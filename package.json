@@ -5,6 +5,14 @@
   "description": "Chrome extension for normalized unit-price comparison across shopping sites.",
   "license": "UNLICENSED",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erichasinternet/apples-to-apples.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erichasinternet/apples-to-apples/issues"
+  },
+  "homepage": "https://github.com/erichasinternet/apples-to-apples#readme",
   "engines": {
     "node": ">=22"
   },
