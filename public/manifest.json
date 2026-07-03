@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "Apples to Apples Unit Price Compare",
+  "short_name": "Apples Unit",
+  "version": "0.1.6",
+  "description": "Normalize unit prices on shopping pages so weight, volume, count, and area comparisons are easier to trust.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://www.walmart.com/*",
+    "https://www.amazon.com/*",
+    "https://www.target.com/*",
+    "https://www.costco.com/*",
+    "https://www.samsclub.com/*",
+    "https://www.chewy.com/*",
+    "https://www.petco.com/*",
+    "https://www.kroger.com/*",
+    "https://www.instacart.com/*",
+    "https://www.walgreens.com/*",
+    "https://www.cvs.com/*",
+    "https://www.homedepot.com/*",
+    "https://www.lowes.com/*",
+    "https://www.staples.com/*",
+    "https://www.officedepot.com/*",
+    "http://127.0.0.1/*",
+    "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "Compare unit prices",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.walmart.com/*",
+        "https://www.amazon.com/*",
+        "https://www.target.com/*",
+        "https://www.costco.com/*",
+        "https://www.samsclub.com/*",
+        "https://www.chewy.com/*",
+        "https://www.petco.com/*",
+        "https://www.kroger.com/*",
+        "https://www.instacart.com/*",
+        "https://www.walgreens.com/*",
+        "https://www.cvs.com/*",
+        "https://www.homedepot.com/*",
+        "https://www.lowes.com/*",
+        "https://www.staples.com/*",
+        "https://www.officedepot.com/*",
+        "http://127.0.0.1/*",
+        "http://localhost/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

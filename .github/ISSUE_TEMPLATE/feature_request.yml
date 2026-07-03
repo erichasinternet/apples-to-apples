@@ -1,0 +1,24 @@
+name: Feature Request
+description: Suggest a retailer, unit type, UI improvement, or workflow.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What shopping comparison problem should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should change?
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation ideas
+      description: How can we prove this works?

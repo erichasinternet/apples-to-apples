@@ -1,0 +1,36 @@
+{
+  "name": "apples-to-apples",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chrome extension for normalized unit-price comparison across shopping sites.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "ci": "npm run verify && npm run test:e2e",
+    "prepare": "husky",
+    "precommit": "npm run verify",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "npm run build && playwright test",
+    "test:live": "LIVE_SHOPPING_TESTS=1 npm run build && playwright test tests/e2e/live-sites.spec.ts",
+    "serve:fixtures": "node scripts/serve-fixtures.mjs",
+    "verify": "npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.0",
+    "@commitlint/config-conventional": "^21.2.0",
+    "@playwright/test": "^1.54.1",
+    "@types/chrome": "^0.0.326",
+    "@types/node": "^24.0.10",
+    "esbuild": "^0.25.5",
+    "husky": "^9.1.7",
+    "jsdom": "^26.1.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

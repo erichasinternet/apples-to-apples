@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Household search fixture</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f8f7f4;
+        color: #20231f;
+      }
+
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      article {
+        min-height: 260px;
+        border: 1px solid #ddd8cd;
+        border-radius: 8px;
+        background: #fffdfa;
+        padding: 14px;
+      }
+
+      img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        border-radius: 6px;
+        background: #ece7da;
+      }
+
+      h2 {
+        font-size: 15px;
+        line-height: 1.3;
+      }
+
+      .price {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      button {
+        min-height: 34px;
+        padding: 0 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Household essentials</h1>
+      <label>
+        Sort by
+        <select aria-label="Sort by">
+          <option value="relevance">Relevance</option>
+          <option value="price-low">Price: low to high</option>
+          <option value="price-high">Price: high to low</option>
+        </select>
+      </label>
+      <div class="grid">
+        <article class="product-card">
+          <a href="/products/cat-litter-premium">
+            <img alt="Cat litter premium" />
+            <h2>Premium Clay Cat Litter, Scented, 24 lb Box</h2>
+          </a>
+          <p class="price">current price $16.80</p>
+          <p>70.0 ¢/lb</p>
+          <button>Add to cart</button>
+        </article>
+
+        <article class="product-card">
+          <a href="/products/cat-litter-a">
+            <img alt="Cat litter" />
+            <h2>Special Kitty Non-Clumping Clay Cat Litter, Unscented, 48 lb Bag, 1 Count</h2>
+          </a>
+          <p class="price">current price $10.98</p>
+          <p>22.9 ¢/lb</p>
+          <button>Add to cart</button>
+        </article>
+
+        <article class="product-card">
+          <a href="/products/detergent-b">
+            <img alt="Detergent" />
+            <h2>FreshWash Concentrated Laundry Detergent, 154 fl oz, 107 loads</h2>
+          </a>
+          <p class="price">current price $18.48</p>
+          <p>$0.12/fl oz</p>
+          <button>Add to cart</button>
+        </article>
+
+        <article class="product-card">
+          <a href="/products/paper-c">
+            <img alt="Paper towels" />
+            <h2>Kitchen Roll Paper Towels, 12 rolls, 840 sheets, 612 sq ft</h2>
+          </a>
+          <p class="price">current price $22.99</p>
+          <button>Add to cart</button>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
