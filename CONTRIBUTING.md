@@ -5,8 +5,8 @@ This project is private, but changes should still meet the same bar as a public 
 ## Local Setup
 
 ```bash
-npm install
-npm run build
+bun install
+bun run build
 ```
 
 Load `dist` as an unpacked extension from `chrome://extensions` or `brave://extensions`.
@@ -16,19 +16,19 @@ Load `dist` as an unpacked extension from `chrome://extensions` or `brave://exte
 Run the fast local gate before opening a pull request:
 
 ```bash
-npm run verify
+bun run verify
 ```
 
 Run the browser fixture suite before merging behavior that touches extraction, rendering, sorting, or extension loading:
 
 ```bash
-npm run test:e2e
+bun run test:e2e
 ```
 
 Live retailer smoke tests are opt-in because retailer pages vary by account, location, bot defenses, and experiments:
 
 ```bash
-LIVE_SHOPPING_TESTS=1 npm run test:live
+LIVE_SHOPPING_TESTS=1 bun run test:live
 ```
 
 ## Commit Style
@@ -42,7 +42,7 @@ test: cover nested retailer sort menu
 chore: update dependency gates
 ```
 
-Husky runs `npm run verify` before each commit and Commitlint checks the commit message.
+Husky runs `bun run verify` before each commit and Commitlint checks the commit message.
 
 ## Pull Request Expectations
 

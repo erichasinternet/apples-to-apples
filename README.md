@@ -46,35 +46,35 @@ Any other page can be scanned manually from the extension popup via `activeTab`.
 ## Commands
 
 ```bash
-npm install
-npm run build
-npm run verify
-npm test
-npm run typecheck
-npm run test:e2e
+bun install
+bun run build
+bun run verify
+bun run test
+bun run typecheck
+bun run test:e2e
 ```
 
 Optional live retailer smoke tests:
 
 ```bash
-LIVE_SHOPPING_TESTS=1 npm run test:live
+LIVE_SHOPPING_TESTS=1 bun run test:live
 ```
 
 Live tests are intentionally not part of the default gate because retailer pages vary by location, personalization, bot defenses, and page experiments.
 
 ## Repository Gates
 
-- `npm run verify` runs the fast local gate: TypeScript plus unit tests.
-- `npm run test:e2e` builds the MV3 extension and runs Playwright fixture tests.
-- `npm run ci` runs the full default CI gate.
-- Husky runs `npm run verify` before commits.
+- `bun run verify` runs the fast local gate: TypeScript plus unit tests.
+- `bun run test:e2e` builds the MV3 extension and runs Playwright fixture tests.
+- `bun run ci` runs the full default CI gate.
+- Husky runs `bun run verify` before commits.
 - Commitlint enforces Conventional Commits for commit messages.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for pull request expectations.
 
 ## Loading Locally
 
-1. Run `npm run build`.
+1. Run `bun run build`.
 2. Open `chrome://extensions`.
 3. Enable developer mode.
 4. Load the `dist` directory as an unpacked extension.

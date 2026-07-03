@@ -23,7 +23,7 @@ const config: PlaywrightTestConfig = {
     }
   ],
   webServer: {
-    command: "npm run serve:fixtures",
+    command: "bun run serve:fixtures",
     url: "http://127.0.0.1:4173",
     reuseExistingServer: !process.env.CI,
     timeout: 10_000
