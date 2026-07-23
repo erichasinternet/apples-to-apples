@@ -40,12 +40,14 @@ The collector:
 - Uses a fresh anonymous browser context with no saved account, cookies, address, or purchase history.
 - Visits only public shopping pages and does not bypass authentication, CAPTCHAs, rate limits, or access controls.
 - Captures one page at a time with a delay between requests.
-- Stores sanitized markup from the main content area, compact product-card fragments, card screenshots, URLs without query strings, timestamps, and content hashes.
+- Stores a site-independent rendered-node observation, sanitized markup from the main content area, a main-content screenshot, compact candidate fragments, candidate screenshots, URLs without query strings, timestamps, and content hashes.
 - Assigns stable node identifiers before serialization so every annotation can cite its exact DOM evidence.
 
 Raw captures live under `benchmark-data/`, which is intentionally ignored by Git. Only reviewed, minimized fixtures should be promoted into the repository. Do not publish or redistribute raw retailer captures without a separate legal and privacy review.
 
-Repeated cards with the same canonical product path are deduplicated within a capture before sampling.
+The candidate-card sampler is retained as an annotation convenience and deterministic baseline artifact. It must not define the ground-truth denominator for learned card discovery. Gold card precision and recall are measured against every product card in the adjudicated main-content region.
+
+Repeated candidate cards with the same canonical product path are deduplicated within a capture before convenience sampling.
 
 ## Annotation
 
@@ -62,6 +64,8 @@ Reviewers label every sampled product as comparable or not comparable and record
 The final 20-domain test set is independently annotated twice and adjudicated. At least 20% of development and selection pages are also double-annotated. Report agreement for comparability and dimension labels, plus exact agreement for price, quantity, and normalized result.
 
 An item is not comparable when the visible evidence is insufficient, the price is conditional or ranged without a selected variant, or the meaningful unit cannot be inferred without unsupported assumptions. Ambiguous items are valid negative cases and must not be silently removed.
+
+Annotations for learned extraction also identify every product-card root in the adjudicated region. Training examples contain card roots, extracted fields, abstention reasons, and the smallest supporting evidence-node set. No model-generated label enters the gold set without human review.
 
 ## Metrics
 
@@ -83,6 +87,20 @@ Operational metrics:
 HTTP errors, bot challenges, and empty result shells are recorded as blocked observations, not successful zero-product pages. They remain part of the operational failure-rate report but are excluded from extraction-accuracy denominators.
 
 Use a domain-clustered bootstrap for 95% intervals. Compare deterministic and hybrid extractors on the same observations with a paired test and publish failures, not only aggregate scores.
+
+## Model Selection And Fine-Tuning
+
+Model work follows this order:
+
+1. Freeze the observation and output contracts.
+2. Measure a deterministic baseline.
+3. Establish an achievable ceiling with a capable prompted model.
+4. Compare text-only, layout-aware, and multimodal approaches on development domains.
+5. Fine-tune a smaller model only after the task representation is proven.
+6. Select thresholds and architecture on selection domains.
+7. Run the final evaluation once on held-out domains.
+
+An encoder-decoder fine-tune is promoted only if it improves held-out-domain exact accuracy and abstention without violating latency, memory, or privacy budgets. The model never owns arithmetic, conversion, or evidence acceptance.
 
 ## Commands
 
@@ -114,4 +132,25 @@ During pilot development only, explicitly include single-pass annotations:
 
 ```bash
 bun run benchmark:evaluate -- benchmark-data/live/<run-id> --allow-in-review
+```
+
+Validate a model output against its captured evidence:
+
+```bash
+bun run benchmark:model:validate -- \
+  benchmark-data/live/<run-id>/<page-id>/observation.json \
+  benchmark-data/live/<run-id>/<page-id>/model-extraction.json
+```
+
+Evaluate a complete set of page-local model outputs:
+
+```bash
+bun run benchmark:model:evaluate -- benchmark-data/live/<run-id>
+```
+
+Alternatively, keep predictions in a separate directory as `<page-id>.json`:
+
+```bash
+bun run benchmark:model:evaluate -- benchmark-data/live/<run-id> \
+  --predictions benchmark-data/predictions/<model-id>
 ```

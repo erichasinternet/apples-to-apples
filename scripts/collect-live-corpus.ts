@@ -2,6 +2,8 @@ import { chromium, type Page } from "@playwright/test";
 import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import type { PageObservation } from "../src/learning/contracts";
+import { capturePageObservation } from "../src/learning/page-observation";
 import {
   LIVE_CORPUS_VERSION,
   expandTargets,
@@ -48,6 +50,10 @@ interface PageCapture {
   viewport: { width: number; height: number };
   redactionCount: number;
   candidateCount: number;
+  observationNodeCount: number;
+  observationTruncated: boolean;
+  observationSha256: string;
+  mainScreenshotCaptured: boolean;
   mainHtmlSha256: string;
   mainHtmlBytes: number;
 }
@@ -185,6 +191,11 @@ async function capturePage(
     }
 
     return count;
+  });
+
+  const observation = await page.evaluate(capturePageObservation, {
+    pageId: target.pageId,
+    maxNodes: 20_000
   });
 
   const extracted = await page.evaluate((candidateLimit) => {
@@ -446,6 +457,19 @@ async function capturePage(
   const cardsDirectory = path.join(pageDirectory, "cards");
   await mkdir(cardsDirectory, { recursive: true });
   await writeFile(path.join(pageDirectory, "main.html"), extracted.mainHtml, "utf8");
+  await writeJson(path.join(pageDirectory, "observation.json"), observation);
+
+  const mainScreenshotCaptured = await page
+    .locator(`[data-ata-benchmark-node="${observation.rootNodeId}"]`)
+    .first()
+    .screenshot({
+      path: path.join(pageDirectory, "main.png"),
+      animations: "disabled",
+      caret: "hide",
+      timeout: 15_000
+    })
+    .then(() => true)
+    .catch(() => false);
 
   const candidates: CandidateCapture[] = extracted.candidates;
   if (Buffer.byteLength(extracted.mainHtml) < 5_000 && candidates.length === 0) {
@@ -479,6 +503,10 @@ async function capturePage(
     viewport: page.viewportSize() ?? { width: 1440, height: 1000 },
     redactionCount,
     candidateCount: candidates.length,
+    observationNodeCount: observation.nodes.length,
+    observationTruncated: observation.truncated,
+    observationSha256: hashJson(observation),
+    mainScreenshotCaptured,
     mainHtmlSha256: createHash("sha256").update(extracted.mainHtml).digest("hex"),
     mainHtmlBytes: Buffer.byteLength(extracted.mainHtml)
   };
@@ -550,4 +578,8 @@ function parseOptions(args: string[]): CollectorOptions {
 
 async function writeJson(filename: string, value: unknown): Promise<void> {
   await writeFile(filename, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+}
+
+function hashJson(value: PageObservation): string {
+  return createHash("sha256").update(JSON.stringify(value)).digest("hex");
 }

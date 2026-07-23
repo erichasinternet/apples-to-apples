@@ -29,6 +29,8 @@
     "test:live": "LIVE_SHOPPING_TESTS=1 bun run build && playwright test tests/e2e/live-sites.spec.ts",
     "benchmark:collect": "bun scripts/collect-live-corpus.ts",
     "benchmark:evaluate": "bun scripts/evaluate-live-corpus.ts",
+    "benchmark:model:evaluate": "bun scripts/evaluate-model-corpus.ts",
+    "benchmark:model:validate": "bun scripts/validate-model-extraction.ts",
     "benchmark:validate": "bun scripts/validate-live-corpus.ts",
     "serve:fixtures": "bun scripts/serve-fixtures.mjs",
     "verify": "bun run typecheck && bun run test"

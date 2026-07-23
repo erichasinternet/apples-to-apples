@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/erichasinternet/apples-to-apples/benchmarks/live-sites/model-extraction.schema.json",
+  "title": "Evidence-grounded model extraction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "pageId", "products"],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "pageId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/product"
+      }
+    }
+  },
+  "$defs": {
+    "evidenceNodeIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "unit": {
+      "enum": [
+        "oz",
+        "lb",
+        "g",
+        "kg",
+        "fl_oz",
+        "ml",
+        "l",
+        "gal",
+        "qt",
+        "pt",
+        "cup",
+        "each",
+        "roll",
+        "sheet",
+        "load",
+        "pod",
+        "tablet",
+        "capsule",
+        "diaper",
+        "bag",
+        "sq_ft",
+        "sq_in",
+        "ft",
+        "in"
+      ]
+    },
+    "dimension": {
+      "enum": ["mass", "volume", "count", "area", "length"]
+    },
+    "title": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "evidenceNodeIds"],
+      "properties": {
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidenceNodeIds": {
+          "$ref": "#/$defs/evidenceNodeIds"
+        }
+      }
+    },
+    "money": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cents", "currency", "evidenceNodeIds"],
+      "properties": {
+        "cents": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "currency": {
+          "const": "USD"
+        },
+        "evidenceNodeIds": {
+          "$ref": "#/$defs/evidenceNodeIds"
+        }
+      }
+    },
+    "nativeUnitPrice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["centsPerUnit", "unit", "dimension", "evidenceNodeIds"],
+      "properties": {
+        "centsPerUnit": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "dimension": {
+          "$ref": "#/$defs/dimension"
+        },
+        "evidenceNodeIds": {
+          "$ref": "#/$defs/evidenceNodeIds"
+        }
+      }
+    },
+    "packageQuantity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valuePerPackage", "unit", "dimension", "packCount", "evidenceNodeIds"],
+      "properties": {
+        "valuePerPackage": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "dimension": {
+          "$ref": "#/$defs/dimension"
+        },
+        "packCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "evidenceNodeIds": {
+          "$ref": "#/$defs/evidenceNodeIds"
+        }
+      }
+    },
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cardNodeId", "title"],
+      "oneOf": [
+        {
+          "required": ["abstainReason"],
+          "not": {
+            "anyOf": [
+              {
+                "required": ["currentPrice"]
+              },
+              {
+                "required": ["nativeUnitPrice"]
+              },
+              {
+                "required": ["packageQuantity"]
+              }
+            ]
+          }
+        },
+        {
+          "not": {
+            "required": ["abstainReason"]
+          },
+          "anyOf": [
+            {
+              "required": ["nativeUnitPrice"]
+            },
+            {
+              "required": ["currentPrice", "packageQuantity"]
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "cardNodeId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "$ref": "#/$defs/title"
+        },
+        "currentPrice": {
+          "$ref": "#/$defs/money"
+        },
+        "nativeUnitPrice": {
+          "$ref": "#/$defs/nativeUnitPrice"
+        },
+        "packageQuantity": {
+          "$ref": "#/$defs/packageQuantity"
+        },
+        "abstainReason": {
+          "enum": [
+            "insufficient-evidence",
+            "conditional-price",
+            "price-range",
+            "unselected-variant",
+            "ambiguous-quantity",
+            "unsupported-unit",
+            "not-a-product"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Apples to Apples Unit Price Compare
 
-Chrome extension for comparing shopping-unit prices across major retailers and arbitrary shopping pages.
+Chrome extension and extraction research project for comparing shopping-unit prices across major retailers and unfamiliar shopping pages.
 
 ## What It Does
 
@@ -37,6 +37,7 @@ Any other page can be scanned manually from the extension popup via `activeTab`.
 
 - `src/core`: pure parser, unit conversion, and normalization logic.
 - `src/content`: DOM extraction, site adapters, structured data fallback, and page renderer.
+- `src/learning`: site-independent page observations, model contracts, and deterministic evidence validation.
 - `src/extension`: MV3 service worker and shared preference storage.
 - `src/popup`: popup UI for scanning the active tab.
 - `src/options`: preferences UI.
@@ -69,9 +70,11 @@ The statistically designed live-site corpus is separate from smoke testing:
 bun run benchmark:collect -- --headed --per-site 1 --sites walmart,amazon,target,chewy
 bun run benchmark:validate -- benchmark-data/live/<run-id>
 bun run benchmark:evaluate -- benchmark-data/live/<run-id>
+bun run benchmark:model:validate -- <observation.json> <model-extraction.json>
+bun run benchmark:model:evaluate -- benchmark-data/live/<run-id>
 ```
 
-See [docs/benchmark-protocol.md](docs/benchmark-protocol.md) for sampling, domain-held-out splits, annotation, privacy, and statistical analysis.
+See [docs/benchmark-protocol.md](docs/benchmark-protocol.md) for sampling, domain-held-out splits, annotation, privacy, and statistical analysis. The [learned extraction experiment](docs/learned-extraction.md) defines the evidence contract and model promotion gates.
 
 ## Repository Gates
 
@@ -99,6 +102,7 @@ The quality bar is layered:
 - Playwright tests load the built MV3 extension into Chromium and verify badge rendering, native/custom sort integration, inline fallback sorting, and that add-to-cart controls remain clickable.
 - Sort tests verify that comparable cards can be reordered by unit price and restored to the retailer's original order.
 - Live smoke tests check a small rotating retailer matrix when explicitly enabled.
+- Unknown-site experiments measure card discovery and evidence-grounded fact extraction separately on domains held out from training.
 
 ## Design Principles
 

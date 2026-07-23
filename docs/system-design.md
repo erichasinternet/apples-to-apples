@@ -2,26 +2,60 @@
 
 ## Goal
 
-Build a privacy-conscious Manifest V3 Chrome extension that normalizes unit pricing on shopping pages. The extension should work best on hardened supported retailers while still providing best-effort comparisons on arbitrary pages with enough visible evidence.
+Build a privacy-conscious Manifest V3 extension that can discover products and normalize unit prices on shopping sites that were not known during development. Retailer-specific selectors are a baseline and optional optimization, not the source of truth for extraction.
 
-## Pipeline
+The extension must fail closed. It may omit a comparison when evidence is ambiguous, but it must not display a price or quantity that cannot be traced to the rendered page.
+
+## Target Pipeline
 
 ```text
-Retail page DOM
-  -> page/site classifier
-  -> product-card detector
-  -> evidence extractor
-  -> unit and price parser
-  -> normalization engine
-  -> badge renderer and sort-control integration
+Rendered page
+  -> generic observation builder
+  -> learned product-card and fact extraction
+  -> deterministic evidence validator
+  -> deterministic unit conversion and arithmetic
+  -> inline unit price and local sort integration
 ```
 
-## Extraction Layers
+The current selector and regular-expression extractor remains a benchmark baseline while the learned path is evaluated. It is not assumed to satisfy the unknown-site requirement.
 
-1. Site adapter selectors for high-traffic retailers.
-2. Generic repeated-card detection using product-like DOM, links, images, price text, and add/cart text.
-3. Structured data fallback through JSON-LD `Product` and `Offer`.
-4. Visible text parsing for prices, native unit prices, package sizes, and multipacks.
+## Generic Observation
+
+The observation builder does not branch on hostname and does not use product-oriented selectors. It records:
+
+- Visible rendered nodes and stable node identifiers.
+- Parent relationships and document order.
+- Direct visible text and accessible names.
+- Semantic attributes such as role, label, link, and Schema.org item properties.
+- Bounding boxes, viewport intersection, typography, and interaction state.
+- A screenshot of the captured main content.
+
+This representation preserves semantic, structural, and visual evidence without transmitting scripts, form values, cookies, storage, or URL query parameters.
+
+## Learned Extraction
+
+The learned component has two responsibilities:
+
+1. Identify product-card root nodes.
+2. Extract title, current price, native unit price, quantity per package, pack count, semantic unit, and exact evidence node identifiers.
+
+It does not calculate totals or normalized prices. It emits an explicit abstention when price, variant, quantity, or unit meaning is ambiguous. The output contract intentionally has no confidence field.
+
+An encoder-decoder model is a candidate for the structured transformation from page observations to extraction JSON. A multimodal or layout-aware model may be required if text and geometry alone do not reach the held-out-domain target. Model architecture is selected by benchmark results, not assumed in advance.
+
+## Evidence Gate
+
+Before model output can reach the normalizer, the validator checks:
+
+- Every card and evidence node exists.
+- Every cited evidence node belongs to the emitted card.
+- The title occurs in cited evidence.
+- Every emitted numeric value occurs in cited evidence.
+- Every unit occurs in cited evidence and matches its dimension.
+- Multipack factors are grounded separately.
+- Abstentions do not also emit comparison values.
+
+Rejected model products produce no extension UI. Accepted quantity factors are multiplied and normalized by deterministic code.
 
 ## Unit Rules
 
@@ -33,22 +67,28 @@ The engine converts only within the same dimension:
 - Area: `sq ft`, `sq in`
 - Length: `ft`, `in`
 
-Count units are intentionally conservative. A roll is not automatically equivalent to a sheet, even though both are count-like.
+Count units remain semantically distinct. A roll is not automatically equivalent to a sheet.
 
 ## Sorting
 
-The extension adds `Unit price: low to high` to retailer sort controls when the page exposes either a visible normal HTML `<select>` or a visible custom sort trigger with an open listbox/menu. Many large retailers use custom dropdown components, hide legacy controls, or load controls asynchronously; for those, the extension watches the visible sort trigger and inserts one menu option when the retailer menu opens. A delayed inline fallback is used only when no usable retailer sort control appears after the page settles.
+Extraction and sort-control integration are separate problems. The learned extractor supplies comparable values; a generic UI integration layer then attempts to identify the site's visible sort control through accessible roles, labels, and interaction behavior.
 
-The sorter:
+Local unit-price sorting:
 
 - Reorders only product cards already visible in the current DOM.
-- Sorts only groups with comparable normalized units.
-- Keeps unrelated groups in their existing page slots.
-- Stores a DOM snapshot so the user can restore the retailer's original order.
+- Sorts only products with the same semantic comparison unit.
+- Keeps unrelated page regions in place.
+- Preserves a DOM snapshot so retailer order can be restored.
 
-## Privacy
+Retailer adapters may remain as optional UI compatibility code, but extraction accuracy must not depend on them.
 
-- No backend is required.
-- No product browsing data is transmitted.
-- Content scripts auto-run only on declared shopping hosts.
-- Manual scanning on arbitrary pages uses `activeTab`.
+## Privacy And Deployment
+
+Raw live captures remain local and ignored by Git. No model is shipped or called from the extension until the benchmark establishes its accuracy, latency, memory, privacy, and cost characteristics.
+
+Deployment options are evaluated independently:
+
+- Local model: stronger privacy, constrained by extension download size and browser inference cost.
+- Remote model: easier experimentation, but requires explicit consent, redaction, retention controls, and a sustainable cost model.
+
+The offline benchmark and evidence validator are shared across both options.
