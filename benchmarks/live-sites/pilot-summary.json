@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "status": "single-pass-pilot-not-gold",
+  "capturedAt": "2026-07-23T03:17:22.023Z",
+  "runId": "2026-07-23T03-17-22-023Z",
+  "sampling": {
+    "domains": 2,
+    "pages": 2,
+    "primaryResultCards": 24,
+    "comparableProducts": 11,
+    "expectedAbstentions": 13
+  },
+  "captureValidation": {
+    "blockedPages": 0,
+    "failedPages": 0,
+    "privacyRedactionPatternsPresentAfterCapture": 0
+  },
+  "deterministicBaseline": {
+    "comparableOutputRecall": 1,
+    "exactNormalizedAccuracy": 0,
+    "abstentionAccuracy": 0.9230769230769231,
+    "overallDecisionAccuracy": 0.5
+  },
+  "observedFailureClasses": [
+    "semantic unit mismatch between each, roll, and sheet",
+    "multipack expressed as quantity-unit followed by pack count",
+    "single-item price confused with multibuy promotion",
+    "retailer native unit price conflicts with visible package evidence"
+  ],
+  "promotionRule": "Do not use these figures as final model-selection evidence until the annotations are independently reviewed and adjudicated."
+}

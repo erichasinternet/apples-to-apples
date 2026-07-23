@@ -42,6 +42,7 @@ Any other page can be scanned manually from the extension popup via `activeTab`.
 - `src/options`: preferences UI.
 - `tests/unit`: parser and fixture tests.
 - `tests/e2e`: Playwright extension tests and optional live-site smoke tests.
+- `benchmarks/live-sites`: live-corpus sampling frame and annotation contract.
 
 ## Commands
 
@@ -61,6 +62,16 @@ LIVE_SHOPPING_TESTS=1 bun run test:live
 ```
 
 Live tests are intentionally not part of the default gate because retailer pages vary by location, personalization, bot defenses, and page experiments.
+
+The statistically designed live-site corpus is separate from smoke testing:
+
+```bash
+bun run benchmark:collect -- --headed --per-site 1 --sites walmart,amazon,target,chewy
+bun run benchmark:validate -- benchmark-data/live/<run-id>
+bun run benchmark:evaluate -- benchmark-data/live/<run-id>
+```
+
+See [docs/benchmark-protocol.md](docs/benchmark-protocol.md) for sampling, domain-held-out splits, annotation, privacy, and statistical analysis.
 
 ## Repository Gates
 

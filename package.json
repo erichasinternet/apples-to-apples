@@ -27,6 +27,9 @@
     "test:watch": "vitest",
     "test:e2e": "bun run build && playwright test",
     "test:live": "LIVE_SHOPPING_TESTS=1 bun run build && playwright test tests/e2e/live-sites.spec.ts",
+    "benchmark:collect": "bun scripts/collect-live-corpus.ts",
+    "benchmark:evaluate": "bun scripts/evaluate-live-corpus.ts",
+    "benchmark:validate": "bun scripts/validate-live-corpus.ts",
     "serve:fixtures": "bun scripts/serve-fixtures.mjs",
     "verify": "bun run typecheck && bun run test"
   },
@@ -35,6 +38,7 @@
     "@commitlint/config-conventional": "^21.2.0",
     "@playwright/test": "^1.54.1",
     "@types/chrome": "^0.0.326",
+    "@types/jsdom": "^28.0.3",
     "@types/node": "^24.0.10",
     "esbuild": "^0.25.5",
     "husky": "^9.1.7",

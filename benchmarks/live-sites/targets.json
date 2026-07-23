@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "description": "Wave-one US retailer sampling frame. Four queries per domain cover mass, volume, count, and a site-relevant fourth category.",
+  "sites": [
+    {
+      "id": "walmart",
+      "label": "Walmart",
+      "hostname": "www.walmart.com",
+      "stratum": "general-marketplace",
+      "searchUrlTemplate": "https://www.walmart.com/search?q={query}",
+      "queries": [
+        { "id": "cat-litter", "query": "cat litter", "dimension": "mass" },
+        { "id": "laundry-detergent", "query": "laundry detergent", "dimension": "volume" },
+        { "id": "trash-bags", "query": "trash bags", "dimension": "count" },
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "amazon",
+      "label": "Amazon",
+      "hostname": "www.amazon.com",
+      "stratum": "general-marketplace",
+      "searchUrlTemplate": "https://www.amazon.com/s?k={query}",
+      "queries": [
+        { "id": "coffee", "query": "ground coffee", "dimension": "mass" },
+        { "id": "dish-soap", "query": "dish soap", "dimension": "volume" },
+        { "id": "vitamins", "query": "vitamins", "dimension": "count" },
+        { "id": "aluminum-foil", "query": "aluminum foil", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "target",
+      "label": "Target",
+      "hostname": "www.target.com",
+      "stratum": "general-retailer",
+      "searchUrlTemplate": "https://www.target.com/s?searchTerm={query}",
+      "queries": [
+        { "id": "cat-litter", "query": "cat litter", "dimension": "mass" },
+        { "id": "shampoo", "query": "shampoo", "dimension": "volume" },
+        { "id": "diapers", "query": "diapers", "dimension": "count" },
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "chewy",
+      "label": "Chewy",
+      "hostname": "www.chewy.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://www.chewy.com/s?query={query}",
+      "queries": [
+        { "id": "cat-litter", "query": "cat litter", "dimension": "mass" },
+        { "id": "wet-cat-food", "query": "wet cat food", "dimension": "mass" },
+        { "id": "dog-treats", "query": "dog treats", "dimension": "count" },
+        { "id": "flea-treatment", "query": "flea treatment", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "petco",
+      "label": "Petco",
+      "hostname": "www.petco.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://www.petco.com/shop/en/petcostore/search?query={query}",
+      "queries": [
+        { "id": "cat-litter", "query": "cat litter", "dimension": "mass" },
+        { "id": "dog-food", "query": "dog food", "dimension": "mass" },
+        { "id": "aquarium-conditioner", "query": "aquarium water conditioner", "dimension": "volume" },
+        { "id": "dog-waste-bags", "query": "dog waste bags", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "petsmart",
+      "label": "PetSmart",
+      "hostname": "www.petsmart.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://www.petsmart.com/search/?q={query}",
+      "queries": [
+        { "id": "cat-litter", "query": "cat litter", "dimension": "mass" },
+        { "id": "dog-food", "query": "dog food", "dimension": "mass" },
+        { "id": "aquarium-conditioner", "query": "aquarium water conditioner", "dimension": "volume" },
+        { "id": "training-pads", "query": "training pads", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "walgreens",
+      "label": "Walgreens",
+      "hostname": "www.walgreens.com",
+      "stratum": "pharmacy",
+      "searchUrlTemplate": "https://www.walgreens.com/search/results.jsp?Ntt={query}",
+      "queries": [
+        { "id": "protein-powder", "query": "protein powder", "dimension": "mass" },
+        { "id": "shampoo", "query": "shampoo", "dimension": "volume" },
+        { "id": "vitamins", "query": "vitamins", "dimension": "count" },
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "cvs",
+      "label": "CVS",
+      "hostname": "www.cvs.com",
+      "stratum": "pharmacy",
+      "searchUrlTemplate": "https://www.cvs.com/search?searchTerm={query}",
+      "queries": [
+        { "id": "protein-powder", "query": "protein powder", "dimension": "mass" },
+        { "id": "mouthwash", "query": "mouthwash", "dimension": "volume" },
+        { "id": "vitamins", "query": "vitamins", "dimension": "count" },
+        { "id": "toilet-paper", "query": "toilet paper", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "home-depot",
+      "label": "Home Depot",
+      "hostname": "www.homedepot.com",
+      "stratum": "home-improvement",
+      "searchUrlTemplate": "https://www.homedepot.com/s/{query}",
+      "queries": [
+        { "id": "ice-melt", "query": "ice melt", "dimension": "mass" },
+        { "id": "cleaner", "query": "all purpose cleaner", "dimension": "volume" },
+        { "id": "trash-bags", "query": "trash bags", "dimension": "count" },
+        { "id": "plastic-sheeting", "query": "plastic sheeting", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "lowes",
+      "label": "Lowe's",
+      "hostname": "www.lowes.com",
+      "stratum": "home-improvement",
+      "searchUrlTemplate": "https://www.lowes.com/search?searchTerm={query}",
+      "queries": [
+        { "id": "ice-melt", "query": "ice melt", "dimension": "mass" },
+        { "id": "cleaner", "query": "all purpose cleaner", "dimension": "volume" },
+        { "id": "trash-bags", "query": "trash bags", "dimension": "count" },
+        { "id": "plastic-sheeting", "query": "plastic sheeting", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "costco",
+      "label": "Costco",
+      "hostname": "www.costco.com",
+      "stratum": "warehouse-club",
+      "searchUrlTemplate": "https://www.costco.com/CatalogSearch?keyword={query}",
+      "queries": [
+        { "id": "coffee", "query": "coffee", "dimension": "mass" },
+        { "id": "laundry-detergent", "query": "laundry detergent", "dimension": "volume" },
+        { "id": "trash-bags", "query": "trash bags", "dimension": "count" },
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "sams-club",
+      "label": "Sam's Club",
+      "hostname": "www.samsclub.com",
+      "stratum": "warehouse-club",
+      "searchUrlTemplate": "https://www.samsclub.com/s/{query}",
+      "queries": [
+        { "id": "coffee", "query": "coffee", "dimension": "mass" },
+        { "id": "laundry-detergent", "query": "laundry detergent", "dimension": "volume" },
+        { "id": "trash-bags", "query": "trash bags", "dimension": "count" },
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "kroger",
+      "label": "Kroger",
+      "hostname": "www.kroger.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://www.kroger.com/search?query={query}",
+      "queries": [
+        { "id": "rice", "query": "rice", "dimension": "mass" },
+        { "id": "olive-oil", "query": "olive oil", "dimension": "volume" },
+        { "id": "coffee-pods", "query": "coffee pods", "dimension": "count" },
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "albertsons",
+      "label": "Albertsons",
+      "hostname": "www.albertsons.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://www.albertsons.com/shop/search-results.html?q={query}",
+      "queries": [
+        { "id": "rice", "query": "rice", "dimension": "mass" },
+        { "id": "olive-oil", "query": "olive oil", "dimension": "volume" },
+        { "id": "coffee-pods", "query": "coffee pods", "dimension": "count" },
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "safeway",
+      "label": "Safeway",
+      "hostname": "www.safeway.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://www.safeway.com/shop/search-results.html?q={query}",
+      "queries": [
+        { "id": "rice", "query": "rice", "dimension": "mass" },
+        { "id": "olive-oil", "query": "olive oil", "dimension": "volume" },
+        { "id": "coffee-pods", "query": "coffee pods", "dimension": "count" },
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+      ]
+    }
+  ]
+}

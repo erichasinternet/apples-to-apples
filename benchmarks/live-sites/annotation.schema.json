@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/erichasinternet/apples-to-apples/benchmarks/live-sites/annotation.schema.json",
+  "title": "Apples to Apples live corpus annotation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "pageId", "reviewStatus", "annotators", "products"],
+  "properties": {
+    "version": { "const": 1 },
+    "pageId": { "type": "string", "minLength": 1 },
+    "reviewStatus": { "enum": ["unreviewed", "in-review", "adjudicated"] },
+    "annotators": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["nodeId", "scope", "comparable", "title", "evidenceNodeIds"],
+        "properties": {
+          "nodeId": { "type": "string", "minLength": 1 },
+          "scope": { "enum": ["primary-results", "secondary-recommendation", "unknown"] },
+          "comparable": { "type": "boolean" },
+          "title": { "type": "string", "minLength": 1 },
+          "evidenceNodeIds": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "currentPriceCents": { "type": "number", "exclusiveMinimum": 0 },
+          "nativeUnitPrice": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["centsPerUnit", "unit"],
+            "properties": {
+              "centsPerUnit": { "type": "number", "exclusiveMinimum": 0 },
+              "unit": { "type": "string", "minLength": 1 }
+            }
+          },
+          "totalQuantity": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["value", "unit", "dimension"],
+            "properties": {
+              "value": { "type": "number", "exclusiveMinimum": 0 },
+              "unit": { "type": "string", "minLength": 1 },
+              "dimension": { "enum": ["mass", "volume", "count", "area", "length"] }
+            }
+          },
+          "expectedNormalized": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["centsPerUnit", "unit", "dimension"],
+            "properties": {
+              "centsPerUnit": { "type": "number", "exclusiveMinimum": 0 },
+              "unit": { "type": "string", "minLength": 1 },
+              "dimension": { "enum": ["mass", "volume", "count", "area", "length"] }
+            }
+          },
+          "exclusionReason": { "type": "string", "minLength": 1 },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}
