@@ -9,6 +9,18 @@
     "version": { "const": 1 },
     "pageId": { "type": "string", "minLength": 1 },
     "reviewStatus": { "enum": ["unreviewed", "in-review", "adjudicated"] },
+    "coverage": { "enum": ["unreviewed", "sampled", "complete-main-region"] },
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "width": { "type": "number", "exclusiveMinimum": 0 },
+        "height": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
     "annotators": {
       "type": "array",
       "items": { "type": "string", "minLength": 1 },
@@ -31,14 +43,37 @@
             "minItems": 1,
             "uniqueItems": true
           },
-          "currentPriceCents": { "type": "number", "exclusiveMinimum": 0 },
+          "fieldEvidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["title"],
+            "properties": {
+              "title": { "$ref": "#/$defs/evidenceNodeIds" },
+              "currentPrice": { "$ref": "#/$defs/evidenceNodeIds" },
+              "nativeUnitPrice": { "$ref": "#/$defs/evidenceNodeIds" },
+              "packageQuantity": { "$ref": "#/$defs/evidenceNodeIds" }
+            }
+          },
+          "currentPriceCents": { "type": "integer", "minimum": 1 },
           "nativeUnitPrice": {
             "type": "object",
             "additionalProperties": false,
             "required": ["centsPerUnit", "unit"],
             "properties": {
               "centsPerUnit": { "type": "number", "exclusiveMinimum": 0 },
-              "unit": { "type": "string", "minLength": 1 }
+              "unit": { "type": "string", "minLength": 1 },
+              "dimension": { "enum": ["mass", "volume", "count", "area", "length"] }
+            }
+          },
+          "packageQuantity": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["valuePerPackage", "packCount", "unit", "dimension"],
+            "properties": {
+              "valuePerPackage": { "type": "number", "exclusiveMinimum": 0 },
+              "packCount": { "type": "integer", "minimum": 1 },
+              "unit": { "type": "string", "minLength": 1 },
+              "dimension": { "enum": ["mass", "volume", "count", "area", "length"] }
             }
           },
           "totalQuantity": {
@@ -61,10 +96,29 @@
               "dimension": { "enum": ["mass", "volume", "count", "area", "length"] }
             }
           },
+          "abstainReason": {
+            "enum": [
+              "insufficient-evidence",
+              "conditional-price",
+              "price-range",
+              "unselected-variant",
+              "ambiguous-quantity",
+              "unsupported-unit",
+              "not-a-product"
+            ]
+          },
           "exclusionReason": { "type": "string", "minLength": 1 },
           "notes": { "type": "string" }
         }
       }
+    }
+  },
+  "$defs": {
+    "evidenceNodeIds": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1,
+      "uniqueItems": true
     }
   }
 }

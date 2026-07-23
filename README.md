@@ -68,10 +68,12 @@ The statistically designed live-site corpus is separate from smoke testing:
 
 ```bash
 bun run benchmark:collect -- --headed --per-site 1 --sites walmart,amazon,target,chewy
+bun run benchmark:coverage
 bun run benchmark:validate -- benchmark-data/live/<run-id>
 bun run benchmark:evaluate -- benchmark-data/live/<run-id>
 bun run benchmark:model:validate -- <observation.json> <model-extraction.json>
 bun run benchmark:model:evaluate -- benchmark-data/live/<run-id>
+bun run benchmark:training:export -- benchmark-data/live/<run-id> --output benchmark-data/training/development.jsonl
 ```
 
 See [docs/benchmark-protocol.md](docs/benchmark-protocol.md) for sampling, domain-held-out splits, annotation, privacy, and statistical analysis. The [learned extraction experiment](docs/learned-extraction.md) defines the evidence contract and model promotion gates.
@@ -103,6 +105,7 @@ The quality bar is layered:
 - Sort tests verify that comparable cards can be reordered by unit price and restored to the retailer's original order.
 - Live smoke tests check a small rotating retailer matrix when explicitly enabled.
 - Unknown-site experiments measure card discovery and evidence-grounded fact extraction separately on domains held out from training.
+- Training export accepts only development domains with complete bounded-region coverage, field-level evidence, adjudication, and two reviewers.
 
 ## Design Principles
 

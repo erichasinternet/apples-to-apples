@@ -14,6 +14,7 @@ Each captured page produces:
 - `main.png`: a visual record of the main-content region when screenshot capture succeeds.
 - `main.html`: sanitized markup used by the deterministic baseline.
 - `annotation.json`: human labels and evidence-node references.
+- `annotation.png`: the bounded region that reviewers must cover completely.
 
 Model output follows [`model-extraction.schema.json`](../benchmarks/live-sites/model-extraction.schema.json). It emits raw facts and citations, not normalized prices.
 
@@ -31,7 +32,7 @@ target:
   model-extraction JSON with card roots, raw facts, abstentions, and evidence node IDs
 ```
 
-Page regions may be compacted for model context limits, but compaction must be generic and deterministic. It cannot use hostname checks or gold product selectors.
+Page regions are compacted to the recorded annotation bounds by geometry while preserving structural ancestors. Compaction is generic and deterministic; it cannot use hostname checks or gold product selectors.
 
 ## Required Baselines
 

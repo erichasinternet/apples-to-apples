@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import type { PageObservation } from "../src/learning/contracts";
+import { boundsIntersect } from "../src/learning/observation-region";
 import {
   LIVE_CORPUS_VERSION,
   calculateWorstCaseSampleSize,
@@ -42,6 +43,8 @@ for (const result of run.results.filter((entry) => entry.status === "captured"))
         observationNodeCount?: number;
         observationSha256?: string;
         mainScreenshotCaptured?: boolean;
+        annotationRegion?: { x: number; y: number; width: number; height: number };
+        annotationScreenshotCaptured?: boolean;
       }>(path.join(pageDirectory, "page.json")),
       readJson<CorpusAnnotation>(path.join(pageDirectory, "annotation.json"))
     ]);
@@ -53,8 +56,9 @@ for (const result of run.results.filter((entry) => entry.status === "captured"))
     if (page.mainHtmlSha256.length !== 64 || mainHtml.length === 0) {
       errors.push(`${result.pageId}: invalid main HTML capture`);
     }
+    let observation: PageObservation | undefined;
     if (page.observationSha256) {
-      const observation = await readJson<PageObservation>(path.join(pageDirectory, "observation.json"));
+      observation = await readJson<PageObservation>(path.join(pageDirectory, "observation.json"));
       const actualHash = createHash("sha256").update(JSON.stringify(observation)).digest("hex");
       if (
         observation.pageId !== result.pageId ||
@@ -72,6 +76,32 @@ for (const result of run.results.filter((entry) => entry.status === "captured"))
         errors.push(`${result.pageId}: invalid main screenshot`);
       }
     }
+    if (page.annotationScreenshotCaptured) {
+      const screenshot = await stat(path.join(pageDirectory, "annotation.png"));
+      if (!screenshot.isFile() || screenshot.size === 0) {
+        errors.push(`${result.pageId}: invalid annotation screenshot`);
+      } else if (page.annotationRegion) {
+        const image = await readFile(path.join(pageDirectory, "annotation.png"));
+        const dimensions = readPngDimensions(image);
+        if (
+          !dimensions ||
+          Math.abs(dimensions.width - page.annotationRegion.width) > 1 ||
+          Math.abs(dimensions.height - page.annotationRegion.height) > 1
+        ) {
+          errors.push(`${result.pageId}: annotation screenshot dimensions do not match its region`);
+        }
+      }
+    }
+    if (
+      annotation.region &&
+      page.annotationRegion &&
+      JSON.stringify(annotation.region) !== JSON.stringify(page.annotationRegion)
+    ) {
+      errors.push(`${result.pageId}: annotation region does not match page metadata`);
+    }
+    if (annotation.coverage === "complete-main-region" && !annotation.region) {
+      errors.push(`${result.pageId}: complete annotation lacks a bounded region`);
+    }
 
     pages += 1;
     candidates += page.candidateCount;
@@ -88,6 +118,20 @@ for (const result of run.results.filter((entry) => entry.status === "captured"))
       }
       if (!product.comparable && !product.exclusionReason) {
         errors.push(`${result.pageId}: excluded product lacks exclusionReason`);
+      }
+      if (annotation.coverage === "complete-main-region") {
+        if (!product.fieldEvidence) {
+          errors.push(`${result.pageId}: complete annotation lacks field evidence for ${product.nodeId}`);
+        }
+        if (!product.comparable && !product.abstainReason) {
+          errors.push(`${result.pageId}: complete annotation lacks abstain reason for ${product.nodeId}`);
+        }
+        const node = observation?.nodes.find((candidate) => candidate.id === product.nodeId);
+        if (!node) {
+          errors.push(`${result.pageId}: annotation references unknown node ${product.nodeId}`);
+        } else if (annotation.region && !boundsIntersect(node.bounds, annotation.region)) {
+          errors.push(`${result.pageId}: product ${product.nodeId} is outside the annotation region`);
+        }
       }
     }
   } catch (error) {
@@ -122,4 +166,18 @@ async function readJson<T>(filename: string): Promise<T> {
     throw new Error(`${filename} is not a file`);
   }
   return JSON.parse(await readFile(filename, "utf8")) as T;
+}
+
+function readPngDimensions(value: Buffer): { width: number; height: number } | undefined {
+  if (
+    value.length < 24 ||
+    value.toString("ascii", 1, 4) !== "PNG" ||
+    value.toString("ascii", 12, 16) !== "IHDR"
+  ) {
+    return undefined;
+  }
+  return {
+    width: value.readUInt32BE(16),
+    height: value.readUInt32BE(20)
+  };
 }

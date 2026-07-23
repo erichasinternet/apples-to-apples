@@ -10,7 +10,7 @@ The corpus is not a one-time scrape. Each run is an immutable, timestamped obser
 
 The full benchmark target is:
 
-- 60 independently operated shopping domains.
+- 60 distinct shopping domains.
 - Four search or category captures per domain.
 - Twelve audited product cards per capture.
 - 2,880 audited products in total.
@@ -19,9 +19,10 @@ At the worst-case proportion of 0.5, 2,880 observations provide a 95% interval n
 
 Domains are stratified across general marketplaces, grocery, pharmacy, warehouse clubs, pet specialists, home improvement, office supply, beauty/wellness, and independent storefront platforms. The sampling frame must include large and mid-sized retailers; popularity alone is not a valid proxy for DOM diversity.
 
-The checked-in target manifest is wave one. Additional waves expand it to 60 domains without changing previously captured observations.
+The sampling frame now contains 60 domains and 240 pages. `domain-splits.json` freezes 30 development, 10 selection, and 20 held-out domains. All domains used before the split was frozen are assigned to development; held-out domains were added afterward.
 
-`benchmarks/live-sites/pilot-summary.json` records the first end-to-end collection and deterministic baseline. It is explicitly a single-pass pilot, not part of the gold test set.
+`benchmarks/live-sites/pilot-summary.json` records the original deterministic pilot.
+`benchmarks/live-sites/observation-pilot-summary.json` records the unknown-site observation and acquisition pilot. Both are explicitly pilot evidence, not part of the gold test set.
 
 ## Split Policy
 
@@ -37,11 +38,14 @@ No selector, prompt example, fixture, or model fine-tuning example derived from 
 
 The collector:
 
-- Uses a fresh anonymous browser context with no saved account, cookies, address, or purchase history.
+- Uses a fresh anonymous browser process and context for each target with no saved account, cookies, address, or purchase history.
 - Visits only public shopping pages and does not bypass authentication, CAPTCHAs, rate limits, or access controls.
 - Captures one page at a time with a delay between requests.
 - Stores a site-independent rendered-node observation, sanitized markup from the main content area, a main-content screenshot, compact candidate fragments, candidate screenshots, URLs without query strings, timestamps, and content hashes.
+- Stores a 2,400-pixel bounded annotation screenshot and matching document-coordinate region. Complete coverage means every product card intersecting this exact region, not an informal interpretation of the full page.
 - Assigns stable node identifiers before serialization so every annotation can cite its exact DOM evidence.
+- Dismisses only explicit close, reject, decline, "no thanks," and "not now" controls inside visible modal or fixed overlays, including cross-origin marketing frames, and records the number of dismissals.
+- Retries transient transport failures three times, while preserving exhausted retries as acquisition failures.
 
 Raw captures live under `benchmark-data/`, which is intentionally ignored by Git. Only reviewed, minimized fixtures should be promoted into the repository. Do not publish or redistribute raw retailer captures without a separate legal and privacy review.
 
@@ -66,6 +70,8 @@ The final 20-domain test set is independently annotated twice and adjudicated. A
 An item is not comparable when the visible evidence is insufficient, the price is conditional or ranged without a selected variant, or the meaningful unit cannot be inferred without unsupported assumptions. Ambiguous items are valid negative cases and must not be silently removed.
 
 Annotations for learned extraction also identify every product-card root in the adjudicated region. Training examples contain card roots, extracted fields, abstention reasons, and the smallest supporting evidence-node set. No model-generated label enters the gold set without human review.
+
+Training export requires complete bounded-region coverage, per-field evidence nodes, adjudicated status, and two annotators by default. It exports development domains only and copies the aligned annotation screenshot alongside each cropped observation.
 
 ## Metrics
 
@@ -108,6 +114,12 @@ Capture a small headed pilot in a separate Chromium process:
 
 ```bash
 bun run benchmark:collect -- --headed --per-site 1 --sites walmart,amazon,target,chewy
+```
+
+Verify the frozen 60-domain frame and split coverage:
+
+```bash
+bun run benchmark:coverage
 ```
 
 Capture selected sites:
@@ -153,4 +165,11 @@ Alternatively, keep predictions in a separate directory as `<page-id>.json`:
 ```bash
 bun run benchmark:model:evaluate -- benchmark-data/live/<run-id> \
   --predictions benchmark-data/predictions/<model-id>
+```
+
+Export leakage-safe development examples after adjudication:
+
+```bash
+bun run benchmark:training:export -- benchmark-data/live/<run-id> \
+  --output benchmark-data/training/development.jsonl
 ```

@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "date": "2026-07-22",
+  "purpose": "Validate site-independent observation capture on newly added development domains without touching the held-out split.",
+  "initialRun": {
+    "requestedPages": 10,
+    "capturedPages": 6,
+    "blockedPages": 4,
+    "failedPages": 0,
+    "observationPages": 6,
+    "observedNodes": 7443,
+    "candidateCards": 24
+  },
+  "routeCorrections": {
+    "sites": ["vitacost", "staples", "wegmans", "save-mart", "dollar-general"],
+    "rerunCapturedPages": 5,
+    "rerunBlockedPages": 0,
+    "rerunObservedNodes": 7856
+  },
+  "additionalDevelopmentRun": {
+    "requestedPages": 5,
+    "capturedPagesBeforeRouteCorrection": 1,
+    "blockedPagesBeforeRouteCorrection": 4,
+    "capturedPagesAfterRouteCorrection": 4,
+    "remainingBlockedPages": 1,
+    "remainingBlockedSite": "food-lion",
+    "correctedRouteObservedNodes": 4840,
+    "correctedRouteCandidateCards": 36
+  },
+  "allDevelopmentDomainBaseline": {
+    "requestedDomains": 30,
+    "capturedPages": 12,
+    "blockedPages": 12,
+    "collectorErrors": 6,
+    "observedNodes": 23761,
+    "candidateCards": 108,
+    "postRunDomErrorsReproduced": 2,
+    "postFixDomErrors": 0,
+    "postFixTransportErrors": 4,
+    "transportRetryAttempts": 3
+  },
+  "obstructionValidation": {
+    "staplesDismissedObstructions": 1,
+    "vitacostDismissedObstructions": 2,
+    "wegmansDismissedObstructions": 1,
+    "crossOriginFrameDismissalVerified": true
+  },
+  "boundedRegionValidation": {
+    "site": "vitacost",
+    "regionWidth": 1440,
+    "regionHeight": 2400,
+    "screenshotWidth": 1440,
+    "screenshotHeight": 2401,
+    "validatorTolerancePixels": 1
+  },
+  "notes": [
+    "Vitacost and Staples initially returned 404 because their acquisition routes had changed; both templates were corrected and recaptured.",
+    "Wegmans, Save Mart, and Dollar General also changed search routes; browser-discovered templates recaptured all three with zero validation errors.",
+    "Etsy returned HTTP 403, while H-E-B returned an incomplete shell. These remain operational capture failures rather than zero-product pages.",
+    "Food Lion returned HTTP 403 in the additional development run and remains an operational capture failure.",
+    "The first all-development-domain pass separated 12 usable captures, 12 explicit site blocks, and 6 collector errors instead of treating missing observations as negative examples.",
+    "Walmart and Sam's Club exposed a DOM compatibility failure caused by relying on HTMLElement.dataset; standard Element attributes removed both collector errors on live reruns.",
+    "Kroger, Costco, Staples, and Office Depot repeatedly reset Playwright HTTP/2 navigation. Three bounded retries still failed, so these remain measured acquisition failures rather than silently omitted pages.",
+    "Visual inspection of a fresh Wegmans capture found and then verified fixes for scroll-coordinate misalignment and a late shallow cookie banner.",
+    "The heuristic candidate sampler found zero Staples cards even though the generic observation and bounded screenshot contained a product grid. Candidate cards therefore remain convenience artifacts and are not the learned card-discovery denominator.",
+    "No held-out domain was visited or inspected."
+  ]
+}

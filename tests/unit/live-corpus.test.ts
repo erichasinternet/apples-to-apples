@@ -1,17 +1,28 @@
+import domainSplits from "../../benchmarks/live-sites/domain-splits.json";
 import targetManifest from "../../benchmarks/live-sites/targets.json";
 import {
   calculateWorstCaseSampleSize,
   expandTargets,
+  getDomainSplit,
   selectTargets,
   slugify,
+  validateDomainSplits,
+  type CorpusDomainSplits,
   type CorpusTargetManifest
 } from "../../scripts/live-corpus-lib";
 
 describe("live benchmark corpus", () => {
   it("expands every site query into a unique reproducible target", () => {
-    const targets = expandTargets(targetManifest as CorpusTargetManifest);
+    const manifest = targetManifest as CorpusTargetManifest;
+    const targets = expandTargets(manifest);
+    const expectedPages = manifest.sites.reduce(
+      (sum, site) =>
+        sum +
+        (site.queries?.length ?? manifest.querySets?.[site.querySet ?? ""]?.length ?? 0),
+      0
+    );
 
-    expect(targets).toHaveLength(targetManifest.sites.reduce((sum, site) => sum + site.queries.length, 0));
+    expect(targets).toHaveLength(expectedPages);
     expect(new Set(targets.map((target) => target.pageId)).size).toBe(targets.length);
     expect(targets.every((target) => target.url.startsWith("https://"))).toBe(true);
   });
@@ -42,5 +53,82 @@ describe("live benchmark corpus", () => {
 
   it("creates filesystem-safe identifiers", () => {
     expect(slugify("Lowe's / Paper Towels")).toBe("lowe-s-paper-towels");
+  });
+
+  it("resolves shared query sets without changing unique page ids", () => {
+    const manifest: CorpusTargetManifest = {
+      version: 1,
+      description: "test",
+      querySets: {
+        common: [{ id: "rice", query: "rice", dimension: "mass" }]
+      },
+      sites: [
+        {
+          id: "shop",
+          label: "Shop",
+          hostname: "shop.example",
+          stratum: "grocery",
+          searchUrlTemplate: "https://shop.example/search?q={query}",
+          querySet: "common"
+        }
+      ]
+    };
+
+    expect(expandTargets(manifest)).toEqual([
+      expect.objectContaining({ pageId: "shop--rice", dimension: "mass" })
+    ]);
+  });
+
+  it("supports slugged search routes without hostname-specific logic", () => {
+    const manifest: CorpusTargetManifest = {
+      version: 1,
+      description: "test",
+      sites: [
+        {
+          id: "shop",
+          label: "Shop",
+          hostname: "shop.example",
+          stratum: "office",
+          searchUrlTemplate: "https://shop.example/{querySlug}/directory_{querySlug}",
+          queries: [{ id: "paper", query: "printer paper", dimension: "count" }]
+        }
+      ]
+    };
+
+    expect(expandTargets(manifest)[0]?.url).toBe(
+      "https://shop.example/printer-paper/directory_printer-paper"
+    );
+  });
+
+  it("validates disjoint domain-level splits", () => {
+    const manifest = targetManifest as CorpusTargetManifest;
+    const ids = manifest.sites.map((site) => site.id);
+    const splits: CorpusDomainSplits = {
+      version: 1,
+      seed: 42,
+      development: ids.slice(0, 5),
+      selection: ids.slice(5, 10),
+      heldOut: ids.slice(10)
+    };
+
+    expect(validateDomainSplits(manifest, splits)).toEqual([]);
+    expect(getDomainSplit(ids[0]!, splits)).toBe("development");
+    expect(getDomainSplit(ids[7]!, splits)).toBe("selection");
+    expect(getDomainSplit(ids[12]!, splits)).toBe("heldOut");
+  });
+
+  it("freezes a leakage-safe 30/10/20 split for the complete manifest", () => {
+    const manifest = targetManifest as CorpusTargetManifest;
+    const splits = domainSplits as CorpusDomainSplits;
+
+    expect(manifest.sites).toHaveLength(60);
+    expect(expandTargets(manifest)).toHaveLength(240);
+    expect(splits.development).toHaveLength(30);
+    expect(splits.selection).toHaveLength(10);
+    expect(splits.heldOut).toHaveLength(20);
+    expect(validateDomainSplits(manifest, splits)).toEqual([]);
+    expect(splits.heldOut).not.toContain("walmart");
+    expect(splits.heldOut).not.toContain("amazon");
+    expect(splits.heldOut).not.toContain("target");
   });
 });

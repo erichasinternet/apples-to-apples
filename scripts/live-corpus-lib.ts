@@ -1,4 +1,5 @@
 import type { Dimension } from "../src/core/types";
+import type { ModelAbstentionReason, ObservationBounds } from "../src/learning/contracts";
 
 export const LIVE_CORPUS_VERSION = 1;
 
@@ -14,13 +15,23 @@ export interface CorpusSite {
   hostname: string;
   stratum: string;
   searchUrlTemplate: string;
-  queries: CorpusQuery[];
+  querySet?: string;
+  queries?: CorpusQuery[];
 }
 
 export interface CorpusTargetManifest {
   version: number;
   description: string;
+  querySets?: Record<string, CorpusQuery[]>;
   sites: CorpusSite[];
+}
+
+export interface CorpusDomainSplits {
+  version: number;
+  seed: number;
+  development: string[];
+  selection: string[];
+  heldOut: string[];
 }
 
 export interface CaptureTarget extends CorpusQuery {
@@ -36,6 +47,8 @@ export interface CorpusAnnotation {
   version: number;
   pageId: string;
   reviewStatus: "unreviewed" | "in-review" | "adjudicated";
+  coverage?: "unreviewed" | "sampled" | "complete-main-region";
+  region?: ObservationBounds;
   annotators: string[];
   products: AnnotatedProduct[];
 }
@@ -46,10 +59,23 @@ export interface AnnotatedProduct {
   comparable: boolean;
   title: string;
   evidenceNodeIds: string[];
+  fieldEvidence?: {
+    title: string[];
+    currentPrice?: string[];
+    nativeUnitPrice?: string[];
+    packageQuantity?: string[];
+  };
   currentPriceCents?: number;
   nativeUnitPrice?: {
     centsPerUnit: number;
     unit: string;
+    dimension?: Dimension;
+  };
+  packageQuantity?: {
+    valuePerPackage: number;
+    packCount: number;
+    unit: string;
+    dimension: Dimension;
   };
   totalQuantity?: {
     value: number;
@@ -61,6 +87,7 @@ export interface AnnotatedProduct {
     unit: string;
     dimension: Dimension;
   };
+  abstainReason?: ModelAbstentionReason;
   exclusionReason?: string;
   notes?: string;
 }
@@ -74,11 +101,15 @@ export function expandTargets(manifest: CorpusTargetManifest): CaptureTarget[] {
   const targets: CaptureTarget[] = [];
 
   for (const site of manifest.sites) {
-    if (!site.searchUrlTemplate.includes("{query}")) {
-      throw new Error(`${site.id} searchUrlTemplate must contain {query}`);
+    if (
+      !site.searchUrlTemplate.includes("{query}") &&
+      !site.searchUrlTemplate.includes("{querySlug}")
+    ) {
+      throw new Error(`${site.id} searchUrlTemplate must contain {query} or {querySlug}`);
     }
 
-    for (const query of site.queries) {
+    const queries = resolveSiteQueries(manifest, site);
+    for (const query of queries) {
       const pageId = `${slugify(site.id)}--${slugify(query.id)}`;
       if (pageIds.has(pageId)) {
         throw new Error(`Duplicate page id: ${pageId}`);
@@ -92,12 +123,65 @@ export function expandTargets(manifest: CorpusTargetManifest): CaptureTarget[] {
         siteLabel: site.label,
         hostname: site.hostname,
         stratum: site.stratum,
-        url: site.searchUrlTemplate.replace("{query}", encodeURIComponent(query.query))
+        url: site.searchUrlTemplate
+          .replaceAll("{query}", encodeURIComponent(query.query))
+          .replaceAll("{querySlug}", slugify(query.query))
       });
     }
   }
 
   return targets;
+}
+
+export function validateDomainSplits(
+  manifest: CorpusTargetManifest,
+  splits: CorpusDomainSplits
+): string[] {
+  const errors: string[] = [];
+  if (splits.version !== LIVE_CORPUS_VERSION) {
+    errors.push(`Unsupported split version: ${splits.version}`);
+  }
+
+  const manifestIds = new Set(manifest.sites.map((site) => site.id));
+  const assignments = [
+    ...splits.development.map((siteId) => ({ siteId, split: "development" })),
+    ...splits.selection.map((siteId) => ({ siteId, split: "selection" })),
+    ...splits.heldOut.map((siteId) => ({ siteId, split: "heldOut" }))
+  ];
+  const seen = new Map<string, string>();
+
+  for (const assignment of assignments) {
+    if (!manifestIds.has(assignment.siteId)) {
+      errors.push(`${assignment.split}: unknown site ${assignment.siteId}`);
+    }
+    const prior = seen.get(assignment.siteId);
+    if (prior) {
+      errors.push(`${assignment.siteId} appears in both ${prior} and ${assignment.split}`);
+    } else {
+      seen.set(assignment.siteId, assignment.split);
+    }
+  }
+
+  for (const siteId of manifestIds) {
+    if (!seen.has(siteId)) {
+      errors.push(`Unassigned site: ${siteId}`);
+    }
+  }
+  if (seen.size !== manifestIds.size) {
+    errors.push(`Expected ${manifestIds.size} unique assignments, found ${seen.size}`);
+  }
+
+  return errors;
+}
+
+export function getDomainSplit(
+  siteId: string,
+  splits: CorpusDomainSplits
+): "development" | "selection" | "heldOut" | undefined {
+  if (splits.development.includes(siteId)) return "development";
+  if (splits.selection.includes(siteId)) return "selection";
+  if (splits.heldOut.includes(siteId)) return "heldOut";
+  return undefined;
 }
 
 export function selectTargets(
@@ -140,6 +224,24 @@ function groupBySite(targets: readonly CaptureTarget[]): Map<string, CaptureTarg
     grouped.set(target.siteId, siteTargets);
   }
   return grouped;
+}
+
+function resolveSiteQueries(manifest: CorpusTargetManifest, site: CorpusSite): CorpusQuery[] {
+  if (site.queries && site.querySet) {
+    throw new Error(`${site.id} must define either queries or querySet, not both`);
+  }
+  if (site.queries) {
+    return site.queries;
+  }
+  if (!site.querySet) {
+    throw new Error(`${site.id} must define queries or querySet`);
+  }
+
+  const queries = manifest.querySets?.[site.querySet];
+  if (!queries) {
+    throw new Error(`${site.id} references unknown querySet ${site.querySet}`);
+  }
+  return queries;
 }
 
 function deterministicShuffle<T>(values: readonly T[], seed: number): T[] {

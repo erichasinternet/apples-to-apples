@@ -59,4 +59,52 @@ describe("page observation capture", () => {
     expect(observation.nodes).toHaveLength(2);
     expect(observation.truncated).toBe(true);
   });
+
+  it("ignores non-HTML elements that do not implement HTMLElement APIs", () => {
+    document.body.innerHTML = `
+      <main>
+        <svg><path d="M0 0"></path></svg>
+        <article><span>$10.00 for 20 oz</span></article>
+      </main>
+    `;
+    vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockReturnValue({
+      x: 0,
+      y: 0,
+      width: 100,
+      height: 20,
+      top: 0,
+      right: 100,
+      bottom: 20,
+      left: 0,
+      toJSON: () => ({})
+    });
+
+    const observation = capturePageObservation({ pageId: "svg-safe" });
+
+    expect(observation.nodes.some((node) => node.tag === "article")).toBe(true);
+    expect(observation.nodes.some((node) => node.tag === "svg")).toBe(false);
+  });
+
+  it("falls back to the document body when a non-HTML element claims the main role", () => {
+    document.body.innerHTML = `
+      <svg role="main"><path d="M0 0"></path></svg>
+      <section><span>$12.00 for 24 count</span></section>
+    `;
+    vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockReturnValue({
+      x: 0,
+      y: 0,
+      width: 100,
+      height: 20,
+      top: 0,
+      right: 100,
+      bottom: 20,
+      left: 0,
+      toJSON: () => ({})
+    });
+
+    const observation = capturePageObservation({ pageId: "non-html-main" });
+
+    expect(observation.nodes.some((node) => node.tag === "section")).toBe(true);
+    expect(observation.rootNodeId).toBe("n0");
+  });
 });

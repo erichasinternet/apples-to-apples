@@ -2,6 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { PageObservation } from "../src/learning/contracts";
 import { validateModelExtraction } from "../src/learning/evidence-validator";
+import { cropObservationToRegion } from "../src/learning/observation-region";
 import type { CorpusAnnotation } from "./live-corpus-lib";
 import {
   evaluateValidatedModelPage,
@@ -51,7 +52,10 @@ for (const result of run.results.filter((entry) => entry.status === "captured"))
       readJson<PageObservation>(path.join(pageDirectory, "observation.json")),
       readJson<unknown>(predictionPath)
     ]);
-    const validation = validateModelExtraction(output, observation);
+    const evaluationObservation = annotation.region
+      ? cropObservationToRegion(observation, annotation.region)
+      : observation;
+    const validation = validateModelExtraction(output, evaluationObservation);
     if (!validation.valid && validation.products.length === 0) {
       invalidOutputPages += 1;
     }

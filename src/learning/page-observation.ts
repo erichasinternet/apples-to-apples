@@ -28,13 +28,13 @@ export function capturePageObservation(options: ObservationCaptureOptions): Page
     return `${url.origin}${url.pathname}`;
   };
   const nearestIncludedParentId = (
-    start: HTMLElement | null,
+    start: Element | null,
     rootElement: HTMLElement,
     includedIds: ReadonlySet<string>
   ): string | undefined => {
     let current = start;
     while (current && rootElement.contains(current)) {
-      const nodeId = current.dataset.ataBenchmarkNode;
+      const nodeId = current.getAttribute("data-ata-benchmark-node") ?? undefined;
       if (nodeId && includedIds.has(nodeId)) {
         return nodeId;
       }
@@ -68,15 +68,16 @@ export function capturePageObservation(options: ObservationCaptureOptions): Page
 
     return attributes;
   };
-  const root =
-    document.querySelector<HTMLElement>("main, [role='main'], #main, #content") ??
-    document.body;
+  const rootCandidate = document.querySelector("main, [role='main'], #main, #content");
+  const root = rootCandidate instanceof HTMLElement ? rootCandidate : document.body;
   const maxNodes = Math.max(1, options.maxNodes ?? 20_000);
-  const allElements = [root, ...root.querySelectorAll<HTMLElement>("*")];
+  const allElements = [root, ...root.querySelectorAll("*")].filter(
+    (element): element is HTMLElement => element instanceof HTMLElement
+  );
 
   for (const [index, element] of allElements.entries()) {
-    if (!element.dataset.ataBenchmarkNode) {
-      element.dataset.ataBenchmarkNode = `n${index}`;
+    if (!element.hasAttribute("data-ata-benchmark-node")) {
+      element.setAttribute("data-ata-benchmark-node", `n${index}`);
     }
   }
 
@@ -92,18 +93,22 @@ export function capturePageObservation(options: ObservationCaptureOptions): Page
       box.height > 0;
     if (!hasRenderedBox) continue;
 
-    let current: HTMLElement | null = element;
+    let current: Element | null = element;
     while (current && root.contains(current)) {
       const currentStyle = getComputedStyle(current);
       if (currentStyle.display === "none" || currentStyle.visibility === "hidden") break;
-      renderedSet.add(current);
+      if (current instanceof HTMLElement) {
+        renderedSet.add(current);
+      }
       if (current === root) break;
       current = current.parentElement;
     }
   }
   const rendered = allElements.filter((element) => renderedSet.has(element));
   const included = rendered.slice(0, maxNodes);
-  const includedIds = new Set(included.map((element) => element.dataset.ataBenchmarkNode ?? ""));
+  const includedIds = new Set(
+    included.map((element) => element.getAttribute("data-ata-benchmark-node") ?? "")
+  );
   const viewportWidth = window.innerWidth;
   const viewportHeight = window.innerHeight;
 
@@ -128,7 +133,7 @@ export function capturePageObservation(options: ObservationCaptureOptions): Page
     const role = element.getAttribute("role")?.trim();
 
     return {
-      id: element.dataset.ataBenchmarkNode ?? "",
+      id: element.getAttribute("data-ata-benchmark-node") ?? "",
       ...(parentId ? { parentId } : {}),
       tag: element.tagName.toLowerCase(),
       ...(role ? { role } : {}),
@@ -168,7 +173,7 @@ export function capturePageObservation(options: ObservationCaptureOptions): Page
       scrollX: round(window.scrollX),
       scrollY: round(window.scrollY)
     },
-    rootNodeId: root.dataset.ataBenchmarkNode ?? "n0",
+    rootNodeId: root.getAttribute("data-ata-benchmark-node") ?? "n0",
     nodes,
     truncated: rendered.length > included.length
   };

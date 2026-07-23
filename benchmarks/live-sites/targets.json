@@ -1,6 +1,68 @@
 {
   "version": 1,
-  "description": "Wave-one US retailer sampling frame. Four queries per domain cover mass, volume, count, and a site-relevant fourth category.",
+  "description": "Sixty-domain US shopping sampling frame. Four queries per domain cover mass, volume, count, and a site-relevant fourth category.",
+  "querySets": {
+    "general": [
+      { "id": "coffee", "query": "ground coffee", "dimension": "mass" },
+      { "id": "shampoo", "query": "shampoo", "dimension": "volume" },
+      { "id": "vitamins", "query": "vitamins", "dimension": "count" },
+      { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+    ],
+    "grocery": [
+      { "id": "rice", "query": "rice", "dimension": "mass" },
+      { "id": "olive-oil", "query": "olive oil", "dimension": "volume" },
+      { "id": "coffee-pods", "query": "coffee pods", "dimension": "count" },
+      { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+    ],
+    "pharmacy": [
+      { "id": "protein-powder", "query": "protein powder", "dimension": "mass" },
+      { "id": "mouthwash", "query": "mouthwash", "dimension": "volume" },
+      { "id": "vitamins", "query": "vitamins", "dimension": "count" },
+      { "id": "toilet-paper", "query": "toilet paper", "dimension": "count" }
+    ],
+    "beauty-wellness": [
+      { "id": "bath-salts", "query": "bath salts", "dimension": "mass" },
+      { "id": "shampoo", "query": "shampoo", "dimension": "volume" },
+      { "id": "cotton-pads", "query": "cotton pads", "dimension": "count" },
+      { "id": "facial-tissues", "query": "facial tissues", "dimension": "count" }
+    ],
+    "home-improvement": [
+      { "id": "ice-melt", "query": "ice melt", "dimension": "mass" },
+      { "id": "cleaner", "query": "all purpose cleaner", "dimension": "volume" },
+      { "id": "trash-bags", "query": "trash bags", "dimension": "count" },
+      { "id": "plastic-sheeting", "query": "plastic sheeting", "dimension": "area" }
+    ],
+    "office-supply": [
+      { "id": "coffee", "query": "ground coffee", "dimension": "mass" },
+      { "id": "hand-soap", "query": "hand soap", "dimension": "volume" },
+      { "id": "pens", "query": "pens", "dimension": "count" },
+      { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+    ],
+    "restaurant-supply": [
+      { "id": "flour", "query": "flour", "dimension": "mass" },
+      { "id": "cooking-oil", "query": "cooking oil", "dimension": "volume" },
+      { "id": "trash-bags", "query": "trash bags", "dimension": "count" },
+      { "id": "aluminum-foil", "query": "aluminum foil", "dimension": "length" }
+    ],
+    "household-direct": [
+      { "id": "laundry-powder", "query": "laundry powder", "dimension": "mass" },
+      { "id": "dish-soap", "query": "dish soap", "dimension": "volume" },
+      { "id": "dishwasher-tablets", "query": "dishwasher tablets", "dimension": "count" },
+      { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+    ],
+    "baby": [
+      { "id": "formula", "query": "baby formula", "dimension": "mass" },
+      { "id": "baby-shampoo", "query": "baby shampoo", "dimension": "volume" },
+      { "id": "diapers", "query": "diapers", "dimension": "count" },
+      { "id": "baby-wipes", "query": "baby wipes", "dimension": "count" }
+    ],
+    "pet": [
+      { "id": "cat-litter", "query": "cat litter", "dimension": "mass" },
+      { "id": "aquarium-conditioner", "query": "aquarium water conditioner", "dimension": "volume" },
+      { "id": "dog-waste-bags", "query": "dog waste bags", "dimension": "count" },
+      { "id": "wet-cat-food", "query": "wet cat food", "dimension": "mass" }
+    ]
+  },
   "sites": [
     {
       "id": "walmart",
@@ -196,6 +258,366 @@
         { "id": "coffee-pods", "query": "coffee pods", "dimension": "count" },
         { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
       ]
+    },
+    {
+      "id": "bjs",
+      "label": "BJ's Wholesale Club",
+      "hostname": "www.bjs.com",
+      "stratum": "warehouse-club",
+      "searchUrlTemplate": "https://www.bjs.com/search/{query}",
+      "querySet": "general"
+    },
+    {
+      "id": "instacart",
+      "label": "Instacart",
+      "hostname": "www.instacart.com",
+      "stratum": "grocery-marketplace",
+      "searchUrlTemplate": "https://www.instacart.com/store/s?k={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "ebay",
+      "label": "eBay",
+      "hostname": "www.ebay.com",
+      "stratum": "general-marketplace",
+      "searchUrlTemplate": "https://www.ebay.com/sch/i.html?_nkw={query}",
+      "querySet": "general"
+    },
+    {
+      "id": "etsy",
+      "label": "Etsy",
+      "hostname": "www.etsy.com",
+      "stratum": "general-marketplace",
+      "searchUrlTemplate": "https://www.etsy.com/search?q={query}",
+      "querySet": "general"
+    },
+    {
+      "id": "dollar-general",
+      "label": "Dollar General",
+      "hostname": "www.dollargeneral.com",
+      "stratum": "discount-retailer",
+      "searchUrlTemplate": "https://www.dollargeneral.com/product-search?q={query}",
+      "querySet": "general"
+    },
+    {
+      "id": "dollar-tree",
+      "label": "Dollar Tree",
+      "hostname": "www.dollartree.com",
+      "stratum": "discount-retailer",
+      "searchUrlTemplate": "https://www.dollartree.com/searchresults?Ntt={query}",
+      "querySet": "general"
+    },
+    {
+      "id": "big-lots",
+      "label": "Big Lots",
+      "hostname": "www.biglots.com",
+      "stratum": "discount-retailer",
+      "searchUrlTemplate": "https://www.biglots.com/search?Ntt={query}",
+      "querySet": "general"
+    },
+    {
+      "id": "macys",
+      "label": "Macy's",
+      "hostname": "www.macys.com",
+      "stratum": "department-store",
+      "searchUrlTemplate": "https://www.macys.com/shop/featured/{query}",
+      "querySet": "beauty-wellness"
+    },
+    {
+      "id": "kohls",
+      "label": "Kohl's",
+      "hostname": "www.kohls.com",
+      "stratum": "department-store",
+      "searchUrlTemplate": "https://www.kohls.com/search.jsp?search={query}",
+      "querySet": "general"
+    },
+    {
+      "id": "meijer",
+      "label": "Meijer",
+      "hostname": "www.meijer.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://www.meijer.com/shopping/search.html?text={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "heb",
+      "label": "H-E-B",
+      "hostname": "www.heb.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://www.heb.com/search/?q={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "publix",
+      "label": "Publix",
+      "hostname": "www.publix.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://www.publix.com/search?searchTerm={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "food-lion",
+      "label": "Food Lion",
+      "hostname": "foodlion.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://foodlion.com/search/?query={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "hy-vee",
+      "label": "Hy-Vee",
+      "hostname": "www.hy-vee.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://www.hy-vee.com/aisles-online/search?search={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "freshdirect",
+      "label": "FreshDirect",
+      "hostname": "www.freshdirect.com",
+      "stratum": "online-grocery",
+      "searchUrlTemplate": "https://www.freshdirect.com/search.jsp?searchParams={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "sprouts",
+      "label": "Sprouts Farmers Market",
+      "hostname": "shop.sprouts.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://shop.sprouts.com/search?search_term={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "wegmans",
+      "label": "Wegmans",
+      "hostname": "www.wegmans.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://www.wegmans.com/shop/search?query={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "aldi",
+      "label": "ALDI",
+      "hostname": "www.aldi.us",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://www.aldi.us/results?q={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "save-mart",
+      "label": "Save Mart",
+      "hostname": "shop.savemart.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://shop.savemart.com/store/savemart/s?k={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "raleys",
+      "label": "Raley's",
+      "hostname": "shop.raleys.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://shop.raleys.com/search?search_term={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "weis-markets",
+      "label": "Weis Markets",
+      "hostname": "shop.weismarkets.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://shop.weismarkets.com/search?search_term={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "giant-eagle",
+      "label": "Giant Eagle",
+      "hostname": "www.gianteagle.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://www.gianteagle.com/grocery/search/product?text={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "shoprite",
+      "label": "ShopRite",
+      "hostname": "www.shoprite.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://www.shoprite.com/sm/planning/rsid/3000/results?q={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "brookshires",
+      "label": "Brookshire's",
+      "hostname": "www.brookshires.com",
+      "stratum": "grocery",
+      "searchUrlTemplate": "https://www.brookshires.com/search?search={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "rite-aid",
+      "label": "Rite Aid",
+      "hostname": "www.riteaid.com",
+      "stratum": "pharmacy",
+      "searchUrlTemplate": "https://www.riteaid.com/shop/catalogsearch/result/?q={query}",
+      "querySet": "pharmacy"
+    },
+    {
+      "id": "iherb",
+      "label": "iHerb",
+      "hostname": "www.iherb.com",
+      "stratum": "beauty-wellness",
+      "searchUrlTemplate": "https://www.iherb.com/search?kw={query}",
+      "querySet": "beauty-wellness"
+    },
+    {
+      "id": "vitacost",
+      "label": "Vitacost",
+      "hostname": "www.vitacost.com",
+      "stratum": "beauty-wellness",
+      "searchUrlTemplate": "https://www.vitacost.com/search?q={query}",
+      "querySet": "beauty-wellness"
+    },
+    {
+      "id": "ulta",
+      "label": "Ulta Beauty",
+      "hostname": "www.ulta.com",
+      "stratum": "beauty-wellness",
+      "searchUrlTemplate": "https://www.ulta.com/shop/search?query={query}",
+      "querySet": "beauty-wellness"
+    },
+    {
+      "id": "sephora",
+      "label": "Sephora",
+      "hostname": "www.sephora.com",
+      "stratum": "beauty-wellness",
+      "searchUrlTemplate": "https://www.sephora.com/search?keyword={query}",
+      "querySet": "beauty-wellness"
+    },
+    {
+      "id": "menards",
+      "label": "Menards",
+      "hostname": "www.menards.com",
+      "stratum": "home-improvement",
+      "searchUrlTemplate": "https://www.menards.com/main/search.html?search={query}",
+      "querySet": "home-improvement"
+    },
+    {
+      "id": "ace-hardware",
+      "label": "Ace Hardware",
+      "hostname": "www.acehardware.com",
+      "stratum": "home-improvement",
+      "searchUrlTemplate": "https://www.acehardware.com/search?query={query}",
+      "querySet": "home-improvement"
+    },
+    {
+      "id": "true-value",
+      "label": "True Value",
+      "hostname": "www.truevalue.com",
+      "stratum": "home-improvement",
+      "searchUrlTemplate": "https://www.truevalue.com/search?query={query}",
+      "querySet": "home-improvement"
+    },
+    {
+      "id": "tractor-supply",
+      "label": "Tractor Supply",
+      "hostname": "www.tractorsupply.com",
+      "stratum": "home-improvement",
+      "searchUrlTemplate": "https://www.tractorsupply.com/tsc/search/{query}",
+      "querySet": "home-improvement"
+    },
+    {
+      "id": "staples",
+      "label": "Staples",
+      "hostname": "www.staples.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.staples.com/{querySlug}/directory_{querySlug}",
+      "querySet": "office-supply"
+    },
+    {
+      "id": "office-depot",
+      "label": "Office Depot",
+      "hostname": "www.officedepot.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.officedepot.com/a/search/?q={query}",
+      "querySet": "office-supply"
+    },
+    {
+      "id": "uline",
+      "label": "Uline",
+      "hostname": "www.uline.com",
+      "stratum": "business-supply",
+      "searchUrlTemplate": "https://www.uline.com/BL_?keywords={query}",
+      "querySet": "restaurant-supply"
+    },
+    {
+      "id": "webstaurantstore",
+      "label": "WebstaurantStore",
+      "hostname": "www.webstaurantstore.com",
+      "stratum": "restaurant-supply",
+      "searchUrlTemplate": "https://www.webstaurantstore.com/search/{query}.html",
+      "querySet": "restaurant-supply"
+    },
+    {
+      "id": "grove",
+      "label": "Grove Collaborative",
+      "hostname": "www.grove.co",
+      "stratum": "household-direct",
+      "searchUrlTemplate": "https://www.grove.co/catalog/?q={query}",
+      "querySet": "household-direct"
+    },
+    {
+      "id": "thrive-market",
+      "label": "Thrive Market",
+      "hostname": "thrivemarket.com",
+      "stratum": "online-grocery",
+      "searchUrlTemplate": "https://thrivemarket.com/search/results?filter%5Bsearch%5D={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "honest",
+      "label": "The Honest Company",
+      "hostname": "www.honest.com",
+      "stratum": "baby-household-direct",
+      "searchUrlTemplate": "https://www.honest.com/search?q={query}",
+      "querySet": "baby"
+    },
+    {
+      "id": "babylist",
+      "label": "Babylist",
+      "hostname": "www.babylist.com",
+      "stratum": "baby",
+      "searchUrlTemplate": "https://www.babylist.com/store/search?q={query}",
+      "querySet": "baby"
+    },
+    {
+      "id": "boxncase",
+      "label": "BoxNCase",
+      "hostname": "boxncase.com",
+      "stratum": "bulk-grocery",
+      "searchUrlTemplate": "https://boxncase.com/search?q={query}",
+      "querySet": "restaurant-supply"
+    },
+    {
+      "id": "gopuff",
+      "label": "Gopuff",
+      "hostname": "www.gopuff.com",
+      "stratum": "delivery-marketplace",
+      "searchUrlTemplate": "https://www.gopuff.com/search?q={query}",
+      "querySet": "grocery"
+    },
+    {
+      "id": "pet-supplies-plus",
+      "label": "Pet Supplies Plus",
+      "hostname": "www.petsuppliesplus.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://www.petsuppliesplus.com/search?query={query}",
+      "querySet": "pet"
+    },
+    {
+      "id": "petflow",
+      "label": "PetFlow",
+      "hostname": "www.petflow.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://www.petflow.com/search?q={query}",
+      "querySet": "pet"
     }
   ]
 }

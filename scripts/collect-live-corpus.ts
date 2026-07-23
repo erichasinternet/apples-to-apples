@@ -3,7 +3,9 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { PageObservation } from "../src/learning/contracts";
+import { navigateForObservation } from "../src/learning/page-navigation";
 import { capturePageObservation } from "../src/learning/page-observation";
+import { dismissVisibleObstruction } from "../src/learning/page-preparation";
 import {
   LIVE_CORPUS_VERSION,
   expandTargets,
@@ -43,17 +45,21 @@ interface PageCapture {
   capturedAt: string;
   requestedUrl: string;
   finalUrl: string;
+  navigationAttempts: number;
   title: string;
   httpStatus?: number;
   blocked: boolean;
   blockReasons: string[];
   viewport: { width: number; height: number };
   redactionCount: number;
+  dismissedObstructions: number;
   candidateCount: number;
   observationNodeCount: number;
   observationTruncated: boolean;
   observationSha256: string;
   mainScreenshotCaptured: boolean;
+  annotationRegion: { x: number; y: number; width: number; height: number };
+  annotationScreenshotCaptured: boolean;
   mainHtmlSha256: string;
   mainHtmlBytes: number;
 }
@@ -76,43 +82,39 @@ const runId = new Date().toISOString().replace(/[:.]/g, "-");
 const runDirectory = path.join(options.outputRoot, runId);
 await mkdir(runDirectory, { recursive: true });
 
-const browser = await chromium.launch({ headless: !options.headed });
-const context = await browser.newContext({
-  locale: "en-US",
-  timezoneId: "America/Denver",
-  viewport: { width: 1440, height: 1000 },
-  colorScheme: "light"
-});
-
 const runResults: Array<{ pageId: string; status: "captured" | "blocked" | "error"; message?: string }> = [];
 
-try {
-  for (const [index, target] of targets.entries()) {
-    process.stdout.write(`[${index + 1}/${targets.length}] ${target.siteLabel}: ${target.query}\n`);
-    const page = await context.newPage();
+for (const [index, target] of targets.entries()) {
+  process.stdout.write(`[${index + 1}/${targets.length}] ${target.siteLabel}: ${target.query}\n`);
+  const browser = await chromium.launch({ headless: !options.headed });
+  const context = await browser.newContext({
+    locale: "en-US",
+    timezoneId: "America/Denver",
+    viewport: { width: 1440, height: 1000 },
+    colorScheme: "light"
+  });
+  const page = await context.newPage();
 
-    try {
-      const capture = await capturePage(page, target, runDirectory, options.maxCards);
-      runResults.push({
-        pageId: target.pageId,
-        status: capture.blocked ? "blocked" : "captured",
-        ...(capture.blockReasons.length === 0 ? {} : { message: capture.blockReasons.join("; ") })
-      });
-    } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      runResults.push({ pageId: target.pageId, status: "error", message });
-      process.stderr.write(`  capture failed: ${message}\n`);
-    } finally {
-      await page.close();
-    }
-
-    if (options.delayMs > 0 && index < targets.length - 1) {
-      await new Promise((resolve) => setTimeout(resolve, options.delayMs));
-    }
+  try {
+    const capture = await capturePage(page, target, runDirectory, options.maxCards);
+    runResults.push({
+      pageId: target.pageId,
+      status: capture.blocked ? "blocked" : "captured",
+      ...(capture.blockReasons.length === 0 ? {} : { message: capture.blockReasons.join("; ") })
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    runResults.push({ pageId: target.pageId, status: "error", message });
+    process.stderr.write(`  capture failed: ${message}\n`);
+  } finally {
+    await page.close();
+    await context.close();
+    await browser.close();
   }
-} finally {
-  await context.close();
-  await browser.close();
+
+  if (options.delayMs > 0 && index < targets.length - 1) {
+    await new Promise((resolve) => setTimeout(resolve, options.delayMs));
+  }
 }
 
 const runManifest = {
@@ -138,11 +140,16 @@ async function capturePage(
   runDirectory: string,
   maxCards: number
 ): Promise<PageCapture> {
-  const response = await page.goto(target.url, { waitUntil: "domcontentloaded", timeout: 45_000 });
+  const navigation = await navigateForObservation(page, target.url);
+  const response = navigation.response;
   await page.waitForLoadState("networkidle", { timeout: 12_000 }).catch(() => undefined);
   await page.waitForTimeout(1_500);
+  let dismissedObstructions = await preparePage(page);
   await page.mouse.wheel(0, 900);
   await page.waitForTimeout(750);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(350);
+  dismissedObstructions += await preparePage(page);
 
   const bodyText = await page
     .locator("body")
@@ -199,13 +206,14 @@ async function capturePage(
   });
 
   const extracted = await page.evaluate((candidateLimit) => {
-    const root =
-      document.querySelector<HTMLElement>("main, [role='main'], #main, #content") ??
-      document.body;
+    const rootCandidate = document.querySelector("main, [role='main'], #main, #content");
+    const root = rootCandidate instanceof HTMLElement ? rootCandidate : document.body;
 
-    const allElements = [root, ...root.querySelectorAll<HTMLElement>("*")];
+    const allElements = [root, ...root.querySelectorAll("*")].filter(
+      (element): element is HTMLElement => element instanceof HTMLElement
+    );
     for (const [index, element] of allElements.entries()) {
-      element.dataset.ataBenchmarkNode = `n${index}`;
+      element.setAttribute("data-ata-benchmark-node", `n${index}`);
     }
 
     const visibleText = (element: HTMLElement): string =>
@@ -395,7 +403,7 @@ async function capturePage(
             style.visibility === "hidden"
           );
         })
-        .map((element) => element.dataset.ataBenchmarkNode)
+        .map((element) => element.getAttribute("data-ata-benchmark-node"))
         .filter((nodeId): nodeId is string => Boolean(nodeId));
 
       clone.querySelectorAll("script, style, noscript, iframe, object, embed").forEach((element) => element.remove());
@@ -435,9 +443,9 @@ async function capturePage(
         const box = element.getBoundingClientRect();
         const link = element.querySelector<HTMLAnchorElement>("a[href]");
         return {
-          nodeId: element.dataset.ataBenchmarkNode ?? "",
+          nodeId: element.getAttribute("data-ata-benchmark-node") ?? "",
           groupHint,
-          containerNodeId: container.dataset.ataBenchmarkNode ?? "",
+          containerNodeId: container.getAttribute("data-ata-benchmark-node") ?? "",
           groupScore,
           text: visibleText(element),
           html: sanitize(element),
@@ -470,6 +478,19 @@ async function capturePage(
     })
     .then(() => true)
     .catch(() => false);
+  const rootObservation = observation.nodes.find((node) => node.id === observation.rootNodeId);
+  const annotationRegion = {
+    x: Math.max(0, rootObservation?.bounds.x ?? 0),
+    y: Math.max(0, rootObservation?.bounds.y ?? 0),
+    width: Math.max(1, rootObservation?.bounds.width ?? observation.viewport.width),
+    height: Math.max(1, Math.min(2_400, rootObservation?.bounds.height ?? observation.viewport.height))
+  };
+  const annotationScreenshotCaptured = await captureAnnotationScreenshot(
+    page,
+    observation.rootNodeId,
+    annotationRegion.height,
+    path.join(pageDirectory, "annotation.png")
+  );
 
   const candidates: CandidateCapture[] = extracted.candidates;
   if (Buffer.byteLength(extracted.mainHtml) < 5_000 && candidates.length === 0) {
@@ -496,17 +517,21 @@ async function capturePage(
     capturedAt: new Date().toISOString(),
     requestedUrl: target.url,
     finalUrl: page.url(),
+    navigationAttempts: navigation.attempts,
     title: await page.title(),
     ...(response ? { httpStatus: response.status() } : {}),
     blocked: blockReasons.length > 0,
     blockReasons,
     viewport: page.viewportSize() ?? { width: 1440, height: 1000 },
     redactionCount,
+    dismissedObstructions,
     candidateCount: candidates.length,
     observationNodeCount: observation.nodes.length,
     observationTruncated: observation.truncated,
     observationSha256: hashJson(observation),
     mainScreenshotCaptured,
+    annotationRegion,
+    annotationScreenshotCaptured,
     mainHtmlSha256: createHash("sha256").update(extracted.mainHtml).digest("hex"),
     mainHtmlBytes: Buffer.byteLength(extracted.mainHtml)
   };
@@ -515,6 +540,8 @@ async function capturePage(
     version: LIVE_CORPUS_VERSION,
     pageId: target.pageId,
     reviewStatus: "unreviewed",
+    coverage: "unreviewed",
+    region: annotationRegion,
     annotators: [],
     products: []
   };
@@ -522,6 +549,56 @@ async function capturePage(
   await writeJson(path.join(pageDirectory, "page.json"), capture);
   await writeJson(path.join(pageDirectory, "annotation.json"), annotation);
   return capture;
+}
+
+async function preparePage(page: Page): Promise<number> {
+  let dismissed = 0;
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    let dismissedThisAttempt = 0;
+    for (const frame of page.frames()) {
+      const frameDismissed = await frame.evaluate(dismissVisibleObstruction).catch(() => false);
+      if (frameDismissed) dismissedThisAttempt += 1;
+    }
+    if (dismissedThisAttempt === 0) break;
+    dismissed += dismissedThisAttempt;
+    await page.waitForTimeout(350);
+  }
+  return dismissed;
+}
+
+async function captureAnnotationScreenshot(
+  page: Page,
+  rootNodeId: string,
+  height: number,
+  outputPath: string
+): Promise<boolean> {
+  const root = page.locator(`[data-ata-benchmark-node="${rootNodeId}"]`).first();
+  const originalStyle = await root.getAttribute("style").catch(() => null);
+  try {
+    await root.evaluate((element, regionHeight) => {
+      element.style.setProperty("max-height", `${regionHeight}px`, "important");
+      element.style.setProperty("overflow", "hidden", "important");
+    }, height);
+    await root.screenshot({
+      path: outputPath,
+      animations: "disabled",
+      caret: "hide",
+      timeout: 15_000
+    });
+    return true;
+  } catch {
+    return false;
+  } finally {
+    await root
+      .evaluate((element, style) => {
+        if (style === null) {
+          element.removeAttribute("style");
+        } else {
+          element.setAttribute("style", style);
+        }
+      }, originalStyle)
+      .catch(() => undefined);
+  }
 }
 
 function parseOptions(args: string[]): CollectorOptions {

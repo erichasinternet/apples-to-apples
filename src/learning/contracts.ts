@@ -54,6 +54,7 @@ export interface PageObservation {
   };
   rootNodeId: string;
   nodes: ObservedNode[];
+  sourceRegion?: ObservationBounds;
   truncated: boolean;
 }
 
