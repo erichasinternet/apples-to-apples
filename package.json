@@ -39,7 +39,7 @@
     "@playwright/test": "^1.54.1",
     "@types/chrome": "^0.0.326",
     "@types/jsdom": "^28.0.3",
-    "@types/node": "^24.0.10",
+    "@types/node": "^26.1.1",
     "esbuild": "^0.25.5",
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",
