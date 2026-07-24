@@ -2,7 +2,7 @@
   "version": 1,
   "updatedAt": "2026-07-24",
   "modelId": "google/t5gemma-2-270m-270m",
-  "datasetSha256": "22ea3792a05883c35d51923e5843ac3bb38807e017ec7e013bdcb2bb2211acc0",
+  "datasetSha256": "a4244fe987b6c66d4c5fe75a5a35272ecf2b84a6cc0f90102c1fc9c0c45f1fda",
   "evaluationRecords": 32,
   "experiments": [
     {
@@ -172,6 +172,31 @@
       "estimatedTrainingGpuUsd": 0.2989,
       "estimatedTrainingAllResourcesUsd": 0.3848,
       "decision": "reject-selection-regression-retain-parent"
+    },
+    {
+      "name": "flan-t5-base-discovery-pilot-20",
+      "modelId": "google/flan-t5-base",
+      "parent": null,
+      "steps": 20,
+      "datasetSha256": "a4244fe987b6c66d4c5fe75a5a35272ecf2b84a6cc0f90102c1fc9c0c45f1fda",
+      "trainingMix": "50% repeated adjudicated real-DOM discovery from 17 development domains, 50% synthetic discovery replay; screenshot token removed",
+      "trainingRecords": 320,
+      "validationRecords": 32,
+      "maxOutputTokens": 192,
+      "metrics": {
+        "internalEvalLoss": 1.2714701890945435,
+        "internalJsonValid": 0.0,
+        "internalJsonPrefixExact": 0.0,
+        "sealedInstacartChunks": 3,
+        "sealedInstacartMalformedPredictions": 3,
+        "sealedInstacartReferenceRoots": 28,
+        "sealedInstacartRecall": 0.0
+      },
+      "successfulRunA10Seconds": 472.43,
+      "failedRunA10SecondsEstimated": 465.0,
+      "selectionInferenceT4Seconds": 34.82,
+      "estimatedAllResourcesUsdIncludingFailedRun": 0.378,
+      "decision": "reject-malformed-output-no-additional-budget"
     }
   ],
   "liveValidation": {
@@ -346,6 +371,71 @@
       "eligibleForTraining": false
     }
   },
+  "remainingAdjudicatedDevelopment": {
+    "domains": [
+      "albertsons",
+      "chewy",
+      "cvs",
+      "etsy",
+      "food-lion",
+      "heb",
+      "home-depot",
+      "lowes",
+      "office-depot",
+      "petco",
+      "safeway",
+      "sephora",
+      "walgreens",
+      "walmart"
+    ],
+    "pages": 14,
+    "records": 26,
+    "referenceRoots": 30,
+    "negativePages": 11,
+    "reviewPath": "benchmarks/reviews/development-remaining-2026-07-24-adjudicated.json",
+    "eligibleForTraining": true,
+    "eligibleForBenchmarkGold": false,
+    "retiredFromValidation": true,
+    "independentVisualReview": {
+      "modelId": "Qwen/Qwen3-VL-2B-Instruct",
+      "promptVersion": 3,
+      "predictedRoots": 14,
+      "truePositive": 4,
+      "falsePositive": 10,
+      "falseNegative": 26,
+      "precision": 0.2857142857142857,
+      "recall": 0.13333333333333333,
+      "f1": 0.18181818181818182
+    },
+    "parentCheckpoint": {
+      "checkpoint": "synthetic-pilot-120-adjudicated-discovery",
+      "truePositive": 23,
+      "falsePositive": 21,
+      "falseNegative": 7,
+      "precision": 0.5227272727272727,
+      "recall": 0.7666666666666667,
+      "f1": 0.6216216216216216,
+      "negativePageFalseRoots": 0
+    },
+    "strictDataset": {
+      "trainingRecords": 361,
+      "validationRecords": 72,
+      "realDiscoveryChunks": 73,
+      "pages": 150,
+      "domains": 67,
+      "products": 190,
+      "sha256": "a4244fe987b6c66d4c5fe75a5a35272ecf2b84a6cc0f90102c1fc9c0c45f1fda"
+    },
+    "extractionAnnotationQueue": {
+      "cards": 190,
+      "negativePages": 12,
+      "withTitleCandidate": 177,
+      "withCurrentPriceCandidate": 157,
+      "withNativeUnitPriceCandidate": 54,
+      "withPackageQuantityCandidate": 131,
+      "eligibleForTraining": false
+    }
+  },
   "selectionInstacart": {
     "runId": "2026-07-24T09-30-29-708Z",
     "attemptedNewDomains": 8,
@@ -447,8 +537,17 @@
   },
   "modalMeteredCostUsdLastObserved": 1.52469832,
   "modalBilledCostUsdLastObserved": 0.0,
-  "additionalEstimatedComputeUsd": 2.6306,
-  "estimatedTotalComputeUsd": 4.1556,
+  "additionalEstimatedComputeUsd": 3.1065,
+  "estimatedTotalComputeUsd": 4.6315,
+  "remainingDevelopmentAndFlanCycleEstimatedCompute": {
+    "pricingSource": "https://modal.com/pricing",
+    "t4GpuSeconds": 423.07,
+    "a10GpuSeconds": 937.43,
+    "a10FailedRunSecondsAreEstimated": true,
+    "estimatedT4GpuCpuMemoryUsd": 0.1066,
+    "estimatedA10GpuCpuMemoryUsd": 0.3693,
+    "estimatedTotalUsd": 0.4759
+  },
   "latestCycleEstimatedCompute": {
     "pricingSource": "https://modal.com/pricing",
     "t4GpuSeconds": 1487.63,

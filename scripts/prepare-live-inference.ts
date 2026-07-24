@@ -37,6 +37,7 @@ interface BundlePage {
   pageId: string;
   siteId: string;
   split: Exclude<RequestedSplit, "all">;
+  blocked: boolean;
   sourceDirectory: string;
   observationPath: string;
   imagePath: string;
@@ -84,6 +85,8 @@ interface Options {
   stage: Stage;
   outputDirectory: string;
   requestedSplit: RequestedSplit;
+  includeBlocked: boolean;
+  siteIds: string[];
   predictionsPath?: string;
   runDirectories: string[];
 }
@@ -115,15 +118,26 @@ async function prepareDiscovery(options: Options): Promise<void> {
       () => undefined
     );
     if (!run) continue;
-    for (const result of run.results.filter((entry) => entry.status === "captured")) {
+    for (const result of run.results.filter(
+      (entry) =>
+        entry.status === "captured" ||
+        (options.includeBlocked && entry.status === "blocked")
+    )) {
       const pageDirectory = path.join(runDirectory, result.pageId);
       const candidate = await loadCandidatePage(
         pageDirectory,
         run.runId,
         trainingSplits,
-        domainSplits
+        domainSplits,
+        options.includeBlocked
       ).catch(() => undefined);
       if (!candidate) continue;
+      if (
+        options.siteIds.length > 0 &&
+        !options.siteIds.includes(candidate.siteId)
+      ) {
+        continue;
+      }
       if (
         options.requestedSplit !== "all" &&
         candidate.split !== options.requestedSplit
@@ -184,6 +198,7 @@ async function prepareDiscovery(options: Options): Promise<void> {
       pageId: page.pageId,
       siteId: page.siteId,
       split: page.split,
+      blocked: page.blocked,
       sourceDirectory: page.sourceDirectory,
       observationPath,
       imagePath,
@@ -327,7 +342,8 @@ async function loadCandidatePage(
   pageDirectory: string,
   runId: string,
   trainingSplits: TrainingDomainSplits,
-  domainSplits: CorpusDomainSplits
+  domainSplits: CorpusDomainSplits,
+  includeBlocked: boolean
 ): Promise<(BundlePage & { capturedAt: string }) | undefined> {
   const [page, observation, annotation] = await Promise.all([
     readJson<PageMetadata>(path.join(pageDirectory, "page.json")),
@@ -341,7 +357,7 @@ async function loadCandidatePage(
       : domainSplit;
   if (
     !split ||
-    page.blocked ||
+    (page.blocked && !includeBlocked) ||
     !page.annotationScreenshotCaptured ||
     !annotation.region ||
     observation.nodes.length === 0
@@ -355,6 +371,7 @@ async function loadCandidatePage(
     pageId: observation.pageId,
     siteId: page.target.siteId,
     split,
+    blocked: page.blocked,
     capturedAt: page.capturedAt,
     sourceDirectory: pageDirectory,
     observationPath: "",
@@ -367,9 +384,14 @@ async function loadCandidatePage(
 
 function parseOptions(args: string[]): Options {
   const values = new Map<string, string>();
+  const flags = new Set<string>();
   const positional: string[] = [];
   for (let index = 0; index < args.length; index += 1) {
     const value = args[index]!;
+    if (value === "--include-blocked") {
+      flags.add(value);
+      continue;
+    }
     if (!value.startsWith("--")) {
       positional.push(value);
       continue;
@@ -393,6 +415,11 @@ function parseOptions(args: string[]): Options {
       values.get("--output") ?? "benchmark-data/inference/t5gemma2-live"
     ),
     requestedSplit: requestedSplit as RequestedSplit,
+    includeBlocked: flags.has("--include-blocked"),
+    siteIds: (values.get("--sites") ?? "")
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean),
     ...(values.has("--predictions")
       ? { predictionsPath: path.resolve(values.get("--predictions")!) }
       : {}),

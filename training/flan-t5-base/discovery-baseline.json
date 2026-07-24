@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "modelId": "google/flan-t5-base",
+  "datasetManifest": "benchmark-data/training/t5gemma2-adjudicated-discovery/dataset-manifest.json",
+  "outputDirectory": "benchmark-data/models/flan-t5-base-discovery",
+  "seed": 20260724,
+  "maxInputTokens": 4096,
+  "maxOutputTokens": 192,
+  "training": {
+    "method": "lora",
+    "epochs": 2,
+    "learningRate": 0.0001,
+    "weightDecay": 0.01,
+    "warmupRatio": 0.05,
+    "batchSize": 1,
+    "gradientAccumulationSteps": 16,
+    "gradientCheckpointing": true,
+    "bf16": true,
+    "loraRank": 16,
+    "loraAlpha": 32,
+    "loraDropout": 0.05,
+    "targetModules": [
+      "q",
+      "v"
+    ]
+  },
+  "evaluation": {
+    "generationSamples": 32
+  }
+}

@@ -126,9 +126,9 @@ deterministic conversion only.
 
 ## Cost
 
-The last observed Modal meter was $1.5247. Through the expanded adjudicated cycle,
-the current published Modal GPU, CPU, and memory rates put estimated total project
-compute at $4.16. This remains well below the $30 cap. Estimates exclude negligible
+The last observed Modal meter was $1.5247. Through the remaining-development and
+FLAN control cycle, the recorded Modal GPU, CPU, and memory rates put estimated
+total project compute at $4.63. This remains well below the $30 cap. Estimates exclude negligible
 image-build overhead and should be reconciled with the Modal billing meter.
 
 ## Expanded Data Cycle
@@ -148,12 +148,34 @@ ineligible for training.
 Details are in
 [`expanded-adjudicated-cycle-report.md`](./expanded-adjudicated-cycle-report.md).
 
+## Remaining Development and Text Control
+
+Fourteen additional development domains added 30 exact roots and eleven explicit
+negative pages. The parent checkpoint reached 52.3% precision, 76.7% recall, and
+62.2% F1, with no false roots on the negative pages. Office Depot exposed a
+specific nested-node failure: 16 false positives from selecting inner product
+elements instead of repeated outer cards.
+
+The strict dataset now has 73 adjudicated real discovery chunks, 190 exact roots,
+361 training records, and SHA-256
+`a4244fe987b6c66d4c5fe75a5a35272ecf2b84a6cc0f90102c1fc9c0c45f1fda`.
+The extraction annotation queue now covers 190 cards and remains ineligible for
+training.
+
+A 20-step `google/flan-t5-base` serialized-DOM control reached evaluation loss
+1.2715 but produced zero valid JSON outputs on 32 internal records. All three
+sealed Instacart predictions were malformed, giving zero recall against 28 roots.
+The bounded FLAN configuration is rejected with no additional budget.
+
+Details are in
+[`remaining-development-and-flan-cycle-report.md`](./remaining-development-and-flan-cycle-report.md).
+
 ## Next Gate
 
 Do not launch full training or a larger model. Required work:
 
-1. Add at least 17 more adjudicated development domains and independently reviewed
-   selection pages before another T5Gemma training run.
+1. Add independently reviewed selection pages before another T5Gemma training run;
+   the remaining development-domain acquisition and adjudication is complete.
 2. Include non-shopping redirects, category grids, recommendations, and skeleton
    states as explicit discovery abstention examples.
 3. Annotate card-local title, current price, native unit price, package quantity,
@@ -163,8 +185,9 @@ Do not launch full training or a larger model. Required work:
 5. Evaluate discovery, extraction, normalization, and abstention on a new sealed
    domain split. All currently opened development, selection, and held-out pages
    are retired from final evaluation.
-6. Compare the same immutable corpus against Pix2Struct Base, MarkupLM Base, and
-   FLAN-T5 Base before approving T5Gemma 2 1B-1B.
+6. Compare the same immutable corpus against Pix2Struct Base and MarkupLM Base.
+   The bounded FLAN-T5 Base control failed structured decoding and is rejected
+   unless a later experiment supplies evidence for revisiting it.
 
 T5Gemma 2 1B-1B is the only larger same-family model worth approving now. Use it
 only if the 270M model underfits the adjudicated real corpus. PaliGemma remains

@@ -9,6 +9,10 @@
     {
       "bundleDirectory": "benchmark-data/inference/t5gemma2-development-expansion",
       "reviewPath": "benchmarks/reviews/development-expansion-2026-07-24-adjudicated.json"
+    },
+    {
+      "bundleDirectory": "benchmark-data/inference/t5gemma2-development-remaining",
+      "reviewPath": "benchmarks/reviews/development-remaining-2026-07-24-adjudicated.json"
     }
   ]
 }

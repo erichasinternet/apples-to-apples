@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "runId": "development-remaining-2026-07-24",
+  "reviewer": "codex-visual-dom-review-a",
+  "reviewType": "single-review",
+  "eligibleForTraining": false,
+  "policy": "Card roots were selected from saved screenshots, repeated geometry, and descendant DOM evidence. Access-denied, challenge, empty-result, and incomplete redirect states were explicitly reviewed as negatives. This review source is not training data until independently reviewed and adjudicated.",
+  "pages": [
+    {
+      "pageId": "albertsons--coffee-pods",
+      "siteId": "albertsons",
+      "productCardNodeIds": [],
+      "note": "Incomplete search shell with no rendered product cards."
+    },
+    {
+      "pageId": "chewy--wet-cat-food",
+      "siteId": "chewy",
+      "productCardNodeIds": [],
+      "note": "HTTP 403 error page with no product cards."
+    },
+    {
+      "pageId": "cvs--vitamins",
+      "siteId": "cvs",
+      "productCardNodeIds": [],
+      "note": "Access-denied interstitial with no product cards."
+    },
+    {
+      "pageId": "etsy--shampoo",
+      "siteId": "etsy",
+      "productCardNodeIds": [],
+      "note": "HTTP 403 empty page with no product cards."
+    },
+    {
+      "pageId": "food-lion--olive-oil",
+      "siteId": "food-lion",
+      "productCardNodeIds": [],
+      "note": "HTTP 403 empty page with no product cards."
+    },
+    {
+      "pageId": "heb--rice",
+      "siteId": "heb",
+      "productCardNodeIds": [],
+      "note": "Incomplete search shell with no rendered product cards."
+    },
+    {
+      "pageId": "home-depot--trash-bags",
+      "siteId": "home-depot",
+      "productCardNodeIds": [],
+      "note": "HTTP 403 error page with no product cards."
+    },
+    {
+      "pageId": "lowes--ice-melt",
+      "siteId": "lowes",
+      "productCardNodeIds": [],
+      "note": "Access-denied interstitial with no product cards."
+    },
+    {
+      "pageId": "office-depot--hand-soap",
+      "siteId": "office-depot",
+      "productCardNodeIds": [
+        "n592",
+        "n667",
+        "n742",
+        "n817",
+        "n892",
+        "n998",
+        "n1073",
+        "n1148",
+        "n1253",
+        "n1359",
+        "n1434",
+        "n1503"
+      ],
+      "note": "Accepted twelve complete outer result-card roots in three four-column rows."
+    },
+    {
+      "pageId": "petco--cat-litter",
+      "siteId": "petco",
+      "productCardNodeIds": [],
+      "note": "HTTP 403 empty page with no product cards."
+    },
+    {
+      "pageId": "safeway--rice",
+      "siteId": "safeway",
+      "productCardNodeIds": [],
+      "note": "Incomplete search shell with no rendered product cards."
+    },
+    {
+      "pageId": "sephora--cotton-pads",
+      "siteId": "sephora",
+      "productCardNodeIds": [
+        "n38",
+        "n70",
+        "n102",
+        "n135",
+        "n169",
+        "n202"
+      ],
+      "note": "Accepted all six complete repeated result-card roots; excluded sponsored banners."
+    },
+    {
+      "pageId": "walgreens--shampoo",
+      "siteId": "walgreens",
+      "productCardNodeIds": [
+        "n1138",
+        "n1205",
+        "n1273",
+        "n1343",
+        "n1413",
+        "n1481",
+        "n1549",
+        "n1619",
+        "n1689",
+        "n1759",
+        "n1829",
+        "n1895"
+      ],
+      "note": "Accepted twelve complete outer result-card roots in three four-column rows; excluded the brand carousel."
+    },
+    {
+      "pageId": "walmart--cat-litter",
+      "siteId": "walmart",
+      "productCardNodeIds": [],
+      "note": "Human-verification challenge page with no product cards."
+    }
+  ]
+}

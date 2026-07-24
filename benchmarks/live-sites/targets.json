@@ -199,7 +199,7 @@
       "label": "Costco",
       "hostname": "www.costco.com",
       "stratum": "warehouse-club",
-      "searchUrlTemplate": "https://www.costco.com/CatalogSearch?keyword={query}",
+      "searchUrlTemplate": "https://www.costco.com/s?keyword={query}",
       "queries": [
         { "id": "coffee", "query": "coffee", "dimension": "mass" },
         { "id": "laundry-detergent", "query": "laundry detergent", "dimension": "volume" },
@@ -225,7 +225,7 @@
       "label": "Kroger",
       "hostname": "www.kroger.com",
       "stratum": "grocery",
-      "searchUrlTemplate": "https://www.kroger.com/search?query={query}",
+      "searchUrlTemplate": "https://www.kroger.com/q/{querySlug}",
       "queries": [
         { "id": "rice", "query": "rice", "dimension": "mass" },
         { "id": "olive-oil", "query": "olive oil", "dimension": "volume" },

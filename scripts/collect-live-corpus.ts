@@ -25,6 +25,7 @@ interface CollectorOptions {
   targetsPath: string;
   outputRoot: string;
   headed: boolean;
+  disableHttp2: boolean;
   limit?: number;
   perSite?: number;
   seed: number;
@@ -99,6 +100,7 @@ for (const [index, target] of targets.entries()) {
   try {
     browser = await chromium.launch({
       headless: !options.headed,
+      ...(options.disableHttp2 ? { args: ["--disable-http2"] } : {}),
       timeout: 30_000
     });
     context = await browser.newContext({
@@ -666,6 +668,10 @@ function parseOptions(args: string[]): CollectorOptions {
       flags.add(arg);
       continue;
     }
+    if (arg === "--disable-http2") {
+      flags.add(arg);
+      continue;
+    }
     if (!arg.startsWith("--")) {
       continue;
     }
@@ -696,6 +702,7 @@ function parseOptions(args: string[]): CollectorOptions {
     targetsPath: path.resolve(values.get("--targets") ?? "benchmarks/live-sites/targets.json"),
     outputRoot: path.resolve(values.get("--output") ?? "benchmark-data/live"),
     headed: flags.has("--headed"),
+    disableHttp2: flags.has("--disable-http2"),
     ...(limit === undefined ? {} : { limit }),
     ...(perSite === undefined ? {} : { perSite }),
     seed,

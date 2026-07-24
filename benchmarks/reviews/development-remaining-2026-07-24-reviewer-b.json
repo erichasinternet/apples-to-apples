@@ -1,0 +1,434 @@
+{
+  "version": 1,
+  "runId": "2026-07-24T10-07-18-257Z",
+  "reviewer": {
+    "type": "independent-visual-model",
+    "modelId": "Qwen/Qwen3-VL-2B-Instruct",
+    "reviewPromptVersion": 3
+  },
+  "reviewType": "independent-visual-plus-deterministic-mapping",
+  "eligibleForTraining": false,
+  "policy": "The model saw screenshot crops only. Visual boxes were mapped by the frozen IoU policy. Mapping disagreement requires adjudication before any node ID is used as gold.",
+  "pages": [
+    {
+      "pageId": "albertsons--coffee-pods",
+      "siteId": "albertsons",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T10-07-18-257Z--albertsons-coffee-pods--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"albertsons--coffee-pods\",\n  \"cardBoxes\": [\n    {\n      \"x\": 0,\n      \"y\": 0,\n      \"width\": 1000,\n      \"height\": 1000\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 1,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 1,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "chewy--wet-cat-food",
+      "siteId": "chewy",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T10-07-18-257Z--chewy-wet-cat-food--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"chewy--wet-cat-food\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "cvs--vitamins",
+      "siteId": "cvs",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T10-12-46-019Z--cvs-vitamins--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"cvs--vitamins\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T10-12-46-019Z--cvs-vitamins--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"cvs--vitamins\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "etsy--shampoo",
+      "siteId": "etsy",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T10-07-18-257Z--etsy-shampoo--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"etsy--shampoo\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T10-07-18-257Z--etsy-shampoo--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"etsy--shampoo\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "food-lion--olive-oil",
+      "siteId": "food-lion",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T10-07-18-257Z--food-lion-olive-oil--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"food-lion--olive-oil\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T10-07-18-257Z--food-lion-olive-oil--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"food-lion--olive-oil\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "heb--rice",
+      "siteId": "heb",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T10-07-18-257Z--heb-rice--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"heb--rice\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "home-depot--trash-bags",
+      "siteId": "home-depot",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T10-07-18-257Z--home-depot-trash-bags--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"home-depot--trash-bags\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T10-07-18-257Z--home-depot-trash-bags--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"home-depot--trash-bags\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "lowes--ice-melt",
+      "siteId": "lowes",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T10-07-18-257Z--lowes-ice-melt--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"lowes--ice-melt\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T10-07-18-257Z--lowes-ice-melt--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"lowes--ice-melt\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "office-depot--hand-soap",
+      "siteId": "office-depot",
+      "productCardNodeIds": [
+        "n1006",
+        "n1081",
+        "n1253",
+        "n1359",
+        "n1434",
+        "n592",
+        "n675",
+        "n750",
+        "n900"
+      ],
+      "records": [
+        {
+          "id": "2026-07-24T10-12-46-019Z--office-depot-hand-soap--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"office-depot--hand-soap\",\n  \"cardBoxes\": [\n    {\n      \"x\": 208,\n      \"y\": 420,\n      \"width\": 270,\n      \"height\": 500\n    },\n    {\n      \"x\": 420,\n      \"y\": 420,\n      \"width\": 270,\n      \"height\": 500\n    },\n    {\n      \"x\": 632,\n      \"y\": 420,\n      \"width\": 270,\n      \"height\": 500\n    },\n    {\n      \"x\": 844,\n      \"y\": 420,\n      \"width\": 270,\n      \"height\": 500\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n592",
+              "n675",
+              "n750"
+            ],
+            "boxes": 3,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T10-12-46-019Z--office-depot-hand-soap--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"office-depot--hand-soap\",\n  \"cardBoxes\": [\n    {\n      \"x\": 180,\n      \"y\": 205,\n      \"width\": 240,\n      \"height\": 240\n    },\n    {\n      \"x\": 410,\n      \"y\": 205,\n      \"width\": 240,\n      \"height\": 240\n    },\n    {\n      \"x\": 630,\n      \"y\": 205,\n      \"width\": 240,\n      \"height\": 240\n    },\n    {\n      \"x\": 850,\n      \"y\": 205,\n      \"width\": 240,\n      \"height\": 240\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n900",
+              "n1006",
+              "n1081"
+            ],
+            "boxes": 3,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T10-12-46-019Z--office-depot-hand-soap--discover-2",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"office-depot--hand-soap\",\n  \"cardBoxes\": [\n    {\n      \"x\": 180,\n      \"y\": 0,\n      \"width\": 300,\n      \"height\": 600\n    },\n    {\n      \"x\": 400,\n      \"y\": 0,\n      \"width\": 300,\n      \"height\": 600\n    },\n    {\n      \"x\": 620,\n      \"y\": 0,\n      \"width\": 300,\n      \"height\": 600\n    },\n    {\n      \"x\": 840,\n      \"y\": 0,\n      \"width\": 300,\n      \"height\": 600\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n1253",
+              "n1359",
+              "n1434"
+            ],
+            "boxes": 3,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "petco--cat-litter",
+      "siteId": "petco",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T10-12-46-019Z--petco-cat-litter--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"petco--cat-litter\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T10-12-46-019Z--petco-cat-litter--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"petco--cat-litter\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "safeway--rice",
+      "siteId": "safeway",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T10-07-18-257Z--safeway-rice--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"safeway--rice\",\n  \"cardBoxes\": [\n    {\n      \"x\": 775,\n      \"y\": 280,\n      \"width\": 150,\n      \"height\": 200\n    },\n    {\n      \"x\": 775,\n      \"y\": 280,\n      \"width\": 150,\n      \"height\": 200\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 2,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 2,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "sephora--cotton-pads",
+      "siteId": "sephora",
+      "productCardNodeIds": [
+        "n41",
+        "n73"
+      ],
+      "records": [
+        {
+          "id": "2026-07-24T10-12-46-019Z--sephora-cotton-pads--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"sephora--cotton-pads\",\n  \"cardBoxes\": [\n    {\n      \"x\": 0,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 400\n    },\n    {\n      \"x\": 250,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 400\n    },\n    {\n      \"x\": 500,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 400\n    },\n    {\n      \"x\": 750,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 400\n    },\n    {\n      \"x\": 0,\n      \"y\": 400,\n      \"width\": 250,\n      \"height\": 400\n    },\n    {\n      \"x\": 250,\n      \"y\": 400,\n      \"width\": 250,\n      \"height\": 400\n    },\n    {\n      \"x\": 500,\n      \"y\": 400,\n      \"width\": 250,\n      \"height\": 400\n    },\n    {\n      \"x\": 750,\n      \"y\": 400,\n      \"width\": 250,\n      \"height\": 400\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n41",
+              "n73"
+            ],
+            "boxes": 8,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 5,
+            "duplicateMappings": 1
+          }
+        },
+        {
+          "id": "2026-07-24T10-12-46-019Z--sephora-cotton-pads--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"sephora--cotton-pads\",\n  \"cardBoxes\": [\n    {\n      \"x\": 0,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 100\n    },\n    {\n      \"x\": 500,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 100\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 3,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 3,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "walgreens--shampoo",
+      "siteId": "walgreens",
+      "productCardNodeIds": [
+        "n1692",
+        "n1762",
+        "n1832"
+      ],
+      "records": [
+        {
+          "id": "2026-07-24T10-12-46-019Z--walgreens-shampoo--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"walgreens--shampoo\",\n  \"cardBoxes\": [\n    {\n      \"x\": 298,\n      \"y\": 345,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 450,\n      \"y\": 345,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 600,\n      \"y\": 345,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 750,\n      \"y\": 345,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 898,\n      \"y\": 345,\n      \"width\": 200,\n      \"height\": 200\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 4,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 4,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T10-12-46-019Z--walgreens-shampoo--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"walgreens--shampoo\",\n  \"cardBoxes\": [\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 100\n    },\n    {\n      \"x\": 250,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 1",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T10-12-46-019Z--walgreens-shampoo--discover-2",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"walgreens--shampoo\",\n  \"cardBoxes\": [\n    {\n      \"x\": 250,\n      \"y\": 300,\n      \"width\": 300,\n      \"height\": 500\n    },\n    {\n      \"x\": 420,\n      \"y\": 300,\n      \"width\": 300,\n      \"height\": 500\n    },\n    {\n      \"x\": 600,\n      \"y\": 300,\n      \"width\": 300,\n      \"height\": 500\n    },\n    {\n      \"x\": 780,\n      \"y\": 300,\n      \"width\": 300,\n      \"height\": 500\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n1692",
+              "n1762",
+              "n1832"
+            ],
+            "boxes": 3,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "walmart--cat-litter",
+      "siteId": "walmart",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T10-07-18-257Z--walmart-cat-litter--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"walmart--cat-litter\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T10-07-18-257Z--walmart-cat-litter--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"walmart--cat-litter\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    }
+  ]
+}

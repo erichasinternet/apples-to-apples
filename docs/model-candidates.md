@@ -15,7 +15,7 @@ label, prompt, or evaluation defect.
 | 1 | `google/t5gemma-2-270m-270m` | Current multimodal encoder-decoder | Smallest end-to-end structured extractor already integrated | Continue only bounded data-mixture experiments |
 | 2 | `google/pix2struct-base` | Screenshot-native image-to-text baseline | Pretrained by parsing web-page screenshots into simplified HTML | Beat T5Gemma discovery F1 or materially improve visual root localization at comparable cost |
 | 3 | `microsoft/markuplm-base` | DOM/XPath token-classification baseline | Explicitly encodes HTML text and markup paths for web information extraction | Beat the generative model on exact root and evidence-node tagging |
-| 4 | `google/flan-t5-base` | Text-only serialized-DOM control | Separates the value of language/DOM evidence from screenshot input | Establish that images add measurable held-out value |
+| 4 | `google/flan-t5-base` | Rejected bounded text-only control | A 20-step serialized-DOM pilot produced no valid JSON on internal or sealed selection inference | Revisit only with evidence that a different objective or decoding contract fixes the measured failure |
 | 5 | `google/t5gemma-2-1b-1b` | Same-family capacity check | Preserves the multimodal encoder-decoder contract with more capacity | Run only after the 270M learning curve underfits a sufficiently large adjudicated corpus |
 
 Official references:
