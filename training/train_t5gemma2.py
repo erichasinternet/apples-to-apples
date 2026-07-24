@@ -79,6 +79,19 @@ def resolve_from_repo(repo_root: Path, value: str) -> Path:
     return path if path.is_absolute() else repo_root / path
 
 
+def sanitize_token_ids(
+    token_ids: Any, *, pad_token_id: int, vocabulary_size: int
+) -> list[list[int]]:
+    rows = token_ids.tolist() if hasattr(token_ids, "tolist") else token_ids
+    return [
+        [
+            value if 0 <= (value := int(token_id)) < vocabulary_size else pad_token_id
+            for token_id in row
+        ]
+        for row in rows
+    ]
+
+
 def validate_dataset(
     repo_root: Path, config: dict[str, Any]
 ) -> tuple[dict[str, Any], dict[str, list[dict[str, Any]]], Path]:
@@ -296,7 +309,6 @@ def train(
     max_steps: int | None,
 ) -> None:
     try:
-        import numpy as np
         import torch
         from PIL import Image
         from peft import LoraConfig, PeftModel, TaskType, get_peft_model
@@ -402,30 +414,85 @@ def train(
         model_inputs["labels"] = labels
         return model_inputs
 
+    output_directory = resolve_from_repo(repo_root, config["outputDirectory"])
+    evaluation_records = stratified_limit(
+        records_by_split["validation"],
+        config["evaluation"]["generationSamples"],
+    )
+
     def compute_metrics(eval_prediction: Any) -> dict[str, float]:
         predictions, labels = eval_prediction
         if isinstance(predictions, tuple):
             predictions = predictions[0]
-        labels = np.where(labels != -100, labels, processor.tokenizer.pad_token_id)
+        vocabulary_size = len(processor.tokenizer)
+        predictions = sanitize_token_ids(
+            predictions,
+            pad_token_id=processor.tokenizer.pad_token_id,
+            vocabulary_size=vocabulary_size,
+        )
+        labels = sanitize_token_ids(
+            labels,
+            pad_token_id=processor.tokenizer.pad_token_id,
+            vocabulary_size=vocabulary_size,
+        )
         decoded_predictions = processor.batch_decode(
             predictions, skip_special_tokens=True
         )
         decoded_labels = processor.batch_decode(labels, skip_special_tokens=True)
         valid_json = 0
         exact = 0
-        for prediction, label in zip(decoded_predictions, decoded_labels, strict=True):
+        samples = []
+        for record, prediction, label in zip(
+            evaluation_records,
+            decoded_predictions,
+            decoded_labels,
+            strict=True,
+        ):
+            is_valid_json = True
             try:
                 json.loads(prediction)
                 valid_json += 1
             except json.JSONDecodeError:
-                pass
-            if prediction.strip() == label.strip():
+                is_valid_json = False
+            is_exact = prediction.strip() == label.strip()
+            if is_exact:
                 exact += 1
+            samples.append(
+                {
+                    "task": record["task"],
+                    "siteId": record["siteId"],
+                    "pageId": record["pageId"],
+                    "validJson": is_valid_json,
+                    "exactMatch": is_exact,
+                    "prediction": prediction,
+                    "target": label,
+                }
+            )
         count = max(1, len(decoded_predictions))
-        return {"json_valid": valid_json / count, "exact_match": exact / count}
+        metrics = {
+            "json_valid": valid_json / count,
+            "exact_match": exact / count,
+        }
+        output_directory.mkdir(parents=True, exist_ok=True)
+        (output_directory / "evaluation-samples.jsonl").write_text(
+            "".join(json.dumps(sample) + "\n" for sample in samples),
+            encoding="utf-8",
+        )
+        (output_directory / "evaluation-summary.json").write_text(
+            json.dumps(
+                {
+                    "records": count,
+                    "jsonValid": metrics["json_valid"],
+                    "exactMatch": metrics["exact_match"],
+                },
+                indent=2,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        return metrics
 
     set_seed(config["seed"])
-    output_directory = resolve_from_repo(repo_root, config["outputDirectory"])
     evaluation_steps = config["evaluation"]["steps"]
     save_steps = config["evaluation"]["saveSteps"]
     if max_steps is not None:
@@ -457,10 +524,6 @@ def train(
         report_to="none",
         seed=config["seed"],
         **({"max_steps": max_steps} if max_steps is not None else {}),
-    )
-    evaluation_records = stratified_limit(
-        records_by_split["validation"],
-        config["evaluation"]["generationSamples"],
     )
     trainer = Seq2SeqTrainer(
         model=model,

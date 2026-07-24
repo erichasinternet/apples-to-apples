@@ -14,6 +14,30 @@ import type { CorpusAnnotation } from "../../scripts/live-corpus-lib";
 import type { PageObservation } from "../../src/learning/contracts";
 
 describe("training preparation CLI", () => {
+  it("sanitizes generation padding before tokenizer decoding", async () => {
+    const result = await promisify(execFile)(
+      "python3",
+      [
+        "-c",
+        [
+          "import json",
+          "from training.train_t5gemma2 import sanitize_token_ids",
+          "print(json.dumps(sanitize_token_ids(",
+          "  [[0, 5, -100, -1, 9, 10]],",
+          "  pad_token_id=0,",
+          "  vocabulary_size=10,",
+          ")))"
+        ].join("\n")
+      ],
+      {
+        cwd: process.cwd(),
+        encoding: "utf8"
+      }
+    );
+
+    expect(JSON.parse(result.stdout)).toEqual([[0, 5, 0, 0, 9, 0]]);
+  });
+
   it("exports domain-separated discovery and extraction records", async () => {
     const temporaryRoot = await mkdtemp(path.join(os.tmpdir(), "ata-training-"));
     const runDirectory = path.join(temporaryRoot, "run");

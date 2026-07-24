@@ -137,14 +137,17 @@ Modal runs are separated by cost and failure risk:
 ```bash
 bun run training:modal:diagnose
 bun run training:modal:smoke
+bun run training:modal:pilot
 bun run training:modal:full
 ```
 
 - `diagnose` uses a T4 for at most five minutes and does not download model weights.
 - `smoke` uses an A10 for at most 15 minutes, 16 training records, and two steps.
+- `pilot` uses an A10 for at most 30 minutes, 320 training records, and 20 steps.
 - `full` uses one A10 for at most four hours with no retries.
-- Both training modes verify gated model access on CPU before allocating an A10.
+- All training modes verify gated model access on CPU before allocating an A10.
 - Model outputs and the Hugging Face cache are stored in separate Modal Volumes.
+- Evaluation summaries and decoded prediction/target samples are saved with each model.
 
 The training functions require a Modal Secret named `apples-to-apples-huggingface`
 containing `HF_TOKEN`. Never commit that token or pass it as a command-line argument.
