@@ -1,4 +1,9 @@
-import { chromium, type Page } from "@playwright/test";
+import {
+  chromium,
+  type Browser,
+  type BrowserContext,
+  type Page
+} from "@playwright/test";
 import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -83,20 +88,31 @@ const runDirectory = path.join(options.outputRoot, runId);
 await mkdir(runDirectory, { recursive: true });
 
 const runResults: Array<{ pageId: string; status: "captured" | "blocked" | "error"; message?: string }> = [];
+await writeRunManifest();
 
 for (const [index, target] of targets.entries()) {
   process.stdout.write(`[${index + 1}/${targets.length}] ${target.siteLabel}: ${target.query}\n`);
-  const browser = await chromium.launch({ headless: !options.headed });
-  const context = await browser.newContext({
-    locale: "en-US",
-    timezoneId: "America/Denver",
-    viewport: { width: 1440, height: 1000 },
-    colorScheme: "light"
-  });
-  const page = await context.newPage();
+  let browser: Browser | undefined;
+  let context: BrowserContext | undefined;
+  let page: Page | undefined;
 
   try {
-    const capture = await capturePage(page, target, runDirectory, options.maxCards);
+    browser = await chromium.launch({
+      headless: !options.headed,
+      timeout: 30_000
+    });
+    context = await browser.newContext({
+      locale: "en-US",
+      timezoneId: "America/Denver",
+      viewport: { width: 1440, height: 1000 },
+      colorScheme: "light"
+    });
+    page = await context.newPage();
+    const capture = await withTimeout(
+      capturePage(page, target, runDirectory, options.maxCards),
+      180_000,
+      "target capture exceeded 180 seconds"
+    );
     runResults.push({
       pageId: target.pageId,
       status: capture.blocked ? "blocked" : "captured",
@@ -107,32 +123,71 @@ for (const [index, target] of targets.entries()) {
     runResults.push({ pageId: target.pageId, status: "error", message });
     process.stderr.write(`  capture failed: ${message}\n`);
   } finally {
-    await page.close();
-    await context.close();
-    await browser.close();
+    if (page) await closeWithin(page.close(), 5_000);
+    if (context) await closeWithin(context.close(), 5_000);
+    if (browser) await closeWithin(browser.close(), 5_000);
   }
 
+  await writeRunManifest();
   if (options.delayMs > 0 && index < targets.length - 1) {
     await new Promise((resolve) => setTimeout(resolve, options.delayMs));
   }
 }
 
-const runManifest = {
-  version: LIVE_CORPUS_VERSION,
-  runId,
-  createdAt: new Date().toISOString(),
-  sourceManifest: path.relative(process.cwd(), options.targetsPath),
-  anonymousContext: true,
-  seed: options.seed,
-  requestedPages: targets.length,
-  capturedPages: runResults.filter((result) => result.status === "captured").length,
-  blockedPages: runResults.filter((result) => result.status === "blocked").length,
-  failedPages: runResults.filter((result) => result.status === "error").length,
-  results: runResults
-};
+await new Promise<void>((resolve) => {
+  process.stdout.write(`Corpus run written to ${runDirectory}\n`, () => resolve());
+});
+process.exit(0);
 
-await writeJson(path.join(runDirectory, "run.json"), runManifest);
-process.stdout.write(`Corpus run written to ${runDirectory}\n`);
+async function writeRunManifest(): Promise<void> {
+  await writeJson(path.join(runDirectory, "run.json"), {
+    version: LIVE_CORPUS_VERSION,
+    runId,
+    createdAt: new Date().toISOString(),
+    sourceManifest: path.relative(process.cwd(), options.targetsPath),
+    anonymousContext: true,
+    seed: options.seed,
+    requestedPages: targets.length,
+    completedPages: runResults.length,
+    capturedPages: runResults.filter((result) => result.status === "captured").length,
+    blockedPages: runResults.filter((result) => result.status === "blocked").length,
+    failedPages: runResults.filter((result) => result.status === "error").length,
+    complete: runResults.length === targets.length,
+    results: runResults
+  });
+}
+
+async function closeWithin(operation: Promise<unknown>, timeoutMs: number): Promise<void> {
+  await new Promise<void>((resolve) => {
+    const timer = setTimeout(resolve, timeoutMs);
+    operation
+      .catch(() => undefined)
+      .then(() => {
+        clearTimeout(timer);
+        resolve();
+      });
+  });
+}
+
+async function withTimeout<T>(
+  operation: Promise<T>,
+  timeoutMs: number,
+  message: string
+): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error(message)), timeoutMs);
+    operation.then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      (error) => {
+        clearTimeout(timer);
+        reject(error);
+      }
+    );
+  });
+}
 
 async function capturePage(
   page: Page,
