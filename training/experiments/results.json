@@ -206,6 +206,21 @@
       "recall": 0.6078431372549019,
       "f1": 0.5299145299145299
     },
+    "independentVisualReview": {
+      "modelId": "Qwen/Qwen3-VL-2B-Instruct",
+      "promptVersion": 2,
+      "records": 13,
+      "rawTruncations": 1,
+      "validBoxes": 33,
+      "invalidBoxes": 6,
+      "unmappedBoxes": 14,
+      "mappedRoots": 19,
+      "exactAgreementWithReviewerA": 4,
+      "precisionAgainstReviewerA": 0.21052631578947367,
+      "recallAgainstReviewerA": 0.0784313725490196,
+      "f1AgainstReviewerA": 0.11428571428571428,
+      "eligibleForTraining": false
+    },
     "weakRootPrecision": 0.16666666666666666,
     "weakRootRecall": 0.3333333333333333,
     "weakRootF1": 0.2222222222222222,
@@ -213,6 +228,6 @@
   },
   "modalMeteredCostUsdLastObserved": 1.52469832,
   "modalBilledCostUsdLastObserved": 0.0,
-  "additionalEstimatedComputeUsd": 1.059,
-  "estimatedTotalComputeUsd": 2.584
+  "additionalEstimatedComputeUsd": 1.134,
+  "estimatedTotalComputeUsd": 2.659
 }

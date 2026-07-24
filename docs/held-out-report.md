@@ -97,6 +97,33 @@ non-product captures produced no true positives. The review is checked into
 ineligible for training, and must not be called gold until a second independent
 review is adjudicated.
 
+An independent Qwen3-VL 2B reviewer then saw only the screenshot crops and returned
+normalized product-card rectangles. Its prompt was validated on development pages
+and frozen before held-out inference. The deterministic box-to-DOM mapper was also
+fixed on development pages.
+
+The visual reviewer correctly returned no cards for the BJ's and Macy's non-product
+captures, but exact DOM mapping was not reliable:
+
+| Reviewer-B diagnostic | Result |
+| --- | ---: |
+| Raw review records | 13 |
+| Truncated raw records | 1 |
+| Valid visual boxes | 33 |
+| Invalid boxes rejected | 6 |
+| Unmapped boxes | 14 |
+| Mapped roots | 19 |
+| Exact agreement with reviewer A | 4 |
+| Exact-root precision | 21.1% |
+| Exact-root recall | 7.8% |
+| Exact-root F1 | 11.4% |
+
+This does not invalidate the independent visual counts; it shows that approximate
+screen rectangles cannot be converted into exact DOM roots by IoU alone. Reviewer B
+is preserved in `benchmarks/reviews/heldout-2026-07-24-reviewer-b.json` with raw
+outputs and mapping diagnostics, remains ineligible for training, and does not make
+reviewer A adjudicated gold.
+
 ## Held-Out Extraction
 
 Extraction was not rerun on held-out pages. The prior replay checkpoint produced 37

@@ -1,0 +1,254 @@
+{
+  "version": 1,
+  "runId": "2026-07-24T07-34-15-817Z",
+  "reviewer": {
+    "type": "independent-visual-model",
+    "modelId": "Qwen/Qwen3-VL-2B-Instruct",
+    "reviewPromptVersion": 2
+  },
+  "reviewType": "independent-visual-plus-deterministic-mapping",
+  "eligibleForTraining": false,
+  "policy": "The model saw screenshot crops only. Visual boxes were mapped by the frozen IoU policy. Mapping disagreement requires adjudication before any node ID is used as gold.",
+  "pages": [
+    {
+      "pageId": "bjs--vitamins",
+      "siteId": "bjs",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T07-34-15-817Z--bjs-vitamins--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"bjs--vitamins\",\n  \"cardBoxes\": [\n    {\n      \"x\": 0,\n      \"y\": 0,\n      \"width\": 0,\n      \"height\": 0\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "boxncase--aluminum-foil",
+      "siteId": "boxncase",
+      "productCardNodeIds": [
+        "n120",
+        "n138",
+        "n174",
+        "n48",
+        "n66",
+        "n84"
+      ],
+      "records": [
+        {
+          "id": "2026-07-24T07-34-15-817Z--boxncase-aluminum-foil--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"boxncase--aluminum-foil\",\n  \"cardBoxes\": [\n    {\n      \"x\": 50,\n      \"y\": 265,\n      \"width\": 275,\n      \"height\": 480\n    },\n    {\n      \"x\": 295,\n      \"y\": 265,\n      \"width\": 275,\n      \"height\": 480\n    },\n    {\n      \"x\": 530,\n      \"y\": 265,\n      \"width\": 275,\n      \"height\": 480\n    },\n    {\n      \"x\": 765,\n      \"y\": 265,\n      \"width\": 275,\n      \"height\": 480\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n48",
+              "n66",
+              "n84"
+            ],
+            "boxes": 3,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T07-34-15-817Z--boxncase-aluminum-foil--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"boxncase--aluminum-foil\",\n  \"cardBoxes\": [\n    {\n      \"x\": 0,\n      \"y\": 0,\n      \"width\": 300,\n      \"height\": 400\n    },\n    {\n      \"x\": 300,\n      \"y\": 0,\n      \"width\": 300,\n      \"height\": 400\n    },\n    {\n      \"x\": 600,\n      \"y\": 0,\n      \"width\": 300,\n      \"height\": 400\n    },\n    {\n      \"x\": 900,\n      \"y\": 0,\n      \"width\": 300,\n      \"height\": 400\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n120",
+              "n138",
+              "n174"
+            ],
+            "boxes": 3,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T07-34-15-817Z--boxncase-aluminum-foil--discover-2",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"boxncase--aluminum-foil\",\n  \"cardBoxes\": [\n    {\n      \"x\": 0,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 500\n    },\n    {\n      \"x\": 250,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 500\n    },\n    {\n      \"x\": 500,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 500\n    },\n    {\n      \"x\": 750,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 500\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 4,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 4,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "giant-eagle--olive-oil",
+      "siteId": "giant-eagle",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T07-34-15-817Z--giant-eagle-olive-oil--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"giant-eagle--olive-oil\",\n  \"cardBoxes\": [\n    {\n      \"x\": 100,\n      \"y\": 520,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 200,\n      \"y\": 520,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 300,\n      \"y\": 520,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 400,\n      \"y\": 520,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 500,\n      \"y\": 520,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 600,\n      \"y\": 520,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 700,\n      \"y\": 520,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 800,\n      \"y\": 520,\n      \"width\": 200,\n      \"height\": 200\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 8,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 8,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "gopuff--rice",
+      "siteId": "gopuff",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T07-34-15-817Z--gopuff-rice--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"gopuff--rice\",\n  \"cardBoxes\": [\n    {\n      \"x\": 58,\n      \"y\": 198,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 228,\n      \"y\": 198,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 428,\n      \"y\": 198,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 628,\n      \"y\": 198,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 828,\n      \"y\": 198,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 58,\n      \"y\": 408,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 228,\n      \"y\": 408,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 428,\n      \"y\": 408,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 628,\n      \"y\": 408,\n      \"width\": 200,\n      \"height\": 200",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "iherb--bath-salts",
+      "siteId": "iherb",
+      "productCardNodeIds": [
+        "n37",
+        "n4204",
+        "n4238",
+        "n4272"
+      ],
+      "records": [
+        {
+          "id": "2026-07-24T07-34-15-817Z--iherb-bath-salts--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"iherb--bath-salts\",\n  \"cardBoxes\": [\n    {\n      \"x\": 225,\n      \"y\": 360,\n      \"width\": 320,\n      \"height\": 400\n    },\n    {\n      \"x\": 425,\n      \"y\": 360,\n      \"width\": 320,\n      \"height\": 400\n    },\n    {\n      \"x\": 625,\n      \"y\": 360,\n      \"width\": 320,\n      \"height\": 400\n    },\n    {\n      \"x\": 825,\n      \"y\": 360,\n      \"width\": 320,\n      \"height\": 400\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n4204",
+              "n4238",
+              "n4272"
+            ],
+            "boxes": 3,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T07-34-15-817Z--iherb-bath-salts--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"iherb--bath-salts\",\n  \"cardBoxes\": [\n    {\n      \"x\": 220,\n      \"y\": 370,\n      \"width\": 240,\n      \"height\": 400\n    },\n    {\n      \"x\": 430,\n      \"y\": 370,\n      \"width\": 240,\n      \"height\": 400\n    },\n    {\n      \"x\": 640,\n      \"y\": 370,\n      \"width\": 240,\n      \"height\": 400\n    },\n    {\n      \"x\": 850,\n      \"y\": 370,\n      \"width\": 240,\n      \"height\": 400\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n37"
+            ],
+            "boxes": 3,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 2,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "macys--bath-salts",
+      "siteId": "macys",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T07-34-15-817Z--macys-bath-salts--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"macys--bath-salts\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T07-34-15-817Z--macys-bath-salts--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"macys--bath-salts\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "menards--ice-melt",
+      "siteId": "menards",
+      "productCardNodeIds": [
+        "n3139",
+        "n3204",
+        "n3266",
+        "n3328",
+        "n3389",
+        "n3617",
+        "n3650",
+        "n3708",
+        "n3766"
+      ],
+      "records": [
+        {
+          "id": "2026-07-24T07-34-15-817Z--menards-ice-melt--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"menards--ice-melt\",\n  \"cardBoxes\": [\n    {\n      \"x\": 10,\n      \"y\": 185,\n      \"width\": 240,\n      \"height\": 500\n    },\n    {\n      \"x\": 250,\n      \"y\": 185,\n      \"width\": 240,\n      \"height\": 500\n    },\n    {\n      \"x\": 490,\n      \"y\": 185,\n      \"width\": 240,\n      \"height\": 500\n    },\n    {\n      \"x\": 730,\n      \"y\": 185,\n      \"width\": 240,\n      \"height\": 500\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n3139",
+              "n3204",
+              "n3266",
+              "n3328"
+            ],
+            "boxes": 4,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T07-34-15-817Z--menards-ice-melt--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"menards--ice-melt\",\n  \"cardBoxes\": [\n    {\n      \"x\": 0,\n      \"y\": 0,\n      \"width\": 1000,\n      \"height\": 1000\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n3389"
+            ],
+            "boxes": 1,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T07-34-15-817Z--menards-ice-melt--discover-2",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"menards--ice-melt\",\n  \"cardBoxes\": [\n    {\n      \"x\": 0,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 600\n    },\n    {\n      \"x\": 250,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 600\n    },\n    {\n      \"x\": 500,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 600\n    },\n    {\n      \"x\": 750,\n      \"y\": 0,\n      \"width\": 250,\n      \"height\": 600\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n3617",
+              "n3650",
+              "n3708",
+              "n3766"
+            ],
+            "boxes": 4,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    }
+  ]
+}
