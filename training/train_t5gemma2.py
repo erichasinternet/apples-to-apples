@@ -72,6 +72,14 @@ def parse_args() -> argparse.Namespace:
         type=float,
         help="Mix extraction records with discovery replay at this share (0-1).",
     )
+    parser.add_argument(
+        "--silver-discovery-share",
+        type=float,
+        help=(
+            "Mix real-DOM silver discovery records with synthetic discovery replay "
+            "at this share (0-1)."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -655,6 +663,16 @@ def train(
                 "datasetSha256": manifest["sha256"],
                 "datasetManifest": config["datasetManifest"],
                 "initialAdapter": initial_adapter,
+                "trainingSelection": {
+                    "records": len(records_by_split["train"]),
+                    "uniqueRecords": len(
+                        {record["id"] for record in records_by_split["train"]}
+                    ),
+                    "silverDiscoveryRecords": sum(
+                        str(record.get("captureId", "")).startswith("silver-")
+                        for record in records_by_split["train"]
+                    ),
+                },
             },
             indent=2,
         )
@@ -771,6 +789,42 @@ def mixed_task_limit(
     return selected
 
 
+def mixed_silver_discovery_limit(
+    records: list[dict[str, Any]], limit: int, *, silver_share: float
+) -> list[dict[str, Any]]:
+    if limit <= 0:
+        raise ValueError("Record limits must be positive")
+    if not 0 < silver_share < 1:
+        raise ValueError("--silver-discovery-share must be between 0 and 1")
+    if any(record["task"] != "discover-products" for record in records):
+        raise ValueError("--silver-discovery-share requires discovery-only records")
+    silver = [
+        record
+        for record in records
+        if str(record.get("captureId", "")).startswith("silver-")
+    ]
+    synthetic = [
+        record
+        for record in records
+        if not str(record.get("captureId", "")).startswith("silver-")
+    ]
+    if not silver or not synthetic:
+        raise ValueError("Silver and synthetic discovery records are both required")
+
+    selected = []
+    silver_index = 0
+    synthetic_index = 0
+    while len(selected) < limit:
+        expected_silver = round((len(selected) + 1) * silver_share)
+        if silver_index < expected_silver:
+            selected.append(silver[silver_index % len(silver)])
+            silver_index += 1
+        else:
+            selected.append(synthetic[synthetic_index % len(synthetic)])
+            synthetic_index += 1
+    return selected
+
+
 def main() -> None:
     args = parse_args()
     repo_root = Path(__file__).resolve().parent.parent
@@ -793,6 +847,14 @@ def main() -> None:
             raise ValueError("--extraction-share requires --max-train-records")
         if args.extraction_share is not None and args.train_task:
             raise ValueError("--extraction-share cannot be combined with --train-task")
+        if args.silver_discovery_share is not None and args.max_train_records is None:
+            raise ValueError("--silver-discovery-share requires --max-train-records")
+        if args.silver_discovery_share is not None and (
+            args.extraction_share is not None or args.balance_extraction_abstentions
+        ):
+            raise ValueError(
+                "--silver-discovery-share cannot be combined with extraction sampling"
+            )
         if (
             args.balance_extraction_abstentions
             and args.train_task != "extract-product"
@@ -802,7 +864,13 @@ def main() -> None:
                 "--balance-extraction-abstentions requires "
                 "--train-task extract-product or --extraction-share"
             )
-        if args.extraction_share is not None:
+        if args.silver_discovery_share is not None:
+            records_by_split["train"] = mixed_silver_discovery_limit(
+                records_by_split["train"],
+                args.max_train_records,
+                silver_share=args.silver_discovery_share,
+            )
+        elif args.extraction_share is not None:
             records_by_split["train"] = mixed_task_limit(
                 records_by_split["train"],
                 args.max_train_records,

@@ -300,6 +300,28 @@ def pilot_real_discovery_train() -> dict[str, object]:
     )
 
 
+@training_function(timeout=1800)
+def pilot_balanced_real_discovery_train() -> dict[str, object]:
+    return run_training(
+        output_name="synthetic-pilot-100-real-discovery-balanced",
+        config_name="silver-discovery-adaptation.json",
+        extra_args=[
+            "--initial-adapter",
+            f"{OUTPUT_ROOT}/synthetic-pilot-80-real-discovery",
+            "--silver-discovery-share",
+            "0.5",
+            "--max-train-records",
+            "320",
+            "--max-validation-records",
+            "32",
+            "--max-steps",
+            "20",
+            "--epochs",
+            "2",
+        ],
+    )
+
+
 @training_function(timeout=4 * 60 * 60)
 def full_train() -> dict[str, object]:
     return run_training(output_name="synthetic")
@@ -393,6 +415,18 @@ def main(mode: str = "diagnose") -> None:
         if not access["accessible"]:
             raise RuntimeError(str(access["error"]))
         result = pilot_real_discovery_train.remote()
+    elif mode == "pilot-balanced-real-discovery":
+        if diagnose_only:
+            raise RuntimeError("Training functions are disabled in diagnostic mode")
+        if not SILVER_DISCOVERY_DATASET.is_dir():
+            raise RuntimeError(
+                "Prepare the silver discovery dataset before this mode: "
+                "`bun run training:silver:prepare`"
+            )
+        access = check_model_access.remote()
+        if not access["accessible"]:
+            raise RuntimeError(str(access["error"]))
+        result = pilot_balanced_real_discovery_train.remote()
     elif mode == "full":
         if diagnose_only:
             raise RuntimeError("Training functions are disabled in diagnostic mode")
@@ -403,6 +437,7 @@ def main(mode: str = "diagnose") -> None:
     else:
         raise ValueError(
             "mode must be diagnose, smoke, pilot, pilot-continue, "
-            "pilot-focus-extraction, pilot-replay, pilot-real-discovery, or full"
+            "pilot-focus-extraction, pilot-replay, pilot-real-discovery, "
+            "pilot-balanced-real-discovery, or full"
         )
     print(json.dumps(result, indent=2))

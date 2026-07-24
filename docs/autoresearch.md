@@ -49,6 +49,19 @@ On the fixed nine-chunk live validation bundle:
 These are diagnostics against generic collector candidates, not adjudicated gold
 labels. The checkpoint is promoted only for discovery preannotations.
 
+`synthetic-pilot-100-real-discovery-balanced` continued for 20 steps with 50%
+silver real-DOM presentations and 50% synthetic replay. It regressed on mixed
+internal exactness (81.25% to 62.5%) but improved both untouched live cohorts:
+
+- Development validation: 70.0% weak precision, 87.5% recall, 77.8% F1.
+- Selection FreshDirect: 100% weak precision, 41.7% recall, 58.8% F1.
+- JSON completion remained 100% on both cohorts.
+
+The balanced checkpoint, prompt format, 96-node discovery pruning policy, and
+192-token deterministic generation settings are now frozen. No training or model
+selection may occur after opening held-out domains. This checkpoint is still
+discovery-only and is approved only for preannotation.
+
 The replay extraction checkpoint was then tested on 37 deduplicated live card
 proposals. Evidence validation accepted zero: nine generations were unparseable and
 all 28 parseable generations were rejected. Dominant failures were ungrounded
@@ -58,17 +71,17 @@ training without human annotation.
 
 ## Cost
 
-The last observed Modal meter was $1.5247. Runs added in this iteration used about
-$0.574 of compute at published per-second GPU, CPU, and memory rates, for an estimated
-total near $2.10. This remains well below the $30 cap. Estimates exclude negligible
+The last observed Modal meter was $1.5247. Subsequent runs used about $1.03 of
+compute at published per-second GPU, CPU, and memory rates, for an estimated
+total near $2.56. This remains well below the $30 cap. Estimates exclude negligible
 image-build overhead and should be reconciled with the Modal billing meter.
 
 ## Next Gate
 
 Do not launch full training or a larger model. Required work:
 
-1. Capture selection and sealed held-out domains without changing prompts or site rules.
-2. Use the discovery candidate to create an explicit preannotation queue.
+1. Capture sealed held-out domains without changing the frozen model, prompts, or site rules.
+2. Use the frozen discovery candidate to create an explicit preannotation queue.
 3. Annotate complete main regions with field-level evidence.
 4. Obtain two independent reviews and adjudicate disagreements.
 5. Fine-tune extraction on adjudicated real examples with synthetic replay.

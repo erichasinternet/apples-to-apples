@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import subprocess
 import time
@@ -11,8 +12,10 @@ import modal
 APP_NAME = "apples-to-apples-inference"
 REPO_ROOT = Path(__file__).resolve().parent.parent
 REMOTE_ROOT = Path("/workspace")
-INPUT_BUNDLE = REPO_ROOT / "benchmark-data" / "inference" / "t5gemma2-live"
-REMOTE_BUNDLE = REMOTE_ROOT / "benchmark-data" / "inference" / "t5gemma2-live"
+BUNDLE_NAME = os.environ.get("ATA_INFERENCE_BUNDLE", "t5gemma2-live")
+INPUT_BUNDLE = REPO_ROOT / "benchmark-data" / "inference" / BUNDLE_NAME
+REMOTE_BUNDLE_ROOT = REMOTE_ROOT / "benchmark-data" / "inference"
+REMOTE_BUNDLE = REMOTE_BUNDLE_ROOT / BUNDLE_NAME
 OUTPUT_ROOT = Path("/outputs")
 CACHE_ROOT = Path("/cache")
 
@@ -68,13 +71,18 @@ app = modal.App(
         "TOKENIZERS_PARALLELISM": "false",
     },
 )
-def run_inference(records_filename: str, checkpoint: str) -> dict[str, object]:
+def run_inference(
+    records_filename: str, checkpoint: str, bundle_name: str
+) -> dict[str, object]:
+    if not bundle_name or Path(bundle_name).name != bundle_name:
+        raise ValueError("Invalid inference bundle name")
+    remote_bundle = REMOTE_BUNDLE_ROOT / bundle_name
     output_path = Path("/tmp/predictions.jsonl")
     command = [
         "python",
         f"{REMOTE_ROOT}/training/infer_t5gemma2.py",
         "--bundle",
-        str(REMOTE_BUNDLE),
+        str(remote_bundle),
         "--records",
         records_filename,
         "--output",
@@ -83,6 +91,7 @@ def run_inference(records_filename: str, checkpoint: str) -> dict[str, object]:
     adapters = {
         "replay": "synthetic-pilot-60-replay",
         "real-discovery": "synthetic-pilot-80-real-discovery",
+        "balanced-real-discovery": "synthetic-pilot-100-real-discovery-balanced",
     }
     if checkpoint in adapters:
         command.extend(
@@ -116,9 +125,17 @@ def main(
     output: str = "benchmark-data/inference/t5gemma2-live/discovery-predictions.jsonl",
     checkpoint: str = "replay",
 ) -> None:
-    if checkpoint not in {"base", "replay", "real-discovery"}:
-        raise ValueError("checkpoint must be base, replay, or real-discovery")
-    result = run_inference.remote(records, checkpoint)
+    if checkpoint not in {
+        "base",
+        "replay",
+        "real-discovery",
+        "balanced-real-discovery",
+    }:
+        raise ValueError(
+            "checkpoint must be base, replay, real-discovery, or "
+            "balanced-real-discovery"
+        )
+    result = run_inference.remote(records, checkpoint, BUNDLE_NAME)
     output_path = Path(output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(

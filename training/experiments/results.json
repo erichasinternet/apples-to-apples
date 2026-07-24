@@ -95,6 +95,29 @@
       },
       "estimatedTrainingComputeUsd": 0.3247,
       "decision": "promote-discovery-only-for-preannotation"
+    },
+    {
+      "name": "synthetic-pilot-100-real-discovery-balanced",
+      "parent": "synthetic-pilot-80-real-discovery",
+      "steps": 20,
+      "datasetSha256": "2966669d726b57c41f7ce362618d9e3a2e43ba15c3c8e45fcc204f93dd3107c0",
+      "trainingMix": "50% repeated silver real-DOM discovery, 50% synthetic discovery replay",
+      "maxOutputTokens": 192,
+      "metrics": {
+        "internalJsonValid": 0.875,
+        "internalJsonRecoverable": 1.0,
+        "internalDiscoveryPrefixExact": 0.625,
+        "liveWeakJsonComplete": 1.0,
+        "liveWeakRootPrecision": 0.7,
+        "liveWeakRootRecall": 0.875,
+        "liveWeakRootF1": 0.7777777777777777,
+        "selectionWeakJsonComplete": 1.0,
+        "selectionWeakRootPrecision": 1.0,
+        "selectionWeakRootRecall": 0.4166666666666667,
+        "selectionWeakRootF1": 0.5882352941176471
+      },
+      "estimatedTrainingComputeUsd": 0.3867,
+      "decision": "freeze-discovery-preannotation-checkpoint"
     }
   ],
   "liveValidation": {
@@ -117,6 +140,12 @@
       "weakRootRecall": 0.5833333333333334,
       "weakRootF1": 0.5714285714285714
     },
+    "balancedRealAdaptedDiscovery": {
+      "jsonComplete": 1.0,
+      "weakRootPrecision": 0.7,
+      "weakRootRecall": 0.875,
+      "weakRootF1": 0.7777777777777777
+    },
     "replayExtraction": {
       "proposals": 37,
       "parseFailures": 9,
@@ -125,8 +154,23 @@
       "evidenceAcceptanceRate": 0.0
     }
   },
+  "selectionValidation": {
+    "attemptedDomains": 10,
+    "usableDomains": [
+      "freshdirect",
+      "rite-aid"
+    ],
+    "referencedDomains": [
+      "freshdirect"
+    ],
+    "blockedOrErroredDomains": 8,
+    "frozenCheckpoint": "synthetic-pilot-100-real-discovery-balanced",
+    "weakRootPrecision": 1.0,
+    "weakRootRecall": 0.4166666666666667,
+    "weakRootF1": 0.5882352941176471
+  },
   "modalMeteredCostUsdLastObserved": 1.52469832,
   "modalBilledCostUsdLastObserved": 0.0,
-  "additionalEstimatedComputeUsd": 0.574,
-  "estimatedTotalComputeUsd": 2.099
+  "additionalEstimatedComputeUsd": 1.034,
+  "estimatedTotalComputeUsd": 2.559
 }

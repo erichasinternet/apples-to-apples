@@ -3,7 +3,11 @@ import { copyFile, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { PageObservation } from "../src/learning/contracts";
 import { cropObservationToRegion } from "../src/learning/observation-region";
-import type { CorpusAnnotation } from "./live-corpus-lib";
+import {
+  getDomainSplit,
+  type CorpusAnnotation,
+  type CorpusDomainSplits
+} from "./live-corpus-lib";
 import {
   buildT5DiscoveryRecords,
   buildT5ExtractionRecord,
@@ -13,7 +17,7 @@ import {
 } from "./t5-training-lib";
 
 type Stage = "discovery" | "extraction";
-type RequestedSplit = "train" | "validation" | "all";
+type RequestedSplit = "train" | "validation" | "selection" | "heldOut" | "all";
 
 interface RunManifest {
   runId: string;
@@ -32,7 +36,7 @@ interface BundlePage {
   runId: string;
   pageId: string;
   siteId: string;
-  trainingSplit: "train" | "validation";
+  split: Exclude<RequestedSplit, "all">;
   sourceDirectory: string;
   observationPath: string;
   imagePath: string;
@@ -95,9 +99,14 @@ async function prepareDiscovery(options: Options): Promise<void> {
   if (options.runDirectories.length === 0) {
     throw new Error("Discovery requires at least one live-corpus run directory.");
   }
-  const splits = await readJson<TrainingDomainSplits>(
-    path.resolve("benchmarks/live-sites/training-splits.json")
-  );
+  const [trainingSplits, domainSplits] = await Promise.all([
+    readJson<TrainingDomainSplits>(
+      path.resolve("benchmarks/live-sites/training-splits.json")
+    ),
+    readJson<CorpusDomainSplits>(
+      path.resolve("benchmarks/live-sites/domain-splits.json")
+    )
+  ]);
   const latestPages = new Map<string, BundlePage & { capturedAt: string }>();
 
   for (const runDirectoryValue of options.runDirectories) {
@@ -108,13 +117,16 @@ async function prepareDiscovery(options: Options): Promise<void> {
     if (!run) continue;
     for (const result of run.results.filter((entry) => entry.status === "captured")) {
       const pageDirectory = path.join(runDirectory, result.pageId);
-      const candidate = await loadCandidatePage(pageDirectory, run.runId, splits).catch(
-        () => undefined
-      );
+      const candidate = await loadCandidatePage(
+        pageDirectory,
+        run.runId,
+        trainingSplits,
+        domainSplits
+      ).catch(() => undefined);
       if (!candidate) continue;
       if (
         options.requestedSplit !== "all" &&
-        candidate.trainingSplit !== options.requestedSplit
+        candidate.split !== options.requestedSplit
       ) {
         continue;
       }
@@ -171,7 +183,7 @@ async function prepareDiscovery(options: Options): Promise<void> {
       runId: page.runId,
       pageId: page.pageId,
       siteId: page.siteId,
-      trainingSplit: page.trainingSplit,
+      split: page.split,
       sourceDirectory: page.sourceDirectory,
       observationPath,
       imagePath,
@@ -314,16 +326,21 @@ async function prepareExtraction(options: Options): Promise<void> {
 async function loadCandidatePage(
   pageDirectory: string,
   runId: string,
-  splits: TrainingDomainSplits
+  trainingSplits: TrainingDomainSplits,
+  domainSplits: CorpusDomainSplits
 ): Promise<(BundlePage & { capturedAt: string }) | undefined> {
   const [page, observation, annotation] = await Promise.all([
     readJson<PageMetadata>(path.join(pageDirectory, "page.json")),
     readJson<PageObservation>(path.join(pageDirectory, "observation.json")),
     readJson<CorpusAnnotation>(path.join(pageDirectory, "annotation.json"))
   ]);
-  const trainingSplit = getTrainingSplit(page.target.siteId, splits);
+  const domainSplit = getDomainSplit(page.target.siteId, domainSplits);
+  const split =
+    domainSplit === "development"
+      ? getTrainingSplit(page.target.siteId, trainingSplits)
+      : domainSplit;
   if (
-    !trainingSplit ||
+    !split ||
     page.blocked ||
     !page.annotationScreenshotCaptured ||
     !annotation.region ||
@@ -337,7 +354,7 @@ async function loadCandidatePage(
     runId,
     pageId: observation.pageId,
     siteId: page.target.siteId,
-    trainingSplit,
+    split,
     capturedAt: page.capturedAt,
     sourceDirectory: pageDirectory,
     observationPath: "",
@@ -367,8 +384,8 @@ function parseOptions(args: string[]): Options {
     throw new Error("--stage must be discovery or extraction.");
   }
   const requestedSplit = values.get("--split") ?? "validation";
-  if (!["train", "validation", "all"].includes(requestedSplit)) {
-    throw new Error("--split must be train, validation, or all.");
+  if (!["train", "validation", "selection", "heldOut", "all"].includes(requestedSplit)) {
+    throw new Error("--split must be train, validation, selection, heldOut, or all.");
   }
   return {
     stage,
