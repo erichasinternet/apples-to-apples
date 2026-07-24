@@ -80,6 +80,11 @@ bun run training:prepare -- benchmark-data/live/<run-id> --output benchmark-data
 bun run training:validate
 bun run training:synthetic:generate
 bun run training:synthetic:validate
+bun run training:inference:prepare
+bun run training:inference:discover
+bun run training:inference:analyze-discovery
+bun run training:silver:prepare
+bun run training:silver:validate
 ```
 
 See [docs/benchmark-protocol.md](docs/benchmark-protocol.md) for sampling, domain-held-out splits, annotation, privacy, and statistical analysis. The [learned extraction experiment](docs/learned-extraction.md) defines the evidence contract and model promotion gates.

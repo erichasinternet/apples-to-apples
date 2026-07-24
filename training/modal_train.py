@@ -18,6 +18,9 @@ CACHE_ROOT = Path("/cache")
 SYNTHETIC_DATASET = (
     REPO_ROOT / "benchmark-data" / "training" / "t5gemma2-synthetic"
 )
+SILVER_DISCOVERY_DATASET = (
+    REPO_ROOT / "benchmark-data" / "training" / "t5gemma2-silver-discovery"
+)
 
 if modal.is_local() and not SYNTHETIC_DATASET.is_dir():
     raise RuntimeError(
@@ -44,6 +47,12 @@ image = (
         copy=True,
     )
 )
+if SILVER_DISCOVERY_DATASET.is_dir():
+    image = image.add_local_dir(
+        SILVER_DISCOVERY_DATASET,
+        f"{REMOTE_ROOT}/benchmark-data/training/t5gemma2-silver-discovery",
+        copy=True,
+    )
 output_volume = modal.Volume.from_name(
     "apples-to-apples-training-output", create_if_missing=True
 )
@@ -269,13 +278,38 @@ def pilot_replay_train() -> dict[str, object]:
     )
 
 
+@training_function(timeout=1800)
+def pilot_real_discovery_train() -> dict[str, object]:
+    return run_training(
+        output_name="synthetic-pilot-80-real-discovery",
+        config_name="silver-discovery-adaptation.json",
+        extra_args=[
+            "--initial-adapter",
+            f"{OUTPUT_ROOT}/synthetic-pilot-60-replay",
+            "--train-task",
+            "discover-products",
+            "--max-train-records",
+            "312",
+            "--max-validation-records",
+            "32",
+            "--max-steps",
+            "20",
+            "--epochs",
+            "2",
+        ],
+    )
+
+
 @training_function(timeout=4 * 60 * 60)
 def full_train() -> dict[str, object]:
     return run_training(output_name="synthetic")
 
 
 def run_training(
-    *, output_name: str, extra_args: list[str] | None = None
+    *,
+    output_name: str,
+    extra_args: list[str] | None = None,
+    config_name: str = "synthetic-pretrain.json",
 ) -> dict[str, object]:
     import torch
 
@@ -284,7 +318,7 @@ def run_training(
         "python",
         f"{REMOTE_ROOT}/training/train_t5gemma2.py",
         "--config",
-        f"{REMOTE_ROOT}/training/t5gemma2-270m/synthetic-pretrain.json",
+        f"{REMOTE_ROOT}/training/t5gemma2-270m/{config_name}",
         "--output-directory",
         str(output_directory),
         *(extra_args or []),
@@ -347,6 +381,18 @@ def main(mode: str = "diagnose") -> None:
         if not access["accessible"]:
             raise RuntimeError(str(access["error"]))
         result = pilot_replay_train.remote()
+    elif mode == "pilot-real-discovery":
+        if diagnose_only:
+            raise RuntimeError("Training functions are disabled in diagnostic mode")
+        if not SILVER_DISCOVERY_DATASET.is_dir():
+            raise RuntimeError(
+                "Prepare the silver discovery dataset before this mode: "
+                "`bun run training:silver:prepare`"
+            )
+        access = check_model_access.remote()
+        if not access["accessible"]:
+            raise RuntimeError(str(access["error"]))
+        result = pilot_real_discovery_train.remote()
     elif mode == "full":
         if diagnose_only:
             raise RuntimeError("Training functions are disabled in diagnostic mode")
@@ -357,6 +403,6 @@ def main(mode: str = "diagnose") -> None:
     else:
         raise ValueError(
             "mode must be diagnose, smoke, pilot, pilot-continue, "
-            "pilot-focus-extraction, pilot-replay, or full"
+            "pilot-focus-extraction, pilot-replay, pilot-real-discovery, or full"
         )
     print(json.dumps(result, indent=2))

@@ -134,10 +134,16 @@ def validate_dataset(
     manifest = load_json(manifest_path)
     if manifest.get("version") != 1:
         raise ValueError("Unsupported dataset manifest version")
-    if manifest.get("strict") is not True or manifest.get("allowSingleReview") is not False:
-        raise ValueError(
-            "Training requires a strict, dual-reviewed dataset manifest"
-        )
+    silver_discovery = (
+        config.get("allowSilverDiscovery") is True
+        and manifest.get("datasetType")
+        == "synthetic-plus-silver-real-discovery"
+    )
+    if not silver_discovery and (
+        manifest.get("strict") is not True
+        or manifest.get("allowSingleReview") is not False
+    ):
+        raise ValueError("Training requires a strict, dual-reviewed dataset manifest")
     dataset_root = manifest_path.parent
     records_by_split: dict[str, list[dict[str, Any]]] = {}
     record_ids: set[str] = set()
@@ -157,6 +163,10 @@ def validate_dataset(
                 raise ValueError(f"{record.get('id')}: expected split {split}")
             if record.get("task") not in {"discover-products", "extract-product"}:
                 raise ValueError(f"{record.get('id')}: unsupported task")
+            if silver_discovery and record.get("task") != "discover-products":
+                raise ValueError(
+                    f"{record.get('id')}: silver adaptation may train discovery only"
+                )
             record_id = record.get("id")
             if not isinstance(record_id, str) or record_id in record_ids:
                 raise ValueError(f"Missing or duplicate record id: {record_id}")

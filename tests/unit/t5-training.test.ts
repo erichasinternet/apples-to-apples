@@ -1,7 +1,10 @@
 import type { TrainingExample } from "../../scripts/training-export-lib";
 import {
+  buildT5DiscoveryRecords,
+  buildT5ExtractionRecord,
   buildT5TrainingRecords,
   getTrainingSplit,
+  pruneObservationForModel,
   validateTrainingDomainSplits,
   type TrainingDomainSplits
 } from "../../scripts/t5-training-lib";
@@ -71,6 +74,55 @@ describe("T5 training records", () => {
         expect.stringContaining("unassigned")
       ])
     );
+  });
+
+  it("aligns inference crops to the captured root when the page was scrolled", () => {
+    const observation = makeExample().input.observation;
+    delete observation.sourceRegion;
+    observation.viewport.scrollY = 900;
+    observation.viewport.height = 800;
+
+    const discovery = buildT5DiscoveryRecords(observation, {
+      captureId: "capture-1",
+      pageId: observation.pageId,
+      siteId: "shop",
+      imagePath: "assets/page.png",
+      discoveryChunkHeight: 900
+    });
+    const extraction = buildT5ExtractionRecord(observation, "card-b", {
+      captureId: "capture-1",
+      pageId: observation.pageId,
+      siteId: "shop",
+      imagePath: "assets/page.png",
+      cardPadding: 20
+    });
+
+    expect(discovery).toHaveLength(2);
+    expect(discovery[0]!.imageCrop).toEqual({ x: 0, y: 0, width: 1280, height: 900 });
+    expect(extraction.imageCrop).toEqual({ x: 580, y: 1030, width: 440, height: 340 });
+  });
+
+  it("prunes dense observations while retaining commerce evidence and ancestor paths", () => {
+    const observation = makeExample().input.observation;
+    const filler = Array.from({ length: 30 }, (_, index) =>
+      node(`filler-${index}`, "root", {
+        x: 0,
+        y: 500 + index,
+        width: 10,
+        height: 10
+      })
+    );
+    observation.nodes.splice(1, 0, ...filler);
+
+    const pruned = pruneObservationForModel(observation, 8);
+    const ids = pruned.nodes.map((entry) => entry.id);
+
+    expect(ids).toContain("root");
+    expect(ids).toContain("card-a");
+    expect(ids).toContain("title-a");
+    expect(ids).toContain("price-a");
+    expect(pruned.nodes).toHaveLength(8);
+    expect(pruned.truncated).toBe(true);
   });
 });
 

@@ -26,10 +26,9 @@ export interface ScreenshotCrop {
   height: number;
 }
 
-export interface T5TrainingRecord {
+export interface T5InferenceRecord {
   version: 1;
   id: string;
-  split: T5DatasetSplit;
   task: T5TrainingTask;
   captureId: string;
   pageId: string;
@@ -37,22 +36,36 @@ export interface T5TrainingRecord {
   imagePath: string;
   imageCrop: ScreenshotCrop;
   prompt: string;
-  target: string;
   metadata: {
     sourceRegion: ObservationBounds;
     nodeCount: number;
-    cardCount: number;
+    sourceNodeCount?: number;
     cardNodeId?: string;
-    abstainedProducts: number;
+    cardCount?: number;
+    abstainedProducts?: number;
   };
 }
 
-export interface T5RecordBuildOptions {
-  captureId: string;
+export interface T5TrainingRecord extends T5InferenceRecord {
   split: T5DatasetSplit;
+  target: string;
+}
+
+export interface T5InferenceBuildOptions {
+  captureId: string;
+  pageId: string;
+  siteId: string;
   imagePath: string;
   discoveryChunkHeight?: number;
   cardPadding?: number;
+  maxDiscoveryNodes?: number;
+  maxExtractionNodes?: number;
+  requiredDiscoveryNodeIds?: string[];
+}
+
+export interface T5RecordBuildOptions
+  extends Omit<T5InferenceBuildOptions, "pageId" | "siteId"> {
+  split: T5DatasetSplit;
 }
 
 export function validateTrainingDomainSplits(
@@ -108,29 +121,16 @@ export function buildT5TrainingRecords(
   options: T5RecordBuildOptions
 ): T5TrainingRecord[] {
   const observation = example.input.observation;
-  const sourceRegion = observation.sourceRegion ?? {
-    x: observation.viewport.scrollX,
-    y: observation.viewport.scrollY,
-    width: observation.viewport.width,
-    height: observation.viewport.height
-  };
-  const chunkHeight = Math.max(320, options.discoveryChunkHeight ?? 900);
-  const cardPadding = Math.max(0, options.cardPadding ?? 24);
+  const sourceRegion = getSourceRegion(observation);
   const nodeMap = new Map(observation.nodes.map((node) => [node.id, node]));
   const records: T5TrainingRecord[] = [];
 
-  for (
-    let chunkY = sourceRegion.y, chunkIndex = 0;
-    chunkY < sourceRegion.y + sourceRegion.height;
-    chunkY += chunkHeight, chunkIndex += 1
-  ) {
-    const region = {
-      x: sourceRegion.x,
-      y: chunkY,
-      width: sourceRegion.width,
-      height: Math.min(chunkHeight, sourceRegion.y + sourceRegion.height - chunkY)
-    };
-    const chunkObservation = cropObservationToRegion(observation, region);
+  for (const input of buildT5DiscoveryRecords(observation, {
+    ...options,
+    pageId: example.pageId,
+    siteId: example.siteId
+  })) {
+    const region = input.metadata.sourceRegion;
     const products = example.target.products.filter((product) => {
       const node = nodeMap.get(product.cardNodeId);
       if (!node) return false;
@@ -143,20 +143,11 @@ export function buildT5TrainingRecords(
       cardNodeIds: products.map((product) => product.cardNodeId)
     };
     records.push({
-      version: 1,
-      id: `${options.captureId}--${slugify(example.pageId)}--discover-${chunkIndex}`,
+      ...input,
       split: options.split,
-      task: "discover-products",
-      captureId: options.captureId,
-      pageId: example.pageId,
-      siteId: example.siteId,
-      imagePath: options.imagePath,
-      imageCrop: relativeCrop(region, sourceRegion),
-      prompt: discoveryPrompt(chunkObservation),
       target: JSON.stringify(target),
       metadata: {
-        sourceRegion: region,
-        nodeCount: chunkObservation.nodes.length,
+        ...input.metadata,
         cardCount: products.length,
         abstainedProducts: products.filter((product) => product.abstainReason).length
       }
@@ -164,40 +155,119 @@ export function buildT5TrainingRecords(
   }
 
   for (const product of example.target.products) {
-    const cardNode = nodeMap.get(product.cardNodeId);
-    if (!cardNode) {
-      throw new Error(`Training product references missing card node ${product.cardNodeId}`);
-    }
-    const region = paddedRegion(cardNode.bounds, sourceRegion, cardPadding);
-    const cardObservation = cropObservationToRegion(observation, region);
+    const input = buildT5ExtractionRecord(observation, product.cardNodeId, {
+      ...options,
+      pageId: example.pageId,
+      siteId: example.siteId
+    });
     const target: ModelPageExtraction = {
       version: 1,
       pageId: example.pageId,
       products: [product]
     };
     records.push({
-      version: 1,
-      id: `${options.captureId}--${slugify(example.pageId)}--extract-${slugify(product.cardNodeId)}`,
+      ...input,
       split: options.split,
-      task: "extract-product",
-      captureId: options.captureId,
-      pageId: example.pageId,
-      siteId: example.siteId,
-      imagePath: options.imagePath,
-      imageCrop: relativeCrop(region, sourceRegion),
-      prompt: extractionPrompt(cardObservation, product.cardNodeId),
       target: JSON.stringify(target),
       metadata: {
-        sourceRegion: region,
-        nodeCount: cardObservation.nodes.length,
+        ...input.metadata,
         cardCount: 1,
-        cardNodeId: product.cardNodeId,
         abstainedProducts: product.abstainReason ? 1 : 0
       }
     });
   }
 
   return records;
+}
+
+export function buildT5DiscoveryRecords(
+  observation: PageObservation,
+  options: T5InferenceBuildOptions
+): T5InferenceRecord[] {
+  const sourceRegion = getSourceRegion(observation);
+  const chunkHeight = Math.max(320, options.discoveryChunkHeight ?? 900);
+  const records: T5InferenceRecord[] = [];
+  for (
+    let chunkY = sourceRegion.y, chunkIndex = 0;
+    chunkY < sourceRegion.y + sourceRegion.height;
+    chunkY += chunkHeight, chunkIndex += 1
+  ) {
+    const region = {
+      x: sourceRegion.x,
+      y: chunkY,
+      width: sourceRegion.width,
+      height: Math.min(chunkHeight, sourceRegion.y + sourceRegion.height - chunkY)
+    };
+    const sourceObservation = cropObservationToRegion(observation, region);
+    const requiredNodeIds = options.requiredDiscoveryNodeIds?.filter((nodeId) => {
+      const node = sourceObservation.nodes.find((entry) => entry.id === nodeId);
+      if (!node) return false;
+      const centerY = node.bounds.y + node.bounds.height / 2;
+      return centerY >= region.y && centerY < region.y + region.height;
+    });
+    const chunkObservation = pruneObservationForModel(
+      sourceObservation,
+      Math.max(8, options.maxDiscoveryNodes ?? 96),
+      requiredNodeIds
+    );
+    records.push({
+      version: 1,
+      id: `${options.captureId}--${slugify(options.pageId)}--discover-${chunkIndex}`,
+      task: "discover-products",
+      captureId: options.captureId,
+      pageId: options.pageId,
+      siteId: options.siteId,
+      imagePath: options.imagePath,
+      imageCrop: relativeCrop(region, sourceRegion),
+      prompt: discoveryPrompt(chunkObservation),
+      metadata: {
+        sourceRegion: region,
+        nodeCount: chunkObservation.nodes.length,
+        sourceNodeCount: sourceObservation.nodes.length
+      }
+    });
+  }
+  return records;
+}
+
+export function buildT5ExtractionRecord(
+  observation: PageObservation,
+  cardNodeId: string,
+  options: T5InferenceBuildOptions
+): T5InferenceRecord {
+  const sourceRegion = getSourceRegion(observation);
+  const cardNode = observation.nodes.find((node) => node.id === cardNodeId);
+  if (!cardNode) {
+    throw new Error(`Product references missing card node ${cardNodeId}`);
+  }
+  const region = paddedRegion(
+    cardNode.bounds,
+    sourceRegion,
+    Math.max(0, options.cardPadding ?? 24)
+  );
+  const sourceObservation = cropObservationToRegion(observation, region);
+  const cardObservation = pruneObservationForModel(
+    sourceObservation,
+    Math.max(8, options.maxExtractionNodes ?? 32),
+    cardNodeId
+  );
+  return {
+    version: 1,
+    id: `${options.captureId}--${slugify(options.pageId)}--extract-${slugify(cardNodeId)}`,
+    task: "extract-product",
+    captureId: options.captureId,
+    pageId: options.pageId,
+    siteId: options.siteId,
+    imagePath: options.imagePath,
+    imageCrop: relativeCrop(region, sourceRegion),
+    prompt: extractionPrompt(cardObservation, cardNodeId),
+    metadata: {
+      sourceRegion: region,
+      nodeCount: cardObservation.nodes.length,
+      sourceNodeCount: sourceObservation.nodes.length,
+      cardNodeId
+    }
+  };
 }
 
 function discoveryPrompt(observation: PageObservation): string {
@@ -282,6 +352,101 @@ function relativeCrop(region: ObservationBounds, source: ObservationBounds): Scr
     width: Math.max(1, right - x),
     height: Math.max(1, bottom - y)
   };
+}
+
+function getSourceRegion(observation: PageObservation): ObservationBounds {
+  if (observation.sourceRegion) return observation.sourceRegion;
+  const rootNode = observation.nodes.find((node) => node.id === observation.rootNodeId);
+  if (rootNode) return rootNode.bounds;
+  return {
+    x: observation.viewport.scrollX,
+    y: observation.viewport.scrollY,
+    width: observation.viewport.width,
+    height: observation.viewport.height
+  };
+}
+
+export function pruneObservationForModel(
+  observation: PageObservation,
+  maxNodes: number,
+  requiredNodeIds?: string | readonly string[]
+): PageObservation {
+  if (observation.nodes.length <= maxNodes) return observation;
+  const nodeMap = new Map(observation.nodes.map((node) => [node.id, node]));
+  const indexMap = new Map(observation.nodes.map((node, index) => [node.id, index]));
+  const included = new Set<string>();
+
+  const addPath = (nodeId: string): boolean => {
+    const path: string[] = [];
+    let current = nodeMap.get(nodeId);
+    while (current && !included.has(current.id)) {
+      path.push(current.id);
+      current = current.parentId ? nodeMap.get(current.parentId) : undefined;
+    }
+    if (included.size + path.length > maxNodes) return false;
+    for (const id of path) included.add(id);
+    return true;
+  };
+
+  addPath(observation.rootNodeId);
+  const required =
+    typeof requiredNodeIds === "string" ? [requiredNodeIds] : (requiredNodeIds ?? []);
+  for (const requiredNodeId of required) addPath(requiredNodeId);
+
+  const ranked = observation.nodes
+    .map((node) => ({
+      node,
+      score: modelSignalScore(node),
+      index: indexMap.get(node.id) ?? 0
+    }))
+    .filter((entry) => entry.score > 0)
+    .sort((left, right) => right.score - left.score || left.index - right.index);
+  for (const { node } of ranked) {
+    if (included.size >= maxNodes) break;
+    addPath(node.id);
+  }
+
+  if (included.size < maxNodes) {
+    for (const node of observation.nodes) {
+      if (included.size >= maxNodes) break;
+      if (included.has(node.id)) continue;
+      const parentIncluded = node.parentId ? included.has(node.parentId) : false;
+      if (parentIncluded) included.add(node.id);
+    }
+  }
+
+  return {
+    ...observation,
+    nodes: observation.nodes.filter((node) => included.has(node.id)),
+    truncated: observation.truncated || included.size < observation.nodes.length
+  };
+}
+
+function modelSignalScore(node: ObservedNode): number {
+  const content = [
+    node.text,
+    node.accessibleName,
+    node.attributes?.ariaLabel,
+    node.attributes?.alt,
+    node.attributes?.title
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .trim();
+  let score = 0;
+  if (/[$€£]\s*\d|\d[\d,.]*\s*¢/i.test(content)) score += 100;
+  if (
+    /\b\d+(?:\.\d+)?\s*(?:fl\s*oz|ounces?|oz|pounds?|lbs?|grams?|kg|ml|liters?|litres?|count|ct|pack|pk|each|ea)\b/i.test(
+      content
+    )
+  ) {
+    score += 80;
+  }
+  if (/^(?:h[1-6]|img)$/i.test(node.tag)) score += 35;
+  if (node.tag === "a" && content) score += 30;
+  if (node.interactive && /\b(?:add|buy|cart|select|choose)\b/i.test(content)) score += 25;
+  if (content.length >= 4 && content.length <= 240) score += 10;
+  return score;
 }
 
 export function countExtractionOutcomes(products: readonly ModelProductExtraction[]): {

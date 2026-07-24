@@ -21,7 +21,7 @@ alone, while keeping total Modal spend below $30.
 The machine-readable experiment ledger is
 [`training/experiments/results.json`](../training/experiments/results.json).
 
-## Current Result
+## Current Results
 
 `synthetic-pilot-60-replay` is the synthetic candidate:
 
@@ -34,19 +34,48 @@ The machine-readable experiment ledger is
 The extraction-only branch reached higher extraction scores but erased discovery,
 demonstrating that discovery replay is required.
 
+`synthetic-pilot-80-real-discovery` is a discovery-only preannotation candidate.
+It continued from replay for 20 steps on synthetic discovery plus generic card
+candidates from five real development domains. Two other real development domains
+were reserved for internal validation. Amazon, PetSmart, and Publix were untouched.
+
+On the fixed nine-chunk live validation bundle:
+
+- JSON completion improved from 66.7% to 100%.
+- Weak-label card-root precision improved from 20.5% to 56.0%.
+- Weak-label card-root recall improved from 33.3% to 58.3%.
+- Weak-label F1 improved from 25.4% to 57.1%.
+
+These are diagnostics against generic collector candidates, not adjudicated gold
+labels. The checkpoint is promoted only for discovery preannotations.
+
+The replay extraction checkpoint was then tested on 37 deduplicated live card
+proposals. Evidence validation accepted zero: nine generations were unparseable and
+all 28 parseable generations were rejected. Dominant failures were ungrounded
+numbers, invalid units or dimensions, and evidence outside the proposed card.
+Therefore no live extraction output is eligible for display, benchmark scoring, or
+training without human annotation.
+
+## Cost
+
+The last observed Modal meter was $1.5247. Runs added in this iteration used about
+$0.574 of compute at published per-second GPU, CPU, and memory rates, for an estimated
+total near $2.10. This remains well below the $30 cap. Estimates exclude negligible
+image-build overhead and should be reconciled with the Modal billing meter.
+
 ## Next Gate
 
-Do not launch full synthetic training yet. The live corpus currently has 47 captured
-development pages but no training-eligible pages. Required work:
+Do not launch full training or a larger model. Required work:
 
-1. Replace blocked or incomplete captures.
-2. Annotate complete main regions with evidence node IDs.
-3. Obtain two independent reviews and adjudicate disagreements.
-4. Export domain-separated real training and held-out evaluation datasets.
-5. Evaluate the replay candidate on unseen real domains.
-6. Compare against ungated FLAN-T5 Base and MarkupLM baselines.
+1. Capture selection and sealed held-out domains without changing prompts or site rules.
+2. Use the discovery candidate to create an explicit preannotation queue.
+3. Annotate complete main regions with field-level evidence.
+4. Obtain two independent reviews and adjudicate disagreements.
+5. Fine-tune extraction on adjudicated real examples with synthetic replay.
+6. Evaluate exact normalization and abstention on untouched, adjudicated domains.
+7. Compare against ungated FLAN-T5 Base and MarkupLM baselines.
 
 T5Gemma 2 1B-1B is the only additional gated model worth approving now. Use it only
-if the 270M model underfits the adjudicated real corpus. PaliGemma is deferred because
+if the 270M model underfits the adjudicated real corpus. PaliGemma remains deferred because
 T5Gemma 2 already accepts image and text input, and a 3B vision model would increase
 cost before a measured need exists.

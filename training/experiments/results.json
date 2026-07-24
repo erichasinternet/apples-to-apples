@@ -76,8 +76,57 @@
       },
       "meteredCostDeltaUsd": 0.26065361,
       "decision": "promote-to-real-held-out-evaluation"
+    },
+    {
+      "name": "synthetic-pilot-80-real-discovery",
+      "parent": "synthetic-pilot-60-replay",
+      "steps": 20,
+      "datasetSha256": "2966669d726b57c41f7ce362618d9e3a2e43ba15c3c8e45fcc204f93dd3107c0",
+      "trainingMix": "synthetic discovery replay plus 24 silver real-DOM discovery records from five development domains",
+      "maxOutputTokens": 192,
+      "metrics": {
+        "internalJsonValid": 0.875,
+        "internalJsonRecoverable": 1.0,
+        "internalDiscoveryPrefixExact": 0.8125,
+        "liveWeakJsonComplete": 1.0,
+        "liveWeakRootPrecision": 0.56,
+        "liveWeakRootRecall": 0.5833333333333334,
+        "liveWeakRootF1": 0.5714285714285714
+      },
+      "estimatedTrainingComputeUsd": 0.3247,
+      "decision": "promote-discovery-only-for-preannotation"
     }
   ],
-  "modalMeteredCostUsd": 1.52469832,
-  "modalBilledCostUsd": 0.0
+  "liveValidation": {
+    "domains": [
+      "amazon",
+      "petsmart",
+      "publix"
+    ],
+    "records": 9,
+    "referencePolicy": "Generic collector candidates are weak diagnostic labels, not adjudicated gold.",
+    "replayDiscovery": {
+      "jsonComplete": 0.6666666666666666,
+      "weakRootPrecision": 0.20512820512820512,
+      "weakRootRecall": 0.3333333333333333,
+      "weakRootF1": 0.25396825396825395
+    },
+    "realAdaptedDiscovery": {
+      "jsonComplete": 1.0,
+      "weakRootPrecision": 0.56,
+      "weakRootRecall": 0.5833333333333334,
+      "weakRootF1": 0.5714285714285714
+    },
+    "replayExtraction": {
+      "proposals": 37,
+      "parseFailures": 9,
+      "evidenceAccepted": 0,
+      "evidenceRejected": 28,
+      "evidenceAcceptanceRate": 0.0
+    }
+  },
+  "modalMeteredCostUsdLastObserved": 1.52469832,
+  "modalBilledCostUsdLastObserved": 0.0,
+  "additionalEstimatedComputeUsd": 0.574,
+  "estimatedTotalComputeUsd": 2.099
 }
