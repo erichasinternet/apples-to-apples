@@ -71,6 +71,13 @@ these numbers are directional rather than statistically conclusive. Four duplica
 IDs and two IDs absent from the page observation were also generated. The checkpoint is
 rejected for production and remains usable only to seed a human review queue.
 
+A complete first visual/DOM review found 51 product-card roots across the seven
+captures. After the existing runtime gate removed duplicate and nonexistent IDs,
+the frozen checkpoint reached 47.0% precision, 60.8% recall, and 53.0% F1. These
+single-review metrics are more representative than the sparse weak references, but
+they remain ineligible for training or final benchmark claims until independently
+reviewed and adjudicated.
+
 The replay extraction checkpoint was then tested on 37 deduplicated live card
 proposals. Evidence validation accepted zero: nine generations were unparseable and
 all 28 parseable generations were rejected. Dominant failures were ungrounded

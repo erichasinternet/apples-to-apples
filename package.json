@@ -49,6 +49,7 @@
     "training:heldout:prepare": "bun scripts/prepare-live-inference.ts --stage discovery --split heldOut --output benchmark-data/inference/t5gemma2-heldout benchmark-data/live/*",
     "training:heldout:discover": "ATA_INFERENCE_BUNDLE=t5gemma2-heldout uvx modal run training/modal_infer.py --records discovery.jsonl --output benchmark-data/inference/t5gemma2-heldout/discovery-predictions-balanced-real-adapted.jsonl --checkpoint balanced-real-discovery",
     "training:heldout:review-queue": "bun scripts/build-discovery-review-queue.ts",
+    "training:heldout:score-review-a": "bun scripts/score-discovery-review.ts",
     "training:silver:prepare": "bun scripts/prepare-silver-discovery.ts benchmark-data/live/*",
     "training:silver:validate": "python3 training/train_t5gemma2.py --config training/t5gemma2-270m/silver-discovery-adaptation.json --validate-only",
     "training:run:hybrid": "uv run --project training python training/train_t5gemma2.py --config training/t5gemma2-270m/hybrid-finetune.json",

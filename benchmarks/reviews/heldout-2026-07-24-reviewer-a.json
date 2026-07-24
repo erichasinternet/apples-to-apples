@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "runId": "2026-07-24T07-34-15-817Z",
+  "reviewer": "codex-visual-dom-review-a",
+  "reviewType": "single-review",
+  "eligibleForTraining": false,
+  "policy": "Card roots were selected from saved screenshots, repeated geometry, and descendant DOM evidence. A second independent review and disagreement adjudication are required before these labels become benchmark gold.",
+  "pages": [
+    {
+      "pageId": "bjs--vitamins",
+      "siteId": "bjs",
+      "productCardNodeIds": [],
+      "note": "The capture contains the site header and footer but no product grid."
+    },
+    {
+      "pageId": "boxncase--aluminum-foil",
+      "siteId": "boxncase",
+      "productCardNodeIds": [
+        "n45",
+        "n63",
+        "n81",
+        "n99",
+        "n117",
+        "n135",
+        "n153",
+        "n171",
+        "n189",
+        "n207",
+        "n225",
+        "n243",
+        "n261",
+        "n279",
+        "n297",
+        "n315"
+      ]
+    },
+    {
+      "pageId": "giant-eagle--olive-oil",
+      "siteId": "giant-eagle",
+      "productCardNodeIds": [
+        "n14",
+        "n35",
+        "n57",
+        "n81",
+        "n105"
+      ],
+      "note": "The requested search failed, but the page rendered a five-card Top Products grid."
+    },
+    {
+      "pageId": "gopuff--rice",
+      "siteId": "gopuff",
+      "productCardNodeIds": [
+        "n73",
+        "n105",
+        "n129",
+        "n155",
+        "n179",
+        "n210",
+        "n234",
+        "n258",
+        "n282",
+        "n308"
+      ]
+    },
+    {
+      "pageId": "iherb--bath-salts",
+      "siteId": "iherb",
+      "productCardNodeIds": [
+        "n4204",
+        "n4238",
+        "n4272",
+        "n4306",
+        "n4355",
+        "n4389",
+        "n4423",
+        "n4457"
+      ]
+    },
+    {
+      "pageId": "macys--bath-salts",
+      "siteId": "macys",
+      "productCardNodeIds": [],
+      "note": "The capture contains footer content but no product grid."
+    },
+    {
+      "pageId": "menards--ice-melt",
+      "siteId": "menards",
+      "productCardNodeIds": [
+        "n3133",
+        "n3198",
+        "n3260",
+        "n3322",
+        "n3389",
+        "n3422",
+        "n3484",
+        "n3546",
+        "n3611",
+        "n3644",
+        "n3702",
+        "n3760"
+      ]
+    }
+  ]
+}

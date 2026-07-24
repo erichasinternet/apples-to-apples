@@ -79,6 +79,24 @@ automatically rejected and 66 grounded proposals require review. Each queue entr
 includes the saved screenshot path, node bounds, node text, descendant evidence,
 source chunks, and weak-reference status.
 
+A complete first visual/DOM review identified 51 product-card roots. Scoring after
+the existing duplicate/unknown-ID runtime gate produced:
+
+| Metric | Single-review result |
+| --- | ---: |
+| Precision | 47.0% |
+| Recall | 60.8% |
+| F1 | 53.0% |
+| True positives | 31 |
+| False positives | 35 |
+| False negatives | 20 |
+
+BoxNCase reached 80% precision and 75% recall, while Giant Eagle and both
+non-product captures produced no true positives. The review is checked into
+`benchmarks/reviews/heldout-2026-07-24-reviewer-a.json`, is explicitly marked
+ineligible for training, and must not be called gold until a second independent
+review is adjudicated.
+
 ## Held-Out Extraction
 
 Extraction was not rerun on held-out pages. The prior replay checkpoint produced 37

@@ -195,6 +195,17 @@
       "automaticallyRejected": 2,
       "requiresHumanReview": 66
     },
+    "singleReviewDiagnostic": {
+      "reviewPath": "benchmarks/reviews/heldout-2026-07-24-reviewer-a.json",
+      "eligibleForTraining": false,
+      "referenceRoots": 51,
+      "truePositive": 31,
+      "falsePositive": 35,
+      "falseNegative": 20,
+      "precision": 0.4696969696969697,
+      "recall": 0.6078431372549019,
+      "f1": 0.5299145299145299
+    },
     "weakRootPrecision": 0.16666666666666666,
     "weakRootRecall": 0.3333333333333333,
     "weakRootF1": 0.2222222222222222,
