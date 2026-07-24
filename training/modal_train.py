@@ -225,6 +225,28 @@ def pilot_continue_train() -> dict[str, object]:
     )
 
 
+@training_function(timeout=1800)
+def pilot_focus_extraction_train() -> dict[str, object]:
+    return run_training(
+        output_name="synthetic-pilot-60-extraction",
+        extra_args=[
+            "--initial-adapter",
+            f"{OUTPUT_ROOT}/synthetic-pilot-40",
+            "--train-task",
+            "extract-product",
+            "--balance-extraction-abstentions",
+            "--max-train-records",
+            "320",
+            "--max-validation-records",
+            "32",
+            "--max-steps",
+            "20",
+            "--epochs",
+            "2",
+        ],
+    )
+
+
 @training_function(timeout=4 * 60 * 60)
 def full_train() -> dict[str, object]:
     return run_training(output_name="synthetic")
@@ -289,6 +311,13 @@ def main(mode: str = "diagnose") -> None:
         if not access["accessible"]:
             raise RuntimeError(str(access["error"]))
         result = pilot_continue_train.remote()
+    elif mode == "pilot-focus-extraction":
+        if diagnose_only:
+            raise RuntimeError("Training functions are disabled in diagnostic mode")
+        access = check_model_access.remote()
+        if not access["accessible"]:
+            raise RuntimeError(str(access["error"]))
+        result = pilot_focus_extraction_train.remote()
     elif mode == "full":
         if diagnose_only:
             raise RuntimeError("Training functions are disabled in diagnostic mode")
@@ -298,6 +327,7 @@ def main(mode: str = "diagnose") -> None:
         result = full_train.remote()
     else:
         raise ValueError(
-            "mode must be diagnose, smoke, pilot, pilot-continue, or full"
+            "mode must be diagnose, smoke, pilot, pilot-continue, "
+            "pilot-focus-extraction, or full"
         )
     print(json.dumps(result, indent=2))

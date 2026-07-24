@@ -57,6 +57,16 @@ def parse_args() -> argparse.Namespace:
         "--initial-adapter",
         help="Override the initial LoRA adapter path for a continuation run.",
     )
+    parser.add_argument(
+        "--train-task",
+        choices=("discover-products", "extract-product"),
+        help="Train on one task only for a targeted research run.",
+    )
+    parser.add_argument(
+        "--balance-extraction-abstentions",
+        action="store_true",
+        help="Balance positive and abstaining extraction records before limiting.",
+    )
     return parser.parse_args()
 
 
@@ -102,6 +112,14 @@ def has_json_prefix(value: str) -> bool:
         return True
     except json.JSONDecodeError:
         return False
+
+
+def parse_json_prefix(value: str) -> tuple[bool, Any]:
+    try:
+        parsed, _ = json.JSONDecoder().raw_decode(value.lstrip())
+        return True, parsed
+    except json.JSONDecodeError:
+        return False, None
 
 
 def validate_dataset(
@@ -453,7 +471,16 @@ def train(
         decoded_labels = processor.batch_decode(labels, skip_special_tokens=True)
         valid_json = 0
         recoverable_json = 0
+        prefix_exact = 0
         exact = 0
+        discovery_count = 0
+        discovery_exact = 0
+        extraction_count = 0
+        extraction_exact = 0
+        extraction_field_matches = 0
+        extraction_field_total = 0
+        abstention_count = 0
+        abstention_matches = 0
         samples = []
         for record, prediction, label in zip(
             evaluation_records,
@@ -467,9 +494,47 @@ def train(
                 valid_json += 1
             except json.JSONDecodeError:
                 is_valid_json = False
-            is_recoverable_json = has_json_prefix(prediction)
+            is_recoverable_json, parsed_prediction = parse_json_prefix(prediction)
             if is_recoverable_json:
                 recoverable_json += 1
+            parsed_label = json.loads(label)
+            is_prefix_exact = (
+                is_recoverable_json and parsed_prediction == parsed_label
+            )
+            if is_prefix_exact:
+                prefix_exact += 1
+            if record["task"] == "discover-products":
+                discovery_count += 1
+                discovery_exact += int(is_prefix_exact)
+            else:
+                extraction_count += 1
+                extraction_exact += int(is_prefix_exact)
+                predicted_product = (
+                    parsed_prediction.get("products", [{}])[0]
+                    if isinstance(parsed_prediction, dict)
+                    and parsed_prediction.get("products")
+                    else {}
+                )
+                target_product = parsed_label["products"][0]
+                for field in (
+                    "cardNodeId",
+                    "title",
+                    "currentPrice",
+                    "nativeUnitPrice",
+                    "packageQuantity",
+                    "abstainReason",
+                ):
+                    extraction_field_total += 1
+                    extraction_field_matches += int(
+                        predicted_product.get(field, "__missing__")
+                        == target_product.get(field, "__missing__")
+                    )
+                if "abstainReason" in target_product:
+                    abstention_count += 1
+                    abstention_matches += int(
+                        predicted_product.get("abstainReason")
+                        == target_product["abstainReason"]
+                    )
             is_exact = prediction.strip() == label.strip()
             if is_exact:
                 exact += 1
@@ -480,6 +545,7 @@ def train(
                     "pageId": record["pageId"],
                     "validJson": is_valid_json,
                     "recoverableJson": is_recoverable_json,
+                    "prefixExact": is_prefix_exact,
                     "exactMatch": is_exact,
                     "prediction": prediction,
                     "target": label,
@@ -489,6 +555,12 @@ def train(
         metrics = {
             "json_valid": valid_json / count,
             "json_recoverable": recoverable_json / count,
+            "json_prefix_exact": prefix_exact / count,
+            "discovery_prefix_exact": discovery_exact / max(1, discovery_count),
+            "extraction_prefix_exact": extraction_exact / max(1, extraction_count),
+            "extraction_field_accuracy": extraction_field_matches
+            / max(1, extraction_field_total),
+            "abstention_accuracy": abstention_matches / max(1, abstention_count),
             "exact_match": exact / count,
         }
         output_directory.mkdir(parents=True, exist_ok=True)
@@ -502,6 +574,13 @@ def train(
                     "records": count,
                     "jsonValid": metrics["json_valid"],
                     "jsonRecoverable": metrics["json_recoverable"],
+                    "jsonPrefixExact": metrics["json_prefix_exact"],
+                    "discoveryPrefixExact": metrics["discovery_prefix_exact"],
+                    "extractionPrefixExact": metrics["extraction_prefix_exact"],
+                    "extractionFieldAccuracy": metrics[
+                        "extraction_field_accuracy"
+                    ],
+                    "abstentionAccuracy": metrics["abstention_accuracy"],
                     "exactMatch": metrics["exact_match"],
                 },
                 indent=2,
@@ -537,7 +616,7 @@ def train(
         predict_with_generate=True,
         generation_max_length=config["maxOutputTokens"],
         load_best_model_at_end=True,
-        metric_for_best_model="json_valid",
+        metric_for_best_model="json_prefix_exact",
         greater_is_better=True,
         remove_unused_columns=False,
         report_to="none",
@@ -597,6 +676,42 @@ def stratified_limit(
     return selected
 
 
+def balanced_extraction_limit(
+    records: list[dict[str, Any]], limit: int | None
+) -> list[dict[str, Any]]:
+    extraction_records = [
+        record for record in records if record["task"] == "extract-product"
+    ]
+    target_count = (
+        len(extraction_records)
+        if limit is None
+        else min(limit, len(extraction_records))
+    )
+    if target_count <= 0:
+        raise ValueError("Record limits must be positive")
+    abstaining = []
+    positive = []
+    for record in extraction_records:
+        product = json.loads(record["target"])["products"][0]
+        (abstaining if "abstainReason" in product else positive).append(record)
+    selected = []
+    positive_index = 0
+    abstaining_index = 0
+    while len(selected) < target_count:
+        added = False
+        if positive_index < len(positive) and len(selected) < target_count:
+            selected.append(positive[positive_index])
+            positive_index += 1
+            added = True
+        if abstaining_index < len(abstaining) and len(selected) < target_count:
+            selected.append(abstaining[abstaining_index])
+            abstaining_index += 1
+            added = True
+        if not added:
+            break
+    return selected
+
+
 def main() -> None:
     args = parse_args()
     repo_root = Path(__file__).resolve().parent.parent
@@ -615,9 +730,26 @@ def main() -> None:
     manifest, records_by_split, dataset_root = validate_dataset(repo_root, config)
     print_validation_summary(config, manifest, records_by_split)
     if not args.validate_only:
-        records_by_split["train"] = stratified_limit(
-            records_by_split["train"], args.max_train_records
-        )
+        if args.balance_extraction_abstentions and args.train_task != "extract-product":
+            raise ValueError(
+                "--balance-extraction-abstentions requires "
+                "--train-task extract-product"
+            )
+        if args.balance_extraction_abstentions:
+            records_by_split["train"] = balanced_extraction_limit(
+                records_by_split["train"], args.max_train_records
+            )
+        else:
+            training_records = records_by_split["train"]
+            if args.train_task:
+                training_records = [
+                    record
+                    for record in training_records
+                    if record["task"] == args.train_task
+                ]
+            records_by_split["train"] = stratified_limit(
+                training_records, args.max_train_records
+            )
         records_by_split["validation"] = stratified_limit(
             records_by_split["validation"], args.max_validation_records
         )

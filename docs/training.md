@@ -139,6 +139,7 @@ bun run training:modal:diagnose
 bun run training:modal:smoke
 bun run training:modal:pilot
 bun run training:modal:pilot:continue
+bun run training:modal:pilot:focus
 bun run training:modal:full
 ```
 
@@ -146,6 +147,7 @@ bun run training:modal:full
 - `smoke` uses an A10 for at most 15 minutes, 16 training records, and two steps.
 - `pilot` uses an A10 for at most 30 minutes, 320 training records, and 20 steps.
 - `pilot:continue` trains the saved pilot adapter for another 20 capped steps.
+- `pilot:focus` adds 20 extraction-only steps with balanced abstention examples.
 - `full` uses one A10 for at most four hours with no retries.
 - All training modes verify gated model access on CPU before allocating an A10.
 - Model outputs and the Hugging Face cache are stored in separate Modal Volumes.

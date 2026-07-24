@@ -21,7 +21,7 @@ describe("training preparation CLI", () => {
         "-c",
         [
           "import json",
-          "from training.train_t5gemma2 import has_json_prefix, sanitize_token_ids",
+          "from training.train_t5gemma2 import balanced_extraction_limit, has_json_prefix, parse_json_prefix, sanitize_token_ids",
           "print(json.dumps(sanitize_token_ids(",
           "  [[0, 5, -100, -1, 9, 10]],",
           "  pad_token_id=0,",
@@ -30,7 +30,15 @@ describe("training preparation CLI", () => {
           "print(json.dumps([",
           "  has_json_prefix('{\"ok\":true}{\"extra\":true}'),",
           "  has_json_prefix('not json'),",
-          "]))"
+          "]))",
+          "print(json.dumps(parse_json_prefix('{\"ok\":true}{\"extra\":true}')))",
+          "records = [",
+          "  {'task': 'extract-product', 'id': 'p1', 'target': '{\"products\":[{}]}'},",
+          "  {'task': 'extract-product', 'id': 'p2', 'target': '{\"products\":[{}]}'},",
+          "  {'task': 'extract-product', 'id': 'a1', 'target': '{\"products\":[{\"abstainReason\":\"ambiguous-quantity\"}]}'},",
+          "  {'task': 'extract-product', 'id': 'a2', 'target': '{\"products\":[{\"abstainReason\":\"unsupported-unit\"}]}'},",
+          "]",
+          "print(json.dumps([record['id'] for record in balanced_extraction_limit(records, 4)]))"
         ].join("\n")
       ],
       {
@@ -39,12 +47,14 @@ describe("training preparation CLI", () => {
       }
     );
 
-    const [sanitized, prefixChecks] = result.stdout
+    const [sanitized, prefixChecks, parsedPrefix, balancedIds] = result.stdout
       .trim()
       .split("\n")
       .map((line) => JSON.parse(line));
     expect(sanitized).toEqual([[0, 5, 0, 0, 9, 0]]);
     expect(prefixChecks).toEqual([true, false]);
+    expect(parsedPrefix).toEqual([true, { ok: true }]);
+    expect(balancedIds).toEqual(["p1", "a1", "p2", "a2"]);
   });
 
   it("exports domain-separated discovery and extraction records", async () => {
