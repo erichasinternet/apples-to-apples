@@ -85,6 +85,8 @@ bun run training:synthetic:validate
 See [docs/benchmark-protocol.md](docs/benchmark-protocol.md) for sampling, domain-held-out splits, annotation, privacy, and statistical analysis. The [learned extraction experiment](docs/learned-extraction.md) defines the evidence contract and model promotion gates.
 The [training runbook](docs/training.md) covers dataset readiness, strict export, the
 T5Gemma 2 LoRA configuration, and GPU execution.
+The [autoresearch protocol](docs/autoresearch.md) records the experiment loop,
+checkpoint results, cost controls, and promotion gates.
 
 ## Repository Gates
 

@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-23",
+  "modelId": "google/t5gemma-2-270m-270m",
+  "datasetSha256": "7708923a44726aee209f5de15f6f6770a5281c73bc7aec55ccaf75febf55ed78",
+  "evaluationRecords": 32,
+  "experiments": [
+    {
+      "name": "synthetic-pilot-20",
+      "parent": null,
+      "steps": 20,
+      "trainingMix": "50% discovery, 50% extraction",
+      "maxOutputTokens": 512,
+      "metrics": {
+        "jsonValid": 0.15625,
+        "jsonRecoverable": 1.0,
+        "jsonPrefixExact": 0.46875,
+        "discoveryPrefixExact": 0.875,
+        "extractionPrefixExact": 0.0625,
+        "extractionFieldAccuracy": 0.5833333333333334,
+        "abstentionAccuracy": 0.0
+      },
+      "meteredCostDeltaUsd": 0.49933142,
+      "decision": "continue"
+    },
+    {
+      "name": "synthetic-pilot-40",
+      "parent": "synthetic-pilot-20",
+      "steps": 20,
+      "trainingMix": "50% discovery, 50% extraction",
+      "maxOutputTokens": 192,
+      "metrics": {
+        "jsonValid": 0.0,
+        "jsonRecoverable": 1.0,
+        "jsonPrefixExact": 0.59375,
+        "discoveryPrefixExact": 1.0,
+        "extractionPrefixExact": 0.1875,
+        "extractionFieldAccuracy": 0.6979166666666666,
+        "abstentionAccuracy": 0.0
+      },
+      "meteredCostDeltaUsd": 0.33938683,
+      "decision": "branch"
+    },
+    {
+      "name": "synthetic-pilot-60-extraction",
+      "parent": "synthetic-pilot-40",
+      "steps": 20,
+      "trainingMix": "100% extraction, balanced positive and abstention",
+      "maxOutputTokens": 192,
+      "metrics": {
+        "jsonValid": 0.0,
+        "jsonRecoverable": 0.8125,
+        "jsonPrefixExact": 0.28125,
+        "discoveryPrefixExact": 0.0,
+        "extractionPrefixExact": 0.5625,
+        "extractionFieldAccuracy": 0.8125,
+        "abstentionAccuracy": 0.5
+      },
+      "meteredCostDeltaUsd": 0.30797473,
+      "decision": "reject-catastrophic-forgetting"
+    },
+    {
+      "name": "synthetic-pilot-60-replay",
+      "parent": "synthetic-pilot-40",
+      "steps": 20,
+      "trainingMix": "75% balanced extraction, 25% discovery replay",
+      "maxOutputTokens": 192,
+      "metrics": {
+        "jsonValid": 0.96875,
+        "jsonRecoverable": 1.0,
+        "jsonPrefixExact": 0.6875,
+        "discoveryPrefixExact": 0.875,
+        "extractionPrefixExact": 0.5,
+        "extractionFieldAccuracy": 0.7708333333333334,
+        "abstentionAccuracy": 0.5
+      },
+      "meteredCostDeltaUsd": 0.26065361,
+      "decision": "promote-to-real-held-out-evaluation"
+    }
+  ],
+  "modalMeteredCostUsd": 1.52469832,
+  "modalBilledCostUsd": 0.0
+}
