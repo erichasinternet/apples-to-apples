@@ -45,6 +45,50 @@ describe("visual review mapping", () => {
       duplicateMappings: 0
     });
   });
+
+  it("maps screenshot-relative boxes into an offset DOM source region", () => {
+    const sourceRegion = { x: 300, y: 900, width: 1000, height: 800 };
+    const observation: PageObservation = {
+      version: 1,
+      pageId: "shop--offset",
+      url: "https://shop.example/search",
+      title: "Offset grid",
+      viewport: { width: 1400, height: 800, scrollX: 0, scrollY: 900 },
+      rootNodeId: "root",
+      sourceRegion,
+      truncated: false,
+      nodes: [
+        node("root", undefined, sourceRegion),
+        node(
+          "card-a",
+          "root",
+          { x: 400, y: 1060, width: 300, height: 320 },
+          "listitem"
+        )
+      ]
+    };
+    const prediction = JSON.stringify({
+      version: 1,
+      pageId: observation.pageId,
+      cardBoxes: [{ x: 100, y: 200, width: 300, height: 400 }]
+    });
+
+    expect(
+      mapVisualReview(
+        prediction,
+        observation.pageId,
+        { x: 0, y: 0, width: 1000, height: 800 },
+        sourceRegion,
+        observation
+      )
+    ).toEqual({
+      cardNodeIds: ["card-a"],
+      boxes: 1,
+      invalidBoxes: 0,
+      unmappedBoxes: 0,
+      duplicateMappings: 0
+    });
+  });
 });
 
 function node(

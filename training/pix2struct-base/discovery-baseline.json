@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "modelId": "google/pix2struct-base",
+  "datasetManifest": "benchmark-data/training/t5gemma2-adjudicated-discovery/dataset-manifest.json",
+  "outputDirectory": "benchmark-data/models/pix2struct-base-discovery",
+  "seed": 20260724,
+  "targetFormat": "json",
+  "maxPatches": 2048,
+  "maxOutputTokens": 256,
+  "training": {
+    "method": "full",
+    "epochs": 2,
+    "learningRate": 0.00005,
+    "weightDecay": 0.01,
+    "warmupRatio": 0.05,
+    "batchSize": 1,
+    "gradientAccumulationSteps": 16,
+    "gradientCheckpointing": false,
+    "bf16": true
+  },
+  "evaluation": {
+    "generationSamples": 16,
+    "boxIouThreshold": 0.5
+  }
+}

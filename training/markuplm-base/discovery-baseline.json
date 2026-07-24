@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "modelId": "microsoft/markuplm-base",
+  "datasetManifest": "benchmark-data/training/t5gemma2-adjudicated-discovery/dataset-manifest.json",
+  "outputDirectory": "benchmark-data/models/markuplm-base-discovery",
+  "seed": 20260724,
+  "maxNodes": 64,
+  "maxLength": 512,
+  "training": {
+    "method": "full",
+    "epochs": 4,
+    "learningRate": 0.00003,
+    "weightDecay": 0.01,
+    "warmupRatio": 0.05,
+    "batchSize": 4,
+    "gradientAccumulationSteps": 4,
+    "gradientCheckpointing": false,
+    "bf16": true,
+    "positiveClassWeight": 6
+  },
+  "evaluation": {
+    "thresholds": [0.3, 0.4, 0.5, 0.6, 0.7]
+  }
+}

@@ -197,6 +197,97 @@
       "selectionInferenceT4Seconds": 34.82,
       "estimatedAllResourcesUsdIncludingFailedRun": 0.378,
       "decision": "reject-malformed-output-no-additional-budget"
+    },
+    {
+      "name": "pix2struct-base-discovery-pilot-20",
+      "modelId": "google/pix2struct-base",
+      "parent": null,
+      "steps": 20,
+      "datasetSha256": "a4244fe987b6c66d4c5fe75a5a35272ecf2b84a6cc0f90102c1fc9c0c45f1fda",
+      "trainingMix": "50% repeated adjudicated real screenshots from 17 development domains, 50% synthetic screenshot replay; JSON box target",
+      "trainingRecords": 160,
+      "validationRecords": 16,
+      "metrics": {
+        "internalEvalLoss": 1.5054514408111572,
+        "internalValidJson": 0.0,
+        "sealedInstacartMappedRoots": 0,
+        "sealedInstacartReferenceRoots": 28
+      },
+      "successfulRunA10Seconds": 220.35,
+      "selectionInferenceT4Seconds": 57.98,
+      "decision": "continue-bounded-format-diagnosis"
+    },
+    {
+      "name": "pix2struct-base-discovery-pilot-100",
+      "modelId": "google/pix2struct-base",
+      "parent": "pix2struct-base-discovery-pilot-20",
+      "steps": 80,
+      "datasetSha256": "a4244fe987b6c66d4c5fe75a5a35272ecf2b84a6cc0f90102c1fc9c0c45f1fda",
+      "trainingMix": "continued immutable JSON-box branch on the same mixed screenshot corpus",
+      "trainingRecords": 160,
+      "validationRecords": 16,
+      "metrics": {
+        "internalEvalLoss": 1.1222259998321533,
+        "internalValidJson": 0.0,
+        "sealedInstacartMappedRoots": 0,
+        "sealedInstacartReferenceRoots": 28
+      },
+      "successfulRunA10Seconds": 635.97,
+      "selectionInferenceT4Seconds": 64.22,
+      "decision": "reject-json-box-serialization"
+    },
+    {
+      "name": "pix2struct-base-discovery-compact-pilot-40",
+      "modelId": "google/pix2struct-base",
+      "parent": null,
+      "steps": 40,
+      "datasetSha256": "a4244fe987b6c66d4c5fe75a5a35272ecf2b84a6cc0f90102c1fc9c0c45f1fda",
+      "trainingMix": "same mixed screenshot corpus with compact coordinate tags",
+      "trainingRecords": 160,
+      "validationRecords": 16,
+      "metrics": {
+        "internalEvalLoss": 1.2940272092819214,
+        "internalValidCompactTargets": 0.0,
+        "sealedInstacartGeneratedTitles": 9,
+        "sealedInstacartTitleGroundedTruePositive": 2,
+        "sealedInstacartTitleGroundedFalsePositive": 0,
+        "sealedInstacartTitleGroundedFalseNegative": 26,
+        "sealedInstacartTitleGroundedF1": 0.13333333333333333
+      },
+      "successfulRunA10Seconds": 343.45,
+      "selectionInferenceT4Seconds": 44.65,
+      "decision": "reject-discovery-retain-title-teacher-option"
+    },
+    {
+      "name": "markuplm-base-discovery-pilot-40",
+      "modelId": "microsoft/markuplm-base",
+      "parent": null,
+      "steps": 40,
+      "datasetSha256": "a4244fe987b6c66d4c5fe75a5a35272ecf2b84a6cc0f90102c1fc9c0c45f1fda",
+      "trainingMix": "50% repeated adjudicated real DOM/XPath discovery from 17 development domains, 50% synthetic replay; weighted binary root classification",
+      "trainingRecords": 320,
+      "validationRecords": 64,
+      "metrics": {
+        "internalEvalLoss": 0.18477994203567505,
+        "internalNodePrecision": 0.8305555555555556,
+        "internalNodeRecall": 1.0,
+        "internalNodeF1": 0.9074355083459787,
+        "internalNegativePageAccuracy": 1.0,
+        "serializedPromptInstacartF1": 0.22222222222222224,
+        "fullDomInstacartTruePositive": 24,
+        "fullDomInstacartFalsePositive": 7,
+        "fullDomInstacartFalseNegative": 4,
+        "fullDomInstacartPrecision": 0.7741935483870968,
+        "fullDomInstacartRecall": 0.8571428571428571,
+        "fullDomInstacartF1": 0.8135593220338982,
+        "postDiagnosticStructuralDecodeTruePositive": 28,
+        "postDiagnosticStructuralDecodeFalsePositive": 0,
+        "postDiagnosticStructuralDecodeFalseNegative": 0,
+        "postDiagnosticStructuralDecodeF1": 1.0
+      },
+      "successfulRunA10Seconds": 56.67,
+      "selectionInferenceT4Seconds": 44.87,
+      "decision": "promote-architecture-for-new-sealed-domain-validation-not-production"
     }
   ],
   "liveValidation": {
@@ -342,13 +433,14 @@
     "independentVisualReview": {
       "modelId": "Qwen/Qwen3-VL-2B-Instruct",
       "promptVersion": 2,
-      "predictedRoots": 60,
-      "truePositive": 15,
-      "falsePositive": 45,
-      "falseNegative": 109,
-      "precision": 0.25,
-      "recall": 0.12096774193548387,
-      "f1": 0.16304347826086957
+      "coordinateFrameCorrected": true,
+      "predictedRoots": 83,
+      "truePositive": 20,
+      "falsePositive": 63,
+      "falseNegative": 104,
+      "precision": 0.24096385542168675,
+      "recall": 0.16129032258064516,
+      "f1": 0.19323671497584544
     },
     "parentCheckpoint": {
       "checkpoint": "synthetic-pilot-120-adjudicated-discovery",
@@ -399,13 +491,14 @@
     "independentVisualReview": {
       "modelId": "Qwen/Qwen3-VL-2B-Instruct",
       "promptVersion": 3,
-      "predictedRoots": 14,
-      "truePositive": 4,
-      "falsePositive": 10,
-      "falseNegative": 26,
-      "precision": 0.2857142857142857,
-      "recall": 0.13333333333333333,
-      "f1": 0.18181818181818182
+      "coordinateFrameCorrected": true,
+      "predictedRoots": 22,
+      "truePositive": 13,
+      "falsePositive": 9,
+      "falseNegative": 17,
+      "precision": 0.5909090909090909,
+      "recall": 0.43333333333333335,
+      "f1": 0.5
     },
     "parentCheckpoint": {
       "checkpoint": "synthetic-pilot-120-adjudicated-discovery",
@@ -452,10 +545,16 @@
     "independentVisualReview": {
       "modelId": "Qwen/Qwen3-VL-2B-Instruct",
       "promptVersion": 2,
+      "coordinateFrameCorrected": true,
       "invalidPredictions": 2,
       "validBoxes": 10,
-      "unmappedBoxes": 10,
-      "mappedRoots": 0,
+      "unmappedBoxes": 1,
+      "duplicateMappings": 1,
+      "mappedRoots": 8,
+      "truePositive": 0,
+      "falsePositive": 8,
+      "falseNegative": 28,
+      "f1": 0.0,
       "acceptedAsSecondReview": false
     },
     "parentCheckpoint": {
@@ -476,7 +575,21 @@
       "recall": 0.6428571428571429,
       "f1": 0.7058823529411765
     },
-    "decision": "reject-expanded-checkpoint-retain-parent"
+    "markupLmArchitectureCycle": {
+      "checkpoint": "markuplm-base-discovery-pilot-40",
+      "serializedPromptCandidateRecall": 0.8214285714285714,
+      "serializedPromptF1": 0.22222222222222224,
+      "fullDomCandidateRecall": 1.0,
+      "fullDomBeforeDiagnosticDecodePrecision": 0.7741935483870968,
+      "fullDomBeforeDiagnosticDecodeRecall": 0.8571428571428571,
+      "fullDomBeforeDiagnosticDecodeF1": 0.8135593220338982,
+      "postDiagnosticDecodePrecision": 1.0,
+      "postDiagnosticDecodeRecall": 1.0,
+      "postDiagnosticDecodeF1": 1.0,
+      "selectionPageRetired": true,
+      "interpretation": "The full-DOM result supports MarkupLM as the next discovery architecture. The 1.0 score is diagnostic because this page's error slice informed structural decoding and must not be treated as sealed generalization evidence."
+    },
+    "decision": "reject-expanded-t5gemma-retain-markuplm-for-new-sealed-validation"
   },
   "heldOutValidation": {
     "runId": "2026-07-24T07-34-15-817Z",
@@ -518,16 +631,18 @@
     "independentVisualReview": {
       "modelId": "Qwen/Qwen3-VL-2B-Instruct",
       "promptVersion": 2,
+      "coordinateFrameCorrected": true,
       "records": 13,
       "rawTruncations": 1,
       "validBoxes": 33,
       "invalidBoxes": 6,
-      "unmappedBoxes": 14,
-      "mappedRoots": 19,
-      "exactAgreementWithReviewerA": 4,
-      "precisionAgainstReviewerA": 0.21052631578947367,
-      "recallAgainstReviewerA": 0.0784313725490196,
-      "f1AgainstReviewerA": 0.11428571428571428,
+      "unmappedBoxes": 2,
+      "duplicateMappings": 3,
+      "mappedRoots": 28,
+      "exactAgreementWithReviewerA": 10,
+      "precisionAgainstReviewerA": 0.35714285714285715,
+      "recallAgainstReviewerA": 0.19607843137254902,
+      "f1AgainstReviewerA": 0.2531645569620253,
       "eligibleForTraining": false
     },
     "weakRootPrecision": 0.16666666666666666,
@@ -537,8 +652,8 @@
   },
   "modalMeteredCostUsdLastObserved": 1.52469832,
   "modalBilledCostUsdLastObserved": 0.0,
-  "additionalEstimatedComputeUsd": 3.1065,
-  "estimatedTotalComputeUsd": 4.6315,
+  "additionalEstimatedComputeUsd": 3.6862,
+  "estimatedTotalComputeUsd": 5.2112,
   "remainingDevelopmentAndFlanCycleEstimatedCompute": {
     "pricingSource": "https://modal.com/pricing",
     "t4GpuSeconds": 423.07,
@@ -555,5 +670,14 @@
     "estimatedT4GpuCpuMemoryUsd": 0.3748,
     "estimatedA10GpuCpuMemoryUsd": 0.3848,
     "estimatedTotalUsd": 0.7596
+  },
+  "architectureBaselineCycleEstimatedCompute": {
+    "pricingSource": "https://modal.com/pricing",
+    "t4GpuSeconds": 225.72,
+    "a10GpuSeconds": 1327.31,
+    "failedRunSecondsAreEstimated": true,
+    "estimatedT4GpuCpuMemoryUsd": 0.0569,
+    "estimatedA10GpuCpuMemoryUsd": 0.5229,
+    "estimatedTotalUsd": 0.5797
   }
 }

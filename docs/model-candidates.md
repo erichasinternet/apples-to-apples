@@ -13,8 +13,8 @@ label, prompt, or evaluation defect.
 | Priority | Model | Role | Why it is useful | Promotion condition |
 | --- | --- | --- | --- | --- |
 | 1 | `google/t5gemma-2-270m-270m` | Current multimodal encoder-decoder | Smallest end-to-end structured extractor already integrated | Continue only bounded data-mixture experiments |
-| 2 | `google/pix2struct-base` | Screenshot-native image-to-text baseline | Pretrained by parsing web-page screenshots into simplified HTML | Beat T5Gemma discovery F1 or materially improve visual root localization at comparable cost |
-| 3 | `microsoft/markuplm-base` | DOM/XPath token-classification baseline | Explicitly encodes HTML text and markup paths for web information extraction | Beat the generative model on exact root and evidence-node tagging |
+| 2 | `microsoft/markuplm-base` | Selected DOM/XPath discovery architecture | A 40-step classifier reached 0.907 internal node F1 and 0.814 F1 on unseen Instacart before diagnostic structural decoding | Pass a new sealed multi-domain discovery cohort without decoder changes |
+| 3 | `google/pix2struct-base` | Rejected discovery baseline; optional visual teacher | JSON and compact-box branches produced no valid coordinates, but title grounding recovered 2/28 roots without false positives | Revisit only as an OCR/title teacher with a separately measured downstream gain |
 | 4 | `google/flan-t5-base` | Rejected bounded text-only control | A 20-step serialized-DOM pilot produced no valid JSON on internal or sealed selection inference | Revisit only with evidence that a different objective or decoding contract fixes the measured failure |
 | 5 | `google/t5gemma-2-1b-1b` | Same-family capacity check | Preserves the multimodal encoder-decoder contract with more capacity | Run only after the 270M learning curve underfits a sufficiently large adjudicated corpus |
 
@@ -36,6 +36,10 @@ boxes frequently map to nested descendants, over-enumerate dense carousels, and
 truncate before valid JSON. It must not create training or benchmark gold without
 manual adjudication.
 
+The normalized-box mapper now uses the page-coordinate source region. Corrected
+Qwen F1 remains low: 0.193 on development expansion, 0.500 on remaining
+development, 0.253 on held out, and 0 on Instacart selection.
+
 ## Deferred
 
 - T5Gemma 2 4B-4B and other multi-billion-parameter VLMs: too expensive before a
@@ -49,3 +53,6 @@ Model size does not relax the production gate. The extension receives model outp
 only after exact evidence validation, deterministic normalization, and a
 domain-held-out benchmark demonstrate acceptable false-positive and abstention
 rates.
+
+The measured architecture comparison is in
+[`architecture-baseline-cycle-report.md`](./architecture-baseline-cycle-report.md).

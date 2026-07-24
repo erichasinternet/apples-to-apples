@@ -126,10 +126,11 @@ deterministic conversion only.
 
 ## Cost
 
-The last observed Modal meter was $1.5247. Through the remaining-development and
-FLAN control cycle, the recorded Modal GPU, CPU, and memory rates put estimated
-total project compute at $4.63. This remains well below the $30 cap. Estimates exclude negligible
-image-build overhead and should be reconciled with the Modal billing meter.
+The last observed Modal meter was $1.5247. Through the architecture baseline
+cycle, the recorded Modal GPU, CPU, and memory rates put estimated total project
+compute at $5.21. This remains well below the $30 cap. Estimates exclude
+negligible image-build overhead and should be reconciled with the Modal billing
+meter.
 
 ## Expanded Data Cycle
 
@@ -170,12 +171,35 @@ The bounded FLAN configuration is rejected with no additional budget.
 Details are in
 [`remaining-development-and-flan-cycle-report.md`](./remaining-development-and-flan-cycle-report.md).
 
+## Architecture Baseline Cycle
+
+Pix2Struct Base failed both JSON and compact coordinate serialization after
+bounded 20-, 40-, and 100-step experiments. Its generated product titles could be
+grounded conservatively to 2/28 Instacart roots, so it is rejected for discovery
+but retained as a possible title-evidence teacher.
+
+MarkupLM Base reached 0.907 internal node F1 after 40 steps. The first Instacart
+run exposed an input-contract defect: the 96-node generative prompt omitted five
+reviewed roots and yielded only 0.222 F1. Direct full-DOM inference restored 100%
+candidate recall and reached 0.814 F1 before selection-specific decoding changes.
+A descendant-evidence gate and repeated-sibling constrained decoder then produced
+all 28 reviewed roots with no extras.
+
+The 1.000 result is diagnostic, not a sealed generalization score, because the
+Instacart errors informed the decoder. That page is retired. MarkupLM advances only
+to a new sealed multi-domain discovery evaluation.
+
+The same cycle corrected a visual-box coordinate-frame bug and regenerated all
+saved Qwen mappings. Qwen remains reviewer-only. Details are in
+[`architecture-baseline-cycle-report.md`](./architecture-baseline-cycle-report.md).
+
 ## Next Gate
 
 Do not launch full training or a larger model. Required work:
 
-1. Add independently reviewed selection pages before another T5Gemma training run;
-   the remaining development-domain acquisition and adjudication is complete.
+1. Capture and independently review a new multi-domain selection cohort for the
+   frozen MarkupLM checkpoint and structural decoder. Do not change decoding after
+   opening its labels.
 2. Include non-shopping redirects, category grids, recommendations, and skeleton
    states as explicit discovery abstention examples.
 3. Annotate card-local title, current price, native unit price, package quantity,
@@ -185,9 +209,9 @@ Do not launch full training or a larger model. Required work:
 5. Evaluate discovery, extraction, normalization, and abstention on a new sealed
    domain split. All currently opened development, selection, and held-out pages
    are retired from final evaluation.
-6. Compare the same immutable corpus against Pix2Struct Base and MarkupLM Base.
-   The bounded FLAN-T5 Base control failed structured decoding and is rejected
-   unless a later experiment supplies evidence for revisiting it.
+6. Report candidate recall, root-classification F1, and post-decoder F1 separately.
+   Pix2Struct and FLAN-T5 are rejected discovery baselines; MarkupLM is the selected
+   discovery architecture pending new sealed-domain validation.
 
 T5Gemma 2 1B-1B is the only larger same-family model worth approving now. Use it
 only if the 270M model underfits the adjudicated real corpus. PaliGemma remains

@@ -59,7 +59,7 @@ export function mapVisualReview(
       continue;
     }
     boxes += 1;
-    const predicted = denormalizeBox(value, imageCrop);
+    const predicted = denormalizeBox(value, sourceRegion);
     const ranked = candidates
       .map((node) => ({ node, iou: intersectionOverUnion(predicted, node.bounds) }))
       .filter((entry) => entry.iou >= 0.15)

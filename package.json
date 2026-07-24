@@ -63,6 +63,18 @@
     "training:baseline:flan:validate": "python3 training/train_flan_t5.py --validate-only --max-train-records 320 --max-validation-records 32",
     "training:baseline:flan:train": "uvx modal run training/modal_baselines.py --mode train-flan",
     "training:baseline:flan:selection": "ATA_INFERENCE_BUNDLE=t5gemma2-selection-instacart uvx modal run training/modal_baselines.py --mode infer-flan --output benchmark-data/inference/t5gemma2-selection-instacart/discovery-predictions-flan-t5-base.jsonl",
+    "training:baseline:pix2struct:validate": "python3 training/train_pix2struct.py --validate-only --max-train-records 160 --max-validation-records 16",
+    "training:baseline:pix2struct:smoke": "uvx modal run training/modal_baselines.py --mode smoke-pix2struct",
+    "training:baseline:pix2struct:train": "uvx modal run training/modal_baselines.py --mode train-pix2struct",
+    "training:baseline:pix2struct:continue": "uvx modal run training/modal_baselines.py --mode continue-pix2struct",
+    "training:baseline:pix2struct:compact": "uvx modal run training/modal_baselines.py --mode train-pix2struct-compact",
+    "training:baseline:pix2struct:compact:validate": "python3 training/train_pix2struct.py --config training/pix2struct-base/discovery-compact-baseline.json --validate-only --max-train-records 160 --max-validation-records 16",
+    "training:baseline:pix2struct:selection": "ATA_INFERENCE_BUNDLE=t5gemma2-selection-instacart uvx modal run training/modal_baselines.py --mode infer-pix2struct --output benchmark-data/inference/t5gemma2-selection-instacart/discovery-predictions-pix2struct-base-boxes.jsonl",
+    "training:baseline:pix2struct:selection:100": "ATA_INFERENCE_BUNDLE=t5gemma2-selection-instacart ATA_PIX2STRUCT_CHECKPOINT=pix2struct-base-discovery-pilot-100 uvx modal run training/modal_baselines.py --mode infer-pix2struct --output benchmark-data/inference/t5gemma2-selection-instacart/discovery-predictions-pix2struct-base-100-boxes.jsonl",
+    "training:baseline:pix2struct:selection:compact": "ATA_INFERENCE_BUNDLE=t5gemma2-selection-instacart ATA_PIX2STRUCT_CHECKPOINT=pix2struct-base-discovery-compact-pilot-40 ATA_PIX2STRUCT_TARGET_FORMAT=compact-tags uvx modal run training/modal_baselines.py --mode infer-pix2struct --output benchmark-data/inference/t5gemma2-selection-instacart/discovery-predictions-pix2struct-base-compact-boxes.jsonl",
+    "training:baseline:markuplm:validate": "python3 training/train_markuplm.py --validate-only --max-train-records 320 --max-validation-records 64",
+    "training:baseline:markuplm:train": "uvx modal run training/modal_baselines.py --mode train-markuplm",
+    "training:baseline:markuplm:selection": "ATA_INFERENCE_BUNDLE=t5gemma2-selection-instacart uvx modal run training/modal_baselines.py --mode infer-markuplm --output benchmark-data/inference/t5gemma2-selection-instacart/discovery-predictions-markuplm-base.jsonl",
     "training:silver:prepare": "bun scripts/prepare-silver-discovery.ts benchmark-data/live/*",
     "training:silver:validate": "python3 training/train_t5gemma2.py --config training/t5gemma2-270m/silver-discovery-adaptation.json --validate-only",
     "training:run:hybrid": "uv run --project training python training/train_t5gemma2.py --config training/t5gemma2-270m/hybrid-finetune.json",
@@ -84,7 +96,8 @@
     "training:synthetic:validate": "python3 training/train_t5gemma2.py --config training/t5gemma2-270m/synthetic-pretrain.json --validate-only",
     "training:validate": "python3 training/train_t5gemma2.py --validate-only",
     "serve:fixtures": "bun scripts/serve-fixtures.mjs",
-    "verify": "bun run typecheck && bun run test"
+    "verify": "bun run typecheck && bun run test && bun run training:baseline:markuplm:test",
+    "training:baseline:markuplm:test": "python3 training/test_infer_markuplm.py"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.0",
