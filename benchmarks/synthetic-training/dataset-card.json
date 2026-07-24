@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "generatorVersion": 1,
+  "seed": 20260724,
+  "datasetType": "synthetic-pretraining",
+  "outputPath": "benchmark-data/training/t5gemma2-synthetic",
+  "sha256": "7708923a44726aee209f5de15f6f6770a5281c73bc7aec55ccaf75febf55ed78",
+  "pages": 120,
+  "domains": {
+    "total": 40,
+    "train": 32,
+    "validation": 8
+  },
+  "products": {
+    "total": 1680,
+    "comparable": 1320,
+    "abstained": 360
+  },
+  "records": {
+    "total": 2040,
+    "train": 1632,
+    "validation": 408,
+    "discovery": 360,
+    "extraction": 1680
+  },
+  "distributions": {
+    "dimensions": {
+      "mass": 352,
+      "volume": 352,
+      "count": 352,
+      "area": 88,
+      "length": 176
+    },
+    "units": {
+      "oz": 88,
+      "lb": 88,
+      "g": 88,
+      "kg": 88,
+      "fl_oz": 88,
+      "ml": 88,
+      "l": 88,
+      "gal": 88,
+      "each": 88,
+      "roll": 88,
+      "load": 88,
+      "tablet": 88,
+      "sq_ft": 88,
+      "ft": 88,
+      "in": 88
+    },
+    "abstentionReasons": {
+      "conditional-price": 72,
+      "price-range": 72,
+      "ambiguous-quantity": 72,
+      "unsupported-unit": 72,
+      "unselected-variant": 72
+    },
+    "layouts": {
+      "market-grid": 15,
+      "dense-grid": 15,
+      "clean-list": 15,
+      "split-list": 15,
+      "catalog-grid": 15,
+      "compact-rows": 15,
+      "tile-grid": 15,
+      "editorial-list": 15
+    },
+    "extractionPatterns": {
+      "abstention": 360,
+      "current-price+package-quantity+native-unit-price": 720,
+      "current-price+native-unit-price": 120,
+      "current-price+package-quantity": 480
+    }
+  },
+  "policy": {
+    "allowedUses": [
+      "synthetic warm-start training",
+      "pipeline testing",
+      "ablation experiments"
+    ],
+    "prohibitedClaims": [
+      "live-site accuracy",
+      "model promotion",
+      "held-out benchmark performance"
+    ]
+  }
+}

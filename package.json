@@ -36,8 +36,12 @@
     "benchmark:validate": "bun scripts/validate-live-corpus.ts",
     "training:prepare": "bun scripts/prepare-t5-training.ts",
     "training:readiness": "bun scripts/report-training-readiness.ts",
+    "training:run:hybrid": "uv run --project training python training/train_t5gemma2.py --config training/t5gemma2-270m/hybrid-finetune.json",
     "training:run": "uv run --project training python training/train_t5gemma2.py",
+    "training:run:synthetic": "uv run --project training python training/train_t5gemma2.py --config training/t5gemma2-270m/synthetic-pretrain.json",
     "training:sync": "uv sync --project training",
+    "training:synthetic:generate": "bun scripts/generate-synthetic-training.ts",
+    "training:synthetic:validate": "python3 training/train_t5gemma2.py --config training/t5gemma2-270m/synthetic-pretrain.json --validate-only",
     "training:validate": "python3 training/train_t5gemma2.py --validate-only",
     "serve:fixtures": "bun scripts/serve-fixtures.mjs",
     "verify": "bun run typecheck && bun run test"

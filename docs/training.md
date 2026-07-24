@@ -32,6 +32,39 @@ Run learning-curve experiments at roughly 500, 1,500, 3,000, 10,000, and 20,000 
 Stop increasing the dataset only when domain-held-out error has plateaued and the
 promotion gates in [learned-extraction.md](learned-extraction.md) pass.
 
+## Synthetic Warm Start
+
+The repository can generate a deterministic synthetic pretraining corpus:
+
+```bash
+bun run training:synthetic:generate
+bun run training:synthetic:validate
+```
+
+The default corpus contains:
+
+- 40 invented shopping domains with no known-retailer names.
+- 32 training domains and 8 domain-disjoint validation domains.
+- 120 rendered pages and aligned screenshots.
+- 1,680 products, including 360 explicit abstentions.
+- 360 product-discovery records and 1,680 field-extraction records.
+- Eight layout families, five unit dimensions, multipacks, native unit prices,
+  conditional prices, ranges, ambiguous quantities, unsupported bundles, and
+  unselected variants.
+
+The generator changes structure, semantic elements, ordering, density, visual system,
+product data, and decoy content. Every generated target still passes the
+deterministic evidence validator, and the manifest hashes every screenshot and JSONL
+record. Generated data is written under
+`benchmark-data/training/t5gemma2-synthetic` and is reproducible from the checked-in seed.
+The checked-in
+[`dataset-card.json`](../benchmarks/synthetic-training/dataset-card.json) records the
+expected JSONL hash and class distributions.
+
+Synthetic data is useful for teaching the task contract and broad layout invariances. It
+is not evidence of live-site accuracy and must not enter selection or held-out benchmark
+metrics.
+
 ## Local Preparation
 
 Audit one or more capture runs:
@@ -79,6 +112,23 @@ gradient checkpointing, and an effective batch size of 16. The checkpoint is app
 0.8B total parameters because the name describes its encoder and decoder component sizes.
 The default command deliberately rejects a non-CUDA host. `--allow-non-cuda` exists only
 for tiny pipeline debugging.
+
+Use the synthetic corpus as a warm start:
+
+```bash
+HF_TOKEN=<token> bun run training:run:synthetic
+```
+
+After the real corpus passes readiness and has been exported, continue training that
+adapter at a lower learning rate:
+
+```bash
+HF_TOKEN=<token> bun run training:run:hybrid
+```
+
+For causal comparison, also train the real-only configuration with `bun run training:run`.
+Promote the hybrid only if it beats both real-only and synthetic-only candidates on
+domain-held-out real pages.
 
 ## Evaluation
 

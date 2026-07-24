@@ -272,11 +272,15 @@ function paddedRegion(
 }
 
 function relativeCrop(region: ObservationBounds, source: ObservationBounds): ScreenshotCrop {
+  const x = Math.max(0, Math.floor(region.x - source.x));
+  const y = Math.max(0, Math.floor(region.y - source.y));
+  const right = Math.ceil(region.x - source.x + region.width);
+  const bottom = Math.ceil(region.y - source.y + region.height);
   return {
-    x: region.x - source.x,
-    y: region.y - source.y,
-    width: region.width,
-    height: region.height
+    x,
+    y,
+    width: Math.max(1, right - x),
+    height: Math.max(1, bottom - y)
   };
 }
 

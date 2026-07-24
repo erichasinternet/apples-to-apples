@@ -150,6 +150,29 @@ def validate_dataset(
     if referenced_assets != manifest_assets:
         raise ValueError("Referenced image assets do not match the manifest")
 
+    source_hashes = manifest.get("sourceHashes")
+    if source_hashes is not None:
+        if not isinstance(source_hashes, list) or len(source_hashes) != manifest["pages"]:
+            raise ValueError("Synthetic source hashes must cover every page")
+        for source in source_hashes:
+            for path_key, hash_key in (
+                ("htmlPath", "htmlSha256"),
+                ("observationPath", "observationSha256"),
+                ("annotationPath", "annotationSha256"),
+            ):
+                relative_path = source.get(path_key)
+                expected_hash = source.get(hash_key)
+                if not isinstance(relative_path, str) or not isinstance(
+                    expected_hash, str
+                ):
+                    raise ValueError(f"Invalid source hash entry: {source}")
+                source_path = safe_dataset_path(dataset_root, relative_path)
+                actual_hash = hashlib.sha256(source_path.read_bytes()).hexdigest()
+                if actual_hash != expected_hash:
+                    raise ValueError(
+                        f"Source hash does not match manifest: {relative_path}"
+                    )
+
     serialized_hash = hashlib.sha256()
     for split in ("train", "validation"):
         serialized_hash.update(
@@ -227,6 +250,7 @@ def print_validation_summary(
     summary = {
         "valid": True,
         "modelId": config["modelId"],
+        "datasetType": manifest.get("datasetType", "adjudicated-real"),
         "datasetSha256": manifest["sha256"],
         "pages": manifest["pages"],
         "domains": len(manifest["domains"]),
@@ -250,7 +274,7 @@ def train(
         import numpy as np
         import torch
         from PIL import Image
-        from peft import LoraConfig, TaskType, get_peft_model
+        from peft import LoraConfig, PeftModel, TaskType, get_peft_model
         from torch.utils.data import Dataset
         from transformers import (
             AutoModelForSeq2SeqLM,
@@ -296,7 +320,17 @@ def train(
     model = AutoModelForSeq2SeqLM.from_pretrained(
         config["modelId"], token=os.environ["HF_TOKEN"], dtype=dtype
     )
-    if config["training"]["method"] == "lora":
+    initial_adapter = config.get("initialAdapter")
+    if initial_adapter:
+        adapter_path = resolve_from_repo(repo_root, initial_adapter)
+        if not adapter_path.is_dir():
+            raise RuntimeError(f"Initial adapter does not exist: {adapter_path}")
+        model = PeftModel.from_pretrained(
+            model,
+            adapter_path,
+            is_trainable=True,
+        )
+    elif config["training"]["method"] == "lora":
         lora = LoraConfig(
             task_type=TaskType.SEQ_2_SEQ_LM,
             r=config["training"]["loraRank"],
@@ -409,6 +443,7 @@ def train(
                 "config": config,
                 "datasetSha256": manifest["sha256"],
                 "datasetManifest": config["datasetManifest"],
+                "initialAdapter": initial_adapter,
             },
             indent=2,
         )

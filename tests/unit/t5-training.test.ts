@@ -37,6 +37,7 @@ describe("T5 training records", () => {
     expect(extraction[0]!.prompt).toMatch(/^<start_of_image>\n/);
     expect(extraction[0]!.prompt).toContain('"id":"card-a"');
     expect(extraction[0]!.prompt).not.toContain('"id":"card-b"');
+    expect(Object.values(extraction[0]!.imageCrop).every(Number.isInteger)).toBe(true);
     expect(JSON.parse(extraction[1]!.target).products[0].abstainReason).toBe(
       "ambiguous-quantity"
     );

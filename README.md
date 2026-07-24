@@ -78,6 +78,8 @@ bun run benchmark:training:export -- benchmark-data/live/<run-id> --output bench
 bun run training:readiness -- benchmark-data/live/<run-id>
 bun run training:prepare -- benchmark-data/live/<run-id> --output benchmark-data/training/t5gemma2
 bun run training:validate
+bun run training:synthetic:generate
+bun run training:synthetic:validate
 ```
 
 See [docs/benchmark-protocol.md](docs/benchmark-protocol.md) for sampling, domain-held-out splits, annotation, privacy, and statistical analysis. The [learned extraction experiment](docs/learned-extraction.md) defines the evidence contract and model promotion gates.

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "modelId": "google/t5gemma-2-270m-270m",
+  "datasetManifest": "benchmark-data/training/t5gemma2-synthetic/dataset-manifest.json",
+  "outputDirectory": "benchmark-data/models/t5gemma2-270m-synthetic",
+  "seed": 20260724,
+  "maxInputTokens": 32768,
+  "maxOutputTokens": 2048,
+  "training": {
+    "method": "lora",
+    "epochs": 3,
+    "learningRate": 0.0002,
+    "weightDecay": 0.01,
+    "warmupRatio": 0.05,
+    "batchSize": 1,
+    "gradientAccumulationSteps": 16,
+    "gradientCheckpointing": true,
+    "bf16": true,
+    "loraRank": 16,
+    "loraAlpha": 32,
+    "loraDropout": 0.05,
+    "targetModules": "all-linear"
+  },
+  "evaluation": {
+    "steps": 100,
+    "saveSteps": 100,
+    "generationSamples": 64
+  }
+}
