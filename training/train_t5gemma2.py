@@ -29,6 +29,30 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Allow training without CUDA. Intended only for tiny debugging runs.",
     )
+    parser.add_argument(
+        "--output-directory",
+        help="Override the configured output directory.",
+    )
+    parser.add_argument(
+        "--max-train-records",
+        type=int,
+        help="Deterministically limit training records for a smoke run.",
+    )
+    parser.add_argument(
+        "--max-validation-records",
+        type=int,
+        help="Deterministically limit validation records for a smoke run.",
+    )
+    parser.add_argument(
+        "--max-steps",
+        type=int,
+        help="Override Trainer max_steps for a bounded smoke run.",
+    )
+    parser.add_argument(
+        "--epochs",
+        type=float,
+        help="Override the configured epoch count.",
+    )
     return parser.parse_args()
 
 
@@ -269,6 +293,7 @@ def train(
     records_by_split: dict[str, list[dict[str, Any]]],
     dataset_root: Path,
     allow_non_cuda: bool,
+    max_steps: int | None,
 ) -> None:
     try:
         import numpy as np
@@ -401,6 +426,11 @@ def train(
 
     set_seed(config["seed"])
     output_directory = resolve_from_repo(repo_root, config["outputDirectory"])
+    evaluation_steps = config["evaluation"]["steps"]
+    save_steps = config["evaluation"]["saveSteps"]
+    if max_steps is not None:
+        evaluation_steps = min(evaluation_steps, max_steps)
+        save_steps = min(save_steps, max_steps)
     arguments = Seq2SeqTrainingArguments(
         output_dir=str(output_directory),
         num_train_epochs=config["training"]["epochs"],
@@ -415,8 +445,8 @@ def train(
         gradient_checkpointing=config["training"]["gradientCheckpointing"],
         bf16=config["training"]["bf16"] and torch.cuda.is_available(),
         eval_strategy="steps",
-        eval_steps=config["evaluation"]["steps"],
-        save_steps=config["evaluation"]["saveSteps"],
+        eval_steps=evaluation_steps,
+        save_steps=save_steps,
         save_total_limit=3,
         predict_with_generate=True,
         generation_max_length=config["maxOutputTokens"],
@@ -426,12 +456,17 @@ def train(
         remove_unused_columns=False,
         report_to="none",
         seed=config["seed"],
+        **({"max_steps": max_steps} if max_steps is not None else {}),
+    )
+    evaluation_records = stratified_limit(
+        records_by_split["validation"],
+        config["evaluation"]["generationSamples"],
     )
     trainer = Seq2SeqTrainer(
         model=model,
         args=arguments,
         train_dataset=ShoppingDataset(records_by_split["train"]),
-        eval_dataset=ShoppingDataset(records_by_split["validation"]),
+        eval_dataset=ShoppingDataset(evaluation_records),
         data_collator=collate,
         processing_class=processor,
         compute_metrics=compute_metrics,
@@ -455,14 +490,53 @@ def train(
     processor.save_pretrained(output_directory)
 
 
+def stratified_limit(
+    records: list[dict[str, Any]], limit: int | None
+) -> list[dict[str, Any]]:
+    if limit is None or limit >= len(records):
+        return records
+    if limit <= 0:
+        raise ValueError("Record limits must be positive")
+    tasks = ("discover-products", "extract-product")
+    buckets = {
+        task: [record for record in records if record["task"] == task] for task in tasks
+    }
+    selected: list[dict[str, Any]] = []
+    while len(selected) < limit:
+        added = False
+        for task in tasks:
+            bucket = buckets[task]
+            index = len([record for record in selected if record["task"] == task])
+            if index < len(bucket) and len(selected) < limit:
+                selected.append(bucket[index])
+                added = True
+        if not added:
+            break
+    return selected
+
+
 def main() -> None:
     args = parse_args()
     repo_root = Path(__file__).resolve().parent.parent
     config_path = resolve_from_repo(repo_root, args.config)
     config = load_json(config_path)
+    if args.output_directory:
+        config["outputDirectory"] = args.output_directory
+    if args.epochs is not None:
+        if args.epochs <= 0:
+            raise ValueError("--epochs must be positive")
+        config["training"]["epochs"] = args.epochs
+    if args.max_steps is not None and args.max_steps <= 0:
+        raise ValueError("--max-steps must be positive")
     manifest, records_by_split, dataset_root = validate_dataset(repo_root, config)
     print_validation_summary(config, manifest, records_by_split)
     if not args.validate_only:
+        records_by_split["train"] = stratified_limit(
+            records_by_split["train"], args.max_train_records
+        )
+        records_by_split["validation"] = stratified_limit(
+            records_by_split["validation"], args.max_validation_records
+        )
         train(
             repo_root,
             config,
@@ -470,6 +544,7 @@ def main() -> None:
             records_by_split,
             dataset_root,
             args.allow_non_cuda,
+            args.max_steps,
         )
 
 

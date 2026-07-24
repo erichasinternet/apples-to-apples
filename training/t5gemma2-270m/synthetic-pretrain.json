@@ -4,8 +4,8 @@
   "datasetManifest": "benchmark-data/training/t5gemma2-synthetic/dataset-manifest.json",
   "outputDirectory": "benchmark-data/models/t5gemma2-270m-synthetic",
   "seed": 20260724,
-  "maxInputTokens": 32768,
-  "maxOutputTokens": 2048,
+  "maxInputTokens": 8192,
+  "maxOutputTokens": 512,
   "training": {
     "method": "lora",
     "epochs": 3,
