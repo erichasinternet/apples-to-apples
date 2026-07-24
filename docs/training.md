@@ -140,6 +140,7 @@ bun run training:modal:smoke
 bun run training:modal:pilot
 bun run training:modal:pilot:continue
 bun run training:modal:pilot:focus
+bun run training:modal:pilot:replay
 bun run training:modal:full
 ```
 
@@ -148,6 +149,8 @@ bun run training:modal:full
 - `pilot` uses an A10 for at most 30 minutes, 320 training records, and 20 steps.
 - `pilot:continue` trains the saved pilot adapter for another 20 capped steps.
 - `pilot:focus` adds 20 extraction-only steps with balanced abstention examples.
+- `pilot:replay` branches from the mixed pilot with 75% balanced extraction and
+  25% discovery replay to control catastrophic forgetting.
 - `full` uses one A10 for at most four hours with no retries.
 - All training modes verify gated model access on CPU before allocating an A10.
 - Model outputs and the Hugging Face cache are stored in separate Modal Volumes.

@@ -21,7 +21,7 @@ describe("training preparation CLI", () => {
         "-c",
         [
           "import json",
-          "from training.train_t5gemma2 import balanced_extraction_limit, has_json_prefix, parse_json_prefix, sanitize_token_ids",
+          "from training.train_t5gemma2 import balanced_extraction_limit, has_json_prefix, mixed_task_limit, parse_json_prefix, sanitize_token_ids",
           "print(json.dumps(sanitize_token_ids(",
           "  [[0, 5, -100, -1, 9, 10]],",
           "  pad_token_id=0,",
@@ -38,7 +38,14 @@ describe("training preparation CLI", () => {
           "  {'task': 'extract-product', 'id': 'a1', 'target': '{\"products\":[{\"abstainReason\":\"ambiguous-quantity\"}]}'},",
           "  {'task': 'extract-product', 'id': 'a2', 'target': '{\"products\":[{\"abstainReason\":\"unsupported-unit\"}]}'},",
           "]",
-          "print(json.dumps([record['id'] for record in balanced_extraction_limit(records, 4)]))"
+          "print(json.dumps([record['id'] for record in balanced_extraction_limit(records, 4)]))",
+          "mixed_records = records + [",
+          "  {'task': 'discover-products', 'id': 'd1', 'target': '{}'},",
+          "  {'task': 'discover-products', 'id': 'd2', 'target': '{}'},",
+          "]",
+          "print(json.dumps([record['id'] for record in mixed_task_limit(",
+          "  mixed_records, 4, extraction_share=0.75, balance_extraction_abstentions=True",
+          ")]))"
         ].join("\n")
       ],
       {
@@ -47,7 +54,7 @@ describe("training preparation CLI", () => {
       }
     );
 
-    const [sanitized, prefixChecks, parsedPrefix, balancedIds] = result.stdout
+    const [sanitized, prefixChecks, parsedPrefix, balancedIds, mixedIds] = result.stdout
       .trim()
       .split("\n")
       .map((line) => JSON.parse(line));
@@ -55,6 +62,7 @@ describe("training preparation CLI", () => {
     expect(prefixChecks).toEqual([true, false]);
     expect(parsedPrefix).toEqual([true, { ok: true }]);
     expect(balancedIds).toEqual(["p1", "a1", "p2", "a2"]);
+    expect((mixedIds as string[]).filter((id) => id.startsWith("d"))).toHaveLength(1);
   });
 
   it("exports domain-separated discovery and extraction records", async () => {

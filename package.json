@@ -42,6 +42,7 @@
     "training:modal:pilot": "uvx modal run training/modal_train.py --mode pilot",
     "training:modal:pilot:continue": "uvx modal run training/modal_train.py --mode pilot-continue",
     "training:modal:pilot:focus": "uvx modal run training/modal_train.py --mode pilot-focus-extraction",
+    "training:modal:pilot:replay": "uvx modal run training/modal_train.py --mode pilot-replay",
     "training:modal:full": "uvx modal run training/modal_train.py --mode full",
     "training:run": "uv run --project training python training/train_t5gemma2.py",
     "training:run:synthetic": "uv run --project training python training/train_t5gemma2.py --config training/t5gemma2-270m/synthetic-pretrain.json",

@@ -67,6 +67,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Balance positive and abstaining extraction records before limiting.",
     )
+    parser.add_argument(
+        "--extraction-share",
+        type=float,
+        help="Mix extraction records with discovery replay at this share (0-1).",
+    )
     return parser.parse_args()
 
 
@@ -712,6 +717,50 @@ def balanced_extraction_limit(
     return selected
 
 
+def mixed_task_limit(
+    records: list[dict[str, Any]],
+    limit: int,
+    *,
+    extraction_share: float,
+    balance_extraction_abstentions: bool,
+) -> list[dict[str, Any]]:
+    if limit <= 0:
+        raise ValueError("Record limits must be positive")
+    if not 0 < extraction_share < 1:
+        raise ValueError("--extraction-share must be between 0 and 1")
+    extraction_count = round(limit * extraction_share)
+    discovery_count = limit - extraction_count
+    if balance_extraction_abstentions:
+        extraction = balanced_extraction_limit(records, extraction_count)
+    else:
+        extraction = [
+            record for record in records if record["task"] == "extract-product"
+        ][:extraction_count]
+    discovery = [
+        record for record in records if record["task"] == "discover-products"
+    ][:discovery_count]
+    if len(extraction) != extraction_count or len(discovery) != discovery_count:
+        raise ValueError("Not enough records for the requested task mixture")
+
+    selected = []
+    extraction_index = 0
+    discovery_index = 0
+    while len(selected) < limit:
+        expected_extraction = round(
+            (len(selected) + 1) * extraction_share
+        )
+        if extraction_index < expected_extraction:
+            selected.append(extraction[extraction_index])
+            extraction_index += 1
+        elif discovery_index < len(discovery):
+            selected.append(discovery[discovery_index])
+            discovery_index += 1
+        elif extraction_index < len(extraction):
+            selected.append(extraction[extraction_index])
+            extraction_index += 1
+    return selected
+
+
 def main() -> None:
     args = parse_args()
     repo_root = Path(__file__).resolve().parent.parent
@@ -730,12 +779,27 @@ def main() -> None:
     manifest, records_by_split, dataset_root = validate_dataset(repo_root, config)
     print_validation_summary(config, manifest, records_by_split)
     if not args.validate_only:
-        if args.balance_extraction_abstentions and args.train_task != "extract-product":
+        if args.extraction_share is not None and args.max_train_records is None:
+            raise ValueError("--extraction-share requires --max-train-records")
+        if args.extraction_share is not None and args.train_task:
+            raise ValueError("--extraction-share cannot be combined with --train-task")
+        if (
+            args.balance_extraction_abstentions
+            and args.train_task != "extract-product"
+            and args.extraction_share is None
+        ):
             raise ValueError(
                 "--balance-extraction-abstentions requires "
-                "--train-task extract-product"
+                "--train-task extract-product or --extraction-share"
             )
-        if args.balance_extraction_abstentions:
+        if args.extraction_share is not None:
+            records_by_split["train"] = mixed_task_limit(
+                records_by_split["train"],
+                args.max_train_records,
+                extraction_share=args.extraction_share,
+                balance_extraction_abstentions=args.balance_extraction_abstentions,
+            )
+        elif args.balance_extraction_abstentions:
             records_by_split["train"] = balanced_extraction_limit(
                 records_by_split["train"], args.max_train_records
             )
