@@ -124,6 +124,35 @@ describe("T5 training records", () => {
     expect(pruned.nodes).toHaveLength(8);
     expect(pruned.truncated).toBe(true);
   });
+
+  it("never prunes required nodes when their ancestor paths exceed the node budget", () => {
+    const observation = makeExample().input.observation;
+    const required = Array.from({ length: 6 }, (_, index) => {
+      const parentId = `required-parent-${index}`;
+      const childId = `required-child-${index}`;
+      observation.nodes.push(
+        node(parentId, "root", {
+          x: index * 100,
+          y: 500,
+          width: 90,
+          height: 100
+        }),
+        node(childId, parentId, {
+          x: index * 100,
+          y: 520,
+          width: 80,
+          height: 60
+        })
+      );
+      return childId;
+    });
+
+    const pruned = pruneObservationForModel(observation, 8, required);
+    const ids = new Set(pruned.nodes.map((entry) => entry.id));
+
+    expect(required.every((id) => ids.has(id))).toBe(true);
+    expect(pruned.nodes.length).toBeGreaterThan(8);
+  });
 });
 
 function makeExample(): TrainingExample {

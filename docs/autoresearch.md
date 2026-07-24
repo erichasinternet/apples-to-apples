@@ -20,6 +20,8 @@ alone, while keeping total Modal spend below $30.
 
 The machine-readable experiment ledger is
 [`training/experiments/results.json`](../training/experiments/results.json).
+The controlled comparison queue is in
+[`model-candidates.md`](./model-candidates.md).
 
 ## Current Results
 
@@ -124,18 +126,34 @@ deterministic conversion only.
 
 ## Cost
 
-The last observed Modal meter was $1.5247. The latest cycle used 1,345.44 T4
-GPU-seconds and 1,009.37 A10 GPU-seconds. At Modal's published GPU, CPU, and memory
-rates, this cycle is estimated at $0.74 and total project compute at $3.40. This
-remains well below the $30 cap. Estimates exclude negligible image-build overhead
-and should be reconciled with the Modal billing meter.
+The last observed Modal meter was $1.5247. Through the expanded adjudicated cycle,
+the current published Modal GPU, CPU, and memory rates put estimated total project
+compute at $4.16. This remains well below the $30 cap. Estimates exclude negligible
+image-build overhead and should be reconciled with the Modal billing meter.
+
+## Expanded Data Cycle
+
+Ten additional development domains added 124 exact roots and one challenge-page
+negative. A 20-step continuation improved consumed-development F1 from 63.8% to
+75.4%, but regressed on a newly captured sealed Instacart page from 73.5% to 70.6%
+F1 by adding two false roots with no recall gain. The branch is rejected and
+`synthetic-pilot-120-adjudicated-discovery` remains the best research checkpoint.
+
+The strict combined discovery dataset now has 47 real chunks, 160 exact roots, 335
+training records, and SHA-256
+`22ea3792a05883c35d51923e5843ac3bb38807e017ec7e013bdcb2bb2211acc0`.
+The extraction annotation queue covers all 160 cards but remains pending and
+ineligible for training.
+
+Details are in
+[`expanded-adjudicated-cycle-report.md`](./expanded-adjudicated-cycle-report.md).
 
 ## Next Gate
 
 Do not launch full training or a larger model. Required work:
 
-1. Add at least 27 more adjudicated development domains and eight more selection
-   domains before another T5Gemma training run.
+1. Add at least 17 more adjudicated development domains and independently reviewed
+   selection pages before another T5Gemma training run.
 2. Include non-shopping redirects, category grids, recommendations, and skeleton
    states as explicit discovery abstention examples.
 3. Annotate card-local title, current price, native unit price, package quantity,
@@ -145,13 +163,14 @@ Do not launch full training or a larger model. Required work:
 5. Evaluate discovery, extraction, normalization, and abstention on a new sealed
    domain split. All currently opened development, selection, and held-out pages
    are retired from final evaluation.
-6. Compare the same immutable corpus against FLAN-T5 Base and MarkupLM before
-   approving T5Gemma 2 1B-1B.
+6. Compare the same immutable corpus against Pix2Struct Base, MarkupLM Base, and
+   FLAN-T5 Base before approving T5Gemma 2 1B-1B.
 
-T5Gemma 2 1B-1B is the only additional gated model worth approving now. Use it only
-if the 270M model underfits the adjudicated real corpus. PaliGemma remains deferred because
-T5Gemma 2 already accepts image and text input, and a 3B vision model would increase
-cost before a measured need exists.
+T5Gemma 2 1B-1B is the only larger same-family model worth approving now. Use it
+only if the 270M model underfits the adjudicated real corpus. PaliGemma remains
+deferred because T5Gemma 2 already accepts image and text input, and a 3B vision
+model would increase cost before a measured need exists. The architecture baseline
+policy is in [`model-candidates.md`](./model-candidates.md).
 
 The complete frozen-run analysis is in
 [`held-out-report.md`](./held-out-report.md).

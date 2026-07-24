@@ -93,7 +93,7 @@ await writeFile(
     {
       version: 1,
       modelId: "Qwen/Qwen3-VL-2B-Instruct",
-      reviewPromptVersion: 2,
+      reviewPromptVersion: 3,
       mappingPolicy: "normalized visual boxes to DOM nodes by IoU >= 0.15, then outer-root tie breaking",
       counts
     },

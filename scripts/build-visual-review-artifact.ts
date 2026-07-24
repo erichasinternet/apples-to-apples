@@ -64,7 +64,7 @@ const artifact = {
   reviewer: {
     type: "independent-visual-model",
     modelId: "Qwen/Qwen3-VL-2B-Instruct",
-    reviewPromptVersion: 2
+    reviewPromptVersion: 3
   },
   reviewType: "independent-visual-plus-deterministic-mapping",
   eligibleForTraining: false,

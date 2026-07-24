@@ -84,6 +84,8 @@ def run_review(
         records_filename,
         "--output",
         str(output_path),
+        "--max-output-tokens",
+        "1024",
     ]
     if max_records is not None:
         command.extend(["--max-records", str(max_records)])
@@ -98,7 +100,7 @@ def run_review(
     cache_volume.commit()
     return {
         "modelId": "Qwen/Qwen3-VL-2B-Instruct",
-        "reviewPromptVersion": 2,
+        "reviewPromptVersion": 3,
         "records": len(predictions),
         "elapsedSeconds": round(elapsed, 2),
         "gpuSeconds": round(elapsed, 2),

@@ -353,6 +353,28 @@ def pilot_adjudicated_discovery_train() -> dict[str, object]:
     )
 
 
+@training_function(timeout=1800)
+def pilot_expanded_adjudicated_discovery_train() -> dict[str, object]:
+    return run_training(
+        output_name="synthetic-pilot-140-expanded-adjudicated-discovery",
+        config_name="adjudicated-discovery-adaptation.json",
+        extra_args=[
+            "--initial-adapter",
+            f"{OUTPUT_ROOT}/synthetic-pilot-120-adjudicated-discovery",
+            "--real-discovery-share",
+            "0.5",
+            "--max-train-records",
+            "320",
+            "--max-validation-records",
+            "32",
+            "--max-steps",
+            "20",
+            "--epochs",
+            "2",
+        ],
+    )
+
+
 @training_function(timeout=4 * 60 * 60)
 def full_train() -> dict[str, object]:
     return run_training(output_name="synthetic")
@@ -470,6 +492,18 @@ def main(mode: str = "diagnose") -> None:
         if not access["accessible"]:
             raise RuntimeError(str(access["error"]))
         result = pilot_adjudicated_discovery_train.remote()
+    elif mode == "pilot-expanded-adjudicated-discovery":
+        if diagnose_only:
+            raise RuntimeError("Training functions are disabled in diagnostic mode")
+        if not ADJUDICATED_DISCOVERY_DATASET.is_dir():
+            raise RuntimeError(
+                "Prepare the adjudicated discovery dataset before this mode: "
+                "`bun run training:adjudicated:prepare`"
+            )
+        access = check_model_access.remote()
+        if not access["accessible"]:
+            raise RuntimeError(str(access["error"]))
+        result = pilot_expanded_adjudicated_discovery_train.remote()
     elif mode == "full":
         if diagnose_only:
             raise RuntimeError("Training functions are disabled in diagnostic mode")
@@ -481,6 +515,7 @@ def main(mode: str = "diagnose") -> None:
         raise ValueError(
             "mode must be diagnose, smoke, pilot, pilot-continue, "
             "pilot-focus-extraction, pilot-replay, pilot-real-discovery, "
-            "pilot-balanced-real-discovery, pilot-adjudicated-discovery, or full"
+            "pilot-balanced-real-discovery, pilot-adjudicated-discovery, "
+            "pilot-expanded-adjudicated-discovery, or full"
         )
     print(json.dumps(result, indent=2))

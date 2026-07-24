@@ -1,0 +1,252 @@
+{
+  "version": 1,
+  "runId": "development-expansion-2026-07-24",
+  "reviewType": "adjudicated-development",
+  "eligibleForTraining": true,
+  "eligibleForBenchmarkGold": false,
+  "retiredFromValidation": true,
+  "sources": [
+    {
+      "reviewer": "codex-visual-dom-review-a",
+      "path": "benchmarks/reviews/development-expansion-2026-07-24-reviewer-a.json"
+    },
+    {
+      "reviewer": "Qwen/Qwen3-VL-2B-Instruct",
+      "path": "benchmarks/reviews/development-expansion-2026-07-24-reviewer-b.json"
+    }
+  ],
+  "policy": "Training-only labels were adjudicated from exact DOM hierarchy, repeated geometry, card-local image/title/price evidence, saved screenshots, and an independent screenshot-only visual review. The visual model had 0.163 exact-root F1 and frequently mapped to nested descendants, so agreement was evidence rather than a voting rule. All thirteen pages are permanently retired from validation. This artifact is not benchmark gold because the second source is a model review rather than an independent human review.",
+  "adjudication": {
+    "adjudicator": "codex",
+    "method": "manual-screenshot-dom-reconciliation",
+    "totalRoots": 124,
+    "knownNodeIds": 124,
+    "negativePages": 1,
+    "unresolved": 0,
+    "independentReview": {
+      "predictedRoots": 60,
+      "truePositiveRoots": 15,
+      "falsePositiveRoots": 45,
+      "falseNegativeRoots": 109,
+      "precision": 0.25,
+      "recall": 0.12096774193548387,
+      "f1": 0.16304347826086957
+    }
+  },
+  "pages": [
+    {
+      "pageId": "dollar-general--vitamins",
+      "siteId": "dollar-general",
+      "productCardNodeIds": [
+        "n415",
+        "n435",
+        "n455",
+        "n483",
+        "n510",
+        "n535",
+        "n555",
+        "n575",
+        "n690",
+        "n717",
+        "n734",
+        "n754"
+      ],
+      "adjudicationNote": "Accepted twelve outer card roots. Rejected visual mappings to nested descendants and unrelated later-page nodes."
+    },
+    {
+      "pageId": "honest--baby-shampoo",
+      "siteId": "honest",
+      "productCardNodeIds": [
+        "n470",
+        "n608",
+        "n707",
+        "n773",
+        "n839",
+        "n922",
+        "n1021",
+        "n1135",
+        "n1265",
+        "n1379",
+        "n1445",
+        "n1576",
+        "n1675",
+        "n1741",
+        "n1807",
+        "n1873"
+      ],
+      "adjudicationNote": "Accepted sixteen complete outer roots. Rejected nested model mappings and excluded the incomplete fifth row."
+    },
+    {
+      "pageId": "raleys--olive-oil",
+      "siteId": "raleys",
+      "productCardNodeIds": [
+        "n333",
+        "n359",
+        "n386",
+        "n413",
+        "n446"
+      ],
+      "adjudicationNote": "Accepted five complete Weekly Ad product roots on the redirected home page. Rejected marketing tiles and the clipped sixth carousel item."
+    },
+    {
+      "pageId": "sams-club--paper-towels",
+      "siteId": "sams-club",
+      "productCardNodeIds": [],
+      "adjudicationNote": "Both reviews found no products on the human-verification challenge page; retained as a negative."
+    },
+    {
+      "pageId": "save-mart--rice",
+      "siteId": "save-mart",
+      "productCardNodeIds": [
+        "n1499",
+        "n1539",
+        "n1577",
+        "n1619",
+        "n1661",
+        "n1696"
+      ],
+      "adjudicationNote": "Accepted the six complete product roots retained by prompt-region cropping."
+    },
+    {
+      "pageId": "sprouts--rice",
+      "siteId": "sprouts",
+      "productCardNodeIds": [
+        "n142",
+        "n194",
+        "n250",
+        "n303",
+        "n356",
+        "n409"
+      ],
+      "adjudicationNote": "Accepted six repeated outer product roots despite query irrelevance; discovery labels product structure, not retrieval relevance."
+    },
+    {
+      "pageId": "target--cat-litter",
+      "siteId": "target",
+      "productCardNodeIds": [
+        "n170",
+        "n238",
+        "n303",
+        "n372",
+        "n455",
+        "n522",
+        "n575",
+        "n644",
+        "n707",
+        "n776",
+        "n829",
+        "n894"
+      ],
+      "adjudicationNote": "Accepted twelve outer result-card roots. The visual model selected five immediate nested descendants."
+    },
+    {
+      "pageId": "true-value--trash-bags",
+      "siteId": "true-value",
+      "productCardNodeIds": [
+        "n438",
+        "n477",
+        "n516",
+        "n551",
+        "n586",
+        "n621",
+        "n656"
+      ],
+      "adjudicationNote": "Accepted seven complete carousel product roots; the visual review independently matched five."
+    },
+    {
+      "pageId": "vitacost--bath-salts",
+      "siteId": "vitacost",
+      "productCardNodeIds": [
+        "n4025",
+        "n4060",
+        "n4095",
+        "n4128",
+        "n4161",
+        "n4194",
+        "n4230",
+        "n4263",
+        "n4296",
+        "n4329",
+        "n4364",
+        "n4399"
+      ],
+      "adjudicationNote": "Accepted twelve outer result roots. Rejected the visual model's nested card-content roots."
+    },
+    {
+      "pageId": "vitacost--cotton-pads",
+      "siteId": "vitacost",
+      "productCardNodeIds": [
+        "n1648",
+        "n1681",
+        "n1715",
+        "n1748",
+        "n1781",
+        "n1814",
+        "n1847",
+        "n1880",
+        "n1913",
+        "n1948",
+        "n1983",
+        "n2016"
+      ],
+      "adjudicationNote": "Accepted twelve outer result roots. Rejected nested model mappings and roots beyond the reviewed complete rows."
+    },
+    {
+      "pageId": "wegmans--coffee-pods",
+      "siteId": "wegmans",
+      "productCardNodeIds": [
+        "n335",
+        "n375",
+        "n421",
+        "n461",
+        "n501",
+        "n541",
+        "n581",
+        "n621",
+        "n657",
+        "n697",
+        "n737",
+        "n777"
+      ],
+      "adjudicationNote": "Accepted twelve complete outer roots; the visual reviewer independently matched two."
+    },
+    {
+      "pageId": "wegmans--olive-oil",
+      "siteId": "wegmans",
+      "productCardNodeIds": [
+        "n561",
+        "n657",
+        "n753",
+        "n853",
+        "n947",
+        "n1025",
+        "n1103",
+        "n1181",
+        "n1259",
+        "n1340",
+        "n1428",
+        "n1510"
+      ],
+      "adjudicationNote": "Accepted twelve complete outer roots. Retained five model agreements and rejected nested or later-page model mappings."
+    },
+    {
+      "pageId": "wegmans--paper-towels",
+      "siteId": "wegmans",
+      "productCardNodeIds": [
+        "n345",
+        "n428",
+        "n506",
+        "n584",
+        "n661",
+        "n738",
+        "n816",
+        "n893",
+        "n975",
+        "n1052",
+        "n1130",
+        "n1208"
+      ],
+      "adjudicationNote": "Accepted twelve complete outer roots. Rejected model mappings from a later page region."
+    }
+  ]
+}

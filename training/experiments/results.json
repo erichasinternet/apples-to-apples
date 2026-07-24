@@ -2,7 +2,7 @@
   "version": 1,
   "updatedAt": "2026-07-24",
   "modelId": "google/t5gemma-2-270m-270m",
-  "datasetSha256": "6a330ba358e354202fe43c36f5b5bbdedad39ad01438f6a499635fd4541e2fc7",
+  "datasetSha256": "22ea3792a05883c35d51923e5843ac3bb38807e017ec7e013bdcb2bb2211acc0",
   "evaluationRecords": 32,
   "experiments": [
     {
@@ -146,6 +146,32 @@
       "estimatedTrainingGpuUsd": 0.3089,
       "estimatedTrainingAllResourcesUsd": 0.3976,
       "decision": "retain-best-research-discovery-reject-production"
+    },
+    {
+      "name": "synthetic-pilot-140-expanded-adjudicated-discovery",
+      "parent": "synthetic-pilot-120-adjudicated-discovery",
+      "steps": 20,
+      "datasetSha256": "22ea3792a05883c35d51923e5843ac3bb38807e017ec7e013bdcb2bb2211acc0",
+      "trainingMix": "50% repeated adjudicated real-DOM discovery from thirteen development domains, 50% synthetic discovery replay",
+      "maxOutputTokens": 192,
+      "metrics": {
+        "internalJsonValid": 0.96875,
+        "internalJsonRecoverable": 1.0,
+        "internalDiscoveryPrefixExact": 0.9375,
+        "internalExactMatch": 0.90625,
+        "consumedDevelopmentExactRootPrecision": 0.6473988439306358,
+        "consumedDevelopmentExactRootRecall": 0.9032258064516129,
+        "consumedDevelopmentExactRootF1": 0.7542087542087542,
+        "sealedInstacartExactRootPrecision": 0.782608695652174,
+        "sealedInstacartExactRootRecall": 0.6428571428571429,
+        "sealedInstacartExactRootF1": 0.7058823529411765,
+        "sealedInstacartTruePositive": 18,
+        "sealedInstacartFalsePositive": 5,
+        "sealedInstacartFalseNegative": 10
+      },
+      "estimatedTrainingGpuUsd": 0.2989,
+      "estimatedTrainingAllResourcesUsd": 0.3848,
+      "decision": "reject-selection-regression-retain-parent"
     }
   ],
   "liveValidation": {
@@ -267,6 +293,101 @@
     },
     "interpretation": "The 100% training-domain score and 58.6% selection score indicate memorization from three real domains, not site-agnostic generalization."
   },
+  "expandedAdjudicatedDevelopment": {
+    "domains": [
+      "dollar-general",
+      "honest",
+      "raleys",
+      "sams-club",
+      "save-mart",
+      "sprouts",
+      "target",
+      "true-value",
+      "vitacost",
+      "wegmans"
+    ],
+    "pages": 13,
+    "records": 38,
+    "referenceRoots": 124,
+    "negativePages": 1,
+    "reviewPath": "benchmarks/reviews/development-expansion-2026-07-24-adjudicated.json",
+    "eligibleForTraining": true,
+    "eligibleForBenchmarkGold": false,
+    "retiredFromValidation": true,
+    "independentVisualReview": {
+      "modelId": "Qwen/Qwen3-VL-2B-Instruct",
+      "promptVersion": 2,
+      "predictedRoots": 60,
+      "truePositive": 15,
+      "falsePositive": 45,
+      "falseNegative": 109,
+      "precision": 0.25,
+      "recall": 0.12096774193548387,
+      "f1": 0.16304347826086957
+    },
+    "parentCheckpoint": {
+      "checkpoint": "synthetic-pilot-120-adjudicated-discovery",
+      "precision": 0.5355191256830601,
+      "recall": 0.7903225806451613,
+      "f1": 0.6384364820846906
+    },
+    "expandedCheckpoint": {
+      "checkpoint": "synthetic-pilot-140-expanded-adjudicated-discovery",
+      "precision": 0.6473988439306358,
+      "recall": 0.9032258064516129,
+      "f1": 0.7542087542087542
+    },
+    "extractionAnnotationQueue": {
+      "cards": 160,
+      "withTitleCandidate": 148,
+      "withCurrentPriceCandidate": 127,
+      "withNativeUnitPriceCandidate": 41,
+      "withPackageQuantityCandidate": 107,
+      "eligibleForTraining": false
+    }
+  },
+  "selectionInstacart": {
+    "runId": "2026-07-24T09-30-29-708Z",
+    "attemptedNewDomains": 8,
+    "capturedDomains": [
+      "instacart"
+    ],
+    "blockedDomains": 5,
+    "failedDomains": 2,
+    "reviewPath": "benchmarks/reviews/selection-instacart-2026-07-24-reviewer-a.json",
+    "reviewType": "single-review-diagnostic",
+    "eligibleForTraining": false,
+    "eligibleForBenchmarkGold": false,
+    "referenceRoots": 28,
+    "independentVisualReview": {
+      "modelId": "Qwen/Qwen3-VL-2B-Instruct",
+      "promptVersion": 2,
+      "invalidPredictions": 2,
+      "validBoxes": 10,
+      "unmappedBoxes": 10,
+      "mappedRoots": 0,
+      "acceptedAsSecondReview": false
+    },
+    "parentCheckpoint": {
+      "checkpoint": "synthetic-pilot-120-adjudicated-discovery",
+      "truePositive": 18,
+      "falsePositive": 3,
+      "falseNegative": 10,
+      "precision": 0.8571428571428571,
+      "recall": 0.6428571428571429,
+      "f1": 0.7346938775510204
+    },
+    "expandedCheckpoint": {
+      "checkpoint": "synthetic-pilot-140-expanded-adjudicated-discovery",
+      "truePositive": 18,
+      "falsePositive": 5,
+      "falseNegative": 10,
+      "precision": 0.782608695652174,
+      "recall": 0.6428571428571429,
+      "f1": 0.7058823529411765
+    },
+    "decision": "reject-expanded-checkpoint-retain-parent"
+  },
   "heldOutValidation": {
     "runId": "2026-07-24T07-34-15-817Z",
     "attemptedDomains": 20,
@@ -326,14 +447,14 @@
   },
   "modalMeteredCostUsdLastObserved": 1.52469832,
   "modalBilledCostUsdLastObserved": 0.0,
-  "additionalEstimatedComputeUsd": 1.871,
-  "estimatedTotalComputeUsd": 3.396,
+  "additionalEstimatedComputeUsd": 2.6306,
+  "estimatedTotalComputeUsd": 4.1556,
   "latestCycleEstimatedCompute": {
     "pricingSource": "https://modal.com/pricing",
-    "t4GpuSeconds": 1345.44,
-    "a10GpuSeconds": 1009.37,
-    "estimatedT4GpuCpuMemoryUsd": 0.3389,
-    "estimatedA10GpuCpuMemoryUsd": 0.3976,
-    "estimatedTotalUsd": 0.7366
+    "t4GpuSeconds": 1487.63,
+    "a10GpuSeconds": 976.84,
+    "estimatedT4GpuCpuMemoryUsd": 0.3748,
+    "estimatedA10GpuCpuMemoryUsd": 0.3848,
+    "estimatedTotalUsd": 0.7596
   }
 }

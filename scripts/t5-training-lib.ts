@@ -128,7 +128,10 @@ export function buildT5TrainingRecords(
   for (const input of buildT5DiscoveryRecords(observation, {
     ...options,
     pageId: example.pageId,
-    siteId: example.siteId
+    siteId: example.siteId,
+    requiredDiscoveryNodeIds: example.target.products.map(
+      (product) => product.cardNodeId
+    )
   })) {
     const region = input.metadata.sourceRegion;
     const products = example.target.products.filter((product) => {
@@ -376,14 +379,14 @@ export function pruneObservationForModel(
   const indexMap = new Map(observation.nodes.map((node, index) => [node.id, index]));
   const included = new Set<string>();
 
-  const addPath = (nodeId: string): boolean => {
+  const addPath = (nodeId: string, required = false): boolean => {
     const path: string[] = [];
     let current = nodeMap.get(nodeId);
     while (current && !included.has(current.id)) {
       path.push(current.id);
       current = current.parentId ? nodeMap.get(current.parentId) : undefined;
     }
-    if (included.size + path.length > maxNodes) return false;
+    if (!required && included.size + path.length > maxNodes) return false;
     for (const id of path) included.add(id);
     return true;
   };
@@ -391,7 +394,7 @@ export function pruneObservationForModel(
   addPath(observation.rootNodeId);
   const required =
     typeof requiredNodeIds === "string" ? [requiredNodeIds] : (requiredNodeIds ?? []);
-  for (const requiredNodeId of required) addPath(requiredNodeId);
+  for (const requiredNodeId of required) addPath(requiredNodeId, true);
 
   const ranked = observation.nodes
     .map((node) => ({

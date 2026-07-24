@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "policy": "Every source is training-only, retired from validation, and independently reviewed before adjudication.",
+  "sources": [
+    {
+      "bundleDirectory": "benchmark-data/inference/t5gemma2-live",
+      "reviewPath": "benchmarks/reviews/development-2026-07-23-adjudicated.json"
+    },
+    {
+      "bundleDirectory": "benchmark-data/inference/t5gemma2-development-expansion",
+      "reviewPath": "benchmarks/reviews/development-expansion-2026-07-24-adjudicated.json"
+    }
+  ]
+}

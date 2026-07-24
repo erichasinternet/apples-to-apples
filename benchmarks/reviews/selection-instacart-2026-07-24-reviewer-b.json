@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "runId": "2026-07-24T09-30-29-708Z",
+  "reviewer": {
+    "type": "independent-visual-model",
+    "modelId": "Qwen/Qwen3-VL-2B-Instruct",
+    "reviewPromptVersion": 2
+  },
+  "reviewType": "independent-visual-plus-deterministic-mapping",
+  "eligibleForTraining": false,
+  "policy": "The model saw screenshot crops only. Visual boxes were mapped by the frozen IoU policy. Mapping disagreement requires adjudication before any node ID is used as gold.",
+  "pages": [
+    {
+      "pageId": "instacart--coffee-pods",
+      "siteId": "instacart",
+      "productCardNodeIds": [],
+      "records": [
+        {
+          "id": "2026-07-24T09-30-29-708Z--instacart-coffee-pods--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"instacart--coffee-pods\",\n  \"cardBoxes\": [\n    {\n      \"x\": 70,\n      \"y\": 198,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 200,\n      \"y\": 198,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 330,\n      \"y\": 198,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 460,\n      \"y\": 198,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 590,\n      \"y\": 198,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 720,\n      \"y\": 198,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 850,\n      \"y\": 198,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 980,\n      \"y\": 198,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 70,\n      \"y\": 348,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 200,\n      \"y\": 348,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 330,\n      \"y\": 348,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 460,\n      \"y\": 348,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 590,\n      \"y\": 348,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 720,\n      \"y\": 348,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 850,\n      \"y\": 348,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 980,\n      \"y\": 348,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 70,\n      \"y\": 498,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 200,\n      \"y\": 498,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 330,\n      \"y\": 498,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 460,\n      \"y\": 498,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 590,\n      \"y\": 498,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 720,\n      \"y\": 498,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 850,\n      \"y\": 498,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 980,\n      \"y\": 498,\n      \"width\": 120,\n      \"height\": 198\n    },\n    {\n      \"x\": 70,\n      \"y\": 648,\n      \"width\": 120,\n      \"height\": 198",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T09-30-29-708Z--instacart-coffee-pods--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"instacart--coffee-pods\",\n  \"cardBoxes\": [\n    {\n      \"x\": 68,\n      \"y\": 270,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 190,\n      \"y\": 270,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 312,\n      \"y\": 270,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 434,\n      \"y\": 270,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 556,\n      \"y\": 270,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 678,\n      \"y\": 270,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 800,\n      \"y\": 270,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 922,\n      \"y\": 270,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 68,\n      \"y\": 440,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 190,\n      \"y\": 440,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 312,\n      \"y\": 440,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 434,\n      \"y\": 440,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 556,\n      \"y\": 440,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 678,\n      \"y\": 440,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 800,\n      \"y\": 440,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 922,\n      \"y\": 440,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 68,\n      \"y\": 610,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 190,\n      \"y\": 610,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 312,\n      \"y\": 610,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 434,\n      \"y\": 610,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 556,\n      \"y\": 610,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 678,\n      \"y\": 610,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 800,\n      \"y\": 610,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 922,\n      \"y\": 610,\n      \"width\": 120,\n      \"height\": 120\n    },\n    {\n      \"x\": 68,\n      \"y\": 780,\n      \"width\": 120,\n      \"height\": 120",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-24T09-30-29-708Z--instacart-coffee-pods--discover-2",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"instacart--coffee-pods\",\n  \"cardBoxes\": [\n    {\n      \"x\": 0,\n      \"y\": 0,\n      \"width\": 100,\n      \"height\": 100\n    },\n    {\n      \"x\": 100,\n      \"y\": 0,\n      \"width\": 100,\n      \"height\": 100\n    },\n    {\n      \"x\": 200,\n      \"y\": 0,\n      \"width\": 100,\n      \"height\": 100\n    },\n    {\n      \"x\": 300,\n      \"y\": 0,\n      \"width\": 100,\n      \"height\": 100\n    },\n    {\n      \"x\": 400,\n      \"y\": 0,\n      \"width\": 100,\n      \"height\": 100\n    },\n    {\n      \"x\": 500,\n      \"y\": 0,\n      \"width\": 100,\n      \"height\": 100\n    },\n    {\n      \"x\": 600,\n      \"y\": 0,\n      \"width\": 100,\n      \"height\": 100\n    },\n    {\n      \"x\": 700,\n      \"y\": 0,\n      \"width\": 100,\n      \"height\": 100\n    },\n    {\n      \"x\": 800,\n      \"y\": 0,\n      \"width\": 100,\n      \"height\": 100\n    },\n    {\n      \"x\": 900,\n      \"y\": 0,\n      \"width\": 100,\n      \"height\": 100\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 10,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 10,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    }
+  ]
+}

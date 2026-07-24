@@ -93,6 +93,9 @@ def run_inference(
         "real-discovery": "synthetic-pilot-80-real-discovery",
         "balanced-real-discovery": "synthetic-pilot-100-real-discovery-balanced",
         "adjudicated-discovery": "synthetic-pilot-120-adjudicated-discovery",
+        "expanded-adjudicated-discovery": (
+            "synthetic-pilot-140-expanded-adjudicated-discovery"
+        ),
     }
     if checkpoint in adapters:
         command.extend(
@@ -132,10 +135,12 @@ def main(
         "real-discovery",
         "balanced-real-discovery",
         "adjudicated-discovery",
+        "expanded-adjudicated-discovery",
     }:
         raise ValueError(
             "checkpoint must be base, replay, real-discovery, or "
-            "balanced-real-discovery, or adjudicated-discovery"
+            "balanced-real-discovery, adjudicated-discovery, or "
+            "expanded-adjudicated-discovery"
         )
     result = run_inference.remote(records, checkpoint, BUNDLE_NAME)
     output_path = Path(output)

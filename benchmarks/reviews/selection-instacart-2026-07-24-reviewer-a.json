@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "runId": "2026-07-24T09-30-29-708Z",
+  "reviewer": "codex-visual-dom-review-a",
+  "reviewType": "single-review",
+  "eligibleForTraining": false,
+  "policy": "Card roots were selected from the sealed screenshot, repeated list geometry, and card-local descendant evidence before checkpoint inference. This selection page is not eligible for training.",
+  "pages": [
+    {
+      "pageId": "instacart--coffee-pods",
+      "siteId": "instacart",
+      "productCardNodeIds": [
+        "n44",
+        "n81",
+        "n126",
+        "n172",
+        "n218",
+        "n255",
+        "n292",
+        "n654",
+        "n688",
+        "n721",
+        "n754",
+        "n787",
+        "n826",
+        "n859",
+        "n1196",
+        "n1240",
+        "n1275",
+        "n1321",
+        "n1367",
+        "n1407",
+        "n1451",
+        "n1825",
+        "n1861",
+        "n1895",
+        "n1929",
+        "n1970",
+        "n2004",
+        "n2045"
+      ],
+      "note": "Accepted seven fully visible outer list-item roots in each of four store carousels. Excluded each horizontally clipped eighth item and the final loading skeleton row."
+    }
+  ]
+}

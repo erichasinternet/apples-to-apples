@@ -10,11 +10,13 @@ from typing import Any
 
 
 MODEL_ID = "Qwen/Qwen3-VL-2B-Instruct"
+REVIEW_PROMPT_VERSION = 3
 REVIEW_INSTRUCTIONS = """You are an independent shopping-page visual reviewer.
 Identify every visible product-card rectangle in the screenshot.
 A product card is one repeated result tile containing a product image or title and purchase information.
 Exclude headers, filters, grids, rows, footers, advertisements, buttons, prices, and card fragments.
 Return tight outer rectangles, not rectangles around content inside a card.
+Return at most 16 rectangles. Never continue a repeated grid beyond what is visible.
 Coordinates are integers normalized from 0 to 1000 relative to the screenshot width and height.
 Return an empty cardBoxes array when the screenshot has no product cards.
 Return exactly one JSON object and no Markdown:
@@ -183,7 +185,7 @@ def infer(args: argparse.Namespace) -> dict[str, Any]:
     )
     return {
         "modelId": MODEL_ID,
-        "reviewPromptVersion": 2,
+        "reviewPromptVersion": REVIEW_PROMPT_VERSION,
         "records": len(records),
         "elapsedSeconds": round(time.monotonic() - started, 2),
         "gpu": torch.cuda.get_device_name(0),

@@ -1,0 +1,224 @@
+{
+  "version": 1,
+  "runId": "development-expansion-2026-07-24",
+  "reviewer": "codex-visual-dom-review-a",
+  "reviewType": "single-review",
+  "eligibleForTraining": false,
+  "policy": "Card roots were selected from saved screenshots, repeated geometry, and descendant DOM evidence. Complete product cards outside the requested search results remain valid discovery examples but are documented as redirected or incidental. Cropped partial cards and challenge pages are excluded. This review source is not training data until independently reviewed and adjudicated.",
+  "pages": [
+    {
+      "pageId": "dollar-general--vitamins",
+      "siteId": "dollar-general",
+      "productCardNodeIds": [
+        "n415",
+        "n435",
+        "n455",
+        "n483",
+        "n510",
+        "n535",
+        "n555",
+        "n575",
+        "n690",
+        "n717",
+        "n734",
+        "n754"
+      ],
+      "note": "Accepted twelve complete repeated result-card roots."
+    },
+    {
+      "pageId": "honest--baby-shampoo",
+      "siteId": "honest",
+      "productCardNodeIds": [
+        "n470",
+        "n608",
+        "n707",
+        "n773",
+        "n839",
+        "n922",
+        "n1021",
+        "n1135",
+        "n1265",
+        "n1379",
+        "n1445",
+        "n1576",
+        "n1675",
+        "n1741",
+        "n1807",
+        "n1873"
+      ],
+      "note": "Accepted sixteen complete cards in four four-column rows. Excluded the next four roots because only their images entered the crop and their card evidence was incomplete."
+    },
+    {
+      "pageId": "raleys--olive-oil",
+      "siteId": "raleys",
+      "productCardNodeIds": [
+        "n333",
+        "n359",
+        "n386",
+        "n413",
+        "n446"
+      ],
+      "note": "The requested search redirected to the home page. Accepted five complete product cards in the Weekly Ad carousel and excluded the sixth root beginning outside the captured region. Marketing tiles were rejected."
+    },
+    {
+      "pageId": "sams-club--paper-towels",
+      "siteId": "sams-club",
+      "productCardNodeIds": [],
+      "note": "Human-verification challenge page with no product cards. Preserved as an explicit negative."
+    },
+    {
+      "pageId": "save-mart--rice",
+      "siteId": "save-mart",
+      "productCardNodeIds": [
+        "n1499",
+        "n1539",
+        "n1577",
+        "n1619",
+        "n1661",
+        "n1696"
+      ],
+      "note": "Accepted the six complete product-card roots represented in the cropped observation; omitted cards removed during prompt-region cropping."
+    },
+    {
+      "pageId": "sprouts--rice",
+      "siteId": "sprouts",
+      "productCardNodeIds": [
+        "n142",
+        "n194",
+        "n250",
+        "n303",
+        "n356",
+        "n409"
+      ],
+      "note": "Accepted six complete repeated product cards. Product relevance to the requested query is not a card-discovery criterion."
+    },
+    {
+      "pageId": "target--cat-litter",
+      "siteId": "target",
+      "productCardNodeIds": [
+        "n170",
+        "n238",
+        "n303",
+        "n372",
+        "n455",
+        "n522",
+        "n575",
+        "n644",
+        "n707",
+        "n776",
+        "n829",
+        "n894"
+      ],
+      "note": "Accepted twelve complete repeated result-card roots."
+    },
+    {
+      "pageId": "true-value--trash-bags",
+      "siteId": "true-value",
+      "productCardNodeIds": [
+        "n438",
+        "n477",
+        "n516",
+        "n551",
+        "n586",
+        "n621",
+        "n656"
+      ],
+      "note": "The requested search did not produce the intended result grid. Accepted seven complete product cards from the visible carousel as site-agnostic discovery examples."
+    },
+    {
+      "pageId": "vitacost--bath-salts",
+      "siteId": "vitacost",
+      "productCardNodeIds": [
+        "n4025",
+        "n4060",
+        "n4095",
+        "n4128",
+        "n4161",
+        "n4194",
+        "n4230",
+        "n4263",
+        "n4296",
+        "n4329",
+        "n4364",
+        "n4399"
+      ],
+      "note": "Accepted twelve complete repeated result-card roots."
+    },
+    {
+      "pageId": "vitacost--cotton-pads",
+      "siteId": "vitacost",
+      "productCardNodeIds": [
+        "n1648",
+        "n1681",
+        "n1715",
+        "n1748",
+        "n1781",
+        "n1814",
+        "n1847",
+        "n1880",
+        "n1913",
+        "n1948",
+        "n1983",
+        "n2016"
+      ],
+      "note": "Accepted twelve complete repeated result-card roots."
+    },
+    {
+      "pageId": "wegmans--coffee-pods",
+      "siteId": "wegmans",
+      "productCardNodeIds": [
+        "n335",
+        "n375",
+        "n421",
+        "n461",
+        "n501",
+        "n541",
+        "n581",
+        "n621",
+        "n657",
+        "n697",
+        "n737",
+        "n777"
+      ],
+      "note": "Accepted twelve complete repeated result-card roots."
+    },
+    {
+      "pageId": "wegmans--olive-oil",
+      "siteId": "wegmans",
+      "productCardNodeIds": [
+        "n561",
+        "n657",
+        "n753",
+        "n853",
+        "n947",
+        "n1025",
+        "n1103",
+        "n1181",
+        "n1259",
+        "n1340",
+        "n1428",
+        "n1510"
+      ],
+      "note": "Accepted twelve complete repeated result-card roots."
+    },
+    {
+      "pageId": "wegmans--paper-towels",
+      "siteId": "wegmans",
+      "productCardNodeIds": [
+        "n345",
+        "n428",
+        "n506",
+        "n584",
+        "n661",
+        "n738",
+        "n816",
+        "n893",
+        "n975",
+        "n1052",
+        "n1130",
+        "n1208"
+      ],
+      "note": "Accepted twelve complete repeated result-card roots."
+    }
+  ]
+}
