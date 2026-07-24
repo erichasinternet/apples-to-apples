@@ -1,0 +1,207 @@
+{
+  "version": 1,
+  "runId": "2026-07-23T04-24-46-372Z",
+  "reviewer": {
+    "type": "independent-visual-model",
+    "modelId": "Qwen/Qwen3-VL-2B-Instruct",
+    "reviewPromptVersion": 2
+  },
+  "reviewType": "independent-visual-plus-deterministic-mapping",
+  "eligibleForTraining": false,
+  "policy": "The model saw screenshot crops only. Visual boxes were mapped by the frozen IoU policy. Mapping disagreement requires adjudication before any node ID is used as gold.",
+  "pages": [
+    {
+      "pageId": "amazon--aluminum-foil",
+      "siteId": "amazon",
+      "productCardNodeIds": [
+        "n1098",
+        "n1198",
+        "n1298",
+        "n1405",
+        "n1623",
+        "n1744",
+        "n1847",
+        "n744",
+        "n886"
+      ],
+      "records": [
+        {
+          "id": "2026-07-23T04-24-46-372Z--amazon-aluminum-foil--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"amazon--aluminum-foil\",\n  \"cardBoxes\": [\n    {\n      \"x\": 198,\n      \"y\": 220,\n      \"width\": 300,\n      \"height\": 500\n    },\n    {\n      \"x\": 420,\n      \"y\": 220,\n      \"width\": 300,\n      \"height\": 500\n    },\n    {\n      \"x\": 642,\n      \"y\": 220,\n      \"width\": 300,\n      \"height\": 500\n    },\n    {\n      \"x\": 864,\n      \"y\": 220,\n      \"width\": 300,\n      \"height\": 500\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n744",
+              "n886",
+              "n1098"
+            ],
+            "boxes": 3,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-23T04-24-46-372Z--amazon-aluminum-foil--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"amazon--aluminum-foil\",\n  \"cardBoxes\": [\n    {\n      \"x\": 198,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 400\n    },\n    {\n      \"x\": 400,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 400\n    },\n    {\n      \"x\": 600,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 400\n    },\n    {\n      \"x\": 800,\n      \"y\": 100,\n      \"width\": 300,\n      \"height\": 400\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n1198",
+              "n1298",
+              "n1405"
+            ],
+            "boxes": 3,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-23T04-24-46-372Z--amazon-aluminum-foil--discover-2",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"amazon--aluminum-foil\",\n  \"cardBoxes\": [\n    {\n      \"x\": 200,\n      \"y\": 0,\n      \"width\": 340,\n      \"height\": 600\n    },\n    {\n      \"x\": 400,\n      \"y\": 0,\n      \"width\": 340,\n      \"height\": 600\n    },\n    {\n      \"x\": 600,\n      \"y\": 0,\n      \"width\": 340,\n      \"height\": 600\n    },\n    {\n      \"x\": 800,\n      \"y\": 0,\n      \"width\": 340,\n      \"height\": 600\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n1623",
+              "n1744",
+              "n1847"
+            ],
+            "boxes": 3,
+            "invalidBoxes": 1,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "petsmart--dog-food",
+      "siteId": "petsmart",
+      "productCardNodeIds": [
+        "n163",
+        "n1634",
+        "n1698",
+        "n171",
+        "n1759",
+        "n179",
+        "n1823",
+        "n187",
+        "n1875",
+        "n1938",
+        "n195",
+        "n2001",
+        "n203",
+        "n2069",
+        "n2136",
+        "n2200",
+        "n2261",
+        "n2324"
+      ],
+      "records": [
+        {
+          "id": "2026-07-23T04-24-46-372Z--petsmart-dog-food--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"petsmart--dog-food\",\n  \"cardBoxes\": [\n    {\n      \"x\": 110,\n      \"y\": 305,\n      \"width\": 140,\n      \"height\": 450\n    },\n    {\n      \"x\": 250,\n      \"y\": 305,\n      \"width\": 140,\n      \"height\": 450\n    },\n    {\n      \"x\": 400,\n      \"y\": 305,\n      \"width\": 140,\n      \"height\": 450\n    },\n    {\n      \"x\": 550,\n      \"y\": 305,\n      \"width\": 140,\n      \"height\": 450\n    },\n    {\n      \"x\": 700,\n      \"y\": 305,\n      \"width\": 140,\n      \"height\": 450\n    },\n    {\n      \"x\": 850,\n      \"y\": 305,\n      \"width\": 140,\n      \"height\": 450\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n163",
+              "n171",
+              "n179",
+              "n187",
+              "n195",
+              "n203"
+            ],
+            "boxes": 6,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-23T04-24-46-372Z--petsmart-dog-food--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"petsmart--dog-food\",\n  \"cardBoxes\": [\n    {\n      \"x\": 65,\n      \"y\": 95,\n      \"width\": 240,\n      \"height\": 180\n    },\n    {\n      \"x\": 275,\n      \"y\": 95,\n      \"width\": 240,\n      \"height\": 180\n    },\n    {\n      \"x\": 500,\n      \"y\": 95,\n      \"width\": 240,\n      \"height\": 180\n    },\n    {\n      \"x\": 725,\n      \"y\": 95,\n      \"width\": 240,\n      \"height\": 180\n    },\n    {\n      \"x\": 725,\n      \"y\": 455,\n      \"width\": 240,\n      \"height\": 180\n    },\n    {\n      \"x\": 275,\n      \"y\": 455,\n      \"width\": 240,\n      \"height\": 180\n    },\n    {\n      \"x\": 65,\n      \"y\": 455,\n      \"width\": 240,\n      \"height\": 180\n    },\n    {\n      \"x\": 500,\n      \"y\": 455,\n      \"width\": 240,\n      \"height\": 180\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n1634",
+              "n1698",
+              "n1759",
+              "n1823",
+              "n2069",
+              "n1938",
+              "n1875",
+              "n2001"
+            ],
+            "boxes": 8,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        },
+        {
+          "id": "2026-07-23T04-24-46-372Z--petsmart-dog-food--discover-2",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"petsmart--dog-food\",\n  \"cardBoxes\": [\n    {\n      \"x\": 120,\n      \"y\": 420,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 320,\n      \"y\": 420,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 520,\n      \"y\": 420,\n      \"width\": 200,\n      \"height\": 200\n    },\n    {\n      \"x\": 720,\n      \"y\": 420,\n      \"width\": 200,\n      \"height\": 200\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n2136",
+              "n2200",
+              "n2261",
+              "n2324"
+            ],
+            "boxes": 4,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    },
+    {
+      "pageId": "publix--rice",
+      "siteId": "publix",
+      "productCardNodeIds": [
+        "n697",
+        "n711",
+        "n781",
+        "n795"
+      ],
+      "records": [
+        {
+          "id": "2026-07-23T04-24-46-372Z--publix-rice--discover-0",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"publix--rice\",\n  \"cardBoxes\": [\n    {\n      \"x\": 300,\n      \"y\": 240,\n      \"width\": 300,\n      \"height\": 300\n    },\n    {\n      \"x\": 550,\n      \"y\": 240,\n      \"width\": 300,\n      \"height\": 300\n    },\n    {\n      \"x\": 300,\n      \"y\": 690,\n      \"width\": 300,\n      \"height\": 300\n    },\n    {\n      \"x\": 550,\n      \"y\": 690,\n      \"width\": 300,\n      \"height\": 300\n    },\n    {\n      \"x\": 300,\n      \"y\": 990,\n      \"width\": 300,\n      \"height\": 300\n    },\n    {\n      \"x\": 550,\n      \"y\": 990,\n      \"width\": 300,\n      \"height\": 300\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n697",
+              "n711"
+            ],
+            "boxes": 4,
+            "invalidBoxes": 2,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 2
+          }
+        },
+        {
+          "id": "2026-07-23T04-24-46-372Z--publix-rice--discover-1",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"publix--rice\",\n  \"cardBoxes\": [\n    {\n      \"x\": 250,\n      \"y\": 0,\n      \"width\": 300,\n      \"height\": 500\n    },\n    {\n      \"x\": 500,\n      \"y\": 0,\n      \"width\": 300,\n      \"height\": 500\n    },\n    {\n      \"x\": 750,\n      \"y\": 0,\n      \"width\": 300,\n      \"height\": 500\n    },\n    {\n      \"x\": 250,\n      \"y\": 500,\n      \"width\": 300,\n      \"height\": 500\n    },\n    {\n      \"x\": 500,\n      \"y\": 500,\n      \"width\": 300,\n      \"height\": 500\n    },\n    {\n      \"x\": 750,\n      \"y\": 500,\n      \"width\": 300,\n      \"height\": 500\n    }\n  ]\n}\n```",
+          "mapping": {
+            "cardNodeIds": [
+              "n781",
+              "n795"
+            ],
+            "boxes": 4,
+            "invalidBoxes": 2,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 2
+          }
+        },
+        {
+          "id": "2026-07-23T04-24-46-372Z--publix-rice--discover-2",
+          "rawPrediction": "```json\n{\n  \"version\": 1,\n  \"pageId\": \"publix--rice\",\n  \"cardBoxes\": []\n}\n```",
+          "mapping": {
+            "cardNodeIds": [],
+            "boxes": 0,
+            "invalidBoxes": 0,
+            "unmappedBoxes": 0,
+            "duplicateMappings": 0
+          }
+        }
+      ]
+    }
+  ]
+}

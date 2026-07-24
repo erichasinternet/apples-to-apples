@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "runId": "selection-2026-07-24",
+  "reviewer": "codex-visual-dom-review-a",
+  "reviewType": "single-review",
+  "eligibleForTraining": false,
+  "policy": "Card roots were selected from saved screenshots, repeated geometry, and descendant DOM evidence. Selection pages are evaluation-only and must never enter training.",
+  "pages": [
+    {
+      "pageId": "freshdirect--rice",
+      "siteId": "freshdirect",
+      "productCardNodeIds": [
+        "n111",
+        "n134",
+        "n156",
+        "n178",
+        "n200",
+        "n223",
+        "n245",
+        "n268",
+        "n290",
+        "n313",
+        "n335",
+        "n358",
+        "n380",
+        "n402",
+        "n424",
+        "n446",
+        "n468",
+        "n490",
+        "n512",
+        "n534",
+        "n556",
+        "n578",
+        "n600",
+        "n622",
+        "n644",
+        "n666",
+        "n688",
+        "n710",
+        "n732",
+        "n754"
+      ],
+      "note": "Thirty product cards are visible in five six-column rows. Each root is a direct child of the product-grid node and contains card-local title, price, unit price, and quantity evidence."
+    },
+    {
+      "pageId": "rite-aid--mouthwash",
+      "siteId": "rite-aid",
+      "productCardNodeIds": [],
+      "note": "The requested retail search redirected to a blood-test marketing page. Category tiles, process steps, and testimonials are not shopping product cards."
+    }
+  ]
+}

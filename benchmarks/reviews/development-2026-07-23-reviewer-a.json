@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "runId": "2026-07-23T04-24-46-372Z",
+  "reviewer": "codex-visual-dom-review-a",
+  "reviewType": "single-review",
+  "eligibleForTraining": false,
+  "policy": "Card roots were selected from saved screenshots, repeated geometry, and descendant DOM evidence. This file is a review source, not training data; only the separately adjudicated development artifact is training-eligible.",
+  "pages": [
+    {
+      "pageId": "amazon--aluminum-foil",
+      "siteId": "amazon",
+      "productCardNodeIds": [
+        "n744",
+        "n886",
+        "n989",
+        "n1098",
+        "n1198",
+        "n1298",
+        "n1405",
+        "n1488",
+        "n1612",
+        "n1733",
+        "n1836",
+        "n1950"
+      ],
+      "note": "Twelve complete cards are visible in three four-column rows. The partially rendered fourth row was excluded because the captured DOM lacks complete card evidence."
+    },
+    {
+      "pageId": "petsmart--dog-food",
+      "siteId": "petsmart",
+      "productCardNodeIds": [
+        "n1622",
+        "n1686",
+        "n1747",
+        "n1811",
+        "n1872",
+        "n1931",
+        "n1998",
+        "n2062",
+        "n2131",
+        "n2195",
+        "n2256",
+        "n2315"
+      ],
+      "note": "Twelve product cards are visible in three four-column rows. The six category tiles above the results heading are not product cards."
+    },
+    {
+      "pageId": "publix--rice",
+      "siteId": "publix",
+      "productCardNodeIds": [
+        "n697",
+        "n711",
+        "n725",
+        "n739",
+        "n753",
+        "n767",
+        "n781",
+        "n795",
+        "n809",
+        "n823",
+        "n837",
+        "n851"
+      ],
+      "note": "Twelve cards occupy four three-column rows. A location drawer obscures part of the first two rows, but repeated root geometry and card-local image/title/quantity descendants establish all roots."
+    }
+  ]
+}

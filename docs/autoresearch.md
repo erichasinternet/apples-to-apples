@@ -85,25 +85,68 @@ numbers, invalid units or dimensions, and evidence outside the proposed card.
 Therefore no live extraction output is eligible for display, benchmark scoring, or
 training without human annotation.
 
+## Adjudicated Development Cycle
+
+The opened held-out cohort remains retired and was not reused for model selection.
+A new cycle adjudicated 36 exact product roots across Amazon, PetSmart, and Publix.
+The independent Qwen3-VL review was useful for visual counts but unreliable for
+exact DOM mapping, so these labels are training-only rather than benchmark gold.
+All three domains are permanently retired from validation.
+
+The prior balanced checkpoint scored 62.5% precision, 83.3% recall, and 71.4% F1
+against the exact development roots. A strict dataset combined nine adjudicated
+real-DOM chunks with synthetic discovery replay. The
+`synthetic-pilot-120-adjudicated-discovery` adapter continued for 20 steps with a
+50/50 repeated real/synthetic mix and a lower `5e-5` learning rate.
+
+The candidate memorized the small real set, reaching 100% exact-root F1 on all 36
+training roots. The frozen selection pair contained a 30-card FreshDirect page and
+a non-shopping Rite Aid redirect:
+
+| Metric | Prior balanced | Adjudicated candidate |
+| --- | ---: | ---: |
+| Exact-root precision | 42.9% | 60.7% |
+| Exact-root recall | 50.0% | 56.7% |
+| Exact-root F1 | 46.2% | 58.6% |
+| FreshDirect true roots | 15 / 30 | 17 / 30 |
+| Rite Aid false roots | 20 | 11 |
+
+This is a measured improvement, but eleven false roots on a non-shopping page fail
+the abstention gate. The adapter is retained as the best research discovery
+checkpoint and rejected for production.
+
+Extraction remained unusable. The prior checkpoint produced 35 selection proposals
+and the candidate produced 28; neither had a single evidence-accepted result.
+Candidate failures were 12 parse failures, 11 schema failures, and five evidence
+rejections. Consequently normalized-pricing coverage is 0%, and no accuracy claim
+can be made. The extension must continue to use retailer-native unit prices and
+deterministic conversion only.
+
 ## Cost
 
-The last observed Modal meter was $1.5247. Subsequent runs used about $1.06 of
-compute at published per-second GPU, CPU, and memory rates, for an estimated
-total near $2.58. This remains well below the $30 cap. Estimates exclude negligible
-image-build overhead and should be reconciled with the Modal billing meter.
+The last observed Modal meter was $1.5247. The latest cycle used 1,345.44 T4
+GPU-seconds and 1,009.37 A10 GPU-seconds. At Modal's published GPU, CPU, and memory
+rates, this cycle is estimated at $0.74 and total project compute at $3.40. This
+remains well below the $30 cap. Estimates exclude negligible image-build overhead
+and should be reconciled with the Modal billing meter.
 
 ## Next Gate
 
 Do not launch full training or a larger model. Required work:
 
-1. Annotate complete main regions with field-level evidence.
-2. Obtain two independent reviews and adjudicate disagreements.
-3. Add at least 30 development domains and 10 selection domains with real gold
-   product roots before another training run.
+1. Add at least 27 more adjudicated development domains and eight more selection
+   domains before another T5Gemma training run.
+2. Include non-shopping redirects, category grids, recommendations, and skeleton
+   states as explicit discovery abstention examples.
+3. Annotate card-local title, current price, native unit price, package quantity,
+   multipack, and abstention evidence rather than training extraction from model
+   outputs.
 4. Fine-tune extraction on adjudicated real examples with synthetic replay.
-5. Evaluate exact normalization and abstention on a new untouched, adjudicated
-   domain split. The opened held-out split cannot be reused for model selection.
-6. Compare against ungated FLAN-T5 Base and MarkupLM baselines.
+5. Evaluate discovery, extraction, normalization, and abstention on a new sealed
+   domain split. All currently opened development, selection, and held-out pages
+   are retired from final evaluation.
+6. Compare the same immutable corpus against FLAN-T5 Base and MarkupLM before
+   approving T5Gemma 2 1B-1B.
 
 T5Gemma 2 1B-1B is the only additional gated model worth approving now. Use it only
 if the 270M model underfits the adjudicated real corpus. PaliGemma remains deferred because

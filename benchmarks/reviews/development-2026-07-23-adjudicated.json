@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "runId": "2026-07-23T04-24-46-372Z",
+  "reviewType": "adjudicated-development",
+  "eligibleForTraining": true,
+  "eligibleForBenchmarkGold": false,
+  "retiredFromValidation": true,
+  "sources": [
+    {
+      "reviewer": "codex-visual-dom-review-a",
+      "path": "benchmarks/reviews/development-2026-07-23-reviewer-a.json"
+    },
+    {
+      "reviewer": "Qwen/Qwen3-VL-2B-Instruct",
+      "path": "benchmarks/reviews/development-2026-07-23-reviewer-b.json"
+    }
+  ],
+  "policy": "Training-only labels were adjudicated from exact DOM hierarchy and repeated geometry, card-local image/title/price evidence, and an independent screenshot-only visual review. The visual model's category-tile and nested-node disagreements were rejected. These three domains are permanently retired from validation and are not benchmark gold because the second source is a model review rather than an independent human review.",
+  "adjudication": {
+    "adjudicator": "codex",
+    "method": "manual-screenshot-dom-reconciliation",
+    "totalRoots": 36,
+    "knownNodeIds": 36,
+    "unresolved": 0
+  },
+  "pages": [
+    {
+      "pageId": "amazon--aluminum-foil",
+      "siteId": "amazon",
+      "productCardNodeIds": [
+        "n744",
+        "n886",
+        "n989",
+        "n1098",
+        "n1198",
+        "n1298",
+        "n1405",
+        "n1488",
+        "n1612",
+        "n1733",
+        "n1836",
+        "n1950"
+      ],
+      "adjudicationNote": "Accepted the twelve outer listitem roots. Rejected nested visual mappings and excluded the incomplete fourth row."
+    },
+    {
+      "pageId": "petsmart--dog-food",
+      "siteId": "petsmart",
+      "productCardNodeIds": [
+        "n1622",
+        "n1686",
+        "n1747",
+        "n1811",
+        "n1872",
+        "n1931",
+        "n1998",
+        "n2062",
+        "n2131",
+        "n2195",
+        "n2256",
+        "n2315"
+      ],
+      "adjudicationNote": "Accepted the twelve direct children of the product-grid root. Rejected six category tiles selected by the visual reviewer."
+    },
+    {
+      "pageId": "publix--rice",
+      "siteId": "publix",
+      "productCardNodeIds": [
+        "n697",
+        "n711",
+        "n725",
+        "n739",
+        "n753",
+        "n767",
+        "n781",
+        "n795",
+        "n809",
+        "n823",
+        "n837",
+        "n851"
+      ],
+      "adjudicationNote": "Accepted all twelve repeated grid roots. The location drawer explains partial visual occlusion; exact roots remain established by repeated structure and card-local descendants."
+    }
+  ]
+}

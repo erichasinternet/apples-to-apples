@@ -80,6 +80,14 @@ def parse_args() -> argparse.Namespace:
             "at this share (0-1)."
         ),
     )
+    parser.add_argument(
+        "--real-discovery-share",
+        type=float,
+        help=(
+            "Mix adjudicated real-DOM discovery records with synthetic discovery "
+            "replay at this share (0-1)."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -825,6 +833,42 @@ def mixed_silver_discovery_limit(
     return selected
 
 
+def mixed_real_discovery_limit(
+    records: list[dict[str, Any]], limit: int, *, real_share: float
+) -> list[dict[str, Any]]:
+    if limit <= 0:
+        raise ValueError("Record limits must be positive")
+    if not 0 < real_share < 1:
+        raise ValueError("--real-discovery-share must be between 0 and 1")
+    if any(record["task"] != "discover-products" for record in records):
+        raise ValueError("--real-discovery-share requires discovery-only records")
+    real = [
+        record
+        for record in records
+        if str(record.get("captureId", "")).startswith("adjudicated-")
+    ]
+    synthetic = [
+        record
+        for record in records
+        if not str(record.get("captureId", "")).startswith("adjudicated-")
+    ]
+    if not real or not synthetic:
+        raise ValueError("Adjudicated real and synthetic discovery records are required")
+
+    selected = []
+    real_index = 0
+    synthetic_index = 0
+    while len(selected) < limit:
+        expected_real = round((len(selected) + 1) * real_share)
+        if real_index < expected_real:
+            selected.append(real[real_index % len(real)])
+            real_index += 1
+        else:
+            selected.append(synthetic[synthetic_index % len(synthetic)])
+            synthetic_index += 1
+    return selected
+
+
 def main() -> None:
     args = parse_args()
     repo_root = Path(__file__).resolve().parent.parent
@@ -850,10 +894,22 @@ def main() -> None:
         if args.silver_discovery_share is not None and args.max_train_records is None:
             raise ValueError("--silver-discovery-share requires --max-train-records")
         if args.silver_discovery_share is not None and (
-            args.extraction_share is not None or args.balance_extraction_abstentions
+            args.extraction_share is not None
+            or args.balance_extraction_abstentions
+            or args.real_discovery_share is not None
         ):
             raise ValueError(
                 "--silver-discovery-share cannot be combined with extraction sampling"
+            )
+        if args.real_discovery_share is not None and args.max_train_records is None:
+            raise ValueError("--real-discovery-share requires --max-train-records")
+        if args.real_discovery_share is not None and (
+            args.extraction_share is not None
+            or args.balance_extraction_abstentions
+            or args.train_task is not None
+        ):
+            raise ValueError(
+                "--real-discovery-share cannot be combined with task or extraction sampling"
             )
         if (
             args.balance_extraction_abstentions
@@ -869,6 +925,12 @@ def main() -> None:
                 records_by_split["train"],
                 args.max_train_records,
                 silver_share=args.silver_discovery_share,
+            )
+        elif args.real_discovery_share is not None:
+            records_by_split["train"] = mixed_real_discovery_limit(
+                records_by_split["train"],
+                args.max_train_records,
+                real_share=args.real_discovery_share,
             )
         elif args.extraction_share is not None:
             records_by_split["train"] = mixed_task_limit(

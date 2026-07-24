@@ -28,7 +28,13 @@ const bundle = path.resolve(
 const predictionsPath = path.resolve(
   process.argv[3] ?? path.join(bundle, "extraction-predictions.jsonl")
 );
-const outputDirectory = path.join(bundle, "review");
+const outputDirectory = path.resolve(
+  optionValue("--output-directory") ?? path.join(bundle, "review")
+);
+const discoveryCheckpoint =
+  optionValue("--discovery-checkpoint") ?? "synthetic-pilot-80-real-discovery";
+const extractionCheckpoint =
+  optionValue("--extraction-checkpoint") ?? "synthetic-pilot-60-replay";
 const manifest = await readJson<BundleManifest>(path.join(bundle, "manifest.json"));
 const predictions = await readJsonl<Prediction>(predictionsPath);
 const pageMap = new Map(manifest.pages.map((page) => [page.pageId, page]));
@@ -139,8 +145,8 @@ for (const page of manifest.pages) {
 const report = {
   version: 1,
   checkpoint: {
-    discovery: "synthetic-pilot-80-real-discovery",
-    extraction: "synthetic-pilot-60-replay"
+    discovery: discoveryCheckpoint,
+    extraction: extractionCheckpoint
   },
   policy:
     "Evidence-valid model outputs are preannotations only. Human review and independent adjudication are required before benchmark or training use.",
@@ -210,4 +216,9 @@ async function readJsonl<T>(filePath: string): Promise<T[]> {
     .split(/\r?\n/)
     .filter(Boolean)
     .map((line) => JSON.parse(line) as T);
+}
+
+function optionValue(name: string): string | undefined {
+  const index = process.argv.indexOf(name);
+  return index >= 0 ? process.argv[index + 1] : undefined;
 }

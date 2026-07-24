@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-23",
+  "updatedAt": "2026-07-24",
   "modelId": "google/t5gemma-2-270m-270m",
-  "datasetSha256": "7708923a44726aee209f5de15f6f6770a5281c73bc7aec55ccaf75febf55ed78",
+  "datasetSha256": "6a330ba358e354202fe43c36f5b5bbdedad39ad01438f6a499635fd4541e2fc7",
   "evaluationRecords": 32,
   "experiments": [
     {
@@ -118,6 +118,34 @@
       },
       "estimatedTrainingComputeUsd": 0.3867,
       "decision": "freeze-discovery-preannotation-checkpoint"
+    },
+    {
+      "name": "synthetic-pilot-120-adjudicated-discovery",
+      "parent": "synthetic-pilot-100-real-discovery-balanced",
+      "steps": 20,
+      "datasetSha256": "6a330ba358e354202fe43c36f5b5bbdedad39ad01438f6a499635fd4541e2fc7",
+      "trainingMix": "50% repeated adjudicated real-DOM discovery from three development domains, 50% synthetic discovery replay",
+      "maxOutputTokens": 192,
+      "metrics": {
+        "internalJsonValid": 0.8125,
+        "internalJsonRecoverable": 1.0,
+        "internalDiscoveryPrefixExact": 0.90625,
+        "internalExactMatch": 0.71875,
+        "developmentExactRootPrecision": 1.0,
+        "developmentExactRootRecall": 1.0,
+        "developmentExactRootF1": 1.0,
+        "selectionExactRootPrecision": 0.6071428571428571,
+        "selectionExactRootRecall": 0.5666666666666667,
+        "selectionExactRootF1": 0.5862068965517241,
+        "selectionNonShoppingFalseRoots": 11,
+        "selectionExtractionProposals": 28,
+        "selectionExtractionEvidenceAccepted": 0,
+        "selectionExtractionEvidenceAcceptanceRate": 0.0,
+        "selectionNormalizedPricingCoverage": 0.0
+      },
+      "estimatedTrainingGpuUsd": 0.3089,
+      "estimatedTrainingAllResourcesUsd": 0.3976,
+      "decision": "retain-best-research-discovery-reject-production"
     }
   ],
   "liveValidation": {
@@ -167,7 +195,77 @@
     "frozenCheckpoint": "synthetic-pilot-100-real-discovery-balanced",
     "weakRootPrecision": 1.0,
     "weakRootRecall": 0.4166666666666667,
-    "weakRootF1": 0.5882352941176471
+    "weakRootF1": 0.5882352941176471,
+    "adjudicatedReview": {
+      "reviewPath": "benchmarks/reviews/selection-2026-07-24-adjudicated.json",
+      "eligibleForTraining": false,
+      "eligibleForBenchmarkGold": false,
+      "positivePages": 1,
+      "negativePages": 1,
+      "referenceRoots": 30
+    },
+    "balancedCheckpointExact": {
+      "truePositive": 15,
+      "falsePositive": 20,
+      "falseNegative": 15,
+      "precision": 0.42857142857142855,
+      "recall": 0.5,
+      "f1": 0.4615384615384615,
+      "nonShoppingFalseRoots": 20,
+      "extraction": {
+        "proposals": 35,
+        "parseFailures": 14,
+        "schemaFailures": 14,
+        "accepted": 0,
+        "abstained": 1,
+        "rejected": 6,
+        "normalizedPricingCoverage": 0.0
+      }
+    },
+    "adjudicatedCheckpointExact": {
+      "checkpoint": "synthetic-pilot-120-adjudicated-discovery",
+      "truePositive": 17,
+      "falsePositive": 11,
+      "falseNegative": 13,
+      "precision": 0.6071428571428571,
+      "recall": 0.5666666666666667,
+      "f1": 0.5862068965517241,
+      "nonShoppingFalseRoots": 11,
+      "extraction": {
+        "proposals": 28,
+        "parseFailures": 12,
+        "schemaFailures": 11,
+        "accepted": 0,
+        "abstained": 0,
+        "rejected": 5,
+        "normalizedPricingCoverage": 0.0
+      },
+      "decision": "reject-production-retain-research-checkpoint"
+    }
+  },
+  "adjudicatedDevelopment": {
+    "domains": [
+      "amazon",
+      "petsmart",
+      "publix"
+    ],
+    "reviewPath": "benchmarks/reviews/development-2026-07-23-adjudicated.json",
+    "records": 9,
+    "referenceRoots": 36,
+    "eligibleForTraining": true,
+    "eligibleForBenchmarkGold": false,
+    "retiredFromValidation": true,
+    "balancedCheckpoint": {
+      "precision": 0.625,
+      "recall": 0.8333333333333334,
+      "f1": 0.7142857142857143
+    },
+    "adjudicatedCheckpoint": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "interpretation": "The 100% training-domain score and 58.6% selection score indicate memorization from three real domains, not site-agnostic generalization."
   },
   "heldOutValidation": {
     "runId": "2026-07-24T07-34-15-817Z",
@@ -228,6 +326,14 @@
   },
   "modalMeteredCostUsdLastObserved": 1.52469832,
   "modalBilledCostUsdLastObserved": 0.0,
-  "additionalEstimatedComputeUsd": 1.134,
-  "estimatedTotalComputeUsd": 2.659
+  "additionalEstimatedComputeUsd": 1.871,
+  "estimatedTotalComputeUsd": 3.396,
+  "latestCycleEstimatedCompute": {
+    "pricingSource": "https://modal.com/pricing",
+    "t4GpuSeconds": 1345.44,
+    "a10GpuSeconds": 1009.37,
+    "estimatedT4GpuCpuMemoryUsd": 0.3389,
+    "estimatedA10GpuCpuMemoryUsd": 0.3976,
+    "estimatedTotalUsd": 0.7366
+  }
 }

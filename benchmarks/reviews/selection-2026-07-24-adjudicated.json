@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "runId": "selection-2026-07-24",
+  "reviewType": "adjudicated-selection",
+  "eligibleForTraining": false,
+  "eligibleForBenchmarkGold": false,
+  "selectionFrozen": true,
+  "sources": [
+    {
+      "reviewer": "codex-visual-dom-review-a",
+      "path": "benchmarks/reviews/selection-2026-07-24-reviewer-a.json"
+    },
+    {
+      "reviewer": "Qwen/Qwen3-VL-2B-Instruct",
+      "path": "benchmarks/reviews/selection-2026-07-24-reviewer-b.json"
+    }
+  ],
+  "policy": "Evaluation-only labels were adjudicated from exact DOM hierarchy, repeated geometry, card-local evidence, and an independent screenshot-only review. The visual model's truncated FreshDirect output and Rite Aid testimonial false positives were rejected. This set is not benchmark gold because the second source is a model rather than an independent human.",
+  "adjudication": {
+    "adjudicator": "codex",
+    "method": "manual-screenshot-dom-reconciliation",
+    "positivePages": 1,
+    "negativePages": 1,
+    "totalRoots": 30,
+    "unresolved": 0
+  },
+  "pages": [
+    {
+      "pageId": "freshdirect--rice",
+      "siteId": "freshdirect",
+      "productCardNodeIds": [
+        "n111",
+        "n134",
+        "n156",
+        "n178",
+        "n200",
+        "n223",
+        "n245",
+        "n268",
+        "n290",
+        "n313",
+        "n335",
+        "n358",
+        "n380",
+        "n402",
+        "n424",
+        "n446",
+        "n468",
+        "n490",
+        "n512",
+        "n534",
+        "n556",
+        "n578",
+        "n600",
+        "n622",
+        "n644",
+        "n666",
+        "n688",
+        "n710",
+        "n732",
+        "n754"
+      ],
+      "adjudicationNote": "Accepted all thirty direct product-grid children. Independent visual review identified the grid but returned approximate and one truncated response."
+    },
+    {
+      "pageId": "rite-aid--mouthwash",
+      "siteId": "rite-aid",
+      "productCardNodeIds": [],
+      "adjudicationNote": "Confirmed a non-shopping redirect. Rejected the visual review's final-crop testimonial rectangles."
+    }
+  ]
+}
