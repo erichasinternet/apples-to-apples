@@ -7,12 +7,22 @@ import {
   type CorpusDomainSplits,
   type CorpusTargetManifest
 } from "./live-corpus-lib";
+import {
+  validateTrainingDomainSplits,
+  type TrainingDomainSplits
+} from "./t5-training-lib";
 
-const [manifest, splits] = await Promise.all([
+const [manifest, splits, trainingSplits] = await Promise.all([
   readJson<CorpusTargetManifest>(path.resolve("benchmarks/live-sites/targets.json")),
-  readJson<CorpusDomainSplits>(path.resolve("benchmarks/live-sites/domain-splits.json"))
+  readJson<CorpusDomainSplits>(path.resolve("benchmarks/live-sites/domain-splits.json")),
+  readJson<TrainingDomainSplits>(
+    path.resolve("benchmarks/live-sites/training-splits.json")
+  )
 ]);
-const errors = validateDomainSplits(manifest, splits);
+const errors = [
+  ...validateDomainSplits(manifest, splits),
+  ...validateTrainingDomainSplits(splits, trainingSplits)
+];
 const targets = expandTargets(manifest);
 const splitCounts = {
   development: splits.development.length,
@@ -43,6 +53,10 @@ const summary = {
   pages: targets.length,
   productsAtTwelvePerPage: targets.length * 12,
   splitCounts,
+  trainingSplitCounts: {
+    train: trainingSplits.train.length,
+    validation: trainingSplits.validation.length
+  },
   pagesBySplit,
   domainsByStratum,
   pagesByDimension,
@@ -56,6 +70,8 @@ if (
   splitCounts.development !== 30 ||
   splitCounts.selection !== 10 ||
   splitCounts.heldOut !== 20 ||
+  trainingSplits.train.length !== 24 ||
+  trainingSplits.validation.length !== 6 ||
   errors.length > 0
 ) {
   process.exitCode = 1;

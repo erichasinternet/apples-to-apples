@@ -34,6 +34,11 @@
     "benchmark:model:validate": "bun scripts/validate-model-extraction.ts",
     "benchmark:training:export": "bun scripts/export-training-corpus.ts",
     "benchmark:validate": "bun scripts/validate-live-corpus.ts",
+    "training:prepare": "bun scripts/prepare-t5-training.ts",
+    "training:readiness": "bun scripts/report-training-readiness.ts",
+    "training:run": "uv run --project training python training/train_t5gemma2.py",
+    "training:sync": "uv sync --project training",
+    "training:validate": "python3 training/train_t5gemma2.py --validate-only",
     "serve:fixtures": "bun scripts/serve-fixtures.mjs",
     "verify": "bun run typecheck && bun run test"
   },

@@ -44,6 +44,7 @@ Any other page can be scanned manually from the extension popup via `activeTab`.
 - `tests/unit`: parser and fixture tests.
 - `tests/e2e`: Playwright extension tests and optional live-site smoke tests.
 - `benchmarks/live-sites`: live-corpus sampling frame and annotation contract.
+- `training`: pinned Python environment and T5Gemma 2 LoRA configuration.
 
 ## Commands
 
@@ -74,9 +75,14 @@ bun run benchmark:evaluate -- benchmark-data/live/<run-id>
 bun run benchmark:model:validate -- <observation.json> <model-extraction.json>
 bun run benchmark:model:evaluate -- benchmark-data/live/<run-id>
 bun run benchmark:training:export -- benchmark-data/live/<run-id> --output benchmark-data/training/development.jsonl
+bun run training:readiness -- benchmark-data/live/<run-id>
+bun run training:prepare -- benchmark-data/live/<run-id> --output benchmark-data/training/t5gemma2
+bun run training:validate
 ```
 
 See [docs/benchmark-protocol.md](docs/benchmark-protocol.md) for sampling, domain-held-out splits, annotation, privacy, and statistical analysis. The [learned extraction experiment](docs/learned-extraction.md) defines the evidence contract and model promotion gates.
+The [training runbook](docs/training.md) covers dataset readiness, strict export, the
+T5Gemma 2 LoRA configuration, and GPU execution.
 
 ## Repository Gates
 
@@ -106,6 +112,7 @@ The quality bar is layered:
 - Live smoke tests check a small rotating retailer matrix when explicitly enabled.
 - Unknown-site experiments measure card discovery and evidence-grounded fact extraction separately on domains held out from training.
 - Training export accepts only development domains with complete bounded-region coverage, field-level evidence, adjudication, and two reviewers.
+- T5Gemma 2 training uses domain-disjoint train and validation subsets and leaves the benchmark selection and held-out domains sealed.
 
 ## Design Principles
 

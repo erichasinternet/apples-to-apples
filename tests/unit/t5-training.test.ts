@@ -1,0 +1,166 @@
+import type { TrainingExample } from "../../scripts/training-export-lib";
+import {
+  buildT5TrainingRecords,
+  getTrainingSplit,
+  validateTrainingDomainSplits,
+  type TrainingDomainSplits
+} from "../../scripts/t5-training-lib";
+import type { CorpusDomainSplits } from "../../scripts/live-corpus-lib";
+import type {
+  ModelProductExtraction,
+  ObservedNode,
+  PageObservation
+} from "../../src/learning/contracts";
+
+describe("T5 training records", () => {
+  it("builds page-chunk discovery and per-card extraction examples", () => {
+    const records = buildT5TrainingRecords(makeExample(), {
+      captureId: "capture-1",
+      split: "train",
+      imagePath: "assets/page.png",
+      discoveryChunkHeight: 900,
+      cardPadding: 20
+    });
+
+    const discovery = records.filter((record) => record.task === "discover-products");
+    const extraction = records.filter((record) => record.task === "extract-product");
+    expect(discovery).toHaveLength(2);
+    expect(extraction).toHaveLength(2);
+    expect(JSON.parse(discovery[0]!.target).cardNodeIds).toEqual(["card-a"]);
+    expect(JSON.parse(discovery[1]!.target).cardNodeIds).toEqual(["card-b"]);
+    expect(extraction[0]!.imageCrop).toEqual({
+      x: 80,
+      y: 80,
+      width: 440,
+      height: 340
+    });
+    expect(extraction[0]!.prompt).toMatch(/^<start_of_image>\n/);
+    expect(extraction[0]!.prompt).toContain('"id":"card-a"');
+    expect(extraction[0]!.prompt).not.toContain('"id":"card-b"');
+    expect(JSON.parse(extraction[1]!.target).products[0].abstainReason).toBe(
+      "ambiguous-quantity"
+    );
+  });
+
+  it("requires the internal split to cover development domains only", () => {
+    const domainSplits: CorpusDomainSplits = {
+      version: 1,
+      seed: 1,
+      development: ["a", "b"],
+      selection: ["c"],
+      heldOut: ["d"]
+    };
+    const valid: TrainingDomainSplits = {
+      version: 1,
+      seed: 1,
+      train: ["a"],
+      validation: ["b"]
+    };
+
+    expect(validateTrainingDomainSplits(domainSplits, valid)).toEqual([]);
+    expect(getTrainingSplit("b", valid)).toBe("validation");
+    expect(
+      validateTrainingDomainSplits(domainSplits, {
+        ...valid,
+        validation: ["c"]
+      })
+    ).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining("not a development domain"),
+        expect.stringContaining("unassigned")
+      ])
+    );
+  });
+});
+
+function makeExample(): TrainingExample {
+  const observation: PageObservation = {
+    version: 1,
+    pageId: "shop--coffee",
+    url: "https://shop.example/search",
+    title: "Coffee",
+    viewport: { width: 1280, height: 1800, scrollX: 0, scrollY: 0 },
+    rootNodeId: "root",
+    sourceRegion: { x: 0, y: 0, width: 1280, height: 1800 },
+    nodes: [
+      node("root", undefined, { x: 0, y: 0, width: 1280, height: 1800 }),
+      node("card-a", "root", { x: 100, y: 100, width: 400, height: 300 }),
+      node("title-a", "card-a", { x: 120, y: 120, width: 300, height: 30 }, "Coffee, 20 oz"),
+      node("price-a", "card-a", { x: 120, y: 180, width: 100, height: 30 }, "$10.00"),
+      node("card-b", "root", { x: 600, y: 1050, width: 400, height: 300 }),
+      node("title-b", "card-b", { x: 620, y: 1070, width: 300, height: 30 }, "Coffee")
+    ],
+    truncated: false
+  };
+  return {
+    version: 1,
+    split: "development",
+    pageId: observation.pageId,
+    siteId: "shop",
+    input: {
+      instructions: "extract",
+      observation
+    },
+    target: {
+      version: 1,
+      pageId: observation.pageId,
+      products: [
+        product("card-a", "title-a", {
+          currentPrice: {
+            cents: 1000,
+            currency: "USD",
+            evidenceNodeIds: ["price-a"]
+          },
+          packageQuantity: {
+            valuePerPackage: 20,
+            packCount: 1,
+            unit: "oz",
+            dimension: "mass",
+            evidenceNodeIds: ["title-a"]
+          }
+        }),
+        product("card-b", "title-b", {
+          abstainReason: "ambiguous-quantity"
+        })
+      ]
+    }
+  };
+}
+
+function product(
+  cardNodeId: string,
+  titleNodeId: string,
+  values: Partial<ModelProductExtraction>
+): ModelProductExtraction {
+  return {
+    cardNodeId,
+    title: {
+      value: "Coffee",
+      evidenceNodeIds: [titleNodeId]
+    },
+    ...values
+  };
+}
+
+function node(
+  id: string,
+  parentId: string | undefined,
+  bounds: { x: number; y: number; width: number; height: number },
+  text?: string
+): ObservedNode {
+  return {
+    id,
+    ...(parentId ? { parentId } : {}),
+    tag: parentId ? "span" : "main",
+    ...(text ? { text } : {}),
+    bounds,
+    intersectsViewport: bounds.y < 800,
+    interactive: false,
+    style: {
+      display: "block",
+      position: "static",
+      fontSize: 16,
+      fontWeight: 400
+    }
+  };
+}

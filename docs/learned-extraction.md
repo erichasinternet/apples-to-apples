@@ -20,19 +20,25 @@ Model output follows [`model-extraction.schema.json`](../benchmarks/live-sites/m
 
 ## Fine-Tuning Record Format
 
-One supervised example consists of:
+The T5Gemma 2 experiment uses two supervised record types:
 
 ```text
-input:
-  extraction instructions
-  page observation or a bounded observation region
-  optional aligned screenshot crop
+discover-products input:
+  bounded observation chunk
+  aligned screenshot crop
+discover-products target:
+  every product-card root node ID centered in the chunk
 
-target:
-  model-extraction JSON with card roots, raw facts, abstentions, and evidence node IDs
+extract-product input:
+  one padded product-card observation
+  aligned screenshot crop
+extract-product target:
+  model-extraction JSON with raw facts, abstentions, and evidence node IDs
 ```
 
 Page regions are compacted to the recorded annotation bounds by geometry while preserving structural ancestors. Compaction is generic and deterministic; it cannot use hostname checks or gold product selectors.
+See [training.md](training.md) for readiness thresholds, strict export, and the
+reproducible training command.
 
 ## Required Baselines
 

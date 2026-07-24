@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "seed": 20260723,
+  "train": [
+    "walmart",
+    "target",
+    "chewy",
+    "petco",
+    "walgreens",
+    "home-depot",
+    "costco",
+    "sams-club",
+    "kroger",
+    "albertsons",
+    "safeway",
+    "vitacost",
+    "heb",
+    "honest",
+    "sephora",
+    "true-value",
+    "office-depot",
+    "etsy",
+    "raleys",
+    "dollar-general",
+    "save-mart",
+    "wegmans",
+    "sprouts",
+    "food-lion"
+  ],
+  "validation": [
+    "amazon",
+    "petsmart",
+    "cvs",
+    "lowes",
+    "staples",
+    "publix"
+  ]
+}
