@@ -143,6 +143,7 @@ bun run training:modal:full
 - `diagnose` uses a T4 for at most five minutes and does not download model weights.
 - `smoke` uses an A10 for at most 15 minutes, 16 training records, and two steps.
 - `full` uses one A10 for at most four hours with no retries.
+- Both training modes verify gated model access on CPU before allocating an A10.
 - Model outputs and the Hugging Face cache are stored in separate Modal Volumes.
 
 The training functions require a Modal Secret named `apples-to-apples-huggingface`

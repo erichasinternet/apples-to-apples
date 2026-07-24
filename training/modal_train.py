@@ -10,6 +10,7 @@ import modal
 
 
 APP_NAME = "apples-to-apples-training"
+MODEL_ID = "google/t5gemma-2-270m-270m"
 REPO_ROOT = Path(__file__).resolve().parent.parent
 REMOTE_ROOT = Path("/workspace")
 OUTPUT_ROOT = Path("/outputs")
@@ -98,6 +99,57 @@ def diagnose() -> dict[str, object]:
     }
 
 
+@app.function(
+    image=image,
+    cpu=1,
+    memory=2048,
+    timeout=120,
+    retries=0,
+    single_use_containers=True,
+    secrets=[] if huggingface_secret is None else [huggingface_secret],
+    volumes={CACHE_ROOT: cache_volume},
+    env={
+        "HF_HOME": f"{CACHE_ROOT}/huggingface",
+        "HF_HUB_CACHE": f"{CACHE_ROOT}/huggingface/hub",
+    },
+)
+def check_model_access() -> dict[str, object]:
+    from huggingface_hub import hf_hub_download
+    from huggingface_hub.errors import GatedRepoError, HfHubHTTPError
+
+    token = os.environ.get("HF_TOKEN")
+    if not token:
+        return {
+            "accessible": False,
+            "error": "The Modal secret is missing HF_TOKEN.",
+        }
+
+    try:
+        hf_hub_download(
+            repo_id=MODEL_ID,
+            filename="config.json",
+            token=token,
+            cache_dir=f"{CACHE_ROOT}/huggingface/hub",
+        )
+    except GatedRepoError:
+        return {
+            "accessible": False,
+            "error": (
+                "Accept the Gemma usage license at "
+                f"https://huggingface.co/{MODEL_ID} for the account that owns "
+                "the configured Hugging Face token."
+            ),
+        }
+    except HfHubHTTPError as error:
+        return {
+            "accessible": False,
+            "error": f"Hugging Face model access check failed: {error}",
+        }
+
+    cache_volume.commit()
+    return {"accessible": True, "modelId": MODEL_ID}
+
+
 def training_function(*, timeout: int):
     return app.function(
         image=image,
@@ -183,10 +235,16 @@ def main(mode: str = "diagnose") -> None:
     elif mode == "smoke":
         if diagnose_only:
             raise RuntimeError("Training functions are disabled in diagnostic mode")
+        access = check_model_access.remote()
+        if not access["accessible"]:
+            raise RuntimeError(str(access["error"]))
         result = smoke_train.remote()
     elif mode == "full":
         if diagnose_only:
             raise RuntimeError("Training functions are disabled in diagnostic mode")
+        access = check_model_access.remote()
+        if not access["accessible"]:
+            raise RuntimeError(str(access["error"]))
         result = full_train.remote()
     else:
         raise ValueError("mode must be diagnose, smoke, or full")
