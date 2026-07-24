@@ -53,6 +53,10 @@ def parse_args() -> argparse.Namespace:
         type=float,
         help="Override the configured epoch count.",
     )
+    parser.add_argument(
+        "--initial-adapter",
+        help="Override the initial LoRA adapter path for a continuation run.",
+    )
     return parser.parse_args()
 
 
@@ -90,6 +94,14 @@ def sanitize_token_ids(
         ]
         for row in rows
     ]
+
+
+def has_json_prefix(value: str) -> bool:
+    try:
+        json.JSONDecoder().raw_decode(value.lstrip())
+        return True
+    except json.JSONDecodeError:
+        return False
 
 
 def validate_dataset(
@@ -440,6 +452,7 @@ def train(
         )
         decoded_labels = processor.batch_decode(labels, skip_special_tokens=True)
         valid_json = 0
+        recoverable_json = 0
         exact = 0
         samples = []
         for record, prediction, label in zip(
@@ -454,6 +467,9 @@ def train(
                 valid_json += 1
             except json.JSONDecodeError:
                 is_valid_json = False
+            is_recoverable_json = has_json_prefix(prediction)
+            if is_recoverable_json:
+                recoverable_json += 1
             is_exact = prediction.strip() == label.strip()
             if is_exact:
                 exact += 1
@@ -463,6 +479,7 @@ def train(
                     "siteId": record["siteId"],
                     "pageId": record["pageId"],
                     "validJson": is_valid_json,
+                    "recoverableJson": is_recoverable_json,
                     "exactMatch": is_exact,
                     "prediction": prediction,
                     "target": label,
@@ -471,6 +488,7 @@ def train(
         count = max(1, len(decoded_predictions))
         metrics = {
             "json_valid": valid_json / count,
+            "json_recoverable": recoverable_json / count,
             "exact_match": exact / count,
         }
         output_directory.mkdir(parents=True, exist_ok=True)
@@ -483,6 +501,7 @@ def train(
                 {
                     "records": count,
                     "jsonValid": metrics["json_valid"],
+                    "jsonRecoverable": metrics["json_recoverable"],
                     "exactMatch": metrics["exact_match"],
                 },
                 indent=2,
@@ -585,6 +604,8 @@ def main() -> None:
     config = load_json(config_path)
     if args.output_directory:
         config["outputDirectory"] = args.output_directory
+    if args.initial_adapter:
+        config["initialAdapter"] = args.initial_adapter
     if args.epochs is not None:
         if args.epochs <= 0:
             raise ValueError("--epochs must be positive")

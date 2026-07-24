@@ -5,7 +5,7 @@
   "outputDirectory": "benchmark-data/models/t5gemma2-270m-synthetic",
   "seed": 20260724,
   "maxInputTokens": 8192,
-  "maxOutputTokens": 512,
+  "maxOutputTokens": 192,
   "training": {
     "method": "lora",
     "epochs": 3,

@@ -21,12 +21,16 @@ describe("training preparation CLI", () => {
         "-c",
         [
           "import json",
-          "from training.train_t5gemma2 import sanitize_token_ids",
+          "from training.train_t5gemma2 import has_json_prefix, sanitize_token_ids",
           "print(json.dumps(sanitize_token_ids(",
           "  [[0, 5, -100, -1, 9, 10]],",
           "  pad_token_id=0,",
           "  vocabulary_size=10,",
-          ")))"
+          ")))",
+          "print(json.dumps([",
+          "  has_json_prefix('{\"ok\":true}{\"extra\":true}'),",
+          "  has_json_prefix('not json'),",
+          "]))"
         ].join("\n")
       ],
       {
@@ -35,7 +39,12 @@ describe("training preparation CLI", () => {
       }
     );
 
-    expect(JSON.parse(result.stdout)).toEqual([[0, 5, 0, 0, 9, 0]]);
+    const [sanitized, prefixChecks] = result.stdout
+      .trim()
+      .split("\n")
+      .map((line) => JSON.parse(line));
+    expect(sanitized).toEqual([[0, 5, 0, 0, 9, 0]]);
+    expect(prefixChecks).toEqual([true, false]);
   });
 
   it("exports domain-separated discovery and extraction records", async () => {
