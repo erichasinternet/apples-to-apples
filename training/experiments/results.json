@@ -169,8 +169,39 @@
     "weakRootRecall": 0.4166666666666667,
     "weakRootF1": 0.5882352941176471
   },
+  "heldOutValidation": {
+    "runId": "2026-07-24T07-34-15-817Z",
+    "attemptedDomains": 20,
+    "capturedDomains": [
+      "bjs",
+      "boxncase",
+      "giant-eagle",
+      "gopuff",
+      "iherb",
+      "macys",
+      "menards"
+    ],
+    "blockedDomains": 6,
+    "failedDomains": 7,
+    "records": 13,
+    "referencedRecords": 2,
+    "referencePolicy": "Generic collector candidates are weak diagnostic labels, not adjudicated gold.",
+    "frozenCheckpoint": "synthetic-pilot-100-real-discovery-balanced",
+    "jsonComplete": 1.0,
+    "duplicateIds": 4,
+    "unknownIds": 2,
+    "reviewQueue": {
+      "uniqueProposals": 68,
+      "automaticallyRejected": 2,
+      "requiresHumanReview": 66
+    },
+    "weakRootPrecision": 0.16666666666666666,
+    "weakRootRecall": 0.3333333333333333,
+    "weakRootF1": 0.2222222222222222,
+    "decision": "reject-production-retain-preannotation-only"
+  },
   "modalMeteredCostUsdLastObserved": 1.52469832,
   "modalBilledCostUsdLastObserved": 0.0,
-  "additionalEstimatedComputeUsd": 1.034,
-  "estimatedTotalComputeUsd": 2.559
+  "additionalEstimatedComputeUsd": 1.059,
+  "estimatedTotalComputeUsd": 2.584
 }

@@ -62,6 +62,15 @@ The balanced checkpoint, prompt format, 96-node discovery pruning policy, and
 selection may occur after opening held-out domains. This checkpoint is still
 discovery-only and is approved only for preannotation.
 
+The frozen checkpoint failed the sealed held-out gate. Of 20 previously unseen
+domains, seven produced usable captures, six were blocked, and seven failed page
+acquisition. The seven captured domains produced 13 discovery chunks. JSON
+completion was 100%, but the weak-reference metrics were 16.7% precision, 33.3%
+recall, and 22.2% F1. Only two chunks contained generic collector references, so
+these numbers are directional rather than statistically conclusive. Four duplicate
+IDs and two IDs absent from the page observation were also generated. The checkpoint is
+rejected for production and remains usable only to seed a human review queue.
+
 The replay extraction checkpoint was then tested on 37 deduplicated live card
 proposals. Evidence validation accepted zero: nine generations were unparseable and
 all 28 parseable generations were rejected. Dominant failures were ungrounded
@@ -71,24 +80,28 @@ training without human annotation.
 
 ## Cost
 
-The last observed Modal meter was $1.5247. Subsequent runs used about $1.03 of
+The last observed Modal meter was $1.5247. Subsequent runs used about $1.06 of
 compute at published per-second GPU, CPU, and memory rates, for an estimated
-total near $2.56. This remains well below the $30 cap. Estimates exclude negligible
+total near $2.58. This remains well below the $30 cap. Estimates exclude negligible
 image-build overhead and should be reconciled with the Modal billing meter.
 
 ## Next Gate
 
 Do not launch full training or a larger model. Required work:
 
-1. Capture sealed held-out domains without changing the frozen model, prompts, or site rules.
-2. Use the frozen discovery candidate to create an explicit preannotation queue.
-3. Annotate complete main regions with field-level evidence.
-4. Obtain two independent reviews and adjudicate disagreements.
-5. Fine-tune extraction on adjudicated real examples with synthetic replay.
-6. Evaluate exact normalization and abstention on untouched, adjudicated domains.
-7. Compare against ungated FLAN-T5 Base and MarkupLM baselines.
+1. Annotate complete main regions with field-level evidence.
+2. Obtain two independent reviews and adjudicate disagreements.
+3. Add at least 30 development domains and 10 selection domains with real gold
+   product roots before another training run.
+4. Fine-tune extraction on adjudicated real examples with synthetic replay.
+5. Evaluate exact normalization and abstention on a new untouched, adjudicated
+   domain split. The opened held-out split cannot be reused for model selection.
+6. Compare against ungated FLAN-T5 Base and MarkupLM baselines.
 
 T5Gemma 2 1B-1B is the only additional gated model worth approving now. Use it only
 if the 270M model underfits the adjudicated real corpus. PaliGemma remains deferred because
 T5Gemma 2 already accepts image and text input, and a 3B vision model would increase
 cost before a measured need exists.
+
+The complete frozen-run analysis is in
+[`held-out-report.md`](./held-out-report.md).
