@@ -204,6 +204,102 @@
       "pilotReport": "benchmarks/capture-pilots/g2-blue-sky-vitamin-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-wholesale-direct",
+      "cohort": "training",
+      "pageId": "fabric-wholesale-direct--cotton-fabric",
+      "captureTimestamp": "2026-07-25T23:23:04.047Z",
+      "observationSha256": "5a1a9dbe767a2168e0941c5b3b1e9e33acd203dcbd6cac4eacbe1df2c2894aeb",
+      "annotationScreenshotSha256": "c9f2545a73133b86b90717503c3470b2b502ec4afdd0bae9abcdc8fca36aa144",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-03-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-wholesale-direct",
+      "cohort": "training",
+      "pageId": "fabric-wholesale-direct--upholstery-fabric",
+      "captureTimestamp": "2026-07-25T23:25:32.827Z",
+      "observationSha256": "e39c4cb8deab5224fc9d1da620e2cf857cd01fd2fac294c77d724f388928b097",
+      "annotationScreenshotSha256": "94d89c6140b17bfefcd634b400781f54041c4beab7f7e073c6bf673addb96e83",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-03-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "cohort": "training",
+      "pageId": "ontime-supplies--packing-tape",
+      "captureTimestamp": "2026-07-25T23:18:51.841Z",
+      "observationSha256": "dd0a54e0406b84cb3b90dae15116a120da5aff28fec3721a565f9e9f98853db3",
+      "annotationScreenshotSha256": "c08466148f40b8b0c45c1a9b4ffe2f2bd8a01a1ace6b671d3cd624435a5a365c",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-03-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "cohort": "training",
+      "pageId": "ontime-supplies--paper-towels",
+      "captureTimestamp": "2026-07-25T23:21:19.034Z",
+      "observationSha256": "b463120a8f88ed364f7dd94e8a51e301250dc5ebef9febfe6b0e02e2b2cb2dea",
+      "annotationScreenshotSha256": "c92b7abcc8e97d4e66f50eb2f5eeb82fbc54d876c418b59dae71e19ce63929ae",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-03-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "vitality-medical",
+      "cohort": "training",
+      "pageId": "vitality-medical--exam-gloves",
+      "captureTimestamp": "2026-07-25T23:19:12.927Z",
+      "observationSha256": "1394d5b9889a2700bf5ecfe5019ee6e5dd1cc477ae98e4590e7fd45b0344c92a",
+      "annotationScreenshotSha256": "a98a46a90fdd323cef8916e85b230f901fa7fe949b63a04350719e94f96f8b31",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-03-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "vitality-medical",
+      "cohort": "training",
+      "pageId": "vitality-medical--gauze-pads",
+      "captureTimestamp": "2026-07-25T23:19:43.588Z",
+      "observationSha256": "971e9d6391584856e7aad93cef816b73fdcf175fb5bd9b507ca9f9ea39572523",
+      "annotationScreenshotSha256": "d45df44a6386a5a89ed35ac6a5220da9cf2650f3c005b2433e55f5da690a6603",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-03-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "allegro-medical",
+      "cohort": "training",
+      "pageId": "allegro-medical--medical-wipes",
+      "captureTimestamp": "2026-07-25T23:21:28.237Z",
+      "observationSha256": "24b7c98e174d1f0968114f8f1176802d19bd7c579f585bfb907733cac923469d",
+      "annotationScreenshotSha256": "95b0fa05f90e105f94268071582d4635a7a18ace948de9ae3dc7c20301bada44",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-03-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "allegro-medical",
+      "cohort": "training",
+      "pageId": "allegro-medical--exam-gloves",
+      "captureTimestamp": "2026-07-25T23:25:01.909Z",
+      "observationSha256": "e047b39e6bf360895119400292c56071dc2990a4a197c8623962b67910dab8bb",
+      "annotationScreenshotSha256": "4322d661fa67e7f2dd76e8ca8e39a04a5ff89a33426e507c7f3bd87703c2ef5e",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-03-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

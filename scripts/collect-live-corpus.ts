@@ -17,6 +17,7 @@ import {
 } from "../src/learning/page-preparation";
 import {
   LIVE_CORPUS_VERSION,
+  MINIMUM_QUERY_TOKEN_COVERAGE,
   expandTargets,
   selectTargets,
   slugify,
@@ -352,7 +353,7 @@ async function capturePage(
   if (isInterstitialOrBotChallenge(bodyText)) {
     blockReasons.push("interstitial or bot challenge");
   }
-  if (queryTokenCoverage < 0.5) {
+  if (queryTokenCoverage < MINIMUM_QUERY_TOKEN_COVERAGE) {
     blockReasons.push(
       `search results evidence only ${Math.round(
         queryTokenCoverage * 100

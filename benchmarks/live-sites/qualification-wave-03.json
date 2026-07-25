@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "description": "Third unassigned domain-qualification wave focused on underrepresented area, length, automotive, medical, packaging, and fabric structures. Every domain remains unassigned until it passes the frozen two-page machine and visual gate.",
+  "sites": [
+    {
+      "id": "fabric-wholesale-direct",
+      "label": "Fabric Wholesale Direct",
+      "hostname": "fabricwholesaledirect.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://fabricwholesaledirect.com/search?q={query}",
+      "queries": [
+        { "id": "cotton-fabric", "query": "cotton fabric", "dimension": "length" },
+        { "id": "upholstery-fabric", "query": "upholstery fabric", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "mood-fabrics",
+      "label": "Mood Fabrics",
+      "hostname": "www.moodfabrics.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://www.moodfabrics.com/catalogsearch/result/?q={query}",
+      "queries": [
+        { "id": "cotton-fabric", "query": "cotton fabric", "dimension": "length" },
+        { "id": "upholstery-fabric", "query": "upholstery fabric", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "sailrite",
+      "label": "Sailrite",
+      "hostname": "www.sailrite.com",
+      "stratum": "fabric-and-marine",
+      "searchUrlTemplate": "https://www.sailrite.com/search/?query={query}",
+      "queries": [
+        { "id": "upholstery-fabric", "query": "upholstery fabric", "dimension": "length" },
+        { "id": "marine-rope", "query": "marine rope", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "tilebar",
+      "label": "TileBar",
+      "hostname": "www.tilebar.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.tilebar.com/search?q={query}",
+      "queries": [
+        { "id": "floor-tile", "query": "floor tile", "dimension": "area" },
+        { "id": "mosaic-tile", "query": "mosaic tile", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "floor-and-decor",
+      "label": "Floor & Decor",
+      "hostname": "www.flooranddecor.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.flooranddecor.com/search?q={query}",
+      "queries": [
+        { "id": "floor-tile", "query": "floor tile", "dimension": "area" },
+        { "id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "autozone",
+      "label": "AutoZone",
+      "hostname": "www.autozone.com",
+      "stratum": "automotive",
+      "searchUrlTemplate": "https://www.autozone.com/searchresult?searchText={query}",
+      "queries": [
+        { "id": "motor-oil", "query": "motor oil", "dimension": "volume" },
+        { "id": "coolant", "query": "coolant", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "advance-auto-parts",
+      "label": "Advance Auto Parts",
+      "hostname": "shop.advanceautoparts.com",
+      "stratum": "automotive",
+      "searchUrlTemplate": "https://shop.advanceautoparts.com/web/SearchResults?searchTerm={query}",
+      "queries": [
+        { "id": "motor-oil", "query": "motor oil", "dimension": "volume" },
+        { "id": "washer-fluid", "query": "washer fluid", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "napa-online",
+      "label": "NAPA Online",
+      "hostname": "www.napaonline.com",
+      "stratum": "automotive",
+      "searchUrlTemplate": "https://www.napaonline.com/en/search?text={query}",
+      "queries": [
+        { "id": "motor-oil", "query": "motor oil", "dimension": "volume" },
+        { "id": "coolant", "query": "coolant", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "vitality-medical",
+      "label": "Vitality Medical",
+      "hostname": "www.vitalitymedical.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.vitalitymedical.com/catalogsearch/result/?q={query}",
+      "queries": [
+        { "id": "exam-gloves", "query": "exam gloves", "dimension": "count" },
+        { "id": "gauze-pads", "query": "gauze pads", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "allegro-medical",
+      "label": "Allegro Medical",
+      "hostname": "www.allegromedical.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.allegromedical.com/catalogsearch/result/?q={query}",
+      "queries": [
+        { "id": "exam-gloves", "query": "exam gloves", "dimension": "count" },
+        { "id": "medical-wipes", "query": "medical wipes", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "packaging-supplies",
+      "label": "PackagingSupplies.com",
+      "hostname": "www.packagingsupplies.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.packagingsupplies.com/search?q={query}",
+      "queries": [
+        { "id": "packing-tape", "query": "packing tape", "dimension": "length" },
+        { "id": "trash-bags", "query": "trash bags", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "paper-mart",
+      "label": "Paper Mart",
+      "hostname": "www.papermart.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.papermart.com/search?q={query}",
+      "queries": [
+        { "id": "ribbon", "query": "ribbon", "dimension": "length" },
+        { "id": "gift-boxes", "query": "gift boxes", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "ontime-supplies",
+      "label": "OnTimeSupplies",
+      "hostname": "www.ontimesupplies.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.ontimesupplies.com/search?query={query}",
+      "queries": [
+        { "id": "packing-tape", "query": "packing tape", "dimension": "length" },
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "discount-office-items",
+      "label": "Discount Office Items",
+      "hostname": "www.discountofficeitems.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.discountofficeitems.com/search?query={query}",
+      "queries": [
+        { "id": "packing-tape", "query": "packing tape", "dimension": "length" },
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "the-restaurant-store",
+      "label": "The Restaurant Store",
+      "hostname": "www.therestaurantstore.com",
+      "stratum": "restaurant-supply",
+      "searchUrlTemplate": "https://www.therestaurantstore.com/search/{querySlug}",
+      "queries": [
+        { "id": "aluminum-foil", "query": "aluminum foil", "dimension": "length" },
+        { "id": "food-containers", "query": "food containers", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "valley-vet",
+      "label": "Valley Vet Supply",
+      "hostname": "www.valleyvet.com",
+      "stratum": "veterinary-supply",
+      "searchUrlTemplate": "https://www.valleyvet.com/search.html?query={query}",
+      "queries": [
+        { "id": "syringes", "query": "syringes", "dimension": "count" },
+        { "id": "horse-supplement", "query": "horse supplement", "dimension": "mass" }
+      ]
+    }
+  ]
+}

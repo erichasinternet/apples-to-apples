@@ -14,7 +14,7 @@
     "requiredViewportProfiles": ["desktop", "narrow"],
     "minimumCandidatesPerPage": 8,
     "maximumUnresolvedObstructionCoverage": 0.2,
-    "minimumQueryTokenCoverage": 0.5,
+    "minimumQueryTokenCoverage": 1,
     "requiredMachineValidation": true,
     "requiredVisualValidation": true,
     "allowBotChallenge": false,
@@ -26,6 +26,12 @@
       "appliedAt": "2026-07-25T07:42:00.000Z",
       "retroactive": true,
       "reason": "Visual review proved that a valid-looking catalog can ignore the requested search query. The gate now requires rendered path, title, or body evidence for at least half of meaningful query tokens. Query parameters do not count."
+    },
+    {
+      "id": "query-evidence-v2",
+      "appliedAt": "2026-07-25T23:20:00Z",
+      "retroactive": true,
+      "reason": "A fabric homepage retained the full query in its search input and incidentally matched one generic token in page headings. Qualification now excludes search-input values and requires result-context evidence for every meaningful query token. All previously promoted pages already recorded full coverage."
     }
   ],
   "sample": {

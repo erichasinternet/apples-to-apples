@@ -6,6 +6,7 @@ import {
   assignCaptureViewports,
   calculateQueryTokenCoverage,
   calculateSearchResultQueryCoverage,
+  MINIMUM_QUERY_TOKEN_COVERAGE,
   calculateWorstCaseSampleSize,
   expandTargets,
   getDomainSplit,
@@ -122,6 +123,19 @@ describe("live benchmark corpus", () => {
         searchValues: ["vitamins"]
       })
     ).toBe(1);
+  });
+
+  it("requires every meaningful query token outside the populated search box", () => {
+    const coverage = calculateSearchResultQueryCoverage("upholstery fabric", {
+      title: "Designer Fabrics",
+      pathname: "/",
+      headings: ["Sale", "New Arrivals"],
+      statusText: [],
+      searchValues: ["upholstery fabric"]
+    });
+
+    expect(coverage).toBe(0.5);
+    expect(coverage).toBeLessThan(MINIMUM_QUERY_TOKEN_COVERAGE);
   });
 
   it("recognizes generic verification and slider challenges", () => {

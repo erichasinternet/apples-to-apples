@@ -140,13 +140,77 @@
       "candidateCardCount": 8,
       "observationSha256": "e74b313a99774512c0dda2b9ad1beeb0b4d01707d5a0bc178510c8600390afa8",
       "annotationScreenshotSha256": "443fec5709f8bdd2cdcc5174ac241d50737ace5ea53d9aaaee47fb4577646c6d"
+    },
+    {
+      "siteId": "fabric-wholesale-direct",
+      "pageId": "fabric-wholesale-direct--cotton-fabric",
+      "captureTimestamp": "2026-07-25T23:23:04.047Z",
+      "candidateCardCount": 8,
+      "observationSha256": "5a1a9dbe767a2168e0941c5b3b1e9e33acd203dcbd6cac4eacbe1df2c2894aeb",
+      "annotationScreenshotSha256": "c9f2545a73133b86b90717503c3470b2b502ec4afdd0bae9abcdc8fca36aa144"
+    },
+    {
+      "siteId": "fabric-wholesale-direct",
+      "pageId": "fabric-wholesale-direct--upholstery-fabric",
+      "captureTimestamp": "2026-07-25T23:25:32.827Z",
+      "candidateCardCount": 8,
+      "observationSha256": "e39c4cb8deab5224fc9d1da620e2cf857cd01fd2fac294c77d724f388928b097",
+      "annotationScreenshotSha256": "94d89c6140b17bfefcd634b400781f54041c4beab7f7e073c6bf673addb96e83"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "pageId": "ontime-supplies--packing-tape",
+      "captureTimestamp": "2026-07-25T23:18:51.841Z",
+      "candidateCardCount": 8,
+      "observationSha256": "dd0a54e0406b84cb3b90dae15116a120da5aff28fec3721a565f9e9f98853db3",
+      "annotationScreenshotSha256": "c08466148f40b8b0c45c1a9b4ffe2f2bd8a01a1ace6b671d3cd624435a5a365c"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "pageId": "ontime-supplies--paper-towels",
+      "captureTimestamp": "2026-07-25T23:21:19.034Z",
+      "candidateCardCount": 8,
+      "observationSha256": "b463120a8f88ed364f7dd94e8a51e301250dc5ebef9febfe6b0e02e2b2cb2dea",
+      "annotationScreenshotSha256": "c92b7abcc8e97d4e66f50eb2f5eeb82fbc54d876c418b59dae71e19ce63929ae"
+    },
+    {
+      "siteId": "vitality-medical",
+      "pageId": "vitality-medical--exam-gloves",
+      "captureTimestamp": "2026-07-25T23:19:12.927Z",
+      "candidateCardCount": 8,
+      "observationSha256": "1394d5b9889a2700bf5ecfe5019ee6e5dd1cc477ae98e4590e7fd45b0344c92a",
+      "annotationScreenshotSha256": "a98a46a90fdd323cef8916e85b230f901fa7fe949b63a04350719e94f96f8b31"
+    },
+    {
+      "siteId": "vitality-medical",
+      "pageId": "vitality-medical--gauze-pads",
+      "captureTimestamp": "2026-07-25T23:19:43.588Z",
+      "candidateCardCount": 8,
+      "observationSha256": "971e9d6391584856e7aad93cef816b73fdcf175fb5bd9b507ca9f9ea39572523",
+      "annotationScreenshotSha256": "d45df44a6386a5a89ed35ac6a5220da9cf2650f3c005b2433e55f5da690a6603"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--medical-wipes",
+      "captureTimestamp": "2026-07-25T23:21:28.237Z",
+      "candidateCardCount": 8,
+      "observationSha256": "24b7c98e174d1f0968114f8f1176802d19bd7c579f585bfb907733cac923469d",
+      "annotationScreenshotSha256": "95b0fa05f90e105f94268071582d4635a7a18ace948de9ae3dc7c20301bada44"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--exam-gloves",
+      "captureTimestamp": "2026-07-25T23:25:01.909Z",
+      "candidateCardCount": 8,
+      "observationSha256": "e047b39e6bf360895119400292c56071dc2990a4a197c8623962b67910dab8bb",
+      "annotationScreenshotSha256": "4322d661fa67e7f2dd76e8ca8e39a04a5ff89a33426e507c7f3bd87703c2ef5e"
     }
   ],
   "queues": [
     {
       "reviewerId": "reviewer-a",
-      "queueId": "reviewer-a--campaign--11294ceee8454819",
-      "campaignQueueSha256": "ca08844e27185fc4f292e12a49b60c272815a0fe93f49323fb5e9657a4ec29d8",
+      "queueId": "reviewer-a--campaign--77da08a232d351b2",
+      "campaignQueueSha256": "ab0fea1daa3e6c9d83febc7e284e29ef52abc39ba123867b482fdb0da964feb9",
       "sourceQueueSha256": [
         "c7c5caec03d94ce03dbcdc4d77ca34f5aeb86a328574424e02e2c738af14dc6b",
         "468925a9cc330c8698e57b5f53bfa2c0d8fda3ec0b874489a3a8cc19be1fc8a6",
@@ -157,14 +221,17 @@
         "116869dd0cc60c624b6805f869a92d0e9e160963fa898f2f460d16ade5fa308a",
         "e9b947117d0bc0d2dcfb3eaeb2ba6eb42deab74bcc72b3134e29669a5445e90b",
         "ac232b5c82a2c57accdb5a76c1b128c39e68d7b7e19087c5fb1497d97db308a1",
+        "11c92c3c48cbf742e0100ed1a337f7486958295f034fe924a0a23677e93aa531",
+        "c2f9104e2947992d12a6fe41b96fd1b6cbb587f6cbb8f2ea60a124f4527fae2b",
+        "61df96803b407c51ac523f58e833d690f2c2e01e873506c626db13231b9e9afe",
         "cb1e6f78b123ddee08156e848c59922c9b913ca344aff080712da0c8c79389a7"
       ],
-      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2, 2, 2, 2]
+      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2, 2, 2, 6, 1, 1, 2]
     },
     {
       "reviewerId": "reviewer-b",
-      "queueId": "reviewer-b--campaign--9c7cc9e38d20da47",
-      "campaignQueueSha256": "a903b285f2885473b42220a85bc37120aa1da5350f20d91cbeba986a49c3fab7",
+      "queueId": "reviewer-b--campaign--d0e2b7804393590d",
+      "campaignQueueSha256": "7421c80c1ff137d73fed2687336f67001dd76ba6ae21ac5b02c538e3d2792450",
       "sourceQueueSha256": [
         "b1c95e362b48f8e749048b161cce35ad0e14e3495df5eacf1b1b4e9e124955d7",
         "f3bf77bd4f4f7746637b521fab8030f675c1376be0db4fe76d3b51a65ffb779a",
@@ -175,9 +242,12 @@
         "38cc4ca0d183049174fa6062665d9354a1686ab871cc204277744821a1689365",
         "e8817008ca18813893e821a423a061994d44258a5edf7726d2b5198051157ff4",
         "4bb84f79cf86d8f019e0613399db2e3facd925d0d3ce8bcef42086342a4ed124",
+        "4a63a4ae0f22e4e8390e7b7203a3c8becbeef4e0d6dd54a8873caef74421adcf",
+        "d67d98fb03fcd1dad35a26ad5dfc8e37bff80c90e7826a757691e704d308ea1b",
+        "f9b093719bde6b2754f498893c54a42a5fdc2d8633dfc5dfbb96156ff64380c1",
         "3c29f96ce43425dfd2a0dadbc0e7620c9b80af8cbeccf69b082811e88b1b984f"
       ],
-      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2, 2, 2, 2]
+      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2, 2, 2, 6, 1, 1, 2]
     }
   ],
   "blinding": {
@@ -188,10 +258,10 @@
   },
   "workbenchValidation": {
     "browser": "headed Playwright Chromium",
-    "pagesLoaded": 17,
-    "screenshotsLoaded": 17,
-    "candidateCards": 172,
-    "selectedCardNodeId": "n4211",
+    "pagesLoaded": 25,
+    "screenshotsLoaded": 25,
+    "candidateCards": 236,
+    "selectedCardNodeId": "n651",
     "onlyFrozenCardRootOffered": true,
     "cardScopedCandidateSelection": "passed",
     "nonCandidateAncestor": "rejected-404",

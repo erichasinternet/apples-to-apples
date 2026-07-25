@@ -47,6 +47,18 @@ describe("capture eligibility", () => {
     );
   });
 
+  it("rejects partial query-token coverage", () => {
+    expect(
+      validateCaptureEligibility(
+        {
+          ...page(),
+          queryTokenCoverage: 0.5
+        },
+        eligible()
+      )
+    ).toContain("capture lacks requested-query evidence");
+  });
+
   it("rejects a byte-identical capture from a different run", () => {
     const result = validateCaptureEligibility(
       {

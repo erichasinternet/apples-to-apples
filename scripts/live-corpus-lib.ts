@@ -2,6 +2,7 @@ import type { Dimension } from "../src/core/types";
 import type { ModelAbstentionReason, ObservationBounds } from "../src/learning/contracts";
 
 export const LIVE_CORPUS_VERSION = 1;
+export const MINIMUM_QUERY_TOKEN_COVERAGE = 1;
 
 export interface CorpusQuery {
   id: string;
@@ -92,8 +93,7 @@ export function calculateSearchResultQueryCoverage(
       context.title,
       context.pathname,
       ...context.headings,
-      ...context.statusText,
-      ...context.searchValues
+      ...context.statusText
     ].join("\n")
   );
 }

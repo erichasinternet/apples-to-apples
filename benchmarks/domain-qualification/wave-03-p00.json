@@ -1,0 +1,267 @@
+{
+  "version": 1,
+  "qualificationId": "wave-03-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-03.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 70000,
+    "cardScreenshotBudgetMs": 5000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "smallFixedNonContentEmbedSuppression": true,
+    "genericRefusalActionHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "genericInterstitialDetection": true,
+    "queryParametersCountAsQueryEvidence": false,
+    "queryEvidenceScope": "title, pathname, visible headings, and visible status text",
+    "minimumQueryTokenCoverage": 1,
+    "populatedSearchControlsCountAsQueryEvidence": false
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T23-06-55-893Z",
+      "runManifestSha256": "365f76c3e585e0b846548ee1d1b45a31bc575c1750af7441f1b1a991f79b2d46",
+      "purpose": "one-page headed screening across all 16 wave-03 domains before the search-control evidence correction"
+    },
+    {
+      "runId": "2026-07-25T23-18-46-215Z",
+      "runManifestSha256": "a7e2e8eaba3ab3db0b5836e4dbb5c3b84c9cc0b7ca20b2dd8da5e35af9648d48",
+      "purpose": "two-page mixed-viewport qualification after the search-control evidence correction"
+    },
+    {
+      "runId": "2026-07-25T23-24-55-495Z",
+      "runManifestSha256": "5031c39f304d35dc5f499491fc37a3dc5ce2925be3cd8015ec94c947cc0d6a5c",
+      "purpose": "isolated Allegro Medical narrow-viewport retry"
+    },
+    {
+      "runId": "2026-07-25T23-25-21-735Z",
+      "runManifestSha256": "2a40c65883d9a52fac81717d5e01abbece9ec5851f167667b3f1401463a727b7",
+      "purpose": "isolated Fabric Wholesale Direct desktop-viewport retry"
+    }
+  ],
+  "results": {
+    "fabric-wholesale-direct": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "fabric-wholesale-direct--cotton-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 1208,
+          "observationTruncated": false,
+          "dismissedObstructions": 12,
+          "unresolvedObstructionCoverage": 0.03370397375136712,
+          "queryTokenCoverage": 1,
+          "observationSha256": "5a1a9dbe767a2168e0941c5b3b1e9e33acd203dcbd6cac4eacbe1df2c2894aeb",
+          "annotationScreenshotSha256": "c9f2545a73133b86b90717503c3470b2b502ec4afdd0bae9abcdc8fca36aa144",
+          "provenanceAggregateSha256": "ec8148c86a0b4f32dea1e2df3c742e20b82c9c62f9827beb96806fbf45587915",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "fabric-wholesale-direct--upholstery-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 1565,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0.0038618055555555554,
+          "queryTokenCoverage": 1,
+          "observationSha256": "e39c4cb8deab5224fc9d1da620e2cf857cd01fd2fac294c77d724f388928b097",
+          "annotationScreenshotSha256": "94d89c6140b17bfefcd634b400781f54041c4beab7f7e073c6bf673addb96e83",
+          "provenanceAggregateSha256": "400e290907033b48cf7ac0c3ecab7cf01a0cf5078115c00f522f97ad21534018",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "ontime-supplies": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "ontime-supplies--packing-tape",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 1362,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0.006791666666666666,
+          "queryTokenCoverage": 1,
+          "observationSha256": "dd0a54e0406b84cb3b90dae15116a120da5aff28fec3721a565f9e9f98853db3",
+          "annotationScreenshotSha256": "c08466148f40b8b0c45c1a9b4ffe2f2bd8a01a1ace6b671d3cd624435a5a365c",
+          "provenanceAggregateSha256": "70688ccd110e77fe982156810be6b88a9b2b024ef2fae945476f7d3940fd7e35",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "ontime-supplies--paper-towels",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 1154,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0.02971199416697047,
+          "queryTokenCoverage": 1,
+          "observationSha256": "b463120a8f88ed364f7dd94e8a51e301250dc5ebef9febfe6b0e02e2b2cb2dea",
+          "annotationScreenshotSha256": "c92b7abcc8e97d4e66f50eb2f5eeb82fbc54d876c418b59dae71e19ce63929ae",
+          "provenanceAggregateSha256": "6ffa69e7cb5bda17365aa8fd050ff3468b6a738f7d03bd66a5a566340cdba45c",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "vitality-medical": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "vitality-medical--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 583,
+          "observationTruncated": false,
+          "dismissedObstructions": 2,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "1394d5b9889a2700bf5ecfe5019ee6e5dd1cc477ae98e4590e7fd45b0344c92a",
+          "annotationScreenshotSha256": "a98a46a90fdd323cef8916e85b230f901fa7fe949b63a04350719e94f96f8b31",
+          "provenanceAggregateSha256": "3626b439799aaaef0c05250d94558eb498d7938121901a8d7ece0b5c1365dbdd",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "vitality-medical--gauze-pads",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 522,
+          "observationTruncated": false,
+          "dismissedObstructions": 2,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "971e9d6391584856e7aad93cef816b73fdcf175fb5bd9b507ca9f9ea39572523",
+          "annotationScreenshotSha256": "d45df44a6386a5a89ed35ac6a5220da9cf2650f3c005b2433e55f5da690a6603",
+          "provenanceAggregateSha256": "c3d6c1c9eb487d5a2437f1b7998fe8e688138873914a55cf3a2589d9d95544fb",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "allegro-medical": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "allegro-medical--medical-wipes",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 428,
+          "observationTruncated": false,
+          "dismissedObstructions": 2,
+          "unresolvedObstructionCoverage": 0.00140625,
+          "queryTokenCoverage": 1,
+          "observationSha256": "24b7c98e174d1f0968114f8f1176802d19bd7c579f585bfb907733cac923469d",
+          "annotationScreenshotSha256": "95b0fa05f90e105f94268071582d4635a7a18ace948de9ae3dc7c20301bada44",
+          "provenanceAggregateSha256": "7bc99c57e6535b6cd5a92861cf35f0b6cb3da6b5c582fb75add9421316732d2a",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "allegro-medical--exam-gloves",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 866,
+          "observationTruncated": false,
+          "dismissedObstructions": 2,
+          "unresolvedObstructionCoverage": 0.0027342325920524974,
+          "queryTokenCoverage": 1,
+          "observationSha256": "e047b39e6bf360895119400292c56071dc2990a4a197c8623962b67910dab8bb",
+          "annotationScreenshotSha256": "4322d661fa67e7f2dd76e8ca8e39a04a5ff89a33426e507c7f3bd87703c2ef5e",
+          "provenanceAggregateSha256": "5a6f1f142a2de2aaa885d96b1840455aeede94c54be892f5f61c87819dea858d",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "mood-fabrics": {
+      "status": "discard",
+      "reason": "The search control retained the requested text while the visible page was the unfiltered homepage. This false positive motivated excluding populated search controls from query evidence."
+    },
+    "sailrite": {
+      "status": "discard",
+      "reason": "The upholstery page exceeded the bounded timeout and the marine-rope page showed no visible query evidence or reviewable candidates."
+    },
+    "tilebar": {
+      "status": "discard",
+      "reason": "The headed mosaic-tile screening page exceeded the bounded timeout."
+    },
+    "floor-and-decor": {
+      "status": "discard",
+      "reason": "The headed floor-tile screening page exceeded the bounded timeout."
+    },
+    "autozone": {
+      "status": "discard",
+      "reason": "The headed search returned HTTP 403 with no visible query evidence or reviewable candidates."
+    },
+    "advance-auto-parts": {
+      "status": "discard",
+      "reason": "The headed motor-oil screening page exceeded the bounded timeout."
+    },
+    "napa-online": {
+      "status": "discard",
+      "reason": "The headed search returned HTTP 403 with no visible query evidence or reviewable candidates."
+    },
+    "packaging-supplies": {
+      "status": "discard",
+      "reason": "The headed packing-tape screening page exceeded the bounded timeout."
+    },
+    "paper-mart": {
+      "status": "discard",
+      "reason": "The headed gift-boxes screening page exceeded the bounded timeout."
+    },
+    "discount-office-items": {
+      "status": "discard",
+      "reason": "The headed paper-towels screening page exceeded the bounded timeout."
+    },
+    "the-restaurant-store": {
+      "status": "discard",
+      "reason": "The headed aluminum-foil page produced no reviewable product candidates."
+    },
+    "valley-vet": {
+      "status": "discard",
+      "reason": "The headed horse-supplement page showed no visible query evidence and produced no reviewable product candidates."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "fabric-wholesale-direct",
+      "ontime-supplies",
+      "vitality-medical",
+      "allegro-medical"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "fabric-wholesale-direct",
+        "cohort": "training"
+      },
+      {
+        "siteId": "ontime-supplies",
+        "cohort": "training"
+      },
+      {
+        "siteId": "vitality-medical",
+        "cohort": "training"
+      },
+      {
+        "siteId": "allegro-medical",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

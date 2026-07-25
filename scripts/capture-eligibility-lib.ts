@@ -1,4 +1,5 @@
 import type { IdealCohortName } from "./ideal-dataset-lib";
+import { MINIMUM_QUERY_TOKEN_COVERAGE } from "./live-corpus-lib";
 
 export interface EligibleCaptureEntry {
   siteId: string;
@@ -37,7 +38,7 @@ export function validateCaptureEligibility(
   }
   if (
     page.queryTokenCoverage !== undefined &&
-    page.queryTokenCoverage < 0.5
+    page.queryTokenCoverage < MINIMUM_QUERY_TOKEN_COVERAGE
   ) {
     errors.push("capture lacks requested-query evidence");
   }

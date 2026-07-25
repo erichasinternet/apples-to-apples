@@ -54,6 +54,30 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-02-p08.json",
       "promotedAt": "2026-07-25T16:21:00.000Z"
+    },
+    {
+      "siteId": "fabric-wholesale-direct",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "promotedAt": "2026-07-25T23:30:00.000Z"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "promotedAt": "2026-07-25T23:30:00.000Z"
+    },
+    {
+      "siteId": "vitality-medical",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "promotedAt": "2026-07-25T23:30:00.000Z"
+    },
+    {
+      "siteId": "allegro-medical",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "promotedAt": "2026-07-25T23:30:00.000Z"
     }
   ]
 }

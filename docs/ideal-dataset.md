@@ -205,7 +205,7 @@ reviews and adjudication are complete.
 
 The current multi-page G2 review campaign is recorded in
 [`g2-pilot-p00.json`](../benchmarks/review-campaigns/g2-pilot-p00.json). It
-contains 17 qualification-backed live pages and 172 frozen candidate card
+contains 25 qualification-backed live pages and 236 frozen candidate card
 roots across two independent blinded queues. A headed Chromium smoke test loaded
 all source screenshots, constructed a card-scoped pointer, rejected a product-grid
 ancestor, and rejected incomplete coverage. It still contributes zero gold
@@ -216,6 +216,13 @@ Professional Supplement Center, Sleekshop, Bob's Red Mill, and Bulk Foods with
 captured evidence. It also narrowed search-query relevance to visible search
 context instead of arbitrary product-card text, preventing unfiltered catalogs
 from passing because an incidental card contained the query token.
+
+Wave 03 promoted Fabric Wholesale Direct, OnTime Supplies, Vitality Medical, and
+Allegro Medical. The new evidence adds fabric sold by length, office-supply
+multipacks, and medical-supply count and variant cases. A live Mood Fabrics
+capture also proved that a populated search input is not sufficient evidence of
+a rendered result page, so query qualification now requires every requested token
+in the title, pathname, visible heading, or visible status text.
 
 ## Dataset Growth
 

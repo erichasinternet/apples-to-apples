@@ -1,0 +1,256 @@
+{
+  "version": 1,
+  "pilotId": "g2-wave-03-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-25T23:18:51.841Z",
+  "source": {
+    "siteIds": [
+      "fabric-wholesale-direct",
+      "ontime-supplies",
+      "vitality-medical",
+      "allegro-medical"
+    ],
+    "cohort": "training",
+    "strata": [
+      "fabric",
+      "office-supply",
+      "medical-supply"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": "09b7a625a6268289dcb0f14d163de49301ac4df7ec859bb1bf584074d6d845fe",
+    "collectorSha256": "7634dff9eea66627b8dc7d6657d79cbb38ceff3f61391004f058bdf5068551eb"
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T23-18-46-215Z",
+      "runManifestSha256": "a7e2e8eaba3ab3db0b5836e4dbb5c3b84c9cc0b7ca20b2dd8da5e35af9648d48",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 5000
+    },
+    {
+      "runId": "2026-07-25T23-24-55-495Z",
+      "runManifestSha256": "5031c39f304d35dc5f499491fc37a3dc5ce2925be3cd8015ec94c947cc0d6a5c",
+      "pageTimeoutMs": 70000,
+      "cardScreenshotBudgetMs": 5000
+    },
+    {
+      "runId": "2026-07-25T23-25-21-735Z",
+      "runManifestSha256": "2a40c65883d9a52fac81717d5e01abbece9ec5851f167667b3f1401463a727b7",
+      "pageTimeoutMs": 70000,
+      "cardScreenshotBudgetMs": 5000
+    }
+  ],
+  "captures": [
+    {
+      "siteId": "fabric-wholesale-direct",
+      "pageId": "fabric-wholesale-direct--cotton-fabric",
+      "capturedAt": "2026-07-25T23:23:04.047Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 1208,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0.03370397375136712,
+      "queryTokenCoverage": 1,
+      "observationSha256": "5a1a9dbe767a2168e0941c5b3b1e9e33acd203dcbd6cac4eacbe1df2c2894aeb",
+      "annotationScreenshotSha256": "c9f2545a73133b86b90717503c3470b2b502ec4afdd0bae9abcdc8fca36aa144",
+      "provenanceAggregateSha256": "ec8148c86a0b4f32dea1e2df3c742e20b82c9c62f9827beb96806fbf45587915",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-wholesale-direct",
+      "pageId": "fabric-wholesale-direct--upholstery-fabric",
+      "capturedAt": "2026-07-25T23:25:32.827Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 1565,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0038618055555555554,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e39c4cb8deab5224fc9d1da620e2cf857cd01fd2fac294c77d724f388928b097",
+      "annotationScreenshotSha256": "94d89c6140b17bfefcd634b400781f54041c4beab7f7e073c6bf673addb96e83",
+      "provenanceAggregateSha256": "400e290907033b48cf7ac0c3ecab7cf01a0cf5078115c00f522f97ad21534018",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "pageId": "ontime-supplies--packing-tape",
+      "capturedAt": "2026-07-25T23:18:51.841Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 1362,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.006791666666666666,
+      "queryTokenCoverage": 1,
+      "observationSha256": "dd0a54e0406b84cb3b90dae15116a120da5aff28fec3721a565f9e9f98853db3",
+      "annotationScreenshotSha256": "c08466148f40b8b0c45c1a9b4ffe2f2bd8a01a1ace6b671d3cd624435a5a365c",
+      "provenanceAggregateSha256": "70688ccd110e77fe982156810be6b88a9b2b024ef2fae945476f7d3940fd7e35",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "pageId": "ontime-supplies--paper-towels",
+      "capturedAt": "2026-07-25T23:21:19.034Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 1154,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.02971199416697047,
+      "queryTokenCoverage": 1,
+      "observationSha256": "b463120a8f88ed364f7dd94e8a51e301250dc5ebef9febfe6b0e02e2b2cb2dea",
+      "annotationScreenshotSha256": "c92b7abcc8e97d4e66f50eb2f5eeb82fbc54d876c418b59dae71e19ce63929ae",
+      "provenanceAggregateSha256": "6ffa69e7cb5bda17365aa8fd050ff3468b6a738f7d03bd66a5a566340cdba45c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "vitality-medical",
+      "pageId": "vitality-medical--exam-gloves",
+      "capturedAt": "2026-07-25T23:19:12.927Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 583,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "1394d5b9889a2700bf5ecfe5019ee6e5dd1cc477ae98e4590e7fd45b0344c92a",
+      "annotationScreenshotSha256": "a98a46a90fdd323cef8916e85b230f901fa7fe949b63a04350719e94f96f8b31",
+      "provenanceAggregateSha256": "3626b439799aaaef0c05250d94558eb498d7938121901a8d7ece0b5c1365dbdd",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "vitality-medical",
+      "pageId": "vitality-medical--gauze-pads",
+      "capturedAt": "2026-07-25T23:19:43.588Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 522,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "971e9d6391584856e7aad93cef816b73fdcf175fb5bd9b507ca9f9ea39572523",
+      "annotationScreenshotSha256": "d45df44a6386a5a89ed35ac6a5220da9cf2650f3c005b2433e55f5da690a6603",
+      "provenanceAggregateSha256": "c3d6c1c9eb487d5a2437f1b7998fe8e688138873914a55cf3a2589d9d95544fb",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--medical-wipes",
+      "capturedAt": "2026-07-25T23:21:28.237Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 428,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "24b7c98e174d1f0968114f8f1176802d19bd7c579f585bfb907733cac923469d",
+      "annotationScreenshotSha256": "95b0fa05f90e105f94268071582d4635a7a18ace948de9ae3dc7c20301bada44",
+      "provenanceAggregateSha256": "7bc99c57e6535b6cd5a92861cf35f0b6cb3da6b5c582fb75add9421316732d2a",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--exam-gloves",
+      "capturedAt": "2026-07-25T23:25:01.909Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 866,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e047b39e6bf360895119400292c56071dc2990a4a197c8623962b67910dab8bb",
+      "annotationScreenshotSha256": "4322d661fa67e7f2dd76e8ca8e39a04a5ff89a33426e507c7f3bd87703c2ef5e",
+      "provenanceAggregateSha256": "5a6f1f142a2de2aaa885d96b1840455aeede94c54be892f5f61c87819dea858d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "reviewQueues": {
+    "labelVisibility": "no model or peer labels",
+    "reviewerASourceQueueSha256": [
+      "11c92c3c48cbf742e0100ed1a337f7486958295f034fe924a0a23677e93aa531",
+      "c2f9104e2947992d12a6fe41b96fd1b6cbb587f6cbb8f2ea60a124f4527fae2b",
+      "61df96803b407c51ac523f58e833d690f2c2e01e873506c626db13231b9e9afe"
+    ],
+    "reviewerBSourceQueueSha256": [
+      "4a63a4ae0f22e4e8390e7b7203a3c8becbeef4e0d6dd54a8873caef74421adcf",
+      "d67d98fb03fcd1dad35a26ad5dfc8e37bff80c90e7826a757691e704d308ea1b",
+      "f9b093719bde6b2754f498893c54a42a5fdc2d8633dfc5dfbb96156ff64380c1"
+    ]
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}
