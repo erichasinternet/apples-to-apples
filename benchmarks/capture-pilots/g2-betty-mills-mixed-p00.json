@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "pilotId": "g2-betty-mills-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-25T09:28:24.900Z",
+  "source": {
+    "siteId": "betty-mills",
+    "cohort": "training",
+    "stratum": "janitorial-supply",
+    "anonymousContext": true,
+    "sourceManifestSha256": "0fa5dc1bd2cb18e2bcc674f2fb12ef318b7084837463e125af44a2d666ef58a2",
+    "collectorSha256": "f0aa08cc42afdb503abc575a33d48af7c56933b78caf2c61db56eb598d1ce6a6"
+  },
+  "run": {
+    "runId": "2026-07-25T09-28-17-623Z",
+    "runManifestSha256": "e1e1c44e6583895caadf7d45ce739c5f9c0b99972d4861581485755992d81c52",
+    "pageTimeoutMs": 50000,
+    "cardScreenshotBudgetMs": 5000,
+    "capturedPages": 2,
+    "blockedPages": 0,
+    "failedPages": 0
+  },
+  "captures": [
+    {
+      "pageId": "betty-mills--trash-bags",
+      "capturedAt": "2026-07-25T09:28:24.900Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 751,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.006152023332118119,
+      "queryTokenCoverage": 1,
+      "observationSha256": "520eec4c02405231bac97ef78fe01c705e70181ad21f2942bb52cbca0ece9d00",
+      "annotationScreenshotSha256": "f9ce9434a56dfdaef20aab37b70f31b6e218a5408db6a8f261bf8531febb47ba",
+      "provenanceAggregateSha256": "0c1e0348d106ad6fd545e0579ccb3c9b34a95a37ac944b8c86715ca84df43b10",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "pageId": "betty-mills--cleaner",
+      "capturedAt": "2026-07-25T09:28:32.010Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 1233,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "4a21477030ef26e942bbcb56b5e97bf99d1b1c0edb3eb33c75b6c2c25d96986f",
+      "annotationScreenshotSha256": "eaca024b91f9b0c2a173734ab16253810fa31d29d787adfee12b08f0829bf516",
+      "provenanceAggregateSha256": "e716751c09cf19d414991bf72f1923efeac4fe36d1652b21dc0039f4329efbdd",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "reviewQueues": {
+    "labelVisibility": "no model or peer labels",
+    "reviewerAQueueSha256": "347d97cf373d3adef077065d269cdfa0338f212eb24ab5303549d5b90539433f",
+    "reviewerBQueueSha256": "8e6119b3e976debaa718ec34d602fa8fe51078d2017084ea9fa3b04921751af1"
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

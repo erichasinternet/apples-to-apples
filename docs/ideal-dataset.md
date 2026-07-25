@@ -59,6 +59,9 @@ PureFormulas was discarded after a category landing page failed the listing gate
 [`wave-02-p03.json`](../benchmarks/domain-qualification/wave-02-p03.json) records
 the next bounded result: Revival Animal Health was discarded because both search
 URLs rendered its general storefront rather than requested-query listings.
+[`wave-02-p04.json`](../benchmarks/domain-qualification/wave-02-p04.json) records
+Betty Mills passing the frozen count and volume gate across narrow and desktop
+viewports; CleanFreak was discarded after both searches redirected to Google.
 
 ## Cohorts
 
@@ -191,7 +194,7 @@ reviews and adjudication are complete.
 
 The first multi-page G2 review campaign is recorded in
 [`g2-pilot-p00.json`](../benchmarks/review-campaigns/g2-pilot-p00.json). It
-contains seven qualification-backed live pages and 92 frozen candidate card
+contains nine qualification-backed live pages and 108 frozen candidate card
 roots across two independent blinded queues. A headed Chromium smoke test loaded
 all source screenshots, constructed a card-scoped pointer, rejected a product-grid
 ancestor, and rejected incomplete coverage. It still contributes zero gold

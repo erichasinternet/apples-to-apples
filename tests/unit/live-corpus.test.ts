@@ -8,6 +8,7 @@ import {
   expandTargets,
   getDomainSplit,
   isInterstitialOrBotChallenge,
+  isSameSiteHostname,
   selectTargets,
   slugify,
   validateDomainSplits,
@@ -116,6 +117,13 @@ describe("live benchmark corpus", () => {
         "Verify your delivery address and securely access order history."
       )
     ).toBe(false);
+  });
+
+  it("allows subdomain redirects but rejects unrelated destinations", () => {
+    expect(isSameSiteHostname("www.shop.example", "shop.example")).toBe(true);
+    expect(isSameSiteHostname("shop.example", "checkout.shop.example")).toBe(true);
+    expect(isSameSiteHostname("www.cleanfreak.com", "www.google.com")).toBe(false);
+    expect(isSameSiteHostname("shop.example", "evilshop.example.com")).toBe(false);
   });
 
   it("accounts for clustered observations in the sample target", () => {

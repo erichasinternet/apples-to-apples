@@ -84,6 +84,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-food-service-direct-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "betty-mills",
+      "cohort": "training",
+      "pageId": "betty-mills--trash-bags",
+      "captureTimestamp": "2026-07-25T09:28:24.900Z",
+      "observationSha256": "520eec4c02405231bac97ef78fe01c705e70181ad21f2942bb52cbca0ece9d00",
+      "annotationScreenshotSha256": "f9ce9434a56dfdaef20aab37b70f31b6e218a5408db6a8f261bf8531febb47ba",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p04.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-betty-mills-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "betty-mills",
+      "cohort": "training",
+      "pageId": "betty-mills--cleaner",
+      "captureTimestamp": "2026-07-25T09:28:32.010Z",
+      "observationSha256": "4a21477030ef26e942bbcb56b5e97bf99d1b1c0edb3eb33c75b6c2c25d96986f",
+      "annotationScreenshotSha256": "eaca024b91f9b0c2a173734ab16253810fa31d29d787adfee12b08f0829bf516",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p04.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-betty-mills-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

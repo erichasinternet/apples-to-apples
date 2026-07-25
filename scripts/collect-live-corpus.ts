@@ -23,6 +23,7 @@ import {
   assignCaptureViewports,
   calculateQueryTokenCoverage,
   isInterstitialOrBotChallenge,
+  isSameSiteHostname,
   type CaptureViewportAssignment,
   type CaptureViewportProfile,
   type CaptureTarget,
@@ -304,6 +305,9 @@ async function capturePage(
   const blockReasons: string[] = [];
   if (response && response.status() >= 400) {
     blockReasons.push(`HTTP ${response.status()}`);
+  }
+  if (!isSameSiteHostname(target.hostname, renderedUrl.hostname)) {
+    blockReasons.push(`cross-site redirect to ${renderedUrl.hostname}`);
   }
   if (isInterstitialOrBotChallenge(bodyText)) {
     blockReasons.push("interstitial or bot challenge");

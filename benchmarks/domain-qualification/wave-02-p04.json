@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "qualificationId": "wave-02-p04",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-02.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 50000,
+    "cardScreenshotBudgetMs": 5000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "smallFixedNonContentEmbedSuppression": true,
+    "genericInterstitialDetection": true,
+    "queryParametersCountAsQueryEvidence": false
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T09-28-17-623Z",
+      "runManifestSha256": "e1e1c44e6583895caadf7d45ce739c5f9c0b99972d4861581485755992d81c52",
+      "purpose": "betty-mills final qualification"
+    },
+    {
+      "runId": "2026-07-25T09-29-30-947Z",
+      "runManifestSha256": "3692d56dffef63616f1cf9ed1218373286446c6764a1dc77d071e3d6ad327666",
+      "purpose": "clean-freak qualification"
+    }
+  ],
+  "results": {
+    "betty-mills": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "betty-mills--trash-bags",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 751,
+          "observationTruncated": false,
+          "dismissedObstructions": 2,
+          "unresolvedObstructionCoverage": 0.006152023332118119,
+          "queryTokenCoverage": 1,
+          "observationSha256": "2fd0cf1a59bbd12f3e5b7ac0f66ba675259e8572348b1e6beff3a1c5dfb0fdd8",
+          "annotationScreenshotSha256": "f9ce9434a56dfdaef20aab37b70f31b6e218a5408db6a8f261bf8531febb47ba",
+          "provenanceAggregateSha256": "0c1e0348d106ad6fd545e0579ccb3c9b34a95a37ac944b8c86715ca84df43b10",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "betty-mills--cleaner",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 1233,
+          "observationTruncated": false,
+          "dismissedObstructions": 2,
+          "unresolvedObstructionCoverage": 0.00140625,
+          "queryTokenCoverage": 1,
+          "observationSha256": "98d5a333c122bdafbeb7e8aeafe6d24dd787e44466be932a6239c9dd8eeee550",
+          "annotationScreenshotSha256": "eaca024b91f9b0c2a173734ab16253810fa31d29d787adfee12b08f0829bf516",
+          "provenanceAggregateSha256": "e716751c09cf19d414991bf72f1923efeac4fe36d1652b21dc0039f4329efbdd",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "clean-freak": {
+      "status": "discard",
+      "reason": "Both requested search pages redirected cross-site to google.com, produced 0% requested-query evidence, and yielded no reviewable product candidates."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "betty-mills"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "betty-mills",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

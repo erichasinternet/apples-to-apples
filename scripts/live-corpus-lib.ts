@@ -80,6 +80,18 @@ export function isInterstitialOrBotChallenge(text: string): boolean {
   );
 }
 
+export function isSameSiteHostname(expected: string, actual: string): boolean {
+  const normalize = (hostname: string): string =>
+    hostname.trim().toLowerCase().replace(/\.$/, "");
+  const expectedHostname = normalize(expected);
+  const actualHostname = normalize(actual);
+  return (
+    expectedHostname === actualHostname ||
+    expectedHostname.endsWith(`.${actualHostname}`) ||
+    actualHostname.endsWith(`.${expectedHostname}`)
+  );
+}
+
 export interface CorpusAnnotation {
   version: number;
   pageId: string;
