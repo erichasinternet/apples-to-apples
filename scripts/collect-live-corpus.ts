@@ -26,6 +26,7 @@ import {
 } from "./live-corpus-lib";
 import {
   auditCapturePrivacy,
+  redactSensitiveCaptureText,
   sanitizeCaptureUrl,
   writeCaptureProvenance
 } from "./capture-provenance-lib";
@@ -284,7 +285,7 @@ async function capturePage(
         .replace(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi, "[REDACTED EMAIL]")
         .replace(/\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b/g, "[REDACTED PHONE]")
         .replace(
-          /\b\d{1,6}\s+(?:[NSEW]\.?\s+)?[A-Z0-9][A-Za-z0-9.' -]{1,60}\s(?:street|st|road|rd|avenue|ave|boulevard|blvd|drive|dr|lane|ln|court|ct|way|place|pl)\b/gi,
+          /\b\d{1,6}[ \t]+(?:[NSEW]\.?[ \t]+)?[A-Z0-9][A-Za-z0-9.' -]{1,60}[ \t]+(?:street|st|road|rd|avenue|ave|boulevard|blvd|drive|dr|lane|ln|court|ct|way|place|pl)\b/gi,
           "[REDACTED ADDRESS]"
         )
         .replace(/\b(?:hi|hello|welcome back),?\s+[A-Z][a-z]{1,30}\b/gi, "[REDACTED ACCOUNT]")
@@ -304,6 +305,20 @@ async function capturePage(
         count += 1;
       }
       node = walker.nextNode();
+    }
+
+    // Addresses are often split across nested elements, so no individual text
+    // node contains the complete sensitive value. Redact the deepest combined
+    // text container before observations or screenshots are captured.
+    const elements = [...root.querySelectorAll<HTMLElement>("*")].reverse();
+    for (const element of elements) {
+      const current = (element.innerText || element.textContent || "").trim();
+      if (!current || current.length > 400) continue;
+      const redacted = redact(current);
+      if (redacted !== current) {
+        element.textContent = redacted;
+        count += 1;
+      }
     }
 
     return count;
@@ -505,7 +520,7 @@ async function capturePage(
           .replace(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi, "[REDACTED EMAIL]")
           .replace(/\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b/g, "[REDACTED PHONE]")
           .replace(
-            /\b\d{1,6}\s+(?:[NSEW]\.?\s+)?[A-Z0-9][A-Za-z0-9.' -]{1,60}\s(?:street|st|road|rd|avenue|ave|boulevard|blvd|drive|dr|lane|ln|court|ct|way|place|pl)\b/gi,
+            /\b\d{1,6}[ \t]+(?:[NSEW]\.?[ \t]+)?[A-Z0-9][A-Za-z0-9.' -]{1,60}[ \t]+(?:street|st|road|rd|avenue|ave|boulevard|blvd|drive|dr|lane|ln|court|ct|way|place|pl)\b/gi,
             "[REDACTED ADDRESS]"
           )
           .replace(/\b(?:hi|hello|welcome back),?\s+[A-Z][a-z]{1,30}\b/gi, "[REDACTED ACCOUNT]")
@@ -581,6 +596,9 @@ async function capturePage(
   }, maxCards);
 
   const finalUrl = sanitizeCaptureUrl(page.url());
+  const candidates = JSON.parse(
+    redactSensitiveCaptureText(JSON.stringify(extracted.candidates))
+  ) as CandidateCapture[];
   const sanitizedTarget = {
     ...target,
     url: sanitizeCaptureUrl(target.url)
@@ -595,7 +613,7 @@ async function capturePage(
     texts: [
       { source: "main.html", value: extracted.mainHtml },
       { source: "observation.json", value: JSON.stringify(observation) },
-      { source: "candidates", value: JSON.stringify(extracted.candidates) }
+      { source: "candidates", value: JSON.stringify(candidates) }
     ]
   });
   if (!privacyAudit.passed) {
@@ -637,8 +655,9 @@ async function capturePage(
     path.join(pageDirectory, "annotation.png")
   );
 
-  const candidates: CandidateCapture[] = extracted.candidates;
-  if (Buffer.byteLength(extracted.mainHtml) < 5_000 && candidates.length === 0) {
+  if (candidates.length === 0) {
+    blockReasons.push("no reviewable product candidates");
+  } else if (Buffer.byteLength(extracted.mainHtml) < 5_000) {
     blockReasons.push("empty or incomplete main content");
   }
   for (const [index, candidate] of candidates.entries()) {

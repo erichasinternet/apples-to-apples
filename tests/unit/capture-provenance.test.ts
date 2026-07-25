@@ -3,6 +3,7 @@ import os from "node:os";
 import path from "node:path";
 import {
   auditCapturePrivacy,
+  redactSensitiveCaptureText,
   sanitizeCaptureUrl,
   validateCaptureProvenance,
   writeCaptureProvenance
@@ -44,6 +45,25 @@ describe("capture privacy and provenance", () => {
         "credential"
       ])
     );
+  });
+
+  it("does not treat a product count followed by a new-line brand as an address", () => {
+    const result = auditCapturePrivacy({
+      urls: [{ source: "page", value: "https://shop.example/search" }],
+      texts: [{ source: "candidate", value: "2 sizes\nDr. Elsey's cat litter" }]
+    });
+
+    expect(result.passed).toBe(true);
+  });
+
+  it("redacts serialized addresses without flattening product text", () => {
+    const value =
+      "2 sizes\nDr. Elsey's cat litter; pickup at 160 Wadsworth Blvd";
+    const redacted = redactSensitiveCaptureText(value);
+
+    expect(redacted).toContain("2 sizes\nDr. Elsey's cat litter");
+    expect(redacted).toContain("[REDACTED ADDRESS]");
+    expect(redacted).not.toContain("160 Wadsworth Blvd");
   });
 
   it("hashes immutable assets while allowing annotations to evolve", async () => {

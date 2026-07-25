@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "pilotId": "g2-petsmart-narrow-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-25T06:35:00.193Z",
+  "source": {
+    "pageId": "petsmart--cat-litter",
+    "siteId": "petsmart",
+    "cohort": "validation",
+    "stratum": "specialty-pet",
+    "viewportProfile": "narrow",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "anonymousContext": true,
+    "sourceManifestSha256": "055cf4a57c6d821a966d02ca8c6368733b39cf06a8e3ed1e999ceedc73c0b97f",
+    "collectorSha256": "edada89c0184507b18436c49dd7cc0f7b0934cd1274ecf7833011857ff43b3e4"
+  },
+  "capture": {
+    "httpStatus": 200,
+    "privacyRedactions": 10,
+    "candidateCount": 20,
+    "observationNodeCount": 1560,
+    "observationTruncated": false,
+    "observationSha256": "e1c27c8487b5b1b9fcea99e57879606ec8abdca5e4bbc83485b1619ddad85bce",
+    "annotationScreenshotSha256": "9e7eb595901a50a0fee2501e6f09c89c59ca572b49faf86107320159d6a72442",
+    "provenanceAggregateSha256": "6b8c1ba03fb8e1aa0dc7ff66f1f6c185182914d5ed0598d15cb5525d40a3b956",
+    "machineValidation": "passed",
+    "visualValidation": "passed"
+  },
+  "reviewQueues": {
+    "labelVisibility": "no model or peer labels",
+    "reviewerAQueueSha256": "c84a2dfd43201fe39612923cb461bb0c13c6bbc3702fa41b606849b186c0e525",
+    "reviewerBQueueSha256": "241508b9d82b5d85b2ff5fd5411db80aed66fb96b6391962bd62fcfd9c0bf622"
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

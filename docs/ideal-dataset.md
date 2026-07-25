@@ -138,6 +138,13 @@ targets were independently reparsed and resolved against their exact prompts wit
 zero invalid pointers. This satisfies the synthetic scale and grammar gates only;
 it does not advance any live-data or model-quality gate.
 
+The first G2 capture-pipeline pilot is recorded in
+[`g2-petsmart-narrow-p00.json`](../benchmarks/capture-pilots/g2-petsmart-narrow-p00.json).
+It verifies anonymous narrow-viewport capture, rendered location redaction,
+machine and visual capture validation, immutable provenance, and two blinded
+review queues. It contributes zero gold products until both independent human
+reviews and adjudication are complete.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,
