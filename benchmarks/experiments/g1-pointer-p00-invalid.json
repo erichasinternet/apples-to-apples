@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "createdAt": "2026-07-25T05:47:20Z",
+  "experimentId": "g1-pointer-p00-invalid",
+  "commit": "2adc2fd12484676a31bf7698226ac4c69f5252b3",
+  "modelId": "google/t5gemma-2-1b-1b",
+  "datasetSha256": "b7538f171b0d222d21c6219f73a165ffd784295e3fd50635cd88c83ff0c9b0bf",
+  "evaluationArtifactSha256": "b6b4cd6ae34f5c60be4f45a85f78c982b34dd46fb81f1b61b70f4543283b9013",
+  "modal": {
+    "cancelledAppId": "ap-L44JF0Aoi2jGwgzgWFVPZJ",
+    "completedAppId": "ap-UFW2JWEplIMVjG0RaiR2B8",
+    "completedElapsedSeconds": 647.39,
+    "completedEstimatedCostUsd": 0.1981,
+    "cancelledGpuSecondsFromTimestampedLogs": 369,
+    "cancelledEstimatedCostUsd": 0.1129,
+    "combinedEstimatedCostUsd": 0.311
+  },
+  "result": {
+    "records": 32,
+    "domains": 1,
+    "eligibleComparable": 16,
+    "nativeEligible": 11,
+    "derivedEligible": 5,
+    "rawGrammarValidity": 0,
+    "rawPointerExact": 0,
+    "rawFieldAccuracy": 0,
+    "sevenLineDiagnostic": {
+      "grammarValidity": 0.59375,
+      "pointerExact": 0.1875,
+      "fieldAccuracy": 0.5
+    }
+  },
+  "status": "invalid",
+  "decision": "rerun-protocol",
+  "reason": "The balanced extraction limiter selected all 32 validation records from one held-out domain and therefore did not satisfy the domain-held-out evaluation contract. The attached first attempt also demonstrated that paid Modal runs must use detached execution."
+}

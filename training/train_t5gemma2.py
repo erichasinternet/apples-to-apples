@@ -248,6 +248,34 @@ def parse_evidence_pointer(serialized: str) -> dict[str, str]:
     return values
 
 
+def canonical_pointer_generation(value: str) -> str:
+    candidate = "\n".join(value.splitlines()[: len(POINTER_FIELDS)])
+    try:
+        parse_evidence_pointer(candidate)
+    except ValueError:
+        return value
+    return candidate
+
+
+def record_selection_sha256(records: list[dict[str, Any]]) -> str:
+    digest = hashlib.sha256()
+    for record in records:
+        digest.update(
+            json.dumps(
+                {
+                    "id": record["id"],
+                    "task": record["task"],
+                    "target": record["target"],
+                },
+                ensure_ascii=True,
+                separators=(",", ":"),
+                sort_keys=True,
+            ).encode("utf-8")
+        )
+        digest.update(b"\n")
+    return digest.hexdigest()
+
+
 def validate_pointer_prompt(
     record_id: str, pointer: dict[str, str], prompt: str
 ) -> None:
@@ -746,6 +774,8 @@ def train(
             strict=True,
         ):
             if is_pointer_record(record):
+                raw_prediction = prediction
+                prediction = canonical_pointer_generation(prediction)
                 pointer_count += 1
                 target_pointer = parse_evidence_pointer(label)
                 try:
@@ -780,6 +810,7 @@ def train(
                         "pointerExact": is_pointer_exact,
                         "pointerFieldsCorrect": field_matches,
                         "pointerFieldsTotal": len(POINTER_FIELDS),
+                        "rawPrediction": raw_prediction,
                         "prediction": prediction,
                         "target": label,
                     }
@@ -995,10 +1026,23 @@ def train(
                     "uniqueRecords": len(
                         {record["id"] for record in records_by_split["train"]}
                     ),
+                    "sha256": record_selection_sha256(
+                        records_by_split["train"]
+                    ),
                     "silverDiscoveryRecords": sum(
                         str(record.get("captureId", "")).startswith("silver-")
                         for record in records_by_split["train"]
                     ),
+                },
+                "evaluationSelection": {
+                    "records": len(evaluation_records),
+                    "uniqueRecords": len(
+                        {record["id"] for record in evaluation_records}
+                    ),
+                    "domains": len(
+                        {record["siteId"] for record in evaluation_records}
+                    ),
+                    "sha256": record_selection_sha256(evaluation_records),
                 },
             },
             indent=2,
@@ -1240,29 +1284,58 @@ def mixed_silver_extraction_limit(
 def domain_balanced_extraction_records(
     records: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    sites = sorted({str(record["siteId"]) for record in records})
-    site_buckets: dict[str, list[dict[str, Any]]] = {}
+    extraction_records = [
+        record for record in records if record["task"] == "extract-product"
+    ]
+    sites = sorted({str(record["siteId"]) for record in extraction_records})
+    site_buckets: dict[str, dict[str, list[dict[str, Any]]]] = {}
     for site_id in sites:
-        site_buckets[site_id] = balanced_extraction_limit(
-            [
-                record
-                for record in records
-                if str(record["siteId"]) == site_id
-            ],
-            None,
-        )
+        positive: list[dict[str, Any]] = []
+        abstaining: list[dict[str, Any]] = []
+        for record in extraction_records:
+            if str(record["siteId"]) != site_id:
+                continue
+            if is_pointer_record(record):
+                abstains = (
+                    parse_evidence_pointer(record["target"])["STATUS"]
+                    != "comparable"
+                )
+            else:
+                product = json.loads(record["target"])["products"][0]
+                abstains = "abstainReason" in product
+            (abstaining if abstains else positive).append(record)
+        site_buckets[site_id] = {
+            "positive": positive,
+            "abstaining": abstaining,
+        }
     selected: list[dict[str, Any]] = []
-    index = 0
-    while len(selected) < len(records):
+    indexes = {
+        site_id: {"positive": 0, "abstaining": 0}
+        for site_id in sites
+    }
+    round_index = 0
+    while len(selected) < len(extraction_records):
         added = False
-        for site_id in sites:
-            bucket = site_buckets[site_id]
-            if index < len(bucket):
-                selected.append(bucket[index])
-                added = True
+        for site_index, site_id in enumerate(sites):
+            preferred = (
+                "positive"
+                if (site_index + round_index) % 2 == 0
+                else "abstaining"
+            )
+            fallback = (
+                "abstaining" if preferred == "positive" else "positive"
+            )
+            for bucket_name in (preferred, fallback):
+                index = indexes[site_id][bucket_name]
+                bucket = site_buckets[site_id][bucket_name]
+                if index < len(bucket):
+                    selected.append(bucket[index])
+                    indexes[site_id][bucket_name] += 1
+                    added = True
+                    break
         if not added:
             break
-        index += 1
+        round_index += 1
     return selected
 
 
@@ -1356,9 +1429,9 @@ def main() -> None:
                 balance_extraction_abstentions=args.balance_extraction_abstentions,
             )
         elif args.balance_extraction_abstentions:
-            records_by_split["train"] = balanced_extraction_limit(
-                records_by_split["train"], args.max_train_records
-            )
+            records_by_split["train"] = domain_balanced_extraction_records(
+                records_by_split["train"]
+            )[: args.max_train_records]
         else:
             training_records = records_by_split["train"]
             if args.train_task:
@@ -1388,8 +1461,10 @@ def main() -> None:
                     if record["task"] == args.train_task
                 ]
             if args.balance_extraction_abstentions:
-                records_by_split["validation"] = balanced_extraction_limit(
-                    validation_records, args.max_validation_records
+                records_by_split["validation"] = (
+                    domain_balanced_extraction_records(validation_records)[
+                        : args.max_validation_records
+                    ]
                 )
             else:
                 records_by_split["validation"] = stratified_limit(

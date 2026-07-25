@@ -469,7 +469,7 @@ def pilot_1b_explicit_contract_continue_train() -> dict[str, object]:
 @training_function(timeout=1800)
 def pilot_1b_evidence_pointer_g1_train() -> dict[str, object]:
     return run_training(
-        output_name="t5gemma2-1b-evidence-pointer-g1-pilot-20",
+        output_name="t5gemma2-1b-evidence-pointer-g1-domain-balanced-pilot-20",
         config_directory="t5gemma2-1b",
         config_name="evidence-pointer-g1.json",
         extra_args=[

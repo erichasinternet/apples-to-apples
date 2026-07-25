@@ -11,6 +11,15 @@ from typing import Any
 
 
 DEFAULT_MODEL_ID = "google/t5gemma-2-270m-270m"
+POINTER_FIELDS = (
+    "CARD",
+    "TITLE",
+    "CURRENT_PRICE",
+    "NATIVE_UNIT_PRICE",
+    "PACKAGE_QUANTITY",
+    "PACK_COUNT",
+    "STATUS",
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -69,6 +78,18 @@ def validate_records(bundle: Path, records: list[dict[str, Any]]) -> None:
             )
         if not record.get("prompt", "").startswith("<start_of_image>\n"):
             raise ValueError(f"{record_id}: invalid prompt")
+
+
+def canonical_pointer_generation(value: str) -> str:
+    lines = value.splitlines()
+    candidate_lines = lines[: len(POINTER_FIELDS)]
+    candidate = "\n".join(candidate_lines)
+    if len(lines) < len(POINTER_FIELDS):
+        return value
+    for field, line in zip(POINTER_FIELDS, candidate_lines, strict=True):
+        if not line.startswith(f"{field} "):
+            return value
+    return candidate
 
 
 def infer(args: argparse.Namespace) -> dict[str, Any]:
@@ -144,6 +165,12 @@ def infer(args: argparse.Namespace) -> dict[str, Any]:
             )
         decoded = processor.batch_decode(generated, skip_special_tokens=True)
         for record, prediction in zip(batch, decoded, strict=True):
+            raw_prediction = prediction
+            if (
+                record.get("metadata", {}).get("targetFormat")
+                == "evidence-pointer"
+            ):
+                prediction = canonical_pointer_generation(prediction)
             predictions.append(
                 {
                     "id": record["id"],
@@ -152,6 +179,11 @@ def infer(args: argparse.Namespace) -> dict[str, Any]:
                     "pageId": record["pageId"],
                     "siteId": record["siteId"],
                     "prediction": prediction,
+                    **(
+                        {"rawPrediction": raw_prediction}
+                        if prediction != raw_prediction
+                        else {}
+                    ),
                 }
             )
 

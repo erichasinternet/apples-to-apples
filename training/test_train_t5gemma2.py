@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import unittest
 
+import infer_t5gemma2
 import train_t5gemma2
 
 
@@ -70,6 +71,40 @@ class SilverExtractionSamplingTest(unittest.TestCase):
             ],
         )
 
+    def test_balances_domains_before_repeating_them(self) -> None:
+        records = [
+            {
+                **pointer_record(f"{site}-{status}", status),
+                "siteId": site,
+            }
+            for site in ("site-a", "site-b", "site-c", "site-d")
+            for status in ("comparable", "conditional-price")
+        ]
+        records.append(
+            {
+                "id": "discovery",
+                "task": "discover-products",
+                "siteId": "site-z",
+                "target": json.dumps(
+                    {"version": 1, "pageId": "page", "cardNodeIds": ["card"]}
+                ),
+            }
+        )
+
+        selected = train_t5gemma2.domain_balanced_extraction_records(records)[:4]
+
+        self.assertEqual(len({item["siteId"] for item in selected}), 4)
+        self.assertEqual(
+            sum(
+                train_t5gemma2.parse_evidence_pointer(item["target"])[
+                    "STATUS"
+                ]
+                == "comparable"
+                for item in selected
+            ),
+            2,
+        )
+
 
 class EvidencePointerValidationTest(unittest.TestCase):
     def test_accepts_canonical_comparable_pointer(self) -> None:
@@ -110,6 +145,22 @@ class EvidencePointerValidationTest(unittest.TestCase):
                     'OBSERVATION: {"nodes":[{"id":"card"},{"id":"title"}]}'
                 ),
             )
+
+    def test_canonicalizes_valid_seven_line_prefix(self) -> None:
+        target = pointer_target("comparable")
+
+        self.assertEqual(
+            train_t5gemma2.canonical_pointer_generation(
+                f"{target}\nCARD repeated"
+            ),
+            target,
+        )
+        self.assertEqual(
+            infer_t5gemma2.canonical_pointer_generation(
+                f"{target}\nCARD repeated"
+            ),
+            target,
+        )
 
 
 def record(

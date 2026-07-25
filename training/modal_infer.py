@@ -142,7 +142,7 @@ def run_inference(
             "google/t5gemma-2-1b-1b",
         ),
         "1b-evidence-pointer-g1": (
-            "t5gemma2-1b-evidence-pointer-g1-pilot-20",
+            "t5gemma2-1b-evidence-pointer-g1-domain-balanced-pilot-20",
             "google/t5gemma-2-1b-1b",
         ),
     }
