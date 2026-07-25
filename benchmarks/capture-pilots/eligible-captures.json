@@ -300,6 +300,54 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-03-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "cohort": "training",
+      "pageId": "wholesale-janitorial-supply--laundry-detergent",
+      "captureTimestamp": "2026-07-25T23:43:49.188Z",
+      "observationSha256": "6cc0f3b3a0636f63542fe674735413ddb48d1b961e63fac6c550dcf9db4edfc7",
+      "annotationScreenshotSha256": "edc2a14fb55d53078334a86333c71cfdadbfe2c141b9d9aca45626860e7cbb4c",
+      "qualificationReport": "benchmarks/domain-qualification/wave-04-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-04-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "cohort": "training",
+      "pageId": "wholesale-janitorial-supply--paper-towels",
+      "captureTimestamp": "2026-07-25T23:51:30.387Z",
+      "observationSha256": "caf0f28b889c3e3b79016547cd0a9ec6ca6eab5dac4a84c432cd7c4c794964ef",
+      "annotationScreenshotSha256": "b79b5e9dd30841b4774cfa47894454665109e080f60276a125c5548961d2ad07",
+      "qualificationReport": "benchmarks/domain-qualification/wave-04-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-04-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-cary-company",
+      "cohort": "training",
+      "pageId": "the-cary-company--spray-bottles",
+      "captureTimestamp": "2026-07-25T23:46:11.268Z",
+      "observationSha256": "9f4ef9411283bd4132047afc08d5c9ea8f7632701ceff3b7206f4d585cdc9d59",
+      "annotationScreenshotSha256": "6f71dd939c5d78654415180cd87b91f337f41409797f73e9e0a77039a0899da9",
+      "qualificationReport": "benchmarks/domain-qualification/wave-04-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-04-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-cary-company",
+      "cohort": "training",
+      "pageId": "the-cary-company--plastic-bottles",
+      "captureTimestamp": "2026-07-25T23:50:55.279Z",
+      "observationSha256": "abd267241869d0b8e6d57687300406623991c7a4190719e01de6aecb788e0fac",
+      "annotationScreenshotSha256": "43a402799c806a682c02fa9fbc6c5476d5c13985354a5f2efc4e730d761adfca",
+      "qualificationReport": "benchmarks/domain-qualification/wave-04-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-04-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

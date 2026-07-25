@@ -78,6 +78,18 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
       "promotedAt": "2026-07-25T23:30:00.000Z"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-04-p00.json",
+      "promotedAt": "2026-07-25T23:55:00.000Z"
+    },
+    {
+      "siteId": "the-cary-company",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-04-p00.json",
+      "promotedAt": "2026-07-25T23:55:00.000Z"
     }
   ]
 }

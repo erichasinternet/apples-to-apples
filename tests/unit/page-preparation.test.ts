@@ -134,6 +134,28 @@ describe("page preparation", () => {
     expect(clicked).toHaveBeenCalledOnce();
   });
 
+  it("prefers a persistent cookie choice over a generic close control", () => {
+    document.body.innerHTML = `
+      <div role="dialog" style="position: fixed">
+        <button id="close">Close</button>
+        <button id="accept">Accept All Cookies</button>
+      </div>
+    `;
+    mockVisibleBounds();
+    const closed = vi.fn();
+    const accepted = vi.fn();
+    document
+      .querySelector<HTMLButtonElement>("#close")!
+      .addEventListener("click", closed);
+    document
+      .querySelector<HTMLButtonElement>("#accept")!
+      .addEventListener("click", accepted);
+
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(accepted).toHaveBeenCalledOnce();
+    expect(closed).not.toHaveBeenCalled();
+  });
+
   it("dismisses a consent link styled as the dialog confirmation control", () => {
     document.body.innerHTML = `
       <section role="dialog" style="position: fixed">

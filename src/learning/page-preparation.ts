@@ -22,6 +22,7 @@ export function dismissVisibleObstruction(): boolean {
     "got it",
     "accept",
     "accept all",
+    "accept all cookies",
     "agree",
     "i agree",
     "allow all",
@@ -42,6 +43,7 @@ export function dismissVisibleObstruction(): boolean {
     "reject all",
     "decline"
   ]);
+  const persistentConsentLabels = new Set(["accept all cookies"]);
   const isVisible = (element: HTMLElement): boolean => {
     const style = getComputedStyle(element);
     const box = element.getBoundingClientRect();
@@ -143,10 +145,12 @@ export function dismissVisibleObstruction(): boolean {
     const labels = [ariaLabel, title, text];
     const actionScore = labels.some((label) => optOutLabels.has(label))
       ? 30
-      : explicitlyNamedClose ||
-          labels.some((label) => label === "close" || label === "×")
-        ? 20
-        : 10;
+      : labels.some((label) => persistentConsentLabels.has(label))
+        ? 25
+        : explicitlyNamedClose ||
+            labels.some((label) => label === "close" || label === "×")
+          ? 20
+          : 10;
     const score = actionScore + containerScore;
     if (score > bestScore) {
       bestCandidate = candidate;

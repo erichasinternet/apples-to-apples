@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "pilotId": "g2-wave-04-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-25T23:43:49.188Z",
+  "source": {
+    "siteIds": [
+      "wholesale-janitorial-supply",
+      "the-cary-company"
+    ],
+    "cohort": "training",
+    "strata": [
+      "janitorial-supply",
+      "packaging-supply"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": "37ac4ead92fb15c21a6bb236cdc918f94de6fab3e69a88164238108931199657",
+    "collectorSha256": [
+      "7634dff9eea66627b8dc7d6657d79cbb38ceff3f61391004f058bdf5068551eb",
+      "bbe94a81d320ffd3e6204360f2e1798f840ed59559f7c0fa94f2a7be294edde6"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T23-40-58-181Z",
+      "runManifestSha256": "f6f6fa9eeb00e389cdf441cd31710f6901fb0c90cce86c94df924864c9824ac2",
+      "pageTimeoutMs": 50000,
+      "cardScreenshotBudgetMs": 5000
+    },
+    {
+      "runId": "2026-07-25T23-50-47-569Z",
+      "runManifestSha256": "4bb16c7fca7c306989a50fb964f67503c91a6184da363a9254a1aea1c27afbd1",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 5000
+    },
+    {
+      "runId": "2026-07-25T23-51-24-437Z",
+      "runManifestSha256": "29b9eb08182dc50f64ce440d4b7fafa1ca39ef12d91aa829c03071639dfc75c7",
+      "pageTimeoutMs": 70000,
+      "cardScreenshotBudgetMs": 5000
+    }
+  ],
+  "captures": [
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--laundry-detergent",
+      "capturedAt": "2026-07-25T23:43:49.188Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 255,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.06751703199052132,
+      "queryTokenCoverage": 1,
+      "observationSha256": "6cc0f3b3a0636f63542fe674735413ddb48d1b961e63fac6c550dcf9db4edfc7",
+      "annotationScreenshotSha256": "edc2a14fb55d53078334a86333c71cfdadbfe2c141b9d9aca45626860e7cbb4c",
+      "provenanceAggregateSha256": "d8e1b63a797e3264c29f5ce9016313f0466317b4d764193f270fd8d5b1ed6c9d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--paper-towels",
+      "capturedAt": "2026-07-25T23:51:30.387Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 323,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.000029166666666666666,
+      "queryTokenCoverage": 1,
+      "observationSha256": "caf0f28b889c3e3b79016547cd0a9ec6ca6eab5dac4a84c432cd7c4c794964ef",
+      "annotationScreenshotSha256": "b79b5e9dd30841b4774cfa47894454665109e080f60276a125c5548961d2ad07",
+      "provenanceAggregateSha256": "277fe08f9b0e1ecbe9b31ca139f989d6bd05de84ab5c66ef942c9dd9ae6b9bff",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-cary-company",
+      "pageId": "the-cary-company--spray-bottles",
+      "capturedAt": "2026-07-25T23:46:11.268Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 1729,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0.06903125,
+      "queryTokenCoverage": 1,
+      "observationSha256": "9f4ef9411283bd4132047afc08d5c9ea8f7632701ceff3b7206f4d585cdc9d59",
+      "annotationScreenshotSha256": "6f71dd939c5d78654415180cd87b91f337f41409797f73e9e0a77039a0899da9",
+      "provenanceAggregateSha256": "83d61fea798dd8817448228cc7811e1bf69de1fff13d889a683fa2a391cf567d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-cary-company",
+      "pageId": "the-cary-company--plastic-bottles",
+      "capturedAt": "2026-07-25T23:50:55.279Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 1484,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "abd267241869d0b8e6d57687300406623991c7a4190719e01de6aecb788e0fac",
+      "annotationScreenshotSha256": "43a402799c806a682c02fa9fbc6c5476d5c13985354a5f2efc4e730d761adfca",
+      "provenanceAggregateSha256": "9218c735af9124626c7a5b9238427e67305050c98646398f8dee8c4ec5e2b12e",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "reviewQueues": {
+    "labelVisibility": "no model or peer labels",
+    "reviewerASourceQueueSha256": [
+      "499c33d55393e43b2c8cc74be8e1cb419bc00ca6c40416a41dd9192fd4a2da33",
+      "20f94a43e8059b98d6e7b5771e89df17443a2c65baa6f666caf441b1436c960e",
+      "567cbcd58f7930c2c9f148ce4d4c4056f75c04a9ae815b2448f1d49a00305ac1"
+    ],
+    "reviewerBSourceQueueSha256": [
+      "6eecdef600b1059e2f5ca37ea9aff8b060e575bcb3aaa1193711a1b2a1464ddd",
+      "a63a32083fc767ce1ab7779756b817b3c55be3eafd398ee80113927116bdf96d",
+      "ea1f0a180129df89054c2f78938cf4d2433559715b129c926a7b614a37f759ab"
+    ]
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

@@ -205,7 +205,7 @@ reviews and adjudication are complete.
 
 The current multi-page G2 review campaign is recorded in
 [`g2-pilot-p00.json`](../benchmarks/review-campaigns/g2-pilot-p00.json). It
-contains 25 qualification-backed live pages and 236 frozen candidate card
+contains 29 qualification-backed live pages and 268 frozen candidate card
 roots across two independent blinded queues. A headed Chromium smoke test loaded
 all source screenshots, constructed a card-scoped pointer, rejected a product-grid
 ancestor, and rejected incomplete coverage. It still contributes zero gold
@@ -223,6 +223,12 @@ multipacks, and medical-supply count and variant cases. A live Mood Fabrics
 capture also proved that a populated search input is not sufficient evidence of
 a rendered result page, so query qualification now requires every requested token
 in the title, pathname, visible heading, or visible status text.
+
+Wave 04 promoted Wholesale Janitorial Supply and The Cary Company. Their four
+pages add detergent mass and volume, paper-product roll and sheet multipacks,
+bottle capacities, and quantity-tier price tables. The narrow Cary capture also
+exposed a generic consent-action gap; the collector now recognizes and persists
+an `Accept All Cookies` choice without any hostname or DOM selector override.
 
 ## Dataset Growth
 

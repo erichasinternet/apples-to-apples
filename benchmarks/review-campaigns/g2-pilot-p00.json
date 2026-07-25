@@ -204,50 +204,64 @@
       "candidateCardCount": 8,
       "observationSha256": "e047b39e6bf360895119400292c56071dc2990a4a197c8623962b67910dab8bb",
       "annotationScreenshotSha256": "4322d661fa67e7f2dd76e8ca8e39a04a5ff89a33426e507c7f3bd87703c2ef5e"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--laundry-detergent",
+      "captureTimestamp": "2026-07-25T23:43:49.188Z",
+      "candidateCardCount": 8,
+      "observationSha256": "6cc0f3b3a0636f63542fe674735413ddb48d1b961e63fac6c550dcf9db4edfc7",
+      "annotationScreenshotSha256": "edc2a14fb55d53078334a86333c71cfdadbfe2c141b9d9aca45626860e7cbb4c"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--paper-towels",
+      "captureTimestamp": "2026-07-25T23:51:30.387Z",
+      "candidateCardCount": 8,
+      "observationSha256": "caf0f28b889c3e3b79016547cd0a9ec6ca6eab5dac4a84c432cd7c4c794964ef",
+      "annotationScreenshotSha256": "b79b5e9dd30841b4774cfa47894454665109e080f60276a125c5548961d2ad07"
+    },
+    {
+      "siteId": "the-cary-company",
+      "pageId": "the-cary-company--spray-bottles",
+      "captureTimestamp": "2026-07-25T23:46:11.268Z",
+      "candidateCardCount": 8,
+      "observationSha256": "9f4ef9411283bd4132047afc08d5c9ea8f7632701ceff3b7206f4d585cdc9d59",
+      "annotationScreenshotSha256": "6f71dd939c5d78654415180cd87b91f337f41409797f73e9e0a77039a0899da9"
+    },
+    {
+      "siteId": "the-cary-company",
+      "pageId": "the-cary-company--plastic-bottles",
+      "captureTimestamp": "2026-07-25T23:50:55.279Z",
+      "candidateCardCount": 8,
+      "observationSha256": "abd267241869d0b8e6d57687300406623991c7a4190719e01de6aecb788e0fac",
+      "annotationScreenshotSha256": "43a402799c806a682c02fa9fbc6c5476d5c13985354a5f2efc4e730d761adfca"
     }
   ],
   "queues": [
     {
       "reviewerId": "reviewer-a",
-      "queueId": "reviewer-a--campaign--77da08a232d351b2",
-      "campaignQueueSha256": "ab0fea1daa3e6c9d83febc7e284e29ef52abc39ba123867b482fdb0da964feb9",
+      "queueId": "reviewer-a--campaign--223757c407fd0810",
+      "campaignQueueSha256": "7db57ef01997fbe9a08860a4ec219dfab12447d1345ff4a672af4084b099e5c6",
       "sourceQueueSha256": [
-        "c7c5caec03d94ce03dbcdc4d77ca34f5aeb86a328574424e02e2c738af14dc6b",
-        "468925a9cc330c8698e57b5f53bfa2c0d8fda3ec0b874489a3a8cc19be1fc8a6",
-        "f8375d81437cee2f275d29c33be13a1bb332f97012685bdf1bed6c577778460c",
-        "52a47a8451467d02d06d64107680bd8c1068186c71ddbe321c55b2d3ba27fe1f",
-        "5260bb5052d7cb2c01467865e4ba2f1f2c75e7190a4b01ed4b9538735b9063f2",
-        "347d97cf373d3adef077065d269cdfa0338f212eb24ab5303549d5b90539433f",
-        "116869dd0cc60c624b6805f869a92d0e9e160963fa898f2f460d16ade5fa308a",
-        "e9b947117d0bc0d2dcfb3eaeb2ba6eb42deab74bcc72b3134e29669a5445e90b",
-        "ac232b5c82a2c57accdb5a76c1b128c39e68d7b7e19087c5fb1497d97db308a1",
-        "11c92c3c48cbf742e0100ed1a337f7486958295f034fe924a0a23677e93aa531",
-        "c2f9104e2947992d12a6fe41b96fd1b6cbb587f6cbb8f2ea60a124f4527fae2b",
-        "61df96803b407c51ac523f58e833d690f2c2e01e873506c626db13231b9e9afe",
-        "cb1e6f78b123ddee08156e848c59922c9b913ca344aff080712da0c8c79389a7"
+        "499c33d55393e43b2c8cc74be8e1cb419bc00ca6c40416a41dd9192fd4a2da33",
+        "20f94a43e8059b98d6e7b5771e89df17443a2c65baa6f666caf441b1436c960e",
+        "567cbcd58f7930c2c9f148ce4d4c4056f75c04a9ae815b2448f1d49a00305ac1",
+        "ab0fea1daa3e6c9d83febc7e284e29ef52abc39ba123867b482fdb0da964feb9"
       ],
-      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2, 2, 2, 6, 1, 1, 2]
+      "sourceQueuePageCounts": [2, 1, 1, 25]
     },
     {
       "reviewerId": "reviewer-b",
-      "queueId": "reviewer-b--campaign--d0e2b7804393590d",
-      "campaignQueueSha256": "7421c80c1ff137d73fed2687336f67001dd76ba6ae21ac5b02c538e3d2792450",
+      "queueId": "reviewer-b--campaign--50a127c294fcedf4",
+      "campaignQueueSha256": "219f41af06844134a22d1573799c0c98eae98d5bee8ff1ce96893b1af358935e",
       "sourceQueueSha256": [
-        "b1c95e362b48f8e749048b161cce35ad0e14e3495df5eacf1b1b4e9e124955d7",
-        "f3bf77bd4f4f7746637b521fab8030f675c1376be0db4fe76d3b51a65ffb779a",
-        "0cbbba31756a519caa72ecff09f97649360ed1a690b153823ebaf923477a4964",
-        "3265dd9222efe744e0f65393b8ab2c91582e64c89642483a2410468d09eee0da",
-        "9305a5656a8fb22359bc9a624176943201d4cc75f51cf3e854d3f59217fab1e5",
-        "8e6119b3e976debaa718ec34d602fa8fe51078d2017084ea9fa3b04921751af1",
-        "38cc4ca0d183049174fa6062665d9354a1686ab871cc204277744821a1689365",
-        "e8817008ca18813893e821a423a061994d44258a5edf7726d2b5198051157ff4",
-        "4bb84f79cf86d8f019e0613399db2e3facd925d0d3ce8bcef42086342a4ed124",
-        "4a63a4ae0f22e4e8390e7b7203a3c8becbeef4e0d6dd54a8873caef74421adcf",
-        "d67d98fb03fcd1dad35a26ad5dfc8e37bff80c90e7826a757691e704d308ea1b",
-        "f9b093719bde6b2754f498893c54a42a5fdc2d8633dfc5dfbb96156ff64380c1",
-        "3c29f96ce43425dfd2a0dadbc0e7620c9b80af8cbeccf69b082811e88b1b984f"
+        "6eecdef600b1059e2f5ca37ea9aff8b060e575bcb3aaa1193711a1b2a1464ddd",
+        "a63a32083fc767ce1ab7779756b817b3c55be3eafd398ee80113927116bdf96d",
+        "ea1f0a180129df89054c2f78938cf4d2433559715b129c926a7b614a37f759ab",
+        "7421c80c1ff137d73fed2687336f67001dd76ba6ae21ac5b02c538e3d2792450"
       ],
-      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2, 2, 2, 6, 1, 1, 2]
+      "sourceQueuePageCounts": [2, 1, 1, 25]
     }
   ],
   "blinding": {
@@ -258,10 +272,10 @@
   },
   "workbenchValidation": {
     "browser": "headed Playwright Chromium",
-    "pagesLoaded": 25,
-    "screenshotsLoaded": 25,
-    "candidateCards": 236,
-    "selectedCardNodeId": "n651",
+    "pagesLoaded": 29,
+    "screenshotsLoaded": 29,
+    "candidateCards": 268,
+    "selectedCardNodeId": "n1967",
     "onlyFrozenCardRootOffered": true,
     "cardScopedCandidateSelection": "passed",
     "nonCandidateAncestor": "rejected-404",

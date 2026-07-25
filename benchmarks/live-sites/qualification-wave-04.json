@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "description": "Fourth unassigned domain-qualification wave focused on length- and area-priced materials plus medical, packaging, office, school, and janitorial multipacks. Every domain remains unassigned until it passes the frozen two-page machine and visual gate.",
+  "sites": [
+    {
+      "id": "online-fabric-store",
+      "label": "OnlineFabricStore",
+      "hostname": "www.onlinefabricstore.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://www.onlinefabricstore.com/search.aspx?keyword={query}",
+      "queries": [
+        { "id": "cotton-fabric", "query": "cotton fabric", "dimension": "length" },
+        { "id": "upholstery-fabric", "query": "upholstery fabric", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "best-fabric-store",
+      "label": "Best Fabric Store",
+      "hostname": "bestfabricstore.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://bestfabricstore.com/Merchant2/merchant.mvc?Screen=SRCH&Store_Code=WFI&Search={query}",
+      "queries": [
+        { "id": "cotton-fabric", "query": "cotton fabric", "dimension": "length" },
+        { "id": "upholstery-fabric", "query": "upholstery fabric", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "harts-fabric",
+      "label": "Harts Fabric",
+      "hostname": "hartsfabric.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://hartsfabric.com/search?q={query}",
+      "queries": [
+        { "id": "cotton-fabric", "query": "cotton fabric", "dimension": "length" },
+        { "id": "upholstery-fabric", "query": "upholstery fabric", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "organic-cotton-plus",
+      "label": "Organic Cotton Plus",
+      "hostname": "organiccottonplus.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://organiccottonplus.com/search?q={query}",
+      "queries": [
+        { "id": "cotton-fabric", "query": "cotton fabric", "dimension": "length" },
+        { "id": "cotton-rope", "query": "cotton rope", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "tile-tap",
+      "label": "Tile Tap",
+      "hostname": "www.tile-tap.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.tile-tap.com/search?q={query}",
+      "queries": [
+        { "id": "floor-tile", "query": "floor tile", "dimension": "area" },
+        { "id": "mosaic-tile", "query": "mosaic tile", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "pricon-med",
+      "label": "PriconMed",
+      "hostname": "www.priconmed.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.priconmed.com/search?q={query}",
+      "queries": [
+        { "id": "exam-gloves", "query": "exam gloves", "dimension": "count" },
+        { "id": "gauze-pads", "query": "gauze pads", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "avident-medical",
+      "label": "AviDent Medical",
+      "hostname": "www.avidentmed.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.avidentmed.com/search?q={query}",
+      "queries": [
+        { "id": "exam-gloves", "query": "exam gloves", "dimension": "count" },
+        { "id": "dental-wipes", "query": "dental wipes", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "ace-pak",
+      "label": "Ace-Pak",
+      "hostname": "ace-pak.com",
+      "stratum": "industrial-supply",
+      "searchUrlTemplate": "https://ace-pak.com/search?q={query}",
+      "queries": [
+        { "id": "packing-tape", "query": "packing tape", "dimension": "length" },
+        { "id": "trash-bags", "query": "trash bags", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "us-plastic",
+      "label": "U.S. Plastic",
+      "hostname": "www.usplastic.com",
+      "stratum": "industrial-supply",
+      "searchUrlTemplate": "https://www.usplastic.com/search/?query={query}",
+      "queries": [
+        { "id": "spray-bottles", "query": "spray bottles", "dimension": "volume" },
+        { "id": "plastic-jugs", "query": "plastic jugs", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "the-cary-company",
+      "label": "The Cary Company",
+      "hostname": "www.thecarycompany.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.thecarycompany.com/catalogsearch/result/?q={query}",
+      "queries": [
+        { "id": "plastic-bottles", "query": "plastic bottles", "dimension": "volume" },
+        { "id": "spray-bottles", "query": "spray bottles", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "berlin-packaging",
+      "label": "Berlin Packaging",
+      "hostname": "www.berlinpackaging.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.berlinpackaging.com/search.php?search_query={query}",
+      "queries": [
+        { "id": "plastic-bottles", "query": "plastic bottles", "dimension": "volume" },
+        { "id": "glass-jars", "query": "glass jars", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "nashville-wraps",
+      "label": "Nashville Wraps",
+      "hostname": "www.nashvillewraps.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.nashvillewraps.com/search?q={query}",
+      "queries": [
+        { "id": "ribbon", "query": "ribbon", "dimension": "length" },
+        { "id": "gift-bags", "query": "gift bags", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "school-specialty",
+      "label": "School Specialty",
+      "hostname": "www.schoolspecialty.com",
+      "stratum": "school-supply",
+      "searchUrlTemplate": "https://www.schoolspecialty.com/search?text={query}",
+      "queries": [
+        { "id": "construction-paper", "query": "construction paper", "dimension": "count" },
+        { "id": "glue-sticks", "query": "glue sticks", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "office-crave",
+      "label": "OfficeCrave",
+      "hostname": "www.officecrave.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.officecrave.com/search?q={query}",
+      "queries": [
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" },
+        { "id": "packing-tape", "query": "packing tape", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "bulk-office-supply",
+      "label": "Bulk Office Supply",
+      "hostname": "www.bulkofficesupply.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.bulkofficesupply.com/search?query={query}",
+      "queries": [
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" },
+        { "id": "copy-paper", "query": "copy paper", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "wholesale-janitorial-supply",
+      "label": "Wholesale Janitorial Supply",
+      "hostname": "www.wholesalejanitorialsupply.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.wholesalejanitorialsupply.com/search.php?search_query={query}",
+      "queries": [
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" },
+        { "id": "laundry-detergent", "query": "laundry detergent", "dimension": "mass" }
+      ]
+    }
+  ]
+}

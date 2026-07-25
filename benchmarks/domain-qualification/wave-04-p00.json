@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "qualificationId": "wave-04-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-04.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 5000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "genericConsentActionHandling": true,
+    "persistentCookieConsentHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "queryParametersCountAsQueryEvidence": false,
+    "queryEvidenceScope": "title, pathname, visible headings, and visible status text",
+    "minimumQueryTokenCoverage": 1,
+    "populatedSearchControlsCountAsQueryEvidence": false
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T23-40-58-181Z",
+      "runManifestSha256": "f6f6fa9eeb00e389cdf441cd31710f6901fb0c90cce86c94df924864c9824ac2",
+      "purpose": "one-page headed screening across all 16 wave-04 domains"
+    },
+    {
+      "runId": "2026-07-25T23-47-01-596Z",
+      "runManifestSha256": "1b569fe10d4007e3ef64f9fa11123207cbf84ecde57507fe7772f4b25fef3e35",
+      "purpose": "two-page headed qualification for the two successful screening domains"
+    },
+    {
+      "runId": "2026-07-25T23-50-47-569Z",
+      "runManifestSha256": "4bb16c7fca7c306989a50fb964f67503c91a6184da363a9254a1aea1c27afbd1",
+      "purpose": "isolated Cary Company narrow capture after generic persistent-consent handling"
+    },
+    {
+      "runId": "2026-07-25T23-51-24-437Z",
+      "runManifestSha256": "29b9eb08182dc50f64ce440d4b7fafa1ca39ef12d91aa829c03071639dfc75c7",
+      "purpose": "isolated Wholesale Janitorial Supply desktop paper-towel capture"
+    }
+  ],
+  "results": {
+    "wholesale-janitorial-supply": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "wholesale-janitorial-supply--laundry-detergent",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 255,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0.06751703199052132,
+          "queryTokenCoverage": 1,
+          "observationSha256": "6cc0f3b3a0636f63542fe674735413ddb48d1b961e63fac6c550dcf9db4edfc7",
+          "annotationScreenshotSha256": "edc2a14fb55d53078334a86333c71cfdadbfe2c141b9d9aca45626860e7cbb4c",
+          "provenanceAggregateSha256": "d8e1b63a797e3264c29f5ce9016313f0466317b4d764193f270fd8d5b1ed6c9d",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "wholesale-janitorial-supply--paper-towels",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 323,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0.000029166666666666666,
+          "queryTokenCoverage": 1,
+          "observationSha256": "caf0f28b889c3e3b79016547cd0a9ec6ca6eab5dac4a84c432cd7c4c794964ef",
+          "annotationScreenshotSha256": "b79b5e9dd30841b4774cfa47894454665109e080f60276a125c5548961d2ad07",
+          "provenanceAggregateSha256": "277fe08f9b0e1ecbe9b31ca139f989d6bd05de84ab5c66ef942c9dd9ae6b9bff",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "the-cary-company": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "the-cary-company--spray-bottles",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 1729,
+          "observationTruncated": false,
+          "dismissedObstructions": 12,
+          "unresolvedObstructionCoverage": 0.06903125,
+          "queryTokenCoverage": 1,
+          "observationSha256": "9f4ef9411283bd4132047afc08d5c9ea8f7632701ceff3b7206f4d585cdc9d59",
+          "annotationScreenshotSha256": "6f71dd939c5d78654415180cd87b91f337f41409797f73e9e0a77039a0899da9",
+          "provenanceAggregateSha256": "83d61fea798dd8817448228cc7811e1bf69de1fff13d889a683fa2a391cf567d",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "the-cary-company--plastic-bottles",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 1484,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "abd267241869d0b8e6d57687300406623991c7a4190719e01de6aecb788e0fac",
+          "annotationScreenshotSha256": "43a402799c806a682c02fa9fbc6c5476d5c13985354a5f2efc4e730d761adfca",
+          "provenanceAggregateSha256": "9218c735af9124626c7a5b9238427e67305050c98646398f8dee8c4ec5e2b12e",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "online-fabric-store": {
+      "status": "discard",
+      "reason": "The headed search showed no visible query evidence and produced no reviewable candidates."
+    },
+    "best-fabric-store": {
+      "status": "discard",
+      "reason": "Only half of the requested query appeared in visible result context and no reviewable candidates were frozen."
+    },
+    "harts-fabric": {
+      "status": "discard",
+      "reason": "The search redirected to an unrelated product route and only half of the requested query remained visible."
+    },
+    "organic-cotton-plus": {
+      "status": "discard",
+      "reason": "The headed cotton-rope page exceeded the bounded timeout."
+    },
+    "tile-tap": {
+      "status": "discard",
+      "reason": "An unresolved interstitial covered the full headed viewport."
+    },
+    "pricon-med": {
+      "status": "discard",
+      "reason": "The headed page showed no visible query evidence and produced no reviewable candidates."
+    },
+    "avident-medical": {
+      "status": "discard",
+      "reason": "The headed page showed no visible query evidence."
+    },
+    "ace-pak": {
+      "status": "discard",
+      "reason": "The screen encountered a transient Chromium launch failure and produced no qualification evidence."
+    },
+    "us-plastic": {
+      "status": "discard",
+      "reason": "The headed page showed no visible query evidence."
+    },
+    "berlin-packaging": {
+      "status": "discard",
+      "reason": "The headed plastic-bottle page exceeded the bounded timeout."
+    },
+    "nashville-wraps": {
+      "status": "discard",
+      "reason": "The headed gift-bag page produced no reviewable product candidates."
+    },
+    "school-specialty": {
+      "status": "discard",
+      "reason": "The headed page showed no visible query evidence and produced no reviewable candidates."
+    },
+    "office-crave": {
+      "status": "discard",
+      "reason": "The headed page showed no visible query evidence, remained fully obstructed, and produced no reviewable candidates."
+    },
+    "bulk-office-supply": {
+      "status": "discard",
+      "reason": "The headed route returned HTTP 404 with no visible query evidence or reviewable candidates."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "wholesale-janitorial-supply",
+      "the-cary-company"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "wholesale-janitorial-supply",
+        "cohort": "training"
+      },
+      {
+        "siteId": "the-cary-company",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}
