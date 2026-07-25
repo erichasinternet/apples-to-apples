@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "qualificationId": "wave-02-p02",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-02.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 50000,
+    "cardScreenshotBudgetMs": 5000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "smallFixedNonContentEmbedSuppression": true,
+    "queryParametersCountAsQueryEvidence": false
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T09-14-28-654Z",
+      "runManifestSha256": "38a47deb1f09b9f099b458e4088a24b7699fc3d8ef899b1d74ab4a8a75ea61d7",
+      "purpose": "wasserstrom qualification"
+    },
+    {
+      "runId": "2026-07-25T09-15-39-456Z",
+      "runManifestSha256": "b5c98fb59d3ce989f6a3ab628aca1d904a597964b5d52f0dfa57f05332aa465d",
+      "purpose": "shoplet qualification"
+    },
+    {
+      "runId": "2026-07-25T09-18-17-206Z",
+      "runManifestSha256": "91384bcbf1630aff59e7403957feb749a2521bbbdf2db8cc74f9a5b06066b657",
+      "purpose": "pure-formulas qualification"
+    }
+  ],
+  "results": {
+    "wasserstrom": {
+      "status": "discard",
+      "reason": "Desktop produced a valid aluminum-foil listing, but the narrow cooking-oil search redirected to a single cooking-oil-tester product page with no reviewable listing candidates."
+    },
+    "shoplet": {
+      "status": "discard",
+      "reason": "Both viewports rendered a Verification Required slider challenge with 0% requested-query evidence and no reviewable product candidates."
+    },
+    "pure-formulas": {
+      "status": "discard",
+      "reason": "The narrow protein-powder route rendered a category landing page with no reviewable listing candidates; the desktop vitamins target then exceeded the bounded page deadline."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [],
+    "assignedDomains": [],
+    "status": "discard"
+  }
+}

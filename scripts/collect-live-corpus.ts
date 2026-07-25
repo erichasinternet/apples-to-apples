@@ -22,6 +22,7 @@ import {
   slugify,
   assignCaptureViewports,
   calculateQueryTokenCoverage,
+  isInterstitialOrBotChallenge,
   type CaptureViewportAssignment,
   type CaptureViewportProfile,
   type CaptureTarget,
@@ -304,11 +305,7 @@ async function capturePage(
   if (response && response.status() >= 400) {
     blockReasons.push(`HTTP ${response.status()}`);
   }
-  if (
-    /\b(access (?:to (?:this|the) page (?:has been )?)?denied|verify you are human|captcha|robot check|robot or human|unusual traffic|activate and hold)\b/i.test(
-      bodyText
-    )
-  ) {
+  if (isInterstitialOrBotChallenge(bodyText)) {
     blockReasons.push("interstitial or bot challenge");
   }
   if (unresolvedObstructionCoverage > 0.2) {

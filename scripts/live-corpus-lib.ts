@@ -74,6 +74,12 @@ export function calculateQueryTokenCoverage(
   return matched / queryTokens.length;
 }
 
+export function isInterstitialOrBotChallenge(text: string): boolean {
+  return /\b(access (?:to (?:this|the) page (?:has been )?)?denied|verification required|verify you are human|captcha|robot check|robot or human|unusual traffic|activate and hold|secure your access)\b/i.test(
+    text
+  );
+}
+
 export interface CorpusAnnotation {
   version: number;
   pageId: string;

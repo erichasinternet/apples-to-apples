@@ -51,6 +51,11 @@ The next bounded result is recorded in
 FoodServiceDirect passed the same gate on mass and volume searches after a
 site-agnostic accessibility rule dismissed its help message and suppressed only
 small fixed non-product chat and reCAPTCHA embeds during corpus capture.
+The following bounded result is recorded in
+[`wave-02-p02.json`](../benchmarks/domain-qualification/wave-02-p02.json).
+Wasserstrom was discarded because one search redirected to a product detail page,
+Shoplet was discarded because both viewports returned verification challenges, and
+PureFormulas was discarded after a category landing page failed the listing gate.
 
 ## Cohorts
 

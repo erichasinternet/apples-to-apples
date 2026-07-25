@@ -7,6 +7,7 @@ import {
   calculateWorstCaseSampleSize,
   expandTargets,
   getDomainSplit,
+  isInterstitialOrBotChallenge,
   selectTargets,
   slugify,
   validateDomainSplits,
@@ -97,6 +98,24 @@ describe("live benchmark corpus", () => {
     expect(
       calculateQueryTokenCoverage("mouthwash", "All vitamins and supplements")
     ).toBe(0);
+  });
+
+  it("recognizes generic verification and slider challenges", () => {
+    expect(
+      isInterstitialOrBotChallenge(
+        "Verification Required. Slide right to secure your access."
+      )
+    ).toBe(true);
+    expect(
+      isInterstitialOrBotChallenge(
+        "Verify you are human before continuing through this robot check."
+      )
+    ).toBe(true);
+    expect(
+      isInterstitialOrBotChallenge(
+        "Verify your delivery address and securely access order history."
+      )
+    ).toBe(false);
   });
 
   it("accounts for clustered observations in the sample target", () => {
