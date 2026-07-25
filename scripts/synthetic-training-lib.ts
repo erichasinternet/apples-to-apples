@@ -1,7 +1,10 @@
 import type { CanonicalUnit, Dimension } from "../src/core/types";
 import type { ModelAbstentionReason } from "../src/learning/contracts";
+import type {
+  DatasetProductChallengeTag
+} from "./live-corpus-lib";
 
-export const SYNTHETIC_GENERATOR_VERSION = 1;
+export const SYNTHETIC_GENERATOR_VERSION = 2;
 
 export interface SyntheticQuantity {
   valuePerPackage: number;
@@ -28,6 +31,10 @@ export interface SyntheticProduct {
   visiblePrice?: string;
   visibleNativeUnitPrice?: string;
   badge?: string;
+  scope?: "primary-results" | "secondary-recommendation";
+  challengeTags?: DatasetProductChallengeTag[];
+  pricePresentation?: "plain" | "split" | "sale";
+  titleIncludesQuantity?: boolean;
 }
 
 export interface SyntheticPage {
@@ -192,8 +199,12 @@ function createProduct(
       (options.domainIndex * 3 + options.pageIndex * 5 + productIndex) %
         UNIT_CHOICES.length
     ]!;
-  const value =
+  const baseValue =
     unitChoice.values[Math.floor(random() * unitChoice.values.length)]!;
+  const value =
+    productIndex % 10 === 8 && unitChoice.dimension !== "count"
+      ? 1.5
+      : baseValue;
   const packCount = productIndex % 4 === 3 ? 2 + Math.floor(random() * 4) : 1;
   const brand = BRANDS[Math.floor(random() * BRANDS.length)]!;
   const names = PRODUCT_NAMES[unitChoice.dimension];
@@ -211,6 +222,7 @@ function createProduct(
           ABSTENTION_REASONS.length
       ]!;
     const visible = abstentionText(abstainReason, random);
+    const challengeTag = abstentionChallenge(abstainReason);
     return {
       key,
       title: `${brand} ${name}, ${variant}`,
@@ -218,7 +230,8 @@ function createProduct(
       abstainReason,
       visiblePrice: visible.price,
       visibleQuantity: visible.quantity,
-      ...(visible.badge ? { badge: visible.badge } : {})
+      ...(visible.badge ? { badge: visible.badge } : {}),
+      ...(challengeTag ? { challengeTags: [challengeTag] } : {})
     };
   }
 
@@ -243,6 +256,29 @@ function createProduct(
     rawNativeCents < 100 ? round(rawNativeCents, 1) : round(rawNativeCents, 0);
   const includeNative = productIndex % 3 !== 0;
   const nativeOnly = includeNative && productIndex % 7 === 2;
+  const pricePresentation =
+    productIndex % 10 === 2
+      ? "split"
+      : productIndex % 10 === 3
+        ? "sale"
+        : "plain";
+  const scope =
+    productIndex % 10 === 4
+      ? "secondary-recommendation"
+      : "primary-results";
+  const challengeTags: DatasetProductChallengeTag[] = [
+    ...(packCount > 1 ? (["multipack"] as const) : []),
+    ...(pricePresentation === "split" ? (["split-price"] as const) : []),
+    ...(pricePresentation === "sale" ? (["sale-vs-list"] as const) : []),
+    ...(value % 1 !== 0 ? (["decimal-quantity"] as const) : []),
+    ...(scope === "secondary-recommendation"
+      ? (["sponsored-or-recommendation"] as const)
+      : [])
+  ];
+  const visiblePrice =
+    pricePresentation === "sale"
+      ? `Now ${formatMoney(priceCents)}; Was ${formatMoney(priceCents + 300)}`
+      : formatMoney(priceCents);
 
   return {
     key,
@@ -260,12 +296,16 @@ function createProduct(
           }
         }
       : {}),
-    visiblePrice: formatMoney(priceCents),
+    visiblePrice,
     ...(nativeOnly ? {} : { visibleQuantity: quantityText }),
     ...(includeNative
       ? { visibleNativeUnitPrice: formatUnitPrice(nativeCents, unitChoice.label) }
       : {}),
-    ...(productIndex % 9 === 0 ? { badge: "Popular choice" } : {})
+    ...(productIndex % 9 === 0 ? { badge: "Popular choice" } : {}),
+    scope,
+    challengeTags,
+    pricePresentation,
+    titleIncludesQuantity
   };
 }
 
@@ -293,8 +333,9 @@ function abstentionText(
       };
     case "unsupported-unit":
       return {
-        price: `$${low}.99`,
-        quantity: "1 assorted bundle"
+        price: `€${low}.99`,
+        quantity: "1 assorted bundle",
+        badge: "Imported offer"
       };
     case "unselected-variant":
       return {
@@ -307,6 +348,17 @@ function abstentionText(
         quantity: "Details unavailable"
       };
   }
+}
+
+function abstentionChallenge(
+  reason: ModelAbstentionReason
+): DatasetProductChallengeTag | undefined {
+  if (reason === "conditional-price") return "conditional-price";
+  if (reason === "price-range") return "price-range";
+  if (reason === "unselected-variant") return "unselected-variant";
+  if (reason === "unsupported-unit") return "unsupported-currency";
+  if (reason === "ambiguous-quantity") return "native-derived-conflict";
+  return undefined;
 }
 
 function renderPage(
@@ -404,10 +456,14 @@ function renderCard(product: SyntheticProduct, index: number, layout: string): s
     <h2 class="title" data-synth-title="${product.key}">${escapeHtml(product.title)}</h2>
     <div class="rating">${(3.8 + (index % 12) / 10).toFixed(1)} stars · ${42 + index * 137} reviews</div>
   </div>`;
+  const renderedPrice =
+    product.pricePresentation === "split" && product.priceCents !== undefined
+      ? `<span>$</span><span>${Math.floor(product.priceCents / 100)}</span><sup>${String(
+          product.priceCents % 100
+        ).padStart(2, "0")}</sup>`
+      : escapeHtml(product.visiblePrice ?? "");
   const purchase = `<div class="purchase">
-    <div class="price" data-synth-price="${product.key}">${escapeHtml(
-      product.visiblePrice ?? ""
-    )}</div>
+    <div class="price" data-synth-price="${product.key}">${renderedPrice}</div>
     ${
       product.visibleQuantity
         ? `<div class="quantity" data-synth-quantity="${product.key}">${escapeHtml(
@@ -426,6 +482,33 @@ function renderCard(product: SyntheticProduct, index: number, layout: string): s
   </div>`;
   const order = index % 3 === 0 ? `${media}${purchase}${details}` : `${media}${details}${purchase}`;
   return `<${tag} class="product" data-synth-card="${product.key}">${order}</${tag}>`;
+}
+
+export function syntheticStructuralFamily(
+  layout: string,
+  product: SyntheticProduct
+): string {
+  const dimension =
+    product.quantity?.dimension ??
+    product.nativeUnitPrice?.dimension ??
+    "none";
+  const evidenceMode = product.abstainReason
+    ? `abstain:${product.abstainReason}`
+    : product.quantity && product.nativeUnitPrice
+      ? "native-and-derived"
+      : product.nativeUnitPrice
+        ? "native-only"
+        : "derived-only";
+  return [
+    layout,
+    product.scope ?? "primary-results",
+    dimension,
+    evidenceMode,
+    product.quantity && product.quantity.packCount > 1 ? "multipack" : "single",
+    product.pricePresentation ?? "plain",
+    product.titleIncludesQuantity ? "quantity-in-title" : "quantity-separate",
+    [...(product.challengeTags ?? [])].sort().join("+") || "ordinary"
+  ].join("|");
 }
 
 const palettes = [

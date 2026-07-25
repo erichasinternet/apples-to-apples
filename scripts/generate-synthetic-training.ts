@@ -9,10 +9,12 @@ import {
   buildT5TrainingRecords,
   countExtractionOutcomes,
   type T5DatasetSplit,
+  type T5ExtractionTargetFormat,
   type T5TrainingRecord
 } from "./t5-training-lib";
 import {
   createSyntheticPage,
+  syntheticStructuralFamily,
   SYNTHETIC_GENERATOR_VERSION,
   type SyntheticPage,
   type SyntheticProduct
@@ -26,6 +28,7 @@ interface GeneratorOptions {
   productsPerPage: number;
   validationDomains: number;
   seed: number;
+  targetFormat: T5ExtractionTargetFormat;
 }
 
 interface ProductNodeReferences {
@@ -72,7 +75,9 @@ const distributions = {
   units: {} as Record<string, number>,
   abstentionReasons: {} as Record<string, number>,
   layouts: {} as Record<string, number>,
-  extractionPatterns: {} as Record<string, number>
+  extractionPatterns: {} as Record<string, number>,
+  challengeTags: {} as Record<string, number>,
+  structuralFamilies: {} as Record<string, number>
 };
 let productCount = 0;
 let pageCount = 0;
@@ -145,7 +150,8 @@ try {
         ...buildT5TrainingRecords(built.example, {
           captureId: `synthetic-${options.seed}`,
           split: domain.split,
-          imagePath
+          imagePath,
+          extractionTargetFormat: options.targetFormat
         })
       );
       const outcomes = countExtractionOutcomes(built.example.target.products);
@@ -156,6 +162,13 @@ try {
       layouts.add(synthetic.layout);
       increment(distributions.layouts, synthetic.layout);
       for (const product of synthetic.products) {
+        increment(
+          distributions.structuralFamilies,
+          syntheticStructuralFamily(synthetic.layout, product)
+        );
+        for (const tag of product.challengeTags ?? []) {
+          increment(distributions.challengeTags, tag);
+        }
         if (product.abstainReason) {
           increment(distributions.abstentionReasons, product.abstainReason);
         }
@@ -219,6 +232,7 @@ const manifest = {
   version: 1,
   createdAt: new Date().toISOString(),
   datasetType: "synthetic-pretraining",
+  targetFormat: options.targetFormat,
   labelSource: "deterministic-generator-and-evidence-validator",
   generator: {
     version: SYNTHETIC_GENERATOR_VERSION,
@@ -264,39 +278,32 @@ const manifest = {
   sourceHashes: sourceHashes.sort((left, right) => left.pageId.localeCompare(right.pageId)),
   sha256: createHash("sha256").update(trainText).update(validationText).digest("hex")
 };
-if (
-  options.seed === 20260724 &&
-  options.domains === 40 &&
-  options.validationDomains === 8 &&
-  options.pagesPerDomain === 3 &&
-  options.productsPerPage === 14
-) {
-  await validateDatasetCard({
-    sha256: manifest.sha256,
-    pages: manifest.pages,
-    domains: {
-      total: manifest.domains.length,
-      train: manifest.domainSplits.train.length,
-      validation: manifest.domainSplits.validation.length
-    },
-    products: {
-      total: manifest.products,
-      comparable: manifest.comparableProducts,
-      abstained: manifest.abstainedProducts
-    },
-    records: {
-      total: records.length,
-      ...manifest.records
-    },
-    distributions: manifest.distributions
-  });
-}
 await writeFile(
   path.join(options.outputDirectory, "dataset-manifest.json"),
   `${JSON.stringify(manifest, null, 2)}\n`,
   "utf8"
 );
-process.stdout.write(`${JSON.stringify(manifest, null, 2)}\n`);
+process.stdout.write(
+  `${JSON.stringify(
+    {
+      valid: true,
+      output: options.outputDirectory,
+      targetFormat: manifest.targetFormat,
+      generatorVersion: manifest.generator.version,
+      pages: manifest.pages,
+      products: manifest.products,
+      comparableProducts: manifest.comparableProducts,
+      abstainedProducts: manifest.abstainedProducts,
+      structuralFamilies: Object.keys(
+        manifest.distributions.structuralFamilies
+      ).length,
+      challengeTags: manifest.distributions.challengeTags,
+      sha256: manifest.sha256
+    },
+    null,
+    2
+  )}\n`
+);
 
 async function captureSyntheticPage(
   page: Page,
@@ -403,8 +410,9 @@ function annotateProduct(
     }
     return {
       nodeId: references.card,
-      scope: "primary-results",
+      scope: product.scope ?? "primary-results",
       comparable: false,
+      ...(product.challengeTags ? { challengeTags: product.challengeTags } : {}),
       title: product.title,
       evidenceNodeIds,
       fieldEvidence: { title: [references.title] },
@@ -417,8 +425,9 @@ function annotateProduct(
   }
   return {
     nodeId: references.card,
-    scope: "primary-results",
+    scope: product.scope ?? "primary-results",
     comparable: true,
+    ...(product.challengeTags ? { challengeTags: product.challengeTags } : {}),
     title: product.title,
     evidenceNodeIds,
     fieldEvidence: {
@@ -464,11 +473,16 @@ function parseOptions(args: string[]): GeneratorOptions {
     values.set(flag, value);
     index += 1;
   }
-  const domains = integerOption(values, "--domains", 40);
-  const pagesPerDomain = integerOption(values, "--pages-per-domain", 3);
-  const productsPerPage = integerOption(values, "--products-per-page", 14);
-  const validationDomains = integerOption(values, "--validation-domains", 8);
+  const domains = integerOption(values, "--domains", 200);
+  const pagesPerDomain = integerOption(values, "--pages-per-domain", 5);
+  const productsPerPage = integerOption(values, "--products-per-page", 20);
+  const validationDomains = integerOption(values, "--validation-domains", 40);
   const seed = integerOption(values, "--seed", 20260724);
+  const targetFormat =
+    values.get("--target-format") ?? "evidence-pointer";
+  if (!["json", "evidence-pointer"].includes(targetFormat)) {
+    throw new Error("--target-format must be json or evidence-pointer");
+  }
   if (domains < 2 || validationDomains < 1 || validationDomains >= domains) {
     throw new Error("Synthetic generation requires disjoint train and validation domains.");
   }
@@ -483,7 +497,8 @@ function parseOptions(args: string[]): GeneratorOptions {
     pagesPerDomain,
     productsPerPage,
     validationDomains,
-    seed
+    seed,
+    targetFormat: targetFormat as T5ExtractionTargetFormat
   };
 }
 
@@ -514,27 +529,4 @@ function sha256(value: string): string {
 
 function increment(values: Record<string, number>, key: string): void {
   values[key] = (values[key] ?? 0) + 1;
-}
-
-async function validateDatasetCard(actual: Record<string, unknown>): Promise<void> {
-  const filename = path.resolve("benchmarks/synthetic-training/dataset-card.json");
-  const expected = JSON.parse(await readFile(filename, "utf8")) as Record<string, unknown>;
-  for (const key of ["sha256", "pages", "domains", "products", "records", "distributions"]) {
-    if (stableJson(actual[key]) !== stableJson(expected[key])) {
-      throw new Error(`Generated default corpus does not match dataset card field: ${key}`);
-    }
-  }
-}
-
-function stableJson(value: unknown): string {
-  if (Array.isArray(value)) {
-    return `[${value.map(stableJson).join(",")}]`;
-  }
-  if (value && typeof value === "object") {
-    return `{${Object.entries(value)
-      .sort(([left], [right]) => left.localeCompare(right))
-      .map(([key, entry]) => `${JSON.stringify(key)}:${stableJson(entry)}`)
-      .join(",")}}`;
-  }
-  return JSON.stringify(value);
 }

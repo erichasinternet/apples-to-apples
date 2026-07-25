@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatorVersion": 2,
+  "seed": 20260724,
+  "datasetType": "synthetic-pretraining",
+  "targetFormat": "evidence-pointer",
+  "outputPath": "benchmark-data/training/t5gemma2-synthetic-pointer",
+  "sha256": "c738a431111426013cc606e6c3229277dc600fb0f44c7f84c8d07f7981b2d1c2",
+  "pages": 1000,
+  "domains": {
+    "total": 200,
+    "train": 160,
+    "validation": 40
+  },
+  "products": {
+    "total": 20000,
+    "comparable": 16000,
+    "abstained": 4000
+  },
+  "records": {
+    "total": 23876,
+    "train": 19101,
+    "validation": 4775,
+    "discovery": 3876,
+    "extraction": 20000
+  },
+  "structuralFamilies": 652,
+  "challengeTags": {
+    "conditional-price": 800,
+    "split-price": 2000,
+    "multipack": 4000,
+    "sale-vs-list": 2000,
+    "sponsored-or-recommendation": 2000,
+    "price-range": 800,
+    "native-derived-conflict": 800,
+    "unsupported-currency": 800,
+    "decimal-quantity": 1636,
+    "unselected-variant": 800
+  },
+  "validation": {
+    "pointerRecords": 20000,
+    "invalidPointers": 0,
+    "minimumStructuralFamilies": 200,
+    "minimumExamplesPerRarePattern": 500,
+    "passed": true
+  },
+  "policy": {
+    "allowedUses": [
+      "pointer-grammar warm start",
+      "structural challenge balancing",
+      "pipeline testing",
+      "controlled ablation experiments"
+    ],
+    "prohibitedClaims": [
+      "live-site accuracy",
+      "model promotion without live adjudicated evidence",
+      "held-out benchmark performance"
+    ],
+    "maximumPostWarmStartPresentationShare": 0.5
+  }
+}

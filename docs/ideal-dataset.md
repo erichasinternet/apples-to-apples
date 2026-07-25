@@ -131,6 +131,13 @@ Compare live-only, synthetic-only, and hybrid checkpoints. Keep synthetic replay
 only when it improves domain-held-out live performance without a precision
 regression.
 
+The version 2 pointer corpus is recorded in
+[`pointer-dataset-card.json`](../benchmarks/synthetic-training/pointer-dataset-card.json).
+It contains 20,000 products across 652 generated structural families. All 20,000
+targets were independently reparsed and resolved against their exact prompts with
+zero invalid pointers. This satisfies the synthetic scale and grammar gates only;
+it does not advance any live-data or model-quality gate.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,
