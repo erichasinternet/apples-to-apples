@@ -227,6 +227,18 @@ export function expandTargets(manifest: CorpusTargetManifest): CaptureTarget[] {
   return targets;
 }
 
+export function annotationScreenshotDimensionsMatch(
+  dimensions: { width: number; height: number },
+  region: { width: number; height: number }
+): boolean {
+  // Locator screenshots rasterize fractional CSS bounds from floor(start) to ceil(end).
+  const rasterizationEnvelope = 2;
+  return (
+    Math.abs(dimensions.width - region.width) <= rasterizationEnvelope &&
+    Math.abs(dimensions.height - region.height) <= rasterizationEnvelope
+  );
+}
+
 export function validateDomainSplits(
   manifest: CorpusTargetManifest,
   splits: CorpusDomainSplits

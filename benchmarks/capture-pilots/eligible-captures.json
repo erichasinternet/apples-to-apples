@@ -108,6 +108,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-betty-mills-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "lambert-vet-supply",
+      "cohort": "training",
+      "pageId": "lambert-vet-supply--cat-litter",
+      "captureTimestamp": "2026-07-25T15:15:40.466Z",
+      "observationSha256": "2af83635f43a7ca72aeef3a089eaedb8f58289e5c8dbb8a968e9932c6fc0c2d4",
+      "annotationScreenshotSha256": "9295717bb4b1892e1adeaaea8ae6e6b90a24d5caf332a163ec7be79932b47dc9",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p06.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-lambert-vet-supply-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "lambert-vet-supply",
+      "cohort": "training",
+      "pageId": "lambert-vet-supply--flea-treatment",
+      "captureTimestamp": "2026-07-25T15:15:52.285Z",
+      "observationSha256": "0e1c2e82249aee7bb7a4400e78ce0f5b4ebe72be4ddd439a9dda4e4938dd6506",
+      "annotationScreenshotSha256": "a90d129fa703d46291ffcb04a2d7f9442e748611891ee529621639b807ec6002",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p06.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-lambert-vet-supply-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

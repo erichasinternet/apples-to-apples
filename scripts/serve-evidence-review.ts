@@ -57,6 +57,9 @@ const server = Bun.serve({
           "text/css; charset=utf-8"
         );
       }
+      if (request.method === "GET" && url.pathname === "/favicon.ico") {
+        return new Response(null, { status: 204 });
+      }
       if (request.method === "GET" && url.pathname === "/api/queue") {
         return json({
           queueId: queue.queueId,

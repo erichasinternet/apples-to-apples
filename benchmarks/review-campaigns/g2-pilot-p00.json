@@ -1,7 +1,7 @@
 {
   "version": 1,
   "campaignId": "g2-pilot-p00",
-  "createdAt": "2026-07-25T09:33:00Z",
+  "createdAt": "2026-07-25T15:18:00Z",
   "cohort": "training",
   "decision": "workbench-pass-independent-human-reviews-pending",
   "pages": [
@@ -70,6 +70,22 @@
       "annotationScreenshotSha256": "527a8ef76b0fc5ef5eeb07e3a5778c6814f5efae6c127c47b298bfe2079f9ce1"
     },
     {
+      "siteId": "lambert-vet-supply",
+      "pageId": "lambert-vet-supply--cat-litter",
+      "captureTimestamp": "2026-07-25T15:15:40.466Z",
+      "candidateCardCount": 8,
+      "observationSha256": "2af83635f43a7ca72aeef3a089eaedb8f58289e5c8dbb8a968e9932c6fc0c2d4",
+      "annotationScreenshotSha256": "9295717bb4b1892e1adeaaea8ae6e6b90a24d5caf332a163ec7be79932b47dc9"
+    },
+    {
+      "siteId": "lambert-vet-supply",
+      "pageId": "lambert-vet-supply--flea-treatment",
+      "captureTimestamp": "2026-07-25T15:15:52.285Z",
+      "candidateCardCount": 8,
+      "observationSha256": "0e1c2e82249aee7bb7a4400e78ce0f5b4ebe72be4ddd439a9dda4e4938dd6506",
+      "annotationScreenshotSha256": "a90d129fa703d46291ffcb04a2d7f9442e748611891ee529621639b807ec6002"
+    },
+    {
       "siteId": "restaurant-supply",
       "pageId": "restaurant-supply--flour",
       "captureTimestamp": "2026-07-25T07:02:32.435Z",
@@ -81,31 +97,33 @@
   "queues": [
     {
       "reviewerId": "reviewer-a",
-      "queueId": "reviewer-a--campaign--412de1d6a9d15529",
-      "campaignQueueSha256": "9fd889a899851a10003e8abc7dbb10a04beff51d7505309832159bc3c54b549c",
+      "queueId": "reviewer-a--campaign--7a0560eec03af240",
+      "campaignQueueSha256": "097af0b6a4774c096cd8a89e67a76edf59640ff72806367ed07a21704a3c12af",
       "sourceQueueSha256": [
         "c7c5caec03d94ce03dbcdc4d77ca34f5aeb86a328574424e02e2c738af14dc6b",
         "468925a9cc330c8698e57b5f53bfa2c0d8fda3ec0b874489a3a8cc19be1fc8a6",
         "f8375d81437cee2f275d29c33be13a1bb332f97012685bdf1bed6c577778460c",
         "52a47a8451467d02d06d64107680bd8c1068186c71ddbe321c55b2d3ba27fe1f",
         "5260bb5052d7cb2c01467865e4ba2f1f2c75e7190a4b01ed4b9538735b9063f2",
-        "347d97cf373d3adef077065d269cdfa0338f212eb24ab5303549d5b90539433f"
+        "347d97cf373d3adef077065d269cdfa0338f212eb24ab5303549d5b90539433f",
+        "116869dd0cc60c624b6805f869a92d0e9e160963fa898f2f460d16ade5fa308a"
       ],
-      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2]
+      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2]
     },
     {
       "reviewerId": "reviewer-b",
-      "queueId": "reviewer-b--campaign--f66698ce78bd9473",
-      "campaignQueueSha256": "111fdfa4e3050dfc7f45978e0eeac85f2dc00d7515b4eedbe1213c1f4f267c78",
+      "queueId": "reviewer-b--campaign--5a16f431ef7de834",
+      "campaignQueueSha256": "4c654932d79ca961dea351ff454b227cbe2246338f584c1ef40914a916ce15e0",
       "sourceQueueSha256": [
         "b1c95e362b48f8e749048b161cce35ad0e14e3495df5eacf1b1b4e9e124955d7",
         "f3bf77bd4f4f7746637b521fab8030f675c1376be0db4fe76d3b51a65ffb779a",
         "0cbbba31756a519caa72ecff09f97649360ed1a690b153823ebaf923477a4964",
         "3265dd9222efe744e0f65393b8ab2c91582e64c89642483a2410468d09eee0da",
         "9305a5656a8fb22359bc9a624176943201d4cc75f51cf3e854d3f59217fab1e5",
-        "8e6119b3e976debaa718ec34d602fa8fe51078d2017084ea9fa3b04921751af1"
+        "8e6119b3e976debaa718ec34d602fa8fe51078d2017084ea9fa3b04921751af1",
+        "38cc4ca0d183049174fa6062665d9354a1686ab871cc204277744821a1689365"
       ],
-      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2]
+      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2]
     }
   ],
   "blinding": {
@@ -116,10 +134,10 @@
   },
   "workbenchValidation": {
     "browser": "headed Playwright Chromium",
-    "pagesLoaded": 9,
-    "screenshotsLoaded": 9,
-    "candidateCards": 108,
-    "selectedCardNodeId": "n1989",
+    "pagesLoaded": 11,
+    "screenshotsLoaded": 11,
+    "candidateCards": 124,
+    "selectedCardNodeId": "n3079",
     "onlyFrozenCardRootOffered": true,
     "cardScopedCandidateSelection": "passed",
     "nonCandidateAncestor": "rejected-404",

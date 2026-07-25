@@ -62,6 +62,13 @@ URLs rendered its general storefront rather than requested-query listings.
 [`wave-02-p04.json`](../benchmarks/domain-qualification/wave-02-p04.json) records
 Betty Mills passing the frozen count and volume gate across narrow and desktop
 viewports; CleanFreak was discarded after both searches redirected to Google.
+[`wave-02-p05.json`](../benchmarks/domain-qualification/wave-02-p05.json) records
+PetEdge and Hardware World failing the two-page gate because of obstructed evidence
+and non-query storefront results, respectively.
+[`wave-02-p06.json`](../benchmarks/domain-qualification/wave-02-p06.json) records
+LionsDeal returning no-result pages and Lambert Vet Supply passing the mass and
+count gate after the generic obstruction detector learned to ignore an inert,
+transparent, pointerless notification container.
 
 ## Cohorts
 

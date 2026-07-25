@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "qualificationId": "wave-02-p06",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-02.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 50000,
+    "cardScreenshotBudgetMs": 5000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "smallFixedNonContentEmbedSuppression": true,
+    "transparentPointerlessContainerSuppression": true,
+    "genericInterstitialDetection": true,
+    "queryParametersCountAsQueryEvidence": false
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T15-11-48-607Z",
+      "runManifestSha256": "b850ba81af4ab891893f7810334fbd6569e8050976fd3bac57b816af897df4d6",
+      "purpose": "lions-deal qualification"
+    },
+    {
+      "runId": "2026-07-25T15-12-11-840Z",
+      "runManifestSha256": "ca9384a13a039f4e9769a96ef31f887fe536dd20061aecad7336019e37feb559",
+      "purpose": "lambert-vet-supply diagnostic capture before inert-container correction"
+    },
+    {
+      "runId": "2026-07-25T15-15-29-496Z",
+      "runManifestSha256": "ebafb0102e084119cebea72c4ae552b4a677d867afe3752700042384d52190e8",
+      "purpose": "lambert-vet-supply final qualification"
+    }
+  ],
+  "results": {
+    "lions-deal": {
+      "status": "discard",
+      "reason": "Both requested search pages redirected to the retailer's no-results page, produced 0% requested-query evidence, and yielded no reviewable product candidates."
+    },
+    "lambert-vet-supply": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "lambert-vet-supply--cat-litter",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 799,
+          "observationTruncated": false,
+          "dismissedObstructions": 5,
+          "unresolvedObstructionCoverage": 0.011982014825616722,
+          "queryTokenCoverage": 1,
+          "observationSha256": "0ff5b4f6cd56fa236089c61431d773372803eeca2fb25ce3aaac0aa8368154d2",
+          "annotationScreenshotSha256": "9295717bb4b1892e1adeaaea8ae6e6b90a24d5caf332a163ec7be79932b47dc9",
+          "provenanceAggregateSha256": "e932d25fa4b31b927b8e79187436b1a01baca646161ba4fa314e327afceee3fd",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "lambert-vet-supply--flea-treatment",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 914,
+          "observationTruncated": false,
+          "dismissedObstructions": 5,
+          "unresolvedObstructionCoverage": 0.004841666666666667,
+          "queryTokenCoverage": 1,
+          "observationSha256": "dbeb96e381cb1b8f7f27ab46fe3f142835302bbb2d5fc37c1ee13cfd6afc804c",
+          "annotationScreenshotSha256": "a90d129fa703d46291ffcb04a2d7f9442e748611891ee529621639b807ec6002",
+          "provenanceAggregateSha256": "83f2a1ab71823da7a78a16917dc1c86093a2febf29347df05ad972a3412a6304",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "lambert-vet-supply"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "lambert-vet-supply",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

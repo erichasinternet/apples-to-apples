@@ -2,6 +2,7 @@ import domainSplits from "../../benchmarks/live-sites/domain-splits.json";
 import targetManifest from "../../benchmarks/live-sites/targets.json";
 import {
   CAPTURE_VIEWPORTS,
+  annotationScreenshotDimensionsMatch,
   assignCaptureViewports,
   calculateQueryTokenCoverage,
   calculateWorstCaseSampleSize,
@@ -177,6 +178,21 @@ describe("live benchmark corpus", () => {
     expect(expandTargets(manifest)[0]?.url).toBe(
       "https://shop.example/printer-paper/directory_printer-paper"
     );
+  });
+
+  it("accepts browser rasterization around fractional annotation bounds", () => {
+    expect(
+      annotationScreenshotDimensionsMatch(
+        { width: 1280, height: 1839 },
+        { width: 1280, height: 1837.39 }
+      )
+    ).toBe(true);
+    expect(
+      annotationScreenshotDimensionsMatch(
+        { width: 1280, height: 1840 },
+        { width: 1280, height: 1837.39 }
+      )
+    ).toBe(false);
   });
 
   it("validates disjoint domain-level splits", () => {

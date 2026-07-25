@@ -30,6 +30,12 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-02-p04.json",
       "promotedAt": "2026-07-25T09:33:00.000Z"
+    },
+    {
+      "siteId": "lambert-vet-supply",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p06.json",
+      "promotedAt": "2026-07-25T15:18:00.000Z"
     }
   ]
 }

@@ -182,6 +182,48 @@ export function dismissVisibleObstruction(): boolean {
 export function measureVisibleObstructionCoverage(): number {
   const viewportArea = Math.max(1, window.innerWidth * window.innerHeight);
   let maximumCoverage = 0;
+  const isTransparent = (color: string): boolean =>
+    !color ||
+    color === "transparent" ||
+    /^rgba\([^)]*,\s*0(?:\.0+)?\)$/.test(color);
+  const hasVisiblePaint = (root: HTMLElement): boolean => {
+    if ((root.innerText || root.textContent || "").trim()) return true;
+
+    for (const candidate of [
+      root,
+      ...root.querySelectorAll<HTMLElement>("*")
+    ]) {
+      const style = getComputedStyle(candidate);
+      if (
+        style.display === "none" ||
+        style.visibility === "hidden" ||
+        Number.parseFloat(style.opacity || "1") <= 0
+      ) {
+        continue;
+      }
+      if (
+        ["IMG", "PICTURE", "SVG", "CANVAS", "VIDEO"].includes(
+          candidate.tagName
+        )
+      ) {
+        return true;
+      }
+      if (
+        !isTransparent(style.backgroundColor) ||
+        (style.backgroundImage && style.backgroundImage !== "none") ||
+        (style.boxShadow && style.boxShadow !== "none") ||
+        [
+          style.borderTopWidth,
+          style.borderRightWidth,
+          style.borderBottomWidth,
+          style.borderLeftWidth
+        ].some((width) => Number.parseFloat(width) > 0)
+      ) {
+        return true;
+      }
+    }
+    return false;
+  };
   const roots: Array<Document | ShadowRoot> = [document];
   const elements: HTMLElement[] = [];
   for (let index = 0; index < roots.length; index += 1) {
@@ -204,6 +246,13 @@ export function measureVisibleObstructionCoverage(): number {
       "dialog[open], [role='dialog'], [role='alertdialog'], [aria-modal='true']"
     );
     if (!modal && style.position !== "fixed") continue;
+    if (
+      !modal &&
+      style.pointerEvents === "none" &&
+      !hasVisiblePaint(element)
+    ) {
+      continue;
+    }
     const box = element.getBoundingClientRect();
     const width = Math.max(
       0,

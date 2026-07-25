@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "qualificationId": "wave-02-p05",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-02.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 50000,
+    "cardScreenshotBudgetMs": 5000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "smallFixedNonContentEmbedSuppression": true,
+    "genericInterstitialDetection": true,
+    "queryParametersCountAsQueryEvidence": false
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T15-06-39-859Z",
+      "runManifestSha256": "e76e0e929460eb1e1f45b750656fd81cea9c0ba58976b509a3c00488a98bcb3b",
+      "purpose": "pet-edge qualification"
+    },
+    {
+      "runId": "2026-07-25T15-07-22-425Z",
+      "runManifestSha256": "42eb419a6569f6b20349436bccd3fb16bdff109a77993cf15909c649873d2ae5",
+      "purpose": "hardware-world qualification"
+    }
+  ],
+  "results": {
+    "pet-edge": {
+      "status": "discard",
+      "reason": "The desktop pet-shampoo page passed machine validation and showed query-specific products, but the narrow dog-waste-bags page retained an obstruction over 38% of the viewport. Fixed page chrome also occluded candidate screenshots, so the domain did not produce two clean reviewable listing pages."
+    },
+    "hardware-world": {
+      "status": "discard",
+      "reason": "Both requested search pages rendered generic popular searches and best sellers, produced 0% requested-query evidence, and yielded no reviewable product candidates."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [],
+    "assignedDomains": [],
+    "status": "discard"
+  }
+}

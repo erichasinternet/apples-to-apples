@@ -266,6 +266,31 @@ describe("page preparation", () => {
 
     expect(measureVisibleObstructionCoverage()).toBeCloseTo(0.25);
   });
+
+  it("ignores an inert transparent fixed notification container", () => {
+    document.body.innerHTML = `
+      <div id="notifications" style="position: fixed; pointer-events: none">
+        <div></div>
+      </div>
+    `;
+    mockVisibleBounds();
+
+    expect(measureVisibleObstructionCoverage()).toBe(0);
+  });
+
+  it("still measures a painted pointerless fixed backdrop", () => {
+    document.body.innerHTML = `
+      <div
+        id="backdrop"
+        style="position: fixed; pointer-events: none; background: rgba(0, 0, 0, 0.4)"
+      ></div>
+    `;
+    mockVisibleBounds();
+
+    expect(measureVisibleObstructionCoverage()).toBeCloseTo(
+      (600 * 400) / (1024 * 768)
+    );
+  });
 });
 
 function mockVisibleBounds(): void {

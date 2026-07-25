@@ -5,6 +5,7 @@ import type { PageObservation } from "../src/learning/contracts";
 import { boundsIntersect } from "../src/learning/observation-region";
 import {
   LIVE_CORPUS_VERSION,
+  annotationScreenshotDimensionsMatch,
   calculateWorstCaseSampleSize,
   type CorpusAnnotation
 } from "./live-corpus-lib";
@@ -95,8 +96,7 @@ for (const result of run.results.filter((entry) => entry.status === "captured"))
         const dimensions = readPngDimensions(image);
         if (
           !dimensions ||
-          Math.abs(dimensions.width - page.annotationRegion.width) > 1 ||
-          Math.abs(dimensions.height - page.annotationRegion.height) > 1
+          !annotationScreenshotDimensionsMatch(dimensions, page.annotationRegion)
         ) {
           errors.push(`${result.pageId}: annotation screenshot dimensions do not match its region`);
         }
