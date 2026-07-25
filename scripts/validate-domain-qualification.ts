@@ -14,10 +14,23 @@ const candidatePath = path.resolve(
 );
 const existingPath = path.resolve("benchmarks/live-sites/targets.json");
 const splitPath = path.resolve("benchmarks/ideal-domain-splits.json");
-const [candidate, existing, splits] = await Promise.all([
+const promotionPath = path.resolve(
+  "benchmarks/domain-qualification/promotions.json"
+);
+interface PromotionManifest {
+  version: 1;
+  promotions: Array<{
+    siteId: string;
+    cohort: "training" | "validation" | "selection" | "final";
+    qualificationReport: string;
+    promotedAt: string;
+  }>;
+}
+const [candidate, existing, splits, promotions] = await Promise.all([
   readJson<CorpusTargetManifest>(candidatePath),
   readJson<CorpusTargetManifest>(existingPath),
-  readJson<IdealDomainSplits>(splitPath)
+  readJson<IdealDomainSplits>(splitPath),
+  readJson<PromotionManifest>(promotionPath)
 ]);
 const errors = validateIdealDomainSplits(splits);
 const existingIds = new Set(existing.sites.map((site) => site.id));
@@ -56,8 +69,69 @@ const assigned = new Set([
   ...splits.final,
   ...splits.retired
 ]);
+const assignmentCohort = new Map<string, string>([
+  ...splits.training.map((siteId) => [siteId, "training"] as const),
+  ...splits.validation.map((siteId) => [siteId, "validation"] as const),
+  ...splits.selection.map((siteId) => [siteId, "selection"] as const),
+  ...splits.final.map((siteId) => [siteId, "final"] as const),
+  ...splits.retired.map((siteId) => [siteId, "retired"] as const)
+]);
+const promotionBySite = new Map(
+  promotions.promotions.map((promotion) => [promotion.siteId, promotion])
+);
+if (promotionBySite.size !== promotions.promotions.length) {
+  errors.push("promotion manifest contains duplicate site ids");
+}
 for (const siteId of candidateIds) {
-  if (assigned.has(siteId)) errors.push(`candidate is already assigned: ${siteId}`);
+  if (!assigned.has(siteId)) continue;
+  const promotion = promotionBySite.get(siteId);
+  if (!promotion) {
+    errors.push(`assigned candidate lacks qualification promotion: ${siteId}`);
+    continue;
+  }
+  if (promotion.cohort !== assignmentCohort.get(siteId)) {
+    errors.push(`promotion cohort does not match assignment: ${siteId}`);
+  }
+}
+for (const promotion of promotions.promotions) {
+  if (!candidateIds.has(promotion.siteId)) {
+    errors.push(`promotion references unknown candidate: ${promotion.siteId}`);
+    continue;
+  }
+  if (!assigned.has(promotion.siteId)) {
+    errors.push(`promoted candidate is not assigned: ${promotion.siteId}`);
+  } else if (assignmentCohort.get(promotion.siteId) !== promotion.cohort) {
+    errors.push(`promoted candidate cohort does not match assignment: ${promotion.siteId}`);
+  }
+  if (!Number.isFinite(Date.parse(promotion.promotedAt))) {
+    errors.push(`promotion has invalid timestamp: ${promotion.siteId}`);
+  }
+  try {
+    const report = await readJson<{
+      decision?: {
+        qualifiedDomains?: string[];
+        assignedDomains?: Array<{ siteId: string; cohort: string }>;
+      };
+    }>(path.resolve(promotion.qualificationReport));
+    if (!report.decision?.qualifiedDomains?.includes(promotion.siteId)) {
+      errors.push(
+        `promotion report does not qualify candidate: ${promotion.siteId}`
+      );
+    }
+    if (
+      !report.decision?.assignedDomains?.some(
+        (assignment) =>
+          assignment.siteId === promotion.siteId &&
+          assignment.cohort === promotion.cohort
+      )
+    ) {
+      errors.push(
+        `promotion report does not assign candidate cohort: ${promotion.siteId}`
+      );
+    }
+  } catch {
+    errors.push(`promotion report is unreadable: ${promotion.siteId}`);
+  }
 }
 
 let targets = 0;
@@ -82,6 +156,7 @@ const report = {
   targets,
   strata: strata.size,
   dimensions: [...dimensions].sort(),
+  promotedSites: promotions.promotions.length,
   errors
 };
 process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);

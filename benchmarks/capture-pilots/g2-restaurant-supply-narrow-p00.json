@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "pilotId": "g2-restaurant-supply-narrow-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-25T07:02:32.435Z",
+  "source": {
+    "pageId": "restaurant-supply--flour",
+    "siteId": "restaurant-supply",
+    "cohort": "training",
+    "stratum": "restaurant-supply",
+    "viewportProfile": "narrow",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "anonymousContext": true,
+    "sourceManifestSha256": "4bee2f985aa3af6478812912b7dacb9d44c1d05d2218f143b746cf5369218987",
+    "collectorSha256": "6d563571c276105adfbd63215871e5bf31292fdd697087c57c3e77017a6d820c"
+  },
+  "run": {
+    "runId": "2026-07-25T07-02-15-731Z",
+    "runManifestSha256": "e8da451c3a0f5f2044c39765d2fb0da3b9643c2b5d8526c50f4b41d21d059891",
+    "pageTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 5000,
+    "requestedPages": 2,
+    "capturedPages": 1,
+    "blockedPages": 1
+  },
+  "capture": {
+    "httpStatus": 200,
+    "privacyRedactions": 0,
+    "candidateCount": 20,
+    "candidateScreenshotsCaptured": 20,
+    "observationNodeCount": 1023,
+    "observationTruncated": false,
+    "unresolvedObstructionCoverage": 0.030380362133916636,
+    "observationSha256": "364b4a05595ce2cf1413a613a14b1b48dd17d8dc397877798ebadf7690cb3789",
+    "annotationScreenshotSha256": "ca300f32211e9aed82a0faa81289cfc0f53f109bea40606d162b0a649aa0c242",
+    "provenanceAggregateSha256": "c88b8973668ce59712457f30b0dd4ca2a0c7815a9f874e80de86835677aa3510",
+    "machineValidation": "passed",
+    "visualValidation": "passed"
+  },
+  "reviewQueues": {
+    "labelVisibility": "no model or peer labels",
+    "reviewerAQueueSha256": "9c025b59fc6015a86038512a0fc4aaacd0b7b147769aae520289cda90d01c538",
+    "reviewerBQueueSha256": "5897d64cb558e29b997918fd55d4994fcf3c1e8934f954b1a76ab41934573351"
+  },
+  "workbenchValidation": {
+    "browser": "Playwright Chromium",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "cardNodeId": "n39",
+    "containingNodeChoices": 12,
+    "titleNodeChoices": 7,
+    "currentPriceCandidates": 4,
+    "pointerConstruction": "passed",
+    "visualLayout": "passed",
+    "consoleErrors": 0,
+    "immutableSourceTamper": "rejected-422",
+    "temporaryValidSubmission": "accepted-200",
+    "duplicateSubmission": "rejected-409",
+    "goldReviewSubmitted": false
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

@@ -44,6 +44,8 @@ interface CollectorOptions {
   seed: number;
   maxCards: number;
   delayMs: number;
+  pageTimeoutMs: number;
+  cardScreenshotBudgetMs: number;
   siteIds: string[];
   viewportMode: CaptureViewportProfile | "mixed";
   narrowShare: number;
@@ -76,6 +78,7 @@ interface PageCapture {
   dismissedObstructions: number;
   unresolvedObstructionCoverage: number;
   candidateCount: number;
+  candidateScreenshotsCaptured: number;
   observationNodeCount: number;
   observationTruncated: boolean;
   observationSha256: string;
@@ -144,9 +147,15 @@ for (const [index, target] of targets.entries()) {
     });
     page = await context.newPage();
     const capture = await withTimeout(
-      capturePage(page, target, runDirectory, options.maxCards),
-      180_000,
-      "target capture exceeded 180 seconds"
+      capturePage(
+        page,
+        target,
+        runDirectory,
+        options.maxCards,
+        options.cardScreenshotBudgetMs
+      ),
+      options.pageTimeoutMs,
+      `target capture exceeded ${options.pageTimeoutMs} ms`
     );
     runResults.push({
       pageId: target.pageId,
@@ -188,6 +197,11 @@ async function writeRunManifest(): Promise<void> {
     sourceManifest: path.relative(process.cwd(), options.targetsPath),
     anonymousContext: true,
     seed: options.seed,
+    limits: {
+      pageTimeoutMs: options.pageTimeoutMs,
+      maxCards: options.maxCards,
+      cardScreenshotBudgetMs: options.cardScreenshotBudgetMs
+    },
     viewportPolicy: {
       mode: options.viewportMode,
       narrowShare: options.narrowShare,
@@ -243,7 +257,8 @@ async function capturePage(
   page: Page,
   target: CaptureTarget,
   runDirectory: string,
-  maxCards: number
+  maxCards: number,
+  cardScreenshotBudgetMs: number
 ): Promise<PageCapture> {
   const navigation = await navigateForObservation(page, target.url);
   const response = navigation.response;
@@ -678,15 +693,25 @@ async function capturePage(
     const prefix = `${String(index + 1).padStart(2, "0")}--${slugify(candidate.nodeId)}`;
     await writeFile(path.join(cardsDirectory, `${prefix}.html`), candidate.html, "utf8");
     await writeJson(path.join(cardsDirectory, `${prefix}.json`), candidate);
+  }
 
+  let candidateScreenshotsCaptured = 0;
+  const screenshotDeadline = Date.now() + cardScreenshotBudgetMs;
+  for (const [index, candidate] of candidates.entries()) {
+    const remainingMs = screenshotDeadline - Date.now();
+    if (remainingMs <= 0) break;
+    const prefix = `${String(index + 1).padStart(2, "0")}--${slugify(candidate.nodeId)}`;
     const locator = page.locator(`[data-ata-benchmark-node="${candidate.nodeId}"]`).first();
-    await locator
+    const captured = await locator
       .screenshot({
         path: path.join(cardsDirectory, `${prefix}.png`),
         animations: "disabled",
-        timeout: 8_000
+        caret: "hide",
+        timeout: Math.min(2_500, remainingMs)
       })
-      .catch(() => undefined);
+      .then(() => true)
+      .catch(() => false);
+    if (captured) candidateScreenshotsCaptured += 1;
   }
 
   const capture: PageCapture = {
@@ -705,6 +730,7 @@ async function capturePage(
     dismissedObstructions,
     unresolvedObstructionCoverage,
     candidateCount: candidates.length,
+    candidateScreenshotsCaptured,
     observationNodeCount: observation.nodes.length,
     observationTruncated: observation.truncated,
     observationSha256: hashJson(observation),
@@ -816,6 +842,14 @@ function parseOptions(args: string[]): CollectorOptions {
   const maxCards = Number.parseInt(values.get("--max-cards") ?? "12", 10);
   const delayMs = Number.parseInt(values.get("--delay-ms") ?? "2000", 10);
   const seed = Number.parseInt(values.get("--seed") ?? "20260722", 10);
+  const pageTimeoutMs = Number.parseInt(
+    values.get("--page-timeout-ms") ?? "120000",
+    10
+  );
+  const cardScreenshotBudgetMs = Number.parseInt(
+    values.get("--card-screenshot-budget-ms") ?? "15000",
+    10
+  );
   const viewportMode = values.get("--viewport") ?? "mixed";
   const narrowShare = Number.parseFloat(values.get("--narrow-share") ?? "0.25");
 
@@ -824,6 +858,11 @@ function parseOptions(args: string[]): CollectorOptions {
     (perSite !== undefined && (!Number.isFinite(perSite) || perSite <= 0)) ||
     maxCards <= 0 ||
     delayMs < 0 ||
+    !Number.isFinite(pageTimeoutMs) ||
+    pageTimeoutMs < 30_000 ||
+    !Number.isFinite(cardScreenshotBudgetMs) ||
+    cardScreenshotBudgetMs < 0 ||
+    cardScreenshotBudgetMs > pageTimeoutMs / 2 ||
     !["desktop", "narrow", "mixed"].includes(viewportMode) ||
     !Number.isFinite(narrowShare) ||
     narrowShare < 0 ||
@@ -842,6 +881,8 @@ function parseOptions(args: string[]): CollectorOptions {
     seed,
     maxCards,
     delayMs,
+    pageTimeoutMs,
+    cardScreenshotBudgetMs,
     viewportMode: viewportMode as CaptureViewportProfile | "mixed",
     narrowShare,
     siteIds: (values.get("--sites") ?? "")

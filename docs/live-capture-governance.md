@@ -37,3 +37,17 @@ Use `--viewport desktop` or `--viewport narrow` for controlled slices. Use
 `--narrow-share <0..1>` to change the mixed-run share. The seed controls both
 target selection and viewport assignment, so rerunning the same command produces
 the same plan.
+
+## Capture Budgets
+
+The bounded observation, sanitized HTML, annotation screenshot, and candidate
+records are written before optional per-card screenshots. Page metadata and
+provenance are finalized after those optional attempts. Per-card screenshots
+share a 15-second aggregate budget and use short individual timeouts; missing
+card thumbnails do not invalidate otherwise complete source evidence. The
+default page deadline is 120 seconds. Both limits and the captured thumbnail
+count are recorded in the run and page metadata.
+
+Use `--page-timeout-ms` and `--card-screenshot-budget-ms` only for controlled
+qualification experiments. The screenshot budget cannot exceed half the page
+deadline.

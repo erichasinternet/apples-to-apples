@@ -40,6 +40,7 @@
     "dataset:reviews:candidates": "bun scripts/list-evidence-candidates.ts",
     "dataset:reviews:score": "bun scripts/score-evidence-reviews.ts",
     "dataset:reviews:compile": "bun scripts/compile-evidence-adjudication.ts",
+    "dataset:reviews:serve": "bun scripts/serve-evidence-review.ts",
     "training:prepare": "bun scripts/prepare-t5-training.ts",
     "training:autoresearch:validate": "bun scripts/validate-autoresearch.ts",
     "training:readiness": "bun scripts/report-training-readiness.ts",

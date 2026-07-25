@@ -76,6 +76,19 @@ bun run dataset:reviews:queue -- --run benchmark-data/live/<run> \
   --output benchmark-data/review/<run>-reviewer-a-queue.json
 ```
 
+Open one blinded queue in the local review workbench:
+
+```bash
+bun run dataset:reviews:serve -- \
+  --queue benchmark-data/review/<queue>.json \
+  --output benchmark-data/review/submissions/<reviewer>
+```
+
+The workbench binds to `127.0.0.1`, serves only queue-declared assets beneath
+`benchmark-data`, exposes no model or peer labels, validates submissions against
+the immutable observation and hashes, and refuses to overwrite an existing
+review.
+
 After a reviewer chooses a card root, list the deterministic numeric candidates:
 
 ```bash

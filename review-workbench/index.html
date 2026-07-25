@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evidence Review Workbench</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <strong>Evidence Review</strong>
+        <span id="queueMeta"></span>
+      </div>
+      <div class="topbar-actions">
+        <span id="saveState" role="status">Not submitted</span>
+        <button id="submitReview" class="primary" type="button">Submit review</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="pages-pane" aria-label="Review pages">
+        <div class="pane-heading">
+          <h1>Pages</h1>
+          <span id="pageProgress"></span>
+        </div>
+        <nav id="pageList"></nav>
+      </aside>
+
+      <section class="evidence-pane">
+        <div class="pane-heading">
+          <div>
+            <h2 id="pageTitle">Loading</h2>
+            <span id="selectionHint">Click a product card in the capture.</span>
+          </div>
+          <button id="clearSelection" class="icon-button" type="button" title="Clear selection">×</button>
+        </div>
+        <div id="captureStage" class="capture-stage">
+          <img id="captureImage" alt="Bounded shopping-page capture" />
+          <div id="captureOverlay"></div>
+        </div>
+      </section>
+
+      <aside class="editor-pane">
+        <div class="pane-heading">
+          <h2>Product label</h2>
+          <span id="productCount">0 products</span>
+        </div>
+
+        <section id="nodePicker" class="editor-section">
+          <h3>Card root</h3>
+          <div id="nodeChoices" class="choice-list empty-state">Select a point in the capture.</div>
+        </section>
+
+        <section id="fieldEditor" class="editor-section" hidden>
+          <label>
+            Scope
+            <select id="scope">
+              <option value="primary-results">Primary result</option>
+              <option value="secondary-recommendation">Recommendation</option>
+              <option value="sponsored">Sponsored</option>
+              <option value="non-product">Non-product</option>
+            </select>
+          </label>
+
+          <fieldset>
+            <legend>Title nodes</legend>
+            <div id="titleChoices" class="choice-list"></div>
+          </fieldset>
+
+          <label>Current price <select id="currentPrice"></select></label>
+          <label>Native unit price <select id="nativeUnitPrice"></select></label>
+          <label>Package quantity <select id="packageQuantity"></select></label>
+          <label>Pack count <select id="packCount"></select></label>
+          <label>Status <select id="status"></select></label>
+          <label>
+            Notes
+            <textarea id="notes" rows="2"></textarea>
+          </label>
+          <output id="pointerPreview" class="pointer-preview"></output>
+          <button id="addProduct" class="primary full-width" type="button">Add product</button>
+        </section>
+
+        <section class="editor-section products-section">
+          <h3>Reviewed products</h3>
+          <div id="products" class="product-list empty-state">No products added.</div>
+        </section>
+      </aside>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

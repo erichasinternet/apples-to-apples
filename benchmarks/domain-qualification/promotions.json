@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "promotions": [
+    {
+      "siteId": "restaurant-supply",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-01-p02.json",
+      "promotedAt": "2026-07-25T07:05:00.000Z"
+    }
+  ]
+}

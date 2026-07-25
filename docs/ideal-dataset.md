@@ -29,7 +29,10 @@ in
 [`wave-01-p00.json`](../benchmarks/domain-qualification/wave-01-p00.json);
 the second sample is in
 [`wave-01-p01.json`](../benchmarks/domain-qualification/wave-01-p01.json).
-No sampled domain passed, so none were assigned.
+The bounded follow-up is in
+[`wave-01-p02.json`](../benchmarks/domain-qualification/wave-01-p02.json).
+RestaurantSupply passed two distinct desktop and narrow pages and was promoted
+to training; all other sampled domains remain unassigned.
 
 ## Cohorts
 

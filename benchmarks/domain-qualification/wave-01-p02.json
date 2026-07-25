@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "qualificationId": "wave-01-p02",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-01.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 5000,
+    "essentialArtifactsPrecedeOptionalCardScreenshots": true
+  },
+  "results": {
+    "dropps": {
+      "status": "discard",
+      "reason": "Capture exceeded the frozen 90-second page timeout."
+    },
+    "only-natural-pet": {
+      "status": "discard",
+      "reason": "The rendered page contained no reviewable product candidates."
+    },
+    "restaurant-supply": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "restaurant-supply--flour",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationNodeCount": 1273,
+          "unresolvedObstructionCoverage": 0.006944444444444444,
+          "observationSha256": "6d36923f6a0e4420331b31ffe3b8e7833cdcdb9e770e7c2b4cde8185e27c9d80",
+          "annotationScreenshotSha256": "9dbbf6528f4cd11e07942b3a63d552be8f8fcf89cae8103b0078e21e98353ea5",
+          "provenanceAggregateSha256": "fa578d99263972caeb82433084a2d4ae94eeddf8cabc4f706814d4da73195f91",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "restaurant-supply--cooking-oil",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationNodeCount": 1182,
+          "unresolvedObstructionCoverage": 0.030380362133916636,
+          "observationSha256": "5b7ac1bad05ae7a58d1c12d426128c87e46d303d26bfce6a7a599c20c5087175",
+          "annotationScreenshotSha256": "6cc40838f70598aed7fcd2f6cc1a8b68865dc13a1b73b355d8a91a4d465fe344",
+          "provenanceAggregateSha256": "e84cd2ec6722cafd74039a5da8924f99226571beb245218810deb775962a5c51",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    }
+  },
+  "decision": {
+    "qualifiedDomains": ["restaurant-supply"],
+    "assignedDomains": [
+      {
+        "siteId": "restaurant-supply",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}
