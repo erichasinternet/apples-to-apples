@@ -12,6 +12,12 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-01-p03.json",
       "promotedAt": "2026-07-25T07:25:00.000Z"
+    },
+    {
+      "siteId": "jeffers-pet",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p00.json",
+      "promotedAt": "2026-07-25T08:49:00.000Z"
     }
   ]
 }

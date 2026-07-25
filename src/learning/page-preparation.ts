@@ -27,6 +27,17 @@ export function dismissVisibleObstruction(): boolean {
     "okay",
     "×"
   ]);
+  const optOutLabels = new Set([
+    "no thanks",
+    "no, thanks",
+    "no thank you",
+    "no, thank you",
+    "not now",
+    "maybe later",
+    "continue without",
+    "reject all",
+    "decline"
+  ]);
   const isVisible = (element: HTMLElement): boolean => {
     const style = getComputedStyle(element);
     const box = element.getBoundingClientRect();
@@ -38,17 +49,25 @@ export function dismissVisibleObstruction(): boolean {
       box.height > 0
     );
   };
-  const isInsideObstruction = (element: HTMLElement): boolean => {
+  const obstructionScore = (element: HTMLElement): number => {
     if (window !== window.top) {
-      return true;
+      return 1;
     }
+    let score = 0;
     let current: HTMLElement | null = element;
     while (current) {
-      if (current.matches("dialog[open], [role='dialog'], [aria-modal='true']")) {
-        return true;
+      if (
+        current.matches(
+          "dialog[open], [role='dialog'], [role='alertdialog'], [aria-modal='true']"
+        )
+      ) {
+        score = Math.max(score, 3);
       }
       const style = getComputedStyle(current);
       const box = current.getBoundingClientRect();
+      if (style.position === "fixed" && box.width > 0 && box.height > 0) {
+        score = Math.max(score, 1);
+      }
       const isWideFixedBanner =
         style.position === "fixed" &&
         box.width >= window.innerWidth * 0.7 &&
@@ -59,44 +78,88 @@ export function dismissVisibleObstruction(): boolean {
         ((style.position === "fixed" || style.position === "sticky") &&
           box.width * box.height >= window.innerWidth * window.innerHeight * 0.1)
       ) {
-        return true;
+        score = Math.max(score, 2);
       }
-      current = current.parentElement;
+      const parent: HTMLElement | null = current.parentElement;
+      if (parent) {
+        current = parent;
+      } else {
+        const root = current.getRootNode();
+        current =
+          root instanceof ShadowRoot && root.host instanceof HTMLElement
+            ? root.host
+            : null;
+      }
     }
-    return false;
+    return score;
   };
-  const candidates = document.querySelectorAll<HTMLElement>(
-    "button, a, [role='button'], [tabindex], input[type='button'], input[type='submit'], [id*='dismiss' i]"
-  );
+  const candidateSelector =
+    "button, a, [role='button'], [tabindex], input[type='button'], input[type='submit'], [id*='dismiss' i], [id*='close' i], [class*='dismiss' i], [class*='close' i]";
+  const roots: Array<Document | ShadowRoot> = [document];
+  const candidates: HTMLElement[] = [];
+  for (let index = 0; index < roots.length; index += 1) {
+    const root = roots[index]!;
+    candidates.push(...root.querySelectorAll<HTMLElement>(candidateSelector));
+    for (const element of root.querySelectorAll<HTMLElement>("*")) {
+      if (element.shadowRoot) roots.push(element.shadowRoot);
+    }
+  }
 
+  let bestCandidate: HTMLElement | undefined;
+  let bestScore = -1;
   for (const candidate of candidates) {
-    if (!isVisible(candidate) || !isInsideObstruction(candidate)) continue;
+    if (!isVisible(candidate)) continue;
+    const containerScore = obstructionScore(candidate);
+    if (containerScore === 0) continue;
     const ariaLabel = normalize(candidate.getAttribute("aria-label") ?? "");
     const title = normalize(candidate.getAttribute("title") ?? "");
+    const className = normalize(candidate.getAttribute("class") ?? "");
+    const id = normalize(candidate.id);
     const text = normalize(
       candidate instanceof HTMLInputElement ? candidate.value : candidate.innerText || candidate.textContent || ""
     );
+    const explicitlyNamedClose =
+      /(?:^|[-_\s])(close|dismiss)(?:[-_\s]|$)/.test(className) ||
+      /(?:^|[-_\s])(close|dismiss)(?:[-_\s]|$)/.test(id);
     const explicitlyClosable =
       allowedLabels.has(ariaLabel) ||
       allowedLabels.has(title) ||
       allowedLabels.has(text) ||
       ariaLabel === "close dialog" ||
-      ariaLabel === "close modal";
+      ariaLabel === "close modal" ||
+      explicitlyNamedClose;
     if (!explicitlyClosable) continue;
 
-    candidate.click();
-    return true;
+    const labels = [ariaLabel, title, text];
+    const actionScore = labels.some((label) => optOutLabels.has(label))
+      ? 30
+      : explicitlyNamedClose ||
+          labels.some((label) => label === "close" || label === "×")
+        ? 20
+        : 10;
+    const score = actionScore + containerScore;
+    if (score > bestScore) {
+      bestCandidate = candidate;
+      bestScore = score;
+    }
   }
 
-  return false;
+  bestCandidate?.click();
+  return bestCandidate !== undefined;
 }
 
 export function measureVisibleObstructionCoverage(): number {
   const viewportArea = Math.max(1, window.innerWidth * window.innerHeight);
   let maximumCoverage = 0;
-  const elements = document.querySelectorAll<HTMLElement>(
-    "dialog[open], [role='dialog'], [aria-modal='true'], body *"
-  );
+  const roots: Array<Document | ShadowRoot> = [document];
+  const elements: HTMLElement[] = [];
+  for (let index = 0; index < roots.length; index += 1) {
+    const root = roots[index]!;
+    elements.push(...root.querySelectorAll<HTMLElement>("*"));
+    for (const element of root.querySelectorAll<HTMLElement>("*")) {
+      if (element.shadowRoot) roots.push(element.shadowRoot);
+    }
+  }
   for (const element of elements) {
     const style = getComputedStyle(element);
     if (
@@ -107,7 +170,7 @@ export function measureVisibleObstructionCoverage(): number {
       continue;
     }
     const modal = element.matches(
-      "dialog[open], [role='dialog'], [aria-modal='true']"
+      "dialog[open], [role='dialog'], [role='alertdialog'], [aria-modal='true']"
     );
     if (!modal && style.position !== "fixed") continue;
     const box = element.getBoundingClientRect();

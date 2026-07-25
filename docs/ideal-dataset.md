@@ -39,6 +39,13 @@ sampled domains remain unassigned. The final broad slice is recorded in
 [`wave-01-p04.json`](../benchmarks/domain-qualification/wave-01-p04.json);
 it promoted no domains. Visual review of that slice added a retroactive
 requested-query evidence requirement before any affected domain was promoted.
+The second 20-domain acquisition wave is in
+[`qualification-wave-02.json`](../benchmarks/live-sites/qualification-wave-02.json).
+Its first bounded result is recorded in
+[`wave-02-p00.json`](../benchmarks/domain-qualification/wave-02-p00.json).
+Jeffers Pet passed the frozen gate on mass and count searches across narrow and
+desktop viewports; Global Industrial was discarded after failing rendered-query
+and candidate evidence.
 
 ## Cohorts
 
@@ -171,7 +178,7 @@ reviews and adjudication are complete.
 
 The first multi-page G2 review campaign is recorded in
 [`g2-pilot-p00.json`](../benchmarks/review-campaigns/g2-pilot-p00.json). It
-contains three qualification-backed live pages and 60 frozen candidate card
+contains five qualification-backed live pages and 76 frozen candidate card
 roots across two independent blinded queues. A headed Chromium smoke test loaded
 all source screenshots, constructed a card-scoped pointer, rejected a product-grid
 ancestor, and rejected incomplete coverage. It still contributes zero gold
@@ -224,7 +231,7 @@ screenshot-perceptual duplicate checks remain required before a release export.
 The domain split registry is an assignment and leakage-control frame, not evidence
 that a domain is usable. Readiness counts a page only when its domain has an
 explicit promotion in `benchmarks/domain-qualification/promotions.json` and its
-exact observation and annotation-screenshot hashes appear in
+exact capture timestamp, observation hash, and annotation-screenshot hash appear in
 `benchmarks/capture-pilots/eligible-captures.json`. Legacy opened pages, captures
 from unqualified domains, blocked pages, and recaptures with different hashes are
 reported separately and do not advance any cohort.

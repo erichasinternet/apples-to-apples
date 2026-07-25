@@ -19,6 +19,24 @@ describe("page preparation", () => {
     expect(clicked).toHaveBeenCalledOnce();
   });
 
+  it("prefers declining a standards alertdialog over accepting it", () => {
+    document.body.innerHTML = `
+      <section role="alertdialog" aria-modal="false">
+        <button id="accept">Accept</button>
+        <button id="decline">Decline</button>
+      </section>
+    `;
+    mockVisibleBounds();
+    const accepted = vi.fn();
+    const declined = vi.fn();
+    document.querySelector<HTMLButtonElement>("#accept")!.addEventListener("click", accepted);
+    document.querySelector<HTMLButtonElement>("#decline")!.addEventListener("click", declined);
+
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(declined).toHaveBeenCalledOnce();
+    expect(accepted).not.toHaveBeenCalled();
+  });
+
   it("does not click similar controls in ordinary page content", () => {
     document.body.innerHTML = `
       <main>
@@ -107,10 +125,47 @@ describe("page preparation", () => {
     expect(clicked).toHaveBeenCalledOnce();
   });
 
+  it("dismisses a textless close control inside a fixed open shadow root", () => {
+    document.body.innerHTML = `<div id="widget" style="position: fixed"></div>`;
+    const host = document.querySelector<HTMLElement>("#widget")!;
+    const shadow = host.attachShadow({ mode: "open" });
+    shadow.innerHTML = `<div id="close" class="widget-close-button"></div>`;
+    mockVisibleBounds();
+    const clicked = vi.fn();
+    shadow
+      .querySelector<HTMLElement>("#close")!
+      .addEventListener("click", clicked);
+
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(clicked).toHaveBeenCalledOnce();
+  });
+
   it("measures unresolved modal viewport coverage", () => {
     document.body.innerHTML = `<div id="modal" role="dialog"></div>`;
     vi.spyOn(
       document.querySelector<HTMLElement>("#modal")!,
+      "getBoundingClientRect"
+    ).mockReturnValue({
+      x: 0,
+      y: 0,
+      width: 512,
+      height: 384,
+      top: 0,
+      right: 512,
+      bottom: 384,
+      left: 0,
+      toJSON: () => ({})
+    });
+
+    expect(measureVisibleObstructionCoverage()).toBeCloseTo(0.25);
+  });
+
+  it("measures an alertdialog even when aria-modal is false", () => {
+    document.body.innerHTML = `
+      <section id="alert" role="alertdialog" aria-modal="false"></section>
+    `;
+    vi.spyOn(
+      document.querySelector<HTMLElement>("#alert")!,
       "getBoundingClientRect"
     ).mockReturnValue({
       x: 0,

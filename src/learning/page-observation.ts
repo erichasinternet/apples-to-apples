@@ -69,7 +69,9 @@ export function capturePageObservation(options: ObservationCaptureOptions): Page
     if (itemType) attributes.itemType = redact(itemType);
     if (href) {
       try {
-        attributes.href = canonicalUrl(new URL(href, location.href).href);
+        attributes.href = redact(
+          canonicalUrl(new URL(href, location.href).href)
+        );
       } catch {
         // Invalid links are omitted from the observation.
       }
@@ -77,8 +79,21 @@ export function capturePageObservation(options: ObservationCaptureOptions): Page
 
     return attributes;
   };
-  const rootCandidate = document.querySelector("main, [role='main'], #main, #content");
-  const root = rootCandidate instanceof HTMLElement ? rootCandidate : document.body;
+  const root =
+    [...document.querySelectorAll("main, [role='main'], #main, #content")].find(
+      (candidate): candidate is HTMLElement => {
+        if (!(candidate instanceof HTMLElement)) return false;
+        const style = getComputedStyle(candidate);
+        const box = candidate.getBoundingClientRect();
+        return (
+          style.display !== "none" &&
+          style.display !== "contents" &&
+          style.visibility !== "hidden" &&
+          box.width >= 80 &&
+          box.height >= 30
+        );
+      }
+    ) ?? document.body;
   const maxNodes = Math.max(1, options.maxNodes ?? 20_000);
   const allElements = [root, ...root.querySelectorAll("*")].filter(
     (element): element is HTMLElement => element instanceof HTMLElement

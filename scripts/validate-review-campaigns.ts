@@ -14,6 +14,7 @@ interface ReviewCampaign {
   pages: Array<{
     siteId: string;
     pageId: string;
+    captureTimestamp: string;
     candidateCardCount: number;
     observationSha256: string;
     annotationScreenshotSha256: string;
@@ -23,6 +24,7 @@ interface ReviewCampaign {
     queueId: string;
     campaignQueueSha256: string;
     sourceQueueSha256: string[];
+    sourceQueuePageCounts: number[];
   }>;
   blinding: {
     labelVisibility: string;
@@ -100,6 +102,7 @@ for (const filename of files) {
       !capture ||
       capture.siteId !== page.siteId ||
       capture.cohort !== campaign.cohort ||
+      capture.captureTimestamp !== page.captureTimestamp ||
       capture.observationSha256 !== page.observationSha256 ||
       capture.annotationScreenshotSha256 !==
         page.annotationScreenshotSha256
@@ -122,9 +125,15 @@ for (const filename of files) {
       !queue.reviewerId.trim() ||
       !queue.queueId.startsWith(`${queue.reviewerId}--campaign--`) ||
       !SHA256.test(queue.campaignQueueSha256) ||
-      queue.sourceQueueSha256.length !== campaign.pages.length ||
+      queue.sourceQueueSha256.length === 0 ||
       queue.sourceQueueSha256.some((hash) => !SHA256.test(hash)) ||
-      new Set(queue.sourceQueueSha256).size !== queue.sourceQueueSha256.length
+      new Set(queue.sourceQueueSha256).size !== queue.sourceQueueSha256.length ||
+      queue.sourceQueuePageCounts.length !== queue.sourceQueueSha256.length ||
+      queue.sourceQueuePageCounts.some(
+        (count) => !Number.isInteger(count) || count <= 0
+      ) ||
+      queue.sourceQueuePageCounts.reduce((total, count) => total + count, 0) !==
+        campaign.pages.length
     ) {
       errors.push(`${prefix} invalid queue provenance for ${queue.reviewerId}`);
     }

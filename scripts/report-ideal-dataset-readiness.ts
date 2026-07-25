@@ -169,6 +169,7 @@ for (const annotationFile of annotationFiles) {
       pageId: page.pageId,
       siteId: page.target.siteId,
       cohort,
+      capturedAt: page.capturedAt,
       blocked: page.blocked,
       candidateCount: page.candidateCount,
       observationTruncated: page.observationTruncated,

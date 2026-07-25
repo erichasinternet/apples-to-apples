@@ -93,9 +93,23 @@ interface PageCapture {
 
 const options = parseOptions(process.argv.slice(2));
 const manifestBytes = await readFile(options.targetsPath);
-const collectorBytes = await readFile(fileURLToPath(import.meta.url));
 const sourceManifestSha256 = createHash("sha256").update(manifestBytes).digest("hex");
-const collectorSha256 = createHash("sha256").update(collectorBytes).digest("hex");
+const collectorSourcePaths = [
+  fileURLToPath(import.meta.url),
+  path.resolve("scripts/capture-provenance-lib.ts"),
+  path.resolve("scripts/live-corpus-lib.ts"),
+  path.resolve("src/learning/page-navigation.ts"),
+  path.resolve("src/learning/page-observation.ts"),
+  path.resolve("src/learning/page-preparation.ts")
+];
+const collectorHash = createHash("sha256");
+for (const filename of collectorSourcePaths.sort()) {
+  collectorHash.update(path.relative(process.cwd(), filename));
+  collectorHash.update("\0");
+  collectorHash.update(await readFile(filename));
+  collectorHash.update("\0");
+}
+const collectorSha256 = collectorHash.digest("hex");
 const manifest = JSON.parse(manifestBytes.toString("utf8")) as CorpusTargetManifest;
 const allTargets = expandTargets(manifest);
 const targets = selectTargets(allTargets, {
@@ -314,8 +328,20 @@ async function capturePage(
 
   const redactionCount = await page.evaluate(() => {
     const root =
-      document.querySelector<HTMLElement>("main, [role='main'], #main, #content") ??
-      document.body;
+      [...document.querySelectorAll("main, [role='main'], #main, #content")].find(
+        (candidate): candidate is HTMLElement => {
+          if (!(candidate instanceof HTMLElement)) return false;
+          const style = getComputedStyle(candidate);
+          const box = candidate.getBoundingClientRect();
+          return (
+            style.display !== "none" &&
+            style.display !== "contents" &&
+            style.visibility !== "hidden" &&
+            box.width >= 80 &&
+            box.height >= 30
+          );
+        }
+      ) ?? document.body;
     const redact = (value: string): string =>
       value
         .replace(
@@ -375,8 +401,21 @@ async function capturePage(
   observation.url = sanitizeCaptureUrl(observation.url);
 
   const extracted = await page.evaluate((candidateLimit) => {
-    const rootCandidate = document.querySelector("main, [role='main'], #main, #content");
-    const root = rootCandidate instanceof HTMLElement ? rootCandidate : document.body;
+    const root =
+      [...document.querySelectorAll("main, [role='main'], #main, #content")].find(
+        (candidate): candidate is HTMLElement => {
+          if (!(candidate instanceof HTMLElement)) return false;
+          const style = getComputedStyle(candidate);
+          const box = candidate.getBoundingClientRect();
+          return (
+            style.display !== "none" &&
+            style.display !== "contents" &&
+            style.visibility !== "hidden" &&
+            box.width >= 80 &&
+            box.height >= 30
+          );
+        }
+      ) ?? document.body;
 
     const allElements = [root, ...root.querySelectorAll("*")].filter(
       (element): element is HTMLElement => element instanceof HTMLElement
@@ -723,6 +762,12 @@ async function capturePage(
     path.join(pageDirectory, "annotation.png")
   );
 
+  if (!mainScreenshotCaptured) {
+    blockReasons.push("main screenshot unavailable");
+  }
+  if (!annotationScreenshotCaptured) {
+    blockReasons.push("annotation screenshot unavailable");
+  }
   if (candidates.length === 0) {
     blockReasons.push("no reviewable product candidates");
   } else if (Buffer.byteLength(extracted.mainHtml) < 5_000) {
@@ -746,7 +791,7 @@ async function capturePage(
         path: path.join(cardsDirectory, `${prefix}.png`),
         animations: "disabled",
         caret: "hide",
-        timeout: Math.min(2_500, remainingMs)
+        timeout: Math.min(5_000, remainingMs)
       })
       .then(() => true)
       .catch(() => false);

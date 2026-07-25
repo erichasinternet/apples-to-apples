@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "qualificationId": "wave-02-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-02.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 240000,
+    "cardScreenshotBudgetMs": 60000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "queryParametersCountAsQueryEvidence": false
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T08-20-48-557Z",
+      "runManifestSha256": "af7e896d8847041cd3d749f70971aabd544c4003efddc37882a08ba32199da23",
+      "purpose": "global-industrial qualification"
+    },
+    {
+      "runId": "2026-07-25T08-46-32-015Z",
+      "runManifestSha256": "3672e42132eaeb542a5f2dc10c675cf078601b83a7c071af99fa020986d39819",
+      "purpose": "jeffers-pet final qualification"
+    }
+  ],
+  "results": {
+    "global-industrial": {
+      "status": "discard",
+      "reason": "Desktop produced no reviewable product candidates; narrow rendered an interstitial with 0% requested-query evidence and no candidates."
+    },
+    "jeffers-pet": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "jeffers-pet--cat-litter",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 726,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0027342325920524974,
+          "queryTokenCoverage": 1,
+          "observationSha256": "75c1deb6259d5383c8d8f5f5b559c8f052eef2a81e57c2f9e9e18a6eda6438a2",
+          "annotationScreenshotSha256": "a9a871ad59e0d7d4740a36b956e8496348db60c30a3202027c290866bccd383a",
+          "provenanceAggregateSha256": "5978d0be76b9cc65c0b19e40ed8ad6c4d88aabd0c845c3ef078e131b5b6958c9",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "jeffers-pet--dog-waste-bags",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 991,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.00140625,
+          "queryTokenCoverage": 1,
+          "observationSha256": "9047a6a99df4646a6905939db0ff92ee623275e4cc067771a1d26a38e99643fe",
+          "annotationScreenshotSha256": "229b6ebcc6891a02a6e0403643be86a8878e649bded1a1c5b251ef40d19605fa",
+          "provenanceAggregateSha256": "0f335beafa84843a229a5c49e36afc73d09840cbe7ca59c2234da8d31ef65bb6",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "jeffers-pet"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "jeffers-pet",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

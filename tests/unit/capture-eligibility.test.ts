@@ -46,6 +46,20 @@ describe("capture eligibility", () => {
       "observation hash does not match the eligibility registry"
     );
   });
+
+  it("rejects a byte-identical capture from a different run", () => {
+    const result = validateCaptureEligibility(
+      {
+        ...page(),
+        capturedAt: "2026-07-25T09:00:00.000Z"
+      },
+      eligible()
+    );
+
+    expect(result).toContain(
+      "capture timestamp does not match the eligibility registry"
+    );
+  });
 });
 
 function page(): CaptureEligibilityMetadata {
@@ -53,6 +67,7 @@ function page(): CaptureEligibilityMetadata {
     pageId: "shop--coffee",
     siteId: "shop",
     cohort: "training",
+    capturedAt: "2026-07-25T08:46:50.502Z",
     blocked: false,
     candidateCount: 20,
     observationTruncated: false,
@@ -69,6 +84,7 @@ function eligible(): EligibleCaptureEntry {
     siteId: "shop",
     cohort: "training",
     pageId: "shop--coffee",
+    captureTimestamp: "2026-07-25T08:46:50.502Z",
     observationSha256: "a".repeat(64),
     annotationScreenshotSha256: "b".repeat(64)
   };

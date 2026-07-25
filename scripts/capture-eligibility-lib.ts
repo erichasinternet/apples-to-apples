@@ -4,6 +4,7 @@ export interface EligibleCaptureEntry {
   siteId: string;
   cohort: IdealCohortName;
   pageId: string;
+  captureTimestamp: string;
   observationSha256: string;
   annotationScreenshotSha256: string;
 }
@@ -12,6 +13,7 @@ export interface CaptureEligibilityMetadata {
   pageId: string;
   siteId: string;
   cohort: IdealCohortName;
+  capturedAt: string;
   blocked: boolean;
   candidateCount: number;
   observationTruncated: boolean;
@@ -52,6 +54,9 @@ export function validateCaptureEligibility(
     eligible.cohort !== page.cohort
   ) {
     errors.push("capture identity does not match the eligibility registry");
+  }
+  if (eligible.captureTimestamp !== page.capturedAt) {
+    errors.push("capture timestamp does not match the eligibility registry");
   }
   if (
     !page.observationSha256 ||

@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import {
   expandTargets,
@@ -9,9 +9,10 @@ import {
   type IdealDomainSplits
 } from "./ideal-dataset-lib";
 
-const candidatePath = path.resolve(
-  process.argv[2] ?? "benchmarks/live-sites/qualification-wave-01.json"
-);
+const candidatePaths =
+  process.argv.length > 2
+    ? process.argv.slice(2).map((filename) => path.resolve(filename))
+    : await discoverCandidatePaths();
 const existingPath = path.resolve("benchmarks/live-sites/targets.json");
 const splitPath = path.resolve("benchmarks/ideal-domain-splits.json");
 const promotionPath = path.resolve(
@@ -35,6 +36,7 @@ interface EligibleCaptureManifest {
     siteId: string;
     cohort: "training" | "validation" | "selection" | "final";
     pageId: string;
+    captureTimestamp: string;
     observationSha256: string;
     annotationScreenshotSha256: string;
     qualificationReport: string;
@@ -77,9 +79,11 @@ const SHA256 = /^[a-f0-9]{64}$/;
 const gatePath = path.resolve(
   "benchmarks/domain-qualification/wave-01-p00.json"
 );
-const [candidate, existing, splits, promotions, eligibleCaptures, gateSource] =
+const [candidates, existing, splits, promotions, eligibleCaptures, gateSource] =
   await Promise.all([
-    readJson<CorpusTargetManifest>(candidatePath),
+    Promise.all(
+      candidatePaths.map((filename) => readJson<CorpusTargetManifest>(filename))
+    ),
     readJson<CorpusTargetManifest>(existingPath),
     readJson<IdealDomainSplits>(splitPath),
     readJson<PromotionManifest>(promotionPath),
@@ -94,28 +98,59 @@ const candidateIds = new Set<string>();
 const candidateHosts = new Set<string>();
 const knownIds = new Set(existingIds);
 
-for (const site of candidate.sites) {
-  if (candidateIds.has(site.id)) errors.push(`duplicate candidate site id: ${site.id}`);
-  if (candidateHosts.has(site.hostname)) {
-    errors.push(`duplicate candidate hostname: ${site.hostname}`);
+for (const [manifestIndex, candidate] of candidates.entries()) {
+  const candidateLabel = path.basename(candidatePaths[manifestIndex]!);
+  for (const site of candidate.sites) {
+    if (candidateIds.has(site.id)) {
+      errors.push(`duplicate candidate site id: ${site.id}`);
+    }
+    if (candidateHosts.has(site.hostname)) {
+      errors.push(`duplicate candidate hostname: ${site.hostname}`);
+    }
+    if (existingIds.has(site.id)) {
+      errors.push(`candidate site already exists: ${site.id}`);
+    }
+    if (existingHosts.has(site.hostname)) {
+      errors.push(`candidate hostname already exists: ${site.hostname}`);
+    }
+    candidateIds.add(site.id);
+    knownIds.add(site.id);
+    candidateHosts.add(site.hostname);
+    const searchUrl = new URL(
+      site.searchUrlTemplate
+        .replaceAll("{query}", "test")
+        .replaceAll("{querySlug}", "test")
+    );
+    if (searchUrl.protocol !== "https:") {
+      errors.push(`${site.id} search URL must use HTTPS`);
+    }
+    if (searchUrl.hostname !== site.hostname) {
+      errors.push(`${site.id} hostname does not match its search URL`);
+    }
   }
-  if (existingIds.has(site.id)) errors.push(`candidate site already exists: ${site.id}`);
-  if (existingHosts.has(site.hostname)) {
-    errors.push(`candidate hostname already exists: ${site.hostname}`);
+  try {
+    expandTargets(candidate);
+  } catch (error) {
+    errors.push(
+      `${candidateLabel}: ${error instanceof Error ? error.message : String(error)}`
+    );
   }
-  candidateIds.add(site.id);
-  knownIds.add(site.id);
-  candidateHosts.add(site.hostname);
-  const searchUrl = new URL(
-    site.searchUrlTemplate
-      .replaceAll("{query}", "test")
-      .replaceAll("{querySlug}", "test")
+  const waveDimensions = new Set(
+    [
+      ...Object.values(candidate.querySets ?? {}).flat(),
+      ...candidate.sites.flatMap((site) => site.queries ?? [])
+    ].map((query) => query.dimension)
   );
-  if (searchUrl.protocol !== "https:") {
-    errors.push(`${site.id} search URL must use HTTPS`);
+  const waveStrata = new Set(candidate.sites.map((site) => site.stratum));
+  if (waveDimensions.size < 5) {
+    errors.push(
+      `${candidateLabel}: qualification wave must cover all five dimensions`
+    );
   }
-  if (searchUrl.hostname !== site.hostname) {
-    errors.push(`${site.id} hostname does not match its search URL`);
+  if (waveStrata.size < 8) {
+    errors.push(
+      `${candidateLabel}: qualification wave must cover at least eight strata`
+    );
   }
 }
 
@@ -198,6 +233,9 @@ for (const capture of eligibleCaptures.captures) {
   if (!SHA256.test(capture.annotationScreenshotSha256)) {
     errors.push(`eligible capture has invalid screenshot hash: ${capture.pageId}`);
   }
+  if (!Number.isFinite(Date.parse(capture.captureTimestamp))) {
+    errors.push(`eligible capture has invalid timestamp: ${capture.pageId}`);
+  }
   if (eligibleObservationHashes.has(capture.observationSha256)) {
     errors.push(`duplicate eligible observation hash: ${capture.observationSha256}`);
   }
@@ -246,24 +284,35 @@ for (const promotion of promotions.promotions) {
 }
 
 let targets = 0;
-try {
-  targets = expandTargets(candidate).length;
-} catch (error) {
-  errors.push(error instanceof Error ? error.message : String(error));
+for (const candidate of candidates) {
+  try {
+    targets += expandTargets(candidate).length;
+  } catch {
+    // The wave-specific expansion error is already reported above.
+  }
 }
 const dimensions = new Set(
-  Object.values(candidate.querySets ?? {})
-    .flat()
+  candidates
+    .flatMap((candidate) => [
+      ...Object.values(candidate.querySets ?? {}).flat(),
+      ...candidate.sites.flatMap((site) => site.queries ?? [])
+    ])
     .map((query) => query.dimension)
 );
-const strata = new Set(candidate.sites.map((site) => site.stratum));
-if (dimensions.size < 5) errors.push("qualification wave must cover all five dimensions");
-if (strata.size < 8) errors.push("qualification wave must cover at least eight strata");
+const strata = new Set(
+  candidates.flatMap((candidate) =>
+    candidate.sites.map((site) => site.stratum)
+  )
+);
 
 const report = {
   valid: errors.length === 0,
-  candidatePath,
-  sites: candidate.sites.length,
+  candidatePaths,
+  waves: candidates.length,
+  sites: candidates.reduce(
+    (total, candidate) => total + candidate.sites.length,
+    0
+  ),
   targets,
   strata: strata.size,
   dimensions: [...dimensions].sort(),
@@ -276,6 +325,18 @@ if (errors.length > 0) process.exitCode = 1;
 
 async function readJson<T>(filename: string): Promise<T> {
   return JSON.parse(await readFile(filename, "utf8")) as T;
+}
+
+async function discoverCandidatePaths(): Promise<string[]> {
+  const directory = path.resolve("benchmarks/live-sites");
+  const paths = (await readdir(directory))
+    .filter((filename) => /^qualification-wave-\d+\.json$/.test(filename))
+    .sort()
+    .map((filename) => path.join(directory, filename));
+  if (paths.length === 0) {
+    throw new Error("No qualification-wave manifests were found.");
+  }
+  return paths;
 }
 
 function validatePromotionEvidence(

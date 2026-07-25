@@ -1,13 +1,30 @@
 {
   "version": 1,
   "campaignId": "g2-pilot-p00",
-  "createdAt": "2026-07-25T08:07:39Z",
+  "createdAt": "2026-07-25T08:49:00Z",
   "cohort": "training",
   "decision": "workbench-pass-independent-human-reviews-pending",
   "pages": [
     {
+      "siteId": "jeffers-pet",
+      "pageId": "jeffers-pet--cat-litter",
+      "captureTimestamp": "2026-07-25T08:46:50.502Z",
+      "candidateCardCount": 8,
+      "observationSha256": "e289912902b2c2167c938f29f36fefb86360df2f08dfd66f310b56a3c35b983c",
+      "annotationScreenshotSha256": "a9a871ad59e0d7d4740a36b956e8496348db60c30a3202027c290866bccd383a"
+    },
+    {
+      "siteId": "jeffers-pet",
+      "pageId": "jeffers-pet--dog-waste-bags",
+      "captureTimestamp": "2026-07-25T08:47:01.662Z",
+      "candidateCardCount": 8,
+      "observationSha256": "9e2beb65b0b2e6649a4c44c45b432a3a86b3eb2ca7092fd6834cfb2bb9fe08f3",
+      "annotationScreenshotSha256": "229b6ebcc6891a02a6e0403643be86a8878e649bded1a1c5b251ef40d19605fa"
+    },
+    {
       "siteId": "katom",
       "pageId": "katom--flour",
+      "captureTimestamp": "2026-07-25T07:27:54.256Z",
       "candidateCardCount": 20,
       "observationSha256": "bfe909695d1ef17e8d73ad6619913166617e066349a93d05be2f8c540d735c08",
       "annotationScreenshotSha256": "6ee0c8c6d82f27990d97c85d3e441f37b1451df010aa3f533b2b9fdb7eae08e1"
@@ -15,6 +32,7 @@
     {
       "siteId": "katom",
       "pageId": "katom--trash-bags",
+      "captureTimestamp": "2026-07-25T07:25:38.854Z",
       "candidateCardCount": 20,
       "observationSha256": "54016464a1f0085ab01f47be9687ea6a6ef9347f9b05bd67d25f994bc46e0eb8",
       "annotationScreenshotSha256": "527a8ef76b0fc5ef5eeb07e3a5778c6814f5efae6c127c47b298bfe2079f9ce1"
@@ -22,6 +40,7 @@
     {
       "siteId": "restaurant-supply",
       "pageId": "restaurant-supply--flour",
+      "captureTimestamp": "2026-07-25T07:02:32.435Z",
       "candidateCardCount": 20,
       "observationSha256": "364b4a05595ce2cf1413a613a14b1b48dd17d8dc397877798ebadf7690cb3789",
       "annotationScreenshotSha256": "ca300f32211e9aed82a0faa81289cfc0f53f109bea40606d162b0a649aa0c242"
@@ -30,23 +49,27 @@
   "queues": [
     {
       "reviewerId": "reviewer-a",
-      "queueId": "reviewer-a--campaign--ebefc7b423f9b691",
-      "campaignQueueSha256": "0c55521a57866c2c6380d8e9628cbfd73479657f1e4ae9de93e7efd9b675f5cd",
+      "queueId": "reviewer-a--campaign--fe4301688ef35537",
+      "campaignQueueSha256": "1b8514cbb10d3c032838e2896004ce92e81914b78fef13ff5ac2e8f84498c5a5",
       "sourceQueueSha256": [
         "c7c5caec03d94ce03dbcdc4d77ca34f5aeb86a328574424e02e2c738af14dc6b",
         "468925a9cc330c8698e57b5f53bfa2c0d8fda3ec0b874489a3a8cc19be1fc8a6",
-        "f8375d81437cee2f275d29c33be13a1bb332f97012685bdf1bed6c577778460c"
-      ]
+        "f8375d81437cee2f275d29c33be13a1bb332f97012685bdf1bed6c577778460c",
+        "52a47a8451467d02d06d64107680bd8c1068186c71ddbe321c55b2d3ba27fe1f"
+      ],
+      "sourceQueuePageCounts": [1, 1, 1, 2]
     },
     {
       "reviewerId": "reviewer-b",
-      "queueId": "reviewer-b--campaign--8c09482ff213f188",
-      "campaignQueueSha256": "4cff8f6d73e7ac5b13eecba3b858ff19a8825f28789b5c31873a6703f40da3bd",
+      "queueId": "reviewer-b--campaign--81774ce843705349",
+      "campaignQueueSha256": "ad4c468e8ab08020cec7fd15d7dfdbcdcaa603a4db3f9d74ba020f16e11b674b",
       "sourceQueueSha256": [
         "b1c95e362b48f8e749048b161cce35ad0e14e3495df5eacf1b1b4e9e124955d7",
         "f3bf77bd4f4f7746637b521fab8030f675c1376be0db4fe76d3b51a65ffb779a",
-        "0cbbba31756a519caa72ecff09f97649360ed1a690b153823ebaf923477a4964"
-      ]
+        "0cbbba31756a519caa72ecff09f97649360ed1a690b153823ebaf923477a4964",
+        "3265dd9222efe744e0f65393b8ab2c91582e64c89642483a2410468d09eee0da"
+      ],
+      "sourceQueuePageCounts": [1, 1, 1, 2]
     }
   ],
   "blinding": {
@@ -57,10 +80,10 @@
   },
   "workbenchValidation": {
     "browser": "headed Playwright Chromium",
-    "pagesLoaded": 3,
-    "screenshotsLoaded": 3,
-    "candidateCards": 60,
-    "selectedCardNodeId": "n69",
+    "pagesLoaded": 5,
+    "screenshotsLoaded": 5,
+    "candidateCards": 76,
+    "selectedCardNodeId": "n4391",
     "onlyFrozenCardRootOffered": true,
     "cardScopedCandidateSelection": "passed",
     "nonCandidateAncestor": "rejected-404",

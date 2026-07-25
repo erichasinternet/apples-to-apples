@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Second unassigned domain-qualification wave. HTTP pre-screening only; every domain remains unassigned until it passes the frozen two-page machine and visual gate.",
+  "sites": [
+    {
+      "id": "global-industrial",
+      "label": "Global Industrial",
+      "hostname": "www.globalindustrial.com",
+      "stratum": "industrial-supply",
+      "searchUrlTemplate": "https://www.globalindustrial.com/searchResult?q={query}",
+      "queries": [
+        { "id": "trash-bags", "query": "trash bags", "dimension": "count" },
+        { "id": "plastic-sheeting", "query": "plastic sheeting", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "jeffers-pet",
+      "label": "Jeffers Pet",
+      "hostname": "jefferspet.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://jefferspet.com/search?q={query}",
+      "queries": [
+        { "id": "cat-litter", "query": "cat litter", "dimension": "mass" },
+        { "id": "dog-waste-bags", "query": "dog waste bags", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "food-service-direct",
+      "label": "FoodServiceDirect",
+      "hostname": "www.foodservicedirect.com",
+      "stratum": "specialty-food",
+      "searchUrlTemplate": "https://www.foodservicedirect.com/search-result?q={query}",
+      "queries": [
+        { "id": "flour", "query": "flour", "dimension": "mass" },
+        { "id": "olive-oil", "query": "olive oil", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "wasserstrom",
+      "label": "Wasserstrom",
+      "hostname": "www.wasserstrom.com",
+      "stratum": "restaurant-supply",
+      "searchUrlTemplate": "https://www.wasserstrom.com/restaurant-supplies-equipment/SearchDisplay?searchTerm={query}",
+      "queries": [
+        { "id": "cooking-oil", "query": "cooking oil", "dimension": "volume" },
+        { "id": "aluminum-foil", "query": "aluminum foil", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "shoplet",
+      "label": "Shoplet",
+      "hostname": "www.shoplet.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.shoplet.com/search?keywords={query}",
+      "queries": [
+        { "id": "packing-tape", "query": "packing tape", "dimension": "length" },
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "pure-formulas",
+      "label": "PureFormulas",
+      "hostname": "www.pureformulas.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://www.pureformulas.com/search?Ntt={query}",
+      "queries": [
+        { "id": "protein-powder", "query": "protein powder", "dimension": "mass" },
+        { "id": "vitamins", "query": "vitamins", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "revival-animal",
+      "label": "Revival Animal Health",
+      "hostname": "www.revivalanimal.com",
+      "stratum": "veterinary-supply",
+      "searchUrlTemplate": "https://www.revivalanimal.com/search?query={query}",
+      "queries": [
+        { "id": "flea-treatment", "query": "flea treatment", "dimension": "count" },
+        { "id": "pet-shampoo", "query": "pet shampoo", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "hardware-world",
+      "label": "Hardware World",
+      "hostname": "www.hardwareworld.com",
+      "stratum": "home-improvement",
+      "searchUrlTemplate": "https://www.hardwareworld.com/search?query={query}",
+      "queries": [
+        { "id": "extension-cord", "query": "extension cord", "dimension": "length" },
+        { "id": "plastic-sheeting", "query": "plastic sheeting", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "betty-mills",
+      "label": "Betty Mills",
+      "hostname": "www.bettymills.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.bettymills.com/search?q={query}",
+      "queries": [
+        { "id": "trash-bags", "query": "trash bags", "dimension": "count" },
+        { "id": "cleaner", "query": "all purpose cleaner", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "lions-deal",
+      "label": "LionsDeal",
+      "hostname": "www.lionsdeal.com",
+      "stratum": "restaurant-supply",
+      "searchUrlTemplate": "https://www.lionsdeal.com/search.php?search_query={query}",
+      "queries": [
+        { "id": "aluminum-foil", "query": "aluminum foil", "dimension": "length" },
+        { "id": "food-containers", "query": "food containers", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "clean-freak",
+      "label": "CleanFreak",
+      "hostname": "www.cleanfreak.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.cleanfreak.com/search?q={query}",
+      "queries": [
+        { "id": "paper-towels", "query": "paper towels", "dimension": "area" },
+        { "id": "cleaner", "query": "all purpose cleaner", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "pet-edge",
+      "label": "PetEdge",
+      "hostname": "www.petedge.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://www.petedge.com/search?q={query}",
+      "queries": [
+        { "id": "dog-waste-bags", "query": "dog waste bags", "dimension": "count" },
+        { "id": "pet-shampoo", "query": "pet shampoo", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "lambert-vet-supply",
+      "label": "Lambert Vet Supply",
+      "hostname": "www.lambertvetsupply.com",
+      "stratum": "veterinary-supply",
+      "searchUrlTemplate": "https://www.lambertvetsupply.com/search?q={query}",
+      "queries": [
+        { "id": "cat-litter", "query": "cat litter", "dimension": "mass" },
+        { "id": "flea-treatment", "query": "flea treatment", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "natural-healthy-concepts",
+      "label": "Natural Healthy Concepts",
+      "hostname": "www.nhc.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://www.nhc.com/search?q={query}",
+      "queries": [
+        { "id": "protein-powder", "query": "protein powder", "dimension": "mass" },
+        { "id": "vitamins", "query": "vitamins", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "supplement-warehouse",
+      "label": "Supplement Warehouse",
+      "hostname": "supplementwarehouse.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://supplementwarehouse.com/search?q={query}",
+      "queries": [
+        { "id": "protein-powder", "query": "protein powder", "dimension": "mass" },
+        { "id": "vitamins", "query": "vitamins", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "blue-sky-vitamin",
+      "label": "Blue Sky Vitamin",
+      "hostname": "blueskyvitamin.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://blueskyvitamin.com/search?q={query}",
+      "queries": [
+        { "id": "protein-powder", "query": "protein powder", "dimension": "mass" },
+        { "id": "vitamins", "query": "vitamins", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "professional-supplement-center",
+      "label": "Professional Supplement Center",
+      "hostname": "www.professionalsupplementcenter.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://www.professionalsupplementcenter.com/search?query={query}",
+      "queries": [
+        { "id": "protein-powder", "query": "protein powder", "dimension": "mass" },
+        { "id": "vitamins", "query": "vitamins", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "sleekshop",
+      "label": "Sleekshop",
+      "hostname": "sleekshop.com",
+      "stratum": "beauty",
+      "searchUrlTemplate": "https://sleekshop.com/search?q={query}",
+      "queries": [
+        { "id": "shampoo", "query": "shampoo", "dimension": "volume" },
+        { "id": "cotton-pads", "query": "cotton pads", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "bobs-red-mill",
+      "label": "Bob's Red Mill",
+      "hostname": "www.bobsredmill.com",
+      "stratum": "specialty-food",
+      "searchUrlTemplate": "https://www.bobsredmill.com/search?query={query}",
+      "queries": [
+        { "id": "flour", "query": "flour", "dimension": "mass" },
+        { "id": "rice", "query": "rice", "dimension": "mass" }
+      ]
+    },
+    {
+      "id": "bulk-foods",
+      "label": "Bulk Foods",
+      "hostname": "bulkfoods.com",
+      "stratum": "specialty-food",
+      "searchUrlTemplate": "https://bulkfoods.com/search?controller=search&s={query}",
+      "queries": [
+        { "id": "flour", "query": "flour", "dimension": "mass" },
+        { "id": "rice", "query": "rice", "dimension": "mass" }
+      ]
+    }
+  ]
+}

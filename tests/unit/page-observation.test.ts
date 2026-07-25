@@ -8,6 +8,7 @@ describe("page observation capture", () => {
           <a href="https://shop.example/item/123?tracking=secret">
             <span aria-label="Cat litter 48 lb">Cat litter 48 lb</span>
           </a>
+          <a href="https://shop.example/item/800-555-1212">Support SKU</a>
           <span>current price $10.98</span>
           <input value="private value" placeholder="Email shopper@example.com">
         </article>
@@ -34,7 +35,9 @@ describe("page observation capture", () => {
     expect(JSON.stringify(observation)).not.toContain("tracking=secret");
     expect(JSON.stringify(observation)).not.toContain("private value");
     expect(JSON.stringify(observation)).not.toContain("shopper@example.com");
+    expect(JSON.stringify(observation)).not.toContain("800-555-1212");
     expect(JSON.stringify(observation)).toContain("[REDACTED EMAIL]");
+    expect(JSON.stringify(observation)).toContain("[REDACTED PHONE]");
     expect(observation.nodes.find((node) => node.tag === "a")?.attributes?.href).toBe(
       "https://shop.example/item/123"
     );
@@ -106,5 +109,38 @@ describe("page observation capture", () => {
 
     expect(observation.nodes.some((node) => node.tag === "section")).toBe(true);
     expect(observation.rootNodeId).toBe("n0");
+  });
+
+  it("falls back to the rendered body when main uses display contents", () => {
+    document.body.innerHTML = `
+      <main style="display: contents">
+        <article><span>$12.00 for 24 count</span></article>
+      </main>
+    `;
+    vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockImplementation(
+      function (this: HTMLElement) {
+        const isContentsMain = this.tagName === "MAIN";
+        return {
+          x: 0,
+          y: 0,
+          width: isContentsMain ? 0 : 600,
+          height: isContentsMain ? 0 : 800,
+          top: 0,
+          right: isContentsMain ? 0 : 600,
+          bottom: isContentsMain ? 0 : 800,
+          left: 0,
+          toJSON: () => ({})
+        };
+      }
+    );
+
+    const observation = capturePageObservation({ pageId: "display-contents-main" });
+    const root = observation.nodes.find(
+      (node) => node.id === observation.rootNodeId
+    );
+
+    expect(root?.tag).toBe("body");
+    expect(root?.bounds).toMatchObject({ width: 600, height: 800 });
+    expect(observation.nodes.some((node) => node.tag === "article")).toBe(true);
   });
 });
