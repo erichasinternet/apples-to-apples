@@ -6,6 +6,7 @@ import {
   type ResolvedEvidencePointer
 } from "../src/learning/evidence-pointer";
 import type {
+  CorpusAnnotation,
   DatasetProductChallengeTag
 } from "./live-corpus-lib";
 
@@ -307,6 +308,116 @@ export function validateEvidenceAdjudication(
   return { ...result, valid: errors.length === 0, errors };
 }
 
+export function compileAdjudicatedCorpusAnnotation(
+  adjudication: EvidencePointerReview,
+  reviewA: EvidencePointerReview,
+  reviewB: EvidencePointerReview,
+  observation: PageObservation
+): CorpusAnnotation {
+  const validation = validateEvidenceAdjudication(
+    adjudication,
+    reviewA,
+    reviewB,
+    observation
+  );
+  if (!validation.valid) {
+    throw new Error(`Invalid adjudication: ${validation.errors.join("; ")}`);
+  }
+  const root = observation.nodes.find(
+    (node) => node.id === observation.rootNodeId
+  );
+  const region = observation.sourceRegion ?? root?.bounds;
+  if (!region) throw new Error("Observation lacks a bounded annotation region.");
+
+  return {
+    version: 1,
+    pageId: observation.pageId,
+    reviewStatus: "adjudicated",
+    coverage: "complete-main-region",
+    region,
+    annotators: [
+      reviewA.reviewerId,
+      reviewB.reviewerId,
+      adjudication.reviewerId
+    ],
+    products: adjudication.products.map((reviewedProduct) => {
+      const resolved = validation.resolvedProducts.get(
+        reviewedProduct.cardNodeId
+      )!;
+      const extraction = resolved.extraction!.products[0]!;
+      const validated = resolved.validation!.products[0]!;
+      const fieldEvidence = {
+        title: extraction.title.evidenceNodeIds,
+        ...(extraction.currentPrice
+          ? { currentPrice: extraction.currentPrice.evidenceNodeIds }
+          : {}),
+        ...(extraction.nativeUnitPrice
+          ? { nativeUnitPrice: extraction.nativeUnitPrice.evidenceNodeIds }
+          : {}),
+        ...(extraction.packageQuantity
+          ? { packageQuantity: extraction.packageQuantity.evidenceNodeIds }
+          : {})
+      };
+      const evidenceNodeIds = [
+        ...fieldEvidence.title,
+        ...(fieldEvidence.currentPrice ?? []),
+        ...(fieldEvidence.nativeUnitPrice ?? []),
+        ...(fieldEvidence.packageQuantity ?? [])
+      ].filter((value, index, values) => values.indexOf(value) === index);
+      const comparable = validated.status === "accepted";
+      return {
+        nodeId: reviewedProduct.cardNodeId,
+        scope: legacyScope(reviewedProduct.scope),
+        comparable,
+        ...(reviewedProduct.challengeTags
+          ? { challengeTags: reviewedProduct.challengeTags }
+          : {}),
+        title: extraction.title.value,
+        evidenceNodeIds,
+        fieldEvidence,
+        ...(extraction.currentPrice
+          ? { currentPriceCents: extraction.currentPrice.cents }
+          : {}),
+        ...(extraction.nativeUnitPrice
+          ? {
+              nativeUnitPrice: {
+                centsPerUnit: extraction.nativeUnitPrice.centsPerUnit,
+                unit: extraction.nativeUnitPrice.unit,
+                dimension: extraction.nativeUnitPrice.dimension
+              }
+            }
+          : {}),
+        ...(extraction.packageQuantity
+          ? {
+              packageQuantity: {
+                valuePerPackage: extraction.packageQuantity.valuePerPackage,
+                packCount: extraction.packageQuantity.packCount,
+                unit: extraction.packageQuantity.unit,
+                dimension: extraction.packageQuantity.dimension
+              }
+            }
+          : {}),
+        ...(validated.normalized
+          ? {
+              expectedNormalized: {
+                centsPerUnit: validated.normalized.centsPerUnit,
+                unit: validated.normalized.unit,
+                dimension: validated.normalized.dimension
+              }
+            }
+          : {}),
+        ...(extraction.abstainReason
+          ? {
+              abstainReason: extraction.abstainReason,
+              exclusionReason: extraction.abstainReason
+            }
+          : {}),
+        ...(reviewedProduct.notes ? { notes: reviewedProduct.notes } : {})
+      };
+    })
+  };
+}
+
 function validateSource(
   source: EvidenceReviewSource,
   options: EvidenceReviewValidationOptions,
@@ -428,6 +539,16 @@ function resolvedDimension(result: ResolvedEvidencePointer): string {
     product?.packageQuantity?.dimension ??
     "none"
   );
+}
+
+function legacyScope(
+  scope: EvidenceProductScope
+): CorpusAnnotation["products"][number]["scope"] {
+  if (scope === "primary-results") return "primary-results";
+  if (scope === "secondary-recommendation" || scope === "sponsored") {
+    return "secondary-recommendation";
+  }
+  return "unknown";
 }
 
 function cohensKappa(left: readonly boolean[], right: readonly boolean[]): number | null {

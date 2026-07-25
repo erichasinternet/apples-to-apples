@@ -65,3 +65,33 @@ final status.
 
 Raw captures remain private. Public dataset releases contain only redistribution-
 cleared derived artifacts and provenance metadata.
+
+## Commands
+
+Create separate immutable queues without model or peer labels:
+
+```bash
+bun run dataset:reviews:queue -- --run benchmark-data/live/<run> \
+  --reviewer reviewer-a --cohort training \
+  --output benchmark-data/review/<run>-reviewer-a-queue.json
+```
+
+After a reviewer chooses a card root, list the deterministic numeric candidates:
+
+```bash
+bun run dataset:reviews:candidates -- observation.json n42
+```
+
+Score independent submissions and emit every unresolved field:
+
+```bash
+bun run dataset:reviews:score -- observation.json review-a.json review-b.json
+```
+
+Validate and compile a third-party adjudication into the corpus annotation used by
+the training exporter:
+
+```bash
+bun run dataset:reviews:compile -- observation.json review-a.json review-b.json \
+  adjudication.json annotation.json
+```

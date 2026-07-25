@@ -1,4 +1,5 @@
 import {
+  compileAdjudicatedCorpusAnnotation,
   compareIndependentEvidenceReviews,
   validateEvidenceAdjudication,
   validateEvidencePointerReview,
@@ -84,6 +85,44 @@ describe("evidence-pointer reviews", () => {
         "adjudication adds cards lacking dual review: new-card"
       ])
     );
+  });
+
+  it("compiles only valid adjudication into deterministic corpus facts", () => {
+    const left = review("review-a", "reviewer-a");
+    const right = review("review-b", "reviewer-b");
+    const adjudication = review("adjudication", "reviewer-c");
+    adjudication.phase = "adjudicated";
+    adjudication.preannotationVisibility = "shown-after-submit";
+    adjudication.sourceReviewIds = ["review-a", "review-b"];
+
+    const annotation = compileAdjudicatedCorpusAnnotation(
+      adjudication,
+      left,
+      right,
+      observation()
+    );
+
+    expect(annotation).toMatchObject({
+      reviewStatus: "adjudicated",
+      annotators: ["reviewer-a", "reviewer-b", "reviewer-c"],
+      products: [
+        {
+          comparable: true,
+          currentPriceCents: 1200,
+          packageQuantity: {
+            valuePerPackage: 12,
+            packCount: 1,
+            unit: "oz",
+            dimension: "mass"
+          },
+          expectedNormalized: {
+            centsPerUnit: 1600,
+            unit: "lb",
+            dimension: "mass"
+          }
+        }
+      ]
+    });
   });
 });
 
