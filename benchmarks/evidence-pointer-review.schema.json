@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/erichasinternet/apples-to-apples/benchmarks/evidence-pointer-review.schema.json",
+  "title": "Apples to Apples evidence-pointer review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "reviewId",
+    "pageId",
+    "phase",
+    "reviewerId",
+    "completedAt",
+    "coverage",
+    "preannotationVisibility",
+    "source",
+    "products"
+  ],
+  "properties": {
+    "version": { "const": 1 },
+    "reviewId": { "type": "string", "minLength": 1 },
+    "pageId": { "type": "string", "minLength": 1 },
+    "phase": { "enum": ["independent", "adjudicated"] },
+    "reviewerId": { "type": "string", "minLength": 1 },
+    "completedAt": { "type": "string", "format": "date-time" },
+    "coverage": { "const": "complete-main-region" },
+    "preannotationVisibility": {
+      "enum": ["hidden", "shown-after-submit"]
+    },
+    "sourceReviewIds": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 2,
+      "maxItems": 2,
+      "uniqueItems": true
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "observationSha256",
+        "screenshotSha256",
+        "captureTimestamp",
+        "registrableDomain",
+        "cohort"
+      ],
+      "properties": {
+        "observationSha256": { "$ref": "#/$defs/sha256" },
+        "screenshotSha256": { "$ref": "#/$defs/sha256" },
+        "captureTimestamp": { "type": "string", "format": "date-time" },
+        "registrableDomain": { "type": "string", "minLength": 1 },
+        "cohort": {
+          "enum": ["training", "validation", "selection", "final"]
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["cardNodeId", "scope", "target"],
+        "properties": {
+          "cardNodeId": { "type": "string", "minLength": 1 },
+          "scope": {
+            "enum": [
+              "primary-results",
+              "secondary-recommendation",
+              "sponsored",
+              "non-product"
+            ]
+          },
+          "target": {
+            "type": "string",
+            "pattern": "^CARD [^\\n]+\\nTITLE [^\\n]+\\nCURRENT_PRICE [^\\n]+\\nNATIVE_UNIT_PRICE [^\\n]+\\nPACKAGE_QUANTITY [^\\n]+\\nPACK_COUNT [^\\n]+\\nSTATUS [^\\n]+$"
+          },
+          "challengeTags": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "multipack",
+                "split-price",
+                "sale-vs-list",
+                "native-derived-conflict",
+                "decimal-quantity",
+                "conditional-price",
+                "price-range",
+                "unselected-variant",
+                "sponsored-or-recommendation",
+                "unsupported-currency"
+              ]
+            }
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}
