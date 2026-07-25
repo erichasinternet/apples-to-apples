@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "scope": {
+    "locale": "en-US",
+    "currency": "USD",
+    "claim": "Unfamiliar public English-language shopping sites within the supported currency and unit contract.",
+    "unsupportedLocalePolicy": "abstain"
+  },
+  "cohorts": {
+    "training": {
+      "minimumDomains": 80,
+      "minimumPages": 480,
+      "minimumProducts": 8000,
+      "minimumComparable": 5200,
+      "minimumAbstentions": 2400,
+      "minimumStrata": 10,
+      "minimumCategories": 25,
+      "requiredDualReviewRate": 1,
+      "requiredPointerReadyRate": 1
+    },
+    "validation": {
+      "minimumDomains": 20,
+      "minimumPages": 120,
+      "minimumProducts": 2000,
+      "minimumComparable": 1300,
+      "minimumAbstentions": 600,
+      "minimumStrata": 8,
+      "minimumCategories": 15,
+      "requiredDualReviewRate": 1,
+      "requiredPointerReadyRate": 1
+    },
+    "selection": {
+      "minimumDomains": 20,
+      "minimumPages": 120,
+      "minimumProducts": 2000,
+      "minimumComparable": 1300,
+      "minimumAbstentions": 600,
+      "minimumStrata": 8,
+      "minimumCategories": 15,
+      "requiredDualReviewRate": 1,
+      "requiredPointerReadyRate": 1
+    },
+    "final": {
+      "minimumDomains": 30,
+      "minimumPages": 300,
+      "minimumProducts": 5500,
+      "minimumComparable": 4000,
+      "minimumAbstentions": 1200,
+      "minimumStrata": 10,
+      "minimumCategories": 25,
+      "requiredDualReviewRate": 1,
+      "requiredPointerReadyRate": 1
+    }
+  },
+  "distribution": {
+    "minimumComparableDimensionShares": {
+      "mass": 0.2,
+      "volume": 0.2,
+      "count": 0.2,
+      "area": 0.05,
+      "length": 0.05
+    },
+    "minimumEvidenceModeShares": {
+      "native-only": 0.2,
+      "derived-only": 0.35,
+      "native-and-derived": 0.2
+    },
+    "maximumDomainProductShare": 0.05,
+    "maximumPageProductShare": 0.02,
+    "minimumNarrowViewportShare": 0.25,
+    "minimumTemporalDomains": 20,
+    "minimumCapturesPerTemporalDomain": 3,
+    "minimumProductChallengeCounts": {
+      "multipack": 800,
+      "split-price": 500,
+      "sale-vs-list": 500,
+      "native-derived-conflict": 300,
+      "decimal-quantity": 300,
+      "conditional-price": 300,
+      "price-range": 300,
+      "unselected-variant": 300,
+      "sponsored-or-recommendation": 500,
+      "unsupported-currency": 300
+    },
+    "minimumPageChallengeCounts": {
+      "redirect": 100,
+      "empty-results": 100,
+      "loading-shell": 100,
+      "virtualized-list": 100,
+      "lazy-loaded": 100
+    }
+  },
+  "quality": {
+    "minimumComparableKappa": 0.9,
+    "minimumExactFieldAgreement": 0.98,
+    "minimumExactPointerAgreement": 0.95,
+    "requiredResolvedPointerRate": 1,
+    "requiredDeterministicValidationRate": 1,
+    "maximumCrossCohortDuplicateRate": 0
+  },
+  "synthetic": {
+    "targetProducts": 20000,
+    "minimumStructuralFamilies": 200,
+    "minimumExamplesPerRarePattern": 500,
+    "maximumPostWarmStartPresentationShare": 0.5
+  },
+  "learningCurve": {
+    "liveProductCheckpoints": [500, 1500, 3000, 5000, 8000, 10000],
+    "plateauIncrements": 2,
+    "maximumPlateauGain": 0.01,
+    "maximumSliceCoverageGap": 0.05
+  },
+  "finalEvidence": {
+    "targetCoverage": 0.8,
+    "minimumAcceptedOutputs": 3000,
+    "maximumAcceptedErrors": 0
+  }
+}

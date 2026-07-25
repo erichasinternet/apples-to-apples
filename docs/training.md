@@ -13,6 +13,12 @@ result is safe to display.
 
 ## Data Requirements
 
+The production corpus specification is
+[`ideal-dataset.md`](./ideal-dataset.md). Its machine-readable cohort, diversity,
+quality, synthetic-data, and learning-curve targets are in
+[`ideal-dataset-targets.json`](../benchmarks/ideal-dataset-targets.json). The
+smaller thresholds below are only an engineering pilot gate.
+
 The pilot gate is:
 
 - 24 training domains and 6 domain-disjoint validation domains.

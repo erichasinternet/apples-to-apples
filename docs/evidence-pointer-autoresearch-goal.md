@@ -127,7 +127,9 @@ dataset or model. Audit the pointer/input contract once, then terminate the seri
 
 ### G2: Corpus Readiness
 
-Pass when the development corpus has:
+The complete sampling, diversity, annotation, contamination, and learning-curve
+policy is defined in [`ideal-dataset.md`](./ideal-dataset.md). Pass when the
+development corpus has:
 
 - At least 100 registrable domains.
 - At least 5,000 adjudicated product cards.
@@ -138,6 +140,8 @@ Pass when the development corpus has:
   development labels.
 - A final cohort of at least 30 unseen domains with enough eligible examples to
   produce at least 3,000 accepted outputs at the target coverage.
+- All cohort-specific quality and diversity targets in
+  `benchmarks/ideal-dataset-targets.json`.
 
 Synthetic examples may balance rare structures but never satisfy live-domain or
 final-sample requirements.

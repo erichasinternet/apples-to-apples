@@ -50,13 +50,34 @@ export interface CorpusAnnotation {
   coverage?: "unreviewed" | "sampled" | "complete-main-region";
   region?: ObservationBounds;
   annotators: string[];
+  pageTags?: DatasetPageTag[];
   products: AnnotatedProduct[];
 }
+
+export type DatasetPageTag =
+  | "redirect"
+  | "empty-results"
+  | "loading-shell"
+  | "virtualized-list"
+  | "lazy-loaded";
+
+export type DatasetProductChallengeTag =
+  | "multipack"
+  | "split-price"
+  | "sale-vs-list"
+  | "native-derived-conflict"
+  | "decimal-quantity"
+  | "conditional-price"
+  | "price-range"
+  | "unselected-variant"
+  | "sponsored-or-recommendation"
+  | "unsupported-currency";
 
 export interface AnnotatedProduct {
   nodeId: string;
   scope: "primary-results" | "secondary-recommendation" | "unknown";
   comparable: boolean;
+  challengeTags?: DatasetProductChallengeTag[];
   title: string;
   evidenceNodeIds: string[];
   fieldEvidence?: {
