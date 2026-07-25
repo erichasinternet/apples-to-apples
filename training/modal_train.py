@@ -24,6 +24,9 @@ SILVER_DISCOVERY_DATASET = (
 ADJUDICATED_DISCOVERY_DATASET = (
     REPO_ROOT / "benchmark-data" / "training" / "t5gemma2-adjudicated-discovery"
 )
+SILVER_EXTRACTION_DATASET = (
+    REPO_ROOT / "benchmark-data" / "training" / "t5gemma2-silver-extraction"
+)
 
 if modal.is_local() and not SYNTHETIC_DATASET.is_dir():
     raise RuntimeError(
@@ -60,6 +63,12 @@ if ADJUDICATED_DISCOVERY_DATASET.is_dir():
     image = image.add_local_dir(
         ADJUDICATED_DISCOVERY_DATASET,
         f"{REMOTE_ROOT}/benchmark-data/training/t5gemma2-adjudicated-discovery",
+        copy=True,
+    )
+if SILVER_EXTRACTION_DATASET.is_dir():
+    image = image.add_local_dir(
+        SILVER_EXTRACTION_DATASET,
+        f"{REMOTE_ROOT}/benchmark-data/training/t5gemma2-silver-extraction",
         copy=True,
     )
 output_volume = modal.Volume.from_name(
@@ -131,7 +140,7 @@ def diagnose() -> dict[str, object]:
         "HF_HUB_CACHE": f"{CACHE_ROOT}/huggingface/hub",
     },
 )
-def check_model_access() -> dict[str, object]:
+def check_model_access(model_id: str = MODEL_ID) -> dict[str, object]:
     from huggingface_hub import hf_hub_download
     from huggingface_hub.errors import GatedRepoError, HfHubHTTPError
 
@@ -144,7 +153,7 @@ def check_model_access() -> dict[str, object]:
 
     try:
         hf_hub_download(
-            repo_id=MODEL_ID,
+            repo_id=model_id,
             filename="config.json",
             token=token,
             cache_dir=f"{CACHE_ROOT}/huggingface/hub",
@@ -154,7 +163,7 @@ def check_model_access() -> dict[str, object]:
             "accessible": False,
             "error": (
                 "Accept the Gemma usage license at "
-                f"https://huggingface.co/{MODEL_ID} for the account that owns "
+                f"https://huggingface.co/{model_id} for the account that owns "
                 "the configured Hugging Face token."
             ),
         }
@@ -165,7 +174,7 @@ def check_model_access() -> dict[str, object]:
         }
 
     cache_volume.commit()
-    return {"accessible": True, "modelId": MODEL_ID}
+    return {"accessible": True, "modelId": model_id}
 
 
 def training_function(*, timeout: int):
@@ -375,6 +384,75 @@ def pilot_expanded_adjudicated_discovery_train() -> dict[str, object]:
     )
 
 
+@training_function(timeout=1800)
+def pilot_audited_extraction_train() -> dict[str, object]:
+    return run_training(
+        output_name="synthetic-pilot-80-audited-extraction-evidence-pinned",
+        config_name="audited-silver-extraction.json",
+        extra_args=[
+            "--initial-adapter",
+            f"{OUTPUT_ROOT}/synthetic-pilot-60-replay",
+            "--silver-extraction-share",
+            "0.5",
+            "--balance-extraction-abstentions",
+            "--max-train-records",
+            "320",
+            "--max-validation-records",
+            "64",
+            "--max-steps",
+            "20",
+            "--epochs",
+            "2",
+        ],
+    )
+
+
+@training_function(timeout=2700)
+def pilot_1b_audited_extraction_train() -> dict[str, object]:
+    return run_training(
+        output_name="t5gemma2-1b-pilot-20-audited-extraction",
+        config_directory="t5gemma2-1b",
+        config_name="audited-silver-extraction.json",
+        extra_args=[
+            "--silver-extraction-share",
+            "0.5",
+            "--balance-extraction-abstentions",
+            "--max-train-records",
+            "320",
+            "--max-validation-records",
+            "32",
+            "--max-steps",
+            "20",
+            "--epochs",
+            "2",
+        ],
+    )
+
+
+@training_function(timeout=2700)
+def pilot_1b_explicit_contract_continue_train() -> dict[str, object]:
+    return run_training(
+        output_name="t5gemma2-1b-pilot-40-explicit-contract",
+        config_directory="t5gemma2-1b",
+        config_name="audited-silver-extraction.json",
+        extra_args=[
+            "--initial-adapter",
+            f"{OUTPUT_ROOT}/t5gemma2-1b-pilot-20-audited-extraction",
+            "--silver-extraction-share",
+            "0.5",
+            "--balance-extraction-abstentions",
+            "--max-train-records",
+            "320",
+            "--max-validation-records",
+            "32",
+            "--max-steps",
+            "20",
+            "--epochs",
+            "2",
+        ],
+    )
+
+
 @training_function(timeout=4 * 60 * 60)
 def full_train() -> dict[str, object]:
     return run_training(output_name="synthetic")
@@ -384,6 +462,7 @@ def run_training(
     *,
     output_name: str,
     extra_args: list[str] | None = None,
+    config_directory: str = "t5gemma2-270m",
     config_name: str = "synthetic-pretrain.json",
 ) -> dict[str, object]:
     import torch
@@ -393,7 +472,7 @@ def run_training(
         "python",
         f"{REMOTE_ROOT}/training/train_t5gemma2.py",
         "--config",
-        f"{REMOTE_ROOT}/training/t5gemma2-270m/{config_name}",
+        f"{REMOTE_ROOT}/training/{config_directory}/{config_name}",
         "--output-directory",
         str(output_directory),
         *(extra_args or []),
@@ -421,6 +500,16 @@ def run_training(
 def main(mode: str = "diagnose") -> None:
     if mode == "diagnose":
         result = diagnose.remote()
+    elif mode == "check-candidates":
+        result = {
+            model_id: check_model_access.remote(model_id)
+            for model_id in [
+                MODEL_ID,
+                "google/t5gemma-2-1b-1b",
+                "google/paligemma2-3b-pt-224",
+                "Qwen/Qwen3-VL-2B-Instruct",
+            ]
+        }
     elif mode == "smoke":
         if diagnose_only:
             raise RuntimeError("Training functions are disabled in diagnostic mode")
@@ -504,6 +593,42 @@ def main(mode: str = "diagnose") -> None:
         if not access["accessible"]:
             raise RuntimeError(str(access["error"]))
         result = pilot_expanded_adjudicated_discovery_train.remote()
+    elif mode == "pilot-audited-extraction":
+        if diagnose_only:
+            raise RuntimeError("Training functions are disabled in diagnostic mode")
+        if not SILVER_EXTRACTION_DATASET.is_dir():
+            raise RuntimeError(
+                "Prepare the audited silver extraction dataset before this mode: "
+                "`bun run training:extraction:prepare`"
+            )
+        access = check_model_access.remote()
+        if not access["accessible"]:
+            raise RuntimeError(str(access["error"]))
+        result = pilot_audited_extraction_train.remote()
+    elif mode == "pilot-1b-audited-extraction":
+        if diagnose_only:
+            raise RuntimeError("Training functions are disabled in diagnostic mode")
+        if not SILVER_EXTRACTION_DATASET.is_dir():
+            raise RuntimeError(
+                "Prepare the audited silver extraction dataset before this mode: "
+                "`bun run training:extraction:prepare`"
+            )
+        access = check_model_access.remote("google/t5gemma-2-1b-1b")
+        if not access["accessible"]:
+            raise RuntimeError(str(access["error"]))
+        result = pilot_1b_audited_extraction_train.remote()
+    elif mode == "pilot-1b-explicit-contract-continue":
+        if diagnose_only:
+            raise RuntimeError("Training functions are disabled in diagnostic mode")
+        if not SILVER_EXTRACTION_DATASET.is_dir():
+            raise RuntimeError(
+                "Prepare the audited silver extraction dataset before this mode: "
+                "`bun run training:extraction:prepare`"
+            )
+        access = check_model_access.remote("google/t5gemma-2-1b-1b")
+        if not access["accessible"]:
+            raise RuntimeError(str(access["error"]))
+        result = pilot_1b_explicit_contract_continue_train.remote()
     elif mode == "full":
         if diagnose_only:
             raise RuntimeError("Training functions are disabled in diagnostic mode")
@@ -516,6 +641,9 @@ def main(mode: str = "diagnose") -> None:
             "mode must be diagnose, smoke, pilot, pilot-continue, "
             "pilot-focus-extraction, pilot-replay, pilot-real-discovery, "
             "pilot-balanced-real-discovery, pilot-adjudicated-discovery, "
-            "pilot-expanded-adjudicated-discovery, or full"
+            "check-candidates, pilot-expanded-adjudicated-discovery, "
+            "pilot-audited-extraction, pilot-1b-audited-extraction, "
+            "pilot-1b-explicit-contract-continue, "
+            "or full"
         )
     print(json.dumps(result, indent=2))

@@ -6,7 +6,7 @@ const PRICE_WITH_DECIMAL =
 
 const UNIT_SOURCE = getUnitRegexSource();
 const NATIVE_UNIT_PRICE_REGEX = new RegExp(
-  `(?:\\$\\s*([0-9]+(?:[.,][0-9]+)?)|([0-9]+(?:[.,][0-9]+)?)\\s*(?:¢|cents?))\\s*(?:/|per\\s+)\\s*(${UNIT_SOURCE})(?=\\b|\\W)`,
+  `(?:\\$\\s*([0-9]+(?:[.,][0-9]+)?)|([0-9]+(?:[.,][0-9]+)?)\\s*(?:¢|cents?))\\s*(?:[([]\\s*)?(?:/|per\\s+)\\s*(${UNIT_SOURCE})(?=\\b|\\W)`,
   "gi"
 );
 
@@ -178,13 +178,20 @@ export function parseQuantities(text: string): Quantity[] {
 }
 
 export function extractPackCount(text: string): number | undefined {
-  const match = text.match(/\b(\d{1,3})\s*(?:pack|pk)\b/i);
-  if (!match?.[1]) {
-    return undefined;
+  const patterns = [
+    /\b(\d{1,3})\s*(?:pack|pk)\b/i,
+    /\b(?:pack|pk)\s+of\s+(\d{1,3})\b/i,
+    /\b(\d{1,3})\s*\/\s*(?:carton|case)\b/i,
+    /\btotal\s+qty\s+(\d{1,3})\b/i
+  ];
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    const value = Number.parseInt(match?.[1] ?? "", 10);
+    if (Number.isFinite(value) && value > 1) {
+      return value;
+    }
   }
-
-  const value = Number.parseInt(match[1], 10);
-  return Number.isFinite(value) && value > 1 ? value : undefined;
+  return undefined;
 }
 
 export function selectPackageQuantity(

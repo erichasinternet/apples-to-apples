@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import os
 from pathlib import Path
 import subprocess
@@ -31,11 +32,17 @@ image = (
         "pillow>=12.3,<13",
         "peft>=0.19,<1",
         "torch>=2.13,<3",
+        "torchvision>=0.24,<1",
         "transformers>=5.14,<6",
     )
     .add_local_file(
         REPO_ROOT / "training" / "infer_t5gemma2.py",
         f"{REMOTE_ROOT}/training/infer_t5gemma2.py",
+        copy=True,
+    )
+    .add_local_file(
+        REPO_ROOT / "training" / "infer_qwen3_vl.py",
+        f"{REMOTE_ROOT}/training/infer_qwen3_vl.py",
         copy=True,
     )
     .add_local_dir(INPUT_BUNDLE, str(REMOTE_BUNDLE), copy=True)
@@ -57,7 +64,7 @@ app = modal.App(
 
 @app.function(
     image=image,
-    gpu="T4",
+    gpu="A10",
     cpu=4,
     memory=16384,
     timeout=20 * 60,
@@ -72,36 +79,84 @@ app = modal.App(
     },
 )
 def run_inference(
-    records_filename: str, checkpoint: str, bundle_name: str
+    records_filename: str,
+    checkpoint: str,
+    bundle_name: str,
+    artifact_name: str,
+    max_output_tokens: int,
+    batch_size: int,
 ) -> dict[str, object]:
     if not bundle_name or Path(bundle_name).name != bundle_name:
         raise ValueError("Invalid inference bundle name")
+    if not artifact_name or Path(artifact_name).name != artifact_name:
+        raise ValueError("Invalid inference artifact name")
     remote_bundle = REMOTE_BUNDLE_ROOT / bundle_name
     output_path = Path("/tmp/predictions.jsonl")
+    is_qwen = checkpoint == "qwen3-vl-zero-shot"
     command = [
         "python",
-        f"{REMOTE_ROOT}/training/infer_t5gemma2.py",
+        (
+            f"{REMOTE_ROOT}/training/infer_qwen3_vl.py"
+            if is_qwen
+            else f"{REMOTE_ROOT}/training/infer_t5gemma2.py"
+        ),
         "--bundle",
         str(remote_bundle),
         "--records",
         records_filename,
         "--output",
         str(output_path),
+        "--max-output-tokens",
+        str(max_output_tokens),
     ]
+    if not is_qwen:
+        command.extend(["--batch-size", str(batch_size)])
     adapters = {
-        "replay": "synthetic-pilot-60-replay",
-        "real-discovery": "synthetic-pilot-80-real-discovery",
-        "balanced-real-discovery": "synthetic-pilot-100-real-discovery-balanced",
-        "adjudicated-discovery": "synthetic-pilot-120-adjudicated-discovery",
+        "replay": ("synthetic-pilot-60-replay", "google/t5gemma-2-270m-270m"),
+        "real-discovery": (
+            "synthetic-pilot-80-real-discovery",
+            "google/t5gemma-2-270m-270m",
+        ),
+        "balanced-real-discovery": (
+            "synthetic-pilot-100-real-discovery-balanced",
+            "google/t5gemma-2-270m-270m",
+        ),
+        "adjudicated-discovery": (
+            "synthetic-pilot-120-adjudicated-discovery",
+            "google/t5gemma-2-270m-270m",
+        ),
         "expanded-adjudicated-discovery": (
-            "synthetic-pilot-140-expanded-adjudicated-discovery"
+            "synthetic-pilot-140-expanded-adjudicated-discovery",
+            "google/t5gemma-2-270m-270m",
+        ),
+        "audited-extraction": (
+            "synthetic-pilot-80-audited-extraction-evidence-pinned",
+            "google/t5gemma-2-270m-270m",
+        ),
+        "1b-audited-extraction": (
+            "t5gemma2-1b-pilot-20-audited-extraction",
+            "google/t5gemma-2-1b-1b",
+        ),
+        "1b-explicit-contract": (
+            "t5gemma2-1b-pilot-40-explicit-contract",
+            "google/t5gemma-2-1b-1b",
         ),
     }
-    if checkpoint in adapters:
+    adapter = adapters.get(checkpoint)
+    model_id = (
+        "Qwen/Qwen3-VL-2B-Instruct"
+        if is_qwen
+        else adapter[1]
+        if adapter
+        else "google/t5gemma-2-270m-270m"
+    )
+    if not is_qwen:
+        command.extend(["--model-id", model_id])
+    if adapter:
         command.extend(
             [
                 "--adapter",
-                f"{OUTPUT_ROOT}/{adapters[checkpoint]}",
+                f"{OUTPUT_ROOT}/{adapter[0]}",
             ]
         )
     started = time.monotonic()
@@ -112,13 +167,30 @@ def run_inference(
         for line in output_path.read_text(encoding="utf-8").splitlines()
         if line
     ]
-    cache_volume.commit()
-    return {
+    records_path = remote_bundle / records_filename
+    records_sha256 = hashlib.sha256(records_path.read_bytes()).hexdigest()
+    artifact_directory = OUTPUT_ROOT / "evaluations" / artifact_name
+    artifact_directory.mkdir(parents=True, exist_ok=True)
+    persisted_predictions = artifact_directory / "predictions.jsonl"
+    persisted_predictions.write_bytes(output_path.read_bytes())
+    summary = {
         "recordsFile": records_filename,
-        "checkpoint": adapters.get(checkpoint, "base"),
+        "checkpoint": checkpoint if is_qwen else adapter[0] if adapter else "base",
+        "modelId": model_id,
         "records": len(predictions),
+        "recordsSha256": records_sha256,
         "elapsedSeconds": round(elapsed, 2),
         "gpuSeconds": round(elapsed, 2),
+        "artifactDirectory": str(artifact_directory),
+    }
+    (artifact_directory / "metadata.json").write_text(
+        json.dumps(summary, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    output_volume.commit()
+    cache_volume.commit()
+    return {
+        **summary,
         "predictions": predictions,
     }
 
@@ -128,6 +200,8 @@ def main(
     records: str = "discovery.jsonl",
     output: str = "benchmark-data/inference/t5gemma2-live/discovery-predictions.jsonl",
     checkpoint: str = "replay",
+    max_output_tokens: int = 192,
+    batch_size: int = 1,
 ) -> None:
     if checkpoint not in {
         "base",
@@ -136,13 +210,31 @@ def main(
         "balanced-real-discovery",
         "adjudicated-discovery",
         "expanded-adjudicated-discovery",
+        "audited-extraction",
+        "1b-audited-extraction",
+        "1b-explicit-contract",
+        "qwen3-vl-zero-shot",
     }:
         raise ValueError(
             "checkpoint must be base, replay, real-discovery, or "
             "balanced-real-discovery, adjudicated-discovery, or "
-            "expanded-adjudicated-discovery"
+            "expanded-adjudicated-discovery, audited-extraction, or "
+            "1b-audited-extraction, 1b-explicit-contract, or "
+            "qwen3-vl-zero-shot"
         )
-    result = run_inference.remote(records, checkpoint, BUNDLE_NAME)
+    if max_output_tokens <= 0 or max_output_tokens > 2048:
+        raise ValueError("max_output_tokens must be between 1 and 2048")
+    if batch_size <= 0 or batch_size > 16:
+        raise ValueError("batch_size must be between 1 and 16")
+    artifact_name = Path(output).name.removesuffix(".jsonl")
+    result = run_inference.remote(
+        records,
+        checkpoint,
+        BUNDLE_NAME,
+        artifact_name,
+        max_output_tokens,
+        batch_size,
+    )
     output_path = Path(output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
@@ -154,4 +246,8 @@ def main(
     )
     summary = {key: value for key, value in result.items() if key != "predictions"}
     summary["output"] = str(output_path)
+    output_path.with_suffix(output_path.suffix + ".meta.json").write_text(
+        json.dumps(summary, indent=2) + "\n",
+        encoding="utf-8",
+    )
     print(json.dumps(summary, indent=2))

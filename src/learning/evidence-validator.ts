@@ -445,7 +445,7 @@ function normalizeText(value: string): string {
 }
 
 function numbersInText(text: string): number[] {
-  return [...text.matchAll(/(?:^|[^\p{L}\d])(\d+(?:[.,]\d+)?)(?=$|[^\p{L}\d])/gu)]
+  return [...text.matchAll(/(?:^|[^\p{L}\d]|[x×])(\d+(?:[.,]\d+)?)(?=$|[^\p{L}\d])/gu)]
     .map((match) => Number.parseFloat(match[1]!.replace(",", ".")))
     .filter(Number.isFinite);
 }
@@ -476,11 +476,11 @@ function unitPriceCentsInText(text: string, unit: CanonicalUnit): number[] {
   const unitSource = unitAliasRegexSource(unit);
   if (!unitSource) return [];
   const centsRegex = new RegExp(
-    `(\\d+(?:[.,]\\d+)?)\\s*(?:¢|cents?)\\s*(?:\\/|per)\\s*(?:${unitSource})(?=$|[^a-z])`,
+    `(\\d+(?:[.,]\\d+)?)\\s*(?:¢|cents?)\\s*(?:[([]\\s*)?(?:\\/|per)\\s*(?:${unitSource})(?=$|[^a-z])`,
     "gi"
   );
   const dollarRegex = new RegExp(
-    `\\$\\s*(\\d+(?:[.,]\\d+)?)\\s*(?:\\/|per)\\s*(?:${unitSource})(?=$|[^a-z])`,
+    `\\$\\s*(\\d+(?:[.,]\\d+)?)\\s*(?:[([]\\s*)?(?:\\/|per)\\s*(?:${unitSource})(?=$|[^a-z])`,
     "gi"
   );
   const values = [...text.matchAll(centsRegex)].map((match) =>

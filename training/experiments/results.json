@@ -288,6 +288,96 @@
       "successfulRunA10Seconds": 56.67,
       "selectionInferenceT4Seconds": 44.87,
       "decision": "promote-architecture-for-new-sealed-domain-validation-not-production"
+    },
+    {
+      "name": "synthetic-pilot-80-audited-extraction-invalid",
+      "modelId": "google/t5gemma-2-270m-270m",
+      "parent": "synthetic-pilot-60-replay",
+      "steps": 20,
+      "trainingMix": "audited real extraction plus synthetic replay before required evidence subtrees were pinned",
+      "meteredTrainingCostUsd": 0.2166,
+      "decision": "invalidate-data-contract-target-evidence-was-pruned"
+    },
+    {
+      "name": "synthetic-pilot-80-audited-extraction-evidence-pinned",
+      "modelId": "google/t5gemma-2-270m-270m",
+      "parent": "synthetic-pilot-60-replay",
+      "steps": 20,
+      "evaluationCohortSha256Prefix": "3175ac",
+      "trainingMix": "50% audited real-DOM extraction and 50% synthetic extraction replay with complete target evidence subtrees pinned",
+      "metrics": {
+        "liveExact": 0.0625,
+        "liveFieldAccuracy": 0.4791666666666667,
+        "liveAbstentionClassAccuracy": 0.1875,
+        "liveEvidenceAcceptance": 0.25,
+        "liveNormalizedPricingCoverage": 0.3333333333333333,
+        "liveNormalizedPricingAccuracy": 0.5
+      },
+      "meteredTrainingCostUsd": 0.2495,
+      "decision": "reject-production-insufficient-grounding-and-abstention"
+    },
+    {
+      "name": "t5gemma2-1b-pilot-20-audited-extraction",
+      "modelId": "google/t5gemma-2-1b-1b",
+      "parent": null,
+      "steps": 20,
+      "trainingMix": "50% audited real-DOM extraction and 50% synthetic extraction replay",
+      "metrics": {
+        "liveStrictJson": 0.875,
+        "liveExact": 0.0,
+        "liveFieldAccuracy": 0.6354166666666666,
+        "liveAbstentionClassAccuracy": 0.5625,
+        "liveAbstentionReasonAccuracy": 0.07692307692307693,
+        "liveEvidenceAcceptance": 0.25,
+        "liveNormalizedPricingCoverage": 0.0
+      },
+      "meteredTrainingCostUsd": 0.3266,
+      "decision": "continue-once-with-explicit-output-contract"
+    },
+    {
+      "name": "t5gemma2-1b-pilot-40-explicit-contract",
+      "modelId": "google/t5gemma-2-1b-1b",
+      "parent": "t5gemma2-1b-pilot-20-audited-extraction",
+      "steps": 20,
+      "datasetSha256": "4747bbc0caa47ddaae520ca337c5309a507e6ab98cdf701467ec89adc2519954",
+      "evaluationCohortSha256": "d5b33218ce5a2f17dce009d9fb36a1974d12b48cd43b5fdca49a8f450e0a20f7",
+      "trainingMix": "same extraction mixture with an exact compact schema and closed reason, dimension, and unit enums",
+      "metrics": {
+        "overallRecoverableJson": 1.0,
+        "overallExact": 0.40625,
+        "overallFieldAccuracy": 0.7760416666666666,
+        "overallEvidenceAcceptance": 0.625,
+        "overallNormalizedPricingCoverage": 0.6363636363636364,
+        "liveExact": 0.3125,
+        "liveFieldAccuracy": 0.6875,
+        "liveAbstentionClassAccuracy": 0.375,
+        "liveAbstentionReasonAccuracy": 0.38461538461538464,
+        "liveEvidenceAcceptance": 0.4375,
+        "liveNormalizedPricingCoverage": 0.0
+      },
+      "meteredTrainingCostUsd": 0.4826,
+      "evaluationA10Seconds": 948.15,
+      "decision": "reject-production-and-browser-runtime-live-normalized-coverage-zero"
+    },
+    {
+      "name": "qwen3-vl-2b-zero-shot-extraction",
+      "modelId": "Qwen/Qwen3-VL-2B-Instruct",
+      "parent": null,
+      "steps": 0,
+      "evaluationCohortSha256": "d5b33218ce5a2f17dce009d9fb36a1974d12b48cd43b5fdca49a8f450e0a20f7",
+      "metrics": {
+        "overallRecoverableJson": 0.96875,
+        "overallExact": 0.0,
+        "overallFieldAccuracy": 0.3125,
+        "overallEvidenceAcceptance": 0.0,
+        "overallNormalizedPricingCoverage": 0.0,
+        "liveFieldAccuracy": 0.2916666666666667,
+        "liveAbstentionClassAccuracy": 0.8125,
+        "liveEvidenceAcceptance": 0.0,
+        "liveNormalizedPricingCoverage": 0.0
+      },
+      "evaluationA10Seconds": 185.61,
+      "decision": "reject-zero-shot-and-defer-finetuning-schema-and-evidence-grounding-failed"
     }
   ],
   "liveValidation": {

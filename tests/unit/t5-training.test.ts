@@ -153,6 +153,85 @@ describe("T5 training records", () => {
     expect(required.every((id) => ids.has(id))).toBe(true);
     expect(pruned.nodes.length).toBeGreaterThan(8);
   });
+
+  it("pins target evidence nodes in extraction prompts", () => {
+    const observation = makeExample().input.observation;
+    const filler = Array.from({ length: 40 }, (_, index) =>
+      node(`signal-${index}`, "card-a", {
+        x: 100,
+        y: 200 + index,
+        width: 100,
+        height: 20
+      }, `$${index + 1}.00`)
+    );
+    observation.nodes.push(...filler);
+
+    const record = buildT5ExtractionRecord(observation, "card-a", {
+      captureId: "capture-1",
+      pageId: observation.pageId,
+      siteId: "shop",
+      imagePath: "assets/page.png",
+      maxExtractionNodes: 8,
+      requiredExtractionNodeIds: ["title-a", "price-a"]
+    });
+
+    expect(record.prompt).toContain('"id":"title-a"');
+    expect(record.prompt).toContain('"id":"price-a"');
+    expect(record.prompt).toContain(
+      "Allowed abstainReason values: insufficient-evidence"
+    );
+    expect(record.prompt).toContain("Allowed unit values: oz, lb, g, kg");
+    expect(record.prompt).toContain(
+      '"nativeUnitPrice":{"centsPerUnit":1.2'
+    );
+  });
+
+  it("pins text-bearing descendants of extraction evidence containers", () => {
+    const observation = makeExample().input.observation;
+    const price = observation.nodes.find((entry) => entry.id === "price-a")!;
+    delete price.text;
+    observation.nodes.push(
+      node(
+        "price-symbol",
+        "price-a",
+        { x: 120, y: 180, width: 10, height: 30 },
+        "$"
+      ),
+      node(
+        "price-whole",
+        "price-a",
+        { x: 130, y: 180, width: 30, height: 30 },
+        "10"
+      ),
+      node(
+        "price-fraction",
+        "price-a",
+        { x: 160, y: 180, width: 20, height: 30 },
+        "00"
+      ),
+      ...Array.from({ length: 40 }, (_, index) =>
+        node(
+          `signal-${index}`,
+          "card-a",
+          { x: 100, y: 220 + index, width: 100, height: 20 },
+          `$${index + 1}.00`
+        )
+      )
+    );
+
+    const record = buildT5ExtractionRecord(observation, "card-a", {
+      captureId: "capture-1",
+      pageId: observation.pageId,
+      siteId: "shop",
+      imagePath: "assets/page.png",
+      maxExtractionNodes: 8,
+      requiredExtractionNodeIds: ["title-a", "price-a"]
+    });
+
+    expect(record.prompt).toContain('"id":"price-symbol"');
+    expect(record.prompt).toContain('"id":"price-whole"');
+    expect(record.prompt).toContain('"id":"price-fraction"');
+  });
 });
 
 function makeExample(): TrainingExample {

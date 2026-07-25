@@ -10,7 +10,7 @@ import time
 from typing import Any
 
 
-MODEL_ID = "google/t5gemma-2-270m-270m"
+DEFAULT_MODEL_ID = "google/t5gemma-2-270m-270m"
 
 
 def parse_args() -> argparse.Namespace:
@@ -20,6 +20,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--bundle", required=True)
     parser.add_argument("--records", required=True)
     parser.add_argument("--adapter")
+    parser.add_argument("--model-id", default=DEFAULT_MODEL_ID)
     parser.add_argument("--output", required=True)
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--max-input-tokens", type=int, default=8192)
@@ -96,9 +97,9 @@ def infer(args: argparse.Namespace) -> dict[str, Any]:
     validate_records(bundle, records)
 
     started = time.monotonic()
-    processor = AutoProcessor.from_pretrained(MODEL_ID, token=token)
+    processor = AutoProcessor.from_pretrained(args.model_id, token=token)
     model = AutoModelForSeq2SeqLM.from_pretrained(
-        MODEL_ID, token=token, dtype=torch.bfloat16
+        args.model_id, token=token, dtype=torch.bfloat16
     )
     if args.adapter:
         adapter = Path(args.adapter)
@@ -128,7 +129,7 @@ def infer(args: argparse.Namespace) -> dict[str, Any]:
                 )
         inputs = processor(
             text=[record["prompt"] for record in batch],
-            images=images,
+            images=[[image] for image in images],
             padding=True,
             truncation=True,
             max_length=args.max_input_tokens,
@@ -161,7 +162,7 @@ def infer(args: argparse.Namespace) -> dict[str, Any]:
         encoding="utf-8",
     )
     return {
-        "modelId": MODEL_ID,
+        "modelId": args.model_id,
         "adapter": args.adapter,
         "records": len(records),
         "elapsedSeconds": round(time.monotonic() - started, 2),

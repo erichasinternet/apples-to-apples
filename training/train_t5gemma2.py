@@ -88,6 +88,14 @@ def parse_args() -> argparse.Namespace:
             "replay at this share (0-1)."
         ),
     )
+    parser.add_argument(
+        "--silver-extraction-share",
+        type=float,
+        help=(
+            "Mix audited real-DOM silver extraction records with synthetic "
+            "extraction replay at this share (0-1), for training and evaluation."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -155,7 +163,12 @@ def validate_dataset(
         and manifest.get("datasetType")
         == "synthetic-plus-silver-real-discovery"
     )
-    if not silver_discovery and (
+    silver_extraction = (
+        config.get("allowSilverExtraction") is True
+        and manifest.get("datasetType")
+        == "synthetic-plus-audited-silver-real-extraction"
+    )
+    if not silver_discovery and not silver_extraction and (
         manifest.get("strict") is not True
         or manifest.get("allowSingleReview") is not False
     ):
@@ -183,6 +196,10 @@ def validate_dataset(
                 raise ValueError(
                     f"{record.get('id')}: silver adaptation may train discovery only"
                 )
+            if silver_extraction and record.get("task") != "extract-product":
+                raise ValueError(
+                    f"{record.get('id')}: silver adaptation may train extraction only"
+                )
             record_id = record.get("id")
             if not isinstance(record_id, str) or record_id in record_ids:
                 raise ValueError(f"Missing or duplicate record id: {record_id}")
@@ -209,6 +226,29 @@ def validate_dataset(
                 raise ValueError(f"{record_id}: invalid image crop {crop}")
             if not record.get("prompt", "").startswith("<start_of_image>\n"):
                 raise ValueError(f"{record_id}: prompt is missing <start_of_image>")
+            if record.get("task") == "extract-product":
+                target = json.loads(record["target"])["products"][0]
+                required_evidence = {
+                    node_id
+                    for field in (
+                        "title",
+                        "currentPrice",
+                        "nativeUnitPrice",
+                        "packageQuantity",
+                    )
+                    if isinstance(target.get(field), dict)
+                    for node_id in target[field].get("evidenceNodeIds", [])
+                }
+                missing_evidence = [
+                    node_id
+                    for node_id in sorted(required_evidence)
+                    if f'"id":"{node_id}"' not in record["prompt"]
+                ]
+                if missing_evidence:
+                    raise ValueError(
+                        f"{record_id}: prompt omits target evidence nodes "
+                        f"{', '.join(missing_evidence)}"
+                    )
             image_width, image_height = png_dimensions(image_path)
             if (
                 crop["x"] + crop["width"] > image_width
@@ -512,6 +552,26 @@ def train(
         extraction_field_total = 0
         abstention_count = 0
         abstention_matches = 0
+        extraction_slices = {
+            "silver": {
+                "records": 0,
+                "jsonValid": 0,
+                "prefixExact": 0,
+                "fieldMatches": 0,
+                "fieldTotal": 0,
+                "abstentions": 0,
+                "abstentionMatches": 0,
+            },
+            "synthetic": {
+                "records": 0,
+                "jsonValid": 0,
+                "prefixExact": 0,
+                "fieldMatches": 0,
+                "fieldTotal": 0,
+                "abstentions": 0,
+                "abstentionMatches": 0,
+            },
+        }
         samples = []
         for record, prediction, label in zip(
             evaluation_records,
@@ -540,6 +600,17 @@ def train(
             else:
                 extraction_count += 1
                 extraction_exact += int(is_prefix_exact)
+                slice_name = (
+                    "silver"
+                    if str(record.get("captureId", "")).startswith(
+                        "audited-silver"
+                    )
+                    else "synthetic"
+                )
+                extraction_slice = extraction_slices[slice_name]
+                extraction_slice["records"] += 1
+                extraction_slice["jsonValid"] += int(is_valid_json)
+                extraction_slice["prefixExact"] += int(is_prefix_exact)
                 predicted_product = (
                     parsed_prediction.get("products", [{}])[0]
                     if isinstance(parsed_prediction, dict)
@@ -556,16 +627,22 @@ def train(
                     "abstainReason",
                 ):
                     extraction_field_total += 1
-                    extraction_field_matches += int(
+                    field_match = int(
                         predicted_product.get(field, "__missing__")
                         == target_product.get(field, "__missing__")
                     )
+                    extraction_field_matches += field_match
+                    extraction_slice["fieldTotal"] += 1
+                    extraction_slice["fieldMatches"] += field_match
                 if "abstainReason" in target_product:
                     abstention_count += 1
-                    abstention_matches += int(
+                    abstention_match = int(
                         predicted_product.get("abstainReason")
                         == target_product["abstainReason"]
                     )
+                    abstention_matches += abstention_match
+                    extraction_slice["abstentions"] += 1
+                    extraction_slice["abstentionMatches"] += abstention_match
             is_exact = prediction.strip() == label.strip()
             if is_exact:
                 exact += 1
@@ -594,6 +671,24 @@ def train(
             "abstention_accuracy": abstention_matches / max(1, abstention_count),
             "exact_match": exact / count,
         }
+        slice_summary = {
+            name: {
+                "records": values["records"],
+                "jsonValid": values["jsonValid"] / max(1, values["records"]),
+                "prefixExact": values["prefixExact"] / max(1, values["records"]),
+                "fieldAccuracy": values["fieldMatches"]
+                / max(1, values["fieldTotal"]),
+                "abstentionAccuracy": values["abstentionMatches"]
+                / max(1, values["abstentions"]),
+            }
+            for name, values in extraction_slices.items()
+        }
+        metrics["silver_extraction_field_accuracy"] = slice_summary["silver"][
+            "fieldAccuracy"
+        ]
+        metrics["synthetic_extraction_field_accuracy"] = slice_summary[
+            "synthetic"
+        ]["fieldAccuracy"]
         output_directory.mkdir(parents=True, exist_ok=True)
         (output_directory / "evaluation-samples.jsonl").write_text(
             "".join(json.dumps(sample) + "\n" for sample in samples),
@@ -613,6 +708,7 @@ def train(
                     ],
                     "abstentionAccuracy": metrics["abstention_accuracy"],
                     "exactMatch": metrics["exact_match"],
+                    "extractionSlices": slice_summary,
                 },
                 indent=2,
             )
@@ -869,6 +965,78 @@ def mixed_real_discovery_limit(
     return selected
 
 
+def mixed_silver_extraction_limit(
+    records: list[dict[str, Any]],
+    limit: int,
+    *,
+    silver_share: float,
+    balance_abstentions: bool,
+) -> list[dict[str, Any]]:
+    if limit <= 0:
+        raise ValueError("Record limits must be positive")
+    if not 0 < silver_share < 1:
+        raise ValueError("--silver-extraction-share must be between 0 and 1")
+    if any(record["task"] != "extract-product" for record in records):
+        raise ValueError("--silver-extraction-share requires extraction-only records")
+    silver = [
+        record
+        for record in records
+        if str(record.get("captureId", "")).startswith("audited-silver")
+    ]
+    synthetic = [
+        record
+        for record in records
+        if not str(record.get("captureId", "")).startswith("audited-silver")
+    ]
+    if not silver or not synthetic:
+        raise ValueError("Audited silver and synthetic extraction records are required")
+    if balance_abstentions:
+        silver = domain_balanced_extraction_records(silver)
+        synthetic = domain_balanced_extraction_records(synthetic)
+
+    selected = []
+    silver_index = 0
+    synthetic_index = 0
+    while len(selected) < limit:
+        expected_silver = round((len(selected) + 1) * silver_share)
+        if silver_index < expected_silver:
+            selected.append(silver[silver_index % len(silver)])
+            silver_index += 1
+        else:
+            selected.append(synthetic[synthetic_index % len(synthetic)])
+            synthetic_index += 1
+    return selected
+
+
+def domain_balanced_extraction_records(
+    records: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    sites = sorted({str(record["siteId"]) for record in records})
+    site_buckets: dict[str, list[dict[str, Any]]] = {}
+    for site_id in sites:
+        site_buckets[site_id] = balanced_extraction_limit(
+            [
+                record
+                for record in records
+                if str(record["siteId"]) == site_id
+            ],
+            None,
+        )
+    selected: list[dict[str, Any]] = []
+    index = 0
+    while len(selected) < len(records):
+        added = False
+        for site_id in sites:
+            bucket = site_buckets[site_id]
+            if index < len(bucket):
+                selected.append(bucket[index])
+                added = True
+        if not added:
+            break
+        index += 1
+    return selected
+
+
 def main() -> None:
     args = parse_args()
     repo_root = Path(__file__).resolve().parent.parent
@@ -911,16 +1079,35 @@ def main() -> None:
             raise ValueError(
                 "--real-discovery-share cannot be combined with task or extraction sampling"
             )
+        if args.silver_extraction_share is not None and args.max_train_records is None:
+            raise ValueError("--silver-extraction-share requires --max-train-records")
+        if args.silver_extraction_share is not None and (
+            args.extraction_share is not None
+            or args.silver_discovery_share is not None
+            or args.real_discovery_share is not None
+            or args.train_task is not None
+        ):
+            raise ValueError(
+                "--silver-extraction-share cannot be combined with other task mixing"
+            )
         if (
             args.balance_extraction_abstentions
             and args.train_task != "extract-product"
             and args.extraction_share is None
+            and args.silver_extraction_share is None
         ):
             raise ValueError(
                 "--balance-extraction-abstentions requires "
                 "--train-task extract-product or --extraction-share"
             )
-        if args.silver_discovery_share is not None:
+        if args.silver_extraction_share is not None:
+            records_by_split["train"] = mixed_silver_extraction_limit(
+                records_by_split["train"],
+                args.max_train_records,
+                silver_share=args.silver_extraction_share,
+                balance_abstentions=args.balance_extraction_abstentions,
+            )
+        elif args.silver_discovery_share is not None:
             records_by_split["train"] = mixed_silver_discovery_limit(
                 records_by_split["train"],
                 args.max_train_records,
@@ -954,9 +1141,19 @@ def main() -> None:
             records_by_split["train"] = stratified_limit(
                 training_records, args.max_train_records
             )
-        records_by_split["validation"] = stratified_limit(
-            records_by_split["validation"], args.max_validation_records
-        )
+        if args.silver_extraction_share is not None:
+            records_by_split["validation"] = mixed_silver_extraction_limit(
+                records_by_split["validation"],
+                args.max_validation_records
+                if args.max_validation_records is not None
+                else len(records_by_split["validation"]),
+                silver_share=args.silver_extraction_share,
+                balance_abstentions=args.balance_extraction_abstentions,
+            )
+        else:
+            records_by_split["validation"] = stratified_limit(
+                records_by_split["validation"], args.max_validation_records
+            )
         train(
             repo_root,
             config,

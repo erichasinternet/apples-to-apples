@@ -61,6 +61,7 @@ export interface T5InferenceBuildOptions {
   maxDiscoveryNodes?: number;
   maxExtractionNodes?: number;
   requiredDiscoveryNodeIds?: string[];
+  requiredExtractionNodeIds?: string[];
 }
 
 export interface T5RecordBuildOptions
@@ -161,7 +162,8 @@ export function buildT5TrainingRecords(
     const input = buildT5ExtractionRecord(observation, product.cardNodeId, {
       ...options,
       pageId: example.pageId,
-      siteId: example.siteId
+      siteId: example.siteId,
+      requiredExtractionNodeIds: productEvidenceNodeIds(product)
     });
     const target: ModelPageExtraction = {
       version: 1,
@@ -252,7 +254,7 @@ export function buildT5ExtractionRecord(
   const cardObservation = pruneObservationForModel(
     sourceObservation,
     Math.max(8, options.maxExtractionNodes ?? 32),
-    cardNodeId
+    [cardNodeId, ...(options.requiredExtractionNodeIds ?? [])]
   );
   return {
     version: 1,
@@ -290,7 +292,13 @@ function extractionPrompt(observation: PageObservation, cardNodeId: string): str
     "TASK: extract-product",
     `Extract visible facts for product card ${JSON.stringify(cardNodeId)}.`,
     "Return one model-extraction JSON object with evidence node IDs.",
+    'Exact shape: {"version":1,"pageId":"...","products":[{"cardNodeId":"...","title":{"value":"...","evidenceNodeIds":["..."]},"currentPrice":{"cents":1234,"currency":"USD","evidenceNodeIds":["..."]},"nativeUnitPrice":{"centsPerUnit":1.2,"unit":"...","dimension":"...","evidenceNodeIds":["..."]},"packageQuantity":{"valuePerPackage":1,"packCount":1,"unit":"...","dimension":"...","evidenceNodeIds":["..."]},"abstainReason":"..."}]}.',
+    "Omit unsupported optional fields; an abstaining product contains only cardNodeId, title, and abstainReason.",
     "Use an abstainReason when current price and comparable quantity are not visibly supported.",
+    "Allowed abstainReason values: insufficient-evidence, conditional-price, price-range, unselected-variant, ambiguous-quantity, unsupported-unit, not-a-product.",
+    "Allowed dimension values: mass, volume, count, area, length.",
+    "Allowed unit values: oz, lb, g, kg, fl_oz, ml, l, gal, qt, pt, cup, each, roll, sheet, load, pod, tablet, capsule, diaper, bag, sq_ft, sq_in, ft, in.",
+    "Only include nativeUnitPrice when the page visibly lists it; do not derive it from price and quantity.",
     "Do not calculate normalized unit price and do not invent node IDs.",
     `OBSERVATION: ${serializeObservation(observation)}`
   ].join("\n");
@@ -304,6 +312,72 @@ function serializeObservation(observation: PageObservation): string {
     rootNodeId: observation.rootNodeId,
     nodes: observation.nodes.map(compactNode)
   });
+}
+
+export function parseT5PromptObservation(prompt: string): PageObservation {
+  const marker = "OBSERVATION: ";
+  const index = prompt.indexOf(marker);
+  if (index < 0) throw new Error("Prompt lacks serialized observation.");
+  const compact = JSON.parse(prompt.slice(index + marker.length)) as {
+    pageId: string;
+    title: string;
+    region?: ObservationBounds;
+    rootNodeId: string;
+    nodes: Array<Record<string, unknown>>;
+  };
+  return {
+    version: 1,
+    pageId: compact.pageId,
+    url: "https://evaluation.invalid/",
+    title: compact.title,
+    viewport: {
+      width: compact.region?.width ?? 0,
+      height: compact.region?.height ?? 0,
+      scrollX: compact.region?.x ?? 0,
+      scrollY: compact.region?.y ?? 0
+    },
+    rootNodeId: compact.rootNodeId,
+    nodes: compact.nodes.map((node): ObservedNode => {
+      const bounds = node.bounds as ObservedNode["bounds"];
+      const style = node.style as {
+        position: string;
+        fontSize: number;
+        fontWeight: number;
+      };
+      return {
+        id: String(node.id),
+        ...(typeof node.parent === "string"
+          ? { parentId: node.parent }
+          : {}),
+        tag: String(node.tag),
+        ...(typeof node.role === "string" ? { role: node.role } : {}),
+        ...(typeof node.text === "string" ? { text: node.text } : {}),
+        ...(typeof node.name === "string"
+          ? { accessibleName: node.name }
+          : {}),
+        ...(node.attributes &&
+        typeof node.attributes === "object" &&
+        !Array.isArray(node.attributes)
+          ? {
+              attributes: node.attributes as NonNullable<
+                ObservedNode["attributes"]
+              >
+            }
+          : {}),
+        bounds,
+        intersectsViewport: true,
+        interactive: node.interactive === true,
+        style: {
+          display: "block",
+          position: style.position,
+          fontSize: style.fontSize,
+          fontWeight: style.fontWeight
+        }
+      };
+    }),
+    ...(compact.region ? { sourceRegion: compact.region } : {}),
+    truncated: true
+  };
 }
 
 function compactNode(node: ObservedNode): Record<string, unknown> {
@@ -377,6 +451,13 @@ export function pruneObservationForModel(
   if (observation.nodes.length <= maxNodes) return observation;
   const nodeMap = new Map(observation.nodes.map((node) => [node.id, node]));
   const indexMap = new Map(observation.nodes.map((node, index) => [node.id, index]));
+  const children = new Map<string, string[]>();
+  for (const node of observation.nodes) {
+    if (!node.parentId) continue;
+    const childIds = children.get(node.parentId) ?? [];
+    childIds.push(node.id);
+    children.set(node.parentId, childIds);
+  }
   const included = new Set<string>();
 
   const addPath = (nodeId: string, required = false): boolean => {
@@ -394,7 +475,13 @@ export function pruneObservationForModel(
   addPath(observation.rootNodeId);
   const required =
     typeof requiredNodeIds === "string" ? [requiredNodeIds] : (requiredNodeIds ?? []);
-  for (const requiredNodeId of required) addPath(requiredNodeId, true);
+  const addRequiredSubtree = (nodeId: string): void => {
+    addPath(nodeId, true);
+    for (const childId of children.get(nodeId) ?? []) {
+      addRequiredSubtree(childId);
+    }
+  };
+  for (const requiredNodeId of required) addRequiredSubtree(requiredNodeId);
 
   const ranked = observation.nodes
     .map((node) => ({
@@ -460,4 +547,13 @@ export function countExtractionOutcomes(products: readonly ModelProductExtractio
     comparable: products.filter((product) => !product.abstainReason).length,
     abstained: products.filter((product) => product.abstainReason).length
   };
+}
+
+function productEvidenceNodeIds(product: ModelProductExtraction): string[] {
+  return [
+    ...product.title.evidenceNodeIds,
+    ...(product.currentPrice?.evidenceNodeIds ?? []),
+    ...(product.nativeUnitPrice?.evidenceNodeIds ?? []),
+    ...(product.packageQuantity?.evidenceNodeIds ?? [])
+  ].filter((value, index, values) => values.indexOf(value) === index);
 }

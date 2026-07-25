@@ -193,6 +193,21 @@ The same cycle corrected a visual-box coordinate-frame bug and regenerated all
 saved Qwen mappings. Qwen remains reviewer-only. Details are in
 [`architecture-baseline-cycle-report.md`](./architecture-baseline-cycle-report.md).
 
+## Audited Extraction Cycle
+
+An audited extraction corpus now contains 1,680 synthetic and 185 live records.
+Every target is validated against the exact evidence-pruned prompt. The first
+training run was invalidated after a prompt audit found that text-bearing
+descendants of required evidence containers could be pruned; complete evidence
+subtrees are now pinned and covered by regression tests.
+
+T5Gemma 2 1B with an explicit output contract reached 68.8% live field accuracy
+and 43.8% live evidence acceptance, but 0% live normalized-pricing coverage on the
+frozen pilot cohort. Qwen3-VL 2B zero shot reached 29.2% live field accuracy, 0%
+evidence acceptance, and 0% normalized coverage. Both are rejected for production.
+The full results and cost ledger are in
+[`audited-extraction-cycle-report.md`](./audited-extraction-cycle-report.md).
+
 ## Next Gate
 
 Do not launch full training or a larger model. Required work:

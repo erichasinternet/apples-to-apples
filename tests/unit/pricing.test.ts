@@ -38,6 +38,14 @@ describe("unit price parsing", () => {
     expect(parseNativeUnitPrices("$0.12/fl oz")[0]?.dimension).toBe("volume");
     expect(parseNativeUnitPrices("9.2 ¢/oz")[0]?.dimension).toBe("mass");
   });
+
+  it("parses unit pricing split by retailer grouping punctuation", () => {
+    expect(parseNativeUnitPrices("$0.39 ( /ct.)")[0]).toMatchObject({
+      centsPerUnit: 39,
+      unit: "each",
+      dimension: "count"
+    });
+  });
 });
 
 describe("quantity parsing", () => {
@@ -56,6 +64,9 @@ describe("quantity parsing", () => {
 
   it("captures multipack count separately", () => {
     expect(extractPackCount("Fresh scent refill, 4 Pack")).toBe(4);
+    expect(extractPackCount("Hand soap, 7.5 oz, Pack of 6 bottles")).toBe(6);
+    expect(extractPackCount("Hand soap, 7.5 fl oz, 6/Carton")).toBe(6);
+    expect(extractPackCount("Hand soap, 11.25 oz, Total Qty 6")).toBe(6);
   });
 });
 
