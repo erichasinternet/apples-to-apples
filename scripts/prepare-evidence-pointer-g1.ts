@@ -9,6 +9,8 @@ import {
 import {
   buildEvidencePointerPrompt,
   parseT5PromptObservation,
+  productEvidenceNodeIds,
+  pruneObservationForModel,
   type T5TrainingRecord
 } from "./t5-training-lib";
 
@@ -34,10 +36,17 @@ const sourceManifest = JSON.parse(
   sourceManifestBytes.toString("utf8")
 ) as { sha256: string };
 const converted = records.map((record): T5TrainingRecord => {
-  const observation = parseT5PromptObservation(record.prompt);
+  const sourceObservation = parseT5PromptObservation(record.prompt);
   const extraction = JSON.parse(record.target) as ModelPageExtraction;
   const product = extraction.products[0];
   if (!product) throw new Error(`${record.id}: target lacks a product`);
+  const evidenceNodeIds = productEvidenceNodeIds(product);
+  const observation = pruneObservationForModel(
+    sourceObservation,
+    32,
+    [product.cardNodeId, ...evidenceNodeIds],
+    evidenceNodeIds
+  );
   const target = serializeEvidencePointer(product, observation);
   const resolved = resolveEvidencePointer(target, observation);
   if (!resolved.valid) {
@@ -53,6 +62,8 @@ const converted = records.map((record): T5TrainingRecord => {
     target,
     metadata: {
       ...record.metadata,
+      nodeCount: observation.nodes.length,
+      sourceNodeCount: sourceObservation.nodes.length,
       targetFormat: "evidence-pointer"
     }
   };

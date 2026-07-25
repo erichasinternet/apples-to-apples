@@ -266,7 +266,8 @@ export function buildT5ExtractionRecord(
   const cardObservation = pruneObservationForModel(
     sourceObservation,
     Math.max(8, options.maxExtractionNodes ?? 32),
-    [cardNodeId, ...(options.requiredExtractionNodeIds ?? [])]
+    [cardNodeId, ...(options.requiredExtractionNodeIds ?? [])],
+    options.requiredExtractionNodeIds
   );
   return {
     version: 1,
@@ -517,7 +518,8 @@ function getSourceRegion(observation: PageObservation): ObservationBounds {
 export function pruneObservationForModel(
   observation: PageObservation,
   maxNodes: number,
-  requiredNodeIds?: string | readonly string[]
+  requiredNodeIds?: string | readonly string[],
+  requiredSubtreeNodeIds?: string | readonly string[]
 ): PageObservation {
   if (observation.nodes.length <= maxNodes) return observation;
   const nodeMap = new Map(observation.nodes.map((node) => [node.id, node]));
@@ -546,13 +548,21 @@ export function pruneObservationForModel(
   addPath(observation.rootNodeId);
   const required =
     typeof requiredNodeIds === "string" ? [requiredNodeIds] : (requiredNodeIds ?? []);
+  for (const requiredNodeId of required) addPath(requiredNodeId, true);
+
+  const requiredSubtrees =
+    typeof requiredSubtreeNodeIds === "string"
+      ? [requiredSubtreeNodeIds]
+      : (requiredSubtreeNodeIds ?? required);
   const addRequiredSubtree = (nodeId: string): void => {
     addPath(nodeId, true);
     for (const childId of children.get(nodeId) ?? []) {
       addRequiredSubtree(childId);
     }
   };
-  for (const requiredNodeId of required) addRequiredSubtree(requiredNodeId);
+  for (const requiredNodeId of requiredSubtrees) {
+    addRequiredSubtree(requiredNodeId);
+  }
 
   const ranked = observation.nodes
     .map((node) => ({
@@ -620,7 +630,7 @@ export function countExtractionOutcomes(products: readonly ModelProductExtractio
   };
 }
 
-function productEvidenceNodeIds(product: ModelProductExtraction): string[] {
+export function productEvidenceNodeIds(product: ModelProductExtraction): string[] {
   return [
     ...product.title.evidenceNodeIds,
     ...(product.currentPrice?.evidenceNodeIds ?? []),

@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "createdAt": "2026-07-25T06:07:36Z",
+  "experimentId": "g1-pointer-p01-domain-balanced",
+  "commit": "449bd165",
+  "modelId": "google/t5gemma-2-1b-1b",
+  "datasetSha256": "b7538f171b0d222d21c6219f73a165ffd784295e3fd50635cd88c83ff0c9b0bf",
+  "trainingSelectionSha256": "fce819aa0ddbbe9709b6f5f501c3e5fc20f5041b8286a066508611500d56f2c0",
+  "syntheticEvaluationSelectionSha256": "e63a77209112ae123c6cb0860c3bd7098b3198d5049be22185695fe2e43b4442",
+  "liveEvaluationCohortSha256": "588d55673e5ff23feffe217d4f809b0e102d8918a5740f7cc33e882592b3c766",
+  "predictionSha256": "1121ebf40c3c9ca5a1cac1c52ce53a4fe6d54185fd247918ec6be94c5280fa1c",
+  "scoreSha256": "aea1b6d42dccabf81ff604266c0ee19d1b6628f3815598d2179f839b1ae04715",
+  "modal": {
+    "trainingAppId": "ap-hRsI2PNpcDMB5sarJ9iKjl",
+    "inferenceAppId": "ap-EttdmS8JkUQflcRfPfi4lC",
+    "trainingElapsedSeconds": 565.06,
+    "inferenceGpuSeconds": 239.49,
+    "trainingEstimatedCostUsd": 0.1729,
+    "inferenceEstimatedCostUsd": 0.0733,
+    "combinedEstimatedCostUsd": 0.2462
+  },
+  "syntheticDomainHeldOut": {
+    "records": 32,
+    "domains": 32,
+    "grammarValidity": 0.6875,
+    "pointerExact": 0.3125,
+    "fieldAccuracy": 0.6339285714285714,
+    "abstentionReasonAccuracy": 0.125
+  },
+  "liveSilverDiagnostic": {
+    "records": 16,
+    "domains": 3,
+    "eligibleComparable": 3,
+    "grammarValidity": 0.1875,
+    "pointerExact": 0,
+    "fieldAccuracy": 0.11607142857142858,
+    "evidenceAcceptance": 0.1875,
+    "acceptedCorrect": 0,
+    "acceptedIncorrect": 0,
+    "acceptedCoverage": 0,
+    "abstentionClassAccuracy": 0.8125,
+    "abstentionReasonAccuracy": 0
+  },
+  "status": "discard",
+  "decision": "compact-input",
+  "diagnosis": "representation",
+  "reason": "Live prompts are 6,724-24,374 characters with 29-98 nodes versus 3,761-5,281 characters and 15-20 nodes for synthetic prompts. Amazon generations copy serialized DOM spans, while grammar-valid synthetic examples select all six evidence fields correctly and fail primarily at STATUS."
+}

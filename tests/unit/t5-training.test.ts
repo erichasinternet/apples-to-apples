@@ -206,6 +206,7 @@ describe("T5 training records", () => {
 
     expect(record.prompt).toContain('"id":"title-a"');
     expect(record.prompt).toContain('"id":"price-a"');
+    expect(record.metadata.nodeCount).toBeLessThanOrEqual(8);
     expect(record.prompt).toContain(
       "Allowed abstainReason values: insufficient-evidence"
     );
@@ -260,6 +261,7 @@ describe("T5 training records", () => {
     expect(record.prompt).toContain('"id":"price-symbol"');
     expect(record.prompt).toContain('"id":"price-whole"');
     expect(record.prompt).toContain('"id":"price-fraction"');
+    expect(record.metadata.nodeCount).toBeLessThanOrEqual(8);
   });
 });
 
