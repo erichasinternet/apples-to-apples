@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "pilotId": "g2-food-service-direct-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-25T09:03:24.229Z",
+  "source": {
+    "siteId": "food-service-direct",
+    "cohort": "training",
+    "stratum": "specialty-food",
+    "anonymousContext": true,
+    "sourceManifestSha256": "0fa5dc1bd2cb18e2bcc674f2fb12ef318b7084837463e125af44a2d666ef58a2",
+    "collectorSha256": "ff746686afb3ec90a8f569d8efd081ddedf59cfc07a15fd36d901b8f9ed60061"
+  },
+  "run": {
+    "runId": "2026-07-25T09-02-46-960Z",
+    "runManifestSha256": "ffbc491ca72530c7013b6bcd8d99239388197159ea19d6e47bcba1bfcf5c857c",
+    "pageTimeoutMs": 50000,
+    "cardScreenshotBudgetMs": 5000,
+    "capturedPages": 2,
+    "blockedPages": 0,
+    "failedPages": 0
+  },
+  "captures": [
+    {
+      "pageId": "food-service-direct--flour",
+      "capturedAt": "2026-07-25T09:03:24.229Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 1239,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "4f239717a791d751aababcd1fef6a9a2d1229d6a32398fb0cd5cb39df93c6067",
+      "annotationScreenshotSha256": "59b52fa3d669604e17e8cd34d0f1accb3c87bad4ae9f89f2e9850558e4b9c3d1",
+      "provenanceAggregateSha256": "4c29a2a779e4c91d29fbf437ef2b507da27ceff4ec4010b88dc445c2867dd615",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "pageId": "food-service-direct--olive-oil",
+      "capturedAt": "2026-07-25T09:04:02.753Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 1173,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "943656ffd418a1f8dd7029805c7ad3ea322f6e01b366ddd1c9c61a6a93bf9524",
+      "annotationScreenshotSha256": "6f03109c126229cbdee63b59e4ed66241efc9fb155841872a2330765f6a444d1",
+      "provenanceAggregateSha256": "8b04bc0b95d1740221fe5ff947bd650f1b6ee8de1d04b71e1c576e23f065d930",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "reviewQueues": {
+    "labelVisibility": "no model or peer labels",
+    "reviewerAQueueSha256": "5260bb5052d7cb2c01467865e4ba2f1f2c75e7190a4b01ed4b9538735b9063f2",
+    "reviewerBQueueSha256": "9305a5656a8fb22359bc9a624176943201d4cc75f51cf3e854d3f59217fab1e5"
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

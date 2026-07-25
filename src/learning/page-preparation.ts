@@ -121,12 +121,18 @@ export function dismissVisibleObstruction(): boolean {
     const explicitlyNamedClose =
       /(?:^|[-_\s])(close|dismiss)(?:[-_\s]|$)/.test(className) ||
       /(?:^|[-_\s])(close|dismiss)(?:[-_\s]|$)/.test(id);
+    const accessibleCloseAction = [ariaLabel, title].some((label) =>
+      /^(?:close|dismiss)\s+(?:the\s+)?(?:banner|chat|dialog|message|modal|notification|popup|window)\b/.test(
+        label
+      )
+    );
     const explicitlyClosable =
       allowedLabels.has(ariaLabel) ||
       allowedLabels.has(title) ||
       allowedLabels.has(text) ||
       ariaLabel === "close dialog" ||
       ariaLabel === "close modal" ||
+      accessibleCloseAction ||
       explicitlyNamedClose;
     if (!explicitlyClosable) continue;
 
@@ -144,8 +150,33 @@ export function dismissVisibleObstruction(): boolean {
     }
   }
 
-  bestCandidate?.click();
-  return bestCandidate !== undefined;
+  if (bestCandidate) {
+    bestCandidate.click();
+    return true;
+  }
+
+  const nonContentEmbedTitle =
+    /^(?:(?:button to )?(?:launch|open) (?:a )?(?:chat|messaging)(?: window)?|(?:google )?recaptcha)$/;
+  for (const iframe of document.querySelectorAll<HTMLIFrameElement>("iframe[title]")) {
+    const title = normalize(iframe.title);
+    if (!nonContentEmbedTitle.test(title) || !isVisible(iframe)) continue;
+
+    let fixedContainer: HTMLElement | null = iframe;
+    while (fixedContainer && getComputedStyle(fixedContainer).position !== "fixed") {
+      fixedContainer = fixedContainer.parentElement;
+    }
+    if (!fixedContainer || !isVisible(fixedContainer)) continue;
+
+    const box = fixedContainer.getBoundingClientRect();
+    const coverage = (box.width * box.height) / Math.max(1, window.innerWidth * window.innerHeight);
+    if (coverage > 0.15) continue;
+
+    fixedContainer.dataset.ataSuppressedNonContentEmbed = "true";
+    fixedContainer.style.setProperty("display", "none", "important");
+    return true;
+  }
+
+  return false;
 }
 
 export function measureVisibleObstructionCoverage(): number {

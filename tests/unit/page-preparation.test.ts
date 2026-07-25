@@ -140,6 +140,91 @@ describe("page preparation", () => {
     expect(clicked).toHaveBeenCalledOnce();
   });
 
+  it("dismisses a standard accessible close-message action inside an obstruction", () => {
+    document.body.innerHTML = `
+      <div role="dialog">
+        <button id="close-message" aria-label="Close message from company"></button>
+      </div>
+    `;
+    mockVisibleBounds();
+    const clicked = vi.fn();
+    document
+      .querySelector<HTMLButtonElement>("#close-message")!
+      .addEventListener("click", clicked);
+
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(clicked).toHaveBeenCalledOnce();
+  });
+
+  it("suppresses a small fixed messaging launcher iframe", () => {
+    document.body.innerHTML = `
+      <iframe
+        id="launcher"
+        title="Button to launch messaging window"
+        style="position: fixed"
+      ></iframe>
+    `;
+    const launcher = document.querySelector<HTMLIFrameElement>("#launcher")!;
+    vi.spyOn(launcher, "getBoundingClientRect").mockReturnValue({
+      x: 16,
+      y: 764,
+      width: 64,
+      height: 64,
+      top: 764,
+      right: 80,
+      bottom: 828,
+      left: 16,
+      toJSON: () => ({})
+    });
+
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(launcher.dataset.ataSuppressedNonContentEmbed).toBe("true");
+    expect(launcher.style.getPropertyValue("display")).toBe("none");
+    expect(launcher.style.getPropertyPriority("display")).toBe("important");
+  });
+
+  it("suppresses the small fixed container of a reCAPTCHA badge", () => {
+    document.body.innerHTML = `
+      <div id="badge" style="position: fixed">
+        <iframe id="recaptcha" title="reCAPTCHA"></iframe>
+      </div>
+    `;
+    const badge = document.querySelector<HTMLElement>("#badge")!;
+    const recaptcha = document.querySelector<HTMLIFrameElement>("#recaptcha")!;
+    const badgeBounds = {
+      x: 320,
+      y: 770,
+      width: 256,
+      height: 60,
+      top: 770,
+      right: 576,
+      bottom: 830,
+      left: 320,
+      toJSON: () => ({})
+    };
+    vi.spyOn(badge, "getBoundingClientRect").mockReturnValue(badgeBounds);
+    vi.spyOn(recaptcha, "getBoundingClientRect").mockReturnValue(badgeBounds);
+
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(badge.dataset.ataSuppressedNonContentEmbed).toBe("true");
+    expect(badge.style.getPropertyValue("display")).toBe("none");
+  });
+
+  it("does not suppress a large reCAPTCHA challenge", () => {
+    document.body.innerHTML = `
+      <div id="challenge" style="position: fixed">
+        <iframe title="reCAPTCHA"></iframe>
+      </div>
+    `;
+    mockVisibleBounds();
+
+    expect(dismissVisibleObstruction()).toBe(false);
+    expect(
+      document.querySelector<HTMLElement>("#challenge")!.dataset
+        .ataSuppressedNonContentEmbed
+    ).toBeUndefined();
+  });
+
   it("measures unresolved modal viewport coverage", () => {
     document.body.innerHTML = `<div id="modal" role="dialog"></div>`;
     vi.spyOn(

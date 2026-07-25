@@ -46,6 +46,11 @@ Its first bounded result is recorded in
 Jeffers Pet passed the frozen gate on mass and count searches across narrow and
 desktop viewports; Global Industrial was discarded after failing rendered-query
 and candidate evidence.
+The next bounded result is recorded in
+[`wave-02-p01.json`](../benchmarks/domain-qualification/wave-02-p01.json).
+FoodServiceDirect passed the same gate on mass and volume searches after a
+site-agnostic accessibility rule dismissed its help message and suppressed only
+small fixed non-product chat and reCAPTCHA embeds during corpus capture.
 
 ## Cohorts
 
@@ -178,7 +183,7 @@ reviews and adjudication are complete.
 
 The first multi-page G2 review campaign is recorded in
 [`g2-pilot-p00.json`](../benchmarks/review-campaigns/g2-pilot-p00.json). It
-contains five qualification-backed live pages and 76 frozen candidate card
+contains seven qualification-backed live pages and 92 frozen candidate card
 roots across two independent blinded queues. A headed Chromium smoke test loaded
 all source screenshots, constructed a card-scoped pointer, rejected a product-grid
 ancestor, and rejected incomplete coverage. It still contributes zero gold

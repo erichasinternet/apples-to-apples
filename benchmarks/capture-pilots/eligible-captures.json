@@ -60,6 +60,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-jeffers-pet-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "food-service-direct",
+      "cohort": "training",
+      "pageId": "food-service-direct--flour",
+      "captureTimestamp": "2026-07-25T09:03:24.229Z",
+      "observationSha256": "4f239717a791d751aababcd1fef6a9a2d1229d6a32398fb0cd5cb39df93c6067",
+      "annotationScreenshotSha256": "59b52fa3d669604e17e8cd34d0f1accb3c87bad4ae9f89f2e9850558e4b9c3d1",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p01.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-food-service-direct-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "food-service-direct",
+      "cohort": "training",
+      "pageId": "food-service-direct--olive-oil",
+      "captureTimestamp": "2026-07-25T09:04:02.753Z",
+      "observationSha256": "943656ffd418a1f8dd7029805c7ad3ea322f6e01b366ddd1c9c61a6a93bf9524",
+      "annotationScreenshotSha256": "6f03109c126229cbdee63b59e4ed66241efc9fb155841872a2330765f6a444d1",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p01.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-food-service-direct-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

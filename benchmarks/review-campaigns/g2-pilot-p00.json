@@ -1,10 +1,26 @@
 {
   "version": 1,
   "campaignId": "g2-pilot-p00",
-  "createdAt": "2026-07-25T08:49:00Z",
+  "createdAt": "2026-07-25T09:05:00Z",
   "cohort": "training",
   "decision": "workbench-pass-independent-human-reviews-pending",
   "pages": [
+    {
+      "siteId": "food-service-direct",
+      "pageId": "food-service-direct--flour",
+      "captureTimestamp": "2026-07-25T09:03:24.229Z",
+      "candidateCardCount": 8,
+      "observationSha256": "4f239717a791d751aababcd1fef6a9a2d1229d6a32398fb0cd5cb39df93c6067",
+      "annotationScreenshotSha256": "59b52fa3d669604e17e8cd34d0f1accb3c87bad4ae9f89f2e9850558e4b9c3d1"
+    },
+    {
+      "siteId": "food-service-direct",
+      "pageId": "food-service-direct--olive-oil",
+      "captureTimestamp": "2026-07-25T09:04:02.753Z",
+      "candidateCardCount": 8,
+      "observationSha256": "943656ffd418a1f8dd7029805c7ad3ea322f6e01b366ddd1c9c61a6a93bf9524",
+      "annotationScreenshotSha256": "6f03109c126229cbdee63b59e4ed66241efc9fb155841872a2330765f6a444d1"
+    },
     {
       "siteId": "jeffers-pet",
       "pageId": "jeffers-pet--cat-litter",
@@ -49,27 +65,29 @@
   "queues": [
     {
       "reviewerId": "reviewer-a",
-      "queueId": "reviewer-a--campaign--fe4301688ef35537",
-      "campaignQueueSha256": "1b8514cbb10d3c032838e2896004ce92e81914b78fef13ff5ac2e8f84498c5a5",
+      "queueId": "reviewer-a--campaign--01616ee0405ce43e",
+      "campaignQueueSha256": "dbd74c127001fc04f33961b7b608ffa23cb7dcb4feb4ee7e9095d011183a6a42",
       "sourceQueueSha256": [
         "c7c5caec03d94ce03dbcdc4d77ca34f5aeb86a328574424e02e2c738af14dc6b",
         "468925a9cc330c8698e57b5f53bfa2c0d8fda3ec0b874489a3a8cc19be1fc8a6",
         "f8375d81437cee2f275d29c33be13a1bb332f97012685bdf1bed6c577778460c",
-        "52a47a8451467d02d06d64107680bd8c1068186c71ddbe321c55b2d3ba27fe1f"
+        "52a47a8451467d02d06d64107680bd8c1068186c71ddbe321c55b2d3ba27fe1f",
+        "5260bb5052d7cb2c01467865e4ba2f1f2c75e7190a4b01ed4b9538735b9063f2"
       ],
-      "sourceQueuePageCounts": [1, 1, 1, 2]
+      "sourceQueuePageCounts": [1, 1, 1, 2, 2]
     },
     {
       "reviewerId": "reviewer-b",
-      "queueId": "reviewer-b--campaign--81774ce843705349",
-      "campaignQueueSha256": "ad4c468e8ab08020cec7fd15d7dfdbcdcaa603a4db3f9d74ba020f16e11b674b",
+      "queueId": "reviewer-b--campaign--7a6d990a47018b29",
+      "campaignQueueSha256": "0e1a5f0ffe638adc873bb51774f0866af7ece792900e9045ebe26219dde88fa1",
       "sourceQueueSha256": [
         "b1c95e362b48f8e749048b161cce35ad0e14e3495df5eacf1b1b4e9e124955d7",
         "f3bf77bd4f4f7746637b521fab8030f675c1376be0db4fe76d3b51a65ffb779a",
         "0cbbba31756a519caa72ecff09f97649360ed1a690b153823ebaf923477a4964",
-        "3265dd9222efe744e0f65393b8ab2c91582e64c89642483a2410468d09eee0da"
+        "3265dd9222efe744e0f65393b8ab2c91582e64c89642483a2410468d09eee0da",
+        "9305a5656a8fb22359bc9a624176943201d4cc75f51cf3e854d3f59217fab1e5"
       ],
-      "sourceQueuePageCounts": [1, 1, 1, 2]
+      "sourceQueuePageCounts": [1, 1, 1, 2, 2]
     }
   ],
   "blinding": {
@@ -80,10 +98,10 @@
   },
   "workbenchValidation": {
     "browser": "headed Playwright Chromium",
-    "pagesLoaded": 5,
-    "screenshotsLoaded": 5,
-    "candidateCards": 76,
-    "selectedCardNodeId": "n4391",
+    "pagesLoaded": 7,
+    "screenshotsLoaded": 7,
+    "candidateCards": 92,
+    "selectedCardNodeId": "n630",
     "onlyFrozenCardRootOffered": true,
     "cardScopedCandidateSelection": "passed",
     "nonCandidateAncestor": "rejected-404",

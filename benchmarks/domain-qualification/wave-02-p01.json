@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "qualificationId": "wave-02-p01",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-02.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 50000,
+    "cardScreenshotBudgetMs": 5000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "smallFixedNonContentEmbedSuppression": true,
+    "queryParametersCountAsQueryEvidence": false
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T09-02-46-960Z",
+      "runManifestSha256": "ffbc491ca72530c7013b6bcd8d99239388197159ea19d6e47bcba1bfcf5c857c",
+      "purpose": "food-service-direct final qualification"
+    }
+  ],
+  "results": {
+    "food-service-direct": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "food-service-direct--flour",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 1239,
+          "observationTruncated": false,
+          "dismissedObstructions": 3,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "e240decbe0d66b0fb08d4d14784d2ad250ffd0df254f7ed00389bd34184b64ee",
+          "annotationScreenshotSha256": "59b52fa3d669604e17e8cd34d0f1accb3c87bad4ae9f89f2e9850558e4b9c3d1",
+          "provenanceAggregateSha256": "4c29a2a779e4c91d29fbf437ef2b507da27ceff4ec4010b88dc445c2867dd615",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "food-service-direct--olive-oil",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 1173,
+          "observationTruncated": false,
+          "dismissedObstructions": 3,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "405c8d9108243aef4f61e508ccddce903cbeae1cc098c32cf3d15aec58c71e22",
+          "annotationScreenshotSha256": "6f03109c126229cbdee63b59e4ed66241efc9fb155841872a2330765f6a444d1",
+          "provenanceAggregateSha256": "8b04bc0b95d1740221fe5ff947bd650f1b6ee8de1d04b71e1c576e23f065d930",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "food-service-direct"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "food-service-direct",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}
