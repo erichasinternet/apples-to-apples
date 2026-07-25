@@ -141,6 +141,10 @@ def run_inference(
             "t5gemma2-1b-pilot-40-explicit-contract",
             "google/t5gemma-2-1b-1b",
         ),
+        "1b-evidence-pointer-g1": (
+            "t5gemma2-1b-evidence-pointer-g1-pilot-20",
+            "google/t5gemma-2-1b-1b",
+        ),
     }
     adapter = adapters.get(checkpoint)
     model_id = (
@@ -213,6 +217,7 @@ def main(
         "audited-extraction",
         "1b-audited-extraction",
         "1b-explicit-contract",
+        "1b-evidence-pointer-g1",
         "qwen3-vl-zero-shot",
     }:
         raise ValueError(
@@ -220,6 +225,7 @@ def main(
             "balanced-real-discovery, adjudicated-discovery, or "
             "expanded-adjudicated-discovery, audited-extraction, or "
             "1b-audited-extraction, 1b-explicit-contract, or "
+            "1b-evidence-pointer-g1, or "
             "qwen3-vl-zero-shot"
         )
     if max_output_tokens <= 0 or max_output_tokens > 2048:

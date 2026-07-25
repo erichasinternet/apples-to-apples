@@ -18,6 +18,9 @@ CACHE_ROOT = Path("/cache")
 SYNTHETIC_DATASET = (
     REPO_ROOT / "benchmark-data" / "training" / "t5gemma2-synthetic"
 )
+POINTER_DATASET = (
+    REPO_ROOT / "benchmark-data" / "training" / "t5gemma2-synthetic-pointer"
+)
 SILVER_DISCOVERY_DATASET = (
     REPO_ROOT / "benchmark-data" / "training" / "t5gemma2-silver-discovery"
 )
@@ -31,6 +34,11 @@ SILVER_EXTRACTION_DATASET = (
 if modal.is_local() and not SYNTHETIC_DATASET.is_dir():
     raise RuntimeError(
         "Generate the synthetic dataset before running Modal: "
+        "`bun run training:synthetic:generate`"
+    )
+if modal.is_local() and not POINTER_DATASET.is_dir():
+    raise RuntimeError(
+        "Generate the evidence-pointer dataset before running Modal: "
         "`bun run training:synthetic:generate`"
     )
 
@@ -50,6 +58,11 @@ image = (
     .add_local_dir(
         SYNTHETIC_DATASET,
         f"{REMOTE_ROOT}/benchmark-data/training/t5gemma2-synthetic",
+        copy=True,
+    )
+    .add_local_dir(
+        POINTER_DATASET,
+        f"{REMOTE_ROOT}/benchmark-data/training/t5gemma2-synthetic-pointer",
         copy=True,
     )
 )
@@ -453,6 +466,28 @@ def pilot_1b_explicit_contract_continue_train() -> dict[str, object]:
     )
 
 
+@training_function(timeout=1800)
+def pilot_1b_evidence_pointer_g1_train() -> dict[str, object]:
+    return run_training(
+        output_name="t5gemma2-1b-evidence-pointer-g1-pilot-20",
+        config_directory="t5gemma2-1b",
+        config_name="evidence-pointer-g1.json",
+        extra_args=[
+            "--train-task",
+            "extract-product",
+            "--balance-extraction-abstentions",
+            "--max-train-records",
+            "320",
+            "--max-validation-records",
+            "32",
+            "--max-steps",
+            "20",
+            "--epochs",
+            "1",
+        ],
+    )
+
+
 @training_function(timeout=4 * 60 * 60)
 def full_train() -> dict[str, object]:
     return run_training(output_name="synthetic")
@@ -629,6 +664,18 @@ def main(mode: str = "diagnose") -> None:
         if not access["accessible"]:
             raise RuntimeError(str(access["error"]))
         result = pilot_1b_explicit_contract_continue_train.remote()
+    elif mode == "pilot-1b-evidence-pointer-g1":
+        if diagnose_only:
+            raise RuntimeError("Training functions are disabled in diagnostic mode")
+        if not POINTER_DATASET.is_dir():
+            raise RuntimeError(
+                "Generate the evidence-pointer dataset before this mode: "
+                "`bun run training:synthetic:generate`"
+            )
+        access = check_model_access.remote("google/t5gemma-2-1b-1b")
+        if not access["accessible"]:
+            raise RuntimeError(str(access["error"]))
+        result = pilot_1b_evidence_pointer_g1_train.remote()
     elif mode == "full":
         if diagnose_only:
             raise RuntimeError("Training functions are disabled in diagnostic mode")
@@ -644,6 +691,7 @@ def main(mode: str = "diagnose") -> None:
             "check-candidates, pilot-expanded-adjudicated-discovery, "
             "pilot-audited-extraction, pilot-1b-audited-extraction, "
             "pilot-1b-explicit-contract-continue, "
+            "pilot-1b-evidence-pointer-g1, "
             "or full"
         )
     print(json.dumps(result, indent=2))

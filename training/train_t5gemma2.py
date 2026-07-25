@@ -6,8 +6,38 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import struct
 from typing import Any
+
+
+POINTER_FIELDS = (
+    "CARD",
+    "TITLE",
+    "CURRENT_PRICE",
+    "NATIVE_UNIT_PRICE",
+    "PACKAGE_QUANTITY",
+    "PACK_COUNT",
+    "STATUS",
+)
+POINTER_STATUSES = {
+    "comparable",
+    "insufficient-evidence",
+    "conditional-price",
+    "price-range",
+    "unselected-variant",
+    "ambiguous-quantity",
+    "unsupported-unit",
+    "not-a-product",
+}
+NODE_TOKEN = re.compile(r"^[A-Za-z0-9._:-]+$")
+CANDIDATE_TOKEN = re.compile(r"^[A-Za-z0-9._:-]+@[puqk]\d+$")
+CANDIDATE_SUFFIX_BY_FIELD = {
+    "CURRENT_PRICE": "@p",
+    "NATIVE_UNIT_PRICE": "@u",
+    "PACKAGE_QUANTITY": "@q",
+    "PACK_COUNT": "@k",
+}
 
 
 def parse_args() -> argparse.Namespace:
@@ -151,6 +181,102 @@ def parse_json_prefix(value: str) -> tuple[bool, Any]:
         return False, None
 
 
+def is_pointer_record(record: dict[str, Any]) -> bool:
+    return (
+        record.get("task") == "extract-product"
+        and record.get("metadata", {}).get("targetFormat") == "evidence-pointer"
+    )
+
+
+def parse_evidence_pointer(serialized: str) -> dict[str, str]:
+    if (
+        not isinstance(serialized, str)
+        or serialized != serialized.strip()
+        or "\r" in serialized
+        or "```" in serialized
+    ):
+        raise ValueError("pointer must contain only the seven canonical lines")
+    lines = serialized.split("\n")
+    if len(lines) != len(POINTER_FIELDS):
+        raise ValueError(f"pointer must contain {len(POINTER_FIELDS)} lines")
+    values: dict[str, str] = {}
+    for field, line in zip(POINTER_FIELDS, lines, strict=True):
+        prefix = f"{field} "
+        if not line.startswith(prefix) or line == prefix:
+            raise ValueError(f"pointer line must begin with {prefix}")
+        values[field] = line[len(prefix) :]
+
+    if not NODE_TOKEN.fullmatch(values["CARD"]):
+        raise ValueError("CARD must contain one node ID")
+    title_nodes = values["TITLE"].split(",")
+    if (
+        values["TITLE"] == "NONE"
+        or any(not NODE_TOKEN.fullmatch(node_id) for node_id in title_nodes)
+        or len(title_nodes) != len(set(title_nodes))
+    ):
+        raise ValueError("TITLE must contain unique comma-separated node IDs")
+    for field, suffix in CANDIDATE_SUFFIX_BY_FIELD.items():
+        value = values[field]
+        if value != "NONE" and (
+            not CANDIDATE_TOKEN.fullmatch(value)
+            or suffix not in value[value.rfind("@") :]
+        ):
+            raise ValueError(f"{field} has an invalid candidate ID")
+    if values["STATUS"] not in POINTER_STATUSES:
+        raise ValueError("STATUS is not allowed")
+
+    value_fields = tuple(CANDIDATE_SUFFIX_BY_FIELD)
+    has_values = any(values[field] != "NONE" for field in value_fields)
+    if values["STATUS"] != "comparable" and has_values:
+        raise ValueError("abstention pointers must use NONE for all value fields")
+    if (
+        values["STATUS"] == "comparable"
+        and values["NATIVE_UNIT_PRICE"] == "NONE"
+        and (
+            values["CURRENT_PRICE"] == "NONE"
+            or values["PACKAGE_QUANTITY"] == "NONE"
+        )
+    ):
+        raise ValueError(
+            "comparable pointers require native unit price or price and quantity"
+        )
+    if (
+        values["PACK_COUNT"] != "NONE"
+        and values["PACKAGE_QUANTITY"] == "NONE"
+    ):
+        raise ValueError("PACK_COUNT requires PACKAGE_QUANTITY")
+    return values
+
+
+def validate_pointer_prompt(
+    record_id: str, pointer: dict[str, str], prompt: str
+) -> None:
+    node_ids = set(re.findall(r'"id":"([A-Za-z0-9._:-]+)"', prompt))
+    referenced_nodes = {pointer["CARD"], *pointer["TITLE"].split(",")}
+    missing_nodes = sorted(referenced_nodes - node_ids)
+    if missing_nodes:
+        raise ValueError(
+            f"{record_id}: prompt omits target nodes {', '.join(missing_nodes)}"
+        )
+    listed_candidates = set(
+        re.findall(
+            r'"id":"([A-Za-z0-9._:-]+@[puqk]\d+)"',
+            prompt,
+        )
+    )
+    referenced_candidates = {
+        pointer[field]
+        for field in CANDIDATE_SUFFIX_BY_FIELD
+        if pointer[field] != "NONE"
+    }
+    missing_candidates = sorted(referenced_candidates - listed_candidates)
+    if missing_candidates:
+        raise ValueError(
+            f"{record_id}: prompt omits target candidates "
+            f"{', '.join(missing_candidates)}"
+        )
+
+
 def validate_dataset(
     repo_root: Path, config: dict[str, Any]
 ) -> tuple[dict[str, Any], dict[str, list[dict[str, Any]]], Path]:
@@ -208,7 +334,19 @@ def validate_dataset(
             if not isinstance(site_id, str) or not site_id:
                 raise ValueError(f"{record_id}: missing siteId")
             split_domains.add(site_id)
-            validate_target(record_id, record["task"], record["target"])
+            pointer_format = is_pointer_record(record)
+            if (
+                record.get("task") == "extract-product"
+                and manifest.get("targetFormat") == "evidence-pointer"
+                and not pointer_format
+            ):
+                raise ValueError(f"{record_id}: missing evidence-pointer metadata")
+            validate_target(
+                record_id,
+                record["task"],
+                record["target"],
+                target_format="evidence-pointer" if pointer_format else "json",
+            )
             image_relative = record.get("imagePath")
             if not isinstance(image_relative, str):
                 raise ValueError(f"{record_id}: invalid imagePath")
@@ -227,28 +365,35 @@ def validate_dataset(
             if not record.get("prompt", "").startswith("<start_of_image>\n"):
                 raise ValueError(f"{record_id}: prompt is missing <start_of_image>")
             if record.get("task") == "extract-product":
-                target = json.loads(record["target"])["products"][0]
-                required_evidence = {
-                    node_id
-                    for field in (
-                        "title",
-                        "currentPrice",
-                        "nativeUnitPrice",
-                        "packageQuantity",
+                if pointer_format:
+                    validate_pointer_prompt(
+                        record_id,
+                        parse_evidence_pointer(record["target"]),
+                        record["prompt"],
                     )
-                    if isinstance(target.get(field), dict)
-                    for node_id in target[field].get("evidenceNodeIds", [])
-                }
-                missing_evidence = [
-                    node_id
-                    for node_id in sorted(required_evidence)
-                    if f'"id":"{node_id}"' not in record["prompt"]
-                ]
-                if missing_evidence:
-                    raise ValueError(
-                        f"{record_id}: prompt omits target evidence nodes "
-                        f"{', '.join(missing_evidence)}"
-                    )
+                else:
+                    target = json.loads(record["target"])["products"][0]
+                    required_evidence = {
+                        node_id
+                        for field in (
+                            "title",
+                            "currentPrice",
+                            "nativeUnitPrice",
+                            "packageQuantity",
+                        )
+                        if isinstance(target.get(field), dict)
+                        for node_id in target[field].get("evidenceNodeIds", [])
+                    }
+                    missing_evidence = [
+                        node_id
+                        for node_id in sorted(required_evidence)
+                        if f'"id":"{node_id}"' not in record["prompt"]
+                    ]
+                    if missing_evidence:
+                        raise ValueError(
+                            f"{record_id}: prompt omits target evidence nodes "
+                            f"{', '.join(missing_evidence)}"
+                        )
             image_width, image_height = png_dimensions(image_path)
             if (
                 crop["x"] + crop["width"] > image_width
@@ -349,7 +494,21 @@ def safe_dataset_path(dataset_root: Path, relative_path: str) -> Path:
     return candidate
 
 
-def validate_target(record_id: str, task: str, serialized: str) -> None:
+def validate_target(
+    record_id: str,
+    task: str,
+    serialized: str,
+    *,
+    target_format: str = "json",
+) -> None:
+    if target_format == "evidence-pointer":
+        if task != "extract-product":
+            raise ValueError(f"{record_id}: pointer targets require extraction")
+        try:
+            parse_evidence_pointer(serialized)
+        except ValueError as error:
+            raise ValueError(f"{record_id}: invalid evidence pointer: {error}") from error
+        return
     if not isinstance(serialized, str):
         raise ValueError(f"{record_id}: target must be serialized JSON")
     target = json.loads(serialized)
@@ -552,6 +711,13 @@ def train(
         extraction_field_total = 0
         abstention_count = 0
         abstention_matches = 0
+        pointer_count = 0
+        pointer_valid = 0
+        pointer_exact = 0
+        pointer_field_matches = 0
+        pointer_field_total = 0
+        pointer_abstention_count = 0
+        pointer_abstention_matches = 0
         extraction_slices = {
             "silver": {
                 "records": 0,
@@ -579,6 +745,46 @@ def train(
             decoded_labels,
             strict=True,
         ):
+            if is_pointer_record(record):
+                pointer_count += 1
+                target_pointer = parse_evidence_pointer(label)
+                try:
+                    predicted_pointer = parse_evidence_pointer(prediction)
+                    is_pointer_valid = True
+                    pointer_valid += 1
+                except ValueError:
+                    predicted_pointer = {}
+                    is_pointer_valid = False
+                field_matches = sum(
+                    predicted_pointer.get(field) == target_pointer[field]
+                    for field in POINTER_FIELDS
+                )
+                pointer_field_matches += field_matches
+                pointer_field_total += len(POINTER_FIELDS)
+                is_pointer_exact = is_pointer_valid and prediction == label
+                pointer_exact += int(is_pointer_exact)
+                if target_pointer["STATUS"] != "comparable":
+                    pointer_abstention_count += 1
+                    pointer_abstention_matches += int(
+                        predicted_pointer.get("STATUS")
+                        == target_pointer["STATUS"]
+                    )
+                exact += int(prediction.strip() == label.strip())
+                samples.append(
+                    {
+                        "task": record["task"],
+                        "targetFormat": "evidence-pointer",
+                        "siteId": record["siteId"],
+                        "pageId": record["pageId"],
+                        "pointerValid": is_pointer_valid,
+                        "pointerExact": is_pointer_exact,
+                        "pointerFieldsCorrect": field_matches,
+                        "pointerFieldsTotal": len(POINTER_FIELDS),
+                        "prediction": prediction,
+                        "target": label,
+                    }
+                )
+                continue
             is_valid_json = True
             try:
                 json.loads(prediction)
@@ -670,6 +876,12 @@ def train(
             / max(1, extraction_field_total),
             "abstention_accuracy": abstention_matches / max(1, abstention_count),
             "exact_match": exact / count,
+            "pointer_grammar_valid": pointer_valid / max(1, pointer_count),
+            "pointer_exact": pointer_exact / max(1, pointer_count),
+            "pointer_field_accuracy": pointer_field_matches
+            / max(1, pointer_field_total),
+            "pointer_abstention_accuracy": pointer_abstention_matches
+            / max(1, pointer_abstention_count),
         }
         slice_summary = {
             name: {
@@ -708,6 +920,13 @@ def train(
                     ],
                     "abstentionAccuracy": metrics["abstention_accuracy"],
                     "exactMatch": metrics["exact_match"],
+                    "pointerRecords": pointer_count,
+                    "pointerGrammarValidity": metrics["pointer_grammar_valid"],
+                    "pointerExact": metrics["pointer_exact"],
+                    "pointerFieldAccuracy": metrics["pointer_field_accuracy"],
+                    "pointerAbstentionAccuracy": metrics[
+                        "pointer_abstention_accuracy"
+                    ],
                     "extractionSlices": slice_summary,
                 },
                 indent=2,
@@ -743,7 +962,11 @@ def train(
         predict_with_generate=True,
         generation_max_length=config["maxOutputTokens"],
         load_best_model_at_end=True,
-        metric_for_best_model="json_prefix_exact",
+        metric_for_best_model=(
+            "pointer_exact"
+            if manifest.get("targetFormat") == "evidence-pointer"
+            else "json_prefix_exact"
+        ),
         greater_is_better=True,
         remove_unused_columns=False,
         report_to="none",
@@ -829,8 +1052,14 @@ def balanced_extraction_limit(
     abstaining = []
     positive = []
     for record in extraction_records:
-        product = json.loads(record["target"])["products"][0]
-        (abstaining if "abstainReason" in product else positive).append(record)
+        if is_pointer_record(record):
+            abstains = (
+                parse_evidence_pointer(record["target"])["STATUS"] != "comparable"
+            )
+        else:
+            product = json.loads(record["target"])["products"][0]
+            abstains = "abstainReason" in product
+        (abstaining if abstains else positive).append(record)
     selected = []
     positive_index = 0
     abstaining_index = 0
@@ -1151,9 +1380,21 @@ def main() -> None:
                 balance_abstentions=args.balance_extraction_abstentions,
             )
         else:
-            records_by_split["validation"] = stratified_limit(
-                records_by_split["validation"], args.max_validation_records
-            )
+            validation_records = records_by_split["validation"]
+            if args.train_task:
+                validation_records = [
+                    record
+                    for record in validation_records
+                    if record["task"] == args.train_task
+                ]
+            if args.balance_extraction_abstentions:
+                records_by_split["validation"] = balanced_extraction_limit(
+                    validation_records, args.max_validation_records
+                )
+            else:
+                records_by_split["validation"] = stratified_limit(
+                    validation_records, args.max_validation_records
+                )
         train(
             repo_root,
             config,
