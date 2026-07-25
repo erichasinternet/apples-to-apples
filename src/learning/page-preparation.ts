@@ -66,7 +66,7 @@ export function dismissVisibleObstruction(): boolean {
     return false;
   };
   const candidates = document.querySelectorAll<HTMLElement>(
-    "button, [role='button'], input[type='button'], input[type='submit'], [id*='dismiss' i]"
+    "button, a, [role='button'], [tabindex], input[type='button'], input[type='submit'], [id*='dismiss' i]"
   );
 
   for (const candidate of candidates) {

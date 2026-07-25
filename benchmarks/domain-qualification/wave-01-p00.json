@@ -14,11 +14,20 @@
     "requiredViewportProfiles": ["desktop", "narrow"],
     "minimumCandidatesPerPage": 8,
     "maximumUnresolvedObstructionCoverage": 0.2,
+    "minimumQueryTokenCoverage": 0.5,
     "requiredMachineValidation": true,
     "requiredVisualValidation": true,
     "allowBotChallenge": false,
     "allowTruncatedObservation": false
   },
+  "qualificationGateAmendments": [
+    {
+      "id": "query-evidence-v1",
+      "appliedAt": "2026-07-25T07:42:00.000Z",
+      "retroactive": true,
+      "reason": "Visual review proved that a valid-looking catalog can ignore the requested search query. The gate now requires rendered path, title, or body evidence for at least half of meaningful query tokens. Query parameters do not count."
+    }
+  ],
   "sample": {
     "seed": 20260724,
     "sites": ["gnc", "grainger", "pet-supermarket", "nuts-com"],

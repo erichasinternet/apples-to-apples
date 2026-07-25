@@ -91,6 +91,22 @@ describe("page preparation", () => {
     expect(clicked).toHaveBeenCalledOnce();
   });
 
+  it("dismisses a consent link styled as the dialog confirmation control", () => {
+    document.body.innerHTML = `
+      <section role="dialog" style="position: fixed">
+        <a id="confirm" href="#">OK</a>
+      </section>
+    `;
+    mockVisibleBounds();
+    const clicked = vi.fn((event: Event) => event.preventDefault());
+    document
+      .querySelector<HTMLAnchorElement>("#confirm")!
+      .addEventListener("click", clicked);
+
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(clicked).toHaveBeenCalledOnce();
+  });
+
   it("measures unresolved modal viewport coverage", () => {
     document.body.innerHTML = `<div id="modal" role="dialog"></div>`;
     vi.spyOn(

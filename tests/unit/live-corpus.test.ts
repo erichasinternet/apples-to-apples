@@ -3,6 +3,7 @@ import targetManifest from "../../benchmarks/live-sites/targets.json";
 import {
   CAPTURE_VIEWPORTS,
   assignCaptureViewports,
+  calculateQueryTokenCoverage,
   calculateWorstCaseSampleSize,
   expandTargets,
   getDomainSplit,
@@ -78,6 +79,24 @@ describe("live benchmark corpus", () => {
     expect(
       [...assignCaptureViewports(targets, { seed: 1, mode: "narrow" }).values()]
     ).toEqual(Array(4).fill(CAPTURE_VIEWPORTS.narrow));
+  });
+
+  it("requires generic query evidence after a search redirect", () => {
+    expect(
+      calculateQueryTokenCoverage(
+        "protein powder",
+        "Search results for protein powder and supplements"
+      )
+    ).toBe(1);
+    expect(
+      calculateQueryTokenCoverage(
+        "all purpose cleaner",
+        "Industrial cleaners and degreasers"
+      )
+    ).toBe(1);
+    expect(
+      calculateQueryTokenCoverage("mouthwash", "All vitamins and supplements")
+    ).toBe(0);
   });
 
   it("accounts for clustered observations in the sample target", () => {

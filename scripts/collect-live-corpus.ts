@@ -21,6 +21,7 @@ import {
   selectTargets,
   slugify,
   assignCaptureViewports,
+  calculateQueryTokenCoverage,
   type CaptureViewportAssignment,
   type CaptureViewportProfile,
   type CaptureTarget,
@@ -77,6 +78,7 @@ interface PageCapture {
   redactionCount: number;
   dismissedObstructions: number;
   unresolvedObstructionCoverage: number;
+  queryTokenCoverage: number;
   candidateCount: number;
   candidateScreenshotsCaptured: number;
   observationNodeCount: number;
@@ -270,7 +272,7 @@ async function capturePage(
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.waitForTimeout(350);
   dismissedObstructions += await preparePage(page);
-  const unresolvedObstructionCoverage = await page
+  let unresolvedObstructionCoverage = await page
     .evaluate(measureVisibleObstructionCoverage)
     .catch(() => 0);
 
@@ -278,6 +280,12 @@ async function capturePage(
     .locator("body")
     .innerText({ timeout: 5_000 })
     .catch(() => "");
+  const currentTitle = await page.title();
+  const renderedUrl = new URL(page.url());
+  const queryTokenCoverage = calculateQueryTokenCoverage(
+    target.query,
+    `${currentTitle}\n${decodeURIComponent(renderedUrl.pathname)}\n${bodyText}`
+  );
   const blockReasons: string[] = [];
   if (response && response.status() >= 400) {
     blockReasons.push(`HTTP ${response.status()}`);
@@ -294,6 +302,13 @@ async function capturePage(
       `unresolved visible obstruction covers ${Math.round(
         unresolvedObstructionCoverage * 100
       )}% of viewport`
+    );
+  }
+  if (queryTokenCoverage < 0.5) {
+    blockReasons.push(
+      `search results evidence only ${Math.round(
+        queryTokenCoverage * 100
+      )}% of requested query tokens`
     );
   }
 
@@ -659,6 +674,30 @@ async function capturePage(
   await writeFile(path.join(pageDirectory, "main.html"), extracted.mainHtml, "utf8");
   await writeJson(path.join(pageDirectory, "observation.json"), observation);
 
+  // Consent and promotion layers can mount after the initial page-ready pass.
+  // Recheck immediately before screenshots so visual evidence matches the gate.
+  dismissedObstructions += await preparePage(page);
+  await page.waitForTimeout(250);
+  const lateObstructionCoverage = await page
+    .evaluate(measureVisibleObstructionCoverage)
+    .catch(() => 0);
+  unresolvedObstructionCoverage = Math.max(
+    unresolvedObstructionCoverage,
+    lateObstructionCoverage
+  );
+  if (
+    lateObstructionCoverage > 0.2 &&
+    !blockReasons.some((reason) =>
+      reason.startsWith("unresolved visible obstruction covers")
+    )
+  ) {
+    blockReasons.push(
+      `unresolved visible obstruction covers ${Math.round(
+        lateObstructionCoverage * 100
+      )}% of viewport`
+    );
+  }
+
   const mainScreenshotCaptured = await page
     .locator(`[data-ata-benchmark-node="${observation.rootNodeId}"]`)
     .first()
@@ -721,7 +760,7 @@ async function capturePage(
     requestedUrl: sanitizeCaptureUrl(target.url),
     finalUrl,
     navigationAttempts: navigation.attempts,
-    title: await page.title(),
+    title: currentTitle,
     ...(response ? { httpStatus: response.status() } : {}),
     blocked: blockReasons.length > 0,
     blockReasons,
@@ -729,6 +768,7 @@ async function capturePage(
     redactionCount,
     dismissedObstructions,
     unresolvedObstructionCoverage,
+    queryTokenCoverage,
     candidateCount: candidates.length,
     candidateScreenshotsCaptured,
     observationNodeCount: observation.nodes.length,

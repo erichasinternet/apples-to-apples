@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "qualificationId": "wave-01-p03",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-01.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 5000,
+    "essentialArtifactsPrecedeOptionalCardScreenshots": true
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T07-18-23-095Z",
+      "viewportProfile": "desktop",
+      "runManifestSha256": "489d14263eaa5ebc4a5757b8646311ce71c881dcdd9da3a9f7a5c7552d10b9ee"
+    },
+    {
+      "runId": "2026-07-25T07-21-40-181Z",
+      "viewportProfile": "narrow",
+      "runManifestSha256": "607f7efb3c3b13cb1cfdbde62c5c5799330177febcd86592c1549f2e19fad3e5"
+    }
+  ],
+  "results": {
+    "vitamin-shoppe": {
+      "status": "discard",
+      "reason": "Desktop rendered an obstructed shell with no candidates; narrow returned HTTP 403."
+    },
+    "sally-beauty": {
+      "status": "discard",
+      "reason": "Neither desktop nor narrow rendered reviewable product candidates."
+    },
+    "quill": {
+      "status": "discard",
+      "reason": "Both desktop and narrow captures exceeded the frozen 90-second page timeout."
+    },
+    "zoro": {
+      "status": "discard",
+      "reason": "Both desktop and narrow captures returned HTTP 403."
+    },
+    "hollywood-feed": {
+      "status": "discard",
+      "reason": "Both captures were quarantined by the privacy audit before source evidence was written."
+    },
+    "katom": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "katom--flour",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 1285,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0007111111111111111,
+          "queryTokenCoverage": 1,
+          "observationSha256": "aea8377a99533fb70e12508f626680aee1b63dfdb63224cda0ddc3d03a16cf80",
+          "annotationScreenshotSha256": "6ee0c8c6d82f27990d97c85d3e441f37b1451df010aa3f533b2b9fdb7eae08e1",
+          "provenanceAggregateSha256": "72764622aa0ff87512b285f13812641f2dd47d9e91abfe9f37f8904f90027594",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "katom--cooking-oil",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 1253,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0031109490825130637,
+          "queryTokenCoverage": 1,
+          "observationSha256": "48d283fb8df2e479a550e855ed74abf2bd84ec80edce3b476aa86be392009cfb",
+          "annotationScreenshotSha256": "bb14b8d01835ca1a6b91fbc2db8b4db4ddeea2af723ab3a2e867028942abbcc1",
+          "provenanceAggregateSha256": "1388ff19d67ec6d442401d8ae35f4f39f040266c1f9717b57c28a3ef565a24a9",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "katom"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "katom",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

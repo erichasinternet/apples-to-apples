@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "qualificationId": "wave-01-p04",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-01.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 5000,
+    "lateObstructionRecheck": true,
+    "queryParametersCountAsQueryEvidence": false
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T07-29-51-457Z",
+      "viewportProfile": "desktop",
+      "runManifestSha256": "0fcc455c2118a8c604d59a3362c72634524367640a693ade045305e8d50fda60"
+    },
+    {
+      "runId": "2026-07-25T07-34-26-353Z",
+      "viewportProfile": "narrow",
+      "runManifestSha256": "b97bc953f440343eb874c4ed50ee29a25ca266da3ee1c1d7039bcaeefc609baa"
+    },
+    {
+      "runId": "2026-07-25T07-43-27-813Z",
+      "viewportProfile": "desktop",
+      "runManifestSha256": "bba4995aeac778c2034d484687210225c60ec5b4beac704acf998da472f5cf58",
+      "purpose": "query-evidence replay"
+    },
+    {
+      "runId": "2026-07-25T07-44-07-225Z",
+      "viewportProfile": "desktop",
+      "runManifestSha256": "c5d2cc8d88661e4daf480472bef54c8da2291b0155de7977a6e38aad130569b1",
+      "purpose": "distinct-page retries"
+    }
+  ],
+  "results": {
+    "swanson-vitamins": {
+      "status": "discard",
+      "reason": "Both apparent passes redirected to an unfiltered catalog. The corrected replay measured 0% requested-query evidence."
+    },
+    "dermstore": {
+      "status": "discard",
+      "reason": "Desktop product cards remained behind a full-viewport obstruction and narrow exceeded the page deadline."
+    },
+    "do-it-best": {
+      "status": "discard",
+      "reason": "A narrow page rendered candidates, but desktop timed out and the distinct retry measured 0% requested-query evidence."
+    },
+    "bluemercury": {
+      "status": "discard",
+      "reason": "A narrow page rendered candidates, but both distinct desktop attempts exceeded the page deadline."
+    },
+    "wb-mason": {
+      "status": "discard",
+      "reason": "Both desktop and narrow captures returned HTTP 403."
+    },
+    "northern-tool": {
+      "status": "discard",
+      "reason": "Both captures were quarantined by the privacy audit before source evidence was written."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [],
+    "assignedDomains": [],
+    "status": "discard",
+    "reason": "No sampled domain passed the complete two-page, two-viewport, visual, machine, obstruction, and requested-query evidence gate."
+  }
+}

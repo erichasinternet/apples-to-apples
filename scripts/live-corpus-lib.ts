@@ -59,6 +59,21 @@ export const CAPTURE_VIEWPORTS: Record<
   narrow: { profile: "narrow", width: 390, height: 844 }
 };
 
+const QUERY_STOP_WORDS = new Set(["all", "and", "for", "of", "purpose", "the", "with"]);
+
+export function calculateQueryTokenCoverage(
+  query: string,
+  evidence: string
+): number {
+  const queryTokens = normalizedTokens(query).filter(
+    (token) => !QUERY_STOP_WORDS.has(token)
+  );
+  if (queryTokens.length === 0) return 1;
+  const evidenceTokens = new Set(normalizedTokens(evidence));
+  const matched = queryTokens.filter((token) => evidenceTokens.has(token)).length;
+  return matched / queryTokens.length;
+}
+
 export interface CorpusAnnotation {
   version: number;
   pageId: string;
@@ -321,6 +336,24 @@ function groupBySite(targets: readonly CaptureTarget[]): Map<string, CaptureTarg
     grouped.set(target.siteId, siteTargets);
   }
   return grouped;
+}
+
+function normalizedTokens(value: string): string[] {
+  return value
+    .normalize("NFKD")
+    .toLowerCase()
+    .replace(/[\u0300-\u036f]/g, "")
+    .split(/[^a-z0-9]+/)
+    .filter((token) => token.length > 1)
+    .map((token) => {
+      if (token.length > 4 && token.endsWith("ies")) {
+        return `${token.slice(0, -3)}y`;
+      }
+      if (token.length > 3 && token.endsWith("s") && !token.endsWith("ss")) {
+        return token.slice(0, -1);
+      }
+      return token;
+    });
 }
 
 function resolveSiteQueries(manifest: CorpusTargetManifest, site: CorpusSite): CorpusQuery[] {

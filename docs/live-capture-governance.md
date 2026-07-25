@@ -51,3 +51,14 @@ count are recorded in the run and page metadata.
 Use `--page-timeout-ms` and `--card-screenshot-budget-ms` only for controlled
 qualification experiments. The screenshot budget cannot exceed half the page
 deadline.
+
+The collector runs generic obstruction dismissal both after page preparation and
+again immediately before screenshots because consent and promotion layers can
+mount late. The second measured coverage participates in the same frozen
+obstruction gate.
+
+Search captures also record generic requested-query token coverage across the
+rendered path, title, and body. Query parameters are excluded because they only
+echo collector input and do not prove the page honored it. A page that redirects
+to an unrelated catalog or otherwise evidences less than half of the meaningful
+query tokens is blocked from qualification.

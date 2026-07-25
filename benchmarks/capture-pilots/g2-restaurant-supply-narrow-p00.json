@@ -34,6 +34,7 @@
     "observationNodeCount": 1023,
     "observationTruncated": false,
     "unresolvedObstructionCoverage": 0.030380362133916636,
+    "queryTokenCoverage": 1,
     "observationSha256": "364b4a05595ce2cf1413a613a14b1b48dd17d8dc397877798ebadf7690cb3789",
     "annotationScreenshotSha256": "ca300f32211e9aed82a0faa81289cfc0f53f109bea40606d162b0a649aa0c242",
     "provenanceAggregateSha256": "c88b8973668ce59712457f30b0dd4ca2a0c7815a9f874e80de86835677aa3510",

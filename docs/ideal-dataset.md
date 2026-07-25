@@ -32,7 +32,13 @@ the second sample is in
 The bounded follow-up is in
 [`wave-01-p02.json`](../benchmarks/domain-qualification/wave-01-p02.json).
 RestaurantSupply passed two distinct desktop and narrow pages and was promoted
-to training; all other sampled domains remain unassigned.
+to training. The next bounded slice is in
+[`wave-01-p03.json`](../benchmarks/domain-qualification/wave-01-p03.json);
+KaTom passed the same frozen gate and was promoted to training. All other
+sampled domains remain unassigned. The final broad slice is recorded in
+[`wave-01-p04.json`](../benchmarks/domain-qualification/wave-01-p04.json);
+it promoted no domains. Visual review of that slice added a retroactive
+requested-query evidence requirement before any affected domain was promoted.
 
 ## Cohorts
 

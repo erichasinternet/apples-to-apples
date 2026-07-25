@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "pilotId": "g2-katom-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-25T07:25:38.854Z",
+  "source": {
+    "siteId": "katom",
+    "cohort": "training",
+    "stratum": "restaurant-supply",
+    "anonymousContext": true,
+    "sourceManifestSha256": "4bee2f985aa3af6478812912b7dacb9d44c1d05d2218f143b746cf5369218987",
+    "collectorSha256": "6d563571c276105adfbd63215871e5bf31292fdd697087c57c3e77017a6d820c"
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T07-25-22-948Z",
+      "runManifestSha256": "51a3ed3ebcee7a94c4a1fb80249779c09a141a0d5de71b7f4eb92d2295a0c2dd",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 5000,
+      "capturedPages": 1,
+      "failedPages": 1,
+      "failedPageReason": "The supplemental desktop food-containers page exceeded the page deadline."
+    },
+    {
+      "runId": "2026-07-25T07-27-47-464Z",
+      "runManifestSha256": "144ddd8c1b9cf4e6a3e7375c5cb4fffd47e75ae2b7de19a84d980ecd813eb878",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 5000,
+      "capturedPages": 1,
+      "failedPages": 0
+    }
+  ],
+  "captures": [
+    {
+      "pageId": "katom--trash-bags",
+      "capturedAt": "2026-07-25T07:25:38.854Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 20,
+      "candidateScreenshotsCaptured": 20,
+      "observationNodeCount": 1168,
+      "observationTruncated": false,
+      "unresolvedObstructionCoverage": 0.0031109490825130637,
+      "queryTokenCoverage": 1,
+      "observationSha256": "54016464a1f0085ab01f47be9687ea6a6ef9347f9b05bd67d25f994bc46e0eb8",
+      "annotationScreenshotSha256": "527a8ef76b0fc5ef5eeb07e3a5778c6814f5efae6c127c47b298bfe2079f9ce1",
+      "provenanceAggregateSha256": "3791819b106880fb722de318d24e0a72bc6394151d6fbb1afadf09443536b9f0",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "pageId": "katom--flour",
+      "capturedAt": "2026-07-25T07:27:54.256Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 20,
+      "candidateScreenshotsCaptured": 20,
+      "observationNodeCount": 1285,
+      "observationTruncated": false,
+      "unresolvedObstructionCoverage": 0.0007111111111111111,
+      "queryTokenCoverage": 1,
+      "observationSha256": "bfe909695d1ef17e8d73ad6619913166617e066349a93d05be2f8c540d735c08",
+      "annotationScreenshotSha256": "6ee0c8c6d82f27990d97c85d3e441f37b1451df010aa3f533b2b9fdb7eae08e1",
+      "provenanceAggregateSha256": "f091152df0957ff953e6534bd9afdc3da88cfd6574a72ddbccd91ec4fe4999fe",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "reviewQueues": {
+    "labelVisibility": "no model or peer labels",
+    "trashBagsReviewerAQueueSha256": "73441a74056c82b403f2ab6ef5b5470e2e7e0d037987e57cb590a14dbb6334cd",
+    "trashBagsReviewerBQueueSha256": "312412469b8b6a74b34f2ca235782d67fbd3d70838ad3bb99301c1c6ac319f46",
+    "flourReviewerAQueueSha256": "6ca77199259f88d42419b8a2b6f26d2deb65b3709f598e7c6412538358f8f09a",
+    "flourReviewerBQueueSha256": "fba7e117eaf4150ded2e5a9244835468b4a3a2a110e69451698f29cce68f45ad"
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}
