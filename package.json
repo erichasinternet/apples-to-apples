@@ -35,6 +35,7 @@
     "benchmark:training:export": "bun scripts/export-training-corpus.ts",
     "benchmark:validate": "bun scripts/validate-live-corpus.ts",
     "training:prepare": "bun scripts/prepare-t5-training.ts",
+    "training:autoresearch:validate": "bun scripts/validate-autoresearch.ts",
     "training:readiness": "bun scripts/report-training-readiness.ts",
     "training:inference:prepare": "bun scripts/prepare-live-inference.ts --stage discovery --split validation benchmark-data/live/*",
     "training:inference:discover": "uvx modal run training/modal_infer.py --records discovery.jsonl --output benchmark-data/inference/t5gemma2-live/discovery-predictions.jsonl --checkpoint replay",
@@ -108,7 +109,7 @@
     "training:synthetic:validate": "python3 training/train_t5gemma2.py --config training/t5gemma2-270m/synthetic-pretrain.json --validate-only",
     "training:validate": "python3 training/train_t5gemma2.py --validate-only",
     "serve:fixtures": "bun scripts/serve-fixtures.mjs",
-    "verify": "bun run typecheck && bun run test && bun run training:baseline:markuplm:test",
+    "verify": "bun run typecheck && bun run test && bun run training:autoresearch:validate && bun run training:baseline:markuplm:test",
     "training:baseline:markuplm:test": "python3 training/test_infer_markuplm.py && python3 training/test_train_t5gemma2.py"
   },
   "devDependencies": {

@@ -1,5 +1,13 @@
 # Autoresearch Protocol
 
+The next-generation evidence-pointer objective, quantitative gates, budget, and
+retirement rules are frozen in
+[`evidence-pointer-autoresearch-goal.md`](./evidence-pointer-autoresearch-goal.md).
+The autonomous operating instructions are in
+[`training/autoresearch/program.md`](../training/autoresearch/program.md). They
+adapt Karpathy's fixed-harness, bounded-run, keep-or-discard autoresearch pattern
+to a precision-gated extraction task.
+
 ## Objective
 
 Develop a site-agnostic shopping-page extractor that discovers product cards and

@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "objective": "Maximize evidence-valid comparable coverage subject to zero accepted normalized-price errors.",
+  "baseline": {
+    "formulation": "free-form-json",
+    "model": "google/t5gemma-2-1b-1b",
+    "liveEvidenceAcceptance": 0.4375,
+    "liveNormalizedCoverage": 0
+  },
+  "budget": {
+    "totalUsd": 30,
+    "estimatedSpentUsd": 8,
+    "finalReserveUsd": 5,
+    "maxPilotUsd": 0.75,
+    "maxPilotTrainingMinutes": 15,
+    "phaseCapsUsd": {
+      "formulation": 3,
+      "teacher": 5,
+      "oracle": 2,
+      "student": 5,
+      "browser": 2,
+      "final": 5
+    }
+  },
+  "experiments": {
+    "maxAttemptsPerHypothesis": 2,
+    "formulationHypothesisLimit": 2,
+    "minimumCoverageGain": 0.02,
+    "oneVariablePerRun": true,
+    "teacherRunLimit": 3,
+    "oracleRunLimit": 2,
+    "studentVariantLimit": 2
+  },
+  "gates": {
+    "formulation": {
+      "grammarValidity": 1,
+      "minimumEvidenceAcceptance": 0.6375,
+      "acceptedPrecision": 1,
+      "eligibleCoverage": 0.5,
+      "abstentionRecall": 0.9
+    },
+    "teacher": {
+      "grammarValidity": 1,
+      "pointerExact": 0.98,
+      "acceptedPrecision": 1,
+      "eligibleCoverage": 0.8,
+      "nativeCoverage": 0.95,
+      "derivedCoverage": 0.75,
+      "abstentionRecall": 0.99,
+      "siteMacroCoverage": 0.7
+    },
+    "oracle": {
+      "maximumCases": 500,
+      "minimumPointerExactGain": 0.05
+    },
+    "student": {
+      "acceptedPrecision": 1,
+      "maximumCoverageRegression": 0.05,
+      "maximumPointerExactRegression": 0.03,
+      "abstentionRecall": 0.99
+    },
+    "browser": {
+      "maximumArtifactSizeMb": 300,
+      "maximumP50LatencyMs": 2000,
+      "maximumP95LatencyMs": 6000,
+      "maximumPeakMemoryMb": 1536
+    },
+    "final": {
+      "minimumDomains": 30,
+      "minimumAcceptedOutputs": 3000,
+      "maximumAcceptedErrors": 0,
+      "minimumPrecisionLowerBound95": 0.999,
+      "eligibleCoverage": 0.8,
+      "nativeCoverage": 0.95,
+      "derivedCoverage": 0.75,
+      "abstentionRecall": 0.99
+    }
+  }
+}
