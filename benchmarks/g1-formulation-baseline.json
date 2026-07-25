@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "status": "diagnostic-not-gold",
+  "cohort": {
+    "sha256": "d5b33218ce5a2f17dce009d9fb36a1974d12b48cd43b5fdca49a8f450e0a20f7",
+    "records": 32,
+    "liveSilverRecords": 16,
+    "syntheticRecords": 16,
+    "limitation": "The live labels are audited silver, not dual-reviewed and adjudicated under the evidence-pointer policy."
+  },
+  "freeFormJson1B": {
+    "model": "T5Gemma 2 1B-1B explicit-contract checkpoint",
+    "reportSha256": "3f486235de5a9385f04ee774dc644c4f6efd05abab390513db99f2644b73bdc3",
+    "liveSilver": {
+      "records": 16,
+      "strictJsonRate": 0,
+      "recoverableJsonRate": 1,
+      "fieldAccuracy": 0.6875,
+      "abstentionClassAccuracy": 0.375,
+      "evidenceAcceptanceRate": 0.4375,
+      "normalizedPricingCoverage": 0,
+      "normalizedPricingAccuracy": 0,
+      "eligibleComparable": 3
+    }
+  },
+  "evidencePointerDiagnostic": {
+    "cohortSha256": "588d55673e5ff23feffe217d4f809b0e102d8918a5740f7cc33e882592b3c766",
+    "convertedTargets": 32,
+    "invalidTargets": 0,
+    "deterministicUpperBound": {
+      "grammarValidity": 1,
+      "pointerExact": 1,
+      "evidenceAcceptance": 1,
+      "acceptedCoverage": 1,
+      "acceptedCorrect": 11,
+      "acceptedIncorrect": 0
+    }
+  },
+  "promotionPolicy": "This baseline may support a causal formulation diagnostic. It cannot pass G1 or promote a model until the live slice is dual-reviewed and adjudicated."
+}

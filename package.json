@@ -51,6 +51,8 @@
     "training:inference:review-queue": "bun scripts/build-live-review-queue.ts",
     "training:extraction:evaluation:prepare": "bun scripts/prepare-extraction-evaluation.ts",
     "training:extraction:evaluation:score": "bun scripts/score-extraction-evaluation.ts",
+    "training:pointer:g1:prepare": "bun scripts/prepare-evidence-pointer-g1.ts",
+    "training:pointer:g1:score": "bun scripts/score-evidence-pointer-evaluation.ts",
     "training:extraction:evaluation:infer:1b": "ATA_INFERENCE_BUNDLE=t5gemma2-extraction-pilot uvx modal run training/modal_infer.py --records extraction.jsonl --output benchmark-data/inference/t5gemma2-extraction-pilot/predictions-1b-explicit-contract.jsonl --checkpoint 1b-explicit-contract --max-output-tokens 768",
     "training:extraction:evaluation:infer:qwen": "ATA_INFERENCE_BUNDLE=t5gemma2-extraction-pilot uvx modal run training/modal_infer.py --records extraction.jsonl --output benchmark-data/inference/t5gemma2-extraction-pilot/predictions-qwen3-vl-zero-shot.jsonl --checkpoint qwen3-vl-zero-shot --max-output-tokens 384",
     "training:selection:prepare": "bun scripts/prepare-live-inference.ts --stage discovery --split selection --output benchmark-data/inference/t5gemma2-selection benchmark-data/live/*",

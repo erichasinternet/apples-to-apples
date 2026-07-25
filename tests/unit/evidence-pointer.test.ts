@@ -100,6 +100,42 @@ describe("evidence pointer contract", () => {
     expect(result.validation?.products[0]?.normalized?.centsPerUnit).toBe(20);
   });
 
+  it("keeps count evidence beside a dimensional multiplication", () => {
+    const observation = makeObservation([
+      node("card"),
+      node(
+        "title",
+        "card",
+        "500 Count 12 x 10.75 Inch Pre-Cut Aluminum Foil Sheets"
+      ),
+      node("price", "card", "$24.99")
+    ]);
+    const product: ModelProductExtraction = {
+      cardNodeId: "card",
+      title: {
+        value: "500 Count 12 x 10.75 Inch Pre-Cut Aluminum Foil Sheets",
+        evidenceNodeIds: ["title"]
+      },
+      currentPrice: {
+        cents: 2499,
+        currency: "USD",
+        evidenceNodeIds: ["price"]
+      },
+      packageQuantity: {
+        valuePerPackage: 500,
+        packCount: 1,
+        unit: "each",
+        dimension: "count",
+        evidenceNodeIds: ["title"]
+      }
+    };
+
+    const target = serializeEvidencePointer(product, observation);
+
+    expect(target).toMatch(/PACKAGE_QUANTITY title@q\d+/);
+    expect(resolveEvidencePointer(target, observation).valid).toBe(true);
+  });
+
   it("rejects Markdown, reordered fields, generated values, and extra lines", () => {
     const invalid = [
       "```",

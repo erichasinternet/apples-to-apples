@@ -5,6 +5,7 @@ import {
   buildT5TrainingRecords,
   getTrainingSplit,
   parseT5PromptObservation,
+  parseT5PromptCandidateCatalog,
   pruneObservationForModel,
   validateTrainingDomainSplits,
   type TrainingDomainSplits
@@ -61,6 +62,11 @@ describe("T5 training records", () => {
     const observation = parseT5PromptObservation(comparable.prompt);
 
     expect(comparable.prompt).toContain("CANDIDATES: ");
+    expect(parseT5PromptCandidateCatalog(comparable.prompt)).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ id: "price-a@p0", kind: "current-price" })
+      ])
+    );
     expect(comparable.target).toContain("CURRENT_PRICE price-a@p0");
     expect(comparable.target).not.toContain('"cents"');
     expect(comparable.metadata.targetFormat).toBe("evidence-pointer");

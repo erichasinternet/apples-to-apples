@@ -5,7 +5,7 @@
   "datasetType": "synthetic-pretraining",
   "targetFormat": "evidence-pointer",
   "outputPath": "benchmark-data/training/t5gemma2-synthetic-pointer",
-  "sha256": "c738a431111426013cc606e6c3229277dc600fb0f44c7f84c8d07f7981b2d1c2",
+  "sha256": "b7538f171b0d222d21c6219f73a165ffd784295e3fd50635cd88c83ff0c9b0bf",
   "pages": 1000,
   "domains": {
     "total": 200,

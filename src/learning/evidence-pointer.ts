@@ -531,15 +531,15 @@ function addCandidatesForNode(
   );
 
   const factored = parseFactoredPackageQuantities(text);
-  const quantities =
-    factored.length > 0
-      ? factored.map((value) => ({
-          value: value.valuePerPackage,
-          unit: value.unit,
-          dimension: value.dimension,
-          sourceText: value.sourceText
-        }))
-      : parseQuantities(text);
+  const quantities = [
+    ...factored.map((value) => ({
+      value: value.valuePerPackage,
+      unit: value.unit,
+      dimension: value.dimension,
+      sourceText: value.sourceText
+    })),
+    ...parseQuantities(text)
+  ];
   uniqueBy(
     quantities,
     (value) => `${value.value}:${value.unit}:${value.sourceText}`

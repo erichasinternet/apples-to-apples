@@ -3,10 +3,12 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import {
   parseT5PromptObservation,
+  parseT5PromptCandidateCatalog,
   type T5TrainingRecord
 } from "./t5-training-lib";
 import {
-  resolveEvidencePointer
+  resolveEvidencePointer,
+  serializeEvidenceCandidateCatalog
 } from "../src/learning/evidence-pointer";
 import type {
   IdealDatasetTargets
@@ -99,7 +101,18 @@ for (const record of records) {
   }
   try {
     const observation = parseT5PromptObservation(record.prompt);
-    if (!resolveEvidencePointer(record.target, observation).valid) {
+    const catalog = parseT5PromptCandidateCatalog(record.prompt);
+    const cardNodeId = record.metadata.cardNodeId;
+    const expectedCatalog = cardNodeId
+      ? JSON.parse(
+          serializeEvidenceCandidateCatalog(observation, cardNodeId)
+        )
+      : undefined;
+    if (
+      !cardNodeId ||
+      JSON.stringify(catalog) !== JSON.stringify(expectedCatalog) ||
+      !resolveEvidencePointer(record.target, observation).valid
+    ) {
       invalidPointers += 1;
     }
   } catch {

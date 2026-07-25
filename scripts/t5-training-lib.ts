@@ -279,7 +279,7 @@ export function buildT5ExtractionRecord(
     imageCrop: relativeCrop(region, sourceRegion),
     prompt:
       options.extractionTargetFormat === "evidence-pointer"
-        ? evidencePointerPrompt(cardObservation, cardNodeId)
+        ? buildEvidencePointerPrompt(cardObservation, cardNodeId)
         : extractionPrompt(cardObservation, cardNodeId),
     metadata: {
       sourceRegion: region,
@@ -319,7 +319,7 @@ function extractionPrompt(observation: PageObservation, cardNodeId: string): str
   ].join("\n");
 }
 
-function evidencePointerPrompt(
+export function buildEvidencePointerPrompt(
   observation: PageObservation,
   cardNodeId: string
 ): string {
@@ -434,6 +434,21 @@ export function parseT5PromptObservation(prompt: string): PageObservation {
     ...(compact.region ? { sourceRegion: compact.region } : {}),
     truncated: true
   };
+}
+
+export function parseT5PromptCandidateCatalog(
+  prompt: string
+): Array<{ id: string; kind: string; sourceText: string }> {
+  const marker = "CANDIDATES: ";
+  const endMarker = "\nOBSERVATION: ";
+  const start = prompt.indexOf(marker);
+  const end = prompt.indexOf(endMarker, start + marker.length);
+  if (start < 0 || end < 0) {
+    throw new Error("Prompt lacks a deterministic candidate catalog.");
+  }
+  const value = JSON.parse(prompt.slice(start + marker.length, end));
+  if (!Array.isArray(value)) throw new Error("Candidate catalog must be an array.");
+  return value as Array<{ id: string; kind: string; sourceText: string }>;
 }
 
 function compactNode(node: ObservedNode): Record<string, unknown> {
