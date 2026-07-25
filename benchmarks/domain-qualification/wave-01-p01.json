@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "qualificationId": "wave-01-p01",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-01.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "sample": {
+    "seed": 20260725,
+    "headed": true,
+    "sites": [
+      "blueland",
+      "dropps",
+      "only-natural-pet",
+      "restaurant-supply"
+    ],
+    "results": {
+      "blueland": {
+        "status": "discard",
+        "reason": "Annotation screenshot dimensions failed machine validation while a promotion overlay obscured the result region."
+      },
+      "dropps": {
+        "status": "discard",
+        "reason": "Capture exceeded the frozen 180-second page timeout."
+      },
+      "only-natural-pet": {
+        "status": "discard",
+        "reason": "Capture exceeded the frozen 180-second page timeout."
+      },
+      "restaurant-supply": {
+        "status": "one-page-pass",
+        "pageId": "restaurant-supply--flour",
+        "viewportProfile": "desktop",
+        "candidateCount": 12,
+        "observationNodeCount": 1273,
+        "unresolvedObstructionCoverage": 0.006944444444444444,
+        "observationSha256": "6d36923f6a0e4420331b31ffe3b8e7833cdcdb9e770e7c2b4cde8185e27c9d80",
+        "annotationScreenshotSha256": "9dbbf6528f4cd11e07942b3a63d552be8f8fcf89cae8103b0078e21e98353ea5",
+        "provenanceAggregateSha256": "fa578d99263972caeb82433084a2d4ae94eeddf8cabc4f706814d4da73195f91",
+        "machineValidation": "passed",
+        "visualValidation": "passed",
+        "remainingRequirement": "A distinct narrow-viewport listing page must pass."
+      }
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [],
+    "assignedDomains": [],
+    "status": "discard",
+    "reason": "No sampled domain passed the frozen two-page, two-viewport acquisition gate."
+  }
+}

@@ -27,7 +27,9 @@ privacy and provenance validation, no bot challenge, no unresolved obstruction
 over 20% of the viewport, and visual review. The first sampled result is recorded
 in
 [`wave-01-p00.json`](../benchmarks/domain-qualification/wave-01-p00.json);
-no sampled domain passed, so none were assigned.
+the second sample is in
+[`wave-01-p01.json`](../benchmarks/domain-qualification/wave-01-p01.json).
+No sampled domain passed, so none were assigned.
 
 ## Cohorts
 
