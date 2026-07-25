@@ -6,6 +6,7 @@ import {
 } from "@playwright/test";
 import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 import path from "node:path";
 import type { PageObservation } from "../src/learning/contracts";
 import { navigateForObservation } from "../src/learning/page-navigation";
@@ -20,6 +21,11 @@ import {
   type CorpusAnnotation,
   type CorpusTargetManifest
 } from "./live-corpus-lib";
+import {
+  auditCapturePrivacy,
+  sanitizeCaptureUrl,
+  writeCaptureProvenance
+} from "./capture-provenance-lib";
 
 interface CollectorOptions {
   targetsPath: string;
@@ -71,7 +77,11 @@ interface PageCapture {
 }
 
 const options = parseOptions(process.argv.slice(2));
-const manifest = JSON.parse(await readFile(options.targetsPath, "utf8")) as CorpusTargetManifest;
+const manifestBytes = await readFile(options.targetsPath);
+const collectorBytes = await readFile(fileURLToPath(import.meta.url));
+const sourceManifestSha256 = createHash("sha256").update(manifestBytes).digest("hex");
+const collectorSha256 = createHash("sha256").update(collectorBytes).digest("hex");
+const manifest = JSON.parse(manifestBytes.toString("utf8")) as CorpusTargetManifest;
 const allTargets = expandTargets(manifest);
 const targets = selectTargets(allTargets, {
   seed: options.seed,
@@ -239,7 +249,16 @@ async function capturePage(
           "$1 [REDACTED LOCATION]"
         )
         .replace(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi, "[REDACTED EMAIL]")
-        .replace(/\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b/g, "[REDACTED PHONE]");
+        .replace(/\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b/g, "[REDACTED PHONE]")
+        .replace(
+          /\b\d{1,6}\s+(?:[NSEW]\.?\s+)?[A-Z0-9][A-Za-z0-9.' -]{1,60}\s(?:street|st|road|rd|avenue|ave|boulevard|blvd|drive|dr|lane|ln|court|ct|way|place|pl)\b/gi,
+          "[REDACTED ADDRESS]"
+        )
+        .replace(/\b(?:hi|hello|welcome back),?\s+[A-Z][a-z]{1,30}\b/gi, "[REDACTED ACCOUNT]")
+        .replace(
+          /\b(?:bearer\s+[A-Za-z0-9._~+/=-]{16,}|(?:api[-_]?key|access[-_]?token|session[-_]?id)\s*[:=]\s*[A-Za-z0-9._~+/=-]{12,})\b/gi,
+          "[REDACTED CREDENTIAL]"
+        );
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     let count = 0;
     let node = walker.nextNode();
@@ -261,6 +280,7 @@ async function capturePage(
     pageId: target.pageId,
     maxNodes: 20_000
   });
+  observation.url = sanitizeCaptureUrl(observation.url);
 
   const extracted = await page.evaluate((candidateLimit) => {
     const rootCandidate = document.querySelector("main, [role='main'], #main, #content");
@@ -450,7 +470,16 @@ async function capturePage(
             "$1 [REDACTED LOCATION]"
           )
           .replace(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi, "[REDACTED EMAIL]")
-          .replace(/\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b/g, "[REDACTED PHONE]");
+          .replace(/\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b/g, "[REDACTED PHONE]")
+          .replace(
+            /\b\d{1,6}\s+(?:[NSEW]\.?\s+)?[A-Z0-9][A-Za-z0-9.' -]{1,60}\s(?:street|st|road|rd|avenue|ave|boulevard|blvd|drive|dr|lane|ln|court|ct|way|place|pl)\b/gi,
+            "[REDACTED ADDRESS]"
+          )
+          .replace(/\b(?:hi|hello|welcome back),?\s+[A-Z][a-z]{1,30}\b/gi, "[REDACTED ACCOUNT]")
+          .replace(
+            /\b(?:bearer\s+[A-Za-z0-9._~+/=-]{16,}|(?:api[-_]?key|access[-_]?token|session[-_]?id)\s*[:=]\s*[A-Za-z0-9._~+/=-]{12,})\b/gi,
+            "[REDACTED CREDENTIAL]"
+          );
       const hiddenNodeIds = [source, ...source.querySelectorAll<HTMLElement>("*")]
         .filter((element) => {
           const style = getComputedStyle(element);
@@ -518,6 +547,32 @@ async function capturePage(
     };
   }, maxCards);
 
+  const finalUrl = sanitizeCaptureUrl(page.url());
+  const sanitizedTarget = {
+    ...target,
+    url: sanitizeCaptureUrl(target.url)
+  };
+  const capturedAt = new Date().toISOString();
+  const privacyAudit = auditCapturePrivacy({
+    urls: [
+      { source: "requestedUrl", value: sanitizeCaptureUrl(target.url) },
+      { source: "finalUrl", value: finalUrl },
+      { source: "observation.url", value: observation.url }
+    ],
+    texts: [
+      { source: "main.html", value: extracted.mainHtml },
+      { source: "observation.json", value: JSON.stringify(observation) },
+      { source: "candidates", value: JSON.stringify(extracted.candidates) }
+    ]
+  });
+  if (!privacyAudit.passed) {
+    throw new Error(
+      `privacy audit failed: ${privacyAudit.findings
+        .map((finding) => `${finding.source}/${finding.category}`)
+        .join(", ")}`
+    );
+  }
+
   const pageDirectory = path.join(runDirectory, target.pageId);
   const cardsDirectory = path.join(pageDirectory, "cards");
   await mkdir(cardsDirectory, { recursive: true });
@@ -570,10 +625,10 @@ async function capturePage(
 
   const capture: PageCapture = {
     pageId: target.pageId,
-    target,
-    capturedAt: new Date().toISOString(),
-    requestedUrl: target.url,
-    finalUrl: page.url(),
+    target: sanitizedTarget,
+    capturedAt,
+    requestedUrl: sanitizeCaptureUrl(target.url),
+    finalUrl,
     navigationAttempts: navigation.attempts,
     title: await page.title(),
     ...(response ? { httpStatus: response.status() } : {}),
@@ -605,6 +660,12 @@ async function capturePage(
 
   await writeJson(path.join(pageDirectory, "page.json"), capture);
   await writeJson(path.join(pageDirectory, "annotation.json"), annotation);
+  await writeCaptureProvenance(pageDirectory, {
+    pageId: target.pageId,
+    createdAt: capturedAt,
+    sourceManifestSha256,
+    collectorSha256
+  });
   return capture;
 }
 

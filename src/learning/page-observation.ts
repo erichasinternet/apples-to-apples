@@ -22,7 +22,16 @@ export function capturePageObservation(options: ObservationCaptureOptions): Page
         "$1 [REDACTED LOCATION]"
       )
       .replace(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi, "[REDACTED EMAIL]")
-      .replace(/\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b/g, "[REDACTED PHONE]");
+      .replace(/\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b/g, "[REDACTED PHONE]")
+      .replace(
+        /\b\d{1,6}\s+(?:[NSEW]\.?\s+)?[A-Z0-9][A-Za-z0-9.' -]{1,60}\s(?:street|st|road|rd|avenue|ave|boulevard|blvd|drive|dr|lane|ln|court|ct|way|place|pl)\b/gi,
+        "[REDACTED ADDRESS]"
+      )
+      .replace(/\b(?:hi|hello|welcome back),?\s+[A-Z][a-z]{1,30}\b/gi, "[REDACTED ACCOUNT]")
+      .replace(
+        /\b(?:bearer\s+[A-Za-z0-9._~+/=-]{16,}|(?:api[-_]?key|access[-_]?token|session[-_]?id)\s*[:=]\s*[A-Za-z0-9._~+/=-]{12,})\b/gi,
+        "[REDACTED CREDENTIAL]"
+      );
   const canonicalUrl = (value: string): string => {
     const url = new URL(value);
     return `${url.origin}${url.pathname}`;

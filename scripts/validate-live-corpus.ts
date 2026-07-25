@@ -8,6 +8,10 @@ import {
   calculateWorstCaseSampleSize,
   type CorpusAnnotation
 } from "./live-corpus-lib";
+import {
+  validateCaptureProvenance,
+  type CaptureProvenance
+} from "./capture-provenance-lib";
 
 const runDirectory = path.resolve(process.argv[2] ?? "");
 if (!process.argv[2]) {
@@ -35,7 +39,7 @@ const errors: string[] = [];
 for (const result of run.results.filter((entry) => entry.status === "captured")) {
   const pageDirectory = path.join(runDirectory, result.pageId);
   try {
-    const [page, annotation] = await Promise.all([
+    const [page, annotation, provenance] = await Promise.all([
       readJson<{
         pageId: string;
         candidateCount: number;
@@ -46,8 +50,14 @@ for (const result of run.results.filter((entry) => entry.status === "captured"))
         annotationRegion?: { x: number; y: number; width: number; height: number };
         annotationScreenshotCaptured?: boolean;
       }>(path.join(pageDirectory, "page.json")),
-      readJson<CorpusAnnotation>(path.join(pageDirectory, "annotation.json"))
+      readJson<CorpusAnnotation>(path.join(pageDirectory, "annotation.json")),
+      readJson<CaptureProvenance>(path.join(pageDirectory, "provenance.json"))
     ]);
+    errors.push(
+      ...(await validateCaptureProvenance(pageDirectory, provenance)).map(
+        (error) => `${result.pageId}: ${error}`
+      )
+    );
     const mainHtml = await readFile(path.join(pageDirectory, "main.html"));
 
     if (page.pageId !== result.pageId || annotation.pageId !== result.pageId) {
