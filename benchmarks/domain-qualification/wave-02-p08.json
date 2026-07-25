@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "qualificationId": "wave-02-p08",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-02.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 70000,
+    "cardScreenshotBudgetMs": 5000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "smallFixedNonContentEmbedSuppression": true,
+    "genericRefusalActionHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "genericInterstitialDetection": true,
+    "queryParametersCountAsQueryEvidence": false,
+    "queryEvidenceScope": "title, pathname, visible headings/status text, and populated search controls"
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T16-06-20-666Z",
+      "runManifestSha256": "9cb1674eb8e1e9a2c758d1ce4cfcabf2ec70910b2d1956f9500283d0b6756a5b",
+      "purpose": "supplement-domain diagnostic capture before scoped query-evidence correction"
+    },
+    {
+      "runId": "2026-07-25T16-10-06-340Z",
+      "runManifestSha256": "4459d4907129a3d90808b3ed3e7c26f67f86cb08e6e552216096711dc937279d",
+      "purpose": "supplement-domain qualification with scoped query evidence"
+    },
+    {
+      "runId": "2026-07-25T16-12-41-797Z",
+      "runManifestSha256": "76e4ce904a52a78c7d085de60f6cde9f60ab7ae23c715f9d79ac17494b49531c",
+      "purpose": "blue-sky-vitamin desktop protein qualification"
+    },
+    {
+      "runId": "2026-07-25T16-15-07-958Z",
+      "runManifestSha256": "593d46bcba12c7fcbd923f4afe1d0c5906de4e848ae27701f1ee877147817be1",
+      "purpose": "blue-sky-vitamin narrow vitamins qualification"
+    },
+    {
+      "runId": "2026-07-25T16-15-52-032Z",
+      "runManifestSha256": "707d84af31441fa11bcb524c8577c1943241537d2489678d4a4984decd20928c",
+      "purpose": "beauty and specialty-food qualification"
+    }
+  ],
+  "results": {
+    "blue-sky-vitamin": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "blue-sky-vitamin--protein-powder",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 2221,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0.0030555555555555557,
+          "queryTokenCoverage": 1,
+          "observationSha256": "bb14ac1b211e1fb008f0fff30bd50dae4c5af48986e82c3e1bad04d05b72ff32",
+          "annotationScreenshotSha256": "799f80fd7f4abd5c2223c5458d07474e5b1089e44f9e6d46bf1e8eaa13747a6d",
+          "provenanceAggregateSha256": "089608b5c17325726f01604088e47ea22e2d29c1c486110df500117974623eb8",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "blue-sky-vitamin--vitamins",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 1080,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0.01336735933892332,
+          "queryTokenCoverage": 1,
+          "observationSha256": "c7ebc1a1ee40fe3dd56380cd91a04c85086779dbdee511f62343291bf9e92d01",
+          "annotationScreenshotSha256": "c6455e3078e84c7d8fca24870ece5e51bd6e0b521cafe6be2b51fa961ef49825",
+          "provenanceAggregateSha256": "d85bd9110262d9a9d32ec480a9ecf79cbffadd97748e14e61637e96be9f6d3e9",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "professional-supplement-center": {
+      "status": "discard",
+      "reason": "Both requested URLs discarded the search query and returned the same unfiltered 15,352-product catalog. Scoped query evidence correctly measured 0% despite incidental query words in product cards."
+    },
+    "sleekshop": {
+      "status": "discard",
+      "reason": "The shampoo page produced eight candidates, but the count-oriented cotton-pads query had only four total results and could not meet the eight-candidate qualification gate."
+    },
+    "bobs-red-mill": {
+      "status": "discard",
+      "reason": "The rice search discarded the requested query and produced no reviewable candidates; the flour capture exceeded the bounded page timeout."
+    },
+    "bulk-foods": {
+      "status": "discard",
+      "reason": "Search pages contained product names and images but no card-level prices or package quantities, so neither requested page produced reviewable unit-price candidates."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "blue-sky-vitamin"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "blue-sky-vitamin",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

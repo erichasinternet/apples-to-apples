@@ -5,6 +5,7 @@ import {
   annotationScreenshotDimensionsMatch,
   assignCaptureViewports,
   calculateQueryTokenCoverage,
+  calculateSearchResultQueryCoverage,
   calculateWorstCaseSampleSize,
   expandTargets,
   getDomainSplit,
@@ -100,6 +101,27 @@ describe("live benchmark corpus", () => {
     expect(
       calculateQueryTokenCoverage("mouthwash", "All vitamins and supplements")
     ).toBe(0);
+  });
+
+  it("does not treat incidental product-card text as search-query evidence", () => {
+    expect(
+      calculateSearchResultQueryCoverage("vitamins", {
+        title: "Search",
+        pathname: "/search",
+        headings: ["Search"],
+        statusText: ["15352 products"],
+        searchValues: []
+      })
+    ).toBe(0);
+    expect(
+      calculateSearchResultQueryCoverage("vitamins", {
+        title: "Search",
+        pathname: "/search",
+        headings: ['1002 results for "vitamins"'],
+        statusText: [],
+        searchValues: ["vitamins"]
+      })
+    ).toBe(1);
   });
 
   it("recognizes generic verification and slider challenges", () => {

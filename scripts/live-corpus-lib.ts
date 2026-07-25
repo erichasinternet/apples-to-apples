@@ -74,6 +74,30 @@ export function calculateQueryTokenCoverage(
   return matched / queryTokens.length;
 }
 
+export interface SearchResultContext {
+  title: string;
+  pathname: string;
+  headings: string[];
+  statusText: string[];
+  searchValues: string[];
+}
+
+export function calculateSearchResultQueryCoverage(
+  query: string,
+  context: SearchResultContext
+): number {
+  return calculateQueryTokenCoverage(
+    query,
+    [
+      context.title,
+      context.pathname,
+      ...context.headings,
+      ...context.statusText,
+      ...context.searchValues
+    ].join("\n")
+  );
+}
+
 export function isInterstitialOrBotChallenge(text: string): boolean {
   return /\b(access (?:to (?:this|the) page (?:has been )?)?denied|verification required|verify you are human|captcha|robot check|robot or human|unusual traffic|activate and hold|secure your access)\b/i.test(
     text

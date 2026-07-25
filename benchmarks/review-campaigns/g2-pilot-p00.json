@@ -1,10 +1,26 @@
 {
   "version": 1,
   "campaignId": "g2-pilot-p00",
-  "createdAt": "2026-07-25T15:58:00Z",
+  "createdAt": "2026-07-25T16:21:00Z",
   "cohort": "training",
   "decision": "workbench-pass-independent-human-reviews-pending",
   "pages": [
+    {
+      "siteId": "blue-sky-vitamin",
+      "pageId": "blue-sky-vitamin--protein-powder",
+      "captureTimestamp": "2026-07-25T16:12:59.326Z",
+      "candidateCardCount": 8,
+      "observationSha256": "bb14ac1b211e1fb008f0fff30bd50dae4c5af48986e82c3e1bad04d05b72ff32",
+      "annotationScreenshotSha256": "799f80fd7f4abd5c2223c5458d07474e5b1089e44f9e6d46bf1e8eaa13747a6d"
+    },
+    {
+      "siteId": "blue-sky-vitamin",
+      "pageId": "blue-sky-vitamin--vitamins",
+      "captureTimestamp": "2026-07-25T16:15:25.275Z",
+      "candidateCardCount": 8,
+      "observationSha256": "c7ebc1a1ee40fe3dd56380cd91a04c85086779dbdee511f62343291bf9e92d01",
+      "annotationScreenshotSha256": "c6455e3078e84c7d8fca24870ece5e51bd6e0b521cafe6be2b51fa961ef49825"
+    },
     {
       "siteId": "betty-mills",
       "pageId": "betty-mills--cleaner",
@@ -129,8 +145,8 @@
   "queues": [
     {
       "reviewerId": "reviewer-a",
-      "queueId": "reviewer-a--campaign--9d27a1e75b89b2ea",
-      "campaignQueueSha256": "243554682b4294c5c66399447ec800de5fedcf24bcbe8c18125861d5b0e674e7",
+      "queueId": "reviewer-a--campaign--11294ceee8454819",
+      "campaignQueueSha256": "ca08844e27185fc4f292e12a49b60c272815a0fe93f49323fb5e9657a4ec29d8",
       "sourceQueueSha256": [
         "c7c5caec03d94ce03dbcdc4d77ca34f5aeb86a328574424e02e2c738af14dc6b",
         "468925a9cc330c8698e57b5f53bfa2c0d8fda3ec0b874489a3a8cc19be1fc8a6",
@@ -140,14 +156,15 @@
         "347d97cf373d3adef077065d269cdfa0338f212eb24ab5303549d5b90539433f",
         "116869dd0cc60c624b6805f869a92d0e9e160963fa898f2f460d16ade5fa308a",
         "e9b947117d0bc0d2dcfb3eaeb2ba6eb42deab74bcc72b3134e29669a5445e90b",
-        "ac232b5c82a2c57accdb5a76c1b128c39e68d7b7e19087c5fb1497d97db308a1"
+        "ac232b5c82a2c57accdb5a76c1b128c39e68d7b7e19087c5fb1497d97db308a1",
+        "cb1e6f78b123ddee08156e848c59922c9b913ca344aff080712da0c8c79389a7"
       ],
-      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2, 2, 2]
+      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2, 2, 2, 2]
     },
     {
       "reviewerId": "reviewer-b",
-      "queueId": "reviewer-b--campaign--a9e496fc02914aeb",
-      "campaignQueueSha256": "f69033ebe458601a9ebcf909ecf89838c5678f1ab2389f723d0cc1a845d0057f",
+      "queueId": "reviewer-b--campaign--9c7cc9e38d20da47",
+      "campaignQueueSha256": "a903b285f2885473b42220a85bc37120aa1da5350f20d91cbeba986a49c3fab7",
       "sourceQueueSha256": [
         "b1c95e362b48f8e749048b161cce35ad0e14e3495df5eacf1b1b4e9e124955d7",
         "f3bf77bd4f4f7746637b521fab8030f675c1376be0db4fe76d3b51a65ffb779a",
@@ -157,9 +174,10 @@
         "8e6119b3e976debaa718ec34d602fa8fe51078d2017084ea9fa3b04921751af1",
         "38cc4ca0d183049174fa6062665d9354a1686ab871cc204277744821a1689365",
         "e8817008ca18813893e821a423a061994d44258a5edf7726d2b5198051157ff4",
-        "4bb84f79cf86d8f019e0613399db2e3facd925d0d3ce8bcef42086342a4ed124"
+        "4bb84f79cf86d8f019e0613399db2e3facd925d0d3ce8bcef42086342a4ed124",
+        "3c29f96ce43425dfd2a0dadbc0e7620c9b80af8cbeccf69b082811e88b1b984f"
       ],
-      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2, 2, 2]
+      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2, 2, 2, 2]
     }
   ],
   "blinding": {
@@ -170,10 +188,10 @@
   },
   "workbenchValidation": {
     "browser": "headed Playwright Chromium",
-    "pagesLoaded": 15,
-    "screenshotsLoaded": 15,
-    "candidateCards": 156,
-    "selectedCardNodeId": "n183",
+    "pagesLoaded": 17,
+    "screenshotsLoaded": 17,
+    "candidateCards": 172,
+    "selectedCardNodeId": "n4211",
     "onlyFrozenCardRootOffered": true,
     "cardScopedCandidateSelection": "passed",
     "nonCandidateAncestor": "rejected-404",

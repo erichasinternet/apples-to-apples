@@ -203,13 +203,19 @@ machine and visual capture validation, immutable provenance, and two blinded
 review queues. It contributes zero gold products until both independent human
 reviews and adjudication are complete.
 
-The first multi-page G2 review campaign is recorded in
+The current multi-page G2 review campaign is recorded in
 [`g2-pilot-p00.json`](../benchmarks/review-campaigns/g2-pilot-p00.json). It
-contains nine qualification-backed live pages and 108 frozen candidate card
+contains 17 qualification-backed live pages and 172 frozen candidate card
 roots across two independent blinded queues. A headed Chromium smoke test loaded
 all source screenshots, constructed a card-scoped pointer, rejected a product-grid
 ancestor, and rejected incomplete coverage. It still contributes zero gold
 products because no independent human review or adjudication has been claimed.
+
+The final wave-02 qualification pass promoted Blue Sky Vitamin and discarded
+Professional Supplement Center, Sleekshop, Bob's Red Mill, and Bulk Foods with
+captured evidence. It also narrowed search-query relevance to visible search
+context instead of arbitrary product-card text, preventing unfiltered catalogs
+from passing because an incidental card contained the query token.
 
 ## Dataset Growth
 

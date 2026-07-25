@@ -180,6 +180,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-supplement-warehouse-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "blue-sky-vitamin",
+      "cohort": "training",
+      "pageId": "blue-sky-vitamin--protein-powder",
+      "captureTimestamp": "2026-07-25T16:12:59.326Z",
+      "observationSha256": "bb14ac1b211e1fb008f0fff30bd50dae4c5af48986e82c3e1bad04d05b72ff32",
+      "annotationScreenshotSha256": "799f80fd7f4abd5c2223c5458d07474e5b1089e44f9e6d46bf1e8eaa13747a6d",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p08.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-blue-sky-vitamin-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "blue-sky-vitamin",
+      "cohort": "training",
+      "pageId": "blue-sky-vitamin--vitamins",
+      "captureTimestamp": "2026-07-25T16:15:25.275Z",
+      "observationSha256": "c7ebc1a1ee40fe3dd56380cd91a04c85086779dbdee511f62343291bf9e92d01",
+      "annotationScreenshotSha256": "c6455e3078e84c7d8fca24870ece5e51bd6e0b521cafe6be2b51fa961ef49825",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p08.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-blue-sky-vitamin-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

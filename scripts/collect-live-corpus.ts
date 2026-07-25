@@ -21,7 +21,7 @@ import {
   selectTargets,
   slugify,
   assignCaptureViewports,
-  calculateQueryTokenCoverage,
+  calculateSearchResultQueryCoverage,
   isInterstitialOrBotChallenge,
   isSameSiteHostname,
   type CaptureViewportAssignment,
@@ -298,10 +298,50 @@ async function capturePage(
     .catch(() => "");
   const currentTitle = await page.title();
   const renderedUrl = new URL(page.url());
-  const queryTokenCoverage = calculateQueryTokenCoverage(
-    target.query,
-    `${currentTitle}\n${decodeURIComponent(renderedUrl.pathname)}\n${bodyText}`
-  );
+  const searchContext = await page.evaluate(() => {
+    const visibleText = (selector: string): string[] =>
+      [...document.querySelectorAll<HTMLElement>(selector)]
+        .filter((element) => {
+          const style = getComputedStyle(element);
+          const box = element.getBoundingClientRect();
+          return (
+            style.display !== "none" &&
+            style.visibility !== "hidden" &&
+            box.width > 0 &&
+            box.height > 0
+          );
+        })
+        .map((element) => element.innerText.trim())
+        .filter(Boolean);
+    const searchValues = [
+      ...document.querySelectorAll<HTMLInputElement>(
+        "input[type='search'], input[role='searchbox'], [role='search'] input"
+      )
+    ]
+      .filter((element) => {
+        const style = getComputedStyle(element);
+        const box = element.getBoundingClientRect();
+        return (
+          style.display !== "none" &&
+          style.visibility !== "hidden" &&
+          box.width > 0 &&
+          box.height > 0
+        );
+      })
+      .map((element) => element.value.trim())
+      .filter(Boolean);
+
+    return {
+      headings: visibleText("h1, h2, [role='heading']"),
+      statusText: visibleText("[role='status'], [aria-live]"),
+      searchValues
+    };
+  });
+  const queryTokenCoverage = calculateSearchResultQueryCoverage(target.query, {
+    title: currentTitle,
+    pathname: decodeURIComponent(renderedUrl.pathname),
+    ...searchContext
+  });
   const blockReasons: string[] = [];
   if (response && response.status() >= 400) {
     blockReasons.push(`HTTP ${response.status()}`);

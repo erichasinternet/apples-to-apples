@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "pilotId": "g2-blue-sky-vitamin-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-25T16:12:59.326Z",
+  "source": {
+    "siteId": "blue-sky-vitamin",
+    "cohort": "training",
+    "stratum": "health-supplements",
+    "anonymousContext": true,
+    "sourceManifestSha256": "0fa5dc1bd2cb18e2bcc674f2fb12ef318b7084837463e125af44a2d666ef58a2",
+    "collectorSha256": "aad59cb4fdd640c6111af6e724ed693549812572b3b6aa8da556cbe402893db2"
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T16-12-41-797Z",
+      "runManifestSha256": "76e4ce904a52a78c7d085de60f6cde9f60ab7ae23c715f9d79ac17494b49531c",
+      "pageTimeoutMs": 70000,
+      "cardScreenshotBudgetMs": 5000
+    },
+    {
+      "runId": "2026-07-25T16-15-07-958Z",
+      "runManifestSha256": "593d46bcba12c7fcbd923f4afe1d0c5906de4e848ae27701f1ee877147817be1",
+      "pageTimeoutMs": 70000,
+      "cardScreenshotBudgetMs": 5000
+    }
+  ],
+  "captures": [
+    {
+      "pageId": "blue-sky-vitamin--protein-powder",
+      "capturedAt": "2026-07-25T16:12:59.326Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 2221,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.0030555555555555557,
+      "queryTokenCoverage": 1,
+      "observationSha256": "bb14ac1b211e1fb008f0fff30bd50dae4c5af48986e82c3e1bad04d05b72ff32",
+      "annotationScreenshotSha256": "799f80fd7f4abd5c2223c5458d07474e5b1089e44f9e6d46bf1e8eaa13747a6d",
+      "provenanceAggregateSha256": "089608b5c17325726f01604088e47ea22e2d29c1c486110df500117974623eb8",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "pageId": "blue-sky-vitamin--vitamins",
+      "capturedAt": "2026-07-25T16:15:25.275Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 1080,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.01336735933892332,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c7ebc1a1ee40fe3dd56380cd91a04c85086779dbdee511f62343291bf9e92d01",
+      "annotationScreenshotSha256": "c6455e3078e84c7d8fca24870ece5e51bd6e0b521cafe6be2b51fa961ef49825",
+      "provenanceAggregateSha256": "d85bd9110262d9a9d32ec480a9ecf79cbffadd97748e14e61637e96be9f6d3e9",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "reviewQueues": {
+    "labelVisibility": "no model or peer labels",
+    "reviewerAQueueSha256": "cb1e6f78b123ddee08156e848c59922c9b913ca344aff080712da0c8c79389a7",
+    "reviewerBQueueSha256": "3c29f96ce43425dfd2a0dadbc0e7620c9b80af8cbeccf69b082811e88b1b984f"
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}
