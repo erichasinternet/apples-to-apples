@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "qualificationId": "wave-02-p03",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-02.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 50000,
+    "cardScreenshotBudgetMs": 5000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "smallFixedNonContentEmbedSuppression": true,
+    "genericInterstitialDetection": true,
+    "queryParametersCountAsQueryEvidence": false
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T09-22-46-800Z",
+      "runManifestSha256": "de0f4ed9e523a5a7abd28db41df2f4394dcdbb84b7c4b8845e88b6345ab388c6",
+      "purpose": "revival-animal qualification"
+    }
+  ],
+  "results": {
+    "revival-animal": {
+      "status": "discard",
+      "reason": "Both search URLs rendered the general storefront and category navigation rather than requested-query listing pages; neither viewport produced a reviewable product candidate."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [],
+    "assignedDomains": [],
+    "status": "discard"
+  }
+}

@@ -56,6 +56,9 @@ The following bounded result is recorded in
 Wasserstrom was discarded because one search redirected to a product detail page,
 Shoplet was discarded because both viewports returned verification challenges, and
 PureFormulas was discarded after a category landing page failed the listing gate.
+[`wave-02-p03.json`](../benchmarks/domain-qualification/wave-02-p03.json) records
+the next bounded result: Revival Animal Health was discarded because both search
+URLs rendered its general storefront rather than requested-query listings.
 
 ## Cohorts
 
