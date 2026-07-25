@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "createdAt": "2026-07-25T06:16:33Z",
+  "purpose": "Post-hoc contract audit only; not a promotable experiment.",
+  "sourceExperimentId": "g1-pointer-p02-compact-input",
+  "cohortSha256": "75ee93572c326ce80c03e0f1b7726ebdf13c3e41527b1623b44388c861456073",
+  "oraclePredictionSha256": "15a672f3f2a379e76ee5aba14eb152e6b37b1c2d5b63d1ee0e56f259bf08496b",
+  "oracleScoreSha256": "9c47ff77951fe2e6b1edf2b4b6abdb083fa9346a775fbd6e40d64f750ddc8eef",
+  "transformation": "When line seven began with exactly one allowed status followed by extra text, retain that status and remove the suffix.",
+  "liveSilver": {
+    "records": 16,
+    "grammarValidity": 0.5625,
+    "evidenceAcceptance": 0.4375,
+    "eligibleComparable": 3,
+    "acceptedCorrect": 1,
+    "acceptedIncorrect": 3,
+    "acceptedCoverage": 0.3333333333333333,
+    "acceptedPrecision": 0.25
+  },
+  "synthetic": {
+    "records": 16,
+    "grammarValidity": 1,
+    "evidenceAcceptance": 1,
+    "eligibleComparable": 8,
+    "acceptedCorrect": 8,
+    "acceptedIncorrect": 0,
+    "acceptedCoverage": 1,
+    "acceptedPrecision": 1
+  },
+  "conclusion": "Grammar-constrained decoding would repair the synthetic formatting failure but would make live behavior unsafe by accepting three negative live products. Status supervision on representative adjudicated live structures is required before constrained decoding can be evaluated."
+}

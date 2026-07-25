@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "createdAt": "2026-07-25T06:16:33Z",
+  "experimentId": "g1-pointer-p02-compact-input",
+  "parentId": "g1-pointer-p01-domain-balanced",
+  "commit": "2cf56a4961e371564e201b42edcf3c8202cf39aa",
+  "hypothesis": "Capping live observations at 32 nodes while pinning exact evidence will close the synthetic-to-live representation gap.",
+  "changedVariable": "observation-pruning",
+  "modelId": "google/t5gemma-2-1b-1b",
+  "datasetSha256": "b7538f171b0d222d21c6219f73a165ffd784295e3fd50635cd88c83ff0c9b0bf",
+  "liveEvaluationCohortSha256": "75ee93572c326ce80c03e0f1b7726ebdf13c3e41527b1623b44388c861456073",
+  "predictionSha256": "6ef379400eec05ffcd4478e86f2fb9bf48686bf97c03d5e908773cb728a60d3e",
+  "scoreSha256": "44397f6b2ca77a4a3b89d5abfe4531134c13e4bef259d7eb9475255d1ffc14f8",
+  "modal": {
+    "inferenceAppId": "ap-epjqJgBkuaiGlkqShz1KoY",
+    "gpuSeconds": 230.99,
+    "estimatedCostUsd": 0.0707
+  },
+  "representationChange": {
+    "maximumLiveNodesBefore": 98,
+    "maximumLiveNodesAfter": 32,
+    "maximumLivePromptCharactersBefore": 24374,
+    "maximumLivePromptCharactersAfter": 11018,
+    "pointerTargetsValidated": 32
+  },
+  "liveSilverDiagnostic": {
+    "records": 16,
+    "domains": 3,
+    "eligibleComparable": 3,
+    "grammarValidity": 0.1875,
+    "pointerExact": 0,
+    "fieldAccuracy": 0.125,
+    "evidenceAcceptance": 0.1875,
+    "acceptedCorrect": 0,
+    "acceptedIncorrect": 0,
+    "acceptedCoverage": 0,
+    "abstentionClassAccuracy": 0.8125,
+    "abstentionReasonAccuracy": 0
+  },
+  "status": "discard",
+  "decision": "stop-g1",
+  "diagnosis": "objective",
+  "reason": "Compaction eliminated Amazon DOM-copy outputs and improved qualitative grounding, but none of the frozen live gates improved. The dominant remaining failure is generation of the prompt phrase after STATUS and incorrect abstention classes."
+}

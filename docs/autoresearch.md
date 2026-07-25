@@ -1,5 +1,9 @@
 # Autoresearch Protocol
 
+The bounded G1 evidence-pointer formulation series is closed as a no-go. Its
+reproducible results, failure analysis, and restart conditions are recorded in
+[`g1-pointer-no-go-report.md`](./g1-pointer-no-go-report.md).
+
 The next-generation evidence-pointer objective, quantitative gates, budget, and
 retirement rules are frozen in
 [`evidence-pointer-autoresearch-goal.md`](./evidence-pointer-autoresearch-goal.md).
