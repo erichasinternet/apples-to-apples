@@ -312,13 +312,6 @@ async function capturePage(
   if (isInterstitialOrBotChallenge(bodyText)) {
     blockReasons.push("interstitial or bot challenge");
   }
-  if (unresolvedObstructionCoverage > 0.2) {
-    blockReasons.push(
-      `unresolved visible obstruction covers ${Math.round(
-        unresolvedObstructionCoverage * 100
-      )}% of viewport`
-    );
-  }
   if (queryTokenCoverage < 0.5) {
     blockReasons.push(
       `search results evidence only ${Math.round(
@@ -721,10 +714,7 @@ async function capturePage(
   const lateObstructionCoverage = await page
     .evaluate(measureVisibleObstructionCoverage)
     .catch(() => 0);
-  unresolvedObstructionCoverage = Math.max(
-    unresolvedObstructionCoverage,
-    lateObstructionCoverage
-  );
+  unresolvedObstructionCoverage = lateObstructionCoverage;
   if (
     lateObstructionCoverage > 0.2 &&
     !blockReasons.some((reason) =>

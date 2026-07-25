@@ -132,6 +132,54 @@
       "pilotReport": "benchmarks/capture-pilots/g2-lambert-vet-supply-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "cohort": "training",
+      "pageId": "natural-healthy-concepts--protein-powder",
+      "captureTimestamp": "2026-07-25T15:56:34.846Z",
+      "observationSha256": "b172c56b748e3ef9c43358d2960b6b7386e5d4f621552f7fca5e12612c02a971",
+      "annotationScreenshotSha256": "6722665d8a6bda2332e0fc53cac5950e6b26a40db56f78eed450c310f18aa91d",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p07.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-natural-healthy-concepts-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "cohort": "training",
+      "pageId": "natural-healthy-concepts--vitamins",
+      "captureTimestamp": "2026-07-25T15:56:56.654Z",
+      "observationSha256": "873287791f3ed3f0e770342d03c5eb68d2e16e3878b14f82115e5c1e2a4c5429",
+      "annotationScreenshotSha256": "3b421122d2bd34325f31506c53eef3f26da46a821ae04fe64669899c89172183",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p07.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-natural-healthy-concepts-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "cohort": "training",
+      "pageId": "supplement-warehouse--protein-powder",
+      "captureTimestamp": "2026-07-25T15:54:44.418Z",
+      "observationSha256": "e204a551a748cbedf430b837864a695d3e334e9062439724cd1e2b43862244d0",
+      "annotationScreenshotSha256": "75e60980e83f1c7db731e937bb8eb5fa68f021a5e011c0213f4e853e9aacb703",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p07.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-supplement-warehouse-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "cohort": "training",
+      "pageId": "supplement-warehouse--vitamins",
+      "captureTimestamp": "2026-07-25T15:54:59.181Z",
+      "observationSha256": "e74b313a99774512c0dda2b9ad1beeb0b4d01707d5a0bc178510c8600390afa8",
+      "annotationScreenshotSha256": "443fec5709f8bdd2cdcc5174ac241d50737ace5ea53d9aaaee47fb4577646c6d",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p07.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-supplement-warehouse-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

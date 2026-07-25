@@ -36,6 +36,18 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-02-p06.json",
       "promotedAt": "2026-07-25T15:18:00.000Z"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p07.json",
+      "promotedAt": "2026-07-25T15:58:00.000Z"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p07.json",
+      "promotedAt": "2026-07-25T15:58:00.000Z"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "campaignId": "g2-pilot-p00",
-  "createdAt": "2026-07-25T15:18:00Z",
+  "createdAt": "2026-07-25T15:58:00Z",
   "cohort": "training",
   "decision": "workbench-pass-independent-human-reviews-pending",
   "pages": [
@@ -86,19 +86,51 @@
       "annotationScreenshotSha256": "a90d129fa703d46291ffcb04a2d7f9442e748611891ee529621639b807ec6002"
     },
     {
+      "siteId": "natural-healthy-concepts",
+      "pageId": "natural-healthy-concepts--protein-powder",
+      "captureTimestamp": "2026-07-25T15:56:34.846Z",
+      "candidateCardCount": 8,
+      "observationSha256": "b172c56b748e3ef9c43358d2960b6b7386e5d4f621552f7fca5e12612c02a971",
+      "annotationScreenshotSha256": "6722665d8a6bda2332e0fc53cac5950e6b26a40db56f78eed450c310f18aa91d"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "pageId": "natural-healthy-concepts--vitamins",
+      "captureTimestamp": "2026-07-25T15:56:56.654Z",
+      "candidateCardCount": 8,
+      "observationSha256": "873287791f3ed3f0e770342d03c5eb68d2e16e3878b14f82115e5c1e2a4c5429",
+      "annotationScreenshotSha256": "3b421122d2bd34325f31506c53eef3f26da46a821ae04fe64669899c89172183"
+    },
+    {
       "siteId": "restaurant-supply",
       "pageId": "restaurant-supply--flour",
       "captureTimestamp": "2026-07-25T07:02:32.435Z",
       "candidateCardCount": 20,
       "observationSha256": "364b4a05595ce2cf1413a613a14b1b48dd17d8dc397877798ebadf7690cb3789",
       "annotationScreenshotSha256": "ca300f32211e9aed82a0faa81289cfc0f53f109bea40606d162b0a649aa0c242"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "pageId": "supplement-warehouse--protein-powder",
+      "captureTimestamp": "2026-07-25T15:54:44.418Z",
+      "candidateCardCount": 8,
+      "observationSha256": "e204a551a748cbedf430b837864a695d3e334e9062439724cd1e2b43862244d0",
+      "annotationScreenshotSha256": "75e60980e83f1c7db731e937bb8eb5fa68f021a5e011c0213f4e853e9aacb703"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "pageId": "supplement-warehouse--vitamins",
+      "captureTimestamp": "2026-07-25T15:54:59.181Z",
+      "candidateCardCount": 8,
+      "observationSha256": "e74b313a99774512c0dda2b9ad1beeb0b4d01707d5a0bc178510c8600390afa8",
+      "annotationScreenshotSha256": "443fec5709f8bdd2cdcc5174ac241d50737ace5ea53d9aaaee47fb4577646c6d"
     }
   ],
   "queues": [
     {
       "reviewerId": "reviewer-a",
-      "queueId": "reviewer-a--campaign--7a0560eec03af240",
-      "campaignQueueSha256": "097af0b6a4774c096cd8a89e67a76edf59640ff72806367ed07a21704a3c12af",
+      "queueId": "reviewer-a--campaign--9d27a1e75b89b2ea",
+      "campaignQueueSha256": "243554682b4294c5c66399447ec800de5fedcf24bcbe8c18125861d5b0e674e7",
       "sourceQueueSha256": [
         "c7c5caec03d94ce03dbcdc4d77ca34f5aeb86a328574424e02e2c738af14dc6b",
         "468925a9cc330c8698e57b5f53bfa2c0d8fda3ec0b874489a3a8cc19be1fc8a6",
@@ -106,14 +138,16 @@
         "52a47a8451467d02d06d64107680bd8c1068186c71ddbe321c55b2d3ba27fe1f",
         "5260bb5052d7cb2c01467865e4ba2f1f2c75e7190a4b01ed4b9538735b9063f2",
         "347d97cf373d3adef077065d269cdfa0338f212eb24ab5303549d5b90539433f",
-        "116869dd0cc60c624b6805f869a92d0e9e160963fa898f2f460d16ade5fa308a"
+        "116869dd0cc60c624b6805f869a92d0e9e160963fa898f2f460d16ade5fa308a",
+        "e9b947117d0bc0d2dcfb3eaeb2ba6eb42deab74bcc72b3134e29669a5445e90b",
+        "ac232b5c82a2c57accdb5a76c1b128c39e68d7b7e19087c5fb1497d97db308a1"
       ],
-      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2]
+      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2, 2, 2]
     },
     {
       "reviewerId": "reviewer-b",
-      "queueId": "reviewer-b--campaign--5a16f431ef7de834",
-      "campaignQueueSha256": "4c654932d79ca961dea351ff454b227cbe2246338f584c1ef40914a916ce15e0",
+      "queueId": "reviewer-b--campaign--a9e496fc02914aeb",
+      "campaignQueueSha256": "f69033ebe458601a9ebcf909ecf89838c5678f1ab2389f723d0cc1a845d0057f",
       "sourceQueueSha256": [
         "b1c95e362b48f8e749048b161cce35ad0e14e3495df5eacf1b1b4e9e124955d7",
         "f3bf77bd4f4f7746637b521fab8030f675c1376be0db4fe76d3b51a65ffb779a",
@@ -121,9 +155,11 @@
         "3265dd9222efe744e0f65393b8ab2c91582e64c89642483a2410468d09eee0da",
         "9305a5656a8fb22359bc9a624176943201d4cc75f51cf3e854d3f59217fab1e5",
         "8e6119b3e976debaa718ec34d602fa8fe51078d2017084ea9fa3b04921751af1",
-        "38cc4ca0d183049174fa6062665d9354a1686ab871cc204277744821a1689365"
+        "38cc4ca0d183049174fa6062665d9354a1686ab871cc204277744821a1689365",
+        "e8817008ca18813893e821a423a061994d44258a5edf7726d2b5198051157ff4",
+        "4bb84f79cf86d8f019e0613399db2e3facd925d0d3ce8bcef42086342a4ed124"
       ],
-      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2]
+      "sourceQueuePageCounts": [1, 1, 1, 2, 2, 2, 2, 2, 2]
     }
   ],
   "blinding": {
@@ -134,10 +170,10 @@
   },
   "workbenchValidation": {
     "browser": "headed Playwright Chromium",
-    "pagesLoaded": 11,
-    "screenshotsLoaded": 11,
-    "candidateCards": 124,
-    "selectedCardNodeId": "n3079",
+    "pagesLoaded": 15,
+    "screenshotsLoaded": 15,
+    "candidateCards": 156,
+    "selectedCardNodeId": "n183",
     "onlyFrozenCardRootOffered": true,
     "cardScopedCandidateSelection": "passed",
     "nonCandidateAncestor": "rejected-404",

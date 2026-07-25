@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "pilotId": "g2-natural-healthy-concepts-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-25T15:56:34.846Z",
+  "source": {
+    "siteId": "natural-healthy-concepts",
+    "cohort": "training",
+    "stratum": "health-supplements",
+    "anonymousContext": true,
+    "sourceManifestSha256": "0fa5dc1bd2cb18e2bcc674f2fb12ef318b7084837463e125af44a2d666ef58a2",
+    "collectorSha256": "9d4e9839ab2602a5800a13250d0414cea643fd73f08936580864e39e2c5a6616"
+  },
+  "run": {
+    "runId": "2026-07-25T15-56-14-516Z",
+    "runManifestSha256": "2e9ac0d8a480457400db0e6f6c5446097e275a2b67e784aa1444be7e9065aca9",
+    "pageTimeoutMs": 50000,
+    "cardScreenshotBudgetMs": 5000,
+    "capturedPages": 2,
+    "blockedPages": 0,
+    "failedPages": 0
+  },
+  "captures": [
+    {
+      "pageId": "natural-healthy-concepts--protein-powder",
+      "capturedAt": "2026-07-25T15:56:34.846Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 510,
+      "observationTruncated": false,
+      "dismissedObstructions": 9,
+      "unresolvedObstructionCoverage": 0.013610402235994653,
+      "queryTokenCoverage": 1,
+      "observationSha256": "b172c56b748e3ef9c43358d2960b6b7386e5d4f621552f7fca5e12612c02a971",
+      "annotationScreenshotSha256": "6722665d8a6bda2332e0fc53cac5950e6b26a40db56f78eed450c310f18aa91d",
+      "provenanceAggregateSha256": "b92ebb6b28b4bc35050d7d7e9f143b561a8fe70a0763974e7ed7c00f5a90e0b5",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "pageId": "natural-healthy-concepts--vitamins",
+      "capturedAt": "2026-07-25T15:56:56.654Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 908,
+      "observationTruncated": false,
+      "dismissedObstructions": 9,
+      "unresolvedObstructionCoverage": 0.004111111111111111,
+      "queryTokenCoverage": 1,
+      "observationSha256": "873287791f3ed3f0e770342d03c5eb68d2e16e3878b14f82115e5c1e2a4c5429",
+      "annotationScreenshotSha256": "3b421122d2bd34325f31506c53eef3f26da46a821ae04fe64669899c89172183",
+      "provenanceAggregateSha256": "f4a337d841d719698d71f2dc2ccea8f807cc2b34cf81837b0bebdf08e2e01797",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "reviewQueues": {
+    "labelVisibility": "no model or peer labels",
+    "reviewerAQueueSha256": "ac232b5c82a2c57accdb5a76c1b128c39e68d7b7e19087c5fb1497d97db308a1",
+    "reviewerBQueueSha256": "4bb84f79cf86d8f019e0613399db2e3facd925d0d3ce8bcef42086342a4ed124"
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

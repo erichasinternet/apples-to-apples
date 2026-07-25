@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "qualificationId": "wave-02-p07",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-02.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 50000,
+    "cardScreenshotBudgetMs": 5000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "smallFixedNonContentEmbedSuppression": true,
+    "genericRefusalActionHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "genericInterstitialDetection": true,
+    "queryParametersCountAsQueryEvidence": false
+  },
+  "runs": [
+    {
+      "runId": "2026-07-25T15-50-10-685Z",
+      "runManifestSha256": "9f3dfbd44eff5f9b904c8974de451a27d676f2ecad9900f145791d503c6e04dd",
+      "purpose": "natural-healthy-concepts diagnostic capture before refusal handling"
+    },
+    {
+      "runId": "2026-07-25T15-50-59-959Z",
+      "runManifestSha256": "895edf6c598f0962439912ae53c5bac6df8a7e29404d9ff0da0117b8316bfdac",
+      "purpose": "supplement-warehouse diagnostic capture before refusal handling"
+    },
+    {
+      "runId": "2026-07-25T15-52-50-122Z",
+      "runManifestSha256": "6dbdb03c3dcad51881d17253278fa5cc335b3d57573aa66b27e0536c52a0f822",
+      "purpose": "natural-healthy-concepts diagnostic capture before final-state obstruction correction"
+    },
+    {
+      "runId": "2026-07-25T15-54-32-914Z",
+      "runManifestSha256": "5dd2b5b1f3002cd08471df3cc3d7cfff4eff8c6a8601f1b642c33752fe90d126",
+      "purpose": "supplement-warehouse final qualification"
+    },
+    {
+      "runId": "2026-07-25T15-56-14-516Z",
+      "runManifestSha256": "2e9ac0d8a480457400db0e6f6c5446097e275a2b67e784aa1444be7e9065aca9",
+      "purpose": "natural-healthy-concepts final qualification"
+    }
+  ],
+  "results": {
+    "natural-healthy-concepts": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "natural-healthy-concepts--protein-powder",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 510,
+          "observationTruncated": false,
+          "dismissedObstructions": 9,
+          "unresolvedObstructionCoverage": 0.013610402235994653,
+          "queryTokenCoverage": 1,
+          "observationSha256": "fe3aca725b544eba164558b8f9e5c70b8280cd21735fb8e3d5d000fd057f7215",
+          "annotationScreenshotSha256": "6722665d8a6bda2332e0fc53cac5950e6b26a40db56f78eed450c310f18aa91d",
+          "provenanceAggregateSha256": "b92ebb6b28b4bc35050d7d7e9f143b561a8fe70a0763974e7ed7c00f5a90e0b5",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "natural-healthy-concepts--vitamins",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 908,
+          "observationTruncated": false,
+          "dismissedObstructions": 9,
+          "unresolvedObstructionCoverage": 0.004111111111111111,
+          "queryTokenCoverage": 1,
+          "observationSha256": "24d0a585fa576ae1ce81291c0cfb2770ad51a2af2340b7b87735eeaec90a9264",
+          "annotationScreenshotSha256": "3b421122d2bd34325f31506c53eef3f26da46a821ae04fe64669899c89172183",
+          "provenanceAggregateSha256": "f4a337d841d719698d71f2dc2ccea8f807cc2b34cf81837b0bebdf08e2e01797",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "supplement-warehouse": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "supplement-warehouse--protein-powder",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 390,
+          "observationTruncated": false,
+          "dismissedObstructions": 12,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "d6a27aae6fd2681d03735a74459c0fb77a4fd83ca183c70a96fec59c4c098f35",
+          "annotationScreenshotSha256": "75e60980e83f1c7db731e937bb8eb5fa68f021a5e011c0213f4e853e9aacb703",
+          "provenanceAggregateSha256": "ef01d731f114bef2ff0087dac08ae229d1cb8c542f58634f77dfdd8db3e8af2c",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "supplement-warehouse--vitamins",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 354,
+          "observationTruncated": false,
+          "dismissedObstructions": 14,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "ecc70f7d7353b3c99f2bd6a0651e2d398ccf71792a22c7f5edf51458ac07136a",
+          "annotationScreenshotSha256": "443fec5709f8bdd2cdcc5174ac241d50737ace5ea53d9aaaee47fb4577646c6d",
+          "provenanceAggregateSha256": "94968bbbd862b03a755ec2eb4c71c418d41d7c30d371159b4b6689c359e97119",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "natural-healthy-concepts",
+      "supplement-warehouse"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "natural-healthy-concepts",
+        "cohort": "training"
+      },
+      {
+        "siteId": "supplement-warehouse",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

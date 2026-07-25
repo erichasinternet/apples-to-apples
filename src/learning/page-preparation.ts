@@ -12,9 +12,11 @@ export function dismissVisibleObstruction(): boolean {
     "no, thanks",
     "no thank you",
     "no, thank you",
+    "no, i'll pay full price",
     "not now",
     "maybe later",
     "continue without",
+    "do not sell or share",
     "reject all",
     "decline",
     "got it",
@@ -32,9 +34,11 @@ export function dismissVisibleObstruction(): boolean {
     "no, thanks",
     "no thank you",
     "no, thank you",
+    "no, i'll pay full price",
     "not now",
     "maybe later",
     "continue without",
+    "do not sell or share",
     "reject all",
     "decline"
   ]);

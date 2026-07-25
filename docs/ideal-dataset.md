@@ -69,6 +69,10 @@ and non-query storefront results, respectively.
 LionsDeal returning no-result pages and Lambert Vet Supply passing the mass and
 count gate after the generic obstruction detector learned to ignore an inert,
 transparent, pointerless notification container.
+[`wave-02-p07.json`](../benchmarks/domain-qualification/wave-02-p07.json) records
+Natural Healthy Concepts and Supplement Warehouse passing the mass and count gate
+after generic refusal-action handling and final pre-screenshot obstruction
+measurement removed stale overlay failures.
 
 ## Cohorts
 

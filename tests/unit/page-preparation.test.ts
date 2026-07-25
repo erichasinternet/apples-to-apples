@@ -37,6 +37,31 @@ describe("page preparation", () => {
     expect(accepted).not.toHaveBeenCalled();
   });
 
+  it.each([
+    "Do not sell or share",
+    "No, I'll pay full price"
+  ])("recognizes a generic refusal action: %s", (label) => {
+    document.body.innerHTML = `
+      <section role="dialog" style="position: fixed">
+        <button id="accept">Accept</button>
+        <button id="refuse">${label}</button>
+      </section>
+    `;
+    mockVisibleBounds();
+    const accepted = vi.fn();
+    const refused = vi.fn();
+    document
+      .querySelector<HTMLButtonElement>("#accept")!
+      .addEventListener("click", accepted);
+    document
+      .querySelector<HTMLButtonElement>("#refuse")!
+      .addEventListener("click", refused);
+
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(refused).toHaveBeenCalledOnce();
+    expect(accepted).not.toHaveBeenCalled();
+  });
+
   it("does not click similar controls in ordinary page content", () => {
     document.body.innerHTML = `
       <main>

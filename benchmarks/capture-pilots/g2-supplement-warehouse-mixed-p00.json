@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "pilotId": "g2-supplement-warehouse-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-25T15:54:44.418Z",
+  "source": {
+    "siteId": "supplement-warehouse",
+    "cohort": "training",
+    "stratum": "health-supplements",
+    "anonymousContext": true,
+    "sourceManifestSha256": "0fa5dc1bd2cb18e2bcc674f2fb12ef318b7084837463e125af44a2d666ef58a2",
+    "collectorSha256": "bfb3f72e3f40545fcd67e582d6573448dec54637c7e0f1d69780d9a8bfcb3659"
+  },
+  "run": {
+    "runId": "2026-07-25T15-54-32-914Z",
+    "runManifestSha256": "5dd2b5b1f3002cd08471df3cc3d7cfff4eff8c6a8601f1b642c33752fe90d126",
+    "pageTimeoutMs": 50000,
+    "cardScreenshotBudgetMs": 5000,
+    "capturedPages": 2,
+    "blockedPages": 0,
+    "failedPages": 0
+  },
+  "captures": [
+    {
+      "pageId": "supplement-warehouse--protein-powder",
+      "capturedAt": "2026-07-25T15:54:44.418Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 390,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e204a551a748cbedf430b837864a695d3e334e9062439724cd1e2b43862244d0",
+      "annotationScreenshotSha256": "75e60980e83f1c7db731e937bb8eb5fa68f021a5e011c0213f4e853e9aacb703",
+      "provenanceAggregateSha256": "ef01d731f114bef2ff0087dac08ae229d1cb8c542f58634f77dfdd8db3e8af2c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "pageId": "supplement-warehouse--vitamins",
+      "capturedAt": "2026-07-25T15:54:59.181Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 354,
+      "observationTruncated": false,
+      "dismissedObstructions": 14,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e74b313a99774512c0dda2b9ad1beeb0b4d01707d5a0bc178510c8600390afa8",
+      "annotationScreenshotSha256": "443fec5709f8bdd2cdcc5174ac241d50737ace5ea53d9aaaee47fb4577646c6d",
+      "provenanceAggregateSha256": "94968bbbd862b03a755ec2eb4c71c418d41d7c30d371159b4b6689c359e97119",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "reviewQueues": {
+    "labelVisibility": "no model or peer labels",
+    "reviewerAQueueSha256": "e9b947117d0bc0d2dcfb3eaeb2ba6eb42deab74bcc72b3134e29669a5445e90b",
+    "reviewerBQueueSha256": "e8817008ca18813893e821a423a061994d44258a5edf7726d2b5198051157ff4"
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}
