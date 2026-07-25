@@ -169,6 +169,14 @@ machine and visual capture validation, immutable provenance, and two blinded
 review queues. It contributes zero gold products until both independent human
 reviews and adjudication are complete.
 
+The first multi-page G2 review campaign is recorded in
+[`g2-pilot-p00.json`](../benchmarks/review-campaigns/g2-pilot-p00.json). It
+contains three qualification-backed live pages and 60 frozen candidate card
+roots across two independent blinded queues. A headed Chromium smoke test loaded
+all source screenshots, constructed a card-scoped pointer, rejected a product-grid
+ancestor, and rejected incomplete coverage. It still contributes zero gold
+products because no independent human review or adjudication has been claimed.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,
@@ -212,3 +220,11 @@ as pointer-ready examples. It also fails on domain or page concentration,
 sub-threshold independent-review agreement, exact cross-cohort observation
 duplicates, and normalized-title product overlap across cohorts. DOM-template and
 screenshot-perceptual duplicate checks remain required before a release export.
+
+The domain split registry is an assignment and leakage-control frame, not evidence
+that a domain is usable. Readiness counts a page only when its domain has an
+explicit promotion in `benchmarks/domain-qualification/promotions.json` and its
+exact observation and annotation-screenshot hashes appear in
+`benchmarks/capture-pilots/eligible-captures.json`. Legacy opened pages, captures
+from unqualified domains, blocked pages, and recaptures with different hashes are
+reported separately and do not advance any cohort.

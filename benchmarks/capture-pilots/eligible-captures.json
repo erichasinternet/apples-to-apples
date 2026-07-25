@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "captures": [
+    {
+      "siteId": "restaurant-supply",
+      "cohort": "training",
+      "pageId": "restaurant-supply--flour",
+      "observationSha256": "364b4a05595ce2cf1413a613a14b1b48dd17d8dc397877798ebadf7690cb3789",
+      "annotationScreenshotSha256": "ca300f32211e9aed82a0faa81289cfc0f53f109bea40606d162b0a649aa0c242",
+      "qualificationReport": "benchmarks/domain-qualification/wave-01-p02.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-restaurant-supply-narrow-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "katom",
+      "cohort": "training",
+      "pageId": "katom--trash-bags",
+      "observationSha256": "54016464a1f0085ab01f47be9687ea6a6ef9347f9b05bd67d25f994bc46e0eb8",
+      "annotationScreenshotSha256": "527a8ef76b0fc5ef5eeb07e3a5778c6814f5efae6c127c47b298bfe2079f9ce1",
+      "qualificationReport": "benchmarks/domain-qualification/wave-01-p03.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-katom-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "katom",
+      "cohort": "training",
+      "pageId": "katom--flour",
+      "observationSha256": "bfe909695d1ef17e8d73ad6619913166617e066349a93d05be2f8c540d735c08",
+      "annotationScreenshotSha256": "6ee0c8c6d82f27990d97c85d3e441f37b1451df010aa3f533b2b9fdb7eae08e1",
+      "qualificationReport": "benchmarks/domain-qualification/wave-01-p03.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-katom-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ]
+}

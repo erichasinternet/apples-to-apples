@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "campaignId": "g2-pilot-p00",
+  "createdAt": "2026-07-25T08:07:39Z",
+  "cohort": "training",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "katom",
+      "pageId": "katom--flour",
+      "candidateCardCount": 20,
+      "observationSha256": "bfe909695d1ef17e8d73ad6619913166617e066349a93d05be2f8c540d735c08",
+      "annotationScreenshotSha256": "6ee0c8c6d82f27990d97c85d3e441f37b1451df010aa3f533b2b9fdb7eae08e1"
+    },
+    {
+      "siteId": "katom",
+      "pageId": "katom--trash-bags",
+      "candidateCardCount": 20,
+      "observationSha256": "54016464a1f0085ab01f47be9687ea6a6ef9347f9b05bd67d25f994bc46e0eb8",
+      "annotationScreenshotSha256": "527a8ef76b0fc5ef5eeb07e3a5778c6814f5efae6c127c47b298bfe2079f9ce1"
+    },
+    {
+      "siteId": "restaurant-supply",
+      "pageId": "restaurant-supply--flour",
+      "candidateCardCount": 20,
+      "observationSha256": "364b4a05595ce2cf1413a613a14b1b48dd17d8dc397877798ebadf7690cb3789",
+      "annotationScreenshotSha256": "ca300f32211e9aed82a0faa81289cfc0f53f109bea40606d162b0a649aa0c242"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--ebefc7b423f9b691",
+      "campaignQueueSha256": "0c55521a57866c2c6380d8e9628cbfd73479657f1e4ae9de93e7efd9b675f5cd",
+      "sourceQueueSha256": [
+        "c7c5caec03d94ce03dbcdc4d77ca34f5aeb86a328574424e02e2c738af14dc6b",
+        "468925a9cc330c8698e57b5f53bfa2c0d8fda3ec0b874489a3a8cc19be1fc8a6",
+        "f8375d81437cee2f275d29c33be13a1bb332f97012685bdf1bed6c577778460c"
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--8c09482ff213f188",
+      "campaignQueueSha256": "4cff8f6d73e7ac5b13eecba3b858ff19a8825f28789b5c31873a6703f40da3bd",
+      "sourceQueueSha256": [
+        "b1c95e362b48f8e749048b161cce35ad0e14e3495df5eacf1b1b4e9e124955d7",
+        "f3bf77bd4f4f7746637b521fab8030f675c1376be0db4fe76d3b51a65ffb779a",
+        "0cbbba31756a519caa72ecff09f97649360ed1a690b153823ebaf923477a4964"
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 3,
+    "screenshotsLoaded": 3,
+    "candidateCards": 60,
+    "selectedCardNodeId": "n69",
+    "onlyFrozenCardRootOffered": true,
+    "cardScopedCandidateSelection": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

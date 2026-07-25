@@ -43,26 +43,13 @@
   },
   "reviewQueues": {
     "labelVisibility": "no model or peer labels",
-    "reviewerAQueueSha256": "9c025b59fc6015a86038512a0fc4aaacd0b7b147769aae520289cda90d01c538",
-    "reviewerBQueueSha256": "5897d64cb558e29b997918fd55d4994fcf3c1e8934f954b1a76ab41934573351"
+    "reviewerAQueueSha256": "c7c5caec03d94ce03dbcdc4d77ca34f5aeb86a328574424e02e2c738af14dc6b",
+    "reviewerBQueueSha256": "b1c95e362b48f8e749048b161cce35ad0e14e3495df5eacf1b1b4e9e124955d7"
   },
   "workbenchValidation": {
-    "browser": "Playwright Chromium",
-    "viewport": {
-      "width": 1440,
-      "height": 900
-    },
-    "cardNodeId": "n39",
-    "containingNodeChoices": 12,
-    "titleNodeChoices": 7,
-    "currentPriceCandidates": 4,
-    "pointerConstruction": "passed",
-    "visualLayout": "passed",
-    "consoleErrors": 0,
-    "immutableSourceTamper": "rejected-422",
-    "temporaryValidSubmission": "accepted-200",
-    "duplicateSubmission": "rejected-409",
-    "goldReviewSubmitted": false
+    "status": "superseded",
+    "campaignManifest": "benchmarks/review-campaigns/g2-pilot-p00.json",
+    "reason": "Review queues were regenerated with frozen candidate card roots."
   },
   "eligibility": {
     "pointerReady": false,

@@ -3,6 +3,14 @@ import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import type { CorpusAnnotation } from "./live-corpus-lib";
 import {
+  validateCaptureProvenance,
+  type CaptureProvenance
+} from "./capture-provenance-lib";
+import {
+  validateCaptureEligibility,
+  type EligibleCaptureEntry
+} from "./capture-eligibility-lib";
+import {
   compareCohortToTarget,
   compareDevelopmentChallenges,
   compareDistributionToTargets,
@@ -21,6 +29,12 @@ import {
 interface PageMetadata {
   pageId: string;
   capturedAt: string;
+  blocked: boolean;
+  candidateCount: number;
+  observationTruncated: boolean;
+  unresolvedObstructionCoverage: number;
+  queryTokenCoverage?: number;
+  annotationScreenshotCaptured: boolean;
   viewport: {
     width: number;
   };
@@ -31,11 +45,28 @@ interface PageMetadata {
     stratum: string;
   };
 }
+interface PromotionManifest {
+  version: 1;
+  promotions: Array<{
+    siteId: string;
+    cohort: IdealCohortName;
+  }>;
+}
+interface EligibleCaptureManifest {
+  version: 1;
+  captures: EligibleCaptureEntry[];
+}
 
 const captureRoot = path.resolve(process.argv[2] ?? "benchmark-data/live");
-const [targets, domainSplits] = await Promise.all([
+const [targets, domainSplits, promotions, eligibleCaptures] = await Promise.all([
   readJson<IdealDatasetTargets>(path.resolve("benchmarks/ideal-dataset-targets.json")),
-  readJson<IdealDomainSplits>(path.resolve("benchmarks/ideal-domain-splits.json"))
+  readJson<IdealDomainSplits>(path.resolve("benchmarks/ideal-domain-splits.json")),
+  readJson<PromotionManifest>(
+    path.resolve("benchmarks/domain-qualification/promotions.json")
+  ),
+  readJson<EligibleCaptureManifest>(
+    path.resolve("benchmarks/capture-pilots/eligible-captures.json")
+  )
 ]);
 const targetErrors = validateIdealDatasetTargets(targets);
 if (targetErrors.length > 0) {
@@ -52,8 +83,23 @@ const actual = {
   selection: emptyIdealCohortActual(),
   final: emptyIdealCohortActual()
 };
+const qualifiedCohortByDomain = new Map(
+  promotions.promotions.map((promotion) => [
+    promotion.siteId,
+    promotion.cohort
+  ])
+);
+const eligibleByObservationHash = new Map(
+  eligibleCaptures.captures.map((capture) => [
+    capture.observationSha256,
+    capture
+  ])
+);
 let retiredOpenedPages = 0;
+let unqualifiedOpenedPages = 0;
 let unreadableCaptures = 0;
+const ineligibleCaptures: Array<{ pageId: string; reason: string }> = [];
+let matchedEligibleCaptures = 0;
 const observationSources = new Map<
   string,
   Array<{ cohort: IdealCohortName; pageId: string }>
@@ -82,11 +128,77 @@ for (const annotationFile of annotationFiles) {
     retiredOpenedPages += 1;
     continue;
   }
+  if (qualifiedCohortByDomain.get(page.target.siteId) !== cohort) {
+    unqualifiedOpenedPages += 1;
+    continue;
+  }
+  let provenance: CaptureProvenance;
+  try {
+    provenance = await readJson<CaptureProvenance>(
+      path.join(pageDirectory, "provenance.json")
+    );
+  } catch {
+    ineligibleCaptures.push({
+      pageId: page.pageId,
+      reason: "capture provenance is unreadable"
+    });
+    continue;
+  }
+  const provenanceErrors = await validateCaptureProvenance(
+    pageDirectory,
+    provenance
+  );
+  if (provenanceErrors.length > 0) {
+    ineligibleCaptures.push({
+      pageId: page.pageId,
+      reason: `capture provenance failed: ${provenanceErrors.join("; ")}`
+    });
+    continue;
+  }
+  const observationAsset = provenance.assets.find(
+    (asset) => asset.path === "observation.json"
+  );
+  const screenshotAsset = provenance.assets.find(
+    (asset) => asset.path === "annotation.png"
+  );
+  const eligible = observationAsset
+    ? eligibleByObservationHash.get(observationAsset.sha256)
+    : undefined;
+  const eligibilityErrors = validateCaptureEligibility(
+    {
+      pageId: page.pageId,
+      siteId: page.target.siteId,
+      cohort,
+      blocked: page.blocked,
+      candidateCount: page.candidateCount,
+      observationTruncated: page.observationTruncated,
+      unresolvedObstructionCoverage: page.unresolvedObstructionCoverage,
+      ...(page.queryTokenCoverage === undefined
+        ? {}
+        : { queryTokenCoverage: page.queryTokenCoverage }),
+      annotationScreenshotCaptured: page.annotationScreenshotCaptured,
+      ...(observationAsset
+        ? { observationSha256: observationAsset.sha256 }
+        : {}),
+      ...(screenshotAsset
+        ? { annotationScreenshotSha256: screenshotAsset.sha256 }
+        : {})
+    },
+    eligible
+  );
+  if (eligibilityErrors.length > 0) {
+    ineligibleCaptures.push({
+      pageId: page.pageId,
+      reason: eligibilityErrors.join("; ")
+    });
+    continue;
+  }
+  matchedEligibleCaptures += 1;
   const accumulator = actual[cohort];
-  if (page.observationSha256) {
-    const sources = observationSources.get(page.observationSha256) ?? [];
+  if (observationAsset) {
+    const sources = observationSources.get(observationAsset.sha256) ?? [];
     sources.push({ cohort, pageId: page.pageId });
-    observationSources.set(page.observationSha256, sources);
+    observationSources.set(observationAsset.sha256, sources);
   }
   accumulator.domains.add(page.target.siteId);
   accumulator.strata.add(page.target.stratum);
@@ -182,9 +294,23 @@ const report = {
     final: domainSplits.final.length,
     retired: domainSplits.retired.length
   },
+  qualifiedDomainRegistry: Object.fromEntries(
+    (["training", "validation", "selection", "final"] as const).map(
+      (cohort) => [
+        cohort,
+        promotions.promotions.filter(
+          (promotion) => promotion.cohort === cohort
+        ).length
+      ]
+    )
+  ),
+  eligibleCaptureRegistryEntries: eligibleCaptures.captures.length,
+  matchedEligibleCaptures,
   captureRoot,
   annotationFiles: annotationFiles.length,
   retiredOpenedPages,
+  unqualifiedOpenedPages,
+  ineligibleCaptures,
   unreadableCaptures,
   contamination: {
     exactObservationDuplicates,

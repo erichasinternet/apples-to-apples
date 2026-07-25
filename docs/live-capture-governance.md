@@ -21,6 +21,10 @@ are separately versioned append-only labels.
 
 Capture validation recomputes every asset and aggregate hash. Any source mutation,
 missing asset, privacy finding, or provenance mismatch quarantines the page.
+Qualification and visual review do not admit every later recapture automatically.
+Each countable source must also appear by exact observation and annotation
+screenshot hash in `benchmarks/capture-pilots/eligible-captures.json`; hash drift
+requires a new machine and visual review.
 
 Raw HTML and screenshots are not committed or redistributed. A public release
 requires a separate rights and privacy review and should prefer derived

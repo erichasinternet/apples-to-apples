@@ -19,9 +19,14 @@ interface CaptureRun {
 interface CapturePage {
   pageId: string;
   capturedAt: string;
+  candidateCount: number;
   target: {
     hostname: string;
   };
+}
+
+interface CapturedCandidate {
+  nodeId: string;
 }
 
 const options = parseOptions(process.argv.slice(2));
@@ -52,6 +57,29 @@ for (const entry of run.results.filter((result) => result.status === "captured")
   if (!observationAsset || !screenshotAsset) {
     throw new Error(`${entry.pageId}: review source assets are unavailable`);
   }
+  const candidateAssets = provenance.assets
+    .filter(
+      (asset) =>
+        asset.path.startsWith("cards/") && asset.path.endsWith(".json")
+    )
+    .sort((left, right) => left.path.localeCompare(right.path));
+  const candidates = await Promise.all(
+    candidateAssets.map((asset) =>
+      readJson<CapturedCandidate>(path.join(pageDirectory, asset.path))
+    )
+  );
+  const candidateCardNodeIds = candidates.map((candidate) => candidate.nodeId);
+  if (
+    candidateCardNodeIds.length !== page.candidateCount ||
+    new Set(candidateCardNodeIds).size !== candidateCardNodeIds.length ||
+    candidateCardNodeIds.some(
+      (nodeId) => !observation.nodes.some((node) => node.id === nodeId)
+    )
+  ) {
+    throw new Error(
+      `${entry.pageId}: captured candidate roots do not match page metadata`
+    );
+  }
   items.push({
     pageId: entry.pageId,
     source: {
@@ -70,6 +98,7 @@ for (const entry of run.results.filter((result) => result.status === "captured")
       path.join(pageDirectory, "annotation.png")
     ),
     rootNodeId: observation.rootNodeId,
+    candidateCardNodeIds,
     reviewTemplate: {
       version: 1,
       reviewId: `${options.reviewerId}--${run.runId}--${entry.pageId}`,

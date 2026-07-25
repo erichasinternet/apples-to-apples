@@ -78,10 +78,10 @@
   ],
   "reviewQueues": {
     "labelVisibility": "no model or peer labels",
-    "trashBagsReviewerAQueueSha256": "73441a74056c82b403f2ab6ef5b5470e2e7e0d037987e57cb590a14dbb6334cd",
-    "trashBagsReviewerBQueueSha256": "312412469b8b6a74b34f2ca235782d67fbd3d70838ad3bb99301c1c6ac319f46",
-    "flourReviewerAQueueSha256": "6ca77199259f88d42419b8a2b6f26d2deb65b3709f598e7c6412538358f8f09a",
-    "flourReviewerBQueueSha256": "fba7e117eaf4150ded2e5a9244835468b4a3a2a110e69451698f29cce68f45ad"
+    "trashBagsReviewerAQueueSha256": "468925a9cc330c8698e57b5f53bfa2c0d8fda3ec0b874489a3a8cc19be1fc8a6",
+    "trashBagsReviewerBQueueSha256": "f3bf77bd4f4f7746637b521fab8030f675c1376be0db4fe76d3b51a65ffb779a",
+    "flourReviewerAQueueSha256": "f8375d81437cee2f275d29c33be13a1bb332f97012685bdf1bed6c577778460c",
+    "flourReviewerBQueueSha256": "0cbbba31756a519caa72ecff09f97649360ed1a690b153823ebaf923477a4964"
   },
   "eligibility": {
     "pointerReady": false,

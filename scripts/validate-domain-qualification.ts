@@ -17,6 +17,9 @@ const splitPath = path.resolve("benchmarks/ideal-domain-splits.json");
 const promotionPath = path.resolve(
   "benchmarks/domain-qualification/promotions.json"
 );
+const eligibleCapturePath = path.resolve(
+  "benchmarks/capture-pilots/eligible-captures.json"
+);
 interface PromotionManifest {
   version: 1;
   promotions: Array<{
@@ -24,6 +27,20 @@ interface PromotionManifest {
     cohort: "training" | "validation" | "selection" | "final";
     qualificationReport: string;
     promotedAt: string;
+  }>;
+}
+interface EligibleCaptureManifest {
+  version: 1;
+  captures: Array<{
+    siteId: string;
+    cohort: "training" | "validation" | "selection" | "final";
+    pageId: string;
+    observationSha256: string;
+    annotationScreenshotSha256: string;
+    qualificationReport: string;
+    pilotReport: string;
+    machineValidation: "passed";
+    visualValidation: "passed";
   }>;
 }
 interface QualificationGate {
@@ -56,22 +73,26 @@ interface QualificationReport {
     assignedDomains?: Array<{ siteId: string; cohort: string }>;
   };
 }
+const SHA256 = /^[a-f0-9]{64}$/;
 const gatePath = path.resolve(
   "benchmarks/domain-qualification/wave-01-p00.json"
 );
-const [candidate, existing, splits, promotions, gateSource] = await Promise.all([
-  readJson<CorpusTargetManifest>(candidatePath),
-  readJson<CorpusTargetManifest>(existingPath),
-  readJson<IdealDomainSplits>(splitPath),
-  readJson<PromotionManifest>(promotionPath),
-  readJson<{ qualificationGate: QualificationGate }>(gatePath)
-]);
+const [candidate, existing, splits, promotions, eligibleCaptures, gateSource] =
+  await Promise.all([
+    readJson<CorpusTargetManifest>(candidatePath),
+    readJson<CorpusTargetManifest>(existingPath),
+    readJson<IdealDomainSplits>(splitPath),
+    readJson<PromotionManifest>(promotionPath),
+    readJson<EligibleCaptureManifest>(eligibleCapturePath),
+    readJson<{ qualificationGate: QualificationGate }>(gatePath)
+  ]);
 const gate = gateSource.qualificationGate;
 const errors = validateIdealDomainSplits(splits);
 const existingIds = new Set(existing.sites.map((site) => site.id));
 const existingHosts = new Set(existing.sites.map((site) => site.hostname));
 const candidateIds = new Set<string>();
 const candidateHosts = new Set<string>();
+const knownIds = new Set(existingIds);
 
 for (const site of candidate.sites) {
   if (candidateIds.has(site.id)) errors.push(`duplicate candidate site id: ${site.id}`);
@@ -83,6 +104,7 @@ for (const site of candidate.sites) {
     errors.push(`candidate hostname already exists: ${site.hostname}`);
   }
   candidateIds.add(site.id);
+  knownIds.add(site.id);
   candidateHosts.add(site.hostname);
   const searchUrl = new URL(
     site.searchUrlTemplate
@@ -129,8 +151,8 @@ for (const siteId of candidateIds) {
   }
 }
 for (const promotion of promotions.promotions) {
-  if (!candidateIds.has(promotion.siteId)) {
-    errors.push(`promotion references unknown candidate: ${promotion.siteId}`);
+  if (!knownIds.has(promotion.siteId)) {
+    errors.push(`promotion references unknown site: ${promotion.siteId}`);
     continue;
   }
   if (!assigned.has(promotion.siteId)) {
@@ -167,6 +189,62 @@ for (const promotion of promotions.promotions) {
   }
 }
 
+const eligibleObservationHashes = new Set<string>();
+const eligiblePageSources = new Set<string>();
+for (const capture of eligibleCaptures.captures) {
+  if (!SHA256.test(capture.observationSha256)) {
+    errors.push(`eligible capture has invalid observation hash: ${capture.pageId}`);
+  }
+  if (!SHA256.test(capture.annotationScreenshotSha256)) {
+    errors.push(`eligible capture has invalid screenshot hash: ${capture.pageId}`);
+  }
+  if (eligibleObservationHashes.has(capture.observationSha256)) {
+    errors.push(`duplicate eligible observation hash: ${capture.observationSha256}`);
+  }
+  eligibleObservationHashes.add(capture.observationSha256);
+  const pageSource = `${capture.pageId}\0${capture.observationSha256}`;
+  if (eligiblePageSources.has(pageSource)) {
+    errors.push(`duplicate eligible capture: ${capture.pageId}`);
+  }
+  eligiblePageSources.add(pageSource);
+  const promotion = promotionBySite.get(capture.siteId);
+  if (!promotion || promotion.cohort !== capture.cohort) {
+    errors.push(`eligible capture lacks matching domain promotion: ${capture.pageId}`);
+  } else if (promotion.qualificationReport !== capture.qualificationReport) {
+    errors.push(`eligible capture qualification report mismatch: ${capture.pageId}`);
+  }
+  if (!capture.pageId.startsWith(`${capture.siteId}--`)) {
+    errors.push(`eligible capture page id does not match site: ${capture.pageId}`);
+  }
+  if (
+    capture.machineValidation !== "passed" ||
+    capture.visualValidation !== "passed"
+  ) {
+    errors.push(`eligible capture lacks validation: ${capture.pageId}`);
+  }
+  for (const reportPath of [
+    capture.qualificationReport,
+    capture.pilotReport
+  ]) {
+    try {
+      await readFile(path.resolve(reportPath));
+    } catch {
+      errors.push(`eligible capture report is unreadable: ${reportPath}`);
+    }
+  }
+}
+for (const promotion of promotions.promotions) {
+  if (
+    !eligibleCaptures.captures.some(
+      (capture) =>
+        capture.siteId === promotion.siteId &&
+        capture.cohort === promotion.cohort
+    )
+  ) {
+    errors.push(`promoted domain lacks an eligible live capture: ${promotion.siteId}`);
+  }
+}
+
 let targets = 0;
 try {
   targets = expandTargets(candidate).length;
@@ -190,6 +268,7 @@ const report = {
   strata: strata.size,
   dimensions: [...dimensions].sort(),
   promotedSites: promotions.promotions.length,
+  eligibleCaptures: eligibleCaptures.captures.length,
   errors
 };
 process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);

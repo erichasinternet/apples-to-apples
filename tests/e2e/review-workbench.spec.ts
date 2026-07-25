@@ -49,6 +49,7 @@ test("builds and submits a blinded evidence-pointer review", async ({ page }) =>
           {
             pageId: "synthetic-review-page",
             rootNodeId: "root",
+            candidateCardNodeIds: ["card"],
             source: reviewTemplate.source,
             reviewTemplate,
             saved: false
@@ -114,6 +115,7 @@ test("builds and submits a blinded evidence-pointer review", async ({ page }) =>
   expect(captureBox).not.toBeNull();
   await page.mouse.click(captureBox!.x + 80, captureBox!.y + 140);
 
+  await expect(page.locator("#nodeChoices .choice-button")).toHaveCount(1);
   await page.getByRole("button", { name: /card · article/ }).click();
   await expect(page.locator("#captureOverlay")).toBeVisible();
   await page.locator('#titleChoices input[value="title"]').check();

@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { PageObservation } from "../src/learning/contracts";
@@ -6,6 +7,11 @@ import {
   validateEvidencePointerReview,
   type EvidencePointerReview
 } from "./evidence-review-lib";
+import {
+  validateEvidenceReviewQueue,
+  type EvidenceReviewQueue,
+  type EvidenceReviewQueueItem
+} from "./evidence-review-queue-lib";
 
 declare const Bun: {
   serve(options: {
@@ -16,33 +22,14 @@ declare const Bun: {
   file(filename: string): { exists(): Promise<boolean> };
 };
 
-interface ReviewQueueItem {
-  pageId: string;
-  source: {
-    observationSha256: string;
-    screenshotSha256: string;
-  };
-  observationPath: string;
-  screenshotPath: string;
-  rootNodeId: string;
-  reviewTemplate: EvidencePointerReview & { completedAt: string | null };
-}
-
-interface ReviewQueue {
-  version: 1;
-  queueId: string;
-  reviewerId: string;
-  cohort: string;
-  labelVisibility: "no model or peer labels";
-  items: ReviewQueueItem[];
-}
-
 const options = parseOptions(process.argv.slice(2));
-const queue = await readJson<ReviewQueue>(options.queuePath);
-if (queue.labelVisibility !== "no model or peer labels") {
-  throw new Error("Review workbench requires a blinded queue.");
+const queue = await readJson<EvidenceReviewQueue>(options.queuePath);
+const queueErrors = validateEvidenceReviewQueue(queue);
+if (queueErrors.length > 0) {
+  throw new Error(`Invalid review queue: ${queueErrors.join("; ")}`);
 }
 const queueDirectory = path.dirname(options.queuePath);
+await Promise.all(queue.items.map((item) => validateQueueAssets(item)));
 const itemByPageId = new Map(queue.items.map((item) => [item.pageId, item]));
 await mkdir(options.outputDirectory, { recursive: true });
 
@@ -80,6 +67,7 @@ const server = Bun.serve({
             queue.items.map(async (item) => ({
               pageId: item.pageId,
               rootNodeId: item.rootNodeId,
+              candidateCardNodeIds: item.candidateCardNodeIds,
               source: item.source,
               reviewTemplate: item.reviewTemplate,
               saved: await Bun.file(reviewPath(item)).exists()
@@ -94,16 +82,20 @@ const server = Bun.serve({
       }
       if (request.method === "GET" && url.pathname === "/api/screenshot") {
         const item = requireItem(url.searchParams.get("pageId"));
-        return fileResponse(resolveQueueAsset(item.screenshotPath), "image/png");
+        return verifiedFileResponse(
+          resolveQueueAsset(item.screenshotPath),
+          "image/png",
+          item.source.screenshotSha256
+        );
       }
       if (request.method === "GET" && url.pathname === "/api/candidates") {
         const item = requireItem(url.searchParams.get("pageId"));
         const cardNodeId = url.searchParams.get("cardNodeId");
         if (!cardNodeId) throw new HttpError(400, "cardNodeId is required");
-        const observation = await readObservation(item);
-        if (!observation.nodes.some((node) => node.id === cardNodeId)) {
-          throw new HttpError(404, `Unknown card node ${cardNodeId}`);
+        if (!item.candidateCardNodeIds.includes(cardNodeId)) {
+          throw new HttpError(404, `Unknown candidate card ${cardNodeId}`);
         }
+        const observation = await readObservation(item);
         return json({
           cardNodeId,
           candidates: enumerateEvidenceCandidates(observation, cardNodeId)
@@ -115,7 +107,8 @@ const server = Bun.serve({
         const observation = await readObservation(item);
         const validation = validateEvidencePointerReview(input, observation, {
           observationSha256: item.source.observationSha256,
-          screenshotSha256: item.source.screenshotSha256
+          screenshotSha256: item.source.screenshotSha256,
+          expectedCardNodeIds: item.candidateCardNodeIds
         });
         if (!validation.valid) {
           return json({ valid: false, errors: validation.errors }, 422);
@@ -170,15 +163,41 @@ process.stdout.write(
   })}\n`
 );
 
-function requireItem(pageId: string | null): ReviewQueueItem {
+function requireItem(pageId: string | null): EvidenceReviewQueueItem {
   if (!pageId) throw new HttpError(400, "pageId is required");
   const item = itemByPageId.get(pageId);
   if (!item) throw new HttpError(404, `Unknown page ${pageId}`);
   return item;
 }
 
-async function readObservation(item: ReviewQueueItem): Promise<PageObservation> {
-  return readJson<PageObservation>(resolveQueueAsset(item.observationPath));
+async function readObservation(
+  item: EvidenceReviewQueueItem
+): Promise<PageObservation> {
+  const value = await readVerifiedAsset(
+    resolveQueueAsset(item.observationPath),
+    item.source.observationSha256
+  );
+  return JSON.parse(value.toString("utf8")) as PageObservation;
+}
+
+async function validateQueueAssets(
+  item: EvidenceReviewQueueItem
+): Promise<void> {
+  const [observation] = await Promise.all([
+    readObservation(item),
+    readVerifiedAsset(
+      resolveQueueAsset(item.screenshotPath),
+      item.source.screenshotSha256
+    )
+  ]);
+  const nodeIds = new Set(observation.nodes.map((node) => node.id));
+  if (
+    observation.pageId !== item.pageId ||
+    !nodeIds.has(item.rootNodeId) ||
+    item.candidateCardNodeIds.some((nodeId) => !nodeIds.has(nodeId))
+  ) {
+    throw new Error(`Queue assets do not match node contract: ${item.pageId}`);
+  }
 }
 
 function resolveQueueAsset(relativePath: string): string {
@@ -190,7 +209,7 @@ function resolveQueueAsset(relativePath: string): string {
   return resolved;
 }
 
-function reviewPath(item: ReviewQueueItem): string {
+function reviewPath(item: EvidenceReviewQueueItem): string {
   const resolved = path.resolve(
     options.outputDirectory,
     `${item.reviewTemplate.reviewId}.json`
@@ -225,6 +244,32 @@ async function fileResponse(
       "cache-control": "no-store"
     }
   });
+}
+
+async function verifiedFileResponse(
+  filename: string,
+  contentType: string,
+  expectedSha256: string
+): Promise<Response> {
+  const value = await readVerifiedAsset(filename, expectedSha256);
+  return new Response(new Uint8Array(value), {
+    headers: {
+      "content-type": contentType,
+      "cache-control": "no-store"
+    }
+  });
+}
+
+async function readVerifiedAsset(
+  filename: string,
+  expectedSha256: string
+): Promise<Buffer> {
+  const value = await readFile(filename);
+  const actual = createHash("sha256").update(value).digest("hex");
+  if (actual !== expectedSha256) {
+    throw new HttpError(422, `Queue asset hash mismatch: ${path.basename(filename)}`);
+  }
+  return value;
 }
 
 function json(value: unknown, status = 200): Response {

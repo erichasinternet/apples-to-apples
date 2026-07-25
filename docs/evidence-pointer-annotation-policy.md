@@ -9,6 +9,11 @@ are append-only; corrections create a new review ID.
 Each product stores the exact seven-line evidence-pointer target accepted by the
 runtime validator. Reviewers select candidate IDs, not prices, quantities, units,
 or normalized values. The deterministic runtime derives and validates those facts.
+The queue freezes the collector's exact candidate card-root IDs. The workbench
+offers only those roots, scopes field candidates to the selected card, and rejects
+submissions that omit a candidate root or introduce an ancestor, descendant, or
+other node as a card. This is what makes complete coverage and cross-card rejection
+enforceable rather than reviewer convention.
 
 ## Independent Review
 
@@ -76,7 +81,20 @@ bun run dataset:reviews:queue -- --run benchmark-data/live/<run> \
   --output benchmark-data/review/<run>-reviewer-a-queue.json
 ```
 
-Open one blinded queue in the local review workbench:
+Merge multiple single-run queues for one reviewer into a deterministic campaign:
+
+```bash
+bun run dataset:reviews:campaign -- \
+  --output benchmark-data/review/<campaign>.json \
+  benchmark-data/review/<run-1>-reviewer-a-queue.json \
+  benchmark-data/review/<run-2>-reviewer-a-queue.json
+```
+
+Campaign merging rejects mixed reviewers, mixed cohorts, labels, duplicate pages,
+duplicate review IDs, invalid source hashes, and queues without frozen candidate
+card roots. Paths are rebased without changing source evidence.
+
+Open one blinded queue or campaign in the local review workbench:
 
 ```bash
 bun run dataset:reviews:serve -- \
@@ -86,8 +104,8 @@ bun run dataset:reviews:serve -- \
 
 The workbench binds to `127.0.0.1`, serves only queue-declared assets beneath
 `benchmark-data`, exposes no model or peer labels, validates submissions against
-the immutable observation and hashes, and refuses to overwrite an existing
-review.
+the immutable observation, hashes, and complete frozen card-root set, and refuses
+to overwrite an existing review.
 
 After a reviewer chooses a card root, list the deterministic numeric candidates:
 

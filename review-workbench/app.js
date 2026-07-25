@@ -98,11 +98,12 @@ fields.captureImage.addEventListener("click", async (event) => {
   const root = nodeById(state.observation.rootNodeId);
   const documentX = root.bounds.x + (event.clientX - rect.left) * scaleX;
   const documentY = root.bounds.y + (event.clientY - rect.top) * scaleY;
+  const candidateCardNodeIds = new Set(state.item.candidateCardNodeIds);
   state.nodeChoices = state.observation.nodes
+    .filter((node) => candidateCardNodeIds.has(node.id))
     .filter((node) => contains(node.bounds, documentX, documentY))
-    .filter((node) => node.id !== state.observation.rootNodeId)
     .sort((left, right) => area(left.bounds) - area(right.bounds))
-    .slice(0, 12);
+    .slice(0, 4);
   renderNodeChoices();
 });
 
