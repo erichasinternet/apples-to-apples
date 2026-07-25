@@ -5,12 +5,18 @@ import type {
   ObservedNode,
   PageObservation
 } from "../src/learning/contracts";
+import {
+  resolveEvidencePointer,
+  serializeEvidenceCandidateCatalog,
+  serializeEvidencePointer
+} from "../src/learning/evidence-pointer";
 import { cropObservationToRegion } from "../src/learning/observation-region";
 import { slugify, type CorpusDomainSplits } from "./live-corpus-lib";
 import type { TrainingExample } from "./training-export-lib";
 
 export type T5DatasetSplit = "train" | "validation";
 export type T5TrainingTask = "discover-products" | "extract-product";
+export type T5ExtractionTargetFormat = "json" | "evidence-pointer";
 
 export interface TrainingDomainSplits {
   version: number;
@@ -43,6 +49,7 @@ export interface T5InferenceRecord {
     cardNodeId?: string;
     cardCount?: number;
     abstainedProducts?: number;
+    targetFormat?: T5ExtractionTargetFormat;
   };
 }
 
@@ -62,6 +69,7 @@ export interface T5InferenceBuildOptions {
   maxExtractionNodes?: number;
   requiredDiscoveryNodeIds?: string[];
   requiredExtractionNodeIds?: string[];
+  extractionTargetFormat?: T5ExtractionTargetFormat;
 }
 
 export interface T5RecordBuildOptions
@@ -165,19 +173,23 @@ export function buildT5TrainingRecords(
       siteId: example.siteId,
       requiredExtractionNodeIds: productEvidenceNodeIds(product)
     });
-    const target: ModelPageExtraction = {
-      version: 1,
-      pageId: example.pageId,
-      products: [product]
-    };
+    const target =
+      options.extractionTargetFormat === "evidence-pointer"
+        ? buildValidatedPointerTarget(input.prompt, product)
+        : JSON.stringify({
+            version: 1,
+            pageId: example.pageId,
+            products: [product]
+          } satisfies ModelPageExtraction);
     records.push({
       ...input,
       split: options.split,
-      target: JSON.stringify(target),
+      target,
       metadata: {
         ...input.metadata,
         cardCount: 1,
-        abstainedProducts: product.abstainReason ? 1 : 0
+        abstainedProducts: product.abstainReason ? 1 : 0,
+        targetFormat: options.extractionTargetFormat ?? "json"
       }
     });
   }
@@ -265,7 +277,10 @@ export function buildT5ExtractionRecord(
     siteId: options.siteId,
     imagePath: options.imagePath,
     imageCrop: relativeCrop(region, sourceRegion),
-    prompt: extractionPrompt(cardObservation, cardNodeId),
+    prompt:
+      options.extractionTargetFormat === "evidence-pointer"
+        ? evidencePointerPrompt(cardObservation, cardNodeId)
+        : extractionPrompt(cardObservation, cardNodeId),
     metadata: {
       sourceRegion: region,
       nodeCount: cardObservation.nodes.length,
@@ -302,6 +317,47 @@ function extractionPrompt(observation: PageObservation, cardNodeId: string): str
     "Do not calculate normalized unit price and do not invent node IDs.",
     `OBSERVATION: ${serializeObservation(observation)}`
   ].join("\n");
+}
+
+function evidencePointerPrompt(
+  observation: PageObservation,
+  cardNodeId: string
+): string {
+  return [
+    "<start_of_image>",
+    "TASK: extract-product",
+    `Select visible evidence for product card ${JSON.stringify(cardNodeId)}.`,
+    "Return exactly seven plain-text lines in this order:",
+    "CARD node-id",
+    "TITLE node-id[,node-id]",
+    "CURRENT_PRICE listed-candidate-id or NONE",
+    "NATIVE_UNIT_PRICE listed-candidate-id or NONE",
+    "PACKAGE_QUANTITY listed-candidate-id or NONE",
+    "PACK_COUNT listed-candidate-id or NONE",
+    "STATUS comparable or one allowed abstention reason",
+    "Allowed abstentions: insufficient-evidence, conditional-price, price-range, unselected-variant, ambiguous-quantity, unsupported-unit, not-a-product.",
+    "For an abstention, use NONE for every price and quantity field.",
+    "Do not emit values, units, calculations, JSON, Markdown, or confidence.",
+    `CANDIDATES: ${serializeEvidenceCandidateCatalog(observation, cardNodeId)}`,
+    `OBSERVATION: ${serializeObservation(observation)}`
+  ].join("\n");
+}
+
+function buildValidatedPointerTarget(
+  prompt: string,
+  product: ModelProductExtraction
+): string {
+  const exactObservation = parseT5PromptObservation(prompt);
+  const target = serializeEvidencePointer(product, exactObservation);
+  const resolved = resolveEvidencePointer(target, exactObservation);
+  if (!resolved.valid) {
+    throw new Error(
+      `Evidence-pointer target is invalid against its serialized prompt: ${resolved.issues
+        .map((issue) => `${issue.code}: ${issue.message}`)
+        .join("; ")}`
+    );
+  }
+  return target;
 }
 
 function serializeObservation(observation: PageObservation): string {

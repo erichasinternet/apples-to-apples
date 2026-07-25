@@ -1,6 +1,7 @@
 import {
   extractPackCount,
   findBestPrice,
+  parseFactoredPackageQuantities,
   parseMoneyValues,
   parseNativeUnitPrices,
   parseQuantities,
@@ -67,6 +68,18 @@ describe("quantity parsing", () => {
     expect(extractPackCount("Hand soap, 7.5 oz, Pack of 6 bottles")).toBe(6);
     expect(extractPackCount("Hand soap, 7.5 fl oz, 6/Carton")).toBe(6);
     expect(extractPackCount("Hand soap, 11.25 oz, Total Qty 6")).toBe(6);
+  });
+
+  it.each([
+    ["2 x 12 oz bottles", 12, 2, "oz"],
+    ["90 each x 6 pack", 90, 6, "each"],
+    ["4 Pack of 25 count wipes", 25, 4, "each"]
+  ])("keeps factored package quantities for %s", (text, value, packs, unit) => {
+    expect(parseFactoredPackageQuantities(text)[0]).toMatchObject({
+      valuePerPackage: value,
+      packCount: packs,
+      unit
+    });
   });
 });
 

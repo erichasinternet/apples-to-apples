@@ -26,15 +26,25 @@ The replacement target is a compact pointer language:
 ```text
 CARD n42
 TITLE n47
-CURRENT_PRICE n53
-NATIVE_UNIT_PRICE n56
-PACKAGE_QUANTITY n61
-PACK_COUNT n63
+CURRENT_PRICE n53@p0
+NATIVE_UNIT_PRICE n56@u0
+PACKAGE_QUANTITY n61@q0
+PACK_COUNT n61@k0
 STATUS comparable
 ```
 
-Every non-status value must be an existing node ID in the exact serialized input.
-Missing fields use `NONE`. `STATUS` is one of:
+`CARD` and `TITLE` select existing node IDs. Numeric fields select candidates
+generated deterministically from the exact serialized observation:
+
+- `@pN`: current-price candidate
+- `@uN`: retailer-native unit-price candidate
+- `@qN`: package-quantity candidate
+- `@kN`: pack-count candidate
+
+This disambiguates nodes such as `Trash Bags, 120 count, 13 gal` without allowing
+the model to generate a number or unit. Each candidate carries its source node and
+source text; the model sees the candidate catalog in its prompt. Missing fields use
+`NONE`. `STATUS` is one of:
 
 ```text
 comparable
@@ -102,7 +112,8 @@ Training loss and synthetic exactness are diagnostics. They cannot promote a run
 Pass when:
 
 - 100% of targets validate against the exact serialized model input.
-- 100% of target pointers resolve to input nodes or `NONE`.
+- 100% of card/title pointers resolve to input nodes and numeric pointers resolve
+  to deterministic candidates from the exact input, or `NONE`.
 - No domain, page, product, capture, or near-duplicate crosses a split boundary.
 - Train, development, selection, and final manifests have immutable SHA-256 hashes.
 - The final cohort remains sealed until a checkpoint and threshold are frozen.

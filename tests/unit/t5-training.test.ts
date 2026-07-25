@@ -4,10 +4,12 @@ import {
   buildT5ExtractionRecord,
   buildT5TrainingRecords,
   getTrainingSplit,
+  parseT5PromptObservation,
   pruneObservationForModel,
   validateTrainingDomainSplits,
   type TrainingDomainSplits
 } from "../../scripts/t5-training-lib";
+import { resolveEvidencePointer } from "../../src/learning/evidence-pointer";
 import type { CorpusDomainSplits } from "../../scripts/live-corpus-lib";
 import type {
   ModelProductExtraction,
@@ -44,6 +46,27 @@ describe("T5 training records", () => {
     expect(JSON.parse(extraction[1]!.target).products[0].abstainReason).toBe(
       "ambiguous-quantity"
     );
+  });
+
+  it("builds pointer targets against the exact candidate-bearing prompt", () => {
+    const records = buildT5TrainingRecords(makeExample(), {
+      captureId: "capture-1",
+      split: "train",
+      imagePath: "assets/page.png",
+      extractionTargetFormat: "evidence-pointer"
+    });
+    const extraction = records.filter((record) => record.task === "extract-product");
+    const comparable = extraction[0]!;
+    const abstention = extraction[1]!;
+    const observation = parseT5PromptObservation(comparable.prompt);
+
+    expect(comparable.prompt).toContain("CANDIDATES: ");
+    expect(comparable.target).toContain("CURRENT_PRICE price-a@p0");
+    expect(comparable.target).not.toContain('"cents"');
+    expect(comparable.metadata.targetFormat).toBe("evidence-pointer");
+    expect(resolveEvidencePointer(comparable.target, observation).valid).toBe(true);
+    expect(abstention.target).toContain("STATUS ambiguous-quantity");
+    expect(abstention.target).toContain("CURRENT_PRICE NONE");
   });
 
   it("requires the internal split to cover development domains only", () => {

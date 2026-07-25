@@ -86,8 +86,9 @@ Each captured page receives:
 
 - Complete bounded-region product-root coverage.
 - Product scope: primary, recommendation, sponsored, or non-product.
-- Exact pointer for card, title, current price, native unit price, package
-  quantity, and pack count, using `NONE` where appropriate.
+- Exact node pointers for card and title, plus exact deterministic candidate
+  pointers for current price (`@pN`), native unit price (`@uN`), package quantity
+  (`@qN`), and pack count (`@kN`), using `NONE` where appropriate.
 - Comparability status and one normalized abstention reason.
 - Deterministically recomputed normalized value for comparable products.
 - Capture timestamp, locale, currency, viewport, page type, category, stratum,
@@ -105,7 +106,8 @@ Before adjudication, require:
 
 After adjudication:
 
-- 100% of pointers resolve in the exact serialized input.
+- 100% of node pointers and deterministic candidate pointers resolve in the exact
+  serialized input.
 - 100% of comparable records pass deterministic evidence and arithmetic checks.
 - 100% of pages have complete-region coverage.
 - 0% cross-cohort duplicates or near-duplicates.

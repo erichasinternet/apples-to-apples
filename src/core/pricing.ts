@@ -1,4 +1,4 @@
-import type { Money, NativeUnitPrice, Quantity } from "./types";
+import type { CanonicalUnit, Dimension, Money, NativeUnitPrice, Quantity } from "./types";
 import { getUnitRegexSource, parseUnit } from "./units";
 
 const PRICE_WITH_DECIMAL =
@@ -21,6 +21,29 @@ const PACK_OF_COUNT_REGEX = new RegExp(
 );
 
 const QUANTITY_REGEX = new RegExp(`(\\d+(?:\\.\\d+)?)\\s*(${UNIT_SOURCE})(?=\\b|\\W)`, "gi");
+const FACTORED_QUANTITY_PATTERNS = [
+  new RegExp(
+    `(\\d{1,3})\\s*(?:x|×)\\s*(\\d+(?:\\.\\d+)?)\\s*(${UNIT_SOURCE})(?=\\b|\\W)`,
+    "gi"
+  ),
+  new RegExp(
+    `(\\d+(?:\\.\\d+)?)\\s*(${UNIT_SOURCE})(?=\\b|\\W)\\s*(?:x|×)\\s*(\\d{1,3})\\s*(?:pack|pk)?\\b`,
+    "gi"
+  ),
+  new RegExp(
+    `(\\d{1,3})\\s*(?:pack|pk)\\s+of\\s+(\\d+(?:\\.\\d+)?)\\s*(${UNIT_SOURCE})(?=\\b|\\W)`,
+    "gi"
+  )
+] as const;
+
+export interface FactoredPackageQuantity {
+  valuePerPackage: number;
+  packCount: number;
+  unit: CanonicalUnit;
+  dimension: Dimension;
+  sourceText: string;
+  index: number;
+}
 
 export function cleanText(value: string): string {
   return value.replace(/\s+/g, " ").trim();
@@ -192,6 +215,44 @@ export function extractPackCount(text: string): number | undefined {
     }
   }
   return undefined;
+}
+
+export function parseFactoredPackageQuantities(text: string): FactoredPackageQuantity[] {
+  const values: FactoredPackageQuantity[] = [];
+  for (const [patternIndex, pattern] of FACTORED_QUANTITY_PATTERNS.entries()) {
+    pattern.lastIndex = 0;
+    for (const match of text.matchAll(pattern)) {
+      const reversed = patternIndex === 1;
+      const valuePerPackage = Number.parseFloat(match[reversed ? 1 : 2] ?? "");
+      const rawUnit = match[reversed ? 2 : 3] ?? "";
+      const packCount = Number.parseInt(match[reversed ? 3 : 1] ?? "", 10);
+      const definition = parseUnit(rawUnit);
+      if (
+        !definition ||
+        !Number.isFinite(valuePerPackage) ||
+        valuePerPackage <= 0 ||
+        !Number.isInteger(packCount) ||
+        packCount <= 1
+      ) {
+        continue;
+      }
+      values.push({
+        valuePerPackage,
+        packCount,
+        unit: definition.unit,
+        dimension: definition.dimension,
+        sourceText: match[0],
+        index: match.index ?? 0
+      });
+    }
+  }
+  const seen = new Set<string>();
+  return values.filter((value) => {
+    const key = `${value.valuePerPackage}:${value.packCount}:${value.unit}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 export function selectPackageQuantity(
