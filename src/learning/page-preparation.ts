@@ -17,6 +17,14 @@ export function dismissVisibleObstruction(): boolean {
     "continue without",
     "reject all",
     "decline",
+    "got it",
+    "accept",
+    "accept all",
+    "agree",
+    "i agree",
+    "allow all",
+    "ok",
+    "okay",
     "×"
   ]);
   const isVisible = (element: HTMLElement): boolean => {
@@ -81,4 +89,37 @@ export function dismissVisibleObstruction(): boolean {
   }
 
   return false;
+}
+
+export function measureVisibleObstructionCoverage(): number {
+  const viewportArea = Math.max(1, window.innerWidth * window.innerHeight);
+  let maximumCoverage = 0;
+  const elements = document.querySelectorAll<HTMLElement>(
+    "dialog[open], [role='dialog'], [aria-modal='true'], body *"
+  );
+  for (const element of elements) {
+    const style = getComputedStyle(element);
+    if (
+      style.display === "none" ||
+      style.visibility === "hidden" ||
+      Number.parseFloat(style.opacity || "1") <= 0
+    ) {
+      continue;
+    }
+    const modal = element.matches(
+      "dialog[open], [role='dialog'], [aria-modal='true']"
+    );
+    if (!modal && style.position !== "fixed") continue;
+    const box = element.getBoundingClientRect();
+    const width = Math.max(
+      0,
+      Math.min(window.innerWidth, box.right) - Math.max(0, box.left)
+    );
+    const height = Math.max(
+      0,
+      Math.min(window.innerHeight, box.bottom) - Math.max(0, box.top)
+    );
+    maximumCoverage = Math.max(maximumCoverage, (width * height) / viewportArea);
+  }
+  return maximumCoverage;
 }

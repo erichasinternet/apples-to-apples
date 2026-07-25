@@ -1,0 +1,232 @@
+{
+  "version": 1,
+  "description": "First unassigned domain-qualification wave. These sites are acquisition candidates only and cannot enter a cohort until capture qualification passes.",
+  "querySets": {
+    "health": [
+      { "id": "protein-powder", "query": "protein powder", "dimension": "mass" },
+      { "id": "mouthwash", "query": "mouthwash", "dimension": "volume" },
+      { "id": "vitamins", "query": "vitamins", "dimension": "count" },
+      { "id": "cotton-pads", "query": "cotton pads", "dimension": "count" },
+      { "id": "bath-salts", "query": "bath salts", "dimension": "mass" },
+      { "id": "shampoo", "query": "shampoo", "dimension": "volume" }
+    ],
+    "beauty": [
+      { "id": "bath-salts", "query": "bath salts", "dimension": "mass" },
+      { "id": "shampoo", "query": "shampoo", "dimension": "volume" },
+      { "id": "cotton-pads", "query": "cotton pads", "dimension": "count" },
+      { "id": "facial-tissues", "query": "facial tissues", "dimension": "count" },
+      { "id": "body-scrub", "query": "body scrub", "dimension": "mass" },
+      { "id": "conditioner", "query": "conditioner", "dimension": "volume" }
+    ],
+    "office": [
+      { "id": "coffee", "query": "ground coffee", "dimension": "mass" },
+      { "id": "hand-soap", "query": "hand soap", "dimension": "volume" },
+      { "id": "pens", "query": "pens", "dimension": "count" },
+      { "id": "paper-towels", "query": "paper towels", "dimension": "area" },
+      { "id": "packing-tape", "query": "packing tape", "dimension": "length" },
+      { "id": "trash-bags", "query": "trash bags", "dimension": "count" }
+    ],
+    "industrial": [
+      { "id": "ice-melt", "query": "ice melt", "dimension": "mass" },
+      { "id": "cleaner", "query": "all purpose cleaner", "dimension": "volume" },
+      { "id": "trash-bags", "query": "trash bags", "dimension": "count" },
+      { "id": "plastic-sheeting", "query": "plastic sheeting", "dimension": "area" },
+      { "id": "extension-cord", "query": "extension cord", "dimension": "length" },
+      { "id": "shop-towels", "query": "shop towels", "dimension": "count" }
+    ],
+    "pet": [
+      { "id": "cat-litter", "query": "cat litter", "dimension": "mass" },
+      { "id": "aquarium-conditioner", "query": "aquarium water conditioner", "dimension": "volume" },
+      { "id": "dog-waste-bags", "query": "dog waste bags", "dimension": "count" },
+      { "id": "wet-cat-food", "query": "wet cat food", "dimension": "mass" },
+      { "id": "training-pads", "query": "training pads", "dimension": "count" },
+      { "id": "flea-treatment", "query": "flea treatment", "dimension": "count" }
+    ],
+    "food": [
+      { "id": "flour", "query": "flour", "dimension": "mass" },
+      { "id": "olive-oil", "query": "olive oil", "dimension": "volume" },
+      { "id": "coffee-pods", "query": "coffee pods", "dimension": "count" },
+      { "id": "aluminum-foil", "query": "aluminum foil", "dimension": "length" },
+      { "id": "rice", "query": "rice", "dimension": "mass" },
+      { "id": "paper-towels", "query": "paper towels", "dimension": "area" }
+    ],
+    "household": [
+      { "id": "laundry-powder", "query": "laundry powder", "dimension": "mass" },
+      { "id": "dish-soap", "query": "dish soap", "dimension": "volume" },
+      { "id": "dishwasher-tablets", "query": "dishwasher tablets", "dimension": "count" },
+      { "id": "paper-towels", "query": "paper towels", "dimension": "area" },
+      { "id": "trash-bags", "query": "trash bags", "dimension": "count" },
+      { "id": "aluminum-foil", "query": "aluminum foil", "dimension": "length" }
+    ],
+    "restaurant": [
+      { "id": "flour", "query": "flour", "dimension": "mass" },
+      { "id": "cooking-oil", "query": "cooking oil", "dimension": "volume" },
+      { "id": "trash-bags", "query": "trash bags", "dimension": "count" },
+      { "id": "aluminum-foil", "query": "aluminum foil", "dimension": "length" },
+      { "id": "paper-towels", "query": "paper towels", "dimension": "area" },
+      { "id": "food-containers", "query": "food containers", "dimension": "count" }
+    ]
+  },
+  "sites": [
+    {
+      "id": "gnc",
+      "label": "GNC",
+      "hostname": "www.gnc.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://www.gnc.com/vitamins-supplements/?q={query}",
+      "querySet": "health"
+    },
+    {
+      "id": "vitamin-shoppe",
+      "label": "The Vitamin Shoppe",
+      "hostname": "www.vitaminshoppe.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://www.vitaminshoppe.com/search?search={query}",
+      "querySet": "health"
+    },
+    {
+      "id": "swanson-vitamins",
+      "label": "Swanson Vitamins",
+      "hostname": "www.swansonvitamins.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://www.swansonvitamins.com/q?kw={query}",
+      "querySet": "health"
+    },
+    {
+      "id": "sally-beauty",
+      "label": "Sally Beauty",
+      "hostname": "www.sallybeauty.com",
+      "stratum": "beauty",
+      "searchUrlTemplate": "https://www.sallybeauty.com/search-show?q={query}",
+      "querySet": "beauty"
+    },
+    {
+      "id": "dermstore",
+      "label": "Dermstore",
+      "hostname": "www.dermstore.com",
+      "stratum": "beauty",
+      "searchUrlTemplate": "https://www.dermstore.com/search?q={query}",
+      "querySet": "beauty"
+    },
+    {
+      "id": "bluemercury",
+      "label": "Bluemercury",
+      "hostname": "bluemercury.com",
+      "stratum": "beauty",
+      "searchUrlTemplate": "https://bluemercury.com/search?q={query}",
+      "querySet": "beauty"
+    },
+    {
+      "id": "quill",
+      "label": "Quill",
+      "hostname": "www.quill.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.quill.com/search?keywords={query}",
+      "querySet": "office"
+    },
+    {
+      "id": "wb-mason",
+      "label": "W.B. Mason",
+      "hostname": "www.wbmason.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.wbmason.com/SearchResults.aspx?Keyword={query}",
+      "querySet": "office"
+    },
+    {
+      "id": "grainger",
+      "label": "Grainger",
+      "hostname": "www.grainger.com",
+      "stratum": "industrial-supply",
+      "searchUrlTemplate": "https://www.grainger.com/category/cleaning-and-janitorial/cleaning-chemicals/cleaners/all-purpose-cleaners?searchQuery={query}",
+      "querySet": "industrial"
+    },
+    {
+      "id": "zoro",
+      "label": "Zoro",
+      "hostname": "www.zoro.com",
+      "stratum": "industrial-supply",
+      "searchUrlTemplate": "https://www.zoro.com/search?q={query}",
+      "querySet": "industrial"
+    },
+    {
+      "id": "northern-tool",
+      "label": "Northern Tool",
+      "hostname": "www.northerntool.com",
+      "stratum": "home-improvement",
+      "searchUrlTemplate": "https://www.northerntool.com/products?keyword={query}",
+      "querySet": "industrial"
+    },
+    {
+      "id": "do-it-best",
+      "label": "Do it Best",
+      "hostname": "www.doitbest.com",
+      "stratum": "home-improvement",
+      "searchUrlTemplate": "https://www.doitbest.com/search?query={query}",
+      "querySet": "industrial"
+    },
+    {
+      "id": "pet-supermarket",
+      "label": "Pet Supermarket",
+      "hostname": "www.petsupermarket.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://www.petsupermarket.com/cat-1/?q={query}",
+      "querySet": "pet"
+    },
+    {
+      "id": "hollywood-feed",
+      "label": "Hollywood Feed",
+      "hostname": "www.hollywoodfeed.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://www.hollywoodfeed.com/search?q={query}",
+      "querySet": "pet"
+    },
+    {
+      "id": "only-natural-pet",
+      "label": "Only Natural Pet",
+      "hostname": "www.onlynaturalpet.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://www.onlynaturalpet.com/search?q={query}",
+      "querySet": "pet"
+    },
+    {
+      "id": "nuts-com",
+      "label": "Nuts.com",
+      "hostname": "nuts.com",
+      "stratum": "specialty-food",
+      "searchUrlTemplate": "https://nuts.com/tag/{query}",
+      "querySet": "food"
+    },
+    {
+      "id": "blueland",
+      "label": "Blueland",
+      "hostname": "www.blueland.com",
+      "stratum": "household-direct",
+      "searchUrlTemplate": "https://www.blueland.com/search?q={query}",
+      "querySet": "household"
+    },
+    {
+      "id": "dropps",
+      "label": "Dropps",
+      "hostname": "www.dropps.com",
+      "stratum": "household-direct",
+      "searchUrlTemplate": "https://www.dropps.com/search?q={query}",
+      "querySet": "household"
+    },
+    {
+      "id": "katom",
+      "label": "KaTom Restaurant Supply",
+      "hostname": "www.katom.com",
+      "stratum": "restaurant-supply",
+      "searchUrlTemplate": "https://www.katom.com/search?w={query}",
+      "querySet": "restaurant"
+    },
+    {
+      "id": "restaurant-supply",
+      "label": "RestaurantSupply.com",
+      "hostname": "www.restaurantsupply.com",
+      "stratum": "restaurant-supply",
+      "searchUrlTemplate": "https://www.restaurantsupply.com/search?q={query}",
+      "querySet": "restaurant"
+    }
+  ]
+}

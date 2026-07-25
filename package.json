@@ -35,6 +35,7 @@
     "benchmark:training:export": "bun scripts/export-training-corpus.ts",
     "benchmark:validate": "bun scripts/validate-live-corpus.ts",
     "dataset:readiness": "bun scripts/report-ideal-dataset-readiness.ts",
+    "dataset:domains:validate": "bun scripts/validate-domain-qualification.ts",
     "dataset:reviews:queue": "bun scripts/build-evidence-review-queue.ts",
     "dataset:reviews:candidates": "bun scripts/list-evidence-candidates.ts",
     "dataset:reviews:score": "bun scripts/score-evidence-reviews.ts",
@@ -120,7 +121,7 @@
     "training:synthetic:validate": "python3 training/train_t5gemma2.py --config training/t5gemma2-270m/synthetic-pretrain.json --validate-only",
     "training:validate": "python3 training/train_t5gemma2.py --validate-only",
     "serve:fixtures": "bun scripts/serve-fixtures.mjs",
-    "verify": "bun run typecheck && bun run test && bun run training:autoresearch:validate && bun run training:baseline:markuplm:test",
+    "verify": "bun run typecheck && bun run test && bun run dataset:domains:validate && bun run training:autoresearch:validate && bun run training:baseline:markuplm:test",
     "training:baseline:markuplm:test": "python3 training/test_infer_markuplm.py && python3 training/test_train_t5gemma2.py"
   },
   "devDependencies": {

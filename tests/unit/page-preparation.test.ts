@@ -1,4 +1,7 @@
-import { dismissVisibleObstruction } from "../../src/learning/page-preparation";
+import {
+  dismissVisibleObstruction,
+  measureVisibleObstructionCoverage
+} from "../../src/learning/page-preparation";
 
 describe("page preparation", () => {
   it("dismisses an explicit opt-out control inside a visible fixed obstruction", () => {
@@ -70,6 +73,42 @@ describe("page preparation", () => {
 
     expect(dismissVisibleObstruction()).toBe(true);
     expect(clicked).toHaveBeenCalledOnce();
+  });
+
+  it("accepts a cookie dialog only when the control is inside an obstruction", () => {
+    document.body.innerHTML = `
+      <div role="dialog" style="position: fixed">
+        <button id="accept">Got it</button>
+      </div>
+    `;
+    mockVisibleBounds();
+    const clicked = vi.fn();
+    document
+      .querySelector<HTMLButtonElement>("#accept")!
+      .addEventListener("click", clicked);
+
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(clicked).toHaveBeenCalledOnce();
+  });
+
+  it("measures unresolved modal viewport coverage", () => {
+    document.body.innerHTML = `<div id="modal" role="dialog"></div>`;
+    vi.spyOn(
+      document.querySelector<HTMLElement>("#modal")!,
+      "getBoundingClientRect"
+    ).mockReturnValue({
+      x: 0,
+      y: 0,
+      width: 512,
+      height: 384,
+      top: 0,
+      right: 512,
+      bottom: 384,
+      left: 0,
+      toJSON: () => ({})
+    });
+
+    expect(measureVisibleObstructionCoverage()).toBeCloseTo(0.25);
   });
 });
 

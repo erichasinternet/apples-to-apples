@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "qualificationId": "wave-01-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-01.json",
+  "candidateManifestSummary": {
+    "sites": 20,
+    "targets": 120,
+    "strata": 9,
+    "dimensions": ["area", "count", "length", "mass", "volume"],
+    "registryOverlap": 0
+  },
+  "qualificationGate": {
+    "minimumDistinctListingPages": 2,
+    "requiredViewportProfiles": ["desktop", "narrow"],
+    "minimumCandidatesPerPage": 8,
+    "maximumUnresolvedObstructionCoverage": 0.2,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "allowBotChallenge": false,
+    "allowTruncatedObservation": false
+  },
+  "sample": {
+    "seed": 20260724,
+    "sites": ["gnc", "grainger", "pet-supermarket", "nuts-com"],
+    "headless": {
+      "captured": 0,
+      "blocked": 4,
+      "failed": 0,
+      "results": {
+        "gnc": "no-reviewable-product-candidates",
+        "grainger": "no-reviewable-product-candidates",
+        "pet-supermarket": "http-403",
+        "nuts-com": "http-403"
+      }
+    },
+    "headedGnc": {
+      "narrow": {
+        "machineValidation": "passed",
+        "visualValidation": "passed",
+        "candidateCount": 11,
+        "observationNodeCount": 1418,
+        "unresolvedObstructionCoverage": 0.031915329930732775,
+        "observationSha256": "a97846f76b99b93ed77634b8dda43dc0959f890ee95558220f9f2557e928ba84"
+      },
+      "desktop": {
+        "machineValidation": "blocked",
+        "title": "Access to this page has been denied",
+        "candidateCount": 0
+      }
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [],
+    "assignedDomains": [],
+    "status": "discard",
+    "reason": "No sampled domain passed the frozen two-page, two-viewport acquisition gate."
+  }
+}

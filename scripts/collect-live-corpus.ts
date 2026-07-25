@@ -11,7 +11,10 @@ import path from "node:path";
 import type { PageObservation } from "../src/learning/contracts";
 import { navigateForObservation } from "../src/learning/page-navigation";
 import { capturePageObservation } from "../src/learning/page-observation";
-import { dismissVisibleObstruction } from "../src/learning/page-preparation";
+import {
+  dismissVisibleObstruction,
+  measureVisibleObstructionCoverage
+} from "../src/learning/page-preparation";
 import {
   LIVE_CORPUS_VERSION,
   expandTargets,
@@ -71,6 +74,7 @@ interface PageCapture {
   viewport: { width: number; height: number };
   redactionCount: number;
   dismissedObstructions: number;
+  unresolvedObstructionCoverage: number;
   candidateCount: number;
   observationNodeCount: number;
   observationTruncated: boolean;
@@ -251,6 +255,9 @@ async function capturePage(
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.waitForTimeout(350);
   dismissedObstructions += await preparePage(page);
+  const unresolvedObstructionCoverage = await page
+    .evaluate(measureVisibleObstructionCoverage)
+    .catch(() => 0);
 
   const bodyText = await page
     .locator("body")
@@ -261,11 +268,18 @@ async function capturePage(
     blockReasons.push(`HTTP ${response.status()}`);
   }
   if (
-    /\b(access denied|verify you are human|captcha|robot check|robot or human|unusual traffic|activate and hold)\b/i.test(
+    /\b(access (?:to (?:this|the) page (?:has been )?)?denied|verify you are human|captcha|robot check|robot or human|unusual traffic|activate and hold)\b/i.test(
       bodyText
     )
   ) {
     blockReasons.push("interstitial or bot challenge");
+  }
+  if (unresolvedObstructionCoverage > 0.2) {
+    blockReasons.push(
+      `unresolved visible obstruction covers ${Math.round(
+        unresolvedObstructionCoverage * 100
+      )}% of viewport`
+    );
   }
 
   const redactionCount = await page.evaluate(() => {
@@ -689,6 +703,7 @@ async function capturePage(
     viewport: page.viewportSize() ?? { width: 1440, height: 1000 },
     redactionCount,
     dismissedObstructions,
+    unresolvedObstructionCoverage,
     candidateCount: candidates.length,
     observationNodeCount: observation.nodes.length,
     observationTruncated: observation.truncated,

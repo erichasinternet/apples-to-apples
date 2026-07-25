@@ -17,6 +17,17 @@ The machine-readable targets are in
 [`ideal-dataset-targets.json`](../benchmarks/ideal-dataset-targets.json).
 The append-only active, final, and retired domain registry is in
 [`ideal-domain-splits.json`](../benchmarks/ideal-domain-splits.json).
+Unassigned acquisition candidates are added in qualification waves, beginning
+with
+[`qualification-wave-01.json`](../benchmarks/live-sites/qualification-wave-01.json).
+Candidate sites do not enter a cohort merely because their URLs are listed.
+Each domain must pass two distinct public listing pages across desktop and narrow
+viewports, with at least eight candidates per page, complete observations,
+privacy and provenance validation, no bot challenge, no unresolved obstruction
+over 20% of the viewport, and visual review. The first sampled result is recorded
+in
+[`wave-01-p00.json`](../benchmarks/domain-qualification/wave-01-p00.json);
+no sampled domain passed, so none were assigned.
 
 ## Cohorts
 
