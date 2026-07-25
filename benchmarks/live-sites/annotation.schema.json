@@ -26,6 +26,74 @@
       "items": { "type": "string", "minLength": 1 },
       "uniqueItems": true
     },
+    "reviewProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["independentReviewIds", "adjudicationReviewId", "agreement"],
+      "properties": {
+        "independentReviewIds": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "adjudicationReviewId": { "type": "string", "minLength": 1 },
+        "agreement": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "alignedCards",
+            "comparableKappa",
+            "exactPriceAgreement",
+            "exactQuantityAgreement",
+            "exactDimensionAgreement",
+            "exactPointerAgreement",
+            "matches",
+            "comparableConfusion"
+          ],
+          "properties": {
+            "alignedCards": { "type": "integer", "minimum": 0 },
+            "comparableKappa": {
+              "type": ["number", "null"],
+              "minimum": -1,
+              "maximum": 1
+            },
+            "exactPriceAgreement": { "type": "number", "minimum": 0, "maximum": 1 },
+            "exactQuantityAgreement": { "type": "number", "minimum": 0, "maximum": 1 },
+            "exactDimensionAgreement": { "type": "number", "minimum": 0, "maximum": 1 },
+            "exactPointerAgreement": { "type": "number", "minimum": 0, "maximum": 1 },
+            "matches": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["price", "quantity", "dimension", "pointer"],
+              "properties": {
+                "price": { "type": "integer", "minimum": 0 },
+                "quantity": { "type": "integer", "minimum": 0 },
+                "dimension": { "type": "integer", "minimum": 0 },
+                "pointer": { "type": "integer", "minimum": 0 }
+              }
+            },
+            "comparableConfusion": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "bothComparable",
+                "reviewerAOnly",
+                "reviewerBOnly",
+                "bothAbstain"
+              ],
+              "properties": {
+                "bothComparable": { "type": "integer", "minimum": 0 },
+                "reviewerAOnly": { "type": "integer", "minimum": 0 },
+                "reviewerBOnly": { "type": "integer", "minimum": 0 },
+                "bothAbstain": { "type": "integer", "minimum": 0 }
+              }
+            }
+          }
+        }
+      }
+    },
     "products": {
       "type": "array",
       "items": {

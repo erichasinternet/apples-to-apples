@@ -112,6 +112,15 @@ for (const result of run.results.filter((entry) => entry.status === "captured"))
     if (annotation.coverage === "complete-main-region" && !annotation.region) {
       errors.push(`${result.pageId}: complete annotation lacks a bounded region`);
     }
+    if (
+      annotation.reviewStatus === "adjudicated" &&
+      annotation.coverage === "complete-main-region" &&
+      !annotation.reviewProvenance
+    ) {
+      errors.push(
+        `${result.pageId}: adjudicated evidence annotation lacks independent-review provenance`
+      );
+    }
 
     pages += 1;
     candidates += page.candidateCount;

@@ -3,6 +3,7 @@ import {
   compareCohortToTarget,
   compareDevelopmentChallenges,
   compareDistributionToTargets,
+  compareReviewQualityToTargets,
   emptyIdealCohortActual,
   evidenceMode,
   isPointerReadyAnnotationProduct,
@@ -85,6 +86,47 @@ describe("ideal dataset policy", () => {
         { metric: "temporalDomains", actual: 0, target: 20 }
       ])
     );
+  });
+
+  it("enforces reviewer agreement and concentration limits", () => {
+    const actual = emptyIdealCohortActual();
+    actual.products = 100;
+    actual.productCountsByDomain.shop = 10;
+    actual.productCountsByPage.page = 3;
+    actual.reviewAgreement = {
+      alignedCards: 100,
+      priceMatches: 99,
+      quantityMatches: 98,
+      dimensionMatches: 99,
+      pointerMatches: 95,
+      bothComparable: 60,
+      reviewerAOnly: 1,
+      reviewerBOnly: 1,
+      bothAbstain: 38
+    };
+
+    expect(compareDistributionToTargets(actual, targets.distribution)).toEqual(
+      expect.arrayContaining([
+        {
+          metric: "maximumDomainProductShare",
+          actual: 0.1,
+          target: 0.05
+        },
+        {
+          metric: "maximumPageProductShare",
+          actual: 0.03,
+          target: 0.02
+        }
+      ])
+    );
+    expect(compareReviewQualityToTargets(actual, targets.quality)).toEqual([]);
+
+    actual.reviewAgreement.pointerMatches = 94;
+    expect(compareReviewQualityToTargets(actual, targets.quality)).toContainEqual({
+      metric: "exactPointerAgreement",
+      actual: 0.94,
+      target: 0.95
+    });
   });
 });
 

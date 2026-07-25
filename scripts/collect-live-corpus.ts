@@ -17,6 +17,9 @@ import {
   expandTargets,
   selectTargets,
   slugify,
+  assignCaptureViewports,
+  type CaptureViewportAssignment,
+  type CaptureViewportProfile,
   type CaptureTarget,
   type CorpusAnnotation,
   type CorpusTargetManifest
@@ -38,6 +41,8 @@ interface CollectorOptions {
   maxCards: number;
   delayMs: number;
   siteIds: string[];
+  viewportMode: CaptureViewportProfile | "mixed";
+  narrowShare: number;
 }
 
 interface CandidateCapture {
@@ -89,6 +94,11 @@ const targets = selectTargets(allTargets, {
   ...(options.perSite === undefined ? {} : { perSite: options.perSite }),
   ...(options.siteIds.length === 0 ? {} : { siteIds: options.siteIds })
 });
+const viewportAssignments = assignCaptureViewports(targets, {
+  seed: options.seed,
+  mode: options.viewportMode,
+  narrowShare: options.narrowShare
+});
 
 if (targets.length === 0) {
   throw new Error("No capture targets matched the supplied options.");
@@ -98,11 +108,19 @@ const runId = new Date().toISOString().replace(/[:.]/g, "-");
 const runDirectory = path.join(options.outputRoot, runId);
 await mkdir(runDirectory, { recursive: true });
 
-const runResults: Array<{ pageId: string; status: "captured" | "blocked" | "error"; message?: string }> = [];
+const runResults: Array<{
+  pageId: string;
+  status: "captured" | "blocked" | "error";
+  viewport: CaptureViewportAssignment;
+  message?: string;
+}> = [];
 await writeRunManifest();
 
 for (const [index, target] of targets.entries()) {
-  process.stdout.write(`[${index + 1}/${targets.length}] ${target.siteLabel}: ${target.query}\n`);
+  const viewport = viewportAssignments.get(target.pageId)!;
+  process.stdout.write(
+    `[${index + 1}/${targets.length}] ${target.siteLabel}: ${target.query} (${viewport.profile})\n`
+  );
   let browser: Browser | undefined;
   let context: BrowserContext | undefined;
   let page: Page | undefined;
@@ -116,7 +134,7 @@ for (const [index, target] of targets.entries()) {
     context = await browser.newContext({
       locale: "en-US",
       timezoneId: "America/Denver",
-      viewport: { width: 1440, height: 1000 },
+      viewport: { width: viewport.width, height: viewport.height },
       colorScheme: "light"
     });
     page = await context.newPage();
@@ -128,11 +146,17 @@ for (const [index, target] of targets.entries()) {
     runResults.push({
       pageId: target.pageId,
       status: capture.blocked ? "blocked" : "captured",
+      viewport,
       ...(capture.blockReasons.length === 0 ? {} : { message: capture.blockReasons.join("; ") })
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    runResults.push({ pageId: target.pageId, status: "error", message });
+    runResults.push({
+      pageId: target.pageId,
+      status: "error",
+      viewport,
+      message
+    });
     process.stderr.write(`  capture failed: ${message}\n`);
   } finally {
     if (page) await closeWithin(page.close(), 5_000);
@@ -159,6 +183,15 @@ async function writeRunManifest(): Promise<void> {
     sourceManifest: path.relative(process.cwd(), options.targetsPath),
     anonymousContext: true,
     seed: options.seed,
+    viewportPolicy: {
+      mode: options.viewportMode,
+      narrowShare: options.narrowShare,
+      assignments: Object.fromEntries(
+        [...viewportAssignments.entries()].sort(([left], [right]) =>
+          left.localeCompare(right)
+        )
+      )
+    },
     requestedPages: targets.length,
     completedPages: runResults.length,
     capturedPages: runResults.filter((result) => result.status === "captured").length,
@@ -749,12 +782,18 @@ function parseOptions(args: string[]): CollectorOptions {
   const maxCards = Number.parseInt(values.get("--max-cards") ?? "12", 10);
   const delayMs = Number.parseInt(values.get("--delay-ms") ?? "2000", 10);
   const seed = Number.parseInt(values.get("--seed") ?? "20260722", 10);
+  const viewportMode = values.get("--viewport") ?? "mixed";
+  const narrowShare = Number.parseFloat(values.get("--narrow-share") ?? "0.25");
 
   if (
     (limit !== undefined && (!Number.isFinite(limit) || limit <= 0)) ||
     (perSite !== undefined && (!Number.isFinite(perSite) || perSite <= 0)) ||
     maxCards <= 0 ||
-    delayMs < 0
+    delayMs < 0 ||
+    !["desktop", "narrow", "mixed"].includes(viewportMode) ||
+    !Number.isFinite(narrowShare) ||
+    narrowShare < 0 ||
+    narrowShare > 1
   ) {
     throw new Error("Invalid numeric collector option.");
   }
@@ -769,6 +808,8 @@ function parseOptions(args: string[]): CollectorOptions {
     seed,
     maxCards,
     delayMs,
+    viewportMode: viewportMode as CaptureViewportProfile | "mixed",
+    narrowShare,
     siteIds: (values.get("--sites") ?? "")
       .split(",")
       .map((value) => value.trim())

@@ -177,4 +177,7 @@ bun run dataset:readiness
 
 The command reports current eligible counts and gaps. It does not treat empty
 annotation shells, discovery-only labels, single reviews, or opened held-out data
-as pointer-ready examples.
+as pointer-ready examples. It also fails on domain or page concentration,
+sub-threshold independent-review agreement, exact cross-cohort observation
+duplicates, and normalized-title product overlap across cohorts. DOM-template and
+screenshot-perceptual duplicate checks remain required before a release export.

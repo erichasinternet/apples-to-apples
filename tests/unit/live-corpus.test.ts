@@ -1,6 +1,8 @@
 import domainSplits from "../../benchmarks/live-sites/domain-splits.json";
 import targetManifest from "../../benchmarks/live-sites/targets.json";
 import {
+  CAPTURE_VIEWPORTS,
+  assignCaptureViewports,
   calculateWorstCaseSampleSize,
   expandTargets,
   getDomainSplit,
@@ -45,6 +47,37 @@ describe("live benchmark corpus", () => {
 
     expect(sample).toHaveLength(4);
     expect(new Set(sample.map((target) => target.siteId)).size).toBe(4);
+  });
+
+  it("assigns an exact deterministic narrow viewport share", () => {
+    const targets = expandTargets(targetManifest as CorpusTargetManifest).slice(0, 10);
+    const first = assignCaptureViewports(targets, {
+      seed: 42,
+      mode: "mixed",
+      narrowShare: 0.25
+    });
+    const second = assignCaptureViewports(targets, {
+      seed: 42,
+      mode: "mixed",
+      narrowShare: 0.25
+    });
+
+    expect([...first.values()].filter(({ profile }) => profile === "narrow")).toHaveLength(3);
+    expect([...second.entries()]).toEqual([...first.entries()]);
+    expect(first.get(targets[0]!.pageId)).toEqual(
+      expect.objectContaining({ width: expect.any(Number), height: expect.any(Number) })
+    );
+  });
+
+  it("supports controlled all-desktop and all-narrow captures", () => {
+    const targets = expandTargets(targetManifest as CorpusTargetManifest).slice(0, 4);
+
+    expect(
+      [...assignCaptureViewports(targets, { seed: 1, mode: "desktop" }).values()]
+    ).toEqual(Array(4).fill(CAPTURE_VIEWPORTS.desktop));
+    expect(
+      [...assignCaptureViewports(targets, { seed: 1, mode: "narrow" }).values()]
+    ).toEqual(Array(4).fill(CAPTURE_VIEWPORTS.narrow));
   });
 
   it("accounts for clustered observations in the sample target", () => {

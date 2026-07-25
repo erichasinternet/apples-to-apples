@@ -50,9 +50,25 @@ describe("evidence-pointer reviews", () => {
     expect(agreement.comparableKappa).toBe(1);
     expect(agreement.exactPriceAgreement).toBe(0);
     expect(agreement.exactPointerAgreement).toBe(0);
+    expect(agreement.matches).toMatchObject({ price: 0, pointer: 0 });
+    expect(agreement.comparableConfusion.bothComparable).toBe(1);
     expect(agreement.disagreements).toEqual([
       { cardNodeId: "card", fields: ["currentPrice"] }
     ]);
+  });
+
+  it("quarantines pages whose independent reviewers disagree on product roots", () => {
+    const left = review("review-a", "reviewer-a");
+    const right = review("review-b", "reviewer-b");
+    right.products = [];
+    const adjudication = review("adjudication", "reviewer-c");
+    adjudication.phase = "adjudicated";
+    adjudication.preannotationVisibility = "shown-after-submit";
+    adjudication.sourceReviewIds = ["review-a", "review-b"];
+
+    expect(
+      validateEvidenceAdjudication(adjudication, left, right, observation()).errors
+    ).toContain("independent reviews disagree on card roots: card");
   });
 
   it("requires a distinct adjudicator and exactly the dual-reviewed card set", () => {
@@ -105,6 +121,14 @@ describe("evidence-pointer reviews", () => {
     expect(annotation).toMatchObject({
       reviewStatus: "adjudicated",
       annotators: ["reviewer-a", "reviewer-b", "reviewer-c"],
+      reviewProvenance: {
+        independentReviewIds: ["review-a", "review-b"],
+        adjudicationReviewId: "adjudication",
+        agreement: {
+          alignedCards: 1,
+          exactPointerAgreement: 1
+        }
+      },
       products: [
         {
           comparable: true,

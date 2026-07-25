@@ -25,3 +25,15 @@ missing asset, privacy finding, or provenance mismatch quarantines the page.
 Raw HTML and screenshots are not committed or redistributed. A public release
 requires a separate rights and privacy review and should prefer derived
 observations, pointer labels, aggregate metrics, and generated fixtures.
+
+## Viewport Sampling
+
+Corpus runs default to a deterministic mixed viewport plan. After target
+selection, exactly `ceil(pages * 0.25)` pages receive a 390 by 844 narrow
+viewport and the remainder receive a 1440 by 1000 desktop viewport. The run
+manifest records the policy and every page assignment.
+
+Use `--viewport desktop` or `--viewport narrow` for controlled slices. Use
+`--narrow-share <0..1>` to change the mixed-run share. The seed controls both
+target selection and viewport assignment, so rerunning the same command produces
+the same plan.

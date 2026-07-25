@@ -43,6 +43,22 @@ export interface CaptureTarget extends CorpusQuery {
   url: string;
 }
 
+export type CaptureViewportProfile = "desktop" | "narrow";
+
+export interface CaptureViewportAssignment {
+  profile: CaptureViewportProfile;
+  width: number;
+  height: number;
+}
+
+export const CAPTURE_VIEWPORTS: Record<
+  CaptureViewportProfile,
+  CaptureViewportAssignment
+> = {
+  desktop: { profile: "desktop", width: 1440, height: 1000 },
+  narrow: { profile: "narrow", width: 390, height: 844 }
+};
+
 export interface CorpusAnnotation {
   version: number;
   pageId: string;
@@ -50,6 +66,30 @@ export interface CorpusAnnotation {
   coverage?: "unreviewed" | "sampled" | "complete-main-region";
   region?: ObservationBounds;
   annotators: string[];
+  reviewProvenance?: {
+    independentReviewIds: [string, string];
+    adjudicationReviewId: string;
+    agreement: {
+      alignedCards: number;
+      comparableKappa: number | null;
+      exactPriceAgreement: number;
+      exactQuantityAgreement: number;
+      exactDimensionAgreement: number;
+      exactPointerAgreement: number;
+      matches: {
+        price: number;
+        quantity: number;
+        dimension: number;
+        pointer: number;
+      };
+      comparableConfusion: {
+        bothComparable: number;
+        reviewerAOnly: number;
+        reviewerBOnly: number;
+        bothAbstain: number;
+      };
+    };
+  };
   pageTags?: DatasetPageTag[];
   products: AnnotatedProduct[];
 }
@@ -219,6 +259,42 @@ export function selectTargets(
         );
   const shuffled = deterministicShuffle(balanced, options.seed);
   return options.limit === undefined ? shuffled : shuffled.slice(0, options.limit);
+}
+
+export function assignCaptureViewports(
+  targets: readonly CaptureTarget[],
+  options: {
+    seed: number;
+    mode: CaptureViewportProfile | "mixed";
+    narrowShare?: number;
+  }
+): Map<string, CaptureViewportAssignment> {
+  const narrowShare = options.narrowShare ?? 0.25;
+  if (!(narrowShare >= 0 && narrowShare <= 1)) {
+    throw new Error("narrowShare must be between 0 and 1.");
+  }
+
+  const narrowPageIds =
+    options.mode === "mixed"
+      ? new Set(
+          deterministicShuffle(
+            targets.map((target) => target.pageId),
+            options.seed
+          ).slice(0, Math.ceil(targets.length * narrowShare))
+        )
+      : undefined;
+
+  return new Map(
+    targets.map((target) => {
+      const profile =
+        options.mode === "mixed"
+          ? narrowPageIds!.has(target.pageId)
+            ? "narrow"
+            : "desktop"
+          : options.mode;
+      return [target.pageId, CAPTURE_VIEWPORTS[profile]];
+    })
+  );
 }
 
 export function calculateWorstCaseSampleSize(margin: number, confidenceZ = 1.96, designEffect = 1): number {

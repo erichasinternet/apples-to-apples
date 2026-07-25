@@ -72,6 +72,19 @@ export interface IdealCohortActual {
   abstentions: number;
   dualReviewedPages: number;
   pointerReadyProducts: number;
+  productCountsByDomain: Record<string, number>;
+  productCountsByPage: Record<string, number>;
+  reviewAgreement: {
+    alignedCards: number;
+    priceMatches: number;
+    quantityMatches: number;
+    dimensionMatches: number;
+    pointerMatches: number;
+    bothComparable: number;
+    reviewerAOnly: number;
+    reviewerBOnly: number;
+    bothAbstain: number;
+  };
   dimensions: Record<string, number>;
   evidenceModes: Record<string, number>;
   productChallengeCounts: Record<string, number>;
@@ -91,6 +104,19 @@ export function emptyIdealCohortActual(): IdealCohortActual {
     abstentions: 0,
     dualReviewedPages: 0,
     pointerReadyProducts: 0,
+    productCountsByDomain: {},
+    productCountsByPage: {},
+    reviewAgreement: {
+      alignedCards: 0,
+      priceMatches: 0,
+      quantityMatches: 0,
+      dimensionMatches: 0,
+      pointerMatches: 0,
+      bothComparable: 0,
+      reviewerAOnly: 0,
+      reviewerBOnly: 0,
+      bothAbstain: 0
+    },
     dimensions: {},
     evidenceModes: {},
     productChallengeCounts: {},
@@ -235,6 +261,72 @@ export function compareDistributionToTargets(
       target: targets.minimumNarrowViewportShare
     });
   }
+  const maximumDomainShare =
+    actual.products > 0
+      ? Math.max(0, ...Object.values(actual.productCountsByDomain)) /
+        actual.products
+      : 0;
+  if (maximumDomainShare > targets.maximumDomainProductShare) {
+    gaps.push({
+      metric: "maximumDomainProductShare",
+      actual: maximumDomainShare,
+      target: targets.maximumDomainProductShare
+    });
+  }
+  const maximumPageShare =
+    actual.products > 0
+      ? Math.max(0, ...Object.values(actual.productCountsByPage)) /
+        actual.products
+      : 0;
+  if (maximumPageShare > targets.maximumPageProductShare) {
+    gaps.push({
+      metric: "maximumPageProductShare",
+      actual: maximumPageShare,
+      target: targets.maximumPageProductShare
+    });
+  }
+  return gaps;
+}
+
+export function compareReviewQualityToTargets(
+  actual: IdealCohortActual,
+  targets: IdealDatasetTargets["quality"]
+): Array<{ metric: string; actual: number; target: number }> {
+  const agreement = actual.reviewAgreement;
+  const comparableKappa = kappaFromConfusion(agreement);
+  const aligned = agreement.alignedCards;
+  const fieldAgreement =
+    aligned > 0
+      ? Math.min(
+          agreement.priceMatches / aligned,
+          agreement.quantityMatches / aligned,
+          agreement.dimensionMatches / aligned
+        )
+      : 0;
+  const pointerAgreement =
+    aligned > 0 ? agreement.pointerMatches / aligned : 0;
+  const gaps: Array<{ metric: string; actual: number; target: number }> = [];
+  if (comparableKappa < targets.minimumComparableKappa) {
+    gaps.push({
+      metric: "comparableKappa",
+      actual: comparableKappa,
+      target: targets.minimumComparableKappa
+    });
+  }
+  if (fieldAgreement < targets.minimumExactFieldAgreement) {
+    gaps.push({
+      metric: "exactFieldAgreement",
+      actual: fieldAgreement,
+      target: targets.minimumExactFieldAgreement
+    });
+  }
+  if (pointerAgreement < targets.minimumExactPointerAgreement) {
+    gaps.push({
+      metric: "exactPointerAgreement",
+      actual: pointerAgreement,
+      target: targets.minimumExactPointerAgreement
+    });
+  }
   return gaps;
 }
 
@@ -283,4 +375,26 @@ export function compareDevelopmentChallenges(
 
 function sum(values: number[]): number {
   return values.reduce((total, value) => total + value, 0);
+}
+
+function kappaFromConfusion(
+  agreement: IdealCohortActual["reviewAgreement"]
+): number {
+  const total =
+    agreement.bothComparable +
+    agreement.reviewerAOnly +
+    agreement.reviewerBOnly +
+    agreement.bothAbstain;
+  if (total === 0) return 0;
+  const observed =
+    (agreement.bothComparable + agreement.bothAbstain) / total;
+  const reviewerAPositive =
+    (agreement.bothComparable + agreement.reviewerAOnly) / total;
+  const reviewerBPositive =
+    (agreement.bothComparable + agreement.reviewerBOnly) / total;
+  const expected =
+    reviewerAPositive * reviewerBPositive +
+    (1 - reviewerAPositive) * (1 - reviewerBPositive);
+  if (expected === 1) return observed === 1 ? 1 : 0;
+  return (observed - expected) / (1 - expected);
 }

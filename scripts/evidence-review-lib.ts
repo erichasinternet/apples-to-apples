@@ -69,6 +69,18 @@ export interface EvidenceReviewAgreement {
   exactQuantityAgreement: number;
   exactDimensionAgreement: number;
   exactPointerAgreement: number;
+  matches: {
+    price: number;
+    quantity: number;
+    dimension: number;
+    pointer: number;
+  };
+  comparableConfusion: {
+    bothComparable: number;
+    reviewerAOnly: number;
+    reviewerBOnly: number;
+    bothAbstain: number;
+  };
   disagreements: EvidenceReviewDisagreement[];
 }
 
@@ -206,6 +218,12 @@ export function compareIndependentEvidenceReviews(
   };
   const comparableA: boolean[] = [];
   const comparableB: boolean[] = [];
+  const comparableConfusion = {
+    bothComparable: 0,
+    reviewerAOnly: 0,
+    reviewerBOnly: 0,
+    bothAbstain: 0
+  };
 
   for (const cardNodeId of union) {
     const left = productsA.get(cardNodeId);
@@ -234,8 +252,14 @@ export function compareIndependentEvidenceReviews(
     fieldMatches.packageQuantity += Number(quantityMatch);
     fieldMatches.dimension += Number(dimensionMatch);
     fieldMatches.pointer += Number(left.target === right.target);
-    comparableA.push(pointerA.status === "comparable");
-    comparableB.push(pointerB.status === "comparable");
+    const isComparableA = pointerA.status === "comparable";
+    const isComparableB = pointerB.status === "comparable";
+    comparableA.push(isComparableA);
+    comparableB.push(isComparableB);
+    if (isComparableA && isComparableB) comparableConfusion.bothComparable += 1;
+    else if (isComparableA) comparableConfusion.reviewerAOnly += 1;
+    else if (isComparableB) comparableConfusion.reviewerBOnly += 1;
+    else comparableConfusion.bothAbstain += 1;
   }
 
   const rootPrecision = cardsA.size > 0 ? aligned.length / cardsA.size : 1;
@@ -259,6 +283,13 @@ export function compareIndependentEvidenceReviews(
     exactQuantityAgreement: rate(fieldMatches.packageQuantity, aligned.length),
     exactDimensionAgreement: rate(fieldMatches.dimension, aligned.length),
     exactPointerAgreement: rate(fieldMatches.pointer, aligned.length),
+    matches: {
+      price: fieldMatches.currentPrice,
+      quantity: fieldMatches.packageQuantity,
+      dimension: fieldMatches.dimension,
+      pointer: fieldMatches.pointer
+    },
+    comparableConfusion,
     disagreements
   };
 }
@@ -272,6 +303,12 @@ export function validateEvidenceAdjudication(
   assertIndependentPair(reviewA, reviewB);
   const result = validateEvidencePointerReview(adjudication, observation);
   const errors = [...result.errors];
+  const validationA = validateEvidencePointerReview(reviewA, observation);
+  const validationB = validateEvidencePointerReview(reviewB, observation);
+  errors.push(
+    ...validationA.errors.map((error) => `review A: ${error}`),
+    ...validationB.errors.map((error) => `review B: ${error}`)
+  );
   if (adjudication.phase !== "adjudicated") {
     errors.push("final review phase must be adjudicated");
   }
@@ -290,6 +327,16 @@ export function validateEvidenceAdjudication(
     ...reviewA.products.map((product) => product.cardNodeId),
     ...reviewB.products.map((product) => product.cardNodeId)
   ]);
+  const cardsA = new Set(reviewA.products.map((product) => product.cardNodeId));
+  const cardsB = new Set(reviewB.products.map((product) => product.cardNodeId));
+  const rootDisagreements = [...sourceCards].filter(
+    (cardNodeId) => !cardsA.has(cardNodeId) || !cardsB.has(cardNodeId)
+  );
+  if (rootDisagreements.length > 0) {
+    errors.push(
+      `independent reviews disagree on card roots: ${rootDisagreements.sort().join(", ")}`
+    );
+  }
   const adjudicatedCards = new Set(
     adjudication.products.map((product) => product.cardNodeId)
   );
@@ -328,6 +375,11 @@ export function compileAdjudicatedCorpusAnnotation(
   );
   const region = observation.sourceRegion ?? root?.bounds;
   if (!region) throw new Error("Observation lacks a bounded annotation region.");
+  const agreement = compareIndependentEvidenceReviews(
+    reviewA,
+    reviewB,
+    observation
+  );
 
   return {
     version: 1,
@@ -340,6 +392,20 @@ export function compileAdjudicatedCorpusAnnotation(
       reviewB.reviewerId,
       adjudication.reviewerId
     ],
+    reviewProvenance: {
+      independentReviewIds: [reviewA.reviewId, reviewB.reviewId],
+      adjudicationReviewId: adjudication.reviewId,
+      agreement: {
+        alignedCards: agreement.alignedCards,
+        comparableKappa: agreement.comparableKappa,
+        exactPriceAgreement: agreement.exactPriceAgreement,
+        exactQuantityAgreement: agreement.exactQuantityAgreement,
+        exactDimensionAgreement: agreement.exactDimensionAgreement,
+        exactPointerAgreement: agreement.exactPointerAgreement,
+        matches: agreement.matches,
+        comparableConfusion: agreement.comparableConfusion
+      }
+    },
     products: adjudication.products.map((reviewedProduct) => {
       const resolved = validation.resolvedProducts.get(
         reviewedProduct.cardNodeId
