@@ -7,16 +7,44 @@ import {
   emptyIdealCohortActual,
   evidenceMode,
   isPointerReadyAnnotationProduct,
+  resolveIdealCohort,
   validateIdealDatasetTargets,
+  validateIdealDomainSplits,
+  type IdealDomainSplits,
   type IdealDatasetTargets
 } from "../../scripts/ideal-dataset-lib";
 import targetsJson from "../../benchmarks/ideal-dataset-targets.json";
+import domainSplitsJson from "../../benchmarks/ideal-domain-splits.json";
 
 const targets = targetsJson as IdealDatasetTargets;
 
 describe("ideal dataset policy", () => {
   it("keeps the checked-in targets internally consistent", () => {
     expect(validateIdealDatasetTargets(targets)).toEqual([]);
+  });
+
+  it("keeps active and retired domains disjoint with a possible final cohort", () => {
+    const splits = domainSplitsJson as IdealDomainSplits;
+
+    expect(validateIdealDomainSplits(splits)).toEqual([]);
+    expect(resolveIdealCohort("walmart", splits)).toBe("training");
+    expect(resolveIdealCohort("petsmart", splits)).toBe("validation");
+    expect(resolveIdealCohort("instacart", splits)).toBe("selection");
+    expect(resolveIdealCohort("bjs", splits)).toBe("retired");
+    expect(resolveIdealCohort("future-final-site", {
+      ...splits,
+      final: ["future-final-site"]
+    })).toBe("final");
+  });
+
+  it("rejects a domain assigned to more than one ideal cohort", () => {
+    const splits = domainSplitsJson as IdealDomainSplits;
+    expect(
+      validateIdealDomainSplits({
+        ...splits,
+        final: ["walmart"]
+      })
+    ).toContain("walmart appears in both training and final");
   });
 
   it("requires enough final comparable products for the accepted-output claim", () => {

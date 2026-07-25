@@ -15,6 +15,8 @@ support them.
 
 The machine-readable targets are in
 [`ideal-dataset-targets.json`](../benchmarks/ideal-dataset-targets.json).
+The append-only active, final, and retired domain registry is in
+[`ideal-domain-splits.json`](../benchmarks/ideal-domain-splits.json).
 
 ## Cohorts
 

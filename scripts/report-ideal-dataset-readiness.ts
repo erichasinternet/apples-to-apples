@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
-import type { CorpusAnnotation, CorpusDomainSplits } from "./live-corpus-lib";
+import type { CorpusAnnotation } from "./live-corpus-lib";
 import {
   compareCohortToTarget,
   compareDevelopmentChallenges,
@@ -10,11 +10,13 @@ import {
   emptyIdealCohortActual,
   evidenceMode,
   isPointerReadyAnnotationProduct,
+  resolveIdealCohort,
   validateIdealDatasetTargets,
+  validateIdealDomainSplits,
+  type IdealDomainSplits,
   type IdealCohortName,
   type IdealDatasetTargets
 } from "./ideal-dataset-lib";
-import type { TrainingDomainSplits } from "./t5-training-lib";
 
 interface PageMetadata {
   pageId: string;
@@ -31,14 +33,17 @@ interface PageMetadata {
 }
 
 const captureRoot = path.resolve(process.argv[2] ?? "benchmark-data/live");
-const [targets, domainSplits, trainingSplits] = await Promise.all([
+const [targets, domainSplits] = await Promise.all([
   readJson<IdealDatasetTargets>(path.resolve("benchmarks/ideal-dataset-targets.json")),
-  readJson<CorpusDomainSplits>(path.resolve("benchmarks/live-sites/domain-splits.json")),
-  readJson<TrainingDomainSplits>(path.resolve("benchmarks/live-sites/training-splits.json"))
+  readJson<IdealDomainSplits>(path.resolve("benchmarks/ideal-domain-splits.json"))
 ]);
 const targetErrors = validateIdealDatasetTargets(targets);
 if (targetErrors.length > 0) {
   throw new Error(`Invalid ideal dataset targets:\n${targetErrors.join("\n")}`);
+}
+const splitErrors = validateIdealDomainSplits(domainSplits);
+if (splitErrors.length > 0) {
+  throw new Error(`Invalid ideal domain splits:\n${splitErrors.join("\n")}`);
 }
 
 const actual = {
@@ -72,8 +77,8 @@ for (const annotationFile of annotationFiles) {
     unreadableCaptures += 1;
     continue;
   }
-  const cohort = resolveCohort(page.target.siteId, domainSplits, trainingSplits);
-  if (!cohort) {
+  const cohort = resolveIdealCohort(page.target.siteId, domainSplits);
+  if (!cohort || cohort === "retired") {
     retiredOpenedPages += 1;
     continue;
   }
@@ -170,6 +175,13 @@ const contaminationGaps =
 const report = {
   version: 1,
   scope: targets.scope,
+  domainRegistry: {
+    training: domainSplits.training.length,
+    validation: domainSplits.validation.length,
+    selection: domainSplits.selection.length,
+    final: domainSplits.final.length,
+    retired: domainSplits.retired.length
+  },
   captureRoot,
   annotationFiles: annotationFiles.length,
   retiredOpenedPages,
@@ -227,18 +239,6 @@ report.ready =
   report.contamination.gaps.length === 0;
 process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
 if (!report.ready) process.exitCode = 1;
-
-function resolveCohort(
-  siteId: string,
-  splits: CorpusDomainSplits,
-  training: TrainingDomainSplits
-): IdealCohortName | undefined {
-  if (training.train.includes(siteId)) return "training";
-  if (training.validation.includes(siteId)) return "validation";
-  if (splits.selection.includes(siteId)) return "selection";
-  // The old held-out cohort was opened during prior research and is retired.
-  return undefined;
-}
 
 async function findFiles(directory: string, basename: string): Promise<string[]> {
   const files: string[] = [];

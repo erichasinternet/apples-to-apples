@@ -2,6 +2,18 @@ import type { CorpusAnnotation } from "./live-corpus-lib";
 
 export type IdealCohortName = "training" | "validation" | "selection" | "final";
 
+export interface IdealDomainSplits {
+  version: 1;
+  seed: number;
+  frozenAt: string;
+  notes: string;
+  training: string[];
+  validation: string[];
+  selection: string[];
+  final: string[];
+  retired: string[];
+}
+
 export interface IdealCohortTarget {
   minimumDomains: number;
   minimumPages: number;
@@ -171,6 +183,48 @@ export function validateIdealDatasetTargets(targets: IdealDatasetTargets): strin
     errors.push("learning-curve checkpoints must be positive and strictly increasing");
   }
   return errors;
+}
+
+export function validateIdealDomainSplits(
+  splits: IdealDomainSplits
+): string[] {
+  const errors: string[] = [];
+  if (splits.version !== 1) errors.push("ideal domain split version must be 1");
+  if (!Number.isInteger(splits.seed)) errors.push("ideal domain split seed is required");
+  if (!Number.isFinite(Date.parse(splits.frozenAt))) {
+    errors.push("ideal domain split frozenAt must be ISO-8601");
+  }
+  const seen = new Map<string, string>();
+  for (const [cohort, siteIds] of Object.entries({
+    training: splits.training,
+    validation: splits.validation,
+    selection: splits.selection,
+    final: splits.final,
+    retired: splits.retired
+  })) {
+    for (const siteId of siteIds) {
+      if (!siteId.trim()) {
+        errors.push(`${cohort} contains an empty site id`);
+        continue;
+      }
+      const prior = seen.get(siteId);
+      if (prior) errors.push(`${siteId} appears in both ${prior} and ${cohort}`);
+      else seen.set(siteId, cohort);
+    }
+  }
+  return errors;
+}
+
+export function resolveIdealCohort(
+  siteId: string,
+  splits: IdealDomainSplits
+): IdealCohortName | "retired" | undefined {
+  if (splits.training.includes(siteId)) return "training";
+  if (splits.validation.includes(siteId)) return "validation";
+  if (splits.selection.includes(siteId)) return "selection";
+  if (splits.final.includes(siteId)) return "final";
+  if (splits.retired.includes(siteId)) return "retired";
+  return undefined;
 }
 
 export function isPointerReadyAnnotationProduct(
