@@ -12,7 +12,11 @@ const observation = {
     node("card", "root", undefined, 20, 100, 250, 300, "article"),
     node("title", "card", "Coffee, 12 oz", 35, 125, 200, 45),
     node("price", "card", "$12.00", 35, 190, 100, 35),
-    node("quantity", "card", "12 oz", 35, 240, 100, 35)
+    node("quantity", "card", "12 oz", 35, 240, 100, 35),
+    node("card2", "root", undefined, 320, 100, 250, 300, "article"),
+    node("title2", "card2", "Coffee, 24 oz", 335, 125, 200, 45),
+    node("price2", "card2", "$20.00", 335, 190, 100, 35),
+    node("quantity2", "card2", "24 oz", 335, 240, 100, 35)
   ],
   truncated: false
 };
@@ -49,7 +53,7 @@ test("builds and submits a blinded evidence-pointer review", async ({ page }) =>
           {
             pageId: "synthetic-review-page",
             rootNodeId: "root",
-            candidateCardNodeIds: ["card"],
+            candidateCardNodeIds: ["card", "card2"],
             source: reviewTemplate.source,
             reviewTemplate,
             saved: false
@@ -68,30 +72,34 @@ test("builds and submits a blinded evidence-pointer review", async ({ page }) =>
         '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800">',
         '<rect width="600" height="800" fill="#fff"/>',
         '<rect x="20" y="100" width="250" height="300" fill="#eef4ff" stroke="#1659c7"/>',
+        '<rect x="320" y="100" width="250" height="300" fill="#eef4ff" stroke="#1659c7"/>',
         '<text x="35" y="150" font-size="22">Coffee, 12 oz</text>',
         '<text x="35" y="215" font-size="22">$12.00</text>',
+        '<text x="335" y="150" font-size="22">Coffee, 24 oz</text>',
+        '<text x="335" y="215" font-size="22">$20.00</text>',
         "</svg>"
       ].join("")
     });
   });
   await page.route("**/api/candidates?*", async (route) => {
+    const second = new URL(route.request().url()).searchParams.get("cardNodeId") === "card2";
     await route.fulfill({
       json: {
-        cardNodeId: "card",
+        cardNodeId: second ? "card2" : "card",
         candidates: [
           {
-            id: "price@p0",
+            id: second ? "price2@p0" : "price@p0",
             kind: "current-price",
-            nodeId: "price",
-            sourceText: "$12.00",
-            cents: 1200
+            nodeId: second ? "price2" : "price",
+            sourceText: second ? "$20.00" : "$12.00",
+            cents: second ? 2000 : 1200
           },
           {
-            id: "quantity@q0",
+            id: second ? "quantity2@q0" : "quantity@q0",
             kind: "package-quantity",
-            nodeId: "quantity",
-            sourceText: "12 oz",
-            valuePerPackage: 12,
+            nodeId: second ? "quantity2" : "quantity",
+            sourceText: second ? "24 oz" : "12 oz",
+            valuePerPackage: second ? 24 : 12,
             unit: "oz",
             dimension: "mass"
           }
@@ -109,14 +117,10 @@ test("builds and submits a blinded evidence-pointer review", async ({ page }) =>
   await expect(page.locator("#queueMeta")).toHaveText(
     "reviewer-a · training · blinded"
   );
-  const capture = page.locator("#captureImage");
-  await expect(capture).toBeVisible();
-  const captureBox = await capture.boundingBox();
-  expect(captureBox).not.toBeNull();
-  await page.mouse.click(captureBox!.x + 80, captureBox!.y + 140);
-
-  await expect(page.locator("#nodeChoices .choice-button")).toHaveCount(1);
-  await page.getByRole("button", { name: /card · article/ }).click();
+  await expect(page.locator(".card-root-button")).toHaveCount(2);
+  await expect(page.locator("#productCount")).toHaveText("0/2 cards");
+  await expect(page.getByRole("button", { name: "Submit review" })).toBeDisabled();
+  await page.getByRole("button", { name: "Review card 1 of 2" }).click();
   await expect(page.locator("#captureOverlay")).toBeVisible();
   await page.locator('#titleChoices input[value="title"]').check();
   await page.locator("#currentPrice").selectOption("price@p0");
@@ -135,7 +139,25 @@ test("builds and submits a blinded evidence-pointer review", async ({ page }) =>
 
   await page.getByRole("button", { name: "Add product" }).click();
   await expect(page.locator("#products .product-row")).toHaveCount(1);
-  await expect(page.locator("#productCount")).toHaveText("1 products");
+  await expect(page.locator("#productCount")).toHaveText("1/2 cards");
+  await expect(page.locator("#pointerPreview")).toContainText("CARD card2");
+  await expect(page.getByRole("button", { name: "Submit review" })).toBeDisabled();
+
+  await page.locator('#titleChoices input[value="title2"]').check();
+  await page.locator("#currentPrice").selectOption("price2@p0");
+  await page.locator("#packageQuantity").selectOption("quantity2@q0");
+  const expectedTarget2 = [
+    "CARD card2",
+    "TITLE title2",
+    "CURRENT_PRICE price2@p0",
+    "NATIVE_UNIT_PRICE NONE",
+    "PACKAGE_QUANTITY quantity2@q0",
+    "PACK_COUNT NONE",
+    "STATUS comparable"
+  ].join("\n");
+  await page.getByRole("button", { name: "Add product" }).click();
+  await expect(page.locator("#productCount")).toHaveText("2/2 cards");
+  await expect(page.getByRole("button", { name: "Submit review" })).toBeEnabled();
   await page.getByRole("button", { name: "Submit review" }).click();
   await expect(page.locator("#saveState")).toHaveText("Submitted");
 
@@ -149,6 +171,11 @@ test("builds and submits a blinded evidence-pointer review", async ({ page }) =>
         cardNodeId: "card",
         scope: "primary-results",
         target: expectedTarget
+      },
+      {
+        cardNodeId: "card2",
+        scope: "primary-results",
+        target: expectedTarget2
       }
     ]
   });

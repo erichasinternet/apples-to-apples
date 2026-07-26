@@ -202,11 +202,58 @@ legend {
 }
 
 .editor-section > h3,
+.editor-section > .card-root-list,
 .editor-section > fieldset,
 .editor-section > label,
 .editor-section > output,
 .editor-section > button {
   margin-bottom: 12px;
+}
+
+.card-root-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.card-root-button {
+  position: relative;
+  min-width: 0;
+  min-height: 42px;
+  padding: 5px 7px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.card-root-button strong,
+.card-root-button span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-root-button span {
+  color: #68707a;
+  font-size: 10px;
+}
+
+.card-root-button.active {
+  border-color: #1659c7;
+  background: #e8f0ff;
+}
+
+.card-root-button.reviewed::after {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  color: #14733b;
+  content: "✓";
+  font-weight: 700;
+}
+
+.point-heading {
+  margin-top: 14px;
 }
 
 label {

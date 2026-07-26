@@ -11,11 +11,13 @@ const state = {
 const fields = {
   pageList: document.querySelector("#pageList"),
   pageTitle: document.querySelector("#pageTitle"),
+  selectionHint: document.querySelector("#selectionHint"),
   queueMeta: document.querySelector("#queueMeta"),
   pageProgress: document.querySelector("#pageProgress"),
   captureStage: document.querySelector("#captureStage"),
   captureImage: document.querySelector("#captureImage"),
   captureOverlay: document.querySelector("#captureOverlay"),
+  cardRoots: document.querySelector("#cardRoots"),
   nodeChoices: document.querySelector("#nodeChoices"),
   fieldEditor: document.querySelector("#fieldEditor"),
   titleChoices: document.querySelector("#titleChoices"),
@@ -83,8 +85,6 @@ async function openPage(pageId) {
   clearSelection();
   fields.pageTitle.textContent = pageId;
   fields.captureImage.src = `/api/screenshot?pageId=${encodeURIComponent(pageId)}`;
-  fields.saveState.textContent = state.item.saved ? "Already submitted" : "Not submitted";
-  fields.submitReview.disabled = state.item.saved;
   document.querySelectorAll(".page-button").forEach((button) => {
     button.classList.toggle("active", button.dataset.pageId === pageId);
   });
@@ -147,6 +147,8 @@ function renderNodeChoices() {
 
 async function selectCard(cardNodeId) {
   state.cardNodeId = cardNodeId;
+  const cardIndex = state.item.candidateCardNodeIds.indexOf(cardNodeId);
+  fields.selectionHint.textContent = `Card ${cardIndex + 1} selected`;
   state.candidates = (
     await fetchJson(
       `/api/candidates?pageId=${encodeURIComponent(
@@ -161,8 +163,16 @@ async function selectCard(cardNodeId) {
       button.querySelector("strong")?.textContent?.startsWith(`${cardNodeId} ·`)
     );
   });
+  document.querySelectorAll(".card-root-button").forEach((button) => {
+    button.classList.toggle(
+      "active",
+      button.dataset.cardNodeId === cardNodeId
+    );
+  });
   renderCardFields();
+  await ensureCaptureImage();
   highlightNode(nodeById(cardNodeId));
+  revealNode(nodeById(cardNodeId));
 }
 
 function renderCardFields() {
@@ -241,7 +251,7 @@ function renderPointer() {
   fields.addProduct.disabled = !state.cardNodeId || !hasTitle;
 }
 
-function addProduct() {
+async function addProduct() {
   const product = {
     cardNodeId: state.cardNodeId,
     scope: fields.scope.value,
@@ -254,11 +264,24 @@ function addProduct() {
   if (existing >= 0) state.products.splice(existing, 1, product);
   else state.products.push(product);
   renderProducts();
-  clearSelection();
+  const reviewed = new Set(state.products.map((candidate) => candidate.cardNodeId));
+  const next = state.item.candidateCardNodeIds.find(
+    (cardNodeId) => !reviewed.has(cardNodeId)
+  );
+  if (next) await selectCard(next);
+  else clearSelection();
 }
 
 function renderProducts() {
-  fields.productCount.textContent = `${state.products.length} products`;
+  const total = state.item?.candidateCardNodeIds.length ?? 0;
+  const reviewed = state.products.length;
+  fields.productCount.textContent = `${reviewed}/${total} cards`;
+  renderCardRoots();
+  const complete = total > 0 && reviewed === total;
+  fields.submitReview.disabled = Boolean(state.item?.saved) || !complete;
+  fields.saveState.textContent = state.item?.saved
+    ? "Already submitted"
+    : `${reviewed}/${total} reviewed`;
   if (state.products.length === 0) {
     fields.products.className = "product-list empty-state";
     fields.products.textContent = "No products added.";
@@ -289,8 +312,8 @@ function renderProducts() {
 }
 
 async function submitReview() {
-  if (state.products.length === 0) {
-    fields.saveState.textContent = "Add at least one reviewed product";
+  if (state.products.length !== state.item.candidateCardNodeIds.length) {
+    fields.saveState.textContent = "Complete every card before submitting";
     return;
   }
   fields.submitReview.disabled = true;
@@ -321,9 +344,41 @@ function clearSelection() {
   state.nodeChoices = [];
   state.candidates = [];
   fields.nodeChoices.className = "choice-list empty-state";
-  fields.nodeChoices.textContent = "Select a point in the capture.";
+  fields.nodeChoices.textContent = "None";
   fields.fieldEditor.hidden = true;
   fields.captureOverlay.style.display = "none";
+  fields.selectionHint.textContent = "No card selected";
+  document.querySelectorAll(".card-root-button").forEach((button) => {
+    button.classList.remove("active");
+  });
+}
+
+function renderCardRoots() {
+  if (!state.item || !state.observation) {
+    fields.cardRoots.replaceChildren();
+    return;
+  }
+  const reviewed = new Set(state.products.map((product) => product.cardNodeId));
+  fields.cardRoots.replaceChildren(
+    ...state.item.candidateCardNodeIds.map((cardNodeId, index) => {
+      const node = nodeById(cardNodeId);
+      const button = element("button", "card-root-button");
+      button.type = "button";
+      button.dataset.cardNodeId = cardNodeId;
+      button.classList.toggle("reviewed", reviewed.has(cardNodeId));
+      button.classList.toggle("active", state.cardNodeId === cardNodeId);
+      button.setAttribute(
+        "aria-label",
+        `Review card ${index + 1} of ${state.item.candidateCardNodeIds.length}`
+      );
+      button.append(
+        element("strong", "", String(index + 1)),
+        element("span", "", cardNodeId)
+      );
+      button.addEventListener("click", () => selectCard(cardNodeId));
+      return button;
+    })
+  );
 }
 
 function highlightNode(node) {
@@ -340,6 +395,28 @@ function highlightNode(node) {
       (node.bounds.y - root.bounds.y) * scaleY}px`,
     width: `${node.bounds.width * scaleX}px`,
     height: `${node.bounds.height * scaleY}px`
+  });
+}
+
+function revealNode(node) {
+  const imageRect = fields.captureImage.getBoundingClientRect();
+  const root = nodeById(state.observation.rootNodeId);
+  const scaleY = imageRect.height / fields.captureImage.naturalHeight;
+  const targetTop =
+    fields.captureImage.offsetTop + (node.bounds.y - root.bounds.y) * scaleY;
+  fields.captureStage.scrollTo({
+    top: Math.max(0, targetTop - 24),
+    behavior: "smooth"
+  });
+}
+
+async function ensureCaptureImage() {
+  if (fields.captureImage.complete && fields.captureImage.naturalWidth > 0) {
+    return;
+  }
+  await new Promise((resolve) => {
+    fields.captureImage.addEventListener("load", resolve, { once: true });
+    fields.captureImage.addEventListener("error", resolve, { once: true });
   });
 }
 

@@ -31,7 +31,7 @@
         <div class="pane-heading">
           <div>
             <h2 id="pageTitle">Loading</h2>
-            <span id="selectionHint">Click a product card in the capture.</span>
+            <span id="selectionHint">No card selected</span>
           </div>
           <button id="clearSelection" class="icon-button" type="button" title="Clear selection">×</button>
         </div>
@@ -48,8 +48,10 @@
         </div>
 
         <section id="nodePicker" class="editor-section">
-          <h3>Card root</h3>
-          <div id="nodeChoices" class="choice-list empty-state">Select a point in the capture.</div>
+          <h3>Card roots</h3>
+          <div id="cardRoots" class="card-root-list"></div>
+          <h3 class="point-heading">Point candidates</h3>
+          <div id="nodeChoices" class="choice-list empty-state">None</div>
         </section>
 
         <section id="fieldEditor" class="editor-section" hidden>

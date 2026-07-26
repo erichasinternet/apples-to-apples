@@ -115,7 +115,9 @@ bun run dataset:reviews:serve -- \
 The workbench binds to `127.0.0.1`, serves only queue-declared assets beneath
 `benchmark-data`, exposes no model or peer labels, validates submissions against
 the immutable observation, hashes, and complete frozen card-root set, and refuses
-to overwrite an existing review.
+to overwrite an existing review. Reviewers can select any frozen card root
+directly, and the workbench advances to the next unreviewed root after each label.
+Submission remains disabled until every frozen root has a card-scoped decision.
 
 After a reviewer chooses a card root, list the deterministic numeric candidates:
 
