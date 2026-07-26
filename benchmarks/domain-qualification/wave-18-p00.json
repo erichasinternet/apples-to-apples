@@ -1,0 +1,246 @@
+{
+  "version": 1,
+  "qualificationId": "wave-18-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-18.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "screeningPageTimeoutMs": 90000,
+    "qualificationPageTimeoutMs": 90000,
+    "screeningCardScreenshotBudgetMs": 12000,
+    "qualificationCardScreenshotBudgetMs": 12000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "exactPageTargeting": true,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "screeningSamplingFinding": "All initial and follow-up attempts used explicit page IDs. Repeated viewport assignments were retained as screening evidence but never counted toward the opposite-viewport qualification requirement.",
+    "manifestIntegrityFinding": "Four candidate aliases duplicated IDs or hostnames from earlier waves and were replaced before promotion. The final manifest is frozen at sourceManifestSha256 2d6c6c8842be3487ad9854f3a21686743ec97cb5f9ed9e47bbd3ce6a5d19c73c, and all eight accepted provenance records share that hash."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T13-27-16-779Z",
+      "runManifestSha256": "584381eff2caa4c853ff96c507fd6149f8ad45e3a0c341a4211b35c3ba7e9c7b",
+      "purpose": "exact headed mixed-viewport screening across all twenty domains"
+    },
+    {
+      "runId": "2026-07-26T13-43-45-685Z",
+      "runManifestSha256": "3ed0447142fb93001c8817178bf2a193b845b2f5b96b0a2978d4ccd855eb7e5a",
+      "purpose": "exact distinct-query follow-ups with mixed viewport assignments"
+    },
+    {
+      "runId": "2026-07-26T13-48-33-715Z",
+      "runManifestSha256": "232893ae2ba5f4081f19acbe455cf8958f10800c0c01760142a7fa3ce60b3b32",
+      "purpose": "explicit narrow qualification for Medex Supply and Spandex House plus bounded Parentgiving retry"
+    },
+    {
+      "runId": "2026-07-26T14-12-39-494Z",
+      "runManifestSha256": "053d98ec7f9cc52eb0b02e89b354e2d3d0c6f9499aa0447574ed466a75875e21",
+      "purpose": "final replacement-candidate screening; Really Cheap Floors exceeded the bounded timeout"
+    },
+    {
+      "runId": "2026-07-26T14-14-20-033Z",
+      "runManifestSha256": "bc9aa7f6675be1994464db9f2eb67abc07176337d153345977b095c23dd4e54a",
+      "purpose": "final frozen-manifest desktop captures; Armour timed out and was retried separately"
+    },
+    {
+      "runId": "2026-07-26T14-16-52-672Z",
+      "runManifestSha256": "c7b4f1bb30c8398a77419079968b1a64f5668e86aae2cac35005da3fdf29a114",
+      "purpose": "final frozen-manifest narrow captures; Food to Live timed out and was retried separately"
+    },
+    {
+      "runId": "2026-07-26T14-19-23-611Z",
+      "runManifestSha256": "f924771879971fa6b5e9f710a7e02175745ec791d8e77e0a63fd9afbefc1c472",
+      "purpose": "bounded successful retry for final Armour desktop evidence"
+    },
+    {
+      "runId": "2026-07-26T14-19-43-776Z",
+      "runManifestSha256": "4c3bae59af0f87557ac6f33208418417cdbea9cf09ff032e38ba4336e0cd0e19",
+      "purpose": "bounded successful retry for final Food to Live narrow evidence"
+    }
+  ],
+  "results": {
+    "armour-detail-supply": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "armour-detail-supply--wheel-cleaner",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.005754855685763889,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "armour-detail-supply--car-shampoo",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.014218009478672985,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent automotive-detailing grids pass in opposite viewports. Variant starting prices, kits, tools, towels, chemicals, and size-absent products provide useful extraction and abstention cases. A narrow chat widget partly overlaps one card; the remaining roots are readable and the affected root must be abstained during review."
+    },
+    "food-to-live": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "food-to-live--almond-flour",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.014247562323676216,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "food-to-live--brown-rice",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.009527281565196256,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two visually coherent specialty-food result pages pass in opposite viewports. Large featured products, compact repeated cards, starting prices, flour and whole-grain variants, and absent package sizes create realistic mass extraction and abstention evidence."
+    },
+    "medex-supply": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "medex-supply--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.006066666666666666,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "medex-supply--underpads",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.026540284360189573,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two readable medical-supply grids pass in opposite viewports. Titles expose boxes, cases, packs, dimensions, and count suffixes while price ranges and missing sell-unit details supply hard negatives."
+    },
+    "spandex-house": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "spandex-house--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.005333333333333333,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "spandex-house--spandex-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.023332118118847976,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two fabric result grids pass in opposite viewports. Width and stretch measurements are prominent physical attributes rather than sell quantities, prices lack explicit per-yard text, and the broad second search includes noisy but genuine product results. A narrow feedback widget partly overlaps two cards; affected evidence must be abstained during review."
+    },
+    "sincerely-nuts": {
+      "status": "rejected",
+      "reason": "The corrected-manifest narrow page exposed no reviewable product candidates."
+    },
+    "nutstop": {
+      "status": "rejected",
+      "reason": "The screened page exposed twelve roots and full query evidence, but the required annotation screenshot was unavailable."
+    },
+    "beanilla": {
+      "status": "rejected",
+      "reason": "The screened target exceeded the 90-second page bound."
+    },
+    "griots-garage": {
+      "status": "rejected",
+      "reason": "The screened target exceeded the 90-second page bound."
+    },
+    "hyperclean-store": {
+      "status": "rejected",
+      "reason": "The first page passed, but the distinct second query exposed only one candidate root, below the frozen minimum of eight."
+    },
+    "detailers-warehouse": {
+      "status": "rejected",
+      "reason": "The screened target exceeded the 90-second page bound."
+    },
+    "exmed": {
+      "status": "rejected",
+      "reason": "The desktop page passed, but unresolved security UI covered more than 20 percent of the distinct narrow qualification viewport."
+    },
+    "parentgiving": {
+      "status": "rejected",
+      "reason": "The first page passed, but the distinct underpad route exceeded the 90-second page bound in both desktop and explicit narrow attempts."
+    },
+    "honest-med": {
+      "status": "rejected",
+      "reason": "The screened search endpoint exposed roots but zero requested-query token coverage in the frozen result evidence."
+    },
+    "fabric-guru": {
+      "status": "rejected",
+      "reason": "The corrected-manifest narrow page exposed zero requested-query token coverage and no reviewable product candidates."
+    },
+    "fabrics-fabrics": {
+      "status": "rejected",
+      "reason": "The screened target exceeded the 90-second page bound."
+    },
+    "spandex-world": {
+      "status": "rejected",
+      "reason": "The rendered page exposed only half of the requested-query tokens and no reviewable product roots."
+    },
+    "ambient-bamboo": {
+      "status": "rejected",
+      "reason": "The screened target exceeded the 90-second page bound."
+    },
+    "really-cheap-floors": {
+      "status": "rejected",
+      "reason": "The corrected-manifest target exceeded the 90-second page bound."
+    },
+    "hardwood-bargains": {
+      "status": "rejected",
+      "reason": "An unresolved obstruction covered the full screened viewport."
+    },
+    "bedrosians": {
+      "status": "rejected",
+      "reason": "The search route resolved to a same-site 404 with partial query evidence and no reviewable product roots."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "armour-detail-supply",
+      "food-to-live",
+      "medex-supply",
+      "spandex-house"
+    ],
+    "assignedDomains": [
+      {"siteId": "armour-detail-supply", "cohort": "training"},
+      {"siteId": "food-to-live", "cohort": "training"},
+      {"siteId": "medex-supply", "cohort": "training"},
+      {"siteId": "spandex-house", "cohort": "training"}
+    ],
+    "status": "keep"
+  }
+}

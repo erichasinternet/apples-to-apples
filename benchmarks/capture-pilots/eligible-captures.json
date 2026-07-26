@@ -1776,6 +1776,102 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-17-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "armour-detail-supply",
+      "cohort": "training",
+      "pageId": "armour-detail-supply--wheel-cleaner",
+      "captureTimestamp": "2026-07-26T14:19:30.782Z",
+      "observationSha256": "ba7e35b3c09e1decb94b00100b296d524d4f36ab5df7b4162e0e5db210b3746c",
+      "annotationScreenshotSha256": "1491894d239b9690684b83a4170324b37248741bfe3609fbe50a2a4ac15b5f69",
+      "qualificationReport": "benchmarks/domain-qualification/wave-18-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-18-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "food-to-live",
+      "cohort": "training",
+      "pageId": "food-to-live--almond-flour",
+      "captureTimestamp": "2026-07-26T14:16:45.145Z",
+      "observationSha256": "151618d2fe4e8cc22a1f793403c72918a6a78d2cb68cfc0a09bba2917afc3624",
+      "annotationScreenshotSha256": "680fe8f8d7ba88a13b35a8ee3b7b7ee031bd5795d0c0d32ac7b8def1b2fedeb3",
+      "qualificationReport": "benchmarks/domain-qualification/wave-18-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-18-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medex-supply",
+      "cohort": "training",
+      "pageId": "medex-supply--exam-gloves",
+      "captureTimestamp": "2026-07-26T14:14:27.351Z",
+      "observationSha256": "1eb011762f24fe123a44b83d22ec0c92ca3280cd74d3a988ff0e45b1f9c0a8a6",
+      "annotationScreenshotSha256": "479f9dc9a1166031a1018bc876cefe490c310d227b1841a4ac906e7dd6d7141f",
+      "qualificationReport": "benchmarks/domain-qualification/wave-18-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-18-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "spandex-house",
+      "cohort": "training",
+      "pageId": "spandex-house--cotton-fabric",
+      "captureTimestamp": "2026-07-26T14:14:37.546Z",
+      "observationSha256": "0ad73a3641ad86b2b61931c2ea2a8745c487de4d047e133458bc0c72fb25d97c",
+      "annotationScreenshotSha256": "7c892f3c448cd44aa269ce0f8f5586faac4fad3a8d929089db0717fd83a05a6f",
+      "qualificationReport": "benchmarks/domain-qualification/wave-18-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-18-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "armour-detail-supply",
+      "cohort": "training",
+      "pageId": "armour-detail-supply--car-shampoo",
+      "captureTimestamp": "2026-07-26T14:17:19.492Z",
+      "observationSha256": "a1017c4825c418f35c4bf67eef10260153e0a5b39ed6331b9c9013e5e9cdae0b",
+      "annotationScreenshotSha256": "83d317fedd15da2150555ecdc7f9b8ac5d4ad5bba4dadc3ee0369a0c921e36a2",
+      "qualificationReport": "benchmarks/domain-qualification/wave-18-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-18-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "food-to-live",
+      "cohort": "training",
+      "pageId": "food-to-live--brown-rice",
+      "captureTimestamp": "2026-07-26T14:20:02.578Z",
+      "observationSha256": "8a958b3bf43d682ee75c61251a66a55b51af097d86b1abc0ba249968eaf3caaf",
+      "annotationScreenshotSha256": "5849675fec4a6dfbb546b19e5277f9e6f66d579dff121eb6968ccf02e0e9652d",
+      "qualificationReport": "benchmarks/domain-qualification/wave-18-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-18-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medex-supply",
+      "cohort": "training",
+      "pageId": "medex-supply--underpads",
+      "captureTimestamp": "2026-07-26T14:16:59.575Z",
+      "observationSha256": "393bf1cc455dd9ce0bdc6430943642ac566dbbccb51e88aba586a6b3fab2ab78",
+      "annotationScreenshotSha256": "21204975b79448757f7d35c0936097badb60798f043909561642c70112ebb3bc",
+      "qualificationReport": "benchmarks/domain-qualification/wave-18-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-18-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "spandex-house",
+      "cohort": "training",
+      "pageId": "spandex-house--spandex-fabric",
+      "captureTimestamp": "2026-07-26T14:17:09.678Z",
+      "observationSha256": "86024c79f0b6b08f89bffc76edc5714ba91966cfb3c938a365ed244abe32ad6a",
+      "annotationScreenshotSha256": "29edd6bac061aea05466e82beb278d1f953e89f67907897ce1d97efe33bee9e5",
+      "qualificationReport": "benchmarks/domain-qualification/wave-18-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-18-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

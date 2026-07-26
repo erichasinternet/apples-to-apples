@@ -661,6 +661,36 @@ loads all 148 screenshots and 1,509 roots with zero console errors or writes.
 All roots and machine suggestions remain unreviewed and ineligible for silver
 training or benchmark gold.
 
+Wave 18 screens 20 more unfamiliar candidates across all five unit dimensions.
+Armour Detail Supply, Food to Live, Medex Supply, and Spandex House qualify on
+two visually inspected listing pages in opposite viewport profiles. Duplicate
+IDs and hostnames discovered during registry validation were replaced before
+promotion, and all eight accepted pages were recaptured against the same final
+manifest hash. The accepted evidence adds starting-price variants, specialty
+food layouts, medical case and dimension hard negatives, fabric-width traps,
+and 96 frozen roots. Floating widgets affect isolated narrow cards only; those
+roots remain review-time abstention candidates.
+
+The paired blinded campaign in
+[`g2-pilot-p16.json`](../benchmarks/review-campaigns/g2-pilot-p16.json)
+contains 63 qualified training domains, 156 pages, and 1,605 frozen roots. Its
+deterministic preannotation contains 300 tentative comparables, 1,305 explicit
+abstentions, and four invalid suggestions. The semantic diagnostic in
+[`g2-campaign-preannotation-p15.json`](../benchmarks/reviews/g2-campaign-preannotation-p15.json)
+retains 1,586 suggestions, quarantines the same 19 known semantic traps, and
+marks no suggestion as silver or gold. The compact audit in
+[`g2-selection-representation-p14.json`](../benchmarks/reviews/g2-selection-representation-p14.json)
+round-trips all 1,586 retained suggestions exactly with zero failures.
+
+The p16 campaign is deterministically partitioned into 16 matching reviewer
+assignments in
+[`g2-pilot-p16-review-batches.json`](../benchmarks/reviews/g2-pilot-p16-review-batches.json).
+The headed validation recorded in
+[`g2-pilot-p16-review-batch-validation.json`](../benchmarks/reviews/g2-pilot-p16-review-batch-validation.json)
+loads all 156 screenshots and 1,605 roots with zero console errors or writes.
+All roots and machine suggestions remain unreviewed and ineligible for silver
+training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

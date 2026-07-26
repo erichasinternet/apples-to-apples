@@ -354,6 +354,30 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
       "promotedAt": "2026-07-26T13:10:00.000Z"
+    },
+    {
+      "siteId": "armour-detail-supply",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-18-p00.json",
+      "promotedAt": "2026-07-26T13:55:00.000Z"
+    },
+    {
+      "siteId": "food-to-live",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-18-p00.json",
+      "promotedAt": "2026-07-26T13:55:00.000Z"
+    },
+    {
+      "siteId": "medex-supply",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-18-p00.json",
+      "promotedAt": "2026-07-26T13:55:00.000Z"
+    },
+    {
+      "siteId": "spandex-house",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-18-p00.json",
+      "promotedAt": "2026-07-26T13:55:00.000Z"
     }
   ]
 }

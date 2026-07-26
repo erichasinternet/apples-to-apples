@@ -1,0 +1,384 @@
+{
+  "version": 1,
+  "auditId": "g2-selection-representation-p14",
+  "targetFormat": "evidence-selection-v1",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p16-reviewer-a-campaign.json",
+    "campaignSha256": "bb25fdf845dc782becd818fd58a5aa18fde634ee9de88deba4edd08dfd2518c1",
+    "queueSha256": "6500fb4960705daeb6c21a30d750a1993c67834070c5bfc5244ae94c16efa718",
+    "preannotationSha256": "c603351b6e72c8f588c817fa793c573a8190aa92c84d177b3874a843b5c84057",
+    "auditSha256": "2b4ba141a78fb6cf0a84907de07f52f30a3f8630732469a285901b208b0ea15a",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "records": {
+    "requested": 1586,
+    "exactRoundTrips": 1586,
+    "failures": 0,
+    "pages": 156,
+    "sites": 63
+  },
+  "statuses": {
+    "C": 281,
+    "E": 55,
+    "Q": 1250
+  },
+  "representation": {
+    "promptChars": {
+      "min": 2047,
+      "p50": 2559,
+      "p95": 4176,
+      "max": 16226,
+      "mean": 2766.402269861286
+    },
+    "targetChars": {
+      "min": 22,
+      "p50": 22,
+      "p95": 22,
+      "max": 22,
+      "mean": 22
+    },
+    "observationNodes": {
+      "min": 32,
+      "p50": 32,
+      "p95": 32,
+      "max": 66,
+      "mean": 32.51261034047919
+    },
+    "valueCandidates": {
+      "min": 0,
+      "p50": 6,
+      "p95": 25,
+      "max": 84,
+      "mean": 7.969104665825977
+    },
+    "outputGrammar": "T## P## U## Q## K## S#",
+    "generatedValues": false,
+    "generatedDomIds": false
+  },
+  "sites": {
+    "alan-janitorial": {
+      "records": 16,
+      "comparable": 12,
+      "abstained": 4
+    },
+    "allegro-medical": {
+      "records": 52,
+      "comparable": 1,
+      "abstained": 51
+    },
+    "american-spice": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "armour-detail-supply": {
+      "records": 24,
+      "comparable": 2,
+      "abstained": 22
+    },
+    "atwood-rope": {
+      "records": 19,
+      "comparable": 0,
+      "abstained": 19
+    },
+    "autogeek": {
+      "records": 24,
+      "comparable": 6,
+      "abstained": 18
+    },
+    "betty-mills": {
+      "records": 28,
+      "comparable": 0,
+      "abstained": 28
+    },
+    "blackbird-fabrics": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "blowout-medical": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "blue-sky-vitamin": {
+      "records": 28,
+      "comparable": 8,
+      "abstained": 20
+    },
+    "carpro-us": {
+      "records": 24,
+      "comparable": 12,
+      "abstained": 12
+    },
+    "coffee-bean-corral": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "core-fabrics": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "detail-king": {
+      "records": 28,
+      "comparable": 0,
+      "abstained": 28
+    },
+    "discount-school-supply": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "ethos-car-care": {
+      "records": 24,
+      "comparable": 4,
+      "abstained": 20
+    },
+    "fabric-mart-fabrics": {
+      "records": 24,
+      "comparable": 23,
+      "abstained": 1
+    },
+    "fabric-wholesale-direct": {
+      "records": 16,
+      "comparable": 16,
+      "abstained": 0
+    },
+    "fabricworm": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "flooret": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "food-service-direct": {
+      "records": 44,
+      "comparable": 17,
+      "abstained": 27
+    },
+    "food-to-live": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "georgia-carpet": {
+      "records": 18,
+      "comparable": 0,
+      "abstained": 18
+    },
+    "grayline-medical": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "greatmats": {
+      "records": 36,
+      "comparable": 35,
+      "abstained": 1
+    },
+    "jax-wax": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "jeffers-pet": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "katom": {
+      "records": 32,
+      "comparable": 5,
+      "abstained": 27
+    },
+    "kleen-rite": {
+      "records": 28,
+      "comparable": 0,
+      "abstained": 28
+    },
+    "lambert-vet-supply": {
+      "records": 32,
+      "comparable": 4,
+      "abstained": 28
+    },
+    "medex-supply": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "medical-eshop": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "medsurg-express": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "morebeer": {
+      "records": 24,
+      "comparable": 1,
+      "abstained": 23
+    },
+    "mountainside-medical": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "myspicer": {
+      "records": 23,
+      "comparable": 0,
+      "abstained": 23
+    },
+    "natural-healthy-concepts": {
+      "records": 52,
+      "comparable": 5,
+      "abstained": 47
+    },
+    "northern-brewer": {
+      "records": 24,
+      "comparable": 11,
+      "abstained": 13
+    },
+    "obsessed-garage": {
+      "records": 24,
+      "comparable": 1,
+      "abstained": 23
+    },
+    "ontime-supplies": {
+      "records": 31,
+      "comparable": 15,
+      "abstained": 16
+    },
+    "paracord-galaxy": {
+      "records": 16,
+      "comparable": 8,
+      "abstained": 8
+    },
+    "paracord-planet": {
+      "records": 23,
+      "comparable": 0,
+      "abstained": 23
+    },
+    "pool-geek": {
+      "records": 28,
+      "comparable": 0,
+      "abstained": 28
+    },
+    "prosource-wholesale": {
+      "records": 20,
+      "comparable": 0,
+      "abstained": 20
+    },
+    "ps-detail-products": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "purebulk": {
+      "records": 20,
+      "comparable": 5,
+      "abstained": 15
+    },
+    "rehabmart": {
+      "records": 24,
+      "comparable": 1,
+      "abstained": 23
+    },
+    "restaurant-supply": {
+      "records": 18,
+      "comparable": 0,
+      "abstained": 18
+    },
+    "rockywoods": {
+      "records": 20,
+      "comparable": 20,
+      "abstained": 0
+    },
+    "search-for-fabric": {
+      "records": 19,
+      "comparable": 0,
+      "abstained": 19
+    },
+    "seattle-fabrics": {
+      "records": 22,
+      "comparable": 17,
+      "abstained": 5
+    },
+    "spandex-house": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "starwest-botanicals": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "superior-products": {
+      "records": 22,
+      "comparable": 0,
+      "abstained": 22
+    },
+    "supplement-warehouse": {
+      "records": 32,
+      "comparable": 13,
+      "abstained": 19
+    },
+    "the-cary-company": {
+      "records": 22,
+      "comparable": 0,
+      "abstained": 22
+    },
+    "the-flooring-store": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "tileon": {
+      "records": 24,
+      "comparable": 24,
+      "abstained": 0
+    },
+    "utility-direct": {
+      "records": 14,
+      "comparable": 0,
+      "abstained": 14
+    },
+    "vitality-medical": {
+      "records": 44,
+      "comparable": 0,
+      "abstained": 44
+    },
+    "wholesale-janitorial-supply": {
+      "records": 39,
+      "comparable": 13,
+      "abstained": 26
+    },
+    "wholesale-marine": {
+      "records": 24,
+      "comparable": 2,
+      "abstained": 22
+    },
+    "zelouf-fabrics": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    }
+  },
+  "failures": [],
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "Representation compatibility does not establish label correctness. The source remains unreviewed and requires independent review and adjudication."
+  }
+}

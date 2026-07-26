@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "auditId": "g2-pilot-p16-review-batch-validation",
+  "createdAt": "2026-07-26T14:23:00Z",
+  "source": {
+    "batchManifest": "benchmarks/reviews/g2-pilot-p16-review-batches.json",
+    "batchManifestSha256": "5af23b3d5cbe90a4da2d8a62edc6c8df4aba7c741a36a84085fbf3ed3c14adda",
+    "validationReportSha256": [
+      "87d2e23e3699295a81d52310ad508fc8e8bc108b46714555800f3bee395fc3e1",
+      "f49028bb7eb88fc8ce4d19f246fc83724d2c764844f2d0fce5b95402204cc392",
+      "7079d0b8ea77ef583ae2413bdc61f1e345979b15b62453ca1607de35e2ac151d",
+      "6559cc9eedb9ac9a027e1093fb645cd849bc3e276c404cf6bd8b9fcdbd9305a8",
+      "a94663834d4cdc468c8de7ad85afe6b000ec519ff1ab3f1371e3a48b40501b7f",
+      "2e5a398d3932b4f718cad5702c81cd5208adff234004d57dad3817b9c84ca3a1",
+      "c9ff85fd091b73ef1e01b9c0e40dd17821b60fac404d82fd96f4ff590bb0a84f",
+      "6b6c3fa7cd84419e2c530e2fdfd515e49b66c346cb7e657a89c3a428853f1aee",
+      "4bd8dae40302c0083aacffb4965850de40599d6825ea81a7e6ff976027ab9c2b",
+      "9404368dad545b1c0381158135fa7f36d118445ada70811fdb1bdb9c0faeab90",
+      "98a088162ea3885d76915142305085e11b8403cf25ef0cee9cf4bf761f8e8dc0",
+      "fdf1e8a0f63d331f091e6047b6317fe9c016dbbb40ddbb2c2a1efb56386e06b5",
+      "3b763a882bc03b1e626e303283c3f32154940d88b387de84f6c35fd5a6e28467",
+      "3f08a5027a36ba4781db400178d1177bedea6a7b7b7727e51eb9deaf6a409151",
+      "1e2256c77e0bb467e9a26597809943d70aa30a791a0f0ceeaaa0f27d9679c83f",
+      "e175022dea97bcdd5269a618e413074ffbd78bb87897d4f4ea6d42e4677f1922"
+    ]
+  },
+  "browser": "headed Playwright Chromium",
+  "batches": 16,
+  "pagesLoaded": 156,
+  "screenshotsLoaded": 156,
+  "candidateCards": 1605,
+  "onlyFrozenCardRootOffered": true,
+  "directFrozenCardNavigation": "passed",
+  "nonCandidateAncestor": "rejected-404",
+  "incompleteCoverage": "rejected-422",
+  "consoleErrors": 0,
+  "reviewFilesWritten": 0,
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Workbench validation proves batch integrity and usability, not semantic label correctness."
+  }
+}

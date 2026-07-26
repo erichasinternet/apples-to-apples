@@ -86,7 +86,11 @@
     "medsurg-express",
     "mountainside-medical",
     "jax-wax",
-    "tileon"
+    "tileon",
+    "armour-detail-supply",
+    "food-to-live",
+    "medex-supply",
+    "spandex-house"
   ],
   "validation": [
     "amazon",
