@@ -252,6 +252,65 @@ legend {
   font-weight: 700;
 }
 
+.card-root-button.disputed {
+  box-shadow: inset 0 -3px #b55a00;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.section-heading span {
+  color: #9a4b00;
+  font-size: 11px;
+  text-align: right;
+}
+
+.source-review-list {
+  display: grid;
+  gap: 8px;
+}
+
+.source-review {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 8px;
+  padding: 8px 0;
+  border-top: 1px solid #e0e3e6;
+}
+
+.source-review:first-child {
+  border-top: 0;
+}
+
+.source-review strong {
+  align-self: center;
+  font-size: 12px;
+}
+
+.source-review output {
+  grid-column: 1 / -1;
+  max-height: 118px;
+  overflow: auto;
+  padding: 7px;
+  border: 1px solid #d5d9de;
+  background: #f6f7f8;
+  color: #353b43;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  line-height: 1.35;
+  white-space: pre-wrap;
+}
+
+.source-review button {
+  grid-column: 2;
+  grid-row: 1;
+}
+
 .point-heading {
   margin-top: 14px;
 }

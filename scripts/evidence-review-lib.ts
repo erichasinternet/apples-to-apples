@@ -318,6 +318,18 @@ export function validateEvidenceAdjudication(
   ) {
     errors.push("adjudicator must differ from both independent reviewers");
   }
+  const adjudicationTime = Date.parse(adjudication.completedAt);
+  const latestIndependentTime = Math.max(
+    Date.parse(reviewA.completedAt),
+    Date.parse(reviewB.completedAt)
+  );
+  if (
+    Number.isFinite(adjudicationTime) &&
+    Number.isFinite(latestIndependentTime) &&
+    adjudicationTime <= latestIndependentTime
+  ) {
+    errors.push("adjudication must occur after both independent reviews");
+  }
   const expectedSources = [reviewA.reviewId, reviewB.reviewId].sort();
   const actualSources = [...(adjudication.sourceReviewIds ?? [])].sort();
   if (JSON.stringify(actualSources) !== JSON.stringify(expectedSources)) {

@@ -5,7 +5,8 @@ const state = {
   products: [],
   cardNodeId: null,
   nodeChoices: [],
-  candidates: []
+  candidates: [],
+  draftChallengeTags: []
 };
 
 const fields = {
@@ -19,6 +20,14 @@ const fields = {
   captureOverlay: document.querySelector("#captureOverlay"),
   cardRoots: document.querySelector("#cardRoots"),
   nodeChoices: document.querySelector("#nodeChoices"),
+  sourceReviewSection: document.querySelector("#sourceReviewSection"),
+  disagreementSummary: document.querySelector("#disagreementSummary"),
+  reviewALabel: document.querySelector("#reviewALabel"),
+  reviewATarget: document.querySelector("#reviewATarget"),
+  useReviewA: document.querySelector("#useReviewA"),
+  reviewBLabel: document.querySelector("#reviewBLabel"),
+  reviewBTarget: document.querySelector("#reviewBTarget"),
+  useReviewB: document.querySelector("#useReviewB"),
   fieldEditor: document.querySelector("#fieldEditor"),
   titleChoices: document.querySelector("#titleChoices"),
   scope: document.querySelector("#scope"),
@@ -48,11 +57,29 @@ const statuses = [
   "not-a-product"
 ];
 
+const disagreementLabels = {
+  root: "Card root",
+  scope: "Scope",
+  status: "Status",
+  title: "Title",
+  currentPrice: "Current price",
+  nativeUnitPrice: "Native unit price",
+  packageQuantity: "Package quantity",
+  packCount: "Pack count",
+  dimension: "Dimension"
+};
+
 await initialize();
 
 async function initialize() {
   state.queue = await fetchJson("/api/queue");
-  fields.queueMeta.textContent = `${state.queue.reviewerId} · ${state.queue.cohort} · blinded`;
+  const modeLabel =
+    state.queue.mode === "adjudication" ? "adjudication" : "blinded";
+  fields.queueMeta.textContent = `${state.queue.reviewerId} · ${state.queue.cohort} · ${modeLabel}`;
+  if (state.queue.mode === "adjudication") {
+    fields.submitReview.textContent = "Submit adjudication";
+    fields.addProduct.textContent = "Record decision";
+  }
   renderPageList();
   const first = state.queue.items.find((item) => !item.saved) ?? state.queue.items[0];
   if (first) await openPage(first.pageId);
@@ -110,6 +137,8 @@ fields.captureImage.addEventListener("click", async (event) => {
 fields.clearSelection.addEventListener("click", clearSelection);
 fields.addProduct.addEventListener("click", addProduct);
 fields.submitReview.addEventListener("click", submitReview);
+fields.useReviewA.addEventListener("click", () => applySourceReview(0));
+fields.useReviewB.addEventListener("click", () => applySourceReview(1));
 for (const input of [
   fields.currentPrice,
   fields.nativeUnitPrice,
@@ -202,7 +231,89 @@ function renderCardFields() {
   fields.scope.value = "primary-results";
   fields.status.value = "comparable";
   fields.notes.value = "";
+  state.draftChallengeTags = [];
+  renderSourceReviews();
+  const existing = state.products.find(
+    (product) => product.cardNodeId === state.cardNodeId
+  );
+  if (existing) applyProduct(existing);
+  else renderPointer();
+}
+
+function renderSourceReviews() {
+  if (state.queue.mode !== "adjudication" || !state.cardNodeId) {
+    fields.sourceReviewSection.hidden = true;
+    return;
+  }
+  const products = state.item.sourceReviews.map((review) =>
+    review.products.find((product) => product.cardNodeId === state.cardNodeId)
+  );
+  const disagreement = state.item.agreement.disagreements.find(
+    (item) => item.cardNodeId === state.cardNodeId
+  );
+  fields.sourceReviewSection.hidden = false;
+  fields.disagreementSummary.textContent = disagreement
+    ? disagreement.fields
+        .map((field) => disagreementLabels[field] || field)
+        .join(", ")
+    : "Exact agreement";
+  renderSourceReview(0, products[0]);
+  renderSourceReview(1, products[1]);
+}
+
+function renderSourceReview(index, product) {
+  const review = state.item.sourceReviews[index];
+  const label = index === 0 ? fields.reviewALabel : fields.reviewBLabel;
+  const target = index === 0 ? fields.reviewATarget : fields.reviewBTarget;
+  const button = index === 0 ? fields.useReviewA : fields.useReviewB;
+  if (!product) {
+    label.textContent = review.reviewerId;
+    target.textContent = "Missing decision";
+    button.disabled = true;
+    return;
+  }
+  label.textContent = `${review.reviewerId} · ${product.scope}`;
+  target.textContent = product.target;
+  button.disabled = !product;
+}
+
+function applySourceReview(index) {
+  const product = state.item.sourceReviews[index].products.find(
+    (candidate) => candidate.cardNodeId === state.cardNodeId
+  );
+  if (!product) return;
+  applyProduct(product);
+}
+
+function applyProduct(product) {
+  const pointer = new Map(
+    product.target.split("\n").map((line) => {
+      const separator = line.indexOf(" ");
+      return [line.slice(0, separator), line.slice(separator + 1)];
+    })
+  );
+  const titleNodeIds =
+    pointer.get("TITLE") === "NONE"
+      ? []
+      : (pointer.get("TITLE") || "").split(",");
+  fields.titleChoices.querySelectorAll("input").forEach((input) => {
+    input.checked = titleNodeIds.includes(input.value);
+  });
+  fields.scope.value = product.scope;
+  setSelectValue(fields.currentPrice, pointer.get("CURRENT_PRICE"));
+  setSelectValue(fields.nativeUnitPrice, pointer.get("NATIVE_UNIT_PRICE"));
+  setSelectValue(fields.packageQuantity, pointer.get("PACKAGE_QUANTITY"));
+  setSelectValue(fields.packCount, pointer.get("PACK_COUNT"));
+  setSelectValue(fields.status, pointer.get("STATUS"));
+  fields.notes.value = product.notes || "";
+  state.draftChallengeTags = [...(product.challengeTags || [])];
   renderPointer();
+}
+
+function setSelectValue(select, value) {
+  if ([...select.options].some((candidate) => candidate.value === value)) {
+    select.value = value;
+  }
 }
 
 function fillCandidateSelect(select, kind) {
@@ -256,6 +367,9 @@ async function addProduct() {
     cardNodeId: state.cardNodeId,
     scope: fields.scope.value,
     target: pointerValue(),
+    ...(state.draftChallengeTags.length
+      ? { challengeTags: state.draftChallengeTags }
+      : {}),
     ...(fields.notes.value.trim() ? { notes: fields.notes.value.trim() } : {})
   };
   const existing = state.products.findIndex(
@@ -346,6 +460,7 @@ function clearSelection() {
   fields.nodeChoices.className = "choice-list empty-state";
   fields.nodeChoices.textContent = "None";
   fields.fieldEditor.hidden = true;
+  fields.sourceReviewSection.hidden = true;
   fields.captureOverlay.style.display = "none";
   fields.selectionHint.textContent = "No card selected";
   document.querySelectorAll(".card-root-button").forEach((button) => {
@@ -367,6 +482,14 @@ function renderCardRoots() {
       button.dataset.cardNodeId = cardNodeId;
       button.classList.toggle("reviewed", reviewed.has(cardNodeId));
       button.classList.toggle("active", state.cardNodeId === cardNodeId);
+      button.classList.toggle(
+        "disputed",
+        Boolean(
+          state.item.agreement?.disagreements.some(
+            (item) => item.cardNodeId === cardNodeId
+          )
+        )
+      );
       button.setAttribute(
         "aria-label",
         `Review card ${index + 1} of ${state.item.candidateCardNodeIds.length}`

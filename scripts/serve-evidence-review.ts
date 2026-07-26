@@ -4,9 +4,15 @@ import path from "node:path";
 import type { PageObservation } from "../src/learning/contracts";
 import { enumerateEvidenceCandidates } from "../src/learning/evidence-pointer";
 import {
+  validateEvidenceAdjudication,
   validateEvidencePointerReview,
   type EvidencePointerReview
 } from "./evidence-review-lib";
+import {
+  validateEvidenceAdjudicationQueue,
+  type EvidenceAdjudicationQueue,
+  type EvidenceAdjudicationQueueItem
+} from "./evidence-adjudication-queue-lib";
 import {
   validateEvidenceReviewQueue,
   type EvidenceReviewQueue,
@@ -23,13 +29,37 @@ declare const Bun: {
 };
 
 const options = parseOptions(process.argv.slice(2));
-const queue = await readJson<EvidenceReviewQueue>(options.queuePath);
-const queueErrors = validateEvidenceReviewQueue(queue);
+const queue = await readJson<
+  EvidenceReviewQueue | EvidenceAdjudicationQueue
+>(options.queuePath);
+const adjudicationMode = queueIsAdjudication(queue);
+const queueErrors = adjudicationMode
+  ? validateEvidenceAdjudicationQueue(queue)
+  : validateEvidenceReviewQueue(queue);
 if (queueErrors.length > 0) {
   throw new Error(`Invalid review queue: ${queueErrors.join("; ")}`);
 }
 const queueDirectory = path.dirname(options.queuePath);
 await Promise.all(queue.items.map((item) => validateQueueAssets(item)));
+if (adjudicationMode) {
+  const observations = new Map(
+    await Promise.all(
+      queue.items.map(async (item) => [
+        item.pageId,
+        await readObservation(item)
+      ] as const)
+    )
+  );
+  const evidenceErrors = validateEvidenceAdjudicationQueue(
+    queue,
+    observations
+  );
+  if (evidenceErrors.length > 0) {
+    throw new Error(
+      `Invalid adjudication evidence: ${evidenceErrors.join("; ")}`
+    );
+  }
+}
 const itemByPageId = new Map(queue.items.map((item) => [item.pageId, item]));
 await mkdir(options.outputDirectory, { recursive: true });
 
@@ -66,6 +96,7 @@ const server = Bun.serve({
           reviewerId: queue.reviewerId,
           cohort: queue.cohort,
           labelVisibility: queue.labelVisibility,
+          mode: adjudicationMode ? "adjudication" : "independent",
           items: await Promise.all(
             queue.items.map(async (item) => ({
               pageId: item.pageId,
@@ -73,6 +104,12 @@ const server = Bun.serve({
               candidateCardNodeIds: item.candidateCardNodeIds,
               source: item.source,
               reviewTemplate: item.reviewTemplate,
+              ...(itemIsAdjudication(item)
+                ? {
+                    sourceReviews: item.sourceReviews,
+                    agreement: item.agreement
+                  }
+                : {}),
               saved: await Bun.file(reviewPath(item)).exists()
             }))
           )
@@ -108,21 +145,23 @@ const server = Bun.serve({
         const input = (await request.json()) as EvidencePointerReview;
         const item = requireItem(input.pageId);
         const observation = await readObservation(item);
-        const validation = validateEvidencePointerReview(input, observation, {
-          observationSha256: item.source.observationSha256,
-          screenshotSha256: item.source.screenshotSha256,
-          expectedCardNodeIds: item.candidateCardNodeIds
-        });
+        const validation =
+          itemIsAdjudication(item)
+            ? validateEvidenceAdjudication(
+                input,
+                item.sourceReviews[0],
+                item.sourceReviews[1],
+                observation
+              )
+            : validateEvidencePointerReview(input, observation, {
+                observationSha256: item.source.observationSha256,
+                screenshotSha256: item.source.screenshotSha256,
+                expectedCardNodeIds: item.candidateCardNodeIds
+              });
         if (!validation.valid) {
           return json({ valid: false, errors: validation.errors }, 422);
         }
-        if (
-          input.reviewerId !== queue.reviewerId ||
-          input.reviewId !== item.reviewTemplate.reviewId ||
-          input.phase !== "independent" ||
-          input.preannotationVisibility !== "hidden" ||
-          !sameSource(input.source, item.reviewTemplate.source)
-        ) {
+        if (!matchesQueueContract(input, item, queue.reviewerId, adjudicationMode)) {
           return json(
             { valid: false, errors: ["Review identity or blinding contract changed."] },
             422
@@ -166,7 +205,9 @@ process.stdout.write(
   })}\n`
 );
 
-function requireItem(pageId: string | null): EvidenceReviewQueueItem {
+function requireItem(
+  pageId: string | null
+): EvidenceReviewQueueItem | EvidenceAdjudicationQueueItem {
   if (!pageId) throw new HttpError(400, "pageId is required");
   const item = itemByPageId.get(pageId);
   if (!item) throw new HttpError(404, `Unknown page ${pageId}`);
@@ -174,7 +215,7 @@ function requireItem(pageId: string | null): EvidenceReviewQueueItem {
 }
 
 async function readObservation(
-  item: EvidenceReviewQueueItem
+  item: EvidenceReviewQueueItem | EvidenceAdjudicationQueueItem
 ): Promise<PageObservation> {
   const value = await readVerifiedAsset(
     resolveQueueAsset(item.observationPath),
@@ -184,7 +225,7 @@ async function readObservation(
 }
 
 async function validateQueueAssets(
-  item: EvidenceReviewQueueItem
+  item: EvidenceReviewQueueItem | EvidenceAdjudicationQueueItem
 ): Promise<void> {
   const [observation] = await Promise.all([
     readObservation(item),
@@ -212,7 +253,9 @@ function resolveQueueAsset(relativePath: string): string {
   return resolved;
 }
 
-function reviewPath(item: EvidenceReviewQueueItem): string {
+function reviewPath(
+  item: EvidenceReviewQueueItem | EvidenceAdjudicationQueueItem
+): string {
   const resolved = path.resolve(
     options.outputDirectory,
     `${item.reviewTemplate.reviewId}.json`
@@ -221,6 +264,48 @@ function reviewPath(item: EvidenceReviewQueueItem): string {
     throw new HttpError(403, "Review id escapes the output directory.");
   }
   return resolved;
+}
+
+function matchesQueueContract(
+  input: EvidencePointerReview,
+  item: EvidenceReviewQueueItem | EvidenceAdjudicationQueueItem,
+  reviewerId: string,
+  isAdjudication: boolean
+): boolean {
+  const identityMatches =
+    input.reviewerId === reviewerId &&
+    input.reviewId === item.reviewTemplate.reviewId &&
+    sameSource(input.source, item.reviewTemplate.source);
+  if (!identityMatches) return false;
+  if (!isAdjudication) {
+    return (
+      input.phase === "independent" &&
+      input.preannotationVisibility === "hidden" &&
+      !input.sourceReviewIds?.length
+    );
+  }
+  const expected = [
+    ...(item as EvidenceAdjudicationQueueItem).reviewTemplate.sourceReviewIds ??
+      []
+  ].sort();
+  const actual = [...(input.sourceReviewIds ?? [])].sort();
+  return (
+    input.phase === "adjudicated" &&
+    input.preannotationVisibility === "shown-after-submit" &&
+    JSON.stringify(actual) === JSON.stringify(expected)
+  );
+}
+
+function queueIsAdjudication(
+  value: EvidenceReviewQueue | EvidenceAdjudicationQueue
+): value is EvidenceAdjudicationQueue {
+  return "queueType" in value && value.queueType === "adjudication";
+}
+
+function itemIsAdjudication(
+  value: EvidenceReviewQueueItem | EvidenceAdjudicationQueueItem
+): value is EvidenceAdjudicationQueueItem {
+  return "sourceReviews" in value;
 }
 
 function sameSource(

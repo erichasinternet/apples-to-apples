@@ -40,12 +40,31 @@ interface PreparedPage {
   example: NonNullable<ReturnType<typeof buildTrainingExample>["example"]>;
 }
 
+interface AdjudicationOverlayManifest {
+  version: 1;
+  queueId: string;
+  cohort: "training" | "validation" | "selection" | "final";
+  pages: Array<{
+    pageId: string;
+    source: {
+      observationSha256: string;
+      screenshotSha256: string;
+    };
+    annotationPath: string;
+    annotationSha256: string;
+  }>;
+}
+
 const options = parseOptions(process.argv.slice(2));
 const [manifest, domainSplits, trainingSplits] = await Promise.all([
   readJson<CorpusTargetManifest>(path.resolve("benchmarks/live-sites/targets.json")),
   readJson<CorpusDomainSplits>(path.resolve("benchmarks/live-sites/domain-splits.json")),
   readJson<TrainingDomainSplits>(path.resolve("benchmarks/live-sites/training-splits.json"))
 ]);
+const adjudicationOverlay = options.adjudicationManifest
+  ? await loadAdjudicationOverlay(options.adjudicationManifest)
+  : undefined;
+const usedOverlayKeys = new Set<string>();
 const splitErrors = [
   ...validateDomainSplits(manifest, domainSplits),
   ...validateTrainingDomainSplits(domainSplits, trainingSplits)
@@ -93,10 +112,63 @@ for (const runDirectory of options.runDirectories) {
     }
     captureKeys.add(captureKey);
 
-    const [observation, annotation] = await Promise.all([
-      readJson<PageObservation>(path.join(pageDirectory, "observation.json")),
-      readJson<CorpusAnnotation>(path.join(pageDirectory, "annotation.json"))
-    ]);
+    const observationPath = path.join(pageDirectory, "observation.json");
+    const observationBytes = await readFile(observationPath);
+    const observationSha256 = createHash("sha256")
+      .update(observationBytes)
+      .digest("hex");
+    const overlayKey = `${result.pageId}\0${observationSha256}`;
+    const overlayEntry = adjudicationOverlay?.entries.get(overlayKey);
+    if (adjudicationOverlay && !overlayEntry) {
+      skippedPages.push({
+        runId: run.runId,
+        pageId: result.pageId,
+        reason: "capture is not present in the adjudication overlay"
+      });
+      continue;
+    }
+    const observation = JSON.parse(
+      observationBytes.toString("utf8")
+    ) as PageObservation;
+    const annotationPath = overlayEntry
+      ? path.resolve(
+          adjudicationOverlay!.directory,
+          overlayEntry.annotationPath
+        )
+      : path.join(pageDirectory, "annotation.json");
+    const annotationBytes = await readFile(annotationPath);
+    if (
+      overlayEntry &&
+      createHash("sha256").update(annotationBytes).digest("hex") !==
+        overlayEntry.annotationSha256
+    ) {
+      rejectedPages.push({
+        runId: run.runId,
+        pageId: result.pageId,
+        reasons: ["adjudication overlay annotation hash mismatch"]
+      });
+      continue;
+    }
+    if (overlayEntry) usedOverlayKeys.add(overlayKey);
+    const annotation = JSON.parse(
+      annotationBytes.toString("utf8")
+    ) as CorpusAnnotation;
+    if (overlayEntry) {
+      const screenshotBytes = await readFile(
+        path.join(pageDirectory, "annotation.png")
+      );
+      if (
+        createHash("sha256").update(screenshotBytes).digest("hex") !==
+        overlayEntry.source.screenshotSha256
+      ) {
+        rejectedPages.push({
+          runId: run.runId,
+          pageId: result.pageId,
+          reasons: ["adjudication overlay screenshot hash mismatch"]
+        });
+        continue;
+      }
+    }
     const built = buildTrainingExample(page.target.siteId, observation, annotation, {
       allowSingleReview: options.allowSingleReview
     });
@@ -131,6 +203,17 @@ for (const runDirectory of options.runDirectories) {
       pageDirectory,
       imageFilename,
       example: built.example
+    });
+  }
+}
+
+if (adjudicationOverlay) {
+  for (const [key, entry] of adjudicationOverlay.entries) {
+    if (usedOverlayKeys.has(key)) continue;
+    rejectedPages.push({
+      runId: adjudicationOverlay.manifest.queueId,
+      pageId: entry.pageId,
+      reasons: ["adjudication overlay page was not consumed by supplied runs"]
     });
   }
 }
@@ -209,6 +292,15 @@ const datasetManifest = {
   },
   strict: !options.allowIncomplete,
   allowSingleReview: options.allowSingleReview,
+  ...(adjudicationOverlay
+    ? {
+        adjudicationOverlay: {
+          manifest: options.adjudicationManifest,
+          queueId: adjudicationOverlay.manifest.queueId,
+          pages: adjudicationOverlay.entries.size
+        }
+      }
+    : {}),
   discoveryChunkHeight: options.discoveryChunkHeight,
   cardPadding: options.cardPadding,
   pages: preparedPages.length,
@@ -242,6 +334,7 @@ function parseOptions(args: string[]): {
   allowIncomplete: boolean;
   discoveryChunkHeight: number;
   cardPadding: number;
+  adjudicationManifest?: string;
 } {
   const runDirectories: string[] = [];
   let outputDirectory = path.resolve("benchmark-data/training/t5gemma2");
@@ -249,6 +342,7 @@ function parseOptions(args: string[]): {
   let allowIncomplete = false;
   let discoveryChunkHeight = 900;
   let cardPadding = 24;
+  let adjudicationManifest: string | undefined;
 
   for (let index = 0; index < args.length; index += 1) {
     const arg = args[index]!;
@@ -258,6 +352,8 @@ function parseOptions(args: string[]): {
       discoveryChunkHeight = Number.parseInt(requireValue(args, ++index, arg), 10);
     } else if (arg === "--card-padding") {
       cardPadding = Number.parseInt(requireValue(args, ++index, arg), 10);
+    } else if (arg === "--adjudication-manifest") {
+      adjudicationManifest = path.resolve(requireValue(args, ++index, arg));
     } else if (arg === "--allow-single-review") {
       allowSingleReview = true;
     } else if (arg === "--allow-incomplete") {
@@ -271,7 +367,7 @@ function parseOptions(args: string[]): {
 
   if (runDirectories.length === 0) {
     throw new Error(
-      "Usage: bun run training:prepare -- <run-directory> [...] [--output <directory>]"
+      "Usage: bun run training:prepare -- <run-directory> [...] [--output <directory>] [--adjudication-manifest <manifest.json>]"
     );
   }
   if (discoveryChunkHeight < 320 || cardPadding < 0) {
@@ -283,7 +379,53 @@ function parseOptions(args: string[]): {
     allowSingleReview,
     allowIncomplete,
     discoveryChunkHeight,
-    cardPadding
+    cardPadding,
+    ...(adjudicationManifest ? { adjudicationManifest } : {})
+  };
+}
+
+async function loadAdjudicationOverlay(filename: string): Promise<{
+  manifest: AdjudicationOverlayManifest;
+  directory: string;
+  entries: Map<string, AdjudicationOverlayManifest["pages"][number]>;
+}> {
+  const manifest = await readJson<AdjudicationOverlayManifest>(filename);
+  if (
+    manifest.version !== 1 ||
+    manifest.cohort !== "training" ||
+    !manifest.queueId?.trim() ||
+    !Array.isArray(manifest.pages) ||
+    manifest.pages.length === 0
+  ) {
+    throw new Error("Invalid training adjudication overlay manifest.");
+  }
+  const entries = new Map<
+    string,
+    AdjudicationOverlayManifest["pages"][number]
+  >();
+  const directory = path.dirname(filename);
+  for (const entry of manifest.pages) {
+    const key = `${entry.pageId}\0${entry.source.observationSha256}`;
+    const annotationPath = path.resolve(directory, entry.annotationPath);
+    if (
+      entries.has(key) ||
+      !/^[a-f0-9]{64}$/.test(entry.source.observationSha256) ||
+      !/^[a-f0-9]{64}$/.test(entry.source.screenshotSha256) ||
+      !/^[a-f0-9]{64}$/.test(entry.annotationSha256) ||
+      !entry.annotationPath?.trim() ||
+      (annotationPath !== directory &&
+        !annotationPath.startsWith(`${directory}${path.sep}`))
+    ) {
+      throw new Error(
+        `Invalid or duplicate adjudication overlay page: ${entry.pageId}`
+      );
+    }
+    entries.set(key, entry);
+  }
+  return {
+    manifest,
+    directory,
+    entries
   };
 }
 

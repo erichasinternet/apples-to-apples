@@ -158,6 +158,10 @@ test("builds and submits a blinded evidence-pointer review", async ({ page }) =>
   await page.getByRole("button", { name: "Add product" }).click();
   await expect(page.locator("#productCount")).toHaveText("2/2 cards");
   await expect(page.getByRole("button", { name: "Submit review" })).toBeEnabled();
+  await page.getByRole("button", { name: "Review card 1 of 2" }).click();
+  await expect(page.locator("#currentPrice")).toHaveValue("price@p0");
+  await expect(page.locator("#packageQuantity")).toHaveValue("quantity@q0");
+  await expect(page.locator('#titleChoices input[value="title"]')).toBeChecked();
   await page.getByRole("button", { name: "Submit review" }).click();
   await expect(page.locator("#saveState")).toHaveText("Submitted");
 
@@ -180,6 +184,194 @@ test("builds and submits a blinded evidence-pointer review", async ({ page }) =>
     ]
   });
 });
+
+test("resolves independent decisions in adjudication mode", async ({ page }, testInfo) => {
+  let submittedReview: Record<string, unknown> | undefined;
+  const sourceA = {
+    ...reviewTemplate,
+    completedAt: "2026-07-25T01:00:00.000Z",
+    products: [
+      {
+        cardNodeId: "card",
+        scope: "primary-results",
+        target: target("price@p0")
+      }
+    ]
+  };
+  const sourceB = {
+    ...reviewTemplate,
+    reviewId: "reviewer-b--synthetic-review-page",
+    reviewerId: "reviewer-b",
+    completedAt: "2026-07-25T01:05:00.000Z",
+    products: [
+      {
+        cardNodeId: "card",
+        scope: "primary-results",
+        target: target("price-alt@p0")
+      }
+    ]
+  };
+  const adjudicationTemplate = {
+    ...reviewTemplate,
+    reviewId: "reviewer-c--synthetic-review-page",
+    phase: "adjudicated",
+    reviewerId: "reviewer-c",
+    preannotationVisibility: "shown-after-submit",
+    sourceReviewIds: [sourceA.reviewId, sourceB.reviewId]
+  };
+  const adjudicationObservation = {
+    ...observation,
+    nodes: [
+      ...observation.nodes,
+      node("price-alt", "card", "$13.00", 145, 190, 100, 35)
+    ]
+  };
+
+  await page.route("**/api/queue", async (route) => {
+    await route.fulfill({
+      json: {
+        queueId: "synthetic-adjudication-queue",
+        queueType: "adjudication",
+        mode: "adjudication",
+        reviewerId: "reviewer-c",
+        cohort: "training",
+        labelVisibility: "independent reviews and disagreements visible",
+        items: [
+          {
+            pageId: "synthetic-review-page",
+            rootNodeId: "root",
+            candidateCardNodeIds: ["card"],
+            source: reviewTemplate.source,
+            reviewTemplate: adjudicationTemplate,
+            sourceReviews: [sourceA, sourceB],
+            agreement: {
+              disagreements: [
+                { cardNodeId: "card", fields: ["currentPrice"] }
+              ]
+            },
+            saved: false
+          }
+        ]
+      }
+    });
+  });
+  await page.route("**/api/observation?*", async (route) => {
+    await route.fulfill({ json: adjudicationObservation });
+  });
+  await page.route("**/api/screenshot?*", async (route) => {
+    await route.fulfill({
+      contentType: "image/svg+xml",
+      body: [
+        '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800">',
+        '<rect width="600" height="800" fill="#fff"/>',
+        '<rect x="20" y="100" width="250" height="300" fill="#eef4ff" stroke="#1659c7"/>',
+        '<text x="35" y="150" font-size="22">Coffee, 12 oz</text>',
+        '<text x="35" y="215" font-size="22">$12.00 or $13.00</text>',
+        "</svg>"
+      ].join("")
+    });
+  });
+  await page.route("**/api/candidates?*", async (route) => {
+    await route.fulfill({
+      json: {
+        cardNodeId: "card",
+        candidates: [
+          {
+            id: "price@p0",
+            kind: "current-price",
+            nodeId: "price",
+            sourceText: "$12.00",
+            cents: 1200
+          },
+          {
+            id: "price-alt@p0",
+            kind: "current-price",
+            nodeId: "price-alt",
+            sourceText: "$13.00",
+            cents: 1300
+          },
+          {
+            id: "quantity@q0",
+            kind: "package-quantity",
+            nodeId: "quantity",
+            sourceText: "12 oz",
+            valuePerPackage: 12,
+            unit: "oz",
+            dimension: "mass"
+          }
+        ]
+      }
+    });
+  });
+  await page.route("**/api/review", async (route) => {
+    submittedReview = route.request().postDataJSON();
+    await route.fulfill({ json: { valid: true } });
+  });
+
+  await page.goto("http://127.0.0.1:4173/review-workbench/");
+
+  await expect(page.locator("#queueMeta")).toHaveText(
+    "reviewer-c · training · adjudication"
+  );
+  await expect(
+    page.getByRole("button", { name: "Submit adjudication" })
+  ).toBeDisabled();
+  await expect(page.locator("#sourceReviewSection")).toBeHidden();
+
+  await page.getByRole("button", { name: "Review card 1 of 1" }).click();
+  await expect(page.locator("#sourceReviewSection")).toBeVisible();
+  await expect(page.locator("#disagreementSummary")).toHaveText(
+    "Current price"
+  );
+  await expect(page.locator("#reviewALabel")).toContainText("reviewer-a");
+  await expect(page.locator("#reviewBLabel")).toContainText("reviewer-b");
+  await page.screenshot({
+    path: testInfo.outputPath("adjudication-workbench.png"),
+    fullPage: true
+  });
+  await page.getByRole("button", { name: "Use decision B" }).click();
+  await expect(page.locator("#currentPrice")).toHaveValue("price-alt@p0");
+  await expect(page.locator("#pointerPreview")).toHaveText(
+    target("price-alt@p0")
+  );
+
+  await page.getByRole("button", { name: "Record decision" }).click();
+  await expect(
+    page.getByRole("button", { name: "Submit adjudication" })
+  ).toBeEnabled();
+  await page.getByRole("button", { name: "Submit adjudication" }).click();
+  await expect(page.locator("#saveState")).toHaveText("Submitted");
+
+  expect(submittedReview).toMatchObject({
+    reviewId: "reviewer-c--synthetic-review-page",
+    phase: "adjudicated",
+    reviewerId: "reviewer-c",
+    preannotationVisibility: "shown-after-submit",
+    sourceReviewIds: [
+      "reviewer-a--synthetic-review-page",
+      "reviewer-b--synthetic-review-page"
+    ],
+    products: [
+      {
+        cardNodeId: "card",
+        scope: "primary-results",
+        target: target("price-alt@p0")
+      }
+    ]
+  });
+});
+
+function target(priceCandidate: string) {
+  return [
+    "CARD card",
+    "TITLE title",
+    `CURRENT_PRICE ${priceCandidate}`,
+    "NATIVE_UNIT_PRICE NONE",
+    "PACKAGE_QUANTITY quantity@q0",
+    "PACK_COUNT NONE",
+    "STATUS comparable"
+  ].join("\n");
+}
 
 function node(
   id: string,

@@ -136,6 +136,61 @@ The report pairs reviews by immutable page evidence, computes campaign-level
 agreement weighted by aligned card count, lists every unresolved field, and marks
 `readyForAdjudication` only after every page has two valid independent reviews.
 
+Build the third-party queue only after the audit is fully paired:
+
+```bash
+bun run dataset:reviews:adjudication-queue -- \
+  --queue-a benchmark-data/review/<campaign>-reviewer-a.json \
+  --queue-b benchmark-data/review/<campaign>-reviewer-b.json \
+  --submissions-a benchmark-data/review/submissions/reviewer-a \
+  --submissions-b benchmark-data/review/submissions/reviewer-b \
+  --adjudicator reviewer-c \
+  --output benchmark-data/review/<campaign>-adjudication.json
+```
+
+The builder refuses missing or invalid independent reviews and an adjudicator ID
+that matches either reviewer. The adjudication queue contains the two immutable
+source decisions and their field-level disagreements; these labels never appear
+in either blinded reviewer queue.
+
+Serve the adjudication queue through the same workbench:
+
+```bash
+bun run dataset:reviews:serve -- \
+  --queue benchmark-data/review/<campaign>-adjudication.json \
+  --output benchmark-data/review/submissions/reviewer-c
+```
+
+The workbench marks disputed roots, shows both decisions, allows either exact
+pointer to populate the card-scoped editor, and still requires a third-party
+decision for every frozen root. The server rejects reused identities, changed
+source review IDs, invalid pointers, incomplete coverage, and adjudications
+timestamped before either independent review.
+
+Compile a complete adjudication campaign atomically:
+
+```bash
+bun run dataset:reviews:adjudication-compile -- \
+  --queue benchmark-data/review/<campaign>-adjudication.json \
+  --submissions benchmark-data/review/submissions/reviewer-c \
+  --output benchmark-data/review/adjudicated/<campaign>
+```
+
+Compilation validates every artifact before writing, creates no partial output,
+and emits immutable annotations plus `manifest.json`. Use that manifest as an
+explicit training overlay instead of overwriting older capture annotations:
+
+```bash
+bun run training:prepare -- benchmark-data/live/<run> [...] \
+  --adjudication-manifest \
+    benchmark-data/review/adjudicated/<campaign>/manifest.json \
+  --output benchmark-data/training/<campaign>
+```
+
+With an overlay, captures absent from the manifest are skipped, every manifest
+page must be consumed by the supplied runs, and observation, screenshot, and
+annotation hashes must all match.
+
 After a reviewer chooses a card root, list the deterministic numeric candidates:
 
 ```bash

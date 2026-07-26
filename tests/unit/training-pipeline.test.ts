@@ -1,4 +1,5 @@
 import { execFile } from "node:child_process";
+import { createHash } from "node:crypto";
 import {
   appendFile,
   mkdtemp,
@@ -142,6 +143,110 @@ describe("training preparation CLI", () => {
         })
       );
 
+      const overlayDirectory = path.join(temporaryRoot, "adjudicated");
+      const overlayAnnotationDirectory = path.join(
+        overlayDirectory,
+        "annotations"
+      );
+      await mkdir(overlayAnnotationDirectory, { recursive: true });
+      const overlayPages = [];
+      for (const pageId of ["walmart--fixture", "amazon--fixture"]) {
+        const pageDirectory = path.join(runDirectory, pageId);
+        const observationBytes = await readFile(
+          path.join(pageDirectory, "observation.json")
+        );
+        const screenshotBytes = await readFile(
+          path.join(pageDirectory, "annotation.png")
+        );
+        const annotationBytes = await readFile(
+          path.join(pageDirectory, "annotation.json")
+        );
+        const annotationPath = path.join(
+          overlayAnnotationDirectory,
+          `${pageId}.json`
+        );
+        await writeFile(annotationPath, annotationBytes);
+        overlayPages.push({
+          pageId,
+          source: {
+            observationSha256: sha256(observationBytes),
+            screenshotSha256: sha256(screenshotBytes)
+          },
+          annotationPath: `annotations/${pageId}.json`,
+          annotationSha256: sha256(annotationBytes)
+        });
+        await writeJson(path.join(pageDirectory, "annotation.json"), {
+          version: 1,
+          pageId,
+          reviewStatus: "unreviewed",
+          annotators: [],
+          products: []
+        });
+      }
+      const overlayManifestPath = path.join(
+        overlayDirectory,
+        "manifest.json"
+      );
+      await writeJson(overlayManifestPath, {
+        version: 1,
+        queueId: "reviewer-c--adjudication--fixture",
+        cohort: "training",
+        pages: overlayPages
+      });
+      const overlayOutput = path.join(temporaryRoot, "overlay-dataset");
+      await promisify(execFile)(
+        "bun",
+        [
+          "scripts/prepare-t5-training.ts",
+          runDirectory,
+          "--output",
+          overlayOutput,
+          "--adjudication-manifest",
+          overlayManifestPath
+        ],
+        {
+          cwd: process.cwd(),
+          encoding: "utf8"
+        }
+      );
+      const overlayDatasetManifest = JSON.parse(
+        await readFile(
+          path.join(overlayOutput, "dataset-manifest.json"),
+          "utf8"
+        )
+      );
+      expect(overlayDatasetManifest.adjudicationOverlay).toEqual({
+        manifest: overlayManifestPath,
+        queueId: "reviewer-c--adjudication--fixture",
+        pages: 2
+      });
+
+      await appendFile(
+        path.join(overlayAnnotationDirectory, "walmart--fixture.json"),
+        "\n"
+      );
+      await expect(
+        promisify(execFile)(
+          "bun",
+          [
+            "scripts/prepare-t5-training.ts",
+            runDirectory,
+            "--output",
+            path.join(temporaryRoot, "tampered-overlay-dataset"),
+            "--adjudication-manifest",
+            overlayManifestPath
+          ],
+          {
+            cwd: process.cwd(),
+            encoding: "utf8"
+          }
+        )
+      ).rejects.toMatchObject({
+        stderr: expect.stringContaining(
+          "adjudication overlay annotation hash mismatch"
+        )
+      });
+
       await appendFile(
         path.join(outputDirectory, manifest.assets[0].path),
         Buffer.from("tampered")
@@ -258,4 +363,8 @@ async function writePage(runDirectory: string, pageId: string, siteId: string): 
 
 async function writeJson(filename: string, value: unknown): Promise<void> {
   await writeFile(filename, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+}
+
+function sha256(value: Buffer): string {
+  return createHash("sha256").update(value).digest("hex");
 }

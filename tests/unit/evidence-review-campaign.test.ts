@@ -2,6 +2,12 @@ import {
   auditEvidenceReviewCampaign,
   validateCampaignPair
 } from "../../scripts/evidence-review-campaign-lib";
+import {
+  buildEvidenceAdjudicationQueue,
+  validateEvidenceAdjudicationQueue,
+  type BuildEvidenceAdjudicationQueueInput
+} from "../../scripts/evidence-adjudication-queue-lib";
+import { compileEvidenceAdjudicationCampaign } from "../../scripts/evidence-adjudication-campaign-lib";
 import type { EvidencePointerReview } from "../../scripts/evidence-review-lib";
 import type { EvidenceReviewQueue } from "../../scripts/evidence-review-queue-lib";
 import type {
@@ -148,7 +154,188 @@ describe("evidence review campaign intake", () => {
       "missing immutable observation: page"
     ]);
   });
+
+  it("builds a deterministic queue only after dual review", () => {
+    const observations = new Map([["page", observation()]]);
+    const adjudicationQueue = buildEvidenceAdjudicationQueue({
+      queueA: queue("reviewer-a"),
+      queueB: queue("reviewer-b"),
+      submissionsA: [
+        { filename: "a.json", review: review("reviewer-a") }
+      ],
+      submissionsB: [
+        { filename: "b.json", review: review("reviewer-b") }
+      ],
+      observations,
+      adjudicatorId: "reviewer-c",
+      queueAPath: "/repo/benchmark-data/review/reviewer-a.json",
+      outputPath: "/repo/benchmark-data/review/adjudication.json"
+    });
+
+    expect(adjudicationQueue).toMatchObject({
+      queueType: "adjudication",
+      reviewerId: "reviewer-c",
+      labelVisibility: "independent reviews and disagreements visible",
+      sourceQueueIds: [
+        "reviewer-a--campaign--0000000000000000",
+        "reviewer-b--campaign--0000000000000000"
+      ],
+      items: [
+        {
+          pageId: "page",
+          observationPath: "observation.json",
+          screenshotPath: "screenshot.png",
+          reviewTemplate: {
+            phase: "adjudicated",
+            reviewerId: "reviewer-c",
+            sourceReviewIds: ["reviewer-a--page", "reviewer-b--page"]
+          }
+        }
+      ]
+    });
+    expect(
+      validateEvidenceAdjudicationQueue(adjudicationQueue, observations)
+    ).toEqual([]);
+  });
+
+  it("refuses premature or non-independent adjudication", () => {
+    const input: BuildEvidenceAdjudicationQueueInput = {
+      queueA: queue("reviewer-a"),
+      queueB: queue("reviewer-b"),
+      submissionsA: [
+        { filename: "a.json", review: review("reviewer-a") }
+      ],
+      submissionsB: [],
+      observations: new Map([["page", observation()]]),
+      adjudicatorId: "reviewer-c",
+      queueAPath: "/repo/benchmark-data/review/reviewer-a.json",
+      outputPath: "/repo/benchmark-data/review/adjudication.json"
+    };
+    expect(() => buildEvidenceAdjudicationQueue(input)).toThrow(
+      "0/1 paired pages"
+    );
+
+    input.submissionsB = [
+      { filename: "b.json", review: review("reviewer-b") }
+    ];
+    input.adjudicatorId = "reviewer-a";
+    expect(() => buildEvidenceAdjudicationQueue(input)).toThrow(
+      "Adjudicator must have a non-empty identity distinct from both reviewers."
+    );
+  });
+
+  it("detects embedded agreement drift", () => {
+    const observations = new Map([["page", observation()]]);
+    const adjudicationQueue = buildEvidenceAdjudicationQueue({
+      queueA: queue("reviewer-a"),
+      queueB: queue("reviewer-b"),
+      submissionsA: [
+        { filename: "a.json", review: review("reviewer-a") }
+      ],
+      submissionsB: [
+        { filename: "b.json", review: review("reviewer-b") }
+      ],
+      observations,
+      adjudicatorId: "reviewer-c",
+      queueAPath: "/repo/benchmark-data/review/reviewer-a.json",
+      outputPath: "/repo/benchmark-data/review/adjudication.json"
+    });
+    adjudicationQueue.items[0]!.agreement.exactPointerAgreement = 0;
+
+    expect(
+      validateEvidenceAdjudicationQueue(adjudicationQueue, observations)
+    ).toContain("adjudication agreement drift: page");
+  });
+
+  it("compiles a complete third-party campaign into gold annotations", () => {
+    const observations = new Map([["page", observation()]]);
+    const adjudicationQueue = adjudicationQueueFixture(observations);
+    const adjudication = {
+      ...adjudicationQueue.items[0]!.reviewTemplate,
+      completedAt: "2026-07-24T21:00:00.000Z",
+      products: review("reviewer-a").products
+    };
+
+    const result = compileEvidenceAdjudicationCampaign(
+      adjudicationQueue,
+      [{ filename: "adjudication.json", review: adjudication }],
+      observations
+    );
+
+    expect(result).toMatchObject({
+      valid: true,
+      expected: 1,
+      submitted: 1,
+      compiled: 1,
+      missingReviewIds: [],
+      unexpectedReviewIds: []
+    });
+    expect(result.entries[0]?.annotation).toMatchObject({
+      reviewStatus: "adjudicated",
+      coverage: "complete-main-region",
+      annotators: ["reviewer-a", "reviewer-b", "reviewer-c"],
+      products: [
+        {
+          nodeId: "card",
+          comparable: true,
+          currentPriceCents: 1200
+        }
+      ]
+    });
+  });
+
+  it("refuses incomplete or identity-drifted adjudication campaigns", () => {
+    const observations = new Map([["page", observation()]]);
+    const adjudicationQueue = adjudicationQueueFixture(observations);
+    const missing = compileEvidenceAdjudicationCampaign(
+      adjudicationQueue,
+      [],
+      observations
+    );
+    expect(missing).toMatchObject({
+      valid: false,
+      compiled: 0,
+      missingReviewIds: ["reviewer-c--page"]
+    });
+
+    const drifted = {
+      ...adjudicationQueue.items[0]!.reviewTemplate,
+      completedAt: "2026-07-24T21:00:00.000Z",
+      reviewerId: "reviewer-d",
+      products: review("reviewer-a").products
+    };
+    const invalid = compileEvidenceAdjudicationCampaign(
+      adjudicationQueue,
+      [{ filename: "drifted.json", review: drifted }],
+      observations
+    );
+    expect(invalid.valid).toBe(false);
+    expect(invalid.errors).toContainEqual(
+      expect.objectContaining({
+        message: "adjudication identity or source-review contract changed"
+      })
+    );
+  });
 });
+
+function adjudicationQueueFixture(
+  observations: Map<string, PageObservation>
+) {
+  return buildEvidenceAdjudicationQueue({
+    queueA: queue("reviewer-a"),
+    queueB: queue("reviewer-b"),
+    submissionsA: [
+      { filename: "a.json", review: review("reviewer-a") }
+    ],
+    submissionsB: [
+      { filename: "b.json", review: review("reviewer-b") }
+    ],
+    observations,
+    adjudicatorId: "reviewer-c",
+    queueAPath: "/repo/benchmark-data/review/reviewer-a.json",
+    outputPath: "/repo/benchmark-data/review/adjudication.json"
+  });
+}
 
 function queue(reviewerId: string): EvidenceReviewQueue {
   const source = {
