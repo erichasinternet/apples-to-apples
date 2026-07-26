@@ -219,6 +219,14 @@ hashes, eligible-capture registry, and a headed Chromium validation that loaded
 all 59 screenshots with zero console errors. Both independent reviewer queues
 remain empty, so the expanded campaign also contributes zero gold products.
 
+The subsequent
+[`g2-pilot-p02.json`](../benchmarks/review-campaigns/g2-pilot-p02.json)
+campaign adds the four wave-07 pages for 63 pages and 580 frozen candidate roots.
+A headed Chromium sweep loaded every screenshot, exposed only the frozen card
+roots, rejected non-candidate navigation and incomplete coverage, produced zero
+console errors, and wrote zero review files. Both independent queues remain
+empty and therefore still contribute zero gold products.
+
 The final wave-02 qualification pass promoted Blue Sky Vitamin and discarded
 Professional Supplement Center, Sleekshop, Bob's Red Mill, and Bulk Foods with
 captured evidence. It also narrowed search-query relevance to visible search
