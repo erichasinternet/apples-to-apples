@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "auditId": "g2-pilot-p14-review-batch-validation",
+  "createdAt": "2026-07-26T12:30:00Z",
+  "source": {
+    "batchManifest": "benchmarks/reviews/g2-pilot-p14-review-batches.json",
+    "batchManifestSha256": "b0e087d05d212b4acdc04ac816d8ac4f6f565528d16b30a46d199044549c36c1",
+    "validationReportSha256": [
+      "f10104d54d55f13970b68d11cb60d9c26b88193b6bf17df2dba553ad5cbc07d3",
+      "bbd0707068bd64c29d28f836907d9720c81f361a2833e07f8100152fb3c569e3",
+      "6731c245a68f89ea8fcaafce2db948f682738ccae4d7159e71a17ac8a17eab26",
+      "5970c381593610b442c46e78c730384ad56aac5e703ffcc1e6aa773e34baee45",
+      "ecf7acf81be03e563cfe10533dd246429645a0dcabf017c7c87457d07d2a413c",
+      "96e26b11b60f09300066994a1a1d2ab0c623388b594d4e5bb1ac62d588d9e53b",
+      "33beb6046d7e6da91b3061386e103305160a109bb54e5ab3ae81e2bd81988f86",
+      "16185f3e6da2bfd83b6b7c7b8b85a38152736e8bf34a5814d8cbb5345c7e2de3",
+      "af4667ac8726aa2c17c3f402d781a0402a5883c88f69f14be7e474534a1996c7",
+      "f74b7301e740c409af2cf7f7e3efae11e1575a40730e205f47e75842b395eed3",
+      "568dc53fbd71a28170717544bf4f8244fb9d14cdced713d6df12e9be8c6b8fb2",
+      "34ccfc72fc4f22fa88998002b847f6411ddadd14fdf3dffeb047f7296b9c05bd",
+      "9f6cc08c46090cbd5554e69ca91546cedd3bc1045ea6871be3f649abcf1e372a",
+      "8638a07d49a43950356b9996207416974cecda304a8b371c721b6a5a47a27e6f"
+    ]
+  },
+  "browser": "headed Playwright Chromium",
+  "batches": 14,
+  "pagesLoaded": 138,
+  "screenshotsLoaded": 138,
+  "candidateCards": 1389,
+  "onlyFrozenCardRootOffered": true,
+  "directFrozenCardNavigation": "passed",
+  "nonCandidateAncestor": "rejected-404",
+  "incompleteCoverage": "rejected-422",
+  "consoleErrors": 0,
+  "reviewFilesWritten": 0,
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Workbench validation proves batch integrity and usability, not semantic label correctness."
+  }
+}

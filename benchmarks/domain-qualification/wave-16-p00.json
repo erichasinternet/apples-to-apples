@@ -1,0 +1,243 @@
+{
+  "version": 1,
+  "qualificationId": "wave-16-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-16.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "screeningPageTimeoutMs": 90000,
+    "qualificationPageTimeoutMs": 90000,
+    "screeningCardScreenshotBudgetMs": 12000,
+    "qualificationCardScreenshotBudgetMs": 12000,
+    "minimumQueryTokenCoverage": 1,
+    "exactPageTargeting": true,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "screeningSamplingFinding": "The initial --limit 20 run sampled targets rather than one target per domain. It is retained as bounded screening evidence only. Opposite-viewport follow-ups used explicit page IDs, and only exact accepted captures are promoted."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T11-44-47-086Z",
+      "runManifestSha256": "afa320e3d6195d7533adaac402c5d0109478daa16081a29360c4a8c3842e6637",
+      "purpose": "headed mixed-viewport target screening; repeated-domain sampling was detected and bounded"
+    },
+    {
+      "runId": "2026-07-26T11-59-23-415Z",
+      "runManifestSha256": "cac69e17f736693de9c7e64651caf033aca8c1a1b62c42bc90cdf656323b8ab0",
+      "purpose": "explicit narrow opposite-viewport qualification"
+    },
+    {
+      "runId": "2026-07-26T12-11-55-815Z",
+      "runManifestSha256": "d2d4e8d7290ff417a091cd25a5d9594f9141beb44907521489ea523260ecf5e0",
+      "purpose": "explicit desktop Core Fabrics opposite-viewport qualification"
+    }
+  ],
+  "results": {
+    "rehabmart": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "rehabmart--exam-gloves",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.07109004739336493,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "rehabmart--underpads",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two readable rehabilitation-supply grids pass in distinct viewports. Glove titles expose explicit box and case counts while underpad listings mix count evidence with hard negatives."
+    },
+    "ps-detail-products": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "ps-detail-products--car-wash-soap",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.005833333333333334,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "ps-detail-products--wheel-cleaner",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.025519504192489974,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent professional-detailing grids pass in distinct viewports. Sprays, gallon products, tools, kits, and starting prices provide useful volume extraction and abstention cases."
+    },
+    "blackbird-fabrics": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "blackbird-fabrics--linen-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.056,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "blackbird-fabrics--cotton-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.06635071090047394,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two unobstructed apparel-fabric grids pass in distinct viewports with repeated explicit prices per half metre and per metre."
+    },
+    "flooret": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "flooret--oak-flooring",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.006772222222222222,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "flooret--vinyl-flooring",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.029626929152995505,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent flooring sample grids pass in distinct viewports. Sample prices and physical plank dimensions are deliberate area hard negatives because they do not establish a sell-unit square-foot price."
+    },
+    "core-fabrics": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "core-fabrics--cotton-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.07109004739336493,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "core-fabrics--linen-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.066,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two clean sustainable-fabric result grids pass in distinct viewports with explicit USD prices per half-metre and per metre."
+    },
+    "diaspora-co": {
+      "status": "rejected",
+      "reason": "The rendered result page exposed no reviewable candidate roots."
+    },
+    "red-stick-spice": {
+      "status": "rejected",
+      "reason": "An unresolved obstruction covered 28 percent of the screened viewport."
+    },
+    "curio-spice": {
+      "status": "rejected",
+      "reason": "An unresolved obstruction covered 90 percent of the explicitly screened viewport."
+    },
+    "the-spice-lab": {
+      "status": "rejected",
+      "reason": "One screened page exposed no reviewable roots and the other exceeded the 90-second page bound."
+    },
+    "diy-detail": {
+      "status": "rejected",
+      "reason": "The distinct narrow qualification page exceeded the 90-second page bound."
+    },
+    "koch-chemie-usa": {
+      "status": "rejected",
+      "reason": "The rendered result page had zero requested-query token coverage and no reviewable candidate roots."
+    },
+    "detailers-domain": {
+      "status": "rejected",
+      "reason": "The distinct narrow qualification page exceeded the 90-second page bound."
+    },
+    "carewell": {
+      "status": "rejected",
+      "reason": "The explicitly targeted narrow screening page exceeded the 90-second page bound."
+    },
+    "express-med": {
+      "status": "rejected",
+      "reason": "The distinct underpads page exceeded the 90-second page bound in both desktop and narrow attempts."
+    },
+    "medical-mega": {
+      "status": "rejected",
+      "reason": "The screened exam-gloves page exceeded the 90-second page bound."
+    },
+    "bolt-fabric-boutique": {
+      "status": "rejected",
+      "reason": "The rendered result page exposed no reviewable candidate roots."
+    },
+    "style-maker-fabrics": {
+      "status": "rejected",
+      "reason": "The explicitly targeted narrow screening page exceeded the 90-second page bound."
+    },
+    "south-cypress": {
+      "status": "rejected",
+      "reason": "The rendered result page exposed no reviewable candidate roots."
+    },
+    "green-building-supply": {
+      "status": "rejected",
+      "reason": "The screened page exposed only three candidate roots, below the frozen minimum of eight."
+    },
+    "cali-floors": {
+      "status": "rejected",
+      "reason": "The explicitly targeted narrow screening page exceeded the 90-second page bound."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "rehabmart",
+      "ps-detail-products",
+      "blackbird-fabrics",
+      "flooret",
+      "core-fabrics"
+    ],
+    "assignedDomains": [
+      {"siteId": "rehabmart", "cohort": "training"},
+      {"siteId": "ps-detail-products", "cohort": "training"},
+      {"siteId": "blackbird-fabrics", "cohort": "training"},
+      {"siteId": "flooret", "cohort": "training"},
+      {"siteId": "core-fabrics", "cohort": "training"}
+    ],
+    "status": "keep"
+  }
+}

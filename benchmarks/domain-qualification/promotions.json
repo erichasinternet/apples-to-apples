@@ -294,6 +294,36 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-15-p00.json",
       "promotedAt": "2026-07-26T11:40:00.000Z"
+    },
+    {
+      "siteId": "rehabmart",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "promotedAt": "2026-07-26T12:20:00.000Z"
+    },
+    {
+      "siteId": "ps-detail-products",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "promotedAt": "2026-07-26T12:20:00.000Z"
+    },
+    {
+      "siteId": "blackbird-fabrics",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "promotedAt": "2026-07-26T12:20:00.000Z"
+    },
+    {
+      "siteId": "flooret",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "promotedAt": "2026-07-26T12:20:00.000Z"
+    },
+    {
+      "siteId": "core-fabrics",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "promotedAt": "2026-07-26T12:20:00.000Z"
     }
   ]
 }

@@ -1536,6 +1536,126 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-15-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "rehabmart",
+      "cohort": "training",
+      "pageId": "rehabmart--exam-gloves",
+      "captureTimestamp": "2026-07-26T11:44:52.748Z",
+      "observationSha256": "807921fc2eb0cb6a1a055834c3de6f2ba9395a6bee9d1d8849d500f765fb624a",
+      "annotationScreenshotSha256": "3b079355e7e9a9132bdda85620d247157b97ef9b552288049e51dd9fd07b3d78",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-16-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "rehabmart",
+      "cohort": "training",
+      "pageId": "rehabmart--underpads",
+      "captureTimestamp": "2026-07-26T11:56:57.732Z",
+      "observationSha256": "4d3aff22d52cb3ea7b4a7c81cd839b0b02139f020ea1d32568814122301e57d9",
+      "annotationScreenshotSha256": "4967c0743256d19af5bbd80c5b5b62c846d330dc43f0838dd0994b733185c2c2",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-16-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "ps-detail-products",
+      "cohort": "training",
+      "pageId": "ps-detail-products--car-wash-soap",
+      "captureTimestamp": "2026-07-26T11:45:03.260Z",
+      "observationSha256": "804d19230136302d38c90f7236a6ef1a76b5b9cd7dbc662e8affbb42b31512f4",
+      "annotationScreenshotSha256": "df5c7db8ed0ead58cd95bf3f443860f2e27611560ea2b23b95ca5d72a59d5af4",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-16-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "ps-detail-products",
+      "cohort": "training",
+      "pageId": "ps-detail-products--wheel-cleaner",
+      "captureTimestamp": "2026-07-26T12:03:49.656Z",
+      "observationSha256": "144ee68248e4b844d59e751627f512e5a6176340f1eb258a2041e43a4b6993b1",
+      "annotationScreenshotSha256": "e6eda1c2c03deab149dbf629e1b2cee352260f274889238b809ad1dcd6829785",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-16-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "blackbird-fabrics",
+      "cohort": "training",
+      "pageId": "blackbird-fabrics--linen-fabric",
+      "captureTimestamp": "2026-07-26T11:48:56.963Z",
+      "observationSha256": "e33dc505fe45ab95330ae793bf394b16efbd01f59b05b3777386a9cd81532c03",
+      "annotationScreenshotSha256": "fd87cd37ef3290a4286f1ddecd5b2434196ae17adef3a3d791e8ee3004234c8a",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-16-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "blackbird-fabrics",
+      "cohort": "training",
+      "pageId": "blackbird-fabrics--cotton-fabric",
+      "captureTimestamp": "2026-07-26T12:01:51.898Z",
+      "observationSha256": "4940585a529a2ad657e2faa49b2c3cadc48e0018525a539459317ec009746d3c",
+      "annotationScreenshotSha256": "c9290216b56e37a6247026ec346b9d9d63c7327c37d74388a1cae39efabf16ec",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-16-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "flooret",
+      "cohort": "training",
+      "pageId": "flooret--oak-flooring",
+      "captureTimestamp": "2026-07-26T11:55:02.253Z",
+      "observationSha256": "c3082a2d0b208638039e773004c5127a99356b15cac62053f6fee6ac57533d5a",
+      "annotationScreenshotSha256": "74e26f2bd581dabfb1d968c7b2bfbe8e45bd236032d5c0634ca29e4cbd61879e",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-16-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "flooret",
+      "cohort": "training",
+      "pageId": "flooret--vinyl-flooring",
+      "captureTimestamp": "2026-07-26T11:59:43.549Z",
+      "observationSha256": "9b84f38298b424b2cb2932c3ddbc24e5c8900dbca24b367d5cd89a986291b901",
+      "annotationScreenshotSha256": "fa3349332232dd2518edd82c6bce2dd2741963bbde29afb184fb47d2926034c7",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-16-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "core-fabrics",
+      "cohort": "training",
+      "pageId": "core-fabrics--cotton-fabric",
+      "captureTimestamp": "2026-07-26T12:05:55.851Z",
+      "observationSha256": "715a8fc5b893ada37f0c25f3c19ce4e9cb4b03e54c7b53f7f756711a61697156",
+      "annotationScreenshotSha256": "6121ce17d1653270a4216daee93591e3806fbde32086a56ec0d342829be09fd0",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-16-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "core-fabrics",
+      "cohort": "training",
+      "pageId": "core-fabrics--linen-fabric",
+      "captureTimestamp": "2026-07-26T12:12:13.684Z",
+      "observationSha256": "ffe06a5d3931101a3aee0b14d889ee8f8a6b383f7c2d8ba07213fe168922b491",
+      "annotationScreenshotSha256": "41b5ec55855c4f869da34808fb9b2ba5b62bb76bd8653d6f4522e4f8102c2980",
+      "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-16-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

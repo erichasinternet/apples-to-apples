@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Sixteenth unassigned domain-qualification wave. Twenty genuinely new domains contribute four candidates per target dimension across specialty spices, automotive detailing, medical supply, fabric retail, and flooring commerce. Route screening verifies only HTTPS reachability and hostname confinement; no site-specific DOM selectors are supplied. Every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "diaspora-co",
+      "label": "Diaspora Co.",
+      "hostname": "www.diasporaco.com",
+      "stratum": "single-origin-south-asian-spice-retail",
+      "searchUrlTemplate": "https://www.diasporaco.com/search?q={query}",
+      "queries": [
+        {"id": "chili", "query": "chili", "dimension": "mass"},
+        {"id": "garlic", "query": "garlic", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "red-stick-spice",
+      "label": "Red Stick Spice Company",
+      "hostname": "www.redstickspice.com",
+      "stratum": "regional-specialty-spice-retail",
+      "searchUrlTemplate": "https://www.redstickspice.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "garlic-powder", "query": "garlic powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "curio-spice",
+      "label": "Curio Spice Company",
+      "hostname": "curiospice.com",
+      "stratum": "small-batch-spice-retail",
+      "searchUrlTemplate": "https://curiospice.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "pepper", "query": "pepper", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "the-spice-lab",
+      "label": "The Spice Lab",
+      "hostname": "spices.com",
+      "stratum": "direct-to-consumer-spice-brand",
+      "searchUrlTemplate": "https://spices.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "garlic-powder", "query": "garlic powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "diy-detail",
+      "label": "DIY Detail",
+      "hostname": "diydetail.com",
+      "stratum": "direct-to-consumer-detailing-brand",
+      "searchUrlTemplate": "https://diydetail.com/search?q={query}",
+      "queries": [
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"},
+        {"id": "interior-cleaner", "query": "interior cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "ps-detail-products",
+      "label": "P&S Detail Products",
+      "hostname": "psdetailproducts.com",
+      "stratum": "professional-detailing-manufacturer",
+      "searchUrlTemplate": "https://psdetailproducts.com/search?q={query}",
+      "queries": [
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"},
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "koch-chemie-usa",
+      "label": "Koch-Chemie USA",
+      "hostname": "kochchemieusa.com",
+      "stratum": "professional-detailing-chemical-brand",
+      "searchUrlTemplate": "https://kochchemieusa.com/search?q={query}",
+      "queries": [
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"},
+        {"id": "interior-cleaner", "query": "interior cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "detailers-domain",
+      "label": "Detailer's Domain",
+      "hostname": "www.detailersdomain.com",
+      "stratum": "specialty-detailing-retail",
+      "searchUrlTemplate": "https://www.detailersdomain.com/search?q={query}",
+      "queries": [
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"},
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "carewell",
+      "label": "Carewell",
+      "hostname": "www.carewell.com",
+      "stratum": "consumer-caregiver-supply",
+      "searchUrlTemplate": "https://www.carewell.com/search/?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "express-med",
+      "label": "ExpressMed",
+      "hostname": "www.expressmed.com",
+      "stratum": "consumer-medical-supply",
+      "searchUrlTemplate": "https://www.expressmed.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "rehabmart",
+      "label": "Rehabmart",
+      "hostname": "www.rehabmart.com",
+      "stratum": "rehabilitation-medical-equipment-retail",
+      "searchUrlTemplate": "https://www.rehabmart.com/search/?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "medical-mega",
+      "label": "Medical Mega",
+      "hostname": "medicalmega.com",
+      "stratum": "discount-clinical-supply",
+      "searchUrlTemplate": "https://medicalmega.com/?search_query={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "blackbird-fabrics",
+      "label": "Blackbird Fabrics",
+      "hostname": "www.blackbirdfabrics.com",
+      "stratum": "independent-apparel-fabric-retail",
+      "searchUrlTemplate": "https://www.blackbirdfabrics.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "core-fabrics",
+      "label": "Core Fabrics",
+      "hostname": "corefabricstore.com",
+      "stratum": "sustainable-apparel-fabric-retail",
+      "searchUrlTemplate": "https://corefabricstore.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "bolt-fabric-boutique",
+      "label": "Bolt Fabric Boutique",
+      "hostname": "www.boltfabricboutique.com",
+      "stratum": "fabric-boutique-retail",
+      "searchUrlTemplate": "https://www.boltfabricboutique.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "style-maker-fabrics",
+      "label": "Style Maker Fabrics",
+      "hostname": "stylemakerfabrics.com",
+      "stratum": "designer-apparel-fabric-retail",
+      "searchUrlTemplate": "https://stylemakerfabrics.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "south-cypress",
+      "label": "South Cypress",
+      "hostname": "southcypress.com",
+      "stratum": "specialty-flooring-retail",
+      "searchUrlTemplate": "https://southcypress.com/search?q={query}",
+      "queries": [
+        {"id": "carpet-tile", "query": "carpet tile", "dimension": "area"},
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "green-building-supply",
+      "label": "Green Building Supply",
+      "hostname": "www.greenbuildingsupply.com",
+      "stratum": "sustainable-flooring-retail",
+      "searchUrlTemplate": "https://www.greenbuildingsupply.com/search?q={query}",
+      "queries": [
+        {"id": "cork-flooring", "query": "cork flooring", "dimension": "area"},
+        {"id": "wood-flooring", "query": "wood flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "flooret",
+      "label": "Flooret",
+      "hostname": "www.flooret.com",
+      "stratum": "direct-to-consumer-flooring-brand",
+      "searchUrlTemplate": "https://www.flooret.com/search?q={query}",
+      "queries": [
+        {"id": "oak-flooring", "query": "oak flooring", "dimension": "area"},
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "cali-floors",
+      "label": "CALI Floors",
+      "hostname": "www.califloors.com",
+      "stratum": "national-flooring-brand",
+      "searchUrlTemplate": "https://www.califloors.com/search?q={query}",
+      "queries": [
+        {"id": "oak-flooring", "query": "oak flooring", "dimension": "area"},
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"}
+      ]
+    }
+  ]
+}

@@ -116,6 +116,11 @@ Capture a small headed pilot in a separate Chromium process:
 bun run benchmark:collect -- --headed --per-site 1 --sites walmart,amazon,target,chewy
 ```
 
+`--limit` is a global target cap applied after deterministic shuffling; it does
+not imply one target per domain. Use `--per-site 1` for one-page-per-domain
+screening, optionally combined with `--limit` when the balanced domain pool
+itself must be capped.
+
 Verify the frozen 60-domain frame and split coverage:
 
 ```bash

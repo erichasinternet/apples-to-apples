@@ -598,6 +598,37 @@ loads all 128 screenshots and 1,277 roots with zero console errors or writes.
 All roots and machine suggestions remain unreviewed and ineligible for silver
 training or benchmark gold.
 
+Wave 16 screens 20 additional unfamiliar domains across all five unit
+dimensions. Rehabmart, P&S Detail Products, Blackbird Fabrics, Flooret, and
+Core Fabrics qualify on two visually inspected pages in distinct viewport
+profiles. The accepted evidence adds explicit count and per-length listings,
+option-dependent automotive products, and flooring sample cards whose physical
+dimensions must not be mistaken for a sell-unit area price. The initial
+`--limit 20` run was found to sample targets rather than guarantee one target
+per domain; that run is retained only as bounded screening evidence, all
+follow-ups use explicit page IDs, and no unobserved target is inferred as
+passing.
+
+The paired blinded campaign in
+[`g2-pilot-p14.json`](../benchmarks/review-campaigns/g2-pilot-p14.json)
+contains 54 qualified training domains, 138 pages, and 1,389 frozen roots. The
+112-root expansion contributes one tentative comparable and 111 abstentions.
+The diagnostic in
+[`g2-campaign-preannotation-p13.json`](../benchmarks/reviews/g2-campaign-preannotation-p13.json)
+retains 1,370 machine suggestions and quarantines the same 19 known semantic
+traps. The compact audit in
+[`g2-selection-representation-p12.json`](../benchmarks/reviews/g2-selection-representation-p12.json)
+round-trips all 1,370 retained suggestions exactly with zero failures.
+
+The p14 campaign is deterministically partitioned into 14 matching reviewer
+assignments in
+[`g2-pilot-p14-review-batches.json`](../benchmarks/reviews/g2-pilot-p14-review-batches.json).
+The headed validation recorded in
+[`g2-pilot-p14-review-batch-validation.json`](../benchmarks/reviews/g2-pilot-p14-review-batch-validation.json)
+loads all 138 screenshots and 1,389 roots with zero console errors or writes.
+All roots and machine suggestions remain unreviewed and ineligible for silver
+training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

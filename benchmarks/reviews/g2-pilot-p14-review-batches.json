@@ -1,0 +1,487 @@
+{
+  "version": 1,
+  "campaignId": "g2-pilot-p14",
+  "createdAt": "2026-07-26T12:20:40.496Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--c78464b40374ec63",
+      "path": "benchmark-data/review/g2-pilot-p14-reviewer-a-campaign.json",
+      "sha256": "e7bbba35387c94b88322e80ad25d1e432662996b5c0c31a659223b5e038f91df",
+      "pages": 138
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--a9c3d99b0fd1919f",
+      "path": "benchmark-data/review/g2-pilot-p14-reviewer-b-campaign.json",
+      "sha256": "0ca63fd7094133a126465c27fc191af3f3e300f8dfa6ed76c5aa694003d3d45a",
+      "pages": 138
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 14,
+    "pages": 138,
+    "candidateCards": 1389
+  },
+  "batches": [
+    {
+      "batchId": "g2-pilot-p14--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "alan-janitorial--degreaser",
+        "alan-janitorial--floor-cleaner",
+        "allegro-medical--exam-gloves",
+        "allegro-medical--medical-wipes",
+        "allegro-medical--syringes",
+        "allegro-medical--underpads",
+        "allegro-medical--wound-cleanser",
+        "allegro-medical--wound-dressings",
+        "american-spice--garlic-powder",
+        "american-spice--paprika"
+      ],
+      "pages": 10,
+      "candidateCards": 92,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--f0b6ee9e9e784733",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-01.json",
+          "sha256": "7e0d36070cc823e808420d2467c73308bcb4d0025a6bdbba9869486fbdbe27b3"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--7ccaf1145e5664c0",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-01.json",
+          "sha256": "273c00c18ec3eca9753177986f1a2b224c6d81aba83ae4d45c2753a2fedb0c54"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-pilot-p14--batch-02",
+      "batchNumber": 2,
+      "pageIds": [
+        "atwood-rope--paracord",
+        "atwood-rope--utility-rope",
+        "autogeek--car-shampoos",
+        "autogeek--wheel-and-tire-cleaners",
+        "betty-mills--cleaner",
+        "betty-mills--hand-soap",
+        "betty-mills--trash-bags",
+        "blackbird-fabrics--cotton-fabric",
+        "blackbird-fabrics--linen-fabric",
+        "blowout-medical--exam-gloves"
+      ],
+      "pages": 10,
+      "candidateCards": 107,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-02--7f34bf9c1aa1e395",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-02.json",
+          "sha256": "35e71ad09fd8fca8ec406ffbe64c4b987b6a01b38c535ed9083d39481002c38c"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-02--5270505895303d2c",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-02.json",
+          "sha256": "3ea7cc97b952da077d0aef231e749f4205267335931200adff08d9d7104dff13"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-pilot-p14--batch-03",
+      "batchNumber": 3,
+      "pageIds": [
+        "blowout-medical--underpads",
+        "blue-sky-vitamin--liquid-vitamin",
+        "blue-sky-vitamin--protein-powder",
+        "blue-sky-vitamin--vitamins",
+        "carpro-us--car-wash-shampoo",
+        "carpro-us--wheels-tires-trim",
+        "coffee-bean-corral--decaf-coffee",
+        "coffee-bean-corral--green-coffee",
+        "core-fabrics--cotton-fabric",
+        "core-fabrics--linen-fabric"
+      ],
+      "pages": 10,
+      "candidateCards": 104,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-03--1eb5e16cccb67edc",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-03.json",
+          "sha256": "94c667d6f1fdea5cfd139c4c17a9684196e5aafdedb265a5fd7f8a9abc0b65b4"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-03--f113a194464980d8",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-03.json",
+          "sha256": "eb83743f43f29c2d7deec06f19b1e56b4267fc63ecc835cf66cc1f3c4a68b321"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-pilot-p14--batch-04",
+      "batchNumber": 4,
+      "pageIds": [
+        "detail-king--car-wash-soap",
+        "detail-king--interior-cleaner",
+        "detail-king--wheel-cleaner",
+        "discount-school-supply--construction-paper",
+        "discount-school-supply--markers",
+        "ethos-car-care--interior-cleaner",
+        "ethos-car-care--soap",
+        "fabric-mart-fabrics--cotton-fabric",
+        "fabric-mart-fabrics--linen-fabric",
+        "fabric-wholesale-direct--cotton-fabric"
+      ],
+      "pages": 10,
+      "candidateCards": 108,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-04--b09763831d8411f0",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-04.json",
+          "sha256": "e082b1eb06de812ef5dcfdb61ccd7a167be7000ce28bbaaade31d5530b3e23cd"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-04--eda3e3975a6d5799",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-04.json",
+          "sha256": "e4e01f8da6f3738863336f83d9b38ec1cd2cab6a0d67324edbb8e4737d14969d"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-pilot-p14--batch-05",
+      "batchNumber": 5,
+      "pageIds": [
+        "fabric-wholesale-direct--upholstery-fabric",
+        "fabricworm--canvas-fabric",
+        "fabricworm--cotton-fabric",
+        "flooret--oak-flooring",
+        "flooret--vinyl-flooring",
+        "food-service-direct--disposable-cups",
+        "food-service-direct--flour",
+        "food-service-direct--olive-oil",
+        "food-service-direct--rice",
+        "food-service-direct--salad-dressing"
+      ],
+      "pages": 10,
+      "candidateCards": 92,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-05--52c1479a958be717",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-05.json",
+          "sha256": "cac4cae3bd3dec3faa6eaeda72834b587216044bc8698a6941124eaf84ac41ac"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-05--4fe1757d9e4a2652",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-05.json",
+          "sha256": "15404e5a7a9231522a2b39645a5c65824242def2acaf0fba84e79f9ab6c06094"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-pilot-p14--batch-06",
+      "batchNumber": 6,
+      "pageIds": [
+        "georgia-carpet--carpet-tile",
+        "georgia-carpet--vinyl-flooring",
+        "grayline-medical--exam-gloves",
+        "grayline-medical--underpads",
+        "greatmats--carpet-tiles",
+        "greatmats--plastic-flooring",
+        "greatmats--rubber-gym-flooring",
+        "jeffers-pet--cat-litter",
+        "jeffers-pet--dog-food",
+        "jeffers-pet--dog-waste-bags"
+      ],
+      "pages": 10,
+      "candidateCards": 102,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-06--2c6d58546e551a11",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-06.json",
+          "sha256": "81448f861a73724fc9e4faa0822a403f27b5a80c16e30dd0e939dd01cfed8b18"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-06--bbb4072dafb96b02",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-06.json",
+          "sha256": "0618f03bcb80524ec6c56d326845abeb33bb0bd56a9de7b2032890645a56b697"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-pilot-p14--batch-07",
+      "batchNumber": 7,
+      "pageIds": [
+        "katom--flour",
+        "katom--trash-bags",
+        "kleen-rite--car-wash-soap",
+        "kleen-rite--car-wash-wax",
+        "kleen-rite--tire-cleaner",
+        "lambert-vet-supply--cat-litter",
+        "lambert-vet-supply--flea-treatment",
+        "lambert-vet-supply--puppy-pads",
+        "lambert-vet-supply--syringes",
+        "medical-eshop--exam-gloves"
+      ],
+      "pages": 10,
+      "candidateCards": 112,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-07--2ad320ae563655d5",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-07.json",
+          "sha256": "f7399e7f298e4b70f2080ed3280a89cbaf2a83e3d6d986af59a04a1bb15f3a7c"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-07--8adfe8c08f470916",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-07.json",
+          "sha256": "aba499ef27e3dd65d17c47b0a4919bc5511cd17d3dbf8138747d269abc0e6b18"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-pilot-p14--batch-08",
+      "batchNumber": 8,
+      "pageIds": [
+        "medical-eshop--underpads",
+        "morebeer--hops",
+        "morebeer--malt-extract",
+        "myspicer--chili-powder",
+        "myspicer--garlic-powder",
+        "natural-healthy-concepts--collagen-powder",
+        "natural-healthy-concepts--fish-oil",
+        "natural-healthy-concepts--liquid-supplement",
+        "natural-healthy-concepts--magnesium",
+        "natural-healthy-concepts--protein-powder"
+      ],
+      "pages": 10,
+      "candidateCards": 103,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-08--e33e942121ea449c",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-08.json",
+          "sha256": "2e8c1a84d049e8bbe9a4257767b6bb4be0966dfeff6aa9a906d3d7f31c6d28c3"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-08--8435acf8adca391b",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-08.json",
+          "sha256": "c3e38f445381454a1c249ba9f74d932236396e255a178072ea95b219d7a56648"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-pilot-p14--batch-09",
+      "batchNumber": 9,
+      "pageIds": [
+        "natural-healthy-concepts--vitamins",
+        "northern-brewer--grain",
+        "northern-brewer--hops",
+        "ontime-supplies--copy-paper",
+        "ontime-supplies--packing-tape",
+        "ontime-supplies--paper-towels",
+        "ontime-supplies--trash-bags",
+        "paracord-galaxy--paracord",
+        "paracord-galaxy--shock-cord",
+        "paracord-planet--paracord"
+      ],
+      "pages": 10,
+      "candidateCards": 92,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-09--7e12a5fdce8df02b",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-09.json",
+          "sha256": "2c2595b41930e86006ec70172174ec1cd1538a7450108ec95bf27cc2f24bd846"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-09--46cfe22534e1dbc0",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-09.json",
+          "sha256": "3d6db9bfc608efed2951ed1f27b67872d931b82f6095326780622a469d17a05b"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-pilot-p14--batch-10",
+      "batchNumber": 10,
+      "pageIds": [
+        "paracord-planet--shock-cord",
+        "pool-geek--pool-algaecide",
+        "pool-geek--pool-clarifier",
+        "pool-geek--pool-shock",
+        "prosource-wholesale--carpet-tile",
+        "prosource-wholesale--vinyl-flooring",
+        "ps-detail-products--car-wash-soap",
+        "ps-detail-products--wheel-cleaner",
+        "purebulk--magnesium-powder",
+        "purebulk--protein-powder"
+      ],
+      "pages": 10,
+      "candidateCards": 104,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-10--96c474dd28f1c9b3",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-10.json",
+          "sha256": "cf53475eecb77b41398872494746f70e2c1d63e1722e93d6f89c9b64c41f5188"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-10--128053b4c1f8528f",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-10.json",
+          "sha256": "35e7f85a9d4e04675556023e86f8d836d69c9523d9fd9bb4eccc8a010d210555"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-pilot-p14--batch-11",
+      "batchNumber": 11,
+      "pageIds": [
+        "rehabmart--exam-gloves",
+        "rehabmart--underpads",
+        "restaurant-supply--flour",
+        "rockywoods--nylon-fabric",
+        "rockywoods--webbing",
+        "search-for-fabric--knit-fabric",
+        "search-for-fabric--lace-fabric",
+        "seattle-fabrics--shock-cord",
+        "seattle-fabrics--webbing",
+        "starwest-botanicals--bulk-herbs"
+      ],
+      "pages": 10,
+      "candidateCards": 115,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-11--12f543da4686f28a",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-11.json",
+          "sha256": "1b82bc806594073e6d183a3ccb69be0aa220df5bcc1091d72109a87d955092a2"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-11--0b82aa346ab297af",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-11.json",
+          "sha256": "6642041d2f19e3ec0879a4b0cf4c7639e9c80dbfbaf918ba60f2ecdcb6f1b62e"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-pilot-p14--batch-12",
+      "batchNumber": 12,
+      "pageIds": [
+        "starwest-botanicals--loose-leaf-tea",
+        "superior-products--car-wash-soap",
+        "superior-products--glass-cleaner",
+        "supplement-warehouse--collagen-powder",
+        "supplement-warehouse--fish-oil",
+        "supplement-warehouse--protein-powder",
+        "supplement-warehouse--vitamins",
+        "the-cary-company--liquid-containers",
+        "the-cary-company--plastic-bottles",
+        "the-cary-company--spray-bottles"
+      ],
+      "pages": 10,
+      "candidateCards": 86,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-12--4cd613eea0d25dd9",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-12.json",
+          "sha256": "fbf04c9dbea650621093eaf19d8d1bb31ac0fd803725ec68937254cb2a93ee96"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-12--9839deeb5e037070",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-12.json",
+          "sha256": "2d0f016c7da4dc9740fae7e48e02c8c043aa56900a1cc86fd711eeb5533aed1d"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-pilot-p14--batch-13",
+      "batchNumber": 13,
+      "pageIds": [
+        "the-flooring-store--carpet-tile",
+        "the-flooring-store--lvp-flooring",
+        "utility-direct--cordage",
+        "utility-direct--rope",
+        "vitality-medical--adult-briefs",
+        "vitality-medical--exam-gloves",
+        "vitality-medical--gauze-pads",
+        "vitality-medical--underpads",
+        "vitality-medical--wound-cleanser",
+        "wholesale-janitorial-supply--floor-cleaner"
+      ],
+      "pages": 10,
+      "candidateCards": 92,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-13--7a95223eff0767c0",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-13.json",
+          "sha256": "98130f37876782b08e76e3223c4eb479a89c7b197bea4a3f96d3e60141c78da1"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-13--7defb9727a1bdb8b",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-13.json",
+          "sha256": "5eb096606a7a185aa0b192ab2e4d3147b13949dd09447a54ad15edd08db321bf"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-pilot-p14--batch-14",
+      "batchNumber": 14,
+      "pageIds": [
+        "wholesale-janitorial-supply--hand-soap",
+        "wholesale-janitorial-supply--laundry-detergent",
+        "wholesale-janitorial-supply--paper-towels",
+        "wholesale-janitorial-supply--trash-bags",
+        "wholesale-marine--braided-rope",
+        "wholesale-marine--dock-line",
+        "zelouf-fabrics--cotton-fabric",
+        "zelouf-fabrics--linen-fabric"
+      ],
+      "pages": 8,
+      "candidateCards": 80,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-14--049157e0cf0a70f7",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-a--batch-14.json",
+          "sha256": "4fa7f890c96b48afc1a5d19d40360c24113f7bc47478323549664c6967cc8c90"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-14--caff5da1e987ba43",
+          "path": "benchmark-data/review/g2-pilot-p14-batches/reviewer-b--batch-14.json",
+          "sha256": "d69e1ca51bdb0b91dc9b68ee536e0d72c2eb432f1544da35610d481fc65ade60"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}
