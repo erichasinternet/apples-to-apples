@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "description": "Fifth unassigned domain-qualification wave focused on underrepresented length and area evidence plus craft raw materials, botanical ingredients, and green coffee. Every domain remains unassigned until it passes the frozen two-page machine and visual gate.",
+  "sites": [
+    {
+      "id": "big-duck-canvas",
+      "label": "Big Duck Canvas",
+      "hostname": "www.bigduckcanvas.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://www.bigduckcanvas.com/search.php?search_query={query}",
+      "queries": [
+        { "id": "canvas-fabric", "query": "canvas fabric", "dimension": "length" },
+        { "id": "cotton-duck", "query": "cotton duck", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "decorative-fabrics-direct",
+      "label": "Decorative Fabrics Direct",
+      "hostname": "www.decorativefabricsdirect.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://www.decorativefabricsdirect.com/mm5/merchant.mvc?Screen=SRCH&Store_Code=DFD&Search={query}",
+      "queries": [
+        { "id": "upholstery-fabric", "query": "upholstery fabric", "dimension": "length" },
+        { "id": "cotton-fabric", "query": "cotton fabric", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "fabric-depot",
+      "label": "Fabric Depot",
+      "hostname": "fabricdepot.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://fabricdepot.com/search?q={query}",
+      "queries": [
+        { "id": "cotton-fabric", "query": "cotton fabric", "dimension": "length" },
+        { "id": "upholstery-fabric", "query": "upholstery fabric", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "nick-of-time-textiles",
+      "label": "Nick of Time Textiles",
+      "hostname": "nickoftimefabric.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://nickoftimefabric.com/search?q={query}",
+      "queries": [
+        { "id": "cotton-fabric", "query": "cotton fabric", "dimension": "length" },
+        { "id": "fleece-fabric", "query": "fleece fabric", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "knot-and-rope",
+      "label": "Knot & Rope Supply",
+      "hostname": "www.knotandrope.com",
+      "stratum": "rope-and-cordage",
+      "searchUrlTemplate": "https://www.knotandrope.com/search?q={query}",
+      "queries": [
+        { "id": "paracord", "query": "paracord", "dimension": "length" },
+        { "id": "nylon-rope", "query": "nylon rope", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "rw-rope",
+      "label": "R&W Rope",
+      "hostname": "rwrope.com",
+      "stratum": "rope-and-cordage",
+      "searchUrlTemplate": "https://rwrope.com/search?q={query}",
+      "queries": [
+        { "id": "nylon-rope", "query": "nylon rope", "dimension": "length" },
+        { "id": "paracord", "query": "paracord", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "wire-and-cable-your-way",
+      "label": "Wire & Cable Your Way",
+      "hostname": "www.wireandcableyourway.com",
+      "stratum": "electrical-supply",
+      "searchUrlTemplate": "https://www.wireandcableyourway.com/catalogsearch/result/?q={query}",
+      "queries": [
+        { "id": "thhn-wire", "query": "THHN wire", "dimension": "length" },
+        { "id": "uf-b-wire", "query": "UF-B wire", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "wesbell-wire-and-cable",
+      "label": "WesBell Wire and Cable",
+      "hostname": "wesbellwireandcable.com",
+      "stratum": "electrical-supply",
+      "searchUrlTemplate": "https://wesbellwireandcable.com/search?q={query}",
+      "queries": [
+        { "id": "thhn-wire", "query": "THHN wire", "dimension": "length" },
+        { "id": "welding-cable", "query": "welding cable", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "mineral-tiles",
+      "label": "Mineral Tiles",
+      "hostname": "www.mineraltiles.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.mineraltiles.com/search?q={query}",
+      "queries": [
+        { "id": "porcelain-tile", "query": "porcelain tile", "dimension": "area" },
+        { "id": "mosaic-tile", "query": "mosaic tile", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "tile-club",
+      "label": "Tile Club",
+      "hostname": "www.tileclub.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.tileclub.com/search?q={query}",
+      "queries": [
+        { "id": "porcelain-tile", "query": "porcelain tile", "dimension": "area" },
+        { "id": "mosaic-tile", "query": "mosaic tile", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "stone-tile-depot",
+      "label": "Stone Tile Depot",
+      "hostname": "www.stonetiledepot.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.stonetiledepot.com/?s={query}",
+      "queries": [
+        { "id": "porcelain-tile", "query": "porcelain tile", "dimension": "area" },
+        { "id": "marble-tile", "query": "marble tile", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "wholesale-supplies-plus",
+      "label": "Wholesale Supplies Plus",
+      "hostname": "www.wholesalesuppliesplus.com",
+      "stratum": "craft-supply",
+      "searchUrlTemplate": "https://www.wholesalesuppliesplus.com/search.aspx?find={query}",
+      "queries": [
+        { "id": "fragrance-oil", "query": "fragrance oil", "dimension": "volume" },
+        { "id": "soap-base", "query": "soap base", "dimension": "mass" }
+      ]
+    },
+    {
+      "id": "candle-science",
+      "label": "CandleScience",
+      "hostname": "www.candlescience.com",
+      "stratum": "craft-supply",
+      "searchUrlTemplate": "https://www.candlescience.com/search/?q={query}",
+      "queries": [
+        { "id": "candle-wax", "query": "candle wax", "dimension": "mass" },
+        { "id": "candle-wicks", "query": "candle wicks", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "bulk-apothecary",
+      "label": "Bulk Apothecary",
+      "hostname": "www.bulkapothecary.com",
+      "stratum": "personal-care-raw-materials",
+      "searchUrlTemplate": "https://www.bulkapothecary.com/search.php?search_query={query}",
+      "queries": [
+        { "id": "essential-oil", "query": "essential oil", "dimension": "volume" },
+        { "id": "soap-base", "query": "soap base", "dimension": "mass" }
+      ]
+    },
+    {
+      "id": "starwest-botanicals",
+      "label": "Starwest Botanicals",
+      "hostname": "www.starwest-botanicals.com",
+      "stratum": "botanical-ingredients",
+      "searchUrlTemplate": "https://www.starwest-botanicals.com/search.php?search_query={query}",
+      "queries": [
+        { "id": "bulk-herbs", "query": "bulk herbs", "dimension": "mass" },
+        { "id": "loose-leaf-tea", "query": "loose leaf tea", "dimension": "mass" }
+      ]
+    },
+    {
+      "id": "coffee-bean-corral",
+      "label": "Coffee Bean Corral",
+      "hostname": "www.coffeebeancorral.com",
+      "stratum": "green-coffee",
+      "searchUrlTemplate": "https://www.coffeebeancorral.com/search?q={query}",
+      "queries": [
+        { "id": "green-coffee", "query": "green coffee", "dimension": "mass" },
+        { "id": "decaf-coffee", "query": "decaf coffee", "dimension": "mass" }
+      ]
+    }
+  ]
+}

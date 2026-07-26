@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "qualificationId": "wave-05-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-05.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 12000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "genericConsentActionHandling": true,
+    "persistentCookieConsentHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "queryParametersCountAsQueryEvidence": false,
+    "queryEvidenceScope": "title, pathname, visible headings, and visible status text",
+    "minimumQueryTokenCoverage": 1,
+    "populatedSearchControlsCountAsQueryEvidence": false
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T00-01-16-787Z",
+      "runManifestSha256": "965a633b85db48ad87012373e49d1cebbe916ef7773ed7bdb49f67f677d32147",
+      "purpose": "one-page headed screening across all 16 wave-05 domains"
+    },
+    {
+      "runId": "2026-07-26T00-13-39-880Z",
+      "runManifestSha256": "59faebcf5be6e1bc88a9cdc9aaf75462a42db224fb24a4c4ff4ee87a2d7eb232",
+      "purpose": "two-page narrow qualification for Starwest Botanicals and Coffee Bean Corral"
+    },
+    {
+      "runId": "2026-07-26T00-17-40-414Z",
+      "runManifestSha256": "d26ae573c62c2d4ab34fddf710f7177c80dbe984a305a9e8b3e0e042e84c8c6d",
+      "purpose": "isolated Coffee Bean Corral desktop green-coffee capture"
+    }
+  ],
+  "results": {
+    "starwest-botanicals": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "starwest-botanicals--bulk-herbs",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 335,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0.04781311680442262,
+          "queryTokenCoverage": 1,
+          "observationSha256": "a3c2ad0fa68c5f9cbfcc1a62a084b39b416ecba1e69e7ecc651e2e94a036234a",
+          "annotationScreenshotSha256": "619d1a0aa91f06777f0cd287111c098104503c9b20601a8645ce7016d0fcb488",
+          "provenanceAggregateSha256": "32b161dcf463576806a3270e3eff597665318943637190cde693765fda5db2fc",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "starwest-botanicals--loose-leaf-tea",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 390,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0.010929281616210937,
+          "queryTokenCoverage": 1,
+          "observationSha256": "25fff867718a04713284a8397a7a5970cc3a7837a09aadb9ef83ca6c81125a82",
+          "annotationScreenshotSha256": "7f0d29181b72bb1f65a3be4ad1e329e90a0e00c77d0fd773dc0ec46ddd4c31cd",
+          "provenanceAggregateSha256": "f5da57346eccd9d2acc75a5f7395ea917580db01696e393542eba86f4c30ea65",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "coffee-bean-corral": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "coffee-bean-corral--decaf-coffee",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 471,
+          "observationTruncated": false,
+          "dismissedObstructions": 2,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "279dbf16f53eee2273f086008f69cf8b6b53b32391f720cfe2fcea92b751bca5",
+          "annotationScreenshotSha256": "0cbaa199b8479428c9b70d1049b02fb201d1f1a9276f6dd9cfe994b4d11aa18f",
+          "provenanceAggregateSha256": "8c3a4878a5589434f37730b561d4632fcf1a6ecf6b41fd14bfb099bd69dad566",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "coffee-bean-corral--green-coffee",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 498,
+          "observationTruncated": false,
+          "dismissedObstructions": 2,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "963a3ac1b234ef69f1dd6531043ffd389f502e127027d4eccd0f163c243fa031",
+          "annotationScreenshotSha256": "a07e75359a290d8bb64a470f91cda3bbd4a4f355652afe8a0e64c641ac14c594",
+          "provenanceAggregateSha256": "9a62d973e0ab51758ef108346793518b07399a4cc4a533825c8512145c8015f9",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "big-duck-canvas": {
+      "status": "discard",
+      "reason": "The numeric gate passed, but visual inspection showed a misspelled search suggestion and category-link index rather than reviewable product cards."
+    },
+    "decorative-fabrics-direct": {
+      "status": "discard",
+      "reason": "The headed route returned HTTP 404, retained only half of the query evidence, and produced no reviewable candidates."
+    },
+    "fabric-depot": {
+      "status": "discard",
+      "reason": "The isolated browser context closed during the bounded headed capture."
+    },
+    "nick-of-time-textiles": {
+      "status": "discard",
+      "reason": "The headed search redirected across sites to Google and produced no reviewable candidates."
+    },
+    "knot-and-rope": {
+      "status": "discard",
+      "reason": "The headed narrow nylon-rope page exceeded the bounded timeout."
+    },
+    "rw-rope": {
+      "status": "discard",
+      "reason": "The headed route returned HTTP 404, retained only half of the query evidence, and produced no reviewable candidates."
+    },
+    "wire-and-cable-your-way": {
+      "status": "discard",
+      "reason": "The headed narrow UF-B wire page exceeded the bounded timeout."
+    },
+    "wesbell-wire-and-cable": {
+      "status": "discard",
+      "reason": "The headed route returned HTTP 404 with no visible query evidence or reviewable candidates."
+    },
+    "mineral-tiles": {
+      "status": "discard",
+      "reason": "The headed narrow mosaic-tile page exceeded the bounded timeout."
+    },
+    "tile-club": {
+      "status": "discard",
+      "reason": "The headed desktop porcelain-tile page exceeded the bounded timeout."
+    },
+    "stone-tile-depot": {
+      "status": "discard",
+      "reason": "An unresolved interstitial covered the full headed viewport."
+    },
+    "wholesale-supplies-plus": {
+      "status": "discard",
+      "reason": "The headed page showed no visible query evidence and produced no reviewable candidates."
+    },
+    "candle-science": {
+      "status": "discard",
+      "reason": "The headed desktop candle-wick page exceeded the bounded timeout."
+    },
+    "bulk-apothecary": {
+      "status": "discard",
+      "reason": "The headed page passed query and obstruction checks but froze only two candidates, below the eight-card qualification gate."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "starwest-botanicals",
+      "coffee-bean-corral"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "starwest-botanicals",
+        "cohort": "training"
+      },
+      {
+        "siteId": "coffee-bean-corral",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

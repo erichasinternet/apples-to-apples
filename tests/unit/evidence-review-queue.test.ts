@@ -1,5 +1,6 @@
 import {
   mergeEvidenceReviewQueues,
+  selectCapturedReviewPages,
   type EvidenceReviewQueue,
   type EvidenceReviewQueueSource
 } from "../../scripts/evidence-review-queue-lib";
@@ -72,6 +73,31 @@ describe("evidence review campaigns", () => {
         "/repo/benchmark-data/review/campaign.json"
       )
     ).toThrow("queue item contract changed");
+  });
+
+  it("selects only explicitly requested captured pages", () => {
+    const results = [
+      { pageId: "page-a", status: "captured" as const },
+      { pageId: "page-b", status: "blocked" as const },
+      { pageId: "page-c", status: "captured" as const }
+    ];
+
+    expect(selectCapturedReviewPages(results, ["page-c"])).toEqual([
+      results[2]
+    ]);
+    expect(selectCapturedReviewPages(results, [])).toEqual([
+      results[0],
+      results[2]
+    ]);
+    expect(() => selectCapturedReviewPages(results, ["page-b"])).toThrow(
+      "not captured"
+    );
+    expect(() => selectCapturedReviewPages(results, ["missing"])).toThrow(
+      "absent from the run"
+    );
+    expect(() =>
+      selectCapturedReviewPages(results, ["page-a", "page-a"])
+    ).toThrow("must be unique");
   });
 });
 

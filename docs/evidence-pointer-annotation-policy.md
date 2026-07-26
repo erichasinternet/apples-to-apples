@@ -81,6 +81,16 @@ bun run dataset:reviews:queue -- --run benchmark-data/live/<run> \
   --output benchmark-data/review/<run>-reviewer-a-queue.json
 ```
 
+When a qualification screen contains both accepted and rejected captures, freeze
+only exact accepted pages without rewriting the source run:
+
+```bash
+bun run dataset:reviews:queue -- --run benchmark-data/live/<run> \
+  --reviewer reviewer-a --cohort training \
+  --pages accepted-page-a,accepted-page-b \
+  --output benchmark-data/review/<run>-reviewer-a-queue.json
+```
+
 Merge multiple single-run queues for one reviewer into a deterministic campaign:
 
 ```bash

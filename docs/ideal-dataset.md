@@ -205,7 +205,7 @@ reviews and adjudication are complete.
 
 The current multi-page G2 review campaign is recorded in
 [`g2-pilot-p00.json`](../benchmarks/review-campaigns/g2-pilot-p00.json). It
-contains 29 qualification-backed live pages and 268 frozen candidate card
+contains 33 qualification-backed live pages and 300 frozen candidate card
 roots across two independent blinded queues. A headed Chromium smoke test loaded
 all source screenshots, constructed a card-scoped pointer, rejected a product-grid
 ancestor, and rejected incomplete coverage. It still contributes zero gold
@@ -229,6 +229,13 @@ pages add detergent mass and volume, paper-product roll and sheet multipacks,
 bottle capacities, and quantity-tier price tables. The narrow Cary capture also
 exposed a generic consent-action gap; the collector now recognizes and persists
 an `Accept All Cookies` choice without any hostname or DOM selector override.
+
+Wave 05 promoted Starwest Botanicals and Coffee Bean Corral. Their four pages add
+botanical and green-coffee layouts with price ranges, hidden package variants,
+and clean price-only cards that require abstention when quantity evidence is not
+present. The screen also visually rejected a false-positive category-link page
+that had passed the numeric candidate gate, preserving visual review as a
+required qualification step.
 
 ## Dataset Growth
 

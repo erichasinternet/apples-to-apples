@@ -6,6 +6,7 @@ import {
   validateCaptureProvenance,
   type CaptureProvenance
 } from "./capture-provenance-lib";
+import { selectCapturedReviewPages } from "./evidence-review-queue-lib";
 
 interface CaptureRun {
   version: number;
@@ -32,7 +33,7 @@ interface CapturedCandidate {
 const options = parseOptions(process.argv.slice(2));
 const run = await readJson<CaptureRun>(path.join(options.runDirectory, "run.json"));
 const items = [];
-for (const entry of run.results.filter((result) => result.status === "captured")) {
+for (const entry of selectCapturedReviewPages(run.results, options.pageIds)) {
   const pageDirectory = path.join(options.runDirectory, entry.pageId);
   const [page, observation, provenance] = await Promise.all([
     readJson<CapturePage>(path.join(pageDirectory, "page.json")),
@@ -150,6 +151,7 @@ function parseOptions(args: string[]): {
   outputPath: string;
   reviewerId: string;
   cohort: "training" | "validation" | "selection" | "final";
+  pageIds: string[];
 } {
   const values = new Map<string, string>();
   for (let index = 0; index < args.length; index += 2) {
@@ -157,7 +159,7 @@ function parseOptions(args: string[]): {
     const value = args[index + 1];
     if (!key?.startsWith("--") || !value) {
       throw new Error(
-        "Usage: bun scripts/build-evidence-review-queue.ts --run <capture-run> --reviewer <id> --cohort <name> --output <queue.json>"
+        "Usage: bun scripts/build-evidence-review-queue.ts --run <capture-run> --reviewer <id> --cohort <name> --output <queue.json> [--pages <page-id,...>]"
       );
     }
     values.set(key, value);
@@ -180,7 +182,11 @@ function parseOptions(args: string[]): {
     runDirectory: path.resolve(runDirectory),
     outputPath: path.resolve(output),
     reviewerId,
-    cohort: cohort as "training" | "validation" | "selection" | "final"
+    cohort: cohort as "training" | "validation" | "selection" | "final",
+    pageIds: (values.get("--pages") ?? "")
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean)
   };
 }
 

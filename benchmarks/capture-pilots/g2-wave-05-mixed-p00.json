@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "pilotId": "g2-wave-05-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-26T00:13:48.953Z",
+  "source": {
+    "siteIds": [
+      "starwest-botanicals",
+      "coffee-bean-corral"
+    ],
+    "cohort": "training",
+    "strata": [
+      "botanical-ingredients",
+      "green-coffee"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "5f68b96d0f72e71f2c6f391d770c8a2e4e60353c5229cae55d6c51e5d460a13f",
+      "248b5e77b8f0f8cec543109b704f70c8d16255517bfd5d7d52b57a12ee6dda69"
+    ],
+    "collectorSha256": "bbe94a81d320ffd3e6204360f2e1798f840ed59559f7c0fa94f2a7be294edde6"
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T00-01-16-787Z",
+      "runManifestSha256": "965a633b85db48ad87012373e49d1cebbe916ef7773ed7bdb49f67f677d32147",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000
+    },
+    {
+      "runId": "2026-07-26T00-13-39-880Z",
+      "runManifestSha256": "59faebcf5be6e1bc88a9cdc9aaf75462a42db224fb24a4c4ff4ee87a2d7eb232",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000
+    },
+    {
+      "runId": "2026-07-26T00-17-40-414Z",
+      "runManifestSha256": "d26ae573c62c2d4ab34fddf710f7177c80dbe984a305a9e8b3e0e042e84c8c6d",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000
+    }
+  ],
+  "captures": [
+    {
+      "siteId": "starwest-botanicals",
+      "pageId": "starwest-botanicals--bulk-herbs",
+      "capturedAt": "2026-07-26T00:13:48.953Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 335,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.04781311680442262,
+      "queryTokenCoverage": 1,
+      "observationSha256": "a3c2ad0fa68c5f9cbfcc1a62a084b39b416ecba1e69e7ecc651e2e94a036234a",
+      "annotationScreenshotSha256": "619d1a0aa91f06777f0cd287111c098104503c9b20601a8645ce7016d0fcb488",
+      "provenanceAggregateSha256": "32b161dcf463576806a3270e3eff597665318943637190cde693765fda5db2fc",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "starwest-botanicals",
+      "pageId": "starwest-botanicals--loose-leaf-tea",
+      "capturedAt": "2026-07-26T00:04:00.924Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 390,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.010929281616210937,
+      "queryTokenCoverage": 1,
+      "observationSha256": "25fff867718a04713284a8397a7a5970cc3a7837a09aadb9ef83ca6c81125a82",
+      "annotationScreenshotSha256": "7f0d29181b72bb1f65a3be4ad1e329e90a0e00c77d0fd773dc0ec46ddd4c31cd",
+      "provenanceAggregateSha256": "f5da57346eccd9d2acc75a5f7395ea917580db01696e393542eba86f4c30ea65",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "coffee-bean-corral",
+      "pageId": "coffee-bean-corral--decaf-coffee",
+      "capturedAt": "2026-07-26T00:14:01.158Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 471,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "279dbf16f53eee2273f086008f69cf8b6b53b32391f720cfe2fcea92b751bca5",
+      "annotationScreenshotSha256": "0cbaa199b8479428c9b70d1049b02fb201d1f1a9276f6dd9cfe994b4d11aa18f",
+      "provenanceAggregateSha256": "8c3a4878a5589434f37730b561d4632fcf1a6ecf6b41fd14bfb099bd69dad566",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "coffee-bean-corral",
+      "pageId": "coffee-bean-corral--green-coffee",
+      "capturedAt": "2026-07-26T00:17:50.051Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 498,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "963a3ac1b234ef69f1dd6531043ffd389f502e127027d4eccd0f163c243fa031",
+      "annotationScreenshotSha256": "a07e75359a290d8bb64a470f91cda3bbd4a4f355652afe8a0e64c641ac14c594",
+      "provenanceAggregateSha256": "9a62d973e0ab51758ef108346793518b07399a4cc4a533825c8512145c8015f9",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "reviewQueues": {
+    "labelVisibility": "no model or peer labels",
+    "reviewerASourceQueueSha256": [
+      "ab30262a6b1de1ba7779b61dbd3f085bb6b75f711b75a70cb44c978a924899f8",
+      "37337d3e25383c07a2d7491a163bbfdb9bbdc6aebd84b8b75e188ec754c88afb",
+      "928f105592221655ab48ec209a5540917afcf1c63fed185694b1e936fe7168d8"
+    ],
+    "reviewerBSourceQueueSha256": [
+      "28a726a9d82cde802a11f1dcf13e05ea75fc903dacd814e25d4b774f00ea1b0f",
+      "0c7763752533b36749d51c982beb5b6fd239efd2e82e175d8394d042ddcf2d61",
+      "67565218805c9b8315ed7e105e562606f159d408a207ac6a5e10d30d4d261951"
+    ]
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

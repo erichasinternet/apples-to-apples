@@ -348,6 +348,54 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-04-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "starwest-botanicals",
+      "cohort": "training",
+      "pageId": "starwest-botanicals--bulk-herbs",
+      "captureTimestamp": "2026-07-26T00:13:48.953Z",
+      "observationSha256": "a3c2ad0fa68c5f9cbfcc1a62a084b39b416ecba1e69e7ecc651e2e94a036234a",
+      "annotationScreenshotSha256": "619d1a0aa91f06777f0cd287111c098104503c9b20601a8645ce7016d0fcb488",
+      "qualificationReport": "benchmarks/domain-qualification/wave-05-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-05-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "starwest-botanicals",
+      "cohort": "training",
+      "pageId": "starwest-botanicals--loose-leaf-tea",
+      "captureTimestamp": "2026-07-26T00:04:00.924Z",
+      "observationSha256": "25fff867718a04713284a8397a7a5970cc3a7837a09aadb9ef83ca6c81125a82",
+      "annotationScreenshotSha256": "7f0d29181b72bb1f65a3be4ad1e329e90a0e00c77d0fd773dc0ec46ddd4c31cd",
+      "qualificationReport": "benchmarks/domain-qualification/wave-05-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-05-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "coffee-bean-corral",
+      "cohort": "training",
+      "pageId": "coffee-bean-corral--decaf-coffee",
+      "captureTimestamp": "2026-07-26T00:14:01.158Z",
+      "observationSha256": "279dbf16f53eee2273f086008f69cf8b6b53b32391f720cfe2fcea92b751bca5",
+      "annotationScreenshotSha256": "0cbaa199b8479428c9b70d1049b02fb201d1f1a9276f6dd9cfe994b4d11aa18f",
+      "qualificationReport": "benchmarks/domain-qualification/wave-05-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-05-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "coffee-bean-corral",
+      "cohort": "training",
+      "pageId": "coffee-bean-corral--green-coffee",
+      "captureTimestamp": "2026-07-26T00:17:50.051Z",
+      "observationSha256": "963a3ac1b234ef69f1dd6531043ffd389f502e127027d4eccd0f163c243fa031",
+      "annotationScreenshotSha256": "a07e75359a290d8bb64a470f91cda3bbd4a4f355652afe8a0e64c641ac14c594",
+      "qualificationReport": "benchmarks/domain-qualification/wave-05-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-05-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

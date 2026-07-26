@@ -90,6 +90,18 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-04-p00.json",
       "promotedAt": "2026-07-25T23:55:00.000Z"
+    },
+    {
+      "siteId": "starwest-botanicals",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-05-p00.json",
+      "promotedAt": "2026-07-26T00:19:00.000Z"
+    },
+    {
+      "siteId": "coffee-bean-corral",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-05-p00.json",
+      "promotedAt": "2026-07-26T00:19:00.000Z"
     }
   ]
 }

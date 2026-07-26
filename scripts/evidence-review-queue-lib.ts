@@ -34,7 +34,38 @@ export interface EvidenceReviewQueueSource {
   queue: EvidenceReviewQueue;
 }
 
+export interface EvidenceReviewCaptureResult {
+  pageId: string;
+  status: "captured" | "blocked" | "error";
+}
+
 const SHA256 = /^[a-f0-9]{64}$/;
+
+export function selectCapturedReviewPages<T extends EvidenceReviewCaptureResult>(
+  results: T[],
+  requestedPageIds: string[]
+): T[] {
+  const captured = results.filter((result) => result.status === "captured");
+  if (requestedPageIds.length === 0) return captured;
+
+  const requested = new Set(requestedPageIds);
+  if (requested.size !== requestedPageIds.length) {
+    throw new Error("Requested review pages must be unique.");
+  }
+
+  const byPageId = new Map(results.map((result) => [result.pageId, result]));
+  for (const pageId of requestedPageIds) {
+    const result = byPageId.get(pageId);
+    if (!result) {
+      throw new Error(`Requested review page is absent from the run: ${pageId}`);
+    }
+    if (result.status !== "captured") {
+      throw new Error(`Requested review page is not captured: ${pageId}`);
+    }
+  }
+
+  return captured.filter((result) => requested.has(result.pageId));
+}
 
 export function validateEvidenceReviewQueue(
   queue: EvidenceReviewQueue
