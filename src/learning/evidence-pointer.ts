@@ -1,15 +1,13 @@
 import {
   cleanText,
+  extractPackCount,
   parseFactoredPackageQuantities,
   parseMoneyValues,
   parseNativeUnitPrices,
   parseQuantities
 } from "../core/pricing";
-import type {
-  CanonicalUnit,
-  Dimension,
-  UserPreferences
-} from "../core/types";
+import { getUnitRegexSource, parseUnit } from "../core/units";
+import type { CanonicalUnit, Dimension, UserPreferences } from "../core/types";
 import { DEFAULT_PREFERENCES } from "../core/types";
 import {
   type ModelPageExtraction,
@@ -46,15 +44,13 @@ type PointerField = Exclude<EvidencePointerField, "STATUS">;
 type CandidateField = Exclude<PointerField, "CARD" | "TITLE">;
 export type EvidencePointerStatus = (typeof EVIDENCE_POINTER_STATUSES)[number];
 export type EvidenceCandidateKind =
-  | "current-price"
-  | "native-unit-price"
-  | "package-quantity"
-  | "pack-count";
+  "current-price" | "native-unit-price" | "package-quantity" | "pack-count";
 
 interface EvidenceCandidateBase {
   id: string;
   kind: EvidenceCandidateKind;
   nodeId: string;
+  evidenceNodeIds: string[];
   sourceText: string;
 }
 
@@ -161,7 +157,11 @@ const CANDIDATE_KIND_BY_FIELD: Record<CandidateField, EvidenceCandidateKind> = {
 
 export function parseEvidencePointer(input: unknown): ParsedEvidencePointer {
   if (typeof input !== "string") {
-    return failure("invalid-output-type", "OUTPUT", "Pointer output must be plain text.");
+    return failure(
+      "invalid-output-type",
+      "OUTPUT",
+      "Pointer output must be plain text."
+    );
   }
   if (input !== input.trim() || input.includes("\r") || input.includes("```")) {
     return failure(
@@ -239,7 +239,9 @@ export function parseEvidencePointer(input: unknown): ParsedEvidencePointer {
     status: rawStatus as EvidencePointerStatus
   };
   validatePointerSemantics(pointer, issues);
-  return issues.length > 0 ? { valid: false, issues } : { valid: true, pointer, issues: [] };
+  return issues.length > 0
+    ? { valid: false, issues }
+    : { valid: true, pointer, issues: [] };
 }
 
 export function enumerateEvidenceCandidates(
@@ -251,11 +253,13 @@ export function enumerateEvidenceCandidates(
   if (!nodeMap.has(cardNodeId)) return [];
   const candidates: EvidenceCandidate[] = [];
   for (const node of observation.nodes) {
-    if (!isWithinCard(node.id, cardNodeId, nodeMap) || node.id.includes("@")) continue;
+    if (!isWithinCard(node.id, cardNodeId, nodeMap) || node.id.includes("@"))
+      continue;
     const text = evidenceText([node.id], nodeMap, children);
     if (!text) continue;
     addCandidatesForNode(candidates, node.id, text);
   }
+  addSplitNativeUnitCandidates(candidates, observation, cardNodeId, nodeMap);
   return candidates;
 }
 
@@ -277,7 +281,10 @@ export function serializeEvidencePointer(
   observation: PageObservation
 ): string {
   const nodeMap = new Map(observation.nodes.map((node) => [node.id, node]));
-  const candidates = enumerateEvidenceCandidates(observation, product.cardNodeId);
+  const candidates = enumerateEvidenceCandidates(
+    observation,
+    product.cardNodeId
+  );
   const currentPriceCandidateId = product.currentPrice
     ? selectTargetCandidate(
         candidates,
@@ -391,17 +398,22 @@ export function resolveEvidencePointer(
   }
 
   const candidateMap = new Map(
-    enumerateEvidenceCandidates(observation, pointer.cardNodeId).map((candidate) => [
-      candidate.id,
-      candidate
-    ])
+    enumerateEvidenceCandidates(observation, pointer.cardNodeId).map(
+      (candidate) => [candidate.id, candidate]
+    )
   );
   const product: ModelProductExtraction = {
     cardNodeId: pointer.cardNodeId,
     title: { value: titleText, evidenceNodeIds: pointer.titleNodeIds }
   };
   if (pointer.status === "comparable") {
-    resolveComparableCandidates(pointer, product, candidateMap, nodeMap, issues);
+    resolveComparableCandidates(
+      pointer,
+      product,
+      candidateMap,
+      nodeMap,
+      issues
+    );
   } else {
     product.abstainReason = pointer.status;
   }
@@ -412,7 +424,11 @@ export function resolveEvidencePointer(
     pageId: observation.pageId,
     products: [product]
   };
-  const validation = validateModelExtraction(extraction, observation, preferences);
+  const validation = validateModelExtraction(
+    extraction,
+    observation,
+    preferences
+  );
   if (!validation.valid) {
     issues.push(
       ...validation.issues.map((entry) => ({
@@ -468,7 +484,8 @@ export function scoreEvidencePointer(
   const predictedAccepted = predictedProduct?.status === "accepted";
   const normalizedMatch =
     Boolean(targetProduct.normalized && predictedProduct?.normalized) &&
-    targetProduct.normalized!.compareKey === predictedProduct!.normalized!.compareKey &&
+    targetProduct.normalized!.compareKey ===
+      predictedProduct!.normalized!.compareKey &&
     Math.abs(
       targetProduct.normalized!.centsPerUnit -
         predictedProduct!.normalized!.centsPerUnit
@@ -485,8 +502,11 @@ export function scoreEvidencePointer(
     pointerFieldsTotal: fields.size,
     evidenceAccepted: predictedResolved.valid,
     targetComparable,
-    acceptedCorrect: targetComparable && Boolean(predictedAccepted && normalizedMatch),
-    acceptedIncorrect: Boolean(predictedAccepted && (!targetComparable || !normalizedMatch)),
+    acceptedCorrect:
+      targetComparable && Boolean(predictedAccepted && normalizedMatch),
+    acceptedIncorrect: Boolean(
+      predictedAccepted && (!targetComparable || !normalizedMatch)
+    ),
     abstentionClassMatch:
       targetComparable === (predictedProduct?.status === "accepted"),
     abstentionReasonMatch:
@@ -510,6 +530,7 @@ function addCandidatesForNode(
       id: `${nodeId}@p${index}`,
       kind: "current-price",
       nodeId,
+      evidenceNodeIds: [nodeId],
       sourceText: value.sourceText,
       cents: value.cents
     })
@@ -523,6 +544,7 @@ function addCandidatesForNode(
       id: `${nodeId}@u${index}`,
       kind: "native-unit-price",
       nodeId,
+      evidenceNodeIds: [nodeId],
       sourceText: value.sourceText,
       centsPerUnit: value.centsPerUnit,
       unit: value.unit,
@@ -531,6 +553,7 @@ function addCandidatesForNode(
   );
 
   const factored = parseFactoredPackageQuantities(text);
+  const standalonePackCount = extractPackCount(text);
   const quantities = [
     ...factored.map((value) => ({
       value: value.valuePerPackage,
@@ -548,6 +571,7 @@ function addCandidatesForNode(
       id: `${nodeId}@q${index}`,
       kind: "package-quantity",
       nodeId,
+      evidenceNodeIds: [nodeId],
       sourceText: value.sourceText,
       valuePerPackage: value.value,
       unit: value.unit,
@@ -555,20 +579,128 @@ function addCandidatesForNode(
     })
   );
   uniqueBy(
-    factored.map((value) => ({
-      packCount: value.packCount,
-      sourceText: value.sourceText
-    })),
+    [
+      ...factored.map((value) => ({
+        packCount: value.packCount,
+        sourceText: value.sourceText
+      })),
+      ...(standalonePackCount
+        ? [
+            {
+              packCount: standalonePackCount,
+              sourceText: text
+            }
+          ]
+        : [])
+    ],
     (value) => `${value.packCount}:${value.sourceText}`
   ).forEach((value, index) =>
     output.push({
       id: `${nodeId}@k${index}`,
       kind: "pack-count",
       nodeId,
+      evidenceNodeIds: [nodeId],
       sourceText: value.sourceText,
       packCount: value.packCount
     })
   );
+}
+
+function addSplitNativeUnitCandidates(
+  output: EvidenceCandidate[],
+  observation: PageObservation,
+  cardNodeId: string,
+  nodeMap: ReadonlyMap<string, ObservedNode>
+): void {
+  const directPrices = observation.nodes
+    .filter((node) => isWithinCard(node.id, cardNodeId, nodeMap))
+    .flatMap((node) => {
+      const text = directNodeText(node);
+      if (!text || parseNativeUnitPrices(text).length > 0) return [];
+      return parseMoneyValues(text).map((price) => ({
+        nodeId: node.id,
+        cents: price.cents,
+        sourceText: price.sourceText
+      }));
+    });
+  const uniquePrices = uniqueBy(
+    directPrices,
+    (price) => `${price.nodeId}:${price.cents}:${price.sourceText}`
+  );
+  if (uniquePrices.length !== 1) return;
+
+  const unitPattern = new RegExp(
+    `(?:/|\\bper\\s+)\\s*(${getUnitRegexSource()})(?=\\b|\\W)`,
+    "gi"
+  );
+  const unitMarkers = observation.nodes
+    .filter((node) => isWithinCard(node.id, cardNodeId, nodeMap))
+    .flatMap((node) => {
+      const text = directNodeText(node);
+      if (!text || parseNativeUnitPrices(text).length > 0) return [];
+      return [...text.matchAll(unitPattern)].flatMap((match) => {
+        const unit = match[1] ? parseUnit(match[1]) : undefined;
+        if (
+          !unit ||
+          (unit.dimension !== "area" && unit.dimension !== "length")
+        ) {
+          return [];
+        }
+        return [
+          {
+            nodeId: node.id,
+            unit: unit.unit,
+            dimension: unit.dimension,
+            sourceText: match[0]
+          }
+        ];
+      });
+    });
+  const uniqueUnits = uniqueBy(
+    unitMarkers,
+    (unit) => `${unit.nodeId}:${unit.unit}:${unit.sourceText}`
+  );
+  if (
+    uniqueUnits.length === 0 ||
+    new Set(uniqueUnits.map((unit) => `${unit.unit}:${unit.dimension}`))
+      .size !== 1
+  ) {
+    return;
+  }
+
+  const price = uniquePrices[0]!;
+  let nextIndex = output.filter((candidate) =>
+    candidate.id.startsWith(`${cardNodeId}@u`)
+  ).length;
+  for (const unit of uniqueUnits) {
+    if (price.nodeId === unit.nodeId) continue;
+    output.push({
+      id: `${cardNodeId}@u${nextIndex}`,
+      kind: "native-unit-price",
+      nodeId: cardNodeId,
+      evidenceNodeIds: [price.nodeId, unit.nodeId],
+      sourceText: `${price.sourceText} ${unit.sourceText}`,
+      centsPerUnit: price.cents,
+      unit: unit.unit,
+      dimension: unit.dimension
+    });
+    nextIndex += 1;
+  }
+}
+
+function directNodeText(node: ObservedNode): string {
+  return [
+    node.text,
+    node.accessibleName,
+    node.attributes?.ariaLabel,
+    node.attributes?.alt,
+    node.attributes?.title
+  ]
+    .filter((value): value is string => Boolean(value?.trim()))
+    .filter((value, index, values) => values.indexOf(value) === index)
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function resolveComparableCandidates(
@@ -614,7 +746,7 @@ function resolveComparableCandidates(
     product.currentPrice = {
       cents: price.cents,
       currency: "USD",
-      evidenceNodeIds: [price.nodeId]
+      evidenceNodeIds: price.evidenceNodeIds
     };
   }
   if (native?.kind === "native-unit-price") {
@@ -622,7 +754,7 @@ function resolveComparableCandidates(
       centsPerUnit: native.centsPerUnit,
       unit: native.unit,
       dimension: native.dimension,
-      evidenceNodeIds: [native.nodeId]
+      evidenceNodeIds: native.evidenceNodeIds
     };
   }
   if (quantity?.kind === "package-quantity") {
@@ -632,8 +764,8 @@ function resolveComparableCandidates(
       dimension: quantity.dimension,
       packCount: pack?.kind === "pack-count" ? pack.packCount : 1,
       evidenceNodeIds: unique([
-        quantity.nodeId,
-        ...(pack?.kind === "pack-count" ? [pack.nodeId] : [])
+        ...quantity.evidenceNodeIds,
+        ...(pack?.kind === "pack-count" ? pack.evidenceNodeIds : [])
       ])
     };
   }
@@ -689,32 +821,48 @@ function selectTargetCandidate(
     (candidate) =>
       candidate.kind === kind &&
       matches(candidate) &&
-      candidateSupportsEvidence(candidate.nodeId, evidenceNodeIds, nodeMap)
+      candidateSupportsEvidence(candidate, evidenceNodeIds, nodeMap)
   );
   if (matching.length === 0) {
-    throw new Error(`No deterministic ${kind} candidate matches the grounded target.`);
+    throw new Error(
+      `No deterministic ${kind} candidate matches the grounded target.`
+    );
   }
   return matching.sort(
     (left, right) =>
-      evidenceDistance(left.nodeId, evidenceNodeIds, nodeMap) -
-        evidenceDistance(right.nodeId, evidenceNodeIds, nodeMap) ||
+      evidenceDistance(left.evidenceNodeIds, evidenceNodeIds, nodeMap) -
+        evidenceDistance(right.evidenceNodeIds, evidenceNodeIds, nodeMap) ||
       left.id.localeCompare(right.id)
   )[0]!.id;
 }
 
 function candidateSupportsEvidence(
-  candidateNodeId: string,
+  candidate: EvidenceCandidate,
   evidenceNodeIds: readonly string[],
   nodeMap: ReadonlyMap<string, ObservedNode>
 ): boolean {
-  return evidenceNodeIds.every(
-    (nodeId) =>
-      isWithinCard(nodeId, candidateNodeId, nodeMap) ||
-      isWithinCard(candidateNodeId, nodeId, nodeMap)
+  return evidenceNodeIds.every((nodeId) =>
+    candidate.evidenceNodeIds.some(
+      (candidateNodeId) =>
+        isWithinCard(nodeId, candidateNodeId, nodeMap) ||
+        isWithinCard(candidateNodeId, nodeId, nodeMap)
+    )
   );
 }
 
 function evidenceDistance(
+  candidateNodeIds: readonly string[],
+  evidenceNodeIds: readonly string[],
+  nodeMap: ReadonlyMap<string, ObservedNode>
+): number {
+  return Math.min(
+    ...candidateNodeIds.map((candidateNodeId) =>
+      evidenceDistanceForNode(candidateNodeId, evidenceNodeIds, nodeMap)
+    )
+  );
+}
+
+function evidenceDistanceForNode(
   candidateNodeId: string,
   evidenceNodeIds: readonly string[],
   nodeMap: ReadonlyMap<string, ObservedNode>

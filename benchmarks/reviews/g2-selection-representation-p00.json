@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "auditId": "g2-selection-representation-p00",
+  "targetFormat": "evidence-selection-v1",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p02-reviewer-a-campaign.json",
+    "campaignSha256": "7cce9e07e671fa268030a54b957cf61ada8dbe0810e01c52b5e6339105b82e7f",
+    "queueSha256": "8eab6e0a5871b604e09e7cdb986dc6a55b9f4d08b1246831f56ccbdad80ff0de",
+    "preannotationSha256": "c884b7848d45565e0c88d8629cfac90828b13ceee7ce5844c736fd090ecfe1e8",
+    "auditSha256": "614426140bfbf2eb651c880c07cf4ff67da025f5b8e480c64a00392c49e9c71e",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "records": {
+    "requested": 564,
+    "exactRoundTrips": 564,
+    "failures": 0,
+    "pages": 63,
+    "sites": 22
+  },
+  "statuses": {
+    "C": 157,
+    "E": 28,
+    "Q": 379
+  },
+  "representation": {
+    "promptChars": {
+      "min": 2122,
+      "p50": 2717,
+      "p95": 4380,
+      "max": 7808,
+      "mean": 2890.5868794326243
+    },
+    "targetChars": {
+      "min": 22,
+      "p50": 22,
+      "p95": 22,
+      "max": 22,
+      "mean": 22
+    },
+    "observationNodes": {
+      "min": 32,
+      "p50": 32,
+      "p95": 32,
+      "max": 39,
+      "mean": 32.07446808510638
+    },
+    "valueCandidates": {
+      "min": 0,
+      "p50": 7,
+      "p95": 27,
+      "max": 84,
+      "mean": 9.196808510638299
+    },
+    "outputGrammar": "T## P## U## Q## K## S#",
+    "generatedValues": false,
+    "generatedDomIds": false
+  },
+  "sites": {
+    "allegro-medical": {
+      "records": 40,
+      "comparable": 1,
+      "abstained": 39
+    },
+    "betty-mills": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "blue-sky-vitamin": {
+      "records": 16,
+      "comparable": 4,
+      "abstained": 12
+    },
+    "coffee-bean-corral": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "fabric-mart-fabrics": {
+      "records": 24,
+      "comparable": 23,
+      "abstained": 1
+    },
+    "fabric-wholesale-direct": {
+      "records": 16,
+      "comparable": 16,
+      "abstained": 0
+    },
+    "fabricworm": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "food-service-direct": {
+      "records": 32,
+      "comparable": 16,
+      "abstained": 16
+    },
+    "greatmats": {
+      "records": 24,
+      "comparable": 23,
+      "abstained": 1
+    },
+    "jeffers-pet": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "katom": {
+      "records": 32,
+      "comparable": 5,
+      "abstained": 27
+    },
+    "lambert-vet-supply": {
+      "records": 32,
+      "comparable": 4,
+      "abstained": 28
+    },
+    "natural-healthy-concepts": {
+      "records": 40,
+      "comparable": 5,
+      "abstained": 35
+    },
+    "ontime-supplies": {
+      "records": 31,
+      "comparable": 15,
+      "abstained": 16
+    },
+    "restaurant-supply": {
+      "records": 18,
+      "comparable": 0,
+      "abstained": 18
+    },
+    "seattle-fabrics": {
+      "records": 22,
+      "comparable": 17,
+      "abstained": 5
+    },
+    "starwest-botanicals": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "supplement-warehouse": {
+      "records": 32,
+      "comparable": 13,
+      "abstained": 19
+    },
+    "the-cary-company": {
+      "records": 14,
+      "comparable": 0,
+      "abstained": 14
+    },
+    "vitality-medical": {
+      "records": 32,
+      "comparable": 0,
+      "abstained": 32
+    },
+    "wholesale-janitorial-supply": {
+      "records": 39,
+      "comparable": 13,
+      "abstained": 26
+    },
+    "wholesale-marine": {
+      "records": 24,
+      "comparable": 2,
+      "abstained": 22
+    }
+  },
+  "failures": [],
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "Representation compatibility does not establish label correctness. The source remains unreviewed and requires independent review and adjudication."
+  }
+}

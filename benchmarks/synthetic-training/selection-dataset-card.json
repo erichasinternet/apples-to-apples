@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "generatorVersion": 1,
+  "seed": 20260724,
+  "datasetType": "synthetic-pretraining",
+  "targetFormat": "evidence-selection-v1",
+  "sourceTargetFormat": "evidence-pointer",
+  "sourceDatasetSha256": "b7538f171b0d222d21c6219f73a165ffd784295e3fd50635cd88c83ff0c9b0bf",
+  "outputPath": "benchmark-data/training/t5gemma2-synthetic-selection",
+  "sha256": "fbd5d761f84a065e0efbcd737f59ea9ce12ab2acc3ce0284f814ea6d6766f57a",
+  "domains": {
+    "total": 200,
+    "train": 160,
+    "validation": 40
+  },
+  "records": {
+    "total": 20000,
+    "train": 16000,
+    "validation": 4000
+  },
+  "structuralFamilies": 652,
+  "challengeTags": {
+    "conditional-price": 800,
+    "split-price": 2000,
+    "multipack": 4000,
+    "sale-vs-list": 2000,
+    "sponsored-or-recommendation": 2000,
+    "price-range": 800,
+    "native-derived-conflict": 800,
+    "unsupported-currency": 800,
+    "decimal-quantity": 1636,
+    "unselected-variant": 800
+  },
+  "statuses": {
+    "C": 16000,
+    "D": 800,
+    "Q": 800,
+    "R": 800,
+    "U": 800,
+    "V": 800
+  },
+  "representation": {
+    "sourcePromptChars": {
+      "min": 3595,
+      "p50": 4912,
+      "p95": 6218,
+      "max": 7825,
+      "mean": 4948.1907
+    },
+    "compactPromptChars": {
+      "min": 1372,
+      "p50": 2028,
+      "p95": 2807,
+      "max": 3533,
+      "mean": 2065.7572
+    },
+    "promptCharacterReduction": 0.5825227188596429,
+    "targetChars": {
+      "min": 22,
+      "p50": 22,
+      "p95": 22,
+      "max": 22,
+      "mean": 22
+    },
+    "observationNodes": {
+      "min": 15,
+      "p50": 18,
+      "p95": 26,
+      "max": 30,
+      "mean": 18.42255
+    },
+    "valueCandidates": {
+      "min": 0,
+      "p50": 9,
+      "p95": 24,
+      "max": 27,
+      "mean": 10.53915
+    },
+    "outputGrammar": "T## P## U## Q## K## S#",
+    "nodeIndexAlphabet": "base36-two-character",
+    "generatedValues": false,
+    "generatedDomIds": false
+  },
+  "validation": {
+    "records": 20000,
+    "invalidSelections": 0,
+    "exactRoundTrips": 20000,
+    "passed": true
+  },
+  "policy": {
+    "allowedUses": [
+      "closed-grammar formulation experiments",
+      "pointer-selection warm start",
+      "controlled ablation experiments"
+    ],
+    "prohibitedClaims": [
+      "live-site accuracy",
+      "model promotion without live adjudicated evidence",
+      "held-out benchmark performance"
+    ],
+    "maximumPostWarmStartPresentationShare": 0.5
+  }
+}

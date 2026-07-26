@@ -4,6 +4,12 @@ The bounded G1 evidence-pointer formulation series is closed as a no-go. Its
 reproducible results, failure analysis, and restart conditions are recorded in
 [`g1-pointer-no-go-report.md`](./g1-pointer-no-go-report.md).
 
+The G2 compact evidence-selection representation has passed deterministic
+synthetic and unreviewed-live representation preflights. Its exact grammar,
+responsibility boundary, results, non-claims, and paid-training authorization
+gate are recorded in
+[`g2-selection-formulation-preflight.md`](./g2-selection-formulation-preflight.md).
+
 The next-generation evidence-pointer objective, quantitative gates, budget, and
 retirement rules are frozen in
 [`evidence-pointer-autoresearch-goal.md`](./evidence-pointer-autoresearch-goal.md).

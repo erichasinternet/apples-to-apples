@@ -126,6 +126,8 @@
     "training:run:synthetic": "uv run --project training python training/train_t5gemma2.py --config training/t5gemma2-270m/synthetic-pretrain.json",
     "training:sync": "uv sync --project training",
     "training:synthetic:generate": "bun scripts/generate-synthetic-training.ts --output benchmark-data/training/t5gemma2-synthetic-pointer --target-format evidence-pointer",
+    "training:synthetic:selection:generate": "bun scripts/generate-synthetic-selection-training.ts",
+    "training:selection:representation:audit": "bun scripts/audit-live-selection-representation.ts",
     "training:synthetic:audit": "bun scripts/audit-synthetic-pointer-dataset.ts",
     "training:synthetic:validate": "python3 training/train_t5gemma2.py --config training/t5gemma2-270m/synthetic-pretrain.json --validate-only",
     "training:validate": "python3 training/train_t5gemma2.py --validate-only",
