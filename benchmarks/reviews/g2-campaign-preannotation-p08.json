@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "auditId": "g2-campaign-preannotation-p08",
+  "createdAt": "2026-07-26T09:10:33Z",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p09-reviewer-a-campaign.json",
+    "campaignSha256": "46b0f425500385048a3938e4f4faa1b2c3a2937a6ab0682f4c325f12f156ff47",
+    "queueSha256": "c1c65e7da92f165fec27fd8f50807adabb6d4321f060af84aba0356e5c1f5815",
+    "preannotationSha256": "ef6c1efe0c36f97d6956f02e28c8a612ab2e4940f5419ae4bf7d57496768a8b8",
+    "auditSha256": "d0673e55211ba2e24806525e313d2478c33bacd5ec890273c9b66d0294422a18",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "campaign": {
+    "pages": 89,
+    "cards": 826,
+    "targetDimensions": {
+      "area": 76,
+      "count": 196,
+      "length": 214,
+      "mass": 236,
+      "volume": 104
+    },
+    "candidateEvidence": {
+      "withTitle": 819,
+      "withCurrentPrice": 786,
+      "withNativeUnitPriceInOneNode": 39,
+      "withPackageQuantity": 257
+    }
+  },
+  "dimensionConditionedPreannotation": {
+    "tentativeComparable": 213,
+    "abstained": 613,
+    "evidenceInvalid": 4,
+    "methods": {
+      "explicit-abstention": 613,
+      "native-unit-price": 85,
+      "price-and-package": 128
+    }
+  },
+  "semanticAudit": {
+    "machineAuditPassingComparableSuggestions": 194,
+    "machineAuditPassingAbstentionSuggestions": 613,
+    "quarantinedComparableSuggestions": 19,
+    "quarantinedAbstentionSuggestions": 0,
+    "quarantineReasons": {
+      "ambiguous-decimal-quantity": 1,
+      "equipment-capacity-as-quantity": 10,
+      "invalid-evidence": 4,
+      "physical-dimension-as-quantity": 5
+    }
+  },
+  "newDomainOutcomes": {
+    "paracord-galaxy": {
+      "cards": 16,
+      "tentativeComparable": 8,
+      "abstained": 8,
+      "machineAuditPassing": 16
+    },
+    "utility-direct": {
+      "cards": 16,
+      "tentativeComparable": 2,
+      "abstained": 14,
+      "machineAuditPassing": 14
+    }
+  },
+  "representationChanges": [
+    "No extraction heuristic changed for this append-only campaign expansion.",
+    "Added 16 paracord roots with explicit fixed-foot quantities and 16 arborist-rope roots spanning per-foot products, fixed slings, and price ranges.",
+    "Quarantined two Utility Direct comparables where physical dimensions could be mistaken for package length, while retaining the remaining incomplete cases as abstentions."
+  ],
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "The source cards and all preannotations remain unreviewed. Machine checks can quarantine contradictions but cannot establish semantic correctness; two independent reviews and adjudication remain required."
+  },
+  "decision": "retain-as-blinded-review-aid-only"
+}

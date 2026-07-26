@@ -198,6 +198,18 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-11-p00.json",
       "promotedAt": "2026-07-26T08:45:00.000Z"
+    },
+    {
+      "siteId": "paracord-galaxy",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-12-p00.json",
+      "promotedAt": "2026-07-26T09:05:00.000Z"
+    },
+    {
+      "siteId": "utility-direct",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-12-p00.json",
+      "promotedAt": "2026-07-26T09:05:00.000Z"
     }
   ]
 }

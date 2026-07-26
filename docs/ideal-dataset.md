@@ -445,6 +445,30 @@ round-trips all 777 machine-retained suggestions exactly with zero failures
 across the full campaign. All 794 roots and machine suggestions remain
 unreviewed and ineligible for silver training or benchmark gold.
 
+Wave 12 screens 20 further unfamiliar domains across 20 new strata, balanced
+equally across area, count, length, mass, and volume. Paracord Galaxy and Utility
+Direct qualify on two visually inspected pages and distinct viewport profiles
+each. The other 18 domains receive explicit bounded failure dispositions;
+notably, Car Supplies Warehouse is rejected even though one page passed because
+its required second page timed out. The four accepted length pages add explicit
+fixed-foot cord, per-foot rope, fixed slings, price ranges, and incomplete
+comparison evidence.
+
+The paired blinded campaign in
+[`g2-pilot-p09.json`](../benchmarks/review-campaigns/g2-pilot-p09.json)
+contains 35 qualified training domains, 89 pages, and 826 frozen roots. Its
+headed workbench sweep loaded every screenshot and root, offered only frozen
+card choices, rejected invalid and incomplete submissions, emitted no console
+errors, and wrote no review files. The diagnostic in
+[`g2-campaign-preannotation-p08.json`](../benchmarks/reviews/g2-campaign-preannotation-p08.json)
+finds eight tentative comparables and eight abstentions for Paracord Galaxy, plus
+two tentative comparables and 14 abstentions for Utility Direct. The semantic
+audit quarantines both Utility Direct comparables as physical-dimension risks.
+The compact audit in
+[`g2-selection-representation-p07.json`](../benchmarks/reviews/g2-selection-representation-p07.json)
+round-trips all 807 retained suggestions exactly. These artifacts remain
+unreviewed and ineligible for silver training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

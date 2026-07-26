@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "qualificationId": "wave-12-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-12.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "screeningPageTimeoutMs": 60000,
+    "qualificationPageTimeoutMs": 60000,
+    "screeningCardScreenshotBudgetMs": 8000,
+    "qualificationCardScreenshotBudgetMs": 8000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "genericConsentActionHandling": true,
+    "offscreenActionExclusion": true,
+    "pointerlessTransparentShellExclusion": true,
+    "persistentCookieConsentHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "queryParametersCountAsQueryEvidence": false,
+    "queryEvidenceScope": "title, pathname, visible headings, and visible status text",
+    "minimumQueryTokenCoverage": 1,
+    "populatedSearchControlsCountAsQueryEvidence": false,
+    "exactPageTargeting": true
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T08-52-23-600Z",
+      "runManifestSha256": "6724c092160fb128a2bc6d17eee9dc0069af0277899923441782cba817e37e7e",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 8000,
+      "purpose": "one-page headed screening across all 20 wave-12 domains"
+    },
+    {
+      "runId": "2026-07-26T09-02-00-614Z",
+      "runManifestSha256": "5ba3d2f36500899d6225ccbc9618682df5644559d50aefa80e4488e319884351",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 8000,
+      "purpose": "exact narrow second-page qualification across three candidates"
+    }
+  ],
+  "results": {
+    "paracord-galaxy": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "paracord-galaxy--shock-cord",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 555,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0.0049,
+          "queryTokenCoverage": 1,
+          "observationSha256": "a714e4ec24fb45b77580a80ab4ae82e99e00aa31bdf1ebcf419c6c3bfeb13378",
+          "annotationScreenshotSha256": "88d231c1ea5ae8cb859a1b6f807b890301af7e0ee242a35b2e59962752d0aff2",
+          "provenanceAggregateSha256": "2019c2dfc20ac08e2ef70fa96960f9534b3d64ac4cc08d0ac75217330fd0d224",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "paracord-galaxy--paracord",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 536,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0.014047879450723052,
+          "queryTokenCoverage": 1,
+          "observationSha256": "6757f913e13c91337509d5922eba530be8b65e1d323c065852e77b6df5c3accb",
+          "annotationScreenshotSha256": "2fa56edd72b011133eb853d562f8b6d552960fef28fecf9e317cdcaf52faa605",
+          "provenanceAggregateSha256": "923fa36b8bc8c2227b5227924a060062ae9a7f964ab321508fa065d47239d6d5",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two relevant cord grids pass in distinct desktop and narrow viewports with card-local prices and explicit foot quantities."
+    },
+    "utility-direct": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "utility-direct--cordage",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 612,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "12a768e17f3e6960de45731ae4aff6402814598dce803c07d4f8218974316e60",
+          "annotationScreenshotSha256": "e56383aed201b38f500d7287b1885d1c439911ca1ff8b79b6ec0ede6e8a3ae97",
+          "provenanceAggregateSha256": "71b89553efde53ad81a6618928c2ac93fc203626d3ad15d536a7356965ccb1b4",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "utility-direct--rope",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 523,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "85a57a2cd58ba82d7b99c3294abf6dc07560954aa30cf8925a516df6b7095553",
+          "annotationScreenshotSha256": "c09e2fc484b951b16c22b7399f826bbbec579eff0990131e243e04b4596b6204",
+          "provenanceAggregateSha256": "a839b1192d465c370fca41457969352e3dcfe9ab2d9bf8a3a972a90a2bb38c0a",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two relevant arborist-rope grids pass in distinct viewports and deliberately retain per-foot products, fixed-length slings, price ranges, and incomplete comparison evidence."
+    },
+    "car-supplies-warehouse": {"status": "rejected", "reason": "The desktop wheel-cleaner grid passed, but the required distinct narrow car-wash-soap page exceeded the 60-second bound."},
+    "the-spice-house": {"status": "rejected", "reason": "The relevant ginger-powder page exposed only five candidates, below the frozen minimum of eight."},
+    "woodwudy": {"status": "rejected", "reason": "No reviewable product candidates were found."},
+    "get-floors-online": {"status": "rejected", "reason": "Visible search-result evidence covered only half of the requested query tokens."},
+    "west-coast-paracord": {"status": "rejected", "reason": "The proposed search route returned HTTP 404 with no reviewable product candidates."},
+    "one-stop-auto-detail-supply": {"status": "rejected", "reason": "The headed screening target exceeded the 60-second page bound."},
+    "mountain-rose-herbs": {"status": "rejected", "reason": "The proposed route returned HTTP 404 without query evidence or products and retained a 99% viewport obstruction."},
+    "clean-garage": {"status": "rejected", "reason": "The proposed route returned HTTP 404 without query evidence or reviewable products."},
+    "nfc-bags": {"status": "rejected", "reason": "The proposed route returned HTTP 404 with incomplete query evidence and no reviewable products."},
+    "flooring-liquidators": {"status": "rejected", "reason": "Visible search-result evidence covered only half of the requested query tokens and no reviewable products were found."},
+    "spice-jungle": {"status": "rejected", "reason": "The headed screening target exceeded the 60-second page bound."},
+    "tape-jungle": {"status": "rejected", "reason": "The proposed route returned HTTP 404 with incomplete query evidence and no reviewable products."},
+    "detailed-image": {"status": "rejected", "reason": "Visible search-result evidence covered only half of the requested query tokens and no reviewable products were found."},
+    "all-bird-toy-builders": {"status": "rejected", "reason": "The headed screening target exceeded the 60-second page bound."},
+    "associated-bag": {"status": "rejected", "reason": "The proposed route returned HTTP 404 with incomplete query evidence and no reviewable products."},
+    "atlantic-spice": {"status": "rejected", "reason": "The proposed route returned HTTP 404 without query evidence or reviewable products."},
+    "best-laminate": {"status": "rejected", "reason": "The headed screening target exceeded the 60-second page bound."},
+    "correct-products": {"status": "rejected", "reason": "No requested-query evidence or reviewable product candidates were found."}
+  },
+  "decision": {
+    "qualifiedDomains": ["paracord-galaxy", "utility-direct"],
+    "assignedDomains": [
+      {"siteId": "paracord-galaxy", "cohort": "training"},
+      {"siteId": "utility-direct", "cohort": "training"}
+    ],
+    "status": "keep"
+  }
+}

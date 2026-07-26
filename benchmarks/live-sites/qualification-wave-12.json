@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Twelfth unassigned domain-qualification wave. Candidates balance all five dimensions across packaging, rope, flooring, auto-detailing, and culinary-herb retail. Every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "nfc-bags",
+      "label": "NFC Bags",
+      "hostname": "nfcbags.com",
+      "stratum": "flexible-packaging-manufacturer",
+      "searchUrlTemplate": "https://nfcbags.com/search?q={query}",
+      "queries": [
+        {"id": "poly-bags", "query": "poly bags", "dimension": "count"},
+        {"id": "stand-up-pouches", "query": "stand up pouches", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "correct-products",
+      "label": "Correct Products",
+      "hostname": "www.correctproducts.com",
+      "stratum": "esd-packaging",
+      "searchUrlTemplate": "https://www.correctproducts.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "poly-bags", "query": "poly bags", "dimension": "count"},
+        {"id": "shipping-labels", "query": "shipping labels", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "tape-jungle",
+      "label": "Tape Jungle",
+      "hostname": "tapejungle.com",
+      "stratum": "adhesive-tape-specialty",
+      "searchUrlTemplate": "https://tapejungle.com/search?q={query}",
+      "queries": [
+        {"id": "packing-tape", "query": "packing tape", "dimension": "count"},
+        {"id": "masking-tape", "query": "masking tape", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "associated-bag",
+      "label": "Associated Bag",
+      "hostname": "www.associatedbag.com",
+      "stratum": "industrial-bag-supply",
+      "searchUrlTemplate": "https://www.associatedbag.com/search.aspx?keyword={query}",
+      "queries": [
+        {"id": "poly-bags", "query": "poly bags", "dimension": "count"},
+        {"id": "trash-bags", "query": "trash bags", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "all-bird-toy-builders",
+      "label": "All Bird Toy Builders",
+      "hostname": "allbirdtoybuilders.com",
+      "stratum": "bird-craft-supply",
+      "searchUrlTemplate": "https://allbirdtoybuilders.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "rope", "query": "rope", "dimension": "length"},
+        {"id": "cordage", "query": "cordage", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "utility-direct",
+      "label": "Utility Direct",
+      "hostname": "utilitydirect.com",
+      "stratum": "arborist-supply",
+      "searchUrlTemplate": "https://utilitydirect.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "rope", "query": "rope", "dimension": "length"},
+        {"id": "cordage", "query": "cordage", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "west-coast-paracord",
+      "label": "West Coast Paracord",
+      "hostname": "www.westcoastparacord.com",
+      "stratum": "paracord-manufacturer",
+      "searchUrlTemplate": "https://www.westcoastparacord.com/search?q={query}",
+      "queries": [
+        {"id": "paracord", "query": "paracord", "dimension": "length"},
+        {"id": "shock-cord", "query": "shock cord", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "paracord-galaxy",
+      "label": "Paracord Galaxy",
+      "hostname": "paracordgalaxy.com",
+      "stratum": "paracord-specialty",
+      "searchUrlTemplate": "https://paracordgalaxy.com/search?q={query}",
+      "queries": [
+        {"id": "paracord", "query": "paracord", "dimension": "length"},
+        {"id": "shock-cord", "query": "shock cord", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "get-floors-online",
+      "label": "Get Floors Online",
+      "hostname": "www.getfloorsonline.com",
+      "stratum": "online-flooring",
+      "searchUrlTemplate": "https://www.getfloorsonline.com/search?q={query}",
+      "queries": [
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"},
+        {"id": "laminate-flooring", "query": "laminate flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "best-laminate",
+      "label": "Bestlaminate",
+      "hostname": "www.bestlaminate.com",
+      "stratum": "laminate-flooring-specialty",
+      "searchUrlTemplate": "https://www.bestlaminate.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"},
+        {"id": "laminate-flooring", "query": "laminate flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "woodwudy",
+      "label": "Woodwudy Wholesale Flooring",
+      "hostname": "woodwudy.com",
+      "stratum": "hardwood-flooring-outlet",
+      "searchUrlTemplate": "https://woodwudy.com/search?q={query}",
+      "queries": [
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"},
+        {"id": "hardwood-flooring", "query": "hardwood flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "flooring-liquidators",
+      "label": "Flooring Liquidators",
+      "hostname": "flooringliquidators.net",
+      "stratum": "regional-flooring-chain",
+      "searchUrlTemplate": "https://flooringliquidators.net/search?q={query}",
+      "queries": [
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"},
+        {"id": "laminate-flooring", "query": "laminate flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "one-stop-auto-detail-supply",
+      "label": "One Stop Auto Detail Supply",
+      "hostname": "www.onestopautodetailsupply.com",
+      "stratum": "local-detailing-supply",
+      "searchUrlTemplate": "https://www.onestopautodetailsupply.com/search?q={query}",
+      "queries": [
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"},
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "car-supplies-warehouse",
+      "label": "Car Supplies Warehouse",
+      "hostname": "www.carsupplieswarehouse.com",
+      "stratum": "detailing-warehouse",
+      "searchUrlTemplate": "https://www.carsupplieswarehouse.com/search?q={query}",
+      "queries": [
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"},
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "clean-garage",
+      "label": "The Clean Garage",
+      "hostname": "clean-garage.com",
+      "stratum": "detailing-specialty",
+      "searchUrlTemplate": "https://clean-garage.com/search?q={query}",
+      "queries": [
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"},
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "detailed-image",
+      "label": "Detailed Image",
+      "hostname": "www.detailedimage.com",
+      "stratum": "professional-detailing",
+      "searchUrlTemplate": "https://www.detailedimage.com/Search/?query={query}",
+      "queries": [
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"},
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "mountain-rose-herbs",
+      "label": "Mountain Rose Herbs",
+      "hostname": "mountainroseherbs.com",
+      "stratum": "organic-botanical",
+      "searchUrlTemplate": "https://mountainroseherbs.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "ginger-powder", "query": "ginger powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "atlantic-spice",
+      "label": "Atlantic Spice Company",
+      "hostname": "www.atlanticspice.com",
+      "stratum": "spice-wholesale",
+      "searchUrlTemplate": "https://www.atlanticspice.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "ginger-powder", "query": "ginger powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "spice-jungle",
+      "label": "Spice Jungle",
+      "hostname": "www.spicejungle.com",
+      "stratum": "culinary-ingredient-specialty",
+      "searchUrlTemplate": "https://www.spicejungle.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "ginger-powder", "query": "ginger powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "the-spice-house",
+      "label": "The Spice House",
+      "hostname": "www.thespicehouse.com",
+      "stratum": "spice-retail",
+      "searchUrlTemplate": "https://www.thespicehouse.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "ginger-powder", "query": "ginger powder", "dimension": "mass"}
+      ]
+    }
+  ]
+}

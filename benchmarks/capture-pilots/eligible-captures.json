@@ -1020,6 +1020,54 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-11-volume-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "paracord-galaxy",
+      "cohort": "training",
+      "pageId": "paracord-galaxy--shock-cord",
+      "captureTimestamp": "2026-07-26T09:00:12.657Z",
+      "observationSha256": "a714e4ec24fb45b77580a80ab4ae82e99e00aa31bdf1ebcf419c6c3bfeb13378",
+      "annotationScreenshotSha256": "88d231c1ea5ae8cb859a1b6f807b890301af7e0ee242a35b2e59962752d0aff2",
+      "qualificationReport": "benchmarks/domain-qualification/wave-12-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-12-length-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "paracord-galaxy",
+      "cohort": "training",
+      "pageId": "paracord-galaxy--paracord",
+      "captureTimestamp": "2026-07-26T09:02:08.063Z",
+      "observationSha256": "6757f913e13c91337509d5922eba530be8b65e1d323c065852e77b6df5c3accb",
+      "annotationScreenshotSha256": "2fa56edd72b011133eb853d562f8b6d552960fef28fecf9e317cdcaf52faa605",
+      "qualificationReport": "benchmarks/domain-qualification/wave-12-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-12-length-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "utility-direct",
+      "cohort": "training",
+      "pageId": "utility-direct--cordage",
+      "captureTimestamp": "2026-07-26T08:58:16.746Z",
+      "observationSha256": "12a768e17f3e6960de45731ae4aff6402814598dce803c07d4f8218974316e60",
+      "annotationScreenshotSha256": "e56383aed201b38f500d7287b1885d1c439911ca1ff8b79b6ec0ede6e8a3ae97",
+      "qualificationReport": "benchmarks/domain-qualification/wave-12-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-12-length-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "utility-direct",
+      "cohort": "training",
+      "pageId": "utility-direct--rope",
+      "captureTimestamp": "2026-07-26T09:02:17.524Z",
+      "observationSha256": "85a57a2cd58ba82d7b99c3294abf6dc07560954aa30cf8925a516df6b7095553",
+      "annotationScreenshotSha256": "c09e2fc484b951b16c22b7399f826bbbec579eff0990131e243e04b4596b6204",
+      "qualificationReport": "benchmarks/domain-qualification/wave-12-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-12-length-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }
