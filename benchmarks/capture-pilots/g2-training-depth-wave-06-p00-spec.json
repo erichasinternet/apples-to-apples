@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-depth-wave-06-p00",
+  "capturedAt": "2026-07-26T20:39:15.635Z",
+  "sourceManifest": "benchmarks/live-sites/training-depth-wave-06.json",
+  "requestedCaptureAttempts": 40,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T20-24-03-501Z",
+      "pageIds": [
+        "superior-products--upholstery-cleaner",
+        "myspicer--paprika",
+        "tilezz--subway-tile",
+        "jax-wax--car-shampoo",
+        "wholesale-marine--mooring-line",
+        "blue-sky-vitamin--creatine-powder",
+        "ethos-car-care--glass-cleaner",
+        "wholesale-janitorial-supply--dish-soap",
+        "paracord-galaxy--nylon-rope",
+        "artwalk-tile--subway-tile",
+        "coffee-bean-corral--brazilian-coffee",
+        "grayline-medical--surgical-masks",
+        "atwood-rope--static-rope",
+        "betty-mills--facial-tissue"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T20-24-13-498Z",
+      "pageIds": [
+        "medsurg-express--syringes",
+        "myspicer--turmeric",
+        "ethos-car-care--tire-dressing",
+        "paracord-galaxy--elastic-cord",
+        "betty-mills--paper-towels",
+        "jax-wax--ceramic-coating",
+        "wholesale-marine--tow-rope",
+        "blue-sky-vitamin--collagen-powder",
+        "rockywoods--fleece-fabric",
+        "superior-products--floor-cleaner",
+        "tilezz--stone-tile",
+        "atwood-rope--micro-cord",
+        "discount-school-supply--glue"
+      ]
+    }
+  ],
+  "samplingFinding": "Thirty of forty unseen query pages on twenty previously qualified training domains passed the machine capture gates. Three successful captures were rejected because they contained only four, five, or seven frozen roots, below the frozen minimum of eight roots per page. The remaining ten attempts were one blocked annotation and nine navigation or capture errors. The accepted set is twenty-seven of forty pages, a 67.5% yield.",
+  "visualValidationFinding": "All thirty successful full-page annotation views were inspected. Twenty-seven pages and 314 frozen roots were accepted across mass, volume, count, length, and area; the four-root Bulk-Priced Food Shoppe page and the five- and seven-root Flooret pages were excluded strictly by the frozen root-count gate. Accepted evidence includes native per-square-foot, per-box, per-sheet, per-yard, per-roll, and per-carton prices; explicit ounce, pound, gram, milliliter, gallon, foot, meter, sheet, box, serving, and each quantities; combined package-count and physical-quantity offers; prices and starting-price ranges without visible sale quantities; rope diameter and capacity without sale length; tile dimensions without coverage; syringe capacity and needle-size traps; paper ply, product dimensions, age, rider count, and review counts that must not be treated as sale quantity; query-adjacent accessories, kits, samples, coatings, cleaners, and unrelated search results; and pages where abstention is required because package quantity or price binding is absent. No fixed obstruction exceeded the frozen twenty-percent limit or covered the selected evidence."
+}

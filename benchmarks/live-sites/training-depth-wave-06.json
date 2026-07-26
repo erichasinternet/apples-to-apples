@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Sixth bounded depth-expansion wave on twenty qualified training domains. Forty unseen listing queries contribute exactly eight targets per supported dimension without changing domain assignments or supplying site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "blue-sky-vitamin",
+      "label": "Blue Sky Vitamin",
+      "hostname": "blueskyvitamin.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://blueskyvitamin.com/search?q={query}",
+      "queries": [
+        {"id": "creatine-powder", "query": "creatine powder", "dimension": "mass"},
+        {"id": "collagen-powder", "query": "collagen powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "coffee-bean-corral",
+      "label": "Coffee Bean Corral",
+      "hostname": "www.coffeebeancorral.com",
+      "stratum": "green-coffee",
+      "searchUrlTemplate": "https://www.coffeebeancorral.com/search?q={query}",
+      "queries": [
+        {"id": "brazilian-coffee", "query": "brazilian coffee", "dimension": "mass"},
+        {"id": "sumatra-coffee", "query": "sumatra coffee", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "myspicer",
+      "label": "MySpicer",
+      "hostname": "www.myspicer.com",
+      "stratum": "wholesale-spices",
+      "searchUrlTemplate": "https://www.myspicer.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "turmeric", "query": "turmeric", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "bulk-priced-food-shoppe",
+      "label": "Bulk Priced Food Shoppe",
+      "hostname": "bulkpricedfoodshoppe.com",
+      "stratum": "independent-bulk-food-retail",
+      "searchUrlTemplate": "https://bulkpricedfoodshoppe.com/search/?q={query}",
+      "queries": [
+        {"id": "beans", "query": "beans", "dimension": "mass"},
+        {"id": "lentils", "query": "lentils", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "superior-products",
+      "label": "Superior Products",
+      "hostname": "superiorproducts.com",
+      "stratum": "professional-cleaning-chemical-manufacturer",
+      "searchUrlTemplate": "https://superiorproducts.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "upholstery-cleaner", "query": "upholstery cleaner", "dimension": "volume"},
+        {"id": "floor-cleaner", "query": "floor cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "ethos-car-care",
+      "label": "Ethos Car Care",
+      "hostname": "ethoscarcare.com",
+      "stratum": "direct-to-consumer-car-care",
+      "searchUrlTemplate": "https://ethoscarcare.com/search?q={query}",
+      "queries": [
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"},
+        {"id": "tire-dressing", "query": "tire dressing", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "jax-wax",
+      "label": "Jax Wax",
+      "hostname": "www.jaxwax.com",
+      "stratum": "regional-detailing-product-brand",
+      "searchUrlTemplate": "https://www.jaxwax.com/search?q={query}",
+      "queries": [
+        {"id": "car-shampoo", "query": "car shampoo", "dimension": "volume"},
+        {"id": "ceramic-coating", "query": "ceramic coating", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "wholesale-janitorial-supply",
+      "label": "Wholesale Janitorial Supply",
+      "hostname": "www.wholesalejanitorialsupply.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.wholesalejanitorialsupply.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "dish-soap", "query": "dish soap", "dimension": "volume"},
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "discount-school-supply",
+      "label": "Discount School Supply",
+      "hostname": "www.discountschoolsupply.com",
+      "stratum": "early-education-supply",
+      "searchUrlTemplate": "https://www.discountschoolsupply.com/search/?text={query}",
+      "queries": [
+        {"id": "crayons", "query": "crayons", "dimension": "count"},
+        {"id": "glue", "query": "glue", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "grayline-medical",
+      "label": "Grayline Medical",
+      "hostname": "www.graylinemedical.com",
+      "stratum": "clinical-medical-supply",
+      "searchUrlTemplate": "https://www.graylinemedical.com/search?q={query}",
+      "queries": [
+        {"id": "surgical-masks", "query": "surgical masks", "dimension": "count"},
+        {"id": "wound-dressings", "query": "wound dressings", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "medsurg-express",
+      "label": "MedSurg Express",
+      "hostname": "medsurgexpress.com",
+      "stratum": "medical-surgical-supply-retail",
+      "searchUrlTemplate": "https://medsurgexpress.com/search?q={query}",
+      "queries": [
+        {"id": "gauze-pads", "query": "gauze pads", "dimension": "count"},
+        {"id": "syringes", "query": "syringes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "betty-mills",
+      "label": "Betty Mills",
+      "hostname": "www.bettymills.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.bettymills.com/search?q={query}",
+      "queries": [
+        {"id": "facial-tissue", "query": "facial tissue", "dimension": "count"},
+        {"id": "paper-towels", "query": "paper towels", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "rockywoods",
+      "label": "Rockywoods",
+      "hostname": "rockywoods.com",
+      "stratum": "technical-outdoor-fabric",
+      "searchUrlTemplate": "https://rockywoods.com/search?q={query}",
+      "queries": [
+        {"id": "cordura-fabric", "query": "cordura fabric", "dimension": "length"},
+        {"id": "fleece-fabric", "query": "fleece fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "paracord-galaxy",
+      "label": "Paracord Galaxy",
+      "hostname": "paracordgalaxy.com",
+      "stratum": "paracord-specialty",
+      "searchUrlTemplate": "https://paracordgalaxy.com/search?q={query}",
+      "queries": [
+        {"id": "nylon-rope", "query": "nylon rope", "dimension": "length"},
+        {"id": "elastic-cord", "query": "elastic cord", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "atwood-rope",
+      "label": "Atwood Rope",
+      "hostname": "atwoodrope.com",
+      "stratum": "rope-cordage",
+      "searchUrlTemplate": "https://atwoodrope.com/search?q={query}",
+      "queries": [
+        {"id": "static-rope", "query": "static rope", "dimension": "length"},
+        {"id": "micro-cord", "query": "micro cord", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "wholesale-marine",
+      "label": "Wholesale Marine",
+      "hostname": "www.wholesalemarine.com",
+      "stratum": "marine-supply",
+      "searchUrlTemplate": "https://www.wholesalemarine.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "mooring-line", "query": "mooring line", "dimension": "length"},
+        {"id": "tow-rope", "query": "tow rope", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "flooret",
+      "label": "Flooret",
+      "hostname": "www.flooret.com",
+      "stratum": "direct-to-consumer-flooring-brand",
+      "searchUrlTemplate": "https://www.flooret.com/search?q={query}",
+      "queries": [
+        {"id": "herringbone-flooring", "query": "herringbone flooring", "dimension": "area"},
+        {"id": "engineered-hardwood", "query": "engineered hardwood", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "prosource-wholesale",
+      "label": "ProSource Wholesale",
+      "hostname": "www.prosourcewholesale.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.prosourcewholesale.com/products/list?query={query}",
+      "queries": [
+        {"id": "laminate-flooring", "query": "laminate flooring", "dimension": "area"},
+        {"id": "cork-flooring", "query": "cork flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tilezz",
+      "label": "Tilezz",
+      "hostname": "tilezz.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://tilezz.com/search?q={query}",
+      "queries": [
+        {"id": "subway-tile", "query": "subway tile", "dimension": "area"},
+        {"id": "stone-tile", "query": "stone tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "artwalk-tile",
+      "label": "Artwalk Tile",
+      "hostname": "www.artwalktile.com",
+      "stratum": "specialty-tile-retail",
+      "searchUrlTemplate": "https://www.artwalktile.com/search?q={query}",
+      "queries": [
+        {"id": "subway-tile", "query": "subway tile", "dimension": "area"},
+        {"id": "stone-tile", "query": "stone tile", "dimension": "area"}
+      ]
+    }
+  ]
+}
