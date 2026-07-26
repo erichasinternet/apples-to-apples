@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "auditId": "g2-selection-representation-p08",
+  "targetFormat": "evidence-selection-v1",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p10-reviewer-a-campaign.json",
+    "campaignSha256": "e16e19307112dc223e3e4075ef8491d54d524294ab5e94cbe3a4a076adbf4820",
+    "queueSha256": "854a0539eec89ccffc3208507f6992238f696de5dca278f28d67d8ff26c97d57",
+    "preannotationSha256": "695264e681e4908d1610096b03cd2da0f220b65b6db00df879ec44e2bfdb32e2",
+    "auditSha256": "3b0cf4aac1d40f39bf4cd029a8207dd041681b278aff68d59c734199d10a5a25",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "records": {
+    "requested": 935,
+    "exactRoundTrips": 935,
+    "failures": 0,
+    "pages": 100,
+    "sites": 35
+  },
+  "statuses": {
+    "C": 211,
+    "E": 55,
+    "Q": 669
+  },
+  "representation": {
+    "promptChars": {
+      "min": 2056,
+      "p50": 2625,
+      "p95": 4151,
+      "max": 7808,
+      "mean": 2772.8320855614975
+    },
+    "targetChars": {
+      "min": 22,
+      "p50": 22,
+      "p95": 22,
+      "max": 22,
+      "mean": 22
+    },
+    "observationNodes": {
+      "min": 32,
+      "p50": 32,
+      "p95": 32,
+      "max": 39,
+      "mean": 32.04491978609626
+    },
+    "valueCandidates": {
+      "min": 0,
+      "p50": 6,
+      "p95": 25,
+      "max": 84,
+      "mean": 8.037433155080214
+    },
+    "outputGrammar": "T## P## U## Q## K## S#",
+    "generatedValues": false,
+    "generatedDomIds": false
+  },
+  "sites": {
+    "alan-janitorial": {
+      "records": 16,
+      "comparable": 12,
+      "abstained": 4
+    },
+    "allegro-medical": {
+      "records": 52,
+      "comparable": 1,
+      "abstained": 51
+    },
+    "atwood-rope": {
+      "records": 19,
+      "comparable": 0,
+      "abstained": 19
+    },
+    "betty-mills": {
+      "records": 28,
+      "comparable": 0,
+      "abstained": 28
+    },
+    "blue-sky-vitamin": {
+      "records": 28,
+      "comparable": 8,
+      "abstained": 20
+    },
+    "coffee-bean-corral": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "detail-king": {
+      "records": 28,
+      "comparable": 0,
+      "abstained": 28
+    },
+    "fabric-mart-fabrics": {
+      "records": 24,
+      "comparable": 23,
+      "abstained": 1
+    },
+    "fabric-wholesale-direct": {
+      "records": 16,
+      "comparable": 16,
+      "abstained": 0
+    },
+    "fabricworm": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "food-service-direct": {
+      "records": 44,
+      "comparable": 17,
+      "abstained": 27
+    },
+    "greatmats": {
+      "records": 36,
+      "comparable": 35,
+      "abstained": 1
+    },
+    "jeffers-pet": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "katom": {
+      "records": 32,
+      "comparable": 5,
+      "abstained": 27
+    },
+    "kleen-rite": {
+      "records": 28,
+      "comparable": 0,
+      "abstained": 28
+    },
+    "lambert-vet-supply": {
+      "records": 32,
+      "comparable": 4,
+      "abstained": 28
+    },
+    "morebeer": {
+      "records": 24,
+      "comparable": 1,
+      "abstained": 23
+    },
+    "natural-healthy-concepts": {
+      "records": 52,
+      "comparable": 5,
+      "abstained": 47
+    },
+    "northern-brewer": {
+      "records": 24,
+      "comparable": 11,
+      "abstained": 13
+    },
+    "ontime-supplies": {
+      "records": 31,
+      "comparable": 15,
+      "abstained": 16
+    },
+    "paracord-galaxy": {
+      "records": 16,
+      "comparable": 8,
+      "abstained": 8
+    },
+    "paracord-planet": {
+      "records": 23,
+      "comparable": 0,
+      "abstained": 23
+    },
+    "pool-geek": {
+      "records": 28,
+      "comparable": 0,
+      "abstained": 28
+    },
+    "prosource-wholesale": {
+      "records": 20,
+      "comparable": 0,
+      "abstained": 20
+    },
+    "purebulk": {
+      "records": 20,
+      "comparable": 5,
+      "abstained": 15
+    },
+    "restaurant-supply": {
+      "records": 18,
+      "comparable": 0,
+      "abstained": 18
+    },
+    "search-for-fabric": {
+      "records": 19,
+      "comparable": 0,
+      "abstained": 19
+    },
+    "seattle-fabrics": {
+      "records": 22,
+      "comparable": 17,
+      "abstained": 5
+    },
+    "starwest-botanicals": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "supplement-warehouse": {
+      "records": 32,
+      "comparable": 13,
+      "abstained": 19
+    },
+    "the-cary-company": {
+      "records": 22,
+      "comparable": 0,
+      "abstained": 22
+    },
+    "utility-direct": {
+      "records": 14,
+      "comparable": 0,
+      "abstained": 14
+    },
+    "vitality-medical": {
+      "records": 44,
+      "comparable": 0,
+      "abstained": 44
+    },
+    "wholesale-janitorial-supply": {
+      "records": 39,
+      "comparable": 13,
+      "abstained": 26
+    },
+    "wholesale-marine": {
+      "records": 24,
+      "comparable": 2,
+      "abstained": 22
+    }
+  },
+  "failures": [],
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "Representation compatibility does not establish label correctness. The source remains unreviewed and requires independent review and adjudication."
+  }
+}

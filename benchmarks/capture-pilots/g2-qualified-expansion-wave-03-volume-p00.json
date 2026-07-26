@@ -1,0 +1,370 @@
+{
+  "version": 1,
+  "pilotId": "g2-qualified-expansion-wave-03-volume-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-26T09:30:38.031Z",
+  "source": {
+    "siteIds": [
+      "alan-janitorial",
+      "detail-king",
+      "kleen-rite",
+      "pool-geek",
+      "betty-mills",
+      "blue-sky-vitamin",
+      "the-cary-company",
+      "wholesale-marine",
+      "lambert-vet-supply",
+      "supplement-warehouse",
+      "natural-healthy-concepts",
+      "vitality-medical",
+      "allegro-medical",
+      "restaurant-supply",
+      "food-service-direct",
+      "wholesale-janitorial-supply",
+      "ontime-supplies",
+      "jeffers-pet",
+      "prosource-wholesale",
+      "greatmats"
+    ],
+    "cohort": "training",
+    "strata": [
+      "auto-detailing",
+      "car-wash-supply",
+      "cleaning-equipment",
+      "flooring",
+      "health-supplements",
+      "janitorial-supply",
+      "marine-supply",
+      "medical-supply",
+      "office-supply",
+      "packaging-supply",
+      "pool-specialty",
+      "restaurant-supply",
+      "specialty-food",
+      "specialty-pet",
+      "veterinary-supply"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "02e8de377e90656f409465f3ba7047ce5d115bf8eb044bba063a381c6ba966da"
+    ],
+    "collectorSha256": "c697e549acd6eba4a1c75ae20d8f22aa3a3630046d3529cf2ea62f53b806c29f"
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T09-16-35-681Z",
+      "runManifestSha256": "e3f1fedacc5b8e237351dbe3daa24ff84c4df0e80faa0eb698658fd9537f12fe",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000
+    }
+  ],
+  "screening": {
+    "requestedPages": 20,
+    "capturedPages": 12,
+    "acceptedPages": 11,
+    "rejectedPages": [
+      {
+        "pageId": "lambert-vet-supply--wound-spray",
+        "reason": "annotation-screenshot-unavailable"
+      },
+      {
+        "pageId": "ontime-supplies--surface-cleaner",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "alan-janitorial--glass-cleaner",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "restaurant-supply--cooking-oil",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "wholesale-janitorial-supply--disinfectant",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "jeffers-pet--pet-conditioner",
+        "reason": "browser-launch-timeout"
+      },
+      {
+        "pageId": "supplement-warehouse--liquid-collagen",
+        "reason": "visual-obstruction-full-viewport"
+      },
+      {
+        "pageId": "wholesale-marine--engine-oil",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "prosource-wholesale--rubber-flooring",
+        "reason": "insufficient-candidates-3"
+      }
+    ]
+  },
+  "captures": [
+    {
+      "siteId": "natural-healthy-concepts",
+      "pageId": "natural-healthy-concepts--liquid-supplement",
+      "capturedAt": "2026-07-26T09:16:56.085Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 576,
+      "observationTruncated": false,
+      "dismissedObstructions": 8,
+      "unresolvedObstructionCoverage": 0.013610402235994653,
+      "queryTokenCoverage": 1,
+      "observationSha256": "80c73e58ad9794cf58ce0f4d047b316f1f5a631f1e93578661cf041b90a1536c",
+      "annotationScreenshotSha256": "5d246b079cc3b5409c69f27b5d4bc4fb813f2c1936611349b33503acd6f257d4",
+      "provenanceAggregateSha256": "c86278c6131b6534678b17bb9599d09a52a0609dd6a409b182b6cc70429f7ade",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-cary-company",
+      "pageId": "the-cary-company--liquid-containers",
+      "capturedAt": "2026-07-26T09:18:32.608Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 840,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "3da39cb63e5c2e5e1a620aca423c6bcca1f5488fee96928e46160f0fbd5876de",
+      "annotationScreenshotSha256": "3eddd9372826f38c03c29f6d196b65b045cbff009e46a6a2710b55c28c970c0f",
+      "provenanceAggregateSha256": "dc9f510b5c81e4a151fb7bb903b1e34da5e87e9119d87e9ca8c135163799e406",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--wound-cleanser",
+      "capturedAt": "2026-07-26T09:18:45.037Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 924,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "6748ce747de71b5491b4c121e223c8958436bd99f97f043d374a226c88377b6f",
+      "annotationScreenshotSha256": "5f26ac5d57003faa5ecc5a58fc20b9ae8f3b5200ee45346be3f0c1b60a27ef69",
+      "provenanceAggregateSha256": "a164205168edcffc7bb94727eb3db6d7ebc456f61dd821721e4983cb3e69cc3c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "food-service-direct",
+      "pageId": "food-service-direct--salad-dressing",
+      "capturedAt": "2026-07-26T09:20:42.622Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1273,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.005891731770833334,
+      "queryTokenCoverage": 1,
+      "observationSha256": "7e2edcf0595275503ca5280a927c13c6b680b2dce429b15b9d5d1ca9e3141997",
+      "annotationScreenshotSha256": "1eac57d8a6e1fc9c00c3da00d9fd0ef10d835a02dc67df1ef3bccc4bbe757057",
+      "provenanceAggregateSha256": "175805281b5fa6859ff9550c02161100ad15dd6961ea34a45e8c0d4e5e29a7e1",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "vitality-medical",
+      "pageId": "vitality-medical--wound-cleanser",
+      "capturedAt": "2026-07-26T09:22:51.982Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 463,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "cf7dd8ac97c694c5c41c92cbdc26b53c9311a6193797c53478b83f6b01ad28a1",
+      "annotationScreenshotSha256": "cd50a496274115ec223fa275ee2a59783212bc215b040151e2cdf9f68563b5cf",
+      "provenanceAggregateSha256": "f421d348bfec443ae9c9f393e9277cfbc858a568eaf43bdc884b37054ddfc299",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "kleen-rite",
+      "pageId": "kleen-rite--car-wash-wax",
+      "capturedAt": "2026-07-26T09:25:18.032Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1619,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.017544659132336857,
+      "queryTokenCoverage": 1,
+      "observationSha256": "69c783861bf2f5bd33544735df2308c2b5571302b67ce01043d613b1bf3f8e57",
+      "annotationScreenshotSha256": "3036711a859e8c6e21fb0b1084d9d811041242703b795a0c9472df29f508f339",
+      "provenanceAggregateSha256": "a8efb8eb20aaf73968d9f65d1e5b451d73cc0bc8712579b4fad86e47c542471e",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "betty-mills",
+      "pageId": "betty-mills--hand-soap",
+      "capturedAt": "2026-07-26T09:27:13.608Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 753,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.006152023332118119,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c47e7e838c41a1964ebf69b1cf6430026cf270b1b5ca3d039d25c32ed438e3a7",
+      "annotationScreenshotSha256": "e05b67e823f1143b24a53dd1aa7a1664a3d9fee1b989d1226dfff4b71a95e135",
+      "provenanceAggregateSha256": "1c4d37898f628a5377431333945426c81126a11e9d61353746765c47b9161fa5",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "blue-sky-vitamin",
+      "pageId": "blue-sky-vitamin--liquid-vitamin",
+      "capturedAt": "2026-07-26T09:27:33.767Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 7,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2324,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.0030555555555555557,
+      "queryTokenCoverage": 1,
+      "observationSha256": "a788b59171478fbc57a229842173691f69ca8caa3ced30f38ab4e8d4ca9f46f3",
+      "annotationScreenshotSha256": "84078884f21c9882b6df9546f7ce8d7da6f8711830f9dda253480fb4d9207a13",
+      "provenanceAggregateSha256": "2e66e708ec1347178908676292c42d2a720f203390864def46e0070b30f74dc1",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "pool-geek",
+      "pageId": "pool-geek--pool-clarifier",
+      "capturedAt": "2026-07-26T09:27:48.401Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 489,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "409429da0a66b46dd862bbf74a9e682a5409d3e23cbf5e6806372097bd2736c2",
+      "annotationScreenshotSha256": "02912ab9001a4f992138d6d4cd710cf92751f58d31321a88a8b0e6ddc814ff7c",
+      "provenanceAggregateSha256": "d5bda1b4b4199ee5fde263a39f3278835dd6625dc5f67b66b5bafac2876cc8ab",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "greatmats",
+      "pageId": "greatmats--rubber-gym-flooring",
+      "capturedAt": "2026-07-26T09:27:55.295Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1590,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.14972222222222223,
+      "queryTokenCoverage": 1,
+      "observationSha256": "2e8d7520769d80e0697bd26504616a71cc3b2b7bedd814463fd01edbd123e29b",
+      "annotationScreenshotSha256": "6f10f29c3bf28c28aec72d2055d7e5c8f87c390a30d1baf49199456741f18d60",
+      "provenanceAggregateSha256": "91dcd3cf67af4e4fb8df509542b0a79469302b157b771bff64a944a130fb02ad",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "detail-king",
+      "pageId": "detail-king--interior-cleaner",
+      "capturedAt": "2026-07-26T09:30:36.827Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 624,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.005754855685763889,
+      "queryTokenCoverage": 1,
+      "observationSha256": "2634fde4a383bd526853914cef6b4d16d998aa446a4538068f93607e6ed015c6",
+      "annotationScreenshotSha256": "08f2bc0a3b019b7e368f1972130c5c86e133c513d90c241ca5a3e1425af092a7",
+      "provenanceAggregateSha256": "4ec93efa5a44e2cc70489d12bd4f269bfe68de2f094263d4bcc893474ef767f2",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ]
+}

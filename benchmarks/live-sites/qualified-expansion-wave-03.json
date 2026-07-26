@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "description": "Third qualified-domain expansion screen. It targets the current volume-coverage deficit with new non-overlapping queries on already promoted training domains, plus two area pages for continued lower-frequency coverage.",
+  "sites": [
+    {
+      "id": "alan-janitorial",
+      "label": "Alan Janitorial",
+      "hostname": "www.alanjanitorial.com",
+      "stratum": "cleaning-equipment",
+      "searchUrlTemplate": "https://www.alanjanitorial.com/search?q={query}",
+      "queries": [
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "detail-king",
+      "label": "Detail King",
+      "hostname": "www.detailking.com",
+      "stratum": "auto-detailing",
+      "searchUrlTemplate": "https://www.detailking.com/search?q={query}",
+      "queries": [
+        {"id": "interior-cleaner", "query": "interior cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "kleen-rite",
+      "label": "Kleen-Rite",
+      "hostname": "www.kleen-ritecorp.com",
+      "stratum": "car-wash-supply",
+      "searchUrlTemplate": "https://www.kleen-ritecorp.com/search.aspx?searchterm={query}",
+      "queries": [
+        {"id": "car-wash-wax", "query": "car wash wax", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "pool-geek",
+      "label": "Pool Geek",
+      "hostname": "www.poolgeek.com",
+      "stratum": "pool-specialty",
+      "searchUrlTemplate": "https://www.poolgeek.com/search?q={query}",
+      "queries": [
+        {"id": "pool-clarifier", "query": "pool clarifier", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "betty-mills",
+      "label": "Betty Mills",
+      "hostname": "www.bettymills.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.bettymills.com/search?q={query}",
+      "queries": [
+        {"id": "hand-soap", "query": "hand soap", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "blue-sky-vitamin",
+      "label": "Blue Sky Vitamin",
+      "hostname": "blueskyvitamin.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://blueskyvitamin.com/search?q={query}",
+      "queries": [
+        {"id": "liquid-vitamin", "query": "liquid vitamin", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "the-cary-company",
+      "label": "The Cary Company",
+      "hostname": "www.thecarycompany.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.thecarycompany.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "liquid-containers", "query": "liquid containers", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "wholesale-marine",
+      "label": "Wholesale Marine",
+      "hostname": "www.wholesalemarine.com",
+      "stratum": "marine-supply",
+      "searchUrlTemplate": "https://www.wholesalemarine.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "engine-oil", "query": "engine oil", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "lambert-vet-supply",
+      "label": "Lambert Vet Supply",
+      "hostname": "www.lambertvetsupply.com",
+      "stratum": "veterinary-supply",
+      "searchUrlTemplate": "https://www.lambertvetsupply.com/search?q={query}",
+      "queries": [
+        {"id": "wound-spray", "query": "wound spray", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "supplement-warehouse",
+      "label": "Supplement Warehouse",
+      "hostname": "supplementwarehouse.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://supplementwarehouse.com/search?q={query}",
+      "queries": [
+        {"id": "liquid-collagen", "query": "liquid collagen", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "natural-healthy-concepts",
+      "label": "Natural Healthy Concepts",
+      "hostname": "www.nhc.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://www.nhc.com/search?q={query}",
+      "queries": [
+        {"id": "liquid-supplement", "query": "liquid supplement", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "vitality-medical",
+      "label": "Vitality Medical",
+      "hostname": "www.vitalitymedical.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.vitalitymedical.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "wound-cleanser", "query": "wound cleanser", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "allegro-medical",
+      "label": "Allegro Medical",
+      "hostname": "www.allegromedical.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.allegromedical.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "wound-cleanser", "query": "wound cleanser", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "restaurant-supply",
+      "label": "RestaurantSupply.com",
+      "hostname": "www.restaurantsupply.com",
+      "stratum": "restaurant-supply",
+      "searchUrlTemplate": "https://www.restaurantsupply.com/search?q={query}",
+      "queries": [
+        {"id": "cooking-oil", "query": "cooking oil", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "food-service-direct",
+      "label": "FoodServiceDirect",
+      "hostname": "www.foodservicedirect.com",
+      "stratum": "specialty-food",
+      "searchUrlTemplate": "https://www.foodservicedirect.com/search-result?q={query}",
+      "queries": [
+        {"id": "salad-dressing", "query": "salad dressing", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "wholesale-janitorial-supply",
+      "label": "Wholesale Janitorial Supply",
+      "hostname": "www.wholesalejanitorialsupply.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.wholesalejanitorialsupply.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "disinfectant", "query": "disinfectant", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "ontime-supplies",
+      "label": "OnTimeSupplies",
+      "hostname": "www.ontimesupplies.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.ontimesupplies.com/search?query={query}",
+      "queries": [
+        {"id": "surface-cleaner", "query": "surface cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "jeffers-pet",
+      "label": "Jeffers Pet",
+      "hostname": "jefferspet.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://jefferspet.com/search?q={query}",
+      "queries": [
+        {"id": "pet-conditioner", "query": "pet conditioner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "prosource-wholesale",
+      "label": "ProSource Wholesale",
+      "hostname": "www.prosourcewholesale.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.prosourcewholesale.com/products/list?query={query}",
+      "queries": [
+        {"id": "rubber-flooring", "query": "rubber flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "greatmats",
+      "label": "Greatmats",
+      "hostname": "www.greatmats.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.greatmats.com/{querySlug}.php",
+      "queries": [
+        {"id": "rubber-gym-flooring", "query": "rubber gym flooring", "querySlug": "rubber-gym-flooring", "dimension": "area"}
+      ]
+    }
+  ]
+}

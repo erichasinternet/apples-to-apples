@@ -1068,6 +1068,138 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-12-length-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "cohort": "training",
+      "pageId": "natural-healthy-concepts--liquid-supplement",
+      "captureTimestamp": "2026-07-26T09:16:56.085Z",
+      "observationSha256": "80c73e58ad9794cf58ce0f4d047b316f1f5a631f1e93578661cf041b90a1536c",
+      "annotationScreenshotSha256": "5d246b079cc3b5409c69f27b5d4bc4fb813f2c1936611349b33503acd6f257d4",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p07.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-03-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-cary-company",
+      "cohort": "training",
+      "pageId": "the-cary-company--liquid-containers",
+      "captureTimestamp": "2026-07-26T09:18:32.608Z",
+      "observationSha256": "3da39cb63e5c2e5e1a620aca423c6bcca1f5488fee96928e46160f0fbd5876de",
+      "annotationScreenshotSha256": "3eddd9372826f38c03c29f6d196b65b045cbff009e46a6a2710b55c28c970c0f",
+      "qualificationReport": "benchmarks/domain-qualification/wave-04-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-03-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "allegro-medical",
+      "cohort": "training",
+      "pageId": "allegro-medical--wound-cleanser",
+      "captureTimestamp": "2026-07-26T09:18:45.037Z",
+      "observationSha256": "6748ce747de71b5491b4c121e223c8958436bd99f97f043d374a226c88377b6f",
+      "annotationScreenshotSha256": "5f26ac5d57003faa5ecc5a58fc20b9ae8f3b5200ee45346be3f0c1b60a27ef69",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-03-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "food-service-direct",
+      "cohort": "training",
+      "pageId": "food-service-direct--salad-dressing",
+      "captureTimestamp": "2026-07-26T09:20:42.622Z",
+      "observationSha256": "7e2edcf0595275503ca5280a927c13c6b680b2dce429b15b9d5d1ca9e3141997",
+      "annotationScreenshotSha256": "1eac57d8a6e1fc9c00c3da00d9fd0ef10d835a02dc67df1ef3bccc4bbe757057",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p01.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-03-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "vitality-medical",
+      "cohort": "training",
+      "pageId": "vitality-medical--wound-cleanser",
+      "captureTimestamp": "2026-07-26T09:22:51.982Z",
+      "observationSha256": "cf7dd8ac97c694c5c41c92cbdc26b53c9311a6193797c53478b83f6b01ad28a1",
+      "annotationScreenshotSha256": "cd50a496274115ec223fa275ee2a59783212bc215b040151e2cdf9f68563b5cf",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-03-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "kleen-rite",
+      "cohort": "training",
+      "pageId": "kleen-rite--car-wash-wax",
+      "captureTimestamp": "2026-07-26T09:25:18.032Z",
+      "observationSha256": "69c783861bf2f5bd33544735df2308c2b5571302b67ce01043d613b1bf3f8e57",
+      "annotationScreenshotSha256": "3036711a859e8c6e21fb0b1084d9d811041242703b795a0c9472df29f508f339",
+      "qualificationReport": "benchmarks/domain-qualification/wave-09-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-03-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "betty-mills",
+      "cohort": "training",
+      "pageId": "betty-mills--hand-soap",
+      "captureTimestamp": "2026-07-26T09:27:13.608Z",
+      "observationSha256": "c47e7e838c41a1964ebf69b1cf6430026cf270b1b5ca3d039d25c32ed438e3a7",
+      "annotationScreenshotSha256": "e05b67e823f1143b24a53dd1aa7a1664a3d9fee1b989d1226dfff4b71a95e135",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p04.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-03-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "blue-sky-vitamin",
+      "cohort": "training",
+      "pageId": "blue-sky-vitamin--liquid-vitamin",
+      "captureTimestamp": "2026-07-26T09:27:33.767Z",
+      "observationSha256": "a788b59171478fbc57a229842173691f69ca8caa3ced30f38ab4e8d4ca9f46f3",
+      "annotationScreenshotSha256": "84078884f21c9882b6df9546f7ce8d7da6f8711830f9dda253480fb4d9207a13",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p08.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-03-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "pool-geek",
+      "cohort": "training",
+      "pageId": "pool-geek--pool-clarifier",
+      "captureTimestamp": "2026-07-26T09:27:48.401Z",
+      "observationSha256": "409429da0a66b46dd862bbf74a9e682a5409d3e23cbf5e6806372097bd2736c2",
+      "annotationScreenshotSha256": "02912ab9001a4f992138d6d4cd710cf92751f58d31321a88a8b0e6ddc814ff7c",
+      "qualificationReport": "benchmarks/domain-qualification/wave-10-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-03-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "greatmats",
+      "cohort": "training",
+      "pageId": "greatmats--rubber-gym-flooring",
+      "captureTimestamp": "2026-07-26T09:27:55.295Z",
+      "observationSha256": "2e8d7520769d80e0697bd26504616a71cc3b2b7bedd814463fd01edbd123e29b",
+      "annotationScreenshotSha256": "6f10f29c3bf28c28aec72d2055d7e5c8f87c390a30d1baf49199456741f18d60",
+      "qualificationReport": "benchmarks/domain-qualification/wave-07-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-03-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "detail-king",
+      "cohort": "training",
+      "pageId": "detail-king--interior-cleaner",
+      "captureTimestamp": "2026-07-26T09:30:36.827Z",
+      "observationSha256": "2634fde4a383bd526853914cef6b4d16d998aa446a4538068f93607e6ed015c6",
+      "annotationScreenshotSha256": "08f2bc0a3b019b7e368f1972130c5c86e133c513d90c241ca5a3e1425af092a7",
+      "qualificationReport": "benchmarks/domain-qualification/wave-09-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-03-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

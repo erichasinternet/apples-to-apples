@@ -469,6 +469,30 @@ The compact audit in
 round-trips all 807 retained suggestions exactly. These artifacts remain
 unreviewed and ineligible for silver training or benchmark gold.
 
+Qualified expansion wave 3 revisits 20 already-promoted domains to strengthen
+the underrepresented volume slice without changing domain splits. Eleven
+visually inspected pages pass: ten volume-oriented pages contribute 116 roots
+across supplements, medical cleansers, commercial chemicals, case-pack food,
+pool treatment, and a deliberate container-capacity hard negative; one flooring
+page contributes 12 area roots. Eight targets are rejected for bounded capture
+failures or obstruction, and one three-product page is rejected for insufficient
+candidate coverage.
+
+The expanded paired campaign in
+[`g2-pilot-p10.json`](../benchmarks/review-campaigns/g2-pilot-p10.json)
+contains 35 qualified training domains, 100 pages, and 954 frozen roots. Its
+headed workbench sweep loaded every screenshot and root, offered only frozen
+card choices, rejected invalid and incomplete submissions, emitted no console
+errors, and wrote no review files. The diagnostic in
+[`g2-campaign-preannotation-p09.json`](../benchmarks/reviews/g2-campaign-preannotation-p09.json)
+finds 17 tentative comparables and 111 abstentions among the 128 new roots. The
+container-capacity hard negatives remain abstained and the expansion introduces
+no new semantic quarantines. The compact audit in
+[`g2-selection-representation-p08.json`](../benchmarks/reviews/g2-selection-representation-p08.json)
+round-trips all 935 machine-retained suggestions exactly with zero failures.
+All 954 roots and machine suggestions remain unreviewed and ineligible for
+silver training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

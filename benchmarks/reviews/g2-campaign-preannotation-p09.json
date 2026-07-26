@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "auditId": "g2-campaign-preannotation-p09",
+  "createdAt": "2026-07-26T09:39:42Z",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p10-reviewer-a-campaign.json",
+    "campaignSha256": "e16e19307112dc223e3e4075ef8491d54d524294ab5e94cbe3a4a076adbf4820",
+    "queueSha256": "854a0539eec89ccffc3208507f6992238f696de5dca278f28d67d8ff26c97d57",
+    "preannotationSha256": "695264e681e4908d1610096b03cd2da0f220b65b6db00df879ec44e2bfdb32e2",
+    "auditSha256": "3b0cf4aac1d40f39bf4cd029a8207dd041681b278aff68d59c734199d10a5a25",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "campaign": {
+    "pages": 100,
+    "cards": 954,
+    "targetDimensions": {
+      "area": 88,
+      "count": 196,
+      "length": 214,
+      "mass": 236,
+      "volume": 220
+    },
+    "candidateEvidence": {
+      "withTitle": 947,
+      "withCurrentPrice": 914,
+      "withNativeUnitPriceInOneNode": 39,
+      "withPackageQuantity": 308
+    }
+  },
+  "dimensionConditionedPreannotation": {
+    "tentativeComparable": 230,
+    "abstained": 724,
+    "evidenceInvalid": 4,
+    "methods": {
+      "explicit-abstention": 724,
+      "native-unit-price": 97,
+      "price-and-package": 133
+    }
+  },
+  "semanticAudit": {
+    "machineAuditPassingComparableSuggestions": 211,
+    "machineAuditPassingAbstentionSuggestions": 724,
+    "quarantinedComparableSuggestions": 19,
+    "quarantinedAbstentionSuggestions": 0,
+    "quarantineReasons": {
+      "ambiguous-decimal-quantity": 1,
+      "equipment-capacity-as-quantity": 10,
+      "invalid-evidence": 4,
+      "physical-dimension-as-quantity": 5
+    }
+  },
+  "expansionOutcomes": {
+    "pages": 11,
+    "cards": 128,
+    "targetDimensions": {
+      "area": 12,
+      "volume": 116
+    },
+    "tentativeComparable": 17,
+    "abstained": 111,
+    "machineAuditPassing": 128,
+    "quarantined": 0,
+    "pagesWithTentativeComparables": {
+      "blue-sky-vitamin--liquid-vitamin": 4,
+      "food-service-direct--salad-dressing": 1,
+      "greatmats--rubber-gym-flooring": 12
+    }
+  },
+  "representationChanges": [
+    "No extraction heuristic changed for this append-only campaign expansion.",
+    "Added 116 volume-conditioned roots spanning liquid supplements, medical cleansers, commercial cleaning chemicals, case-pack food, hand soap, pool chemicals, and container-capacity hard negatives.",
+    "Added 12 area-conditioned flooring roots with explicit per-square-foot and per-tile pricing.",
+    "The equipment-capacity hard-negative page remained fully abstained and the expansion introduced no additional semantic quarantines."
+  ],
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "The source cards and all preannotations remain unreviewed. Machine checks can quarantine contradictions but cannot establish semantic correctness; two independent reviews and adjudication remain required."
+  },
+  "decision": "retain-as-blinded-review-aid-only"
+}
