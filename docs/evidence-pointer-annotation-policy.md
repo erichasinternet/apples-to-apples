@@ -119,6 +119,23 @@ to overwrite an existing review. Reviewers can select any frozen card root
 directly, and the workbench advances to the next unreviewed root after each label.
 Submission remains disabled until every frozen root has a card-scoped decision.
 
+Audit two submission directories as a complete campaign. Missing reviews are
+reported as pending progress; malformed, duplicate, unexpected, identity-drifted,
+hash-drifted, or incomplete submissions fail the audit:
+
+```bash
+bun run dataset:reviews:audit -- \
+  --queue-a benchmark-data/review/<campaign>-reviewer-a.json \
+  --queue-b benchmark-data/review/<campaign>-reviewer-b.json \
+  --submissions-a benchmark-data/review/submissions/reviewer-a \
+  --submissions-b benchmark-data/review/submissions/reviewer-b \
+  --output benchmark-data/review/<campaign>-status.json
+```
+
+The report pairs reviews by immutable page evidence, computes campaign-level
+agreement weighted by aligned card count, lists every unresolved field, and marks
+`readyForAdjudication` only after every page has two valid independent reviews.
+
 After a reviewer chooses a card root, list the deterministic numeric candidates:
 
 ```bash
