@@ -265,6 +265,27 @@ describe("extraction preannotation", () => {
     expect(result.evidenceValidation.valid).toBe(true);
   });
 
+  it("isolates a root with no product title as a grounded abstention", () => {
+    const observation = page([
+      node("card", undefined, "article"),
+      node("unit", "card", "span", "$7.42 / sq ft")
+    ]);
+
+    const result = preannotateExtraction(item("area"), observation);
+
+    expect(result.outcome).toBe("abstained");
+    expect(result.method).toBe("explicit-abstention");
+    expect(result.extraction).toEqual({
+      cardNodeId: "card",
+      title: {
+        value: "$7.42 / sq ft",
+        evidenceNodeIds: ["unit"]
+      },
+      abstainReason: "not-a-product"
+    });
+    expect(result.evidenceValidation).toEqual({ valid: true, issues: [] });
+  });
+
   it("prefers a product link over promotional and descriptive image text", () => {
     const observation = page([
       node("card", undefined, "article"),

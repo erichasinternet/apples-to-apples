@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Ninth bounded depth-expansion wave on twenty qualified training domains. Forty unseen listing queries contribute exactly eight targets per supported dimension without changing domain assignments or supplying site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "purebulk",
+      "label": "PureBulk",
+      "hostname": "purebulk.com",
+      "stratum": "supplements",
+      "searchUrlTemplate": "https://purebulk.com/search?q={query}",
+      "queries": [
+        {"id": "citrulline-malate", "query": "citrulline malate", "dimension": "mass"},
+        {"id": "taurine-powder", "query": "taurine powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "whole-spice",
+      "label": "Whole Spice",
+      "hostname": "www.wholespice.com",
+      "stratum": "direct-to-consumer-bulk-spice-retail",
+      "searchUrlTemplate": "https://www.wholespice.com/search?q={query}",
+      "queries": [
+        {"id": "ginger", "query": "ginger", "dimension": "mass"},
+        {"id": "fennel", "query": "fennel", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "myspicer",
+      "label": "MySpicer",
+      "hostname": "www.myspicer.com",
+      "stratum": "wholesale-spices",
+      "searchUrlTemplate": "https://www.myspicer.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "black-pepper", "query": "black pepper", "dimension": "mass"},
+        {"id": "curry-powder", "query": "curry powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "bulk-priced-food-shoppe",
+      "label": "Bulk Priced Food Shoppe",
+      "hostname": "bulkpricedfoodshoppe.com",
+      "stratum": "independent-bulk-food-retail",
+      "searchUrlTemplate": "https://bulkpricedfoodshoppe.com/search/?q={query}",
+      "queries": [
+        {"id": "walnuts", "query": "walnuts", "dimension": "mass"},
+        {"id": "granola", "query": "granola", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "alan-janitorial",
+      "label": "Alan Janitorial",
+      "hostname": "www.alanjanitorial.com",
+      "stratum": "cleaning-equipment",
+      "searchUrlTemplate": "https://www.alanjanitorial.com/search?q={query}",
+      "queries": [
+        {"id": "disinfectant", "query": "disinfectant", "dimension": "volume"},
+        {"id": "restroom-cleaner", "query": "restroom cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "detail-king",
+      "label": "Detail King",
+      "hostname": "www.detailking.com",
+      "stratum": "auto-detailing",
+      "searchUrlTemplate": "https://www.detailking.com/search?q={query}",
+      "queries": [
+        {"id": "bug-remover", "query": "bug remover", "dimension": "volume"},
+        {"id": "carpet-shampoo", "query": "carpet shampoo", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "ethos-car-care",
+      "label": "Ethos Car Care",
+      "hostname": "ethoscarcare.com",
+      "stratum": "direct-to-consumer-car-care",
+      "searchUrlTemplate": "https://ethoscarcare.com/search?q={query}",
+      "queries": [
+        {"id": "drying-aid", "query": "drying aid", "dimension": "volume"},
+        {"id": "waterless-wash", "query": "waterless wash", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "armour-detail-supply",
+      "label": "Armour Detail Supply",
+      "hostname": "armourdetailsupply.com",
+      "stratum": "independent-detailing-chemical-brand",
+      "searchUrlTemplate": "https://armourdetailsupply.com/search?q={query}",
+      "queries": [
+        {"id": "clay-lubricant", "query": "clay lubricant", "dimension": "volume"},
+        {"id": "bug-remover", "query": "bug remover", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "mountainside-medical",
+      "label": "Mountainside Medical Equipment",
+      "hostname": "www.mountainside-medical.com",
+      "stratum": "independent-medical-equipment-retail",
+      "searchUrlTemplate": "https://www.mountainside-medical.com/search?q={query}",
+      "queries": [
+        {"id": "lancets", "query": "lancets", "dimension": "count"},
+        {"id": "cotton-swabs", "query": "cotton swabs", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "allegro-medical",
+      "label": "Allegro Medical",
+      "hostname": "www.allegromedical.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.allegromedical.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "compression-bandages", "query": "compression bandages", "dimension": "count"},
+        {"id": "bed-pads", "query": "bed pads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "md-supplies",
+      "label": "MD Supplies",
+      "hostname": "mdsupplies.com",
+      "stratum": "independent-medical-supply-retail",
+      "searchUrlTemplate": "https://mdsupplies.com/search?q={query}",
+      "queries": [
+        {"id": "tongue-depressors", "query": "tongue depressors", "dimension": "count"},
+        {"id": "alcohol-pads", "query": "alcohol pads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "grayline-medical",
+      "label": "Grayline Medical",
+      "hostname": "www.graylinemedical.com",
+      "stratum": "clinical-medical-supply",
+      "searchUrlTemplate": "https://www.graylinemedical.com/search?q={query}",
+      "queries": [
+        {"id": "shoe-covers", "query": "shoe covers", "dimension": "count"},
+        {"id": "bouffant-caps", "query": "bouffant caps", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "fabric-wholesale-direct",
+      "label": "Fabric Wholesale Direct",
+      "hostname": "fabricwholesaledirect.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://fabricwholesaledirect.com/search?q={query}",
+      "queries": [
+        {"id": "chiffon-fabric", "query": "chiffon fabric", "dimension": "length"},
+        {"id": "organza-fabric", "query": "organza fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "core-fabrics",
+      "label": "Core Fabrics",
+      "hostname": "corefabricstore.com",
+      "stratum": "sustainable-apparel-fabric-retail",
+      "searchUrlTemplate": "https://corefabricstore.com/search?q={query}",
+      "queries": [
+        {"id": "denim-fabric", "query": "denim fabric", "dimension": "length"},
+        {"id": "silk-fabric", "query": "silk fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "blackbird-fabrics",
+      "label": "Blackbird Fabrics",
+      "hostname": "www.blackbirdfabrics.com",
+      "stratum": "independent-apparel-fabric-retail",
+      "searchUrlTemplate": "https://www.blackbirdfabrics.com/search?q={query}",
+      "queries": [
+        {"id": "corduroy-fabric", "query": "corduroy fabric", "dimension": "length"},
+        {"id": "jersey-fabric", "query": "jersey fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "rockywoods",
+      "label": "Rockywoods",
+      "hostname": "rockywoods.com",
+      "stratum": "technical-outdoor-fabric",
+      "searchUrlTemplate": "https://rockywoods.com/search?q={query}",
+      "queries": [
+        {"id": "hook-and-loop", "query": "hook and loop", "dimension": "length"},
+        {"id": "elastic-webbing", "query": "elastic webbing", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "tileon",
+      "label": "TileOn",
+      "hostname": "tileon.com",
+      "stratum": "online-porcelain-tile-retail",
+      "searchUrlTemplate": "https://tileon.com/search?q={query}",
+      "queries": [
+        {"id": "slate-tile", "query": "slate tile", "dimension": "area"},
+        {"id": "stone-tile", "query": "stone tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tiles-direct",
+      "label": "Tiles Direct",
+      "hostname": "www.tilesdirect.net",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.tilesdirect.net/search.php?search_query={query}",
+      "queries": [
+        {"id": "backsplash-tile", "query": "backsplash tile", "dimension": "area"},
+        {"id": "hexagon-tile", "query": "hexagon tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "artwalk-tile",
+      "label": "Artwalk Tile",
+      "hostname": "www.artwalktile.com",
+      "stratum": "specialty-tile-retail",
+      "searchUrlTemplate": "https://www.artwalktile.com/search?q={query}",
+      "queries": [
+        {"id": "limestone-tile", "query": "limestone tile", "dimension": "area"},
+        {"id": "hexagon-tile", "query": "hexagon tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tile-and-mosaic-depot",
+      "label": "Tile and Mosaic Depot",
+      "hostname": "tileandmosaicdepot.com",
+      "stratum": "online-tile-and-mosaic-retail",
+      "searchUrlTemplate": "https://tileandmosaicdepot.com/search?q={query}",
+      "queries": [
+        {"id": "limestone-tile", "query": "limestone tile", "dimension": "area"},
+        {"id": "pool-tile", "query": "pool tile", "dimension": "area"}
+      ]
+    }
+  ]
+}

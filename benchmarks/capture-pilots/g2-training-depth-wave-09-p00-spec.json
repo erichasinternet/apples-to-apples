@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-depth-wave-09-p00",
+  "capturedAt": "2026-07-26T22:45:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/training-depth-wave-09.json",
+  "requestedCaptureAttempts": 40,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T22-22-13-724Z",
+      "pageIds": [
+        "grayline-medical--shoe-covers",
+        "alan-janitorial--disinfectant",
+        "purebulk--citrulline-malate",
+        "fabric-wholesale-direct--chiffon-fabric",
+        "mountainside-medical--lancets",
+        "artwalk-tile--limestone-tile",
+        "tiles-direct--backsplash-tile",
+        "md-supplies--tongue-depressors",
+        "myspicer--black-pepper",
+        "whole-spice--ginger"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T22-22-27-874Z",
+      "pageIds": [
+        "grayline-medical--bouffant-caps",
+        "whole-spice--fennel",
+        "md-supplies--alcohol-pads",
+        "artwalk-tile--hexagon-tile",
+        "alan-janitorial--restroom-cleaner",
+        "core-fabrics--silk-fabric",
+        "mountainside-medical--cotton-swabs",
+        "allegro-medical--bed-pads",
+        "ethos-car-care--waterless-wash"
+      ]
+    }
+  ],
+  "samplingFinding": "Twenty-seven of forty unseen query pages on twenty previously qualified training domains produced full-page captures. Thirteen attempts ended in bounded launch, navigation, or capture errors. Manual inspection, minimum-root validation, and frozen per-root evidence validation rejected eight successful captures. The accepted set is nineteen of forty pages and 223 frozen roots, a 47.5% strict yield.",
+  "visualValidationFinding": "All twenty-seven successful full-page annotation views were inspected at original resolution. Nineteen pages and 223 frozen roots were accepted across mass, volume, count, length, and area. The accepted evidence includes price ranges, sale and crossed-out prices, per-yard, per-half-metre, per-metre, per-square-foot, per-each, package-count, gallon, ounce, liter, milliliter, kilogram, physical-dimension, gauge, case-count, and query-adjacent product expressions. Bulk Priced Food Shoppe walnuts and granola and Blackbird Fabrics corduroy were rejected because their result sets were dominated by products unrelated to the query. Blackbird Fabrics jersey and TileOn stone were rejected because fixed controls covered selected textual product evidence. Ethos Car Care drying aid and MySpicer curry powder were rejected because they produced fewer than eight frozen roots. Rockywoods hook and loop was rejected because the run exhausted its per-root screenshot budget and produced no candidate screenshots. Fixed widgets on accepted pages do not cover selected textual title, price, or quantity evidence."
+}

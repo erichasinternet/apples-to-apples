@@ -76,10 +76,12 @@ export function preannotateExtraction(
   const textCandidates = cardNodes
     .map((node) => subtreeTextCandidate(node, children))
     .filter((candidate) => candidate.text);
-  const title = selectTitle(cardNodes);
+  const selectedTitle = selectTitle(cardNodes);
+  const title = selectedTitle ?? selectFallbackTitle(cardNodes);
   if (!title) {
-    throw new Error(`${item.id}: reviewed card has no groundable title`);
+    throw new Error(`${item.id}: reviewed card has no textual evidence`);
   }
+  const fallbackTitle = !selectedTitle;
 
   const prices = selectPriceCandidates(textCandidates);
   const nativeUnitPrice =
@@ -104,7 +106,7 @@ export function preannotateExtraction(
 
   let extraction: ModelProductExtraction;
   let method: ExtractionPreannotation["method"];
-  if (nativeUnitPrice) {
+  if (nativeUnitPrice && !fallbackTitle) {
     extraction = {
       cardNodeId: item.cardNodeId,
       title: {
@@ -139,7 +141,7 @@ export function preannotateExtraction(
         : {})
     };
     method = "native-unit-price";
-  } else if (currentPrice && quantity) {
+  } else if (currentPrice && quantity && !fallbackTitle) {
     extraction = {
       cardNodeId: item.cardNodeId,
       title: {
@@ -167,7 +169,9 @@ export function preannotateExtraction(
         value: title.text,
         evidenceNodeIds: [title.nodeId]
       },
-      abstainReason: abstentionReason(prices, quantity)
+      abstainReason: fallbackTitle
+        ? "not-a-product"
+        : abstentionReason(prices, quantity)
     };
     method = "explicit-abstention";
   }
@@ -216,6 +220,24 @@ function selectTitle(
       right.text.length - left.text.length ||
       left.nodeId.localeCompare(right.nodeId)
   )[0];
+}
+
+function selectFallbackTitle(
+  nodes: ObservedNode[]
+): { nodeId: string; text: string } | undefined {
+  return nodes
+    .flatMap((node) =>
+      nodeStrings(node).map((value) => ({
+        nodeId: node.id,
+        text: value.replace(/\s+/g, " ").trim()
+      }))
+    )
+    .filter((candidate) => candidate.text.length > 0)
+    .sort(
+      (left, right) =>
+        left.text.length - right.text.length ||
+        left.nodeId.localeCompare(right.nodeId)
+    )[0];
 }
 
 function cleanTitle(value: string): string | undefined {
