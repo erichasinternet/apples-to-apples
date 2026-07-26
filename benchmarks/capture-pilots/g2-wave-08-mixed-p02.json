@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "pilotId": "g2-wave-08-mixed-p02",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-26T07:16:16.434Z",
+  "source": {
+    "siteIds": ["atwood-rope", "morebeer", "northern-brewer"],
+    "cohort": "training",
+    "strata": ["rope-cordage", "brewing-supply"],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "13b5a2650b9d15647d29d5d4325b5cf23bd34ae7cdcc7229097748c66ac9c88b"
+    ],
+    "collectorSha256": [
+      "3c400ca745c0a5564b3c4e38ef2a092fabb37d2879ac8a00921a0d648656b9bf"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T07-12-25-533Z",
+      "runManifestSha256": "afe6a377b79b9297dc8c84b8603b1b5f4e539f35de37eb58a74953864ad72b06",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 10000
+    },
+    {
+      "runId": "2026-07-26T07-15-23-012Z",
+      "runManifestSha256": "e0bacbd99a91958c36b19a89e4fe23e0dc5443e3abe67f887b40db18ff729eec",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-26T07-15-38-271Z",
+      "runManifestSha256": "327230519beb5f85913c070bf1f9d57541fc84cd775ad5c174d0004b9066d93b",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-26T07-16-03-665Z",
+      "runManifestSha256": "fca81d9ff25ddbb8e680a7b923da116bd182062117692ad5438ece6b5caf748a",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 9,
+    "successfulCaptureAttempts": 6,
+    "acceptedPages": 6,
+    "qualifiedDomains": 3,
+    "rejectedDomains": 3
+  },
+  "captures": [
+    {
+      "siteId": "atwood-rope",
+      "pageId": "atwood-rope--utility-rope",
+      "capturedAt": "2026-07-26T07:12:53.702Z",
+      "viewportProfile": "narrow",
+      "viewport": { "width": 390, "height": 844 },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 9,
+      "candidateScreenshotsCaptured": 9,
+      "observationNodeCount": 195,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.06635071090047394,
+      "queryTokenCoverage": 1,
+      "observationSha256": "eb19d6870551e78e2f1ddb9b2ce43af8af2578e461029cc7e0ba13604a466c1c",
+      "annotationScreenshotSha256": "9c67a37d3a57b5103f5cb5be7566fce8b6bfd36df5e0a09c51fd6fef3350bd6a",
+      "provenanceAggregateSha256": "2092e7eeea0f516da130392287e1ea14aaf0972873253a0cd2b6f720ed25feff",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "atwood-rope",
+      "pageId": "atwood-rope--paracord",
+      "capturedAt": "2026-07-26T07:15:30.729Z",
+      "viewportProfile": "desktop",
+      "viewport": { "width": 1440, "height": 1000 },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 10,
+      "candidateScreenshotsCaptured": 10,
+      "observationNodeCount": 247,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "4845e4ccee94d240bfc768aa0950a251881896cef12192520e5ae3e5b8ecf3b7",
+      "annotationScreenshotSha256": "5465a487117084296d0eb4cba4466da224ffc5d75e33cec730b4ed82bd4ef537",
+      "provenanceAggregateSha256": "a2362152e4e3a2d46a8e5fae36736fec1d55c341281c10f14be81cd52ea4dd50",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "morebeer",
+      "pageId": "morebeer--hops",
+      "capturedAt": "2026-07-26T07:12:43.987Z",
+      "viewportProfile": "narrow",
+      "viewport": { "width": 390, "height": 844 },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 994,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.014047879450723052,
+      "queryTokenCoverage": 1,
+      "observationSha256": "adc6ee9264a7697818dc3b79e85794a0b825b214479553a16ddb765cf4fdfae8",
+      "annotationScreenshotSha256": "e87398759d562452d9a3d23f08474ce228f1720fb66e7f08cb2604dfb6bfa277",
+      "provenanceAggregateSha256": "3214fd974d29784103a9ef6a7efbb20505f853e512b061e26f90cee78abc2822",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "morebeer",
+      "pageId": "morebeer--malt-extract",
+      "capturedAt": "2026-07-26T07:15:56.073Z",
+      "viewportProfile": "desktop",
+      "viewport": { "width": 1440, "height": 1000 },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1325,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.0049,
+      "queryTokenCoverage": 1,
+      "observationSha256": "9ebc5aac75502dcf5d42a62d5b7063d6c76aa6d34275e746e2ddc1180f59f1d1",
+      "annotationScreenshotSha256": "400790b56faea034812d1649c86def30635138df8791f069f78602cbe25e7caf",
+      "provenanceAggregateSha256": "600a30043f32b2d3a1b52258ee2543f20e75acdb0ab36e5c7994d3f7f559dc80",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "northern-brewer",
+      "pageId": "northern-brewer--grain",
+      "capturedAt": "2026-07-26T07:14:41.762Z",
+      "viewportProfile": "desktop",
+      "viewport": { "width": 1440, "height": 1000 },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 965,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0.004111111111111111,
+      "queryTokenCoverage": 1,
+      "observationSha256": "57b9353ab81ff5dff4850efe7f7e4d462fb2d7d2f34a69079b038959148a4696",
+      "annotationScreenshotSha256": "cb51c6a61ce39c79361bdbf180275176897d120203b45ade52a14c8f6460c5d3",
+      "provenanceAggregateSha256": "64360e8dcf099a3ae5430aab8c54b4bd782f8687a7bd707ca058bafc344e3b0b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "northern-brewer",
+      "pageId": "northern-brewer--hops",
+      "capturedAt": "2026-07-26T07:16:16.434Z",
+      "viewportProfile": "narrow",
+      "viewport": { "width": 390, "height": 844 },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 821,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0.013610402235994653,
+      "queryTokenCoverage": 1,
+      "observationSha256": "9ccad3351f7f7ebbac3fbb0494d8555a0699bafd74d4752c69c3e7abfb025929",
+      "annotationScreenshotSha256": "da4523dc6373f68d28a65f9072d10d6a8d2efc2a963c5b3af184a1bb66508b06",
+      "provenanceAggregateSha256": "fac2f6b4c0c8d95895227fb09549d6821fb93bbbd56b937ca7ffba0d55a0b623",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

@@ -150,6 +150,24 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-08-p01.json",
       "promotedAt": "2026-07-26T07:08:00.000Z"
+    },
+    {
+      "siteId": "atwood-rope",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p02.json",
+      "promotedAt": "2026-07-26T07:18:00.000Z"
+    },
+    {
+      "siteId": "morebeer",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p02.json",
+      "promotedAt": "2026-07-26T07:18:00.000Z"
+    },
+    {
+      "siteId": "northern-brewer",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p02.json",
+      "promotedAt": "2026-07-26T07:18:00.000Z"
     }
   ]
 }

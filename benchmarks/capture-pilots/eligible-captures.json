@@ -828,6 +828,78 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-08-length-p01.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "atwood-rope",
+      "cohort": "training",
+      "pageId": "atwood-rope--utility-rope",
+      "captureTimestamp": "2026-07-26T07:12:53.702Z",
+      "observationSha256": "eb19d6870551e78e2f1ddb9b2ce43af8af2578e461029cc7e0ba13604a466c1c",
+      "annotationScreenshotSha256": "9c67a37d3a57b5103f5cb5be7566fce8b6bfd36df5e0a09c51fd6fef3350bd6a",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p02.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-08-mixed-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "atwood-rope",
+      "cohort": "training",
+      "pageId": "atwood-rope--paracord",
+      "captureTimestamp": "2026-07-26T07:15:30.729Z",
+      "observationSha256": "4845e4ccee94d240bfc768aa0950a251881896cef12192520e5ae3e5b8ecf3b7",
+      "annotationScreenshotSha256": "5465a487117084296d0eb4cba4466da224ffc5d75e33cec730b4ed82bd4ef537",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p02.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-08-mixed-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "morebeer",
+      "cohort": "training",
+      "pageId": "morebeer--hops",
+      "captureTimestamp": "2026-07-26T07:12:43.987Z",
+      "observationSha256": "adc6ee9264a7697818dc3b79e85794a0b825b214479553a16ddb765cf4fdfae8",
+      "annotationScreenshotSha256": "e87398759d562452d9a3d23f08474ce228f1720fb66e7f08cb2604dfb6bfa277",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p02.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-08-mixed-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "morebeer",
+      "cohort": "training",
+      "pageId": "morebeer--malt-extract",
+      "captureTimestamp": "2026-07-26T07:15:56.073Z",
+      "observationSha256": "9ebc5aac75502dcf5d42a62d5b7063d6c76aa6d34275e746e2ddc1180f59f1d1",
+      "annotationScreenshotSha256": "400790b56faea034812d1649c86def30635138df8791f069f78602cbe25e7caf",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p02.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-08-mixed-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "northern-brewer",
+      "cohort": "training",
+      "pageId": "northern-brewer--grain",
+      "captureTimestamp": "2026-07-26T07:14:41.762Z",
+      "observationSha256": "57b9353ab81ff5dff4850efe7f7e4d462fb2d7d2f34a69079b038959148a4696",
+      "annotationScreenshotSha256": "cb51c6a61ce39c79361bdbf180275176897d120203b45ade52a14c8f6460c5d3",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p02.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-08-mixed-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "northern-brewer",
+      "cohort": "training",
+      "pageId": "northern-brewer--hops",
+      "captureTimestamp": "2026-07-26T07:16:16.434Z",
+      "observationSha256": "9ccad3351f7f7ebbac3fbb0494d8555a0699bafd74d4752c69c3e7abfb025929",
+      "annotationScreenshotSha256": "da4523dc6373f68d28a65f9072d10d6a8d2efc2a963c5b3af184a1bb66508b06",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p02.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-08-mixed-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

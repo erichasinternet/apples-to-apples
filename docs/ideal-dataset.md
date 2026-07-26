@@ -362,6 +362,22 @@ selection representation still round-trips all 626 machine-audit-passing
 records exactly in
 [`g2-selection-representation-p02.json`](../benchmarks/reviews/g2-selection-representation-p02.json).
 
+The final Wave 08 pass qualifies Atwood Rope, MoreBeer, and Northern Brewer and
+records explicit failures for the six remaining candidates. Wave 08 therefore
+ends with a complete disposition of all 20 candidate domains: six promoted and
+14 rejected. The current blinded campaign in
+[`g2-pilot-p05.json`](../benchmarks/review-campaigns/g2-pilot-p05.json)
+contains 28 qualified training domains, 75 pages, and 710 frozen roots. Its
+headed sweep loaded every screenshot and root with no console errors or review
+writes. The new captures deliberately retain non-product and wrong-product
+results such as articles, grain mills, and equipment kits. The diagnostic in
+[`g2-campaign-preannotation-p04.json`](../benchmarks/reviews/g2-campaign-preannotation-p04.json)
+produces 191 tentative comparables and 519 abstentions, with 17 comparables
+quarantined. The compact representation audit in
+[`g2-selection-representation-p03.json`](../benchmarks/reviews/g2-selection-representation-p03.json)
+round-trips all 693 retained suggestions exactly across 75 pages and 28 sites.
+All 710 roots remain unreviewed and ineligible for training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

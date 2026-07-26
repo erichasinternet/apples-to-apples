@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "auditId": "g2-campaign-preannotation-p04",
+  "createdAt": "2026-07-26T07:21:00Z",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p05-reviewer-a-campaign.json",
+    "campaignSha256": "24411ab3f21716da95c6c68656554376c3799fe67892b8b7b23ae3f457267851",
+    "queueSha256": "a43a5d371273bb2cb752a4f637eb1c539815d6cfaa623670dd0b774eca9fe79a",
+    "preannotationSha256": "ff24647c6926e1543d8bca1337dbc85795948ff4ba3c67f511781dd10d827917",
+    "auditSha256": "20b7b5d11cee1278763924ce5d68e59ddb7223b399fd8f1e2c169a45aa55d710",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "campaign": {
+    "pages": 75,
+    "cards": 710,
+    "targetDimensions": {
+      "area": 56,
+      "count": 196,
+      "length": 182,
+      "mass": 228,
+      "volume": 48
+    },
+    "candidateEvidence": {
+      "withTitle": 703,
+      "withCurrentPrice": 690,
+      "withNativeUnitPriceInOneNode": 39,
+      "withPackageQuantity": 244
+    }
+  },
+  "dimensionConditionedPreannotation": {
+    "tentativeComparable": 191,
+    "abstained": 519,
+    "evidenceInvalid": 4,
+    "methods": {
+      "explicit-abstention": 519,
+      "native-unit-price": 85,
+      "price-and-package": 106
+    }
+  },
+  "semanticAudit": {
+    "machineAuditPassingComparableSuggestions": 174,
+    "machineAuditPassingAbstentionSuggestions": 519,
+    "quarantinedComparableSuggestions": 17,
+    "quarantinedAbstentionSuggestions": 0,
+    "quarantineReasons": {
+      "ambiguous-decimal-quantity": 1,
+      "equipment-capacity-as-quantity": 10,
+      "invalid-evidence": 4,
+      "physical-dimension-as-quantity": 3
+    }
+  },
+  "newDomainOutcomes": {
+    "atwood-rope": {
+      "cards": 19,
+      "tentativeComparable": 0,
+      "abstained": 19,
+      "machineAuditPassing": 19
+    },
+    "morebeer": {
+      "cards": 24,
+      "tentativeComparable": 1,
+      "abstained": 23,
+      "machineAuditPassing": 24
+    },
+    "northern-brewer": {
+      "cards": 24,
+      "tentativeComparable": 11,
+      "abstained": 13,
+      "machineAuditPassing": 24
+    }
+  },
+  "representationChanges": [
+    "No extraction heuristic changed for this append-only campaign expansion.",
+    "Added 67 roots from unfamiliar rope and brewing storefronts, including equipment and article negatives mixed with commodity results."
+  ],
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "The source cards and all preannotations remain unreviewed. Machine checks can quarantine contradictions but cannot establish semantic correctness; two independent reviews and adjudication remain required."
+  },
+  "decision": "retain-as-blinded-review-aid-only"
+}
