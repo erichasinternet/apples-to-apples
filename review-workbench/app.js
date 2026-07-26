@@ -73,6 +73,9 @@ await initialize();
 
 async function initialize() {
   state.queue = await fetchJson("/api/queue");
+  for (const item of state.queue.items) {
+    item.draftCount = readDraftProducts(item).length;
+  }
   const modeLabel =
     state.queue.mode === "adjudication" ? "adjudication" : "blinded";
   fields.queueMeta.textContent = `${state.queue.reviewerId} · ${state.queue.cohort} · ${modeLabel}`;
@@ -91,10 +94,22 @@ function renderPageList() {
       const button = element("button", "page-button");
       button.type = "button";
       button.dataset.pageId = item.pageId;
+      const progress = item.saved
+        ? "✓"
+        : item.draftCount
+          ? `${item.draftCount}`
+          : "";
       button.append(
         element("span", "", item.pageId),
-        element("span", "saved-mark", item.saved ? "✓" : "")
+        element(
+          "span",
+          item.saved ? "saved-mark" : "draft-mark",
+          progress
+        )
       );
+      if (!item.saved && item.draftCount) {
+        button.title = `${item.draftCount} draft card decisions`;
+      }
       button.addEventListener("click", () => openPage(item.pageId));
       return button;
     })
@@ -108,7 +123,7 @@ async function openPage(pageId) {
   state.observation = await fetchJson(
     `/api/observation?pageId=${encodeURIComponent(pageId)}`
   );
-  state.products = [];
+  state.products = state.item.saved ? [] : readDraftProducts(state.item);
   clearSelection();
   fields.pageTitle.textContent = pageId;
   fields.captureImage.src = `/api/screenshot?pageId=${encodeURIComponent(pageId)}`;
@@ -143,13 +158,23 @@ for (const input of [
   fields.currentPrice,
   fields.nativeUnitPrice,
   fields.packageQuantity,
-  fields.packCount,
-  fields.status
+  fields.packCount
 ]) {
   input.addEventListener("change", renderPointer);
 }
+fields.status.addEventListener("change", () => {
+  if (fields.status.value && fields.status.value !== "comparable") {
+    clearValueSelections();
+  }
+  renderPointer();
+});
 fields.scope.addEventListener("change", () => {
-  if (fields.scope.value === "non-product") fields.status.value = "not-a-product";
+  if (fields.scope.value === "non-product") {
+    fields.status.value = "not-a-product";
+    clearValueSelections();
+  } else if (fields.status.value === "not-a-product") {
+    fields.status.value = "";
+  }
   renderPointer();
 });
 
@@ -206,18 +231,23 @@ async function selectCard(cardNodeId) {
 
 function renderCardFields() {
   const descendants = state.observation.nodes
-    .filter((node) => node.text && isDescendant(node.id, state.cardNodeId))
-    .filter((node) => node.text.trim().length > 1)
-    .sort((left, right) => area(right.bounds) - area(left.bounds))
-    .slice(0, 40);
+    .filter(
+      (node) =>
+        node.id === state.cardNodeId ||
+        isDescendant(node.id, state.cardNodeId)
+    )
+    .map((node) => ({ node, content: nodeContent(node) }))
+    .filter(({ content }) => content.length > 1)
+    .sort((left, right) => area(right.node.bounds) - area(left.node.bounds))
+    .slice(0, 60);
   fields.titleChoices.replaceChildren(
-    ...descendants.map((node) => {
+    ...descendants.map(({ node, content }) => {
       const label = element("label", "title-choice");
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
       checkbox.value = node.id;
       checkbox.addEventListener("change", renderPointer);
-      label.append(checkbox, element("span", "", `${node.id} · ${node.text}`));
+      label.append(checkbox, element("span", "", `${node.id} · ${content}`));
       return label;
     })
   );
@@ -226,10 +256,11 @@ function renderCardFields() {
   fillCandidateSelect(fields.packageQuantity, "package-quantity");
   fillCandidateSelect(fields.packCount, "pack-count");
   fields.status.replaceChildren(
+    option("", "Choose status"),
     ...statuses.map((status) => option(status, status))
   );
   fields.scope.value = "primary-results";
-  fields.status.value = "comparable";
+  fields.status.value = "";
   fields.notes.value = "";
   state.draftChallengeTags = [];
   renderSourceReviews();
@@ -359,7 +390,8 @@ function renderPointer() {
   fields.pointerPreview.textContent = state.cardNodeId ? pointerValue() : "";
   const hasTitle =
     fields.titleChoices.querySelectorAll("input:checked").length > 0;
-  fields.addProduct.disabled = !state.cardNodeId || !hasTitle;
+  fields.addProduct.disabled =
+    !state.cardNodeId || !hasTitle || !pointerFieldsAreComplete();
 }
 
 async function addProduct() {
@@ -377,6 +409,7 @@ async function addProduct() {
   );
   if (existing >= 0) state.products.splice(existing, 1, product);
   else state.products.push(product);
+  persistDraft();
   renderProducts();
   const reviewed = new Set(state.products.map((candidate) => candidate.cardNodeId));
   const next = state.item.candidateCardNodeIds.find(
@@ -417,6 +450,7 @@ function renderProducts() {
         state.products = state.products.filter(
           (candidate) => candidate.cardNodeId !== product.cardNodeId
         );
+        persistDraft();
         renderProducts();
       });
       row.append(summary, remove);
@@ -449,7 +483,103 @@ async function submitReview() {
     return;
   }
   state.item.saved = true;
+  state.item.draftCount = 0;
+  localStorage.removeItem(draftKey(state.item));
   fields.saveState.textContent = "Submitted";
+  renderPageList();
+}
+
+function pointerFieldsAreComplete() {
+  const status = fields.status.value;
+  if (!status) return false;
+  const currentPrice = fields.currentPrice.value !== "NONE";
+  const nativeUnitPrice = fields.nativeUnitPrice.value !== "NONE";
+  const packageQuantity = fields.packageQuantity.value !== "NONE";
+  const packCount = fields.packCount.value !== "NONE";
+  if (packCount && !packageQuantity) return false;
+  if (status === "comparable") {
+    return (
+      fields.scope.value !== "non-product" &&
+      (nativeUnitPrice || (currentPrice && packageQuantity))
+    );
+  }
+  return (
+    !currentPrice &&
+    !nativeUnitPrice &&
+    !packageQuantity &&
+    !packCount &&
+    (status !== "not-a-product" || fields.scope.value === "non-product")
+  );
+}
+
+function clearValueSelections() {
+  fields.currentPrice.value = "NONE";
+  fields.nativeUnitPrice.value = "NONE";
+  fields.packageQuantity.value = "NONE";
+  fields.packCount.value = "NONE";
+}
+
+function draftKey(item) {
+  return [
+    "evidence-review-draft-v1",
+    state.queue.queueId,
+    item.reviewTemplate.reviewId,
+    item.source.observationSha256
+  ].join(":");
+}
+
+function readDraftProducts(item) {
+  try {
+    const raw = localStorage.getItem(draftKey(item));
+    if (!raw) return [];
+    const draft = JSON.parse(raw);
+    if (
+      draft.version !== 1 ||
+      draft.queueId !== state.queue.queueId ||
+      draft.reviewId !== item.reviewTemplate.reviewId ||
+      draft.observationSha256 !== item.source.observationSha256 ||
+      !Array.isArray(draft.products)
+    ) {
+      return [];
+    }
+    const expectedCards = new Set(item.candidateCardNodeIds);
+    const seenCards = new Set();
+    return draft.products.filter((product) => {
+      if (
+        !product ||
+        typeof product !== "object" ||
+        !expectedCards.has(product.cardNodeId) ||
+        seenCards.has(product.cardNodeId) ||
+        typeof product.target !== "string" ||
+        !product.target.startsWith(`CARD ${product.cardNodeId}\n`)
+      ) {
+        return false;
+      }
+      seenCards.add(product.cardNodeId);
+      return true;
+    });
+  } catch {
+    return [];
+  }
+}
+
+function persistDraft() {
+  if (!state.item || state.item.saved) return;
+  state.item.draftCount = state.products.length;
+  if (state.products.length === 0) {
+    localStorage.removeItem(draftKey(state.item));
+  } else {
+    localStorage.setItem(
+      draftKey(state.item),
+      JSON.stringify({
+        version: 1,
+        queueId: state.queue.queueId,
+        reviewId: state.item.reviewTemplate.reviewId,
+        observationSha256: state.item.source.observationSha256,
+        products: state.products
+      })
+    );
+  }
   renderPageList();
 }
 
@@ -567,6 +697,21 @@ function contains(bounds, x, y) {
 
 function area(bounds) {
   return bounds.width * bounds.height;
+}
+
+function nodeContent(node) {
+  return [
+    node.text,
+    node.accessibleName,
+    node.attributes?.ariaLabel,
+    node.attributes?.alt,
+    node.attributes?.title
+  ]
+    .filter((value) => typeof value === "string" && value.trim())
+    .filter((value, index, values) => values.indexOf(value) === index)
+    .join(" | ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function option(value, label) {

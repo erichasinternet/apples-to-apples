@@ -14,7 +14,10 @@ const observation = {
     node("price", "card", "$12.00", 35, 190, 100, 35),
     node("quantity", "card", "12 oz", 35, 240, 100, 35),
     node("card2", "root", undefined, 320, 100, 250, 300, "article"),
-    node("title2", "card2", "Coffee, 24 oz", 335, 125, 200, 45),
+    {
+      ...node("title2", "card2", undefined, 335, 125, 200, 45),
+      accessibleName: "Coffee, 24 oz"
+    },
     node("price2", "card2", "$20.00", 335, 190, 100, 35),
     node("quantity2", "card2", "24 oz", 335, 240, 100, 35)
   ],
@@ -123,7 +126,10 @@ test("builds and submits a blinded evidence-pointer review", async ({ page }) =>
   await page.getByRole("button", { name: "Review card 1 of 2" }).click();
   await expect(page.locator("#captureOverlay")).toBeVisible();
   await page.locator('#titleChoices input[value="title"]').check();
+  await expect(page.getByRole("button", { name: "Add product" })).toBeDisabled();
+  await page.locator("#status").selectOption("comparable");
   await page.locator("#currentPrice").selectOption("price@p0");
+  await expect(page.getByRole("button", { name: "Add product" })).toBeDisabled();
   await page.locator("#packageQuantity").selectOption("quantity@q0");
 
   const expectedTarget = [
@@ -140,10 +146,20 @@ test("builds and submits a blinded evidence-pointer review", async ({ page }) =>
   await page.getByRole("button", { name: "Add product" }).click();
   await expect(page.locator("#products .product-row")).toHaveCount(1);
   await expect(page.locator("#productCount")).toHaveText("1/2 cards");
+  await expect(page.locator(".page-button .draft-mark")).toHaveText("1");
   await expect(page.locator("#pointerPreview")).toContainText("CARD card2");
   await expect(page.getByRole("button", { name: "Submit review" })).toBeDisabled();
 
+  await page.reload();
+  await expect(page.locator("#productCount")).toHaveText("1/2 cards");
+  await expect(page.locator(".page-button .draft-mark")).toHaveText("1");
+  await page.getByRole("button", { name: "Review card 1 of 2" }).click();
+  await expect(page.locator("#currentPrice")).toHaveValue("price@p0");
+  await expect(page.locator("#packageQuantity")).toHaveValue("quantity@q0");
+  await page.getByRole("button", { name: "Review card 2 of 2" }).click();
+  await expect(page.locator("#titleChoices")).toContainText("Coffee, 24 oz");
   await page.locator('#titleChoices input[value="title2"]').check();
+  await page.locator("#status").selectOption("comparable");
   await page.locator("#currentPrice").selectOption("price2@p0");
   await page.locator("#packageQuantity").selectOption("quantity2@q0");
   const expectedTarget2 = [

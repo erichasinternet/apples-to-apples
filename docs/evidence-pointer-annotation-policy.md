@@ -117,7 +117,12 @@ The workbench binds to `127.0.0.1`, serves only queue-declared assets beneath
 the immutable observation, hashes, and complete frozen card-root set, and refuses
 to overwrite an existing review. Reviewers can select any frozen card root
 directly, and the workbench advances to the next unreviewed root after each label.
-Submission remains disabled until every frozen root has a card-scoped decision.
+Partial page decisions are retained in browser-local storage under a key bound to
+the queue, review ID, and observation hash; they are removed after immutable
+submission and never sent to another reviewer. The editor requires an explicit
+status and a structurally valid comparable or abstention pointer before recording
+each card. Submission remains disabled until every frozen root has a card-scoped
+decision.
 
 Audit two submission directories as a complete campaign. Missing reviews are
 reported as pending progress; malformed, duplicate, unexpected, identity-drifted,

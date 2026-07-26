@@ -164,6 +164,13 @@ legend {
   font-weight: 700;
 }
 
+.draft-mark {
+  min-width: 20px;
+  color: #9a4b00;
+  font-weight: 700;
+  text-align: right;
+}
+
 .icon-button {
   width: 34px;
   min-width: 34px;
