@@ -55,6 +55,24 @@ describe("live benchmark corpus", () => {
     expect(new Set(sample.map((target) => target.siteId)).size).toBe(4);
   });
 
+  it("can select exact page ids for reproducible qualification follow-ups", () => {
+    const targets = expandTargets(targetManifest as CorpusTargetManifest);
+    const requested = [
+      targets[3]!.pageId,
+      targets[17]!.pageId,
+      targets[29]!.pageId
+    ];
+    const sample = selectTargets(targets, {
+      seed: 42,
+      pageIds: requested
+    });
+
+    expect(sample).toHaveLength(requested.length);
+    expect(new Set(sample.map((target) => target.pageId))).toEqual(
+      new Set(requested)
+    );
+  });
+
   it("assigns an exact deterministic narrow viewport share", () => {
     const targets = expandTargets(targetManifest as CorpusTargetManifest).slice(0, 10);
     const first = assignCaptureViewports(targets, {

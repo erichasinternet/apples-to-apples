@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "qualificationId": "wave-06-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-06.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "cardScreenshotBudgetMs": 10000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "genericConsentActionHandling": true,
+    "persistentCookieConsentHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "queryParametersCountAsQueryEvidence": false,
+    "queryEvidenceScope": "title, pathname, visible headings, and visible status text",
+    "minimumQueryTokenCoverage": 1,
+    "populatedSearchControlsCountAsQueryEvidence": false,
+    "exactPageTargeting": true
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T04-59-03-005Z",
+      "runManifestSha256": "2d56cf60ff2e057c069818795cb90b74b0efbb0db96dadfdb5b46542594b1f82",
+      "purpose": "one-page headed screening across all 17 wave-06 domains"
+    },
+    {
+      "runId": "2026-07-26T05-10-05-723Z",
+      "runManifestSha256": "17f7fcfc445f2d6db1ccc3db97a6febe5425d33c6cf014f6f58cd4dfbbdee51b",
+      "purpose": "diagnostic opposite-viewport follow-up before exact page targeting"
+    },
+    {
+      "runId": "2026-07-26T05-13-04-396Z",
+      "runManifestSha256": "da5a7f050dd02e5cc57996996f8ba8f9ce0a98559f057132fe9bc4fc77854593",
+      "purpose": "exact narrow-viewport second-page qualification"
+    },
+    {
+      "runId": "2026-07-26T05-15-01-131Z",
+      "runManifestSha256": "4d4917abb757dcfd14d7658bebd81c271021397216e39edec490d4dc9b18e03b",
+      "purpose": "exact desktop second-page qualification"
+    }
+  ],
+  "results": {
+    "fabricworm": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "fabricworm--canvas-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 1114,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "ee56dace94cfcfbe2c7c65391faceee0f9f3a649cd1650807edccc437c82a211",
+          "annotationScreenshotSha256": "e815906b40d2d99a44ecbcc2060002a5811a6e7daa499527dbce8327c0542afd",
+          "provenanceAggregateSha256": "8548559b7c1fefa2b3461ec3ba2449ef8961bb554376f872d8d27bdd564252b9",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "fabricworm--cotton-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 1012,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "9ea64c2491c2812219002edca16555ef7e9bfb38eb7f78cf8f243b6c31e1f25b",
+          "annotationScreenshotSha256": "70daa2997950844261c0143cd19ce3fd41d8a369b32ffeef33a87ff5aa90098f",
+          "provenanceAggregateSha256": "20e111a71c6138d8db76d4bc8ca0d45c7ba04f2fe484763299ef926a9bed1467",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "wholesale-marine": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "wholesale-marine--braided-rope",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 664,
+          "observationTruncated": false,
+          "dismissedObstructions": 12,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "9181b66618cb1ff695943b78540e51807cc1a703cc9d551d42d508da08e7df37",
+          "annotationScreenshotSha256": "39cf48f1c3c8cc83cfa1656048dc83b640c03183af8bdf388c386b1af40f7030",
+          "provenanceAggregateSha256": "c21b9084544df9c1e747dad6d0ec367cb214e043eebdbbf083efd589e58e9059",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "wholesale-marine--dock-line",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 386,
+          "observationTruncated": false,
+          "dismissedObstructions": 12,
+          "unresolvedObstructionCoverage": 0.07109004739336493,
+          "queryTokenCoverage": 1,
+          "observationSha256": "b28b51f50efc3de86f33813cbb12bbc00ececadb1e15abd452b5deb3bedfef4f",
+          "annotationScreenshotSha256": "6d7884b5e666d2282caba5b350d31c60813b0d9ba473e3be7da110373201fcf8",
+          "provenanceAggregateSha256": "9593526261e1417370be0ec689e226dfac827d5657f273655cfb97c292359a6d",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "fabric-mart-fabrics": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "fabric-mart-fabrics--cotton-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 552,
+          "observationTruncated": false,
+          "dismissedObstructions": 12,
+          "unresolvedObstructionCoverage": 0.005881638109126261,
+          "queryTokenCoverage": 1,
+          "observationSha256": "7620533ee674562e7cac800b0100991718d8208bd3092e75ff588467e0d83acf",
+          "annotationScreenshotSha256": "4ef19a87156576fc04e26919c20a88e5ab3fff9b12651430e81a272732bfb754",
+          "provenanceAggregateSha256": "ce73a1040153af743dbeccbcdcb4d00b94cfab40a2939b289601c35feb48756d",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "fabric-mart-fabrics--linen-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 608,
+          "observationTruncated": false,
+          "dismissedObstructions": 12,
+          "unresolvedObstructionCoverage": 0.0013444444444444445,
+          "queryTokenCoverage": 1,
+          "observationSha256": "f91c652ce78916d194ac96a263ab8f6a32d2b594ca022e219c2de69c1265e61b",
+          "annotationScreenshotSha256": "9934c47b4a31d5b7c932618af47e2ceafe2529f68caf44441ff42ab3fdf668ad",
+          "provenanceAggregateSha256": "d9e990e5f41d71bfb0af16ff37315c1787fd54a5005ab55606046a42692a2c3b",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "stonemountain-and-daughter": {
+      "status": "discard",
+      "reason": "Only half of the requested query appeared in visible result context and no reviewable candidates were frozen."
+    },
+    "tilebuys": {
+      "status": "discard",
+      "reason": "The headed mosaic-tile page exceeded the bounded timeout."
+    },
+    "my-spice-sage": {
+      "status": "discard",
+      "reason": "The headed green-tea page retained the requested query but produced no reviewable product candidates."
+    },
+    "tandy-leather": {
+      "status": "discard",
+      "reason": "The desktop page passed screening, but the distinct narrow leather-hide page exceeded the bounded timeout."
+    },
+    "nassau-national-cable": {
+      "status": "discard",
+      "reason": "The headed narrow copper-wire page exceeded the bounded timeout."
+    },
+    "savory-spice": {
+      "status": "discard",
+      "reason": "The headed search redirected across sites to Google and produced no reviewable candidates."
+    },
+    "packaging-price": {
+      "status": "discard",
+      "reason": "The narrow count page passed screening, but the distinct desktop shipping-boxes page exceeded the bounded timeout twice."
+    },
+    "marine-vinyl-fabric": {
+      "status": "discard",
+      "reason": "The headed outdoor-fabric page exceeded the bounded timeout."
+    },
+    "monterey-bay-herb-company": {
+      "status": "discard",
+      "reason": "Only half of the requested query appeared in visible result context."
+    },
+    "rope-com": {
+      "status": "discard",
+      "reason": "The headed search redirected across sites to Google and produced no reviewable candidates."
+    },
+    "mary-jo-fabrics": {
+      "status": "discard",
+      "reason": "The headed upholstery-fabric page exceeded the bounded timeout."
+    },
+    "the-tile-shop": {
+      "status": "discard",
+      "reason": "The headed narrow page showed no visible query evidence and produced no reviewable candidates."
+    },
+    "spiceology": {
+      "status": "discard",
+      "reason": "The headed black-pepper page exceeded the bounded timeout."
+    },
+    "stone-and-tile-shoppe": {
+      "status": "discard",
+      "reason": "The desktop page passed screening, but an unresolved obstruction covered 23% of the distinct narrow page and exceeded the frozen 20% gate."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "fabricworm",
+      "wholesale-marine",
+      "fabric-mart-fabrics"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "fabricworm",
+        "cohort": "training"
+      },
+      {
+        "siteId": "wholesale-marine",
+        "cohort": "training"
+      },
+      {
+        "siteId": "fabric-mart-fabrics",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

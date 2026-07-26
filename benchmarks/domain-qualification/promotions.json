@@ -102,6 +102,24 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-05-p00.json",
       "promotedAt": "2026-07-26T00:19:00.000Z"
+    },
+    {
+      "siteId": "fabricworm",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-06-p00.json",
+      "promotedAt": "2026-07-26T05:20:00.000Z"
+    },
+    {
+      "siteId": "wholesale-marine",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-06-p00.json",
+      "promotedAt": "2026-07-26T05:20:00.000Z"
+    },
+    {
+      "siteId": "fabric-mart-fabrics",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-06-p00.json",
+      "promotedAt": "2026-07-26T05:20:00.000Z"
     }
   ]
 }

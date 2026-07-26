@@ -316,10 +316,21 @@ export function getDomainSplit(
 
 export function selectTargets(
   targets: readonly CaptureTarget[],
-  options: { limit?: number; perSite?: number; siteIds?: readonly string[]; seed: number }
+  options: {
+    limit?: number;
+    perSite?: number;
+    siteIds?: readonly string[];
+    pageIds?: readonly string[];
+    seed: number;
+  }
 ): CaptureTarget[] {
   const siteIds = new Set(options.siteIds ?? []);
-  const filtered = siteIds.size > 0 ? targets.filter((target) => siteIds.has(target.siteId)) : [...targets];
+  const pageIds = new Set(options.pageIds ?? []);
+  const filtered = targets.filter(
+    (target) =>
+      (siteIds.size === 0 || siteIds.has(target.siteId)) &&
+      (pageIds.size === 0 || pageIds.has(target.pageId))
+  );
   const balanced =
     options.perSite === undefined
       ? filtered

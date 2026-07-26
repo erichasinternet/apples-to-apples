@@ -636,6 +636,78 @@
       "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-02-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabricworm",
+      "cohort": "training",
+      "pageId": "fabricworm--canvas-fabric",
+      "captureTimestamp": "2026-07-26T04:59:19.277Z",
+      "observationSha256": "ee56dace94cfcfbe2c7c65391faceee0f9f3a649cd1650807edccc437c82a211",
+      "annotationScreenshotSha256": "e815906b40d2d99a44ecbcc2060002a5811a6e7daa499527dbce8327c0542afd",
+      "qualificationReport": "benchmarks/domain-qualification/wave-06-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-06-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabricworm",
+      "cohort": "training",
+      "pageId": "fabricworm--cotton-fabric",
+      "captureTimestamp": "2026-07-26T05:14:55.321Z",
+      "observationSha256": "9ea64c2491c2812219002edca16555ef7e9bfb38eb7f78cf8f243b6c31e1f25b",
+      "annotationScreenshotSha256": "70daa2997950844261c0143cd19ce3fd41d8a369b32ffeef33a87ff5aa90098f",
+      "qualificationReport": "benchmarks/domain-qualification/wave-06-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-06-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "wholesale-marine",
+      "cohort": "training",
+      "pageId": "wholesale-marine--braided-rope",
+      "captureTimestamp": "2026-07-26T05:02:50.695Z",
+      "observationSha256": "9181b66618cb1ff695943b78540e51807cc1a703cc9d551d42d508da08e7df37",
+      "annotationScreenshotSha256": "39cf48f1c3c8cc83cfa1656048dc83b640c03183af8bdf388c386b1af40f7030",
+      "qualificationReport": "benchmarks/domain-qualification/wave-06-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-06-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "wholesale-marine",
+      "cohort": "training",
+      "pageId": "wholesale-marine--dock-line",
+      "captureTimestamp": "2026-07-26T05:13:15.689Z",
+      "observationSha256": "b28b51f50efc3de86f33813cbb12bbc00ececadb1e15abd452b5deb3bedfef4f",
+      "annotationScreenshotSha256": "6d7884b5e666d2282caba5b350d31c60813b0d9ba473e3be7da110373201fcf8",
+      "qualificationReport": "benchmarks/domain-qualification/wave-06-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-06-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-mart-fabrics",
+      "cohort": "training",
+      "pageId": "fabric-mart-fabrics--cotton-fabric",
+      "captureTimestamp": "2026-07-26T05:06:02.973Z",
+      "observationSha256": "7620533ee674562e7cac800b0100991718d8208bd3092e75ff588467e0d83acf",
+      "annotationScreenshotSha256": "4ef19a87156576fc04e26919c20a88e5ab3fff9b12651430e81a272732bfb754",
+      "qualificationReport": "benchmarks/domain-qualification/wave-06-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-06-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-mart-fabrics",
+      "cohort": "training",
+      "pageId": "fabric-mart-fabrics--linen-fabric",
+      "captureTimestamp": "2026-07-26T05:15:20.743Z",
+      "observationSha256": "f91c652ce78916d194ac96a263ab8f6a32d2b594ca022e219c2de69c1265e61b",
+      "annotationScreenshotSha256": "9934c47b4a31d5b7c932618af47e2ceafe2529f68caf44441ff42ab3fdf668ad",
+      "qualificationReport": "benchmarks/domain-qualification/wave-06-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-06-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

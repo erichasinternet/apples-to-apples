@@ -211,6 +211,14 @@ all source screenshots, constructed a card-scoped pointer, rejected a product-gr
 ancestor, and rejected incomplete coverage. It still contributes zero gold
 products because no independent human review or adjudication has been claimed.
 
+The append-only
+[`g2-pilot-p01.json`](../benchmarks/review-campaigns/g2-pilot-p01.json)
+campaign extends that evidence to 59 pages and 532 frozen candidate roots after
+wave 06. Its report is generated from the paired queue files, source queue
+hashes, eligible-capture registry, and a headed Chromium validation that loaded
+all 59 screenshots with zero console errors. Both independent reviewer queues
+remain empty, so the expanded campaign also contributes zero gold products.
+
 The final wave-02 qualification pass promoted Blue Sky Vitamin and discarded
 Professional Supplement Center, Sleekshop, Bob's Red Mill, and Bulk Foods with
 captured evidence. It also narrowed search-query relevance to visible search
@@ -236,6 +244,28 @@ and clean price-only cards that require abstention when quantity evidence is not
 present. The screen also visually rejected a false-positive category-link page
 that had passed the numeric candidate gate, preserving visual review as a
 required qualification step.
+
+Wave 06 promoted Fabricworm, Wholesale Marine, and Fabric Mart Fabrics. Their six
+pages add desktop and narrow fabric grids, explicit per-yard sale prices,
+per-foot rope listings, and price-only length products that require abstention.
+The first screen sampled 17 new domains; exact page-ID follow-ups prevented a
+random per-site sampler from accidentally repeating a query during qualification.
+Packaging Price failed because its distinct second page timed out, and Stone &
+Tile Shoppe failed because an unresolved obstruction covered 23% of its narrow
+viewport, above the frozen 20% limit. Neither near-pass was promoted.
+
+Use `--pages` for reproducible follow-up captures:
+
+```bash
+bun scripts/collect-live-corpus.ts \
+  --targets benchmarks/live-sites/qualification-wave-06.json \
+  --pages fabricworm--cotton-fabric \
+  --viewport narrow \
+  --headed
+```
+
+Exact page targeting cannot be combined with the random `--sites`, `--limit`, or
+`--per-site` samplers.
 
 Qualified expansion wave 01 sampled one new query on each of the 17 promoted
 training domains. Nine of 17 pages passed bounded headed capture, provenance,

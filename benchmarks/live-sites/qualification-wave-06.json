@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "description": "Sixth unassigned domain-qualification wave. Candidates were screened for public search responses and selected to improve length, area, mass, volume, and count-adjacent coverage across varied specialty shopping strata. Every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "rope-com",
+      "label": "Rope.com",
+      "hostname": "www.rope.com",
+      "stratum": "rope-and-cordage",
+      "searchUrlTemplate": "https://www.rope.com/search?q={query}",
+      "queries": [
+        {
+          "id": "static-rope",
+          "query": "static rope",
+          "dimension": "length"
+        },
+        {
+          "id": "accessory-cord",
+          "query": "accessory cord",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "wholesale-marine",
+      "label": "Wholesale Marine",
+      "hostname": "www.wholesalemarine.com",
+      "stratum": "marine-supply",
+      "searchUrlTemplate": "https://www.wholesalemarine.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "dock-line",
+          "query": "dock line",
+          "dimension": "length"
+        },
+        {
+          "id": "braided-rope",
+          "query": "braided rope",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "nassau-national-cable",
+      "label": "Nassau National Cable",
+      "hostname": "nassaunationalcable.com",
+      "stratum": "electrical-supply",
+      "searchUrlTemplate": "https://nassaunationalcable.com/search?q={query}",
+      "queries": [
+        {
+          "id": "copper-wire",
+          "query": "copper wire",
+          "dimension": "length"
+        },
+        {
+          "id": "welding-cable",
+          "query": "welding cable",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "mary-jo-fabrics",
+      "label": "Mary Jo Fabrics",
+      "hostname": "maryjofabrics.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://maryjofabrics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "fabric-mart-fabrics",
+      "label": "Fabric Mart Fabrics",
+      "hostname": "fabricmartfabrics.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://fabricmartfabrics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "fabricworm",
+      "label": "Fabricworm",
+      "hostname": "fabricworm.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://fabricworm.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "canvas-fabric",
+          "query": "canvas fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "stonemountain-and-daughter",
+      "label": "Stonemountain & Daughter Fabrics",
+      "hostname": "stonemountainfabric.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://stonemountainfabric.com/search-results/?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "my-spice-sage",
+      "label": "My Spice Sage",
+      "hostname": "www.myspicesage.com",
+      "stratum": "spices-and-ingredients",
+      "searchUrlTemplate": "https://www.myspicesage.com/search?q={query}",
+      "queries": [
+        {
+          "id": "black-pepper",
+          "query": "black pepper",
+          "dimension": "mass"
+        },
+        {
+          "id": "green-tea",
+          "query": "green tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "spiceology",
+      "label": "Spiceology",
+      "hostname": "spiceology.com",
+      "stratum": "spices-and-ingredients",
+      "searchUrlTemplate": "https://spiceology.com/search?q={query}",
+      "queries": [
+        {
+          "id": "black-pepper",
+          "query": "black pepper",
+          "dimension": "mass"
+        },
+        {
+          "id": "cinnamon",
+          "query": "cinnamon",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "monterey-bay-herb-company",
+      "label": "Monterey Bay Herb Company",
+      "hostname": "www.herbco.com",
+      "stratum": "botanical-ingredients",
+      "searchUrlTemplate": "https://www.herbco.com/search.aspx?search={query}",
+      "queries": [
+        {
+          "id": "green-tea",
+          "query": "green tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "bulk-herbs",
+          "query": "bulk herbs",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "savory-spice",
+      "label": "Savory Spice",
+      "hostname": "www.savoryspiceshop.com",
+      "stratum": "spices-and-ingredients",
+      "searchUrlTemplate": "https://www.savoryspiceshop.com/search?q={query}",
+      "queries": [
+        {
+          "id": "black-pepper",
+          "query": "black pepper",
+          "dimension": "mass"
+        },
+        {
+          "id": "vanilla-extract",
+          "query": "vanilla extract",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "stone-and-tile-shoppe",
+      "label": "Stone & Tile Shoppe",
+      "hostname": "stoneandtileshoppe.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://stoneandtileshoppe.com/search?q={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "the-tile-shop",
+      "label": "The Tile Shop",
+      "hostname": "www.tileshop.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.tileshop.com/search?q={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "marble-tile",
+          "query": "marble tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "tilebuys",
+      "label": "TileBuys",
+      "hostname": "www.tilebuys.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.tilebuys.com/search?q={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "tandy-leather",
+      "label": "Tandy Leather",
+      "hostname": "tandyleather.com",
+      "stratum": "leather-and-craft",
+      "searchUrlTemplate": "https://tandyleather.com/search?q={query}",
+      "queries": [
+        {
+          "id": "tooling-leather",
+          "query": "tooling leather",
+          "dimension": "area"
+        },
+        {
+          "id": "leather-hide",
+          "query": "leather hide",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "marine-vinyl-fabric",
+      "label": "Marine Vinyl Fabric",
+      "hostname": "www.marinevinylfabric.com",
+      "stratum": "fabric-and-marine",
+      "searchUrlTemplate": "https://www.marinevinylfabric.com/search?q={query}",
+      "queries": [
+        {
+          "id": "marine-vinyl",
+          "query": "marine vinyl",
+          "dimension": "length"
+        },
+        {
+          "id": "outdoor-fabric",
+          "query": "outdoor fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "packaging-price",
+      "label": "Packaging Price",
+      "hostname": "www.packagingprice.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.packagingprice.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "poly-bags",
+          "query": "poly bags",
+          "dimension": "count"
+        },
+        {
+          "id": "shipping-boxes",
+          "query": "shipping boxes",
+          "dimension": "count"
+        }
+      ]
+    }
+  ]
+}

@@ -51,6 +51,7 @@ interface CollectorOptions {
   pageTimeoutMs: number;
   cardScreenshotBudgetMs: number;
   siteIds: string[];
+  pageIds: string[];
   viewportMode: CaptureViewportProfile | "mixed";
   narrowShare: number;
 }
@@ -119,7 +120,8 @@ const targets = selectTargets(allTargets, {
   seed: options.seed,
   ...(options.limit === undefined ? {} : { limit: options.limit }),
   ...(options.perSite === undefined ? {} : { perSite: options.perSite }),
-  ...(options.siteIds.length === 0 ? {} : { siteIds: options.siteIds })
+  ...(options.siteIds.length === 0 ? {} : { siteIds: options.siteIds }),
+  ...(options.pageIds.length === 0 ? {} : { pageIds: options.pageIds })
 });
 const viewportAssignments = assignCaptureViewports(targets, {
   seed: options.seed,
@@ -127,6 +129,13 @@ const viewportAssignments = assignCaptureViewports(targets, {
   narrowShare: options.narrowShare
 });
 
+if (options.pageIds.length > 0) {
+  const knownPageIds = new Set(allTargets.map((target) => target.pageId));
+  const unknownPageIds = options.pageIds.filter((pageId) => !knownPageIds.has(pageId));
+  if (unknownPageIds.length > 0) {
+    throw new Error(`Unknown page ids: ${unknownPageIds.join(", ")}`);
+  }
+}
 if (targets.length === 0) {
   throw new Error("No capture targets matched the supplied options.");
 }
@@ -969,6 +978,8 @@ function parseOptions(args: string[]): CollectorOptions {
   );
   const viewportMode = values.get("--viewport") ?? "mixed";
   const narrowShare = Number.parseFloat(values.get("--narrow-share") ?? "0.25");
+  const siteIds = parseCsv(values.get("--sites") ?? "");
+  const pageIds = parseCsv(values.get("--pages") ?? "");
 
   if (
     (limit !== undefined && (!Number.isFinite(limit) || limit <= 0)) ||
@@ -987,6 +998,12 @@ function parseOptions(args: string[]): CollectorOptions {
   ) {
     throw new Error("Invalid numeric collector option.");
   }
+  if (
+    pageIds.length > 0 &&
+    (siteIds.length > 0 || limit !== undefined || perSite !== undefined)
+  ) {
+    throw new Error("--pages cannot be combined with --sites, --limit, or --per-site.");
+  }
 
   return {
     targetsPath: path.resolve(values.get("--targets") ?? "benchmarks/live-sites/targets.json"),
@@ -1002,11 +1019,13 @@ function parseOptions(args: string[]): CollectorOptions {
     cardScreenshotBudgetMs,
     viewportMode: viewportMode as CaptureViewportProfile | "mixed",
     narrowShare,
-    siteIds: (values.get("--sites") ?? "")
-      .split(",")
-      .map((value) => value.trim())
-      .filter(Boolean)
+    siteIds,
+    pageIds
   };
+}
+
+function parseCsv(value: string): string[] {
+  return [...new Set(value.split(",").map((item) => item.trim()).filter(Boolean))];
 }
 
 async function writeJson(filename: string, value: unknown): Promise<void> {
