@@ -91,7 +91,7 @@ These are minimums, not quotas to fill with duplicates. The final cohort has at
 least 4,000 eligible comparable products so 80% coverage can produce the required
 3,000 accepted outputs with margin.
 
-The current 60-domain frame is development evidence. Its previous selection and
+The current domain frame is development evidence. Its previous selection and
 held-out domains have been opened during research and are permanently ineligible
 for the new final cohort.
 
@@ -830,6 +830,40 @@ validation. The aggregate evidence in
 loads all 235 screenshots and 2,534 roots with zero console errors or review
 writes. Readiness now counts 235 of 480 required training pages, including 117
 narrow pages, 123 categories, and 67 strata. Human-reviewed products remain
+zero, so all roots and machine suggestions remain ineligible for silver
+training or benchmark gold.
+
+Training depth wave 03 adds 27 of 40 attempted unseen query pages across 20
+qualified training domains, a 67.5% page yield. Twenty-eight attempts captured
+successfully; one was rejected for exposing only six candidate roots, while one
+was blocked and eleven ended in navigation or capture errors. All 27 accepted
+annotation views passed manual visual inspection and add 313 frozen roots across
+mass, volume, count, length, and area. The evidence includes per-half-meter and
+per-meter pricing, per-box and per-sheet offers without coverage, hidden package
+options, package-count versus physical-dimension and capacity traps, starting
+prices, ranges, sales, kits, accessories, semantic hard negatives, and listings
+that require abstention. The immutable evidence and decision are recorded in
+[`g2-training-depth-wave-03-p00.json`](../benchmarks/capture-pilots/g2-training-depth-wave-03-p00.json).
+
+The paired blinded
+[`g2-pilot-p21.json`](../benchmarks/review-campaigns/g2-pilot-p21.json)
+campaign now contains 262 pages and 2,847 frozen roots from the same 80
+qualified training domains. Deterministic preannotation proposes 545
+comparables and 2,302 abstentions, including four invalid suggestions. The
+semantic diagnostic in
+[`g2-campaign-preannotation-p20.json`](../benchmarks/reviews/g2-campaign-preannotation-p20.json)
+retains 2,814 suggestions and quarantines 33 traps. The representation audit in
+[`g2-selection-representation-p19.json`](../benchmarks/reviews/g2-selection-representation-p19.json)
+round-trips all 2,814 retained suggestions exactly with zero failures.
+
+The p21 campaign is partitioned into 27 paired assignments in
+[`g2-pilot-p21-review-batches.json`](../benchmarks/reviews/g2-pilot-p21-review-batches.json).
+The full campaign and every reviewer-A batch passed headed Playwright Chromium
+validation. The aggregate evidence in
+[`g2-pilot-p21-review-batch-validation.json`](../benchmarks/reviews/g2-pilot-p21-review-batch-validation.json)
+loads all 262 screenshots and 2,847 roots with zero console errors or review
+writes. Readiness now counts 262 of 480 required training pages, including 132
+narrow pages, 134 categories, and 67 strata. Human-reviewed products remain
 zero, so all roots and machine suggestions remain ineligible for silver
 training or benchmark gold.
 

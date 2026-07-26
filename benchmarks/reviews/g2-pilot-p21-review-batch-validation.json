@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "auditId": "g2-pilot-p21-review-batch-validation",
+  "createdAt": "2026-07-26T18:54:34.981Z",
+  "source": {
+    "batchManifest": "benchmarks/reviews/g2-pilot-p21-review-batches.json",
+    "batchManifestSha256": "57740172d905f3125a5c06f0a422eda5c598fdc602f05af9d50b824b696d2e50",
+    "validationReportSha256": [
+      "bbb5b59241b029f5831e3a8479ac1394a6d2ce81f935e96403547de20005345a",
+      "8e1b9c2dee5f19896542434e42807cf29bae0000b29512a5cc8d8ec7e26ad015",
+      "2d67ed46f4fc3fb6f2d8958379f223db13b169a8e622da04ddca9c3b566e6e0a",
+      "575ade41ee2330cabe40882ac9f628139f1097963fff1cc2adef59b9cde366e3",
+      "f416a2d4e73d9c1592c67454a51fa26b54af584b4d7573e8b24435e4942c9bac",
+      "1d42c895d97dcaab3160c7268b15efd14f17ceef5806e5af15371986625e116a",
+      "8e2e3e1c2336b3dde92f19a1a3a295fc10c6fe634ab3c247f943fb80e14b5c1f",
+      "31cff8406c426c5b9edc929a7cdea76c35b05a5ce7691865f068a8b440837de3",
+      "aecdfeed29980a6a7a2790908c3df7a8aab7f0778baca41287e91a20339c2cde",
+      "dad7050e266fef9ada01128efb1314ef0b01ccc23fb608c111bd2e6c44eee0e5",
+      "f94e3e047e422003bc7496703e008a243cca9c2904bea4ea57eff3da2e2caf86",
+      "666e638583082692902b09faa412521e10d61ccdc285cf2156cd93b3377b032a",
+      "837e6734cb5f11871736288427114966278e2263665a9d6a2e7716c3fe53787b",
+      "a060a0c73c11107a197f8e87670a49c46c15008793b5a1ed2306cf2f31894fd9",
+      "835fd57bef3ed492e897b11bb58a7f9039728a149e4de5439cf2af9429326c23",
+      "cdf96d6a7bc28329ef8c61c4c75d7d11795d0877ee7786ed92e6ada8b6e3758c",
+      "7f69d4b32b6ccf0f0a825e1623f4967bfcdbc546df5582c2f83c953dffa5fb9f",
+      "3d6a9b43e3e0f0a6542071e01a2b88165984364809211c047729e930bc389798",
+      "3be0af333de39ceace7b00fdf9e3e76c5cbdc8891786a63ef2c77fef46ceca6d",
+      "baeb7de686acdfbaa2c0a3a8a7549c36e821bfb433203007e4d5793ee9443e55",
+      "b91753b4eeb10d88be556f400bf52b1d2d364096e38d08c8e7e517b0ae01adb4",
+      "a3922b7daac38d639da931be8bcf81c43b4951d9ef585b8b4b71e02169014b3d",
+      "f81741120aa6000e913e481185df5118691823d462b0ecdda82d08bbcf87d2df",
+      "2071b78292fb6db18b0c8f2df6719a92554885395f7c3482a8dad365f40ebbbb",
+      "4ac413c0ffee1e5d61a56b56f091b388c0e86bd9b97c1f383e741021916a776d",
+      "56ac347c52d7c861918c0ea540145f7af4f19371ddeefb2b6f2b906470552804",
+      "c749217d00b83a92ef5f1e772ed535e7a465f1644380ccd74bd32fa0fde041b2"
+    ]
+  },
+  "browser": "headed Playwright Chromium",
+  "batches": 27,
+  "pagesLoaded": 262,
+  "screenshotsLoaded": 262,
+  "candidateCards": 2847,
+  "onlyFrozenCardRootOffered": true,
+  "directFrozenCardNavigation": "passed",
+  "nonCandidateAncestor": "rejected-404",
+  "incompleteCoverage": "rejected-422",
+  "consoleErrors": 0,
+  "reviewFilesWritten": 0,
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Workbench validation proves batch integrity and usability, not semantic label correctness."
+  }
+}

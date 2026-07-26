@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Third bounded depth-expansion wave on twenty underrepresented qualified training domains. Forty unseen listing queries contribute exactly eight targets per supported dimension without changing domain assignments or supplying site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "american-spice",
+      "label": "American Spice",
+      "hostname": "www.americanspice.com",
+      "stratum": "bulk-spice-retail",
+      "searchUrlTemplate": "https://www.americanspice.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "cumin", "query": "cumin", "dimension": "mass"},
+        {"id": "cinnamon", "query": "cinnamon", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "food-to-live",
+      "label": "Food to Live",
+      "hostname": "foodtolive.com",
+      "stratum": "natural-bulk-food-retail",
+      "searchUrlTemplate": "https://foodtolive.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "quinoa", "query": "quinoa", "dimension": "mass"},
+        {"id": "chia-seeds", "query": "chia seeds", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "myspicer",
+      "label": "MySpicer",
+      "hostname": "www.myspicer.com",
+      "stratum": "wholesale-spices",
+      "searchUrlTemplate": "https://www.myspicer.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "onion-powder", "query": "onion powder", "dimension": "mass"},
+        {"id": "cumin", "query": "cumin", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "purebulk",
+      "label": "PureBulk",
+      "hostname": "purebulk.com",
+      "stratum": "supplements",
+      "searchUrlTemplate": "https://purebulk.com/search?q={query}",
+      "queries": [
+        {"id": "creatine-powder", "query": "creatine powder", "dimension": "mass"},
+        {"id": "collagen-powder", "query": "collagen powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "alan-janitorial",
+      "label": "Alan Janitorial",
+      "hostname": "www.alanjanitorial.com",
+      "stratum": "cleaning-equipment",
+      "searchUrlTemplate": "https://www.alanjanitorial.com/search?q={query}",
+      "queries": [
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"},
+        {"id": "carpet-cleaner", "query": "carpet cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "jax-wax",
+      "label": "Jax Wax",
+      "hostname": "www.jaxwax.com",
+      "stratum": "regional-detailing-product-brand",
+      "searchUrlTemplate": "https://www.jaxwax.com/search?q={query}",
+      "queries": [
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"},
+        {"id": "tire-shine", "query": "tire shine", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "ps-detail-products",
+      "label": "P&S Detail Products",
+      "hostname": "psdetailproducts.com",
+      "stratum": "professional-detailing-manufacturer",
+      "searchUrlTemplate": "https://psdetailproducts.com/search?q={query}",
+      "queries": [
+        {"id": "interior-cleaner", "query": "interior cleaner", "dimension": "volume"},
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "superior-products",
+      "label": "Superior Products",
+      "hostname": "superiorproducts.com",
+      "stratum": "professional-cleaning-chemical-manufacturer",
+      "searchUrlTemplate": "https://superiorproducts.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "interior-cleaner", "query": "interior cleaner", "dimension": "volume"},
+        {"id": "tire-cleaner", "query": "tire cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "grayline-medical",
+      "label": "Grayline Medical",
+      "hostname": "www.graylinemedical.com",
+      "stratum": "clinical-medical-supply",
+      "searchUrlTemplate": "https://www.graylinemedical.com/search?q={query}",
+      "queries": [
+        {"id": "syringes", "query": "syringes", "dimension": "count"},
+        {"id": "gauze-pads", "query": "gauze pads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "medex-supply",
+      "label": "Medex Supply",
+      "hostname": "www.medexsupply.com",
+      "stratum": "discount-medical-supply-retail",
+      "searchUrlTemplate": "https://www.medexsupply.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "syringes", "query": "syringes", "dimension": "count"},
+        {"id": "bandages", "query": "bandages", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "medsurg-express",
+      "label": "MedSurg Express",
+      "hostname": "medsurgexpress.com",
+      "stratum": "medical-surgical-supply-retail",
+      "searchUrlTemplate": "https://medsurgexpress.com/search?q={query}",
+      "queries": [
+        {"id": "masks", "query": "masks", "dimension": "count"},
+        {"id": "syringes", "query": "syringes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "mountainside-medical",
+      "label": "Mountainside Medical Equipment",
+      "hostname": "www.mountainside-medical.com",
+      "stratum": "independent-medical-equipment-retail",
+      "searchUrlTemplate": "https://www.mountainside-medical.com/search?q={query}",
+      "queries": [
+        {"id": "bandages", "query": "bandages", "dimension": "count"},
+        {"id": "gauze-pads", "query": "gauze pads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "blackbird-fabrics",
+      "label": "Blackbird Fabrics",
+      "hostname": "www.blackbirdfabrics.com",
+      "stratum": "independent-apparel-fabric-retail",
+      "searchUrlTemplate": "https://www.blackbirdfabrics.com/search?q={query}",
+      "queries": [
+        {"id": "denim-fabric", "query": "denim fabric", "dimension": "length"},
+        {"id": "rayon-fabric", "query": "rayon fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "core-fabrics",
+      "label": "Core Fabrics",
+      "hostname": "corefabricstore.com",
+      "stratum": "sustainable-apparel-fabric-retail",
+      "searchUrlTemplate": "https://corefabricstore.com/search?q={query}",
+      "queries": [
+        {"id": "wool-fabric", "query": "wool fabric", "dimension": "length"},
+        {"id": "jersey-fabric", "query": "jersey fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "fabricworm",
+      "label": "Fabricworm",
+      "hostname": "fabricworm.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://fabricworm.com/search?q={query}",
+      "queries": [
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"},
+        {"id": "flannel-fabric", "query": "flannel fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "zelouf-fabrics",
+      "label": "Zelouf Fabrics",
+      "hostname": "zelouffabrics.com",
+      "stratum": "wholesale-fashion-fabric",
+      "searchUrlTemplate": "https://zelouffabrics.com/search?q={query}",
+      "queries": [
+        {"id": "satin-fabric", "query": "satin fabric", "dimension": "length"},
+        {"id": "chiffon-fabric", "query": "chiffon fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "flooret",
+      "label": "Flooret",
+      "hostname": "www.flooret.com",
+      "stratum": "direct-to-consumer-flooring-brand",
+      "searchUrlTemplate": "https://www.flooret.com/search?q={query}",
+      "queries": [
+        {"id": "laminate-flooring", "query": "laminate flooring", "dimension": "area"},
+        {"id": "floor-tile", "query": "floor tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "georgia-carpet",
+      "label": "Georgia Carpet",
+      "hostname": "www.georgiacarpet.com",
+      "stratum": "flooring-wholesale-retail",
+      "searchUrlTemplate": "https://www.georgiacarpet.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "hardwood-flooring", "query": "hardwood flooring", "dimension": "area"},
+        {"id": "laminate-flooring", "query": "laminate flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tile-and-mosaic-depot",
+      "label": "Tile and Mosaic Depot",
+      "hostname": "tileandmosaicdepot.com",
+      "stratum": "online-tile-and-mosaic-retail",
+      "searchUrlTemplate": "https://tileandmosaicdepot.com/search?q={query}",
+      "queries": [
+        {"id": "ceramic-tile", "query": "ceramic tile", "dimension": "area"},
+        {"id": "glass-tile", "query": "glass tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tilezz",
+      "label": "Tilezz",
+      "hostname": "tilezz.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://tilezz.com/search?q={query}",
+      "queries": [
+        {"id": "ceramic-tile", "query": "ceramic tile", "dimension": "area"},
+        {"id": "glass-tile", "query": "glass tile", "dimension": "area"}
+      ]
+    }
+  ]
+}

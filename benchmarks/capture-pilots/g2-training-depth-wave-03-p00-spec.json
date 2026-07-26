@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-depth-wave-03-p00",
+  "capturedAt": "2026-07-26T18:42:54.465Z",
+  "sourceManifest": "benchmarks/live-sites/training-depth-wave-03.json",
+  "requestedCaptureAttempts": 40,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T18-10-21-804Z",
+      "pageIds": [
+        "purebulk--creatine-powder",
+        "jax-wax--car-wash-soap",
+        "superior-products--interior-cleaner",
+        "tile-and-mosaic-depot--glass-tile",
+        "mountainside-medical--bandages",
+        "georgia-carpet--hardwood-flooring",
+        "core-fabrics--wool-fabric",
+        "medex-supply--syringes",
+        "blackbird-fabrics--rayon-fabric",
+        "myspicer--cumin",
+        "alan-janitorial--carpet-cleaner",
+        "tilezz--ceramic-tile",
+        "fabricworm--flannel-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T18-29-34-217Z",
+      "pageIds": [
+        "tile-and-mosaic-depot--ceramic-tile",
+        "medsurg-express--masks",
+        "alan-janitorial--glass-cleaner",
+        "core-fabrics--jersey-fabric",
+        "ps-detail-products--interior-cleaner",
+        "blackbird-fabrics--denim-fabric",
+        "jax-wax--tire-shine",
+        "mountainside-medical--gauze-pads",
+        "myspicer--onion-powder",
+        "food-to-live--chia-seeds",
+        "superior-products--tire-cleaner",
+        "american-spice--cumin",
+        "georgia-carpet--laminate-flooring",
+        "grayline-medical--syringes"
+      ]
+    }
+  ],
+  "samplingFinding": "Twenty-seven of forty unseen query pages on twenty previously qualified training domains passed the frozen capture gates, a 67.5% page yield. Twenty-eight attempts captured successfully; one captured page was rejected for exposing only six candidate roots. The remaining twelve attempts were one blocked annotation and eleven navigation or capture errors.",
+  "visualValidationFinding": "All twenty-seven accepted full-page annotation views were inspected after capture and showed coherent query-result evidence. The 313 frozen roots span mass, volume, count, length, and area. They include explicit per-half-meter and per-meter prices; per-box and per-sheet offers without enough coverage evidence; package-count versus physical-dimension and capacity ambiguity; starting prices, ranges, sales, kits, and accessories; query-adjacent semantic hard negatives; and listings where the correct outcome is abstention because package quantity, coverage, or price binding is absent. Fixed chat and navigation elements remained below the frozen twenty-percent obstruction limit and did not cover the selected evidence."
+}
