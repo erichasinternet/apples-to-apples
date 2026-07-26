@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "description": "First one-page-per-domain screening pass for promoted training domains. These captures expand query diversity without changing the frozen domain qualification decisions.",
+  "sites": [
+    {
+      "id": "restaurant-supply",
+      "label": "RestaurantSupply.com",
+      "hostname": "www.restaurantsupply.com",
+      "stratum": "restaurant-supply",
+      "searchUrlTemplate": "https://www.restaurantsupply.com/search?q={query}",
+      "queries": [
+        { "id": "disposable-cups", "query": "disposable cups", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "katom",
+      "label": "KaTom Restaurant Supply",
+      "hostname": "www.katom.com",
+      "stratum": "restaurant-supply",
+      "searchUrlTemplate": "https://www.katom.com/search?w={query}",
+      "queries": [
+        { "id": "coffee-filters", "query": "coffee filters", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "jeffers-pet",
+      "label": "Jeffers Pet",
+      "hostname": "jefferspet.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://jefferspet.com/search?q={query}",
+      "queries": [
+        { "id": "dog-food", "query": "dog food", "dimension": "mass" }
+      ]
+    },
+    {
+      "id": "food-service-direct",
+      "label": "FoodServiceDirect",
+      "hostname": "www.foodservicedirect.com",
+      "stratum": "specialty-food",
+      "searchUrlTemplate": "https://www.foodservicedirect.com/search-result?q={query}",
+      "queries": [
+        { "id": "rice", "query": "rice", "dimension": "mass" }
+      ]
+    },
+    {
+      "id": "betty-mills",
+      "label": "Betty Mills",
+      "hostname": "www.bettymills.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.bettymills.com/search?q={query}",
+      "queries": [
+        { "id": "toilet-paper", "query": "toilet paper", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "lambert-vet-supply",
+      "label": "Lambert Vet Supply",
+      "hostname": "www.lambertvetsupply.com",
+      "stratum": "veterinary-supply",
+      "searchUrlTemplate": "https://www.lambertvetsupply.com/search?q={query}",
+      "queries": [
+        { "id": "puppy-pads", "query": "puppy pads", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "natural-healthy-concepts",
+      "label": "Natural Healthy Concepts",
+      "hostname": "www.nhc.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://www.nhc.com/search?q={query}",
+      "queries": [
+        { "id": "fish-oil", "query": "fish oil", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "supplement-warehouse",
+      "label": "Supplement Warehouse",
+      "hostname": "supplementwarehouse.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://supplementwarehouse.com/search?q={query}",
+      "queries": [
+        { "id": "collagen-powder", "query": "collagen powder", "dimension": "mass" }
+      ]
+    },
+    {
+      "id": "blue-sky-vitamin",
+      "label": "Blue Sky Vitamin",
+      "hostname": "blueskyvitamin.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://blueskyvitamin.com/search?q={query}",
+      "queries": [
+        { "id": "magnesium", "query": "magnesium", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "fabric-wholesale-direct",
+      "label": "Fabric Wholesale Direct",
+      "hostname": "fabricwholesaledirect.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://fabricwholesaledirect.com/search?q={query}",
+      "queries": [
+        { "id": "fleece-fabric", "query": "fleece fabric", "dimension": "length" }
+      ]
+    },
+    {
+      "id": "vitality-medical",
+      "label": "Vitality Medical",
+      "hostname": "www.vitalitymedical.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.vitalitymedical.com/catalogsearch/result/?q={query}",
+      "queries": [
+        { "id": "adult-briefs", "query": "adult briefs", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "allegro-medical",
+      "label": "Allegro Medical",
+      "hostname": "www.allegromedical.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.allegromedical.com/catalogsearch/result/?q={query}",
+      "queries": [
+        { "id": "wound-dressings", "query": "wound dressings", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "ontime-supplies",
+      "label": "OnTimeSupplies",
+      "hostname": "www.ontimesupplies.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.ontimesupplies.com/search?query={query}",
+      "queries": [
+        { "id": "copy-paper", "query": "copy paper", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "the-cary-company",
+      "label": "The Cary Company",
+      "hostname": "www.thecarycompany.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.thecarycompany.com/catalogsearch/result/?q={query}",
+      "queries": [
+        { "id": "glass-jars", "query": "glass jars", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "wholesale-janitorial-supply",
+      "label": "Wholesale Janitorial Supply",
+      "hostname": "www.wholesalejanitorialsupply.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.wholesalejanitorialsupply.com/search.php?search_query={query}",
+      "queries": [
+        { "id": "hand-soap", "query": "hand soap", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "starwest-botanicals",
+      "label": "Starwest Botanicals",
+      "hostname": "www.starwest-botanicals.com",
+      "stratum": "botanical-ingredients",
+      "searchUrlTemplate": "https://www.starwest-botanicals.com/search.php?search_query={query}",
+      "queries": [
+        { "id": "essential-oil", "query": "essential oil", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "coffee-bean-corral",
+      "label": "Coffee Bean Corral",
+      "hostname": "www.coffeebeancorral.com",
+      "stratum": "green-coffee",
+      "searchUrlTemplate": "https://www.coffeebeancorral.com/search?q={query}",
+      "queries": [
+        { "id": "ethiopian-coffee", "query": "ethiopian coffee", "dimension": "mass" }
+      ]
+    }
+  ]
+}

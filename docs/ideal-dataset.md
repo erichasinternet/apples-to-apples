@@ -205,7 +205,7 @@ reviews and adjudication are complete.
 
 The current multi-page G2 review campaign is recorded in
 [`g2-pilot-p00.json`](../benchmarks/review-campaigns/g2-pilot-p00.json). It
-contains 33 qualification-backed live pages and 300 frozen candidate card
+contains 42 qualification-backed live pages and 372 frozen candidate card
 roots across two independent blinded queues. A headed Chromium smoke test loaded
 all source screenshots, constructed a card-scoped pointer, rejected a product-grid
 ancestor, and rejected incomplete coverage. It still contributes zero gold
@@ -236,6 +236,15 @@ and clean price-only cards that require abstention when quantity evidence is not
 present. The screen also visually rejected a false-positive category-link page
 that had passed the numeric candidate gate, preserving visual review as a
 required qualification step.
+
+Qualified expansion wave 01 sampled one new query on each of the 17 promoted
+training domains. Nine of 17 pages passed bounded headed capture, provenance,
+candidate-count, query-evidence, and visual product-grid checks. Six timed out,
+one exposed only six candidates, and KaTom's coffee-filter search was visually
+rejected because most captured cards were water-filtration equipment. The nine
+accepted pages add dog food, puppy pads, fish oil, collagen, hand soap, adult
+briefs, rice, copy paper, and wound dressings without claiming any new domain
+qualification.
 
 ## Dataset Growth
 
@@ -288,3 +297,7 @@ exact capture timestamp, observation hash, and annotation-screenshot hash appear
 `benchmarks/capture-pilots/eligible-captures.json`. Legacy opened pages, captures
 from unqualified domains, blocked pages, and recaptures with different hashes are
 reported separately and do not advance any cohort.
+
+The registry's `observationSha256` is the immutable `observation.json` asset hash
+from `provenance.json`, not the collector's internal observation-content hash in
+`page.json`. Review queues and pilot reports bind to that same asset hash.

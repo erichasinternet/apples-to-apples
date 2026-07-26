@@ -396,6 +396,114 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-05-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "cohort": "training",
+      "pageId": "natural-healthy-concepts--fish-oil",
+      "captureTimestamp": "2026-07-26T00:49:09.599Z",
+      "observationSha256": "9857be6ed77915a75e0fbe574d5430ad94ae6a454a21bfcdc46aa764b0652f8d",
+      "annotationScreenshotSha256": "ff4eabd340790fa4ac8e9562588efef78c1863852601eaba544a4b08b1781c41",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p07.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-01-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "lambert-vet-supply",
+      "cohort": "training",
+      "pageId": "lambert-vet-supply--puppy-pads",
+      "captureTimestamp": "2026-07-26T00:49:23.326Z",
+      "observationSha256": "33ddd97529b68a9c7a12d3e75141990686144a8e1df2e3d95dc57db83730a077",
+      "annotationScreenshotSha256": "be9ba0cf85065617ea826c10cab9347304bd07178299f261e61655cf834cbca2",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p06.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-01-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "cohort": "training",
+      "pageId": "supplement-warehouse--collagen-powder",
+      "captureTimestamp": "2026-07-26T00:51:25.542Z",
+      "observationSha256": "9fa4af7a90c08a2996c169efa2b9f727f65857c55b1ba004ac768ec88615ef2f",
+      "annotationScreenshotSha256": "52b751710e999f053ea5c7d7666376171b057ce2461b9e42eb10a708e20fe18a",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p07.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-01-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "cohort": "training",
+      "pageId": "wholesale-janitorial-supply--hand-soap",
+      "captureTimestamp": "2026-07-26T00:51:35.800Z",
+      "observationSha256": "90e4817aaea114758def3d1d4bc45015745166c031a329b4fb1ae783bfb4ebc9",
+      "annotationScreenshotSha256": "a6df425d063cd431434ff35b5135a599bcb0e282239068254114de6066cd656c",
+      "qualificationReport": "benchmarks/domain-qualification/wave-04-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-01-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "jeffers-pet",
+      "cohort": "training",
+      "pageId": "jeffers-pet--dog-food",
+      "captureTimestamp": "2026-07-26T00:51:56.330Z",
+      "observationSha256": "dca81dc40fcbf1dc8aef6de448a2649de70af807eb3d22e9931eed78421546a1",
+      "annotationScreenshotSha256": "17790bb585324be28ce7027fd258907c23330657fb9f6f60f05aeac51bd30456",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-01-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "vitality-medical",
+      "cohort": "training",
+      "pageId": "vitality-medical--adult-briefs",
+      "captureTimestamp": "2026-07-26T00:52:20.932Z",
+      "observationSha256": "e91941c22714055f050cc2d6b2618902f3be18445921c1d431b1f3fbf1dc6fc2",
+      "annotationScreenshotSha256": "fdf2f70619dabf264941aaa2f9493057b3593716cefd8fe8c72e351bc5fa171e",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-01-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "food-service-direct",
+      "cohort": "training",
+      "pageId": "food-service-direct--rice",
+      "captureTimestamp": "2026-07-26T00:58:20.988Z",
+      "observationSha256": "00b3ebca2e2a3493bfdf347fb407fcf4bd1a4c54917c4d2048ad79f949c2f0ea",
+      "annotationScreenshotSha256": "362d2bc991434f6b57ddb5793affce28aaeaa3aca8ac46ed1f55fc2f5e32d893",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p01.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-01-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "cohort": "training",
+      "pageId": "ontime-supplies--copy-paper",
+      "captureTimestamp": "2026-07-26T01:00:16.075Z",
+      "observationSha256": "c1c1c385769273aadd00b9456b884dc4abf013522a721c8fae66e823ca3fa1b4",
+      "annotationScreenshotSha256": "0fa7d1b0bb765fe1e07df5db473df6140c8211a06bea9271bf22277a0eb9e31b",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-01-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "allegro-medical",
+      "cohort": "training",
+      "pageId": "allegro-medical--wound-dressings",
+      "captureTimestamp": "2026-07-26T01:02:14.120Z",
+      "observationSha256": "7730037c658e2eb8e52bdabc332886f683db1be2afa6ae5fda3266ce6246d619",
+      "annotationScreenshotSha256": "ec0bc4eab9139533ed6501e36f08092467815b17984cc8d0e0f579033d62f89d",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-01-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

@@ -1,0 +1,314 @@
+{
+  "version": 1,
+  "pilotId": "g2-qualified-expansion-wave-01-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-26T01:02:14.120Z",
+  "source": {
+    "siteIds": [
+      "natural-healthy-concepts",
+      "lambert-vet-supply",
+      "supplement-warehouse",
+      "wholesale-janitorial-supply",
+      "jeffers-pet",
+      "vitality-medical",
+      "food-service-direct",
+      "ontime-supplies",
+      "allegro-medical"
+    ],
+    "cohort": "training",
+    "strata": [
+      "health-supplements",
+      "veterinary-supply",
+      "janitorial-supply",
+      "specialty-pet",
+      "medical-supply",
+      "specialty-food",
+      "office-supply"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "59069165a300e7f1f8f92e027ef59496e404ded019bf14005fcbbf36d3c82d68"
+    ],
+    "collectorSha256": "bbe94a81d320ffd3e6204360f2e1798f840ed59559f7c0fa94f2a7be294edde6"
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T00-48-49-139Z",
+      "runManifestSha256": "3fe1d89a090fdda6ee281e1e4f6acac27676069a63a7683582d9b538c2ec0c0d",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000
+    }
+  ],
+  "screening": {
+    "requestedPages": 17,
+    "capturedPages": 11,
+    "acceptedPages": 9,
+    "rejectedPages": [
+      {
+        "pageId": "the-cary-company--glass-jars",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "coffee-bean-corral--ethiopian-coffee",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "starwest-botanicals--essential-oil",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "restaurant-supply--disposable-cups",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "betty-mills--toilet-paper",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "blue-sky-vitamin--magnesium",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "fabric-wholesale-direct--fleece-fabric",
+        "reason": "fewer-than-eight-candidates"
+      },
+      {
+        "pageId": "katom--coffee-filters",
+        "reason": "visual-query-mismatch"
+      }
+    ]
+  },
+  "captures": [
+    {
+      "siteId": "natural-healthy-concepts",
+      "pageId": "natural-healthy-concepts--fish-oil",
+      "capturedAt": "2026-07-26T00:49:09.599Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 751,
+      "observationTruncated": false,
+      "dismissedObstructions": 9,
+      "unresolvedObstructionCoverage": 0.004111111111111111,
+      "queryTokenCoverage": 1,
+      "observationSha256": "9857be6ed77915a75e0fbe574d5430ad94ae6a454a21bfcdc46aa764b0652f8d",
+      "annotationScreenshotSha256": "ff4eabd340790fa4ac8e9562588efef78c1863852601eaba544a4b08b1781c41",
+      "provenanceAggregateSha256": "6f9a567b6ac107e97fb63a50cb997884ae86a0e39639e739da7471661bfc3352",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "lambert-vet-supply",
+      "pageId": "lambert-vet-supply--puppy-pads",
+      "capturedAt": "2026-07-26T00:49:23.326Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 840,
+      "observationTruncated": false,
+      "dismissedObstructions": 5,
+      "unresolvedObstructionCoverage": 0.011982014825616722,
+      "queryTokenCoverage": 1,
+      "observationSha256": "33ddd97529b68a9c7a12d3e75141990686144a8e1df2e3d95dc57db83730a077",
+      "annotationScreenshotSha256": "be9ba0cf85065617ea826c10cab9347304bd07178299f261e61655cf834cbca2",
+      "provenanceAggregateSha256": "6dca62f21bf3b273ceed984d7bb06ca765ccc96ae89d446883abd3c919b2e872",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "pageId": "supplement-warehouse--collagen-powder",
+      "capturedAt": "2026-07-26T00:51:25.542Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 406,
+      "observationTruncated": false,
+      "dismissedObstructions": 14,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "9fa4af7a90c08a2996c169efa2b9f727f65857c55b1ba004ac768ec88615ef2f",
+      "annotationScreenshotSha256": "52b751710e999f053ea5c7d7666376171b057ce2461b9e42eb10a708e20fe18a",
+      "provenanceAggregateSha256": "3216d3d943207f15e7fd4346b2e97c22733000820327e8f66fb49dec16c46aba",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--hand-soap",
+      "capturedAt": "2026-07-26T00:51:35.800Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 331,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.000029166666666666666,
+      "queryTokenCoverage": 1,
+      "observationSha256": "90e4817aaea114758def3d1d4bc45015745166c031a329b4fb1ae783bfb4ebc9",
+      "annotationScreenshotSha256": "a6df425d063cd431434ff35b5135a599bcb0e282239068254114de6066cd656c",
+      "provenanceAggregateSha256": "80dde5abd8dedd8bedbf2b40ffcbd6cccbf3fb65e42fb0acfcf0772020c40683",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "jeffers-pet",
+      "pageId": "jeffers-pet--dog-food",
+      "capturedAt": "2026-07-26T00:51:56.330Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 705,
+      "observationTruncated": false,
+      "dismissedObstructions": 4,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "dca81dc40fcbf1dc8aef6de448a2649de70af807eb3d22e9931eed78421546a1",
+      "annotationScreenshotSha256": "17790bb585324be28ce7027fd258907c23330657fb9f6f60f05aeac51bd30456",
+      "provenanceAggregateSha256": "de93680acd9dc8fa78db3ffd61666a04150ecd621f9a679f6b3b309f54660d68",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "vitality-medical",
+      "pageId": "vitality-medical--adult-briefs",
+      "capturedAt": "2026-07-26T00:52:20.932Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 634,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e91941c22714055f050cc2d6b2618902f3be18445921c1d431b1f3fbf1dc6fc2",
+      "annotationScreenshotSha256": "fdf2f70619dabf264941aaa2f9493057b3593716cefd8fe8c72e351bc5fa171e",
+      "provenanceAggregateSha256": "0801e144c74fcc2fd5c926baf43caafaa39b250cfbe6eaa17f18f1647f06ebaa",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "food-service-direct",
+      "pageId": "food-service-direct--rice",
+      "capturedAt": "2026-07-26T00:58:20.988Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 1218,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "00b3ebca2e2a3493bfdf347fb407fcf4bd1a4c54917c4d2048ad79f949c2f0ea",
+      "annotationScreenshotSha256": "362d2bc991434f6b57ddb5793affce28aaeaa3aca8ac46ed1f55fc2f5e32d893",
+      "provenanceAggregateSha256": "cc37e6d55e1189a0e3b7a53e894f74691c9dacaa76d0cbce1896957144751ecb",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "pageId": "ontime-supplies--copy-paper",
+      "capturedAt": "2026-07-26T01:00:16.075Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 1092,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.02971199416697047,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c1c1c385769273aadd00b9456b884dc4abf013522a721c8fae66e823ca3fa1b4",
+      "annotationScreenshotSha256": "0fa7d1b0bb765fe1e07df5db473df6140c8211a06bea9271bf22277a0eb9e31b",
+      "provenanceAggregateSha256": "265cb1c88f7ce93d8d212409b5635bb6d3815f3d6216d664e91a4cd805e81edb",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--wound-dressings",
+      "capturedAt": "2026-07-26T01:02:14.120Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 848,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "7730037c658e2eb8e52bdabc332886f683db1be2afa6ae5fda3266ce6246d619",
+      "annotationScreenshotSha256": "ec0bc4eab9139533ed6501e36f08092467815b17984cc8d0e0f579033d62f89d",
+      "provenanceAggregateSha256": "63a32b0c6c22d9fc784ad768851641c57f46f577032fa94f25281f7cd9ad1002",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "reviewQueues": {
+    "labelVisibility": "no model or peer labels",
+    "reviewerASourceQueueSha256": [
+      "c749602fba52db1c64ccadaafd43f787cb269dc303263b54a383c95d9eb02b37"
+    ],
+    "reviewerBSourceQueueSha256": [
+      "94af2d3f932a939e1628548c656218e25b40a83bf67c47d471641774be4c3458"
+    ]
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}
