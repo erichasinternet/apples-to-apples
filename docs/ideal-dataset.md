@@ -254,6 +254,16 @@ Packaging Price failed because its distinct second page timed out, and Stone &
 Tile Shoppe failed because an unresolved obstruction covered 23% of its narrow
 viewport, above the frozen 20% limit. Neither near-pass was promoted.
 
+Wave 07 screened 21 previously unseen domains across all five dimensions and
+nine strata, prioritizing count and area candidates. Greatmats qualified with
+desktop and narrow flooring grids that expose carton or tile prices beside
+per-square-foot prices. Seattle Fabrics qualified with desktop and narrow
+per-yard listings plus fixed-price sample packs and full-roll variants. The
+other 19 domains remain discarded after timeouts, invalid routes, cross-site
+redirects, missing query evidence, missing screenshots, obstructions, or
+insufficient product candidates. The four accepted pages raise the immutable
+eligible-capture registry to 63 pages across 22 promoted training domains.
+
 Use `--pages` for reproducible follow-up captures:
 
 ```bash

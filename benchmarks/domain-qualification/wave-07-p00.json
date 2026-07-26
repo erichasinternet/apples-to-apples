@@ -1,0 +1,220 @@
+{
+  "version": 1,
+  "qualificationId": "wave-07-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-07.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 12000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "genericConsentActionHandling": true,
+    "persistentCookieConsentHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "queryParametersCountAsQueryEvidence": false,
+    "queryEvidenceScope": "title, pathname, visible headings, and visible status text",
+    "minimumQueryTokenCoverage": 1,
+    "populatedSearchControlsCountAsQueryEvidence": false,
+    "exactPageTargeting": true
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T05-41-55-500Z",
+      "runManifestSha256": "f7d619f7d2299b168456d7d6cda961fead3e436ac8276f24a6d107d8887168be",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "one-page headed screening across all 21 wave-07 domains"
+    },
+    {
+      "runId": "2026-07-26T05-56-29-539Z",
+      "runManifestSha256": "55318bd82da93406551f008a23871f81b55df51d7552f079dc4e68a58cb2ea08",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "exact narrow follow-up for Greatmats and Seattle Fabrics"
+    },
+    {
+      "runId": "2026-07-26T05-58-49-170Z",
+      "runManifestSha256": "c1ef607c8844c59910216da3932b5cfac53ec5fc9f3b98e1faca82d3b3f8c569",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "exact desktop second-page qualification for Greatmats"
+    },
+    {
+      "runId": "2026-07-26T05-59-22-947Z",
+      "runManifestSha256": "05720df0385b9713d514bf20a490099557dd0ba7816d92d1d049947fc07e9841",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "exact narrow second-page qualification for Seattle Fabrics"
+    }
+  ],
+  "results": {
+    "the-boxery": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: HTTP 404; search results evidence only 0% of requested query tokens; no reviewable product candidates."
+    },
+    "interplas": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: unresolved visible obstruction covers 100% of viewport; no reviewable product candidates."
+    },
+    "packrift": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: no reviewable product candidates."
+    },
+    "clearbags": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 75000 ms."
+    },
+    "good-start-packaging": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 75000 ms."
+    },
+    "store-supply-warehouse": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: HTTP 404; search results evidence only 0% of requested query tokens; no reviewable product candidates."
+    },
+    "packaging-source": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: HTTP 404; search results evidence only 0% of requested query tokens; no reviewable product candidates."
+    },
+    "discount-plastic-bags": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: goto: net::ERR_NAME_NOT_RESOLVED at https://www.discountplasticbags.com/search?q=resealable%20bags\nCall log:\n\u001b[2m  - navigating to \"https://www.discountplasticbags.com/search?q=resealable%20bags\", waiting until \"domcontentloaded\"\u001b[22m\n."
+    },
+    "royal-bag": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 75000 ms."
+    },
+    "pos-paper": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: search results evidence only 33% of requested query tokens; no reviewable product candidates."
+    },
+    "bags-unlimited": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 75000 ms."
+    },
+    "greatmats": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "greatmats--carpet-tiles",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 1405,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0.11966824644549763,
+          "queryTokenCoverage": 1,
+          "observationSha256": "1de37c0bd55b9d691822cd73ce4f7391b86623814aba2269e66428a2815715dc",
+          "annotationScreenshotSha256": "0fec818b517095d7c0de2cd49fb5884ff2296e59bdc361546bf7b40c3cddee26",
+          "provenanceAggregateSha256": "9d4f8615115ecc3abfcbdf8a55347bdd3bbce6efedec94651ddef91f3ca2e84b",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "greatmats--plastic-flooring",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 1606,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0.102,
+          "queryTokenCoverage": 1,
+          "observationSha256": "12cf4903e77f8b43b62100e41517b8628a009e475871697a71d648f701ebc0ad",
+          "annotationScreenshotSha256": "0df0e72263efce38d4144d40eeae56576a6714b39ff697fef1a053bcaa5152a6",
+          "provenanceAggregateSha256": "83ec1471aeb024cb34167e4e9f69c6801958b8af5f6b21503e670543598ca434",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "flooring-inc": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 75000 ms."
+    },
+    "floor-city": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: no reviewable product candidates."
+    },
+    "builddirect": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 75000 ms."
+    },
+    "garage-flooring": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: search results evidence only 50% of requested query tokens; no reviewable product candidates."
+    },
+    "american-carpet-wholesalers": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: HTTP 404; search results evidence only 0% of requested query tokens; no reviewable product candidates."
+    },
+    "seattle-fabrics": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "seattle-fabrics--webbing",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 1099,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0.006488888888888889,
+          "queryTokenCoverage": 1,
+          "observationSha256": "28682bd804f20605f37a83ab8fa3e2541dc0022424aacc220ff3a7127dc73de6",
+          "annotationScreenshotSha256": "1bf0156ba927a64aa6742fff860d6cb5a13f71b54a654aa9f20e61a2172b6de4",
+          "provenanceAggregateSha256": "ccc2ffacf480bfe9837a650bf21d40c37dc1a28c3b44ae698d92cceeeb10c0cd",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "seattle-fabrics--shock-cord",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 446,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0.028387410377931705,
+          "queryTokenCoverage": 1,
+          "observationSha256": "ae414865290f4383b968dd630ce03ef197df7a34454048d292ac8525d3bd0855",
+          "annotationScreenshotSha256": "479097fd46d8376a6111121f572fa47bec0a234aa4414b664e37a0a7b365c53f",
+          "provenanceAggregateSha256": "e21500cc2da4fb662af07f413d9c70e60a347dc67c9d50a6ec4af5d242ab0f3d",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "common-sense-marine": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 75000 ms."
+    },
+    "olive-nation": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: search results evidence only 0% of requested query tokens."
+    },
+    "essential-wholesale": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: cross-site redirect to nourishusnaturals.com."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": ["greatmats", "seattle-fabrics"],
+    "assignedDomains": [
+      {
+        "siteId": "greatmats",
+        "cohort": "training"
+      },
+      {
+        "siteId": "seattle-fabrics",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

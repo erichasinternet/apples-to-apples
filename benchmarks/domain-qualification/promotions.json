@@ -120,6 +120,18 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-06-p00.json",
       "promotedAt": "2026-07-26T05:20:00.000Z"
+    },
+    {
+      "siteId": "greatmats",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-07-p00.json",
+      "promotedAt": "2026-07-26T06:02:00.000Z"
+    },
+    {
+      "siteId": "seattle-fabrics",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-07-p00.json",
+      "promotedAt": "2026-07-26T06:02:00.000Z"
     }
   ]
 }

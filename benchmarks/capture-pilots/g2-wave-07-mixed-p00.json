@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "pilotId": "g2-wave-07-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-26T05:59:28.741Z",
+  "source": {
+    "siteIds": ["greatmats", "seattle-fabrics"],
+    "cohort": "training",
+    "strata": ["flooring", "outdoor-fabric"],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "cb1179cdbd44abf8ccd8a8e2974b07b8b8db268d015085f112e24002b9771a9c",
+      "d720e040f6f4154bbfc3fad1a4cf7fd66ef9733d926b713cd7450286bca3d7cc"
+    ],
+    "collectorSha256": [
+      "3c400ca745c0a5564b3c4e38ef2a092fabb37d2879ac8a00921a0d648656b9bf"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T05-41-55-500Z",
+      "runManifestSha256": "f7d619f7d2299b168456d7d6cda961fead3e436ac8276f24a6d107d8887168be",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 12000
+    },
+    {
+      "runId": "2026-07-26T05-56-29-539Z",
+      "runManifestSha256": "55318bd82da93406551f008a23871f81b55df51d7552f079dc4e68a58cb2ea08",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 12000
+    },
+    {
+      "runId": "2026-07-26T05-58-49-170Z",
+      "runManifestSha256": "c1ef607c8844c59910216da3932b5cfac53ec5fc9f3b98e1faca82d3b3f8c569",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 12000
+    },
+    {
+      "runId": "2026-07-26T05-59-22-947Z",
+      "runManifestSha256": "05720df0385b9713d514bf20a490099557dd0ba7816d92d1d049947fc07e9841",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 12000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 25,
+    "successfulCaptureAttempts": 17,
+    "acceptedPages": 4,
+    "qualifiedDomains": 2,
+    "rejectedDomains": 19
+  },
+  "captures": [
+    {
+      "siteId": "seattle-fabrics",
+      "pageId": "seattle-fabrics--webbing",
+      "capturedAt": "2026-07-26T05:48:47.578Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1099,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.006488888888888889,
+      "queryTokenCoverage": 1,
+      "observationSha256": "28682bd804f20605f37a83ab8fa3e2541dc0022424aacc220ff3a7127dc73de6",
+      "annotationScreenshotSha256": "1bf0156ba927a64aa6742fff860d6cb5a13f71b54a654aa9f20e61a2172b6de4",
+      "provenanceAggregateSha256": "ccc2ffacf480bfe9837a650bf21d40c37dc1a28c3b44ae698d92cceeeb10c0cd",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "greatmats",
+      "pageId": "greatmats--carpet-tiles",
+      "capturedAt": "2026-07-26T05:56:33.923Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1405,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.11966824644549763,
+      "queryTokenCoverage": 1,
+      "observationSha256": "1de37c0bd55b9d691822cd73ce4f7391b86623814aba2269e66428a2815715dc",
+      "annotationScreenshotSha256": "0fec818b517095d7c0de2cd49fb5884ff2296e59bdc361546bf7b40c3cddee26",
+      "provenanceAggregateSha256": "9d4f8615115ecc3abfcbdf8a55347bdd3bbce6efedec94651ddef91f3ca2e84b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "greatmats",
+      "pageId": "greatmats--plastic-flooring",
+      "capturedAt": "2026-07-26T05:58:53.865Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1606,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.102,
+      "queryTokenCoverage": 1,
+      "observationSha256": "12cf4903e77f8b43b62100e41517b8628a009e475871697a71d648f701ebc0ad",
+      "annotationScreenshotSha256": "0df0e72263efce38d4144d40eeae56576a6714b39ff697fef1a053bcaa5152a6",
+      "provenanceAggregateSha256": "83ec1471aeb024cb34167e4e9f69c6801958b8af5f6b21503e670543598ca434",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "seattle-fabrics",
+      "pageId": "seattle-fabrics--shock-cord",
+      "capturedAt": "2026-07-26T05:59:28.741Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 446,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.028387410377931705,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ae414865290f4383b968dd630ce03ef197df7a34454048d292ac8525d3bd0855",
+      "annotationScreenshotSha256": "479097fd46d8376a6111121f572fa47bec0a234aa4414b664e37a0a7b365c53f",
+      "provenanceAggregateSha256": "e21500cc2da4fb662af07f413d9c70e60a347dc67c9d50a6ec4af5d242ab0f3d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

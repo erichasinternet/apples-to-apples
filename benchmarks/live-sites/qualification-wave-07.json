@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "description": "Seventh unassigned domain-qualification wave. Candidates target the underrepresented count and area dimensions across packaging, retail supply, paper supply, and flooring strata. Every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "the-boxery",
+      "label": "The Boxery",
+      "hostname": "www.theboxery.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.theboxery.com/search?q={query}",
+      "queries": [
+        {
+          "id": "shipping-boxes",
+          "query": "shipping boxes",
+          "dimension": "count"
+        },
+        {
+          "id": "bubble-mailers",
+          "query": "bubble mailers",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "interplas",
+      "label": "Interplas",
+      "hostname": "www.interplas.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.interplas.com/poly-bags/flat-poly-bags/{querySlug}",
+      "queries": [
+        {
+          "id": "one-mil",
+          "query": "1 mil",
+          "dimension": "count"
+        },
+        {
+          "id": "two-mil",
+          "query": "2 mil",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "packrift",
+      "label": "Packrift",
+      "hostname": "packrift.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://packrift.com/search?q={query}",
+      "queries": [
+        {
+          "id": "flat-poly-bags",
+          "query": "flat poly bags",
+          "dimension": "count"
+        },
+        {
+          "id": "zipper-bags",
+          "query": "zipper bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "clearbags",
+      "label": "ClearBags",
+      "hostname": "www.clearbags.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.clearbags.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "poly-bags",
+          "query": "poly bags",
+          "dimension": "count"
+        },
+        {
+          "id": "stand-up-pouches",
+          "query": "stand up pouches",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "good-start-packaging",
+      "label": "Good Start Packaging",
+      "hostname": "www.goodstartpackaging.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.goodstartpackaging.com/search?q={query}",
+      "queries": [
+        {
+          "id": "compostable-cups",
+          "query": "compostable cups",
+          "dimension": "count"
+        },
+        {
+          "id": "takeout-containers",
+          "query": "takeout containers",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "store-supply-warehouse",
+      "label": "Store Supply Warehouse",
+      "hostname": "www.storesupply.com",
+      "stratum": "retail-supply",
+      "searchUrlTemplate": "https://www.storesupply.com/search?keyword={query}",
+      "queries": [
+        {
+          "id": "shopping-bags",
+          "query": "shopping bags",
+          "dimension": "count"
+        },
+        {
+          "id": "price-tags",
+          "query": "price tags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "packaging-source",
+      "label": "Packaging Source",
+      "hostname": "www.packagingsource.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.packagingsource.com/search?q={query}",
+      "queries": [
+        {
+          "id": "merchandise-bags",
+          "query": "merchandise bags",
+          "dimension": "count"
+        },
+        {
+          "id": "poly-mailers",
+          "query": "poly mailers",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "discount-plastic-bags",
+      "label": "Discount Plastic Bags",
+      "hostname": "www.discountplasticbags.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.discountplasticbags.com/search?q={query}",
+      "queries": [
+        {
+          "id": "flat-poly-bags",
+          "query": "flat poly bags",
+          "dimension": "count"
+        },
+        {
+          "id": "resealable-bags",
+          "query": "resealable bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "royal-bag",
+      "label": "Royal Bag",
+      "hostname": "www.royalbag.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.royalbag.com/search?q={query}",
+      "queries": [
+        {
+          "id": "trash-bags",
+          "query": "trash bags",
+          "dimension": "count"
+        },
+        {
+          "id": "poly-bags",
+          "query": "poly bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "pos-paper",
+      "label": "POSPaper",
+      "hostname": "www.pospaper.com",
+      "stratum": "paper-supply",
+      "searchUrlTemplate": "https://www.pospaper.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "thermal-paper-rolls",
+          "query": "thermal paper rolls",
+          "dimension": "count"
+        },
+        {
+          "id": "receipt-paper-rolls",
+          "query": "receipt paper rolls",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "bags-unlimited",
+      "label": "Bags Unlimited",
+      "hostname": "www.bagsunlimited.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.bagsunlimited.com/search?q={query}",
+      "queries": [
+        {
+          "id": "comic-bags",
+          "query": "comic bags",
+          "dimension": "count"
+        },
+        {
+          "id": "record-sleeves",
+          "query": "record sleeves",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "greatmats",
+      "label": "Greatmats",
+      "hostname": "www.greatmats.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.greatmats.com/{querySlug}.php",
+      "queries": [
+        {
+          "id": "carpet-tiles",
+          "query": "carpet tiles",
+          "dimension": "area"
+        },
+        {
+          "id": "plastic-flooring",
+          "query": "plastic flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "flooring-inc",
+      "label": "FlooringInc",
+      "hostname": "www.flooringinc.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.flooringinc.com/shop/{querySlug}.html",
+      "queries": [
+        {
+          "id": "carpet",
+          "query": "carpet",
+          "dimension": "area"
+        },
+        {
+          "id": "commercial-flooring",
+          "query": "commercial flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "floor-city",
+      "label": "Floor City",
+      "hostname": "www.floorcity.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.floorcity.com/collections/{querySlug}",
+      "queries": [
+        {
+          "id": "shaw-endura-plus-vinyl-flooring",
+          "query": "shaw endura plus vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "shaw-paragon-tile-plus-vinyl-flooring",
+          "query": "shaw paragon tile plus vinyl flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "builddirect",
+      "label": "BuildDirect",
+      "hostname": "www.builddirect.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.builddirect.com/search?query={query}",
+      "queries": [
+        {
+          "id": "vinyl-plank-flooring",
+          "query": "vinyl plank flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "engineered-hardwood",
+          "query": "engineered hardwood",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "garage-flooring",
+      "label": "Garage Flooring",
+      "hostname": "www.garageflooringllc.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.garageflooringllc.com/search?q={query}",
+      "queries": [
+        {
+          "id": "garage-floor-tiles",
+          "query": "garage floor tiles",
+          "dimension": "area"
+        },
+        {
+          "id": "rubber-flooring",
+          "query": "rubber flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "american-carpet-wholesalers",
+      "label": "American Carpet Wholesalers",
+      "hostname": "www.carpet-wholesale.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.carpet-wholesale.com/search?q={query}",
+      "queries": [
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "dimension": "area"
+        },
+        {
+          "id": "luxury-vinyl-plank",
+          "query": "luxury vinyl plank",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "seattle-fabrics",
+      "label": "Seattle Fabrics",
+      "hostname": "www.seattlefabrics.com",
+      "stratum": "outdoor-fabric",
+      "searchUrlTemplate": "https://www.seattlefabrics.com/search.asp?keyword={query}",
+      "queries": [
+        {
+          "id": "shock-cord",
+          "query": "shock cord",
+          "dimension": "length"
+        },
+        {
+          "id": "webbing",
+          "query": "webbing",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "common-sense-marine",
+      "label": "Common Sense Marine",
+      "hostname": "marinervwire.com",
+      "stratum": "marine-electrical-supply",
+      "searchUrlTemplate": "https://marinervwire.com/search?q={query}",
+      "queries": [
+        {
+          "id": "silicone-wire",
+          "query": "silicone wire",
+          "dimension": "length"
+        },
+        {
+          "id": "marine-wire",
+          "query": "marine wire",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "olive-nation",
+      "label": "OliveNation",
+      "hostname": "www.olivenation.com",
+      "stratum": "baking-ingredients",
+      "searchUrlTemplate": "https://www.olivenation.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "cocoa-powder",
+          "query": "cocoa powder",
+          "dimension": "mass"
+        },
+        {
+          "id": "almond-flour",
+          "query": "almond flour",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "essential-wholesale",
+      "label": "Essential Wholesale & Labs",
+      "hostname": "essentialwholesale.com",
+      "stratum": "cosmetic-ingredients",
+      "searchUrlTemplate": "https://essentialwholesale.com/search?q={query}",
+      "queries": [
+        {
+          "id": "liquid-soap-base",
+          "query": "liquid soap base",
+          "dimension": "volume"
+        },
+        {
+          "id": "body-lotion-base",
+          "query": "body lotion base",
+          "dimension": "volume"
+        }
+      ]
+    }
+  ]
+}
