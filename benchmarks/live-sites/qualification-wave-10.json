@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "description": "Tenth unassigned domain-qualification wave. Candidates target the underrepresented volume and area dimensions through pool chemicals, pressure-washing supplies, janitorial chemicals, paint, and floor-covering storefronts. Every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "pool-geek",
+      "label": "Pool Geek",
+      "hostname": "www.poolgeek.com",
+      "stratum": "pool-specialty",
+      "searchUrlTemplate": "https://www.poolgeek.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-shock",
+          "query": "pool shock",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "dohenys",
+      "label": "Doheny's",
+      "hostname": "www.doheny.com",
+      "stratum": "pool-maintenance",
+      "searchUrlTemplate": "https://www.doheny.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-shock",
+          "query": "pool shock",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "in-the-swim",
+      "label": "In The Swim",
+      "hostname": "www.intheswim.com",
+      "stratum": "aquatic-retail",
+      "searchUrlTemplate": "https://www.intheswim.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-shock",
+          "query": "pool shock",
+          "dimension": "mass"
+        },
+        {
+          "id": "pool-clarifier",
+          "query": "pool clarifier",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "pool-supplies",
+      "label": "PoolSupplies.com",
+      "hostname": "www.poolsupplies.com",
+      "stratum": "pool-retail",
+      "searchUrlTemplate": "https://www.poolsupplies.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-clarifier",
+          "query": "pool clarifier",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "pool-supply-unlimited",
+      "label": "Pool Supply Unlimited",
+      "hostname": "www.poolsupplyunlimited.com",
+      "stratum": "pool-equipment",
+      "searchUrlTemplate": "https://www.poolsupplyunlimited.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-test-strips",
+          "query": "pool test strips",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "sunplay",
+      "label": "Sunplay",
+      "hostname": "www.sunplay.com",
+      "stratum": "water-care",
+      "searchUrlTemplate": "https://www.sunplay.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-clarifier",
+          "query": "pool clarifier",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "royal-swimming-pools",
+      "label": "Royal Swimming Pools",
+      "hostname": "www.royalswimmingpools.com",
+      "stratum": "pool-construction",
+      "searchUrlTemplate": "https://www.royalswimmingpools.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-test-strips",
+          "query": "pool test strips",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "prowash-supply",
+      "label": "ProWash Supply",
+      "hostname": "prowashsupply.com",
+      "stratum": "pressure-washing",
+      "searchUrlTemplate": "https://prowashsupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pressure-hose",
+          "query": "pressure hose",
+          "dimension": "length"
+        },
+        {
+          "id": "degreaser",
+          "query": "degreaser",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "powerwash",
+      "label": "PowerWash.com",
+      "hostname": "www.powerwash.com",
+      "stratum": "pressure-washing",
+      "searchUrlTemplate": "https://www.powerwash.com/search?q={query}",
+      "queries": [
+        {
+          "id": "house-wash",
+          "query": "house wash",
+          "dimension": "volume"
+        },
+        {
+          "id": "degreaser",
+          "query": "degreaser",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "pressure-washer-products",
+      "label": "Pressure Washer Products",
+      "hostname": "pressurewasherproducts.com",
+      "stratum": "pressure-washing",
+      "searchUrlTemplate": "https://pressurewasherproducts.com/search?q={query}",
+      "queries": [
+        {
+          "id": "house-wash",
+          "query": "house wash",
+          "dimension": "volume"
+        },
+        {
+          "id": "degreaser",
+          "query": "degreaser",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "clean-it-supply",
+      "label": "CleanItSupply",
+      "hostname": "www.cleanitsupply.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.cleanitsupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "floor-cleaner",
+          "query": "floor cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "hand-soap",
+          "query": "hand soap",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "janilink",
+      "label": "JaniLink",
+      "hostname": "www.janilink.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.janilink.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "floor-cleaner",
+          "query": "floor cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "hand-soap",
+          "query": "hand soap",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "cleaners-supply",
+      "label": "Cleaner's Supply",
+      "hostname": "www.cleanersupply.com",
+      "stratum": "commercial-cleaning",
+      "searchUrlTemplate": "https://www.cleanersupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "laundry-detergent",
+          "query": "laundry detergent",
+          "dimension": "volume"
+        },
+        {
+          "id": "garment-bags",
+          "query": "garment bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "catalog-cleaning-supply",
+      "label": "Catalog Cleaning Supply",
+      "hostname": "catalogcleaningsupply.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://catalogcleaningsupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "floor-cleaner",
+          "query": "floor cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "hand-soap",
+          "query": "hand soap",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "paint-supply",
+      "label": "Paint Supply",
+      "hostname": "www.paintsupply.com",
+      "stratum": "paint",
+      "searchUrlTemplate": "https://www.paintsupply.com/search/?q={query}",
+      "queries": [
+        {
+          "id": "interior-paint",
+          "query": "interior paint",
+          "dimension": "volume"
+        },
+        {
+          "id": "deck-stain",
+          "query": "deck stain",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "my-perfect-color",
+      "label": "MyPerfectColor",
+      "hostname": "www.myperfectcolor.com",
+      "stratum": "paint",
+      "searchUrlTemplate": "https://www.myperfectcolor.com/search?q={query}",
+      "queries": [
+        {
+          "id": "interior-paint",
+          "query": "interior paint",
+          "dimension": "volume"
+        },
+        {
+          "id": "deck-stain",
+          "query": "deck stain",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "ecos-paints",
+      "label": "ECOS Paints",
+      "hostname": "ecospaints.net",
+      "stratum": "paint",
+      "searchUrlTemplate": "https://ecospaints.net/search?q={query}",
+      "queries": [
+        {
+          "id": "interior-paint",
+          "query": "interior paint",
+          "dimension": "volume"
+        },
+        {
+          "id": "floor-paint",
+          "query": "floor paint",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "backdrop",
+      "label": "Backdrop",
+      "hostname": "www.backdrophome.com",
+      "stratum": "paint",
+      "searchUrlTemplate": "https://www.backdrophome.com/search?q={query}",
+      "queries": [
+        {
+          "id": "interior-paint",
+          "query": "interior paint",
+          "dimension": "volume"
+        },
+        {
+          "id": "exterior-paint",
+          "query": "exterior paint",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "american-floor-mats",
+      "label": "American Floor Mats",
+      "hostname": "www.americanfloormats.com",
+      "stratum": "floor-coverings",
+      "searchUrlTemplate": "https://www.americanfloormats.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "rubber-flooring",
+          "query": "rubber flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "commercial-mats-rubber",
+      "label": "Commercial Mats and Rubber",
+      "hostname": "commercialmatsandrubber.com",
+      "stratum": "floor-coverings",
+      "searchUrlTemplate": "https://commercialmatsandrubber.com/search?q={query}",
+      "queries": [
+        {
+          "id": "rubber-flooring",
+          "query": "rubber flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "dimension": "area"
+        }
+      ]
+    }
+  ]
+}

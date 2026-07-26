@@ -402,6 +402,27 @@ round-trips all 745 retained suggestions exactly with zero failures across 81
 pages and 31 sites. These results remain diagnostic only: all 762 roots are
 unreviewed and ineligible for training or benchmark gold.
 
+Wave 10 screens 20 further unseen domains across all five dimensions and 12
+strata, then qualifies Pool Geek on two visually inspected product grids. The
+other 19 candidates receive explicit bounded failure dispositions, including
+timeouts, dead search routes, unresolved obstruction, empty results, and
+semantically irrelevant recommendation grids. The blinded campaign in
+[`g2-pilot-p07.json`](../benchmarks/review-campaigns/g2-pilot-p07.json)
+contains 32 qualified training domains, 83 pages, and 778 frozen roots. Its
+headed workbench sweep loads every screenshot and root with no console errors
+or review writes.
+
+Pool Geek adds eight volume and eight mass roots where titles and prices are
+DOM-visible but package sizes are commonly visible only on product imagery. The
+diagnostic in
+[`g2-campaign-preannotation-p06.json`](../benchmarks/reviews/g2-campaign-preannotation-p06.json)
+correctly retains all 16 as abstentions rather than inventing DOM evidence. The
+compact audit in
+[`g2-selection-representation-p05.json`](../benchmarks/reviews/g2-selection-representation-p05.json)
+round-trips all 761 machine-retained suggestions exactly across 83 pages and 32
+sites. The image-dependent cases are preserved for independent human review to
+measure whether the eventual model needs a multimodal evidence path.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

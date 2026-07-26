@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "pilotId": "g2-wave-10-volume-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-26T08:24:31.895Z",
+  "source": {
+    "siteIds": [
+      "pool-geek"
+    ],
+    "cohort": "training",
+    "strata": [
+      "pool-specialty"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "7f4bb907d6a500403f13d19bbbad139a41d96027f2716215a03c3b1922d8d229"
+    ],
+    "collectorSha256": [
+      "c697e549acd6eba4a1c75ae20d8f22aa3a3630046d3529cf2ea62f53b806c29f"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T08-14-24-141Z",
+      "runManifestSha256": "960d39cb58d1000da7272737c39ce2ed90ac4e0f23ea7fc0ab1bf9c8a969b371",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 10000
+    },
+    {
+      "runId": "2026-07-26T08-24-24-920Z",
+      "runManifestSha256": "cebf5c33b2d54af2d635c2ef32cf6bcb929b591a65256d23dd7096979bec827f",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 21,
+    "successfulCaptureAttempts": 4,
+    "acceptedPages": 2,
+    "qualifiedDomains": 1,
+    "rejectedDomains": 19
+  },
+  "captures": [
+    {
+      "siteId": "pool-geek",
+      "pageId": "pool-geek--pool-algaecide",
+      "capturedAt": "2026-07-26T08:14:32.051Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 508,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "0ba0b1d7960131c467a2363de72187376a7bd34149cab722bf205e2457cee2d9",
+      "annotationScreenshotSha256": "e7789a8f045d9d597fc3b0dc42c376366a7a658da256525234330abe24f6af79",
+      "provenanceAggregateSha256": "d24eca95e7d25481fb69609b67a5d73f92ce51ce2c4979f57ab11acbbbac66d7",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "pool-geek",
+      "pageId": "pool-geek--pool-shock",
+      "capturedAt": "2026-07-26T08:24:31.895Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 498,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "996d17cd4226897ec21224fb6433b129f30ddad1b7242385301c2188d40ae4ed",
+      "annotationScreenshotSha256": "1f630231cea1f7255c31226e962bf615be3e309cc5d127cb265c994419919b46",
+      "provenanceAggregateSha256": "84f2a9a215d239a5d49e0aa155a505318e016167686cda46d32393457410e767",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

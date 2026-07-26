@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "auditId": "g2-campaign-preannotation-p06",
+  "createdAt": "2026-07-26T08:30:00Z",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p07-reviewer-a-campaign.json",
+    "campaignSha256": "3a6e0f64972ea9b88740d1f9c0abe432cc27a3dd879938389f7dfeae144f8838",
+    "queueSha256": "3350ce3b76002081e0577ce1a343e15f7b34365bf38ae117cefae72389034748",
+    "preannotationSha256": "4175e4f72439ec2a649b7260986c3800fde230a611d63911ea189e04c00e8f40",
+    "auditSha256": "ebd453e65ad3689c360bc8afd1331865b3fca54759da33b16bb2fdfc1688ccbf",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "campaign": {
+    "pages": 83,
+    "cards": 778,
+    "targetDimensions": {
+      "area": 76,
+      "count": 196,
+      "length": 182,
+      "mass": 236,
+      "volume": 88
+    },
+    "candidateEvidence": {
+      "withTitle": 771,
+      "withCurrentPrice": 738,
+      "withNativeUnitPriceInOneNode": 39,
+      "withPackageQuantity": 246
+    }
+  },
+  "dimensionConditionedPreannotation": {
+    "tentativeComparable": 191,
+    "abstained": 587,
+    "evidenceInvalid": 4,
+    "methods": {
+      "explicit-abstention": 587,
+      "native-unit-price": 85,
+      "price-and-package": 106
+    }
+  },
+  "semanticAudit": {
+    "machineAuditPassingComparableSuggestions": 174,
+    "machineAuditPassingAbstentionSuggestions": 587,
+    "quarantinedComparableSuggestions": 17,
+    "quarantinedAbstentionSuggestions": 0,
+    "quarantineReasons": {
+      "ambiguous-decimal-quantity": 1,
+      "equipment-capacity-as-quantity": 10,
+      "invalid-evidence": 4,
+      "physical-dimension-as-quantity": 3
+    }
+  },
+  "newDomainOutcomes": {
+    "pool-geek": {
+      "cards": 16,
+      "tentativeComparable": 0,
+      "abstained": 16,
+      "machineAuditPassing": 16
+    }
+  },
+  "representationChanges": [
+    "No extraction heuristic changed for this append-only campaign expansion.",
+    "Added 16 pool-chemical roots whose titles and prices are DOM-visible while package quantities are commonly visible only in product imagery.",
+    "Retained image-dependent quantity cases as abstentions so human review can quantify the need for multimodal evidence."
+  ],
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "The source cards and all preannotations remain unreviewed. Machine checks can quarantine contradictions but cannot establish semantic correctness; two independent reviews and adjudication remain required."
+  },
+  "decision": "retain-as-blinded-review-aid-only"
+}

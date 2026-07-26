@@ -972,6 +972,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-09-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "pool-geek",
+      "cohort": "training",
+      "pageId": "pool-geek--pool-algaecide",
+      "captureTimestamp": "2026-07-26T08:14:32.051Z",
+      "observationSha256": "0ba0b1d7960131c467a2363de72187376a7bd34149cab722bf205e2457cee2d9",
+      "annotationScreenshotSha256": "e7789a8f045d9d597fc3b0dc42c376366a7a658da256525234330abe24f6af79",
+      "qualificationReport": "benchmarks/domain-qualification/wave-10-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-10-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "pool-geek",
+      "cohort": "training",
+      "pageId": "pool-geek--pool-shock",
+      "captureTimestamp": "2026-07-26T08:24:31.895Z",
+      "observationSha256": "996d17cd4226897ec21224fb6433b129f30ddad1b7242385301c2188d40ae4ed",
+      "annotationScreenshotSha256": "1f630231cea1f7255c31226e962bf615be3e309cc5d127cb265c994419919b46",
+      "qualificationReport": "benchmarks/domain-qualification/wave-10-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-10-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

@@ -186,6 +186,12 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-09-p00.json",
       "promotedAt": "2026-07-26T08:00:00.000Z"
+    },
+    {
+      "siteId": "pool-geek",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-10-p00.json",
+      "promotedAt": "2026-07-26T08:28:00.000Z"
     }
   ]
 }
