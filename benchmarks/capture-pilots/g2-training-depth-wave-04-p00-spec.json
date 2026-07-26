@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-depth-wave-04-p00",
+  "capturedAt": "2026-07-26T19:32:37.666Z",
+  "sourceManifest": "benchmarks/live-sites/training-depth-wave-04.json",
+  "requestedCaptureAttempts": 40,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T19-00-28-803Z",
+      "pageIds": [
+        "coffee-bean-corral--colombian-coffee",
+        "detail-king--glass-cleaner",
+        "pool-geek--stain-remover",
+        "grayline-medical--bandages",
+        "wholesale-marine--anchor-line",
+        "obsessed-garage--interior-cleaner",
+        "prosource-wholesale--hardwood-flooring",
+        "paracord-planet--utility-rope",
+        "medsurg-express--bandages",
+        "tile-generation--ceramic-tile",
+        "medex-supply--bandages",
+        "paracord-galaxy--cotton-rope",
+        "atwood-rope--shock-cord"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T19-16-29-170Z",
+      "pageIds": [
+        "coffee-bean-corral--ethiopian-coffee",
+        "detail-king--tire-dressing",
+        "pool-geek--scale-remover",
+        "grayline-medical--masks",
+        "obsessed-garage--glass-cleaner",
+        "discount-school-supply--pencils",
+        "paracord-planet--bungee-cord",
+        "tile-and-mosaic-depot--marble-tile",
+        "starwest-botanicals--chamomile",
+        "kleen-rite--glass-cleaner",
+        "tile-generation--glass-tile",
+        "medex-supply--masks",
+        "atwood-rope--braided-rope",
+        "morebeer--brewing-sugar"
+      ]
+    }
+  ],
+  "samplingFinding": "Twenty-seven of forty unseen query pages on twenty previously qualified training domains passed the frozen capture gates, a 67.5% page yield. All twenty-seven successful captures were accepted. The remaining thirteen attempts were four blocked annotations and nine navigation or capture errors.",
+  "visualValidationFinding": "All twenty-seven accepted full-page annotation views were inspected after capture and showed coherent query-result evidence. The 317 frozen roots span mass, volume, count, length, and area. They include native square-foot prices; explicit case-count plus volume offers; count packs; meter, yard, and foot quantities; price ranges and starting prices; package count versus physical dimension, product diameter, and batch-capacity ambiguity; accessories and query-adjacent products; and listings where the correct outcome is abstention because sale quantity, coverage, or price binding is absent. Fixed chat and navigation elements remained below the frozen twenty-percent obstruction limit and did not cover the selected evidence."
+}

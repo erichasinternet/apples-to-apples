@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Fourth bounded depth-expansion wave on twenty underrepresented qualified training domains. Forty unseen listing queries contribute exactly eight targets per supported dimension without changing domain assignments or supplying site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "coffee-bean-corral",
+      "label": "Coffee Bean Corral",
+      "hostname": "www.coffeebeancorral.com",
+      "stratum": "green-coffee",
+      "searchUrlTemplate": "https://www.coffeebeancorral.com/search?q={query}",
+      "queries": [
+        {"id": "colombian-coffee", "query": "colombian coffee", "dimension": "mass"},
+        {"id": "ethiopian-coffee", "query": "ethiopian coffee", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "morebeer",
+      "label": "MoreBeer",
+      "hostname": "www.morebeer.com",
+      "stratum": "brewing-supply",
+      "searchUrlTemplate": "https://www.morebeer.com/search?search={query}",
+      "queries": [
+        {"id": "dry-yeast", "query": "dry yeast", "dimension": "mass"},
+        {"id": "brewing-sugar", "query": "brewing sugar", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "northern-brewer",
+      "label": "Northern Brewer",
+      "hostname": "www.northernbrewer.com",
+      "stratum": "brewing-supply",
+      "searchUrlTemplate": "https://www.northernbrewer.com/search?q={query}",
+      "queries": [
+        {"id": "malt-extract", "query": "malt extract", "dimension": "mass"},
+        {"id": "brewing-sugar", "query": "brewing sugar", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "starwest-botanicals",
+      "label": "Starwest Botanicals",
+      "hostname": "www.starwest-botanicals.com",
+      "stratum": "botanical-ingredients",
+      "searchUrlTemplate": "https://www.starwest-botanicals.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "elderberries", "query": "elderberries", "dimension": "mass"},
+        {"id": "chamomile", "query": "chamomile", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "detail-king",
+      "label": "Detail King",
+      "hostname": "www.detailking.com",
+      "stratum": "auto-detailing",
+      "searchUrlTemplate": "https://www.detailking.com/search?q={query}",
+      "queries": [
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"},
+        {"id": "tire-dressing", "query": "tire dressing", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "obsessed-garage",
+      "label": "Obsessed Garage",
+      "hostname": "www.obsessedgarage.com",
+      "stratum": "premium-detailing-retail",
+      "searchUrlTemplate": "https://www.obsessedgarage.com/search?q={query}",
+      "queries": [
+        {"id": "interior-cleaner", "query": "interior cleaner", "dimension": "volume"},
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "pool-geek",
+      "label": "Pool Geek",
+      "hostname": "www.poolgeek.com",
+      "stratum": "pool-specialty",
+      "searchUrlTemplate": "https://www.poolgeek.com/search?q={query}",
+      "queries": [
+        {"id": "stain-remover", "query": "stain remover", "dimension": "volume"},
+        {"id": "scale-remover", "query": "scale remover", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "kleen-rite",
+      "label": "Kleen-Rite",
+      "hostname": "www.kleen-ritecorp.com",
+      "stratum": "car-wash-supply",
+      "searchUrlTemplate": "https://www.kleen-ritecorp.com/search.aspx?searchterm={query}",
+      "queries": [
+        {"id": "interior-cleaner", "query": "interior cleaner", "dimension": "volume"},
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "discount-school-supply",
+      "label": "Discount School Supply",
+      "hostname": "www.discountschoolsupply.com",
+      "stratum": "early-education-supply",
+      "searchUrlTemplate": "https://www.discountschoolsupply.com/search/?text={query}",
+      "queries": [
+        {"id": "glue-sticks", "query": "glue sticks", "dimension": "count"},
+        {"id": "pencils", "query": "pencils", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "medex-supply",
+      "label": "Medex Supply",
+      "hostname": "www.medexsupply.com",
+      "stratum": "discount-medical-supply-retail",
+      "searchUrlTemplate": "https://www.medexsupply.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "bandages", "query": "bandages", "dimension": "count"},
+        {"id": "masks", "query": "masks", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "medsurg-express",
+      "label": "MedSurg Express",
+      "hostname": "medsurgexpress.com",
+      "stratum": "medical-surgical-supply-retail",
+      "searchUrlTemplate": "https://medsurgexpress.com/search?q={query}",
+      "queries": [
+        {"id": "bandages", "query": "bandages", "dimension": "count"},
+        {"id": "gauze-pads", "query": "gauze pads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "grayline-medical",
+      "label": "Grayline Medical",
+      "hostname": "www.graylinemedical.com",
+      "stratum": "clinical-medical-supply",
+      "searchUrlTemplate": "https://www.graylinemedical.com/search?q={query}",
+      "queries": [
+        {"id": "bandages", "query": "bandages", "dimension": "count"},
+        {"id": "masks", "query": "masks", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "atwood-rope",
+      "label": "Atwood Rope",
+      "hostname": "atwoodrope.com",
+      "stratum": "rope-cordage",
+      "searchUrlTemplate": "https://atwoodrope.com/search?q={query}",
+      "queries": [
+        {"id": "shock-cord", "query": "shock cord", "dimension": "length"},
+        {"id": "braided-rope", "query": "braided rope", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "paracord-galaxy",
+      "label": "Paracord Galaxy",
+      "hostname": "paracordgalaxy.com",
+      "stratum": "paracord-specialty",
+      "searchUrlTemplate": "https://paracordgalaxy.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-rope", "query": "cotton rope", "dimension": "length"},
+        {"id": "elastic-cord", "query": "elastic cord", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "paracord-planet",
+      "label": "Paracord Planet",
+      "hostname": "www.paracordplanet.com",
+      "stratum": "rope-cordage",
+      "searchUrlTemplate": "https://www.paracordplanet.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "utility-rope", "query": "utility rope", "dimension": "length"},
+        {"id": "bungee-cord", "query": "bungee cord", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "wholesale-marine",
+      "label": "Wholesale Marine",
+      "hostname": "www.wholesalemarine.com",
+      "stratum": "marine-supply",
+      "searchUrlTemplate": "https://www.wholesalemarine.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "anchor-line", "query": "anchor line", "dimension": "length"},
+        {"id": "nylon-rope", "query": "nylon rope", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "prosource-wholesale",
+      "label": "ProSource Wholesale",
+      "hostname": "www.prosourcewholesale.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.prosourcewholesale.com/products/list?query={query}",
+      "queries": [
+        {"id": "hardwood-flooring", "query": "hardwood flooring", "dimension": "area"},
+        {"id": "laminate-flooring", "query": "laminate flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tile-generation",
+      "label": "Tile Generation",
+      "hostname": "www.tilegeneration.com",
+      "stratum": "online-tile-and-mosaic-retail",
+      "searchUrlTemplate": "https://www.tilegeneration.com/search?q={query}",
+      "queries": [
+        {"id": "ceramic-tile", "query": "ceramic tile", "dimension": "area"},
+        {"id": "glass-tile", "query": "glass tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tilezz",
+      "label": "Tilezz",
+      "hostname": "tilezz.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://tilezz.com/search?q={query}",
+      "queries": [
+        {"id": "subway-tile", "query": "subway tile", "dimension": "area"},
+        {"id": "marble-tile", "query": "marble tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tile-and-mosaic-depot",
+      "label": "Tile and Mosaic Depot",
+      "hostname": "tileandmosaicdepot.com",
+      "stratum": "online-tile-and-mosaic-retail",
+      "searchUrlTemplate": "https://tileandmosaicdepot.com/search?q={query}",
+      "queries": [
+        {"id": "floor-tile", "query": "floor tile", "dimension": "area"},
+        {"id": "marble-tile", "query": "marble tile", "dimension": "area"}
+      ]
+    }
+  ]
+}
