@@ -255,6 +255,16 @@ syringes, underpads, disposable cups, magnesium, collagen, trash bags, floor
 cleaners, and fish oil. Related accessories within valid result grids remain
 frozen as deliberate abstention examples rather than being silently removed.
 
+A deterministic preannotation audit over all 460 campaign cards is recorded in
+[`g2-campaign-preannotation-p00.json`](../benchmarks/reviews/g2-campaign-preannotation-p00.json).
+Conditioning derived extraction on the capture's intended comparison dimension
+reduced tentative comparables from 143 to 84 and evidence-invalid outputs from
+34 to 20. A separate semantic quarantine retained only 54 comparable suggestions
+and identified equipment capacity, lost decimal separators, and ungrounded
+numbers as concrete failure modes. The entire artifact remains ineligible for
+silver training and benchmark gold because deterministic agreement is not an
+independent semantic review.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

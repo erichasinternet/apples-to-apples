@@ -4,11 +4,13 @@ import path from "node:path";
 import type { ExtractionPreannotation } from "./extraction-preannotation-lib";
 import {
   auditExtractionPreannotation,
+  canPromoteSilverTraining,
   type ExtractionQualityAudit
 } from "./extraction-quality-audit-lib";
 
 interface PreannotationReport {
   version: number;
+  sourceReviewStatus?: "adjudicated" | "unreviewed-capture";
   preannotations: ExtractionPreannotation[];
 }
 
@@ -29,14 +31,19 @@ const eligibleIds = audits
 const quarantined = audits.filter(
   (audit) => !audit.eligibleForSilverTraining
 );
+const sourceReviewStatus = input.sourceReviewStatus ?? "adjudicated";
 const report = {
   version: 1,
   createdAt: new Date().toISOString(),
   inputPath: path.relative(process.cwd(), inputPath),
   inputSha256: createHash("sha256").update(inputBytes).digest("hex"),
+  sourceReviewStatus,
   policy:
     "Independent deterministic semantic audit for silver training only. Benchmark gold still requires dual review and adjudication.",
-  eligibleForSilverTraining: quarantined.length < audits.length,
+  eligibleForSilverTraining: canPromoteSilverTraining(
+    sourceReviewStatus,
+    audits
+  ),
   eligibleForBenchmarkGold: false,
   counts: {
     cards: audits.length,

@@ -204,6 +204,10 @@ export function extractPackCount(text: string): number | undefined {
   const patterns = [
     /\b(\d{1,3})\s*(?:pack|pk)\b/i,
     /\b(?:pack|pk)\s+of\s+(\d{1,3})\b/i,
+    /\b(?:case|carton|box)\s+of\s+(\d{1,3})\b/i,
+    /\b(\d{1,3})\s+per\s+(?:case|carton|box)\b/i,
+    /\b(\d{1,3})\s+(?:rolls?|reams?|packs?|bags?|bottles?)\s*\/\s*(?:case|carton|box)\b/i,
+    /\b(\d{1,3})\s+(?:cartons?|cases?)\b/i,
     /\b(\d{1,3})\s*\/\s*(?:carton|case)\b/i,
     /\btotal\s+qty\s+(\d{1,3})\b/i
   ];

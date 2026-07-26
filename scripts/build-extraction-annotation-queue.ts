@@ -119,6 +119,7 @@ const report = {
   version: 1,
   createdAt: new Date().toISOString(),
   sourceManifest: path.relative(process.cwd(), sourceManifestPath),
+  sourceReviewStatus: "adjudicated",
   policy:
     "Candidate types are deterministic review aids, not labels. A reviewer must ground every accepted value in card-local evidence node IDs, explicitly abstain when comparison facts are unsupported, and obtain independent adjudication before training or benchmark use.",
   counts: {

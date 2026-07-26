@@ -1,7 +1,19 @@
-import { auditExtractionPreannotation } from "../../scripts/extraction-quality-audit-lib";
+import {
+  auditExtractionPreannotation,
+  canPromoteSilverTraining
+} from "../../scripts/extraction-quality-audit-lib";
 import type { ExtractionPreannotation } from "../../scripts/extraction-preannotation-lib";
 
 describe("extraction quality audit", () => {
+  it("never promotes unreviewed captures to silver training", () => {
+    const passing = auditExtractionPreannotation(record({}));
+
+    expect(canPromoteSilverTraining("unreviewed-capture", [passing])).toBe(
+      false
+    );
+    expect(canPromoteSilverTraining("adjudicated", [passing])).toBe(true);
+  });
+
   it("accepts a grounded package-math extraction", () => {
     const audit = auditExtractionPreannotation(
       record({
@@ -81,6 +93,48 @@ describe("extraction quality audit", () => {
     );
 
     expect(audit.eligibleForSilverTraining).toBe(true);
+  });
+
+  it("quarantines durable equipment capacity used as package quantity", () => {
+    const audit = auditExtractionPreannotation(
+      record({
+        title: {
+          value: "Stainless Steel Flour Dredge, 10 oz Capacity",
+          evidenceNodeIds: ["title"]
+        },
+        packageQuantity: {
+          valuePerPackage: 10,
+          packCount: 1,
+          unit: "oz",
+          dimension: "mass",
+          evidenceNodeIds: ["title"]
+        }
+      })
+    );
+
+    expect(audit.reasons).toContain("equipment-capacity-as-quantity");
+    expect(audit.eligibleForSilverTraining).toBe(false);
+  });
+
+  it("quarantines quantities with a lost decimal separator", () => {
+    const audit = auditExtractionPreannotation(
+      record({
+        title: {
+          value: "Concentrated Detergent, 53 5 oz Bottle",
+          evidenceNodeIds: ["title"]
+        },
+        packageQuantity: {
+          valuePerPackage: 5,
+          packCount: 1,
+          unit: "oz",
+          dimension: "mass",
+          evidenceNodeIds: ["title"]
+        }
+      })
+    );
+
+    expect(audit.reasons).toContain("ambiguous-decimal-quantity");
+    expect(audit.eligibleForSilverTraining).toBe(false);
   });
 
   it("quarantines image-description titles", () => {

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "auditId": "g2-campaign-preannotation-p00",
+  "createdAt": "2026-07-26T01:45:27Z",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-expansion-wave-02-reviewer-a-campaign.json",
+    "campaignSha256": "daebfd7d2d67df8d9f10278f550ed160c53259ac15be2490cb79c15311ee775a",
+    "queueSha256": "7e127fdd6b3f1c89294d17eb4704688a60318e6be3139335bd8c1f87c63d0ad6",
+    "preannotationSha256": "12190fedd7b0fcc632a856212ce66bae126f3f1cb0275bcf72b8345d34b86f8e",
+    "auditSha256": "b8ec994c7b833460c2ba9aa0e2d6b2eacf56dea63883ebba326cad8619fa0a45",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "campaign": {
+    "pages": 53,
+    "cards": 460,
+    "targetDimensions": {
+      "area": 32,
+      "count": 196,
+      "length": 24,
+      "mass": 160,
+      "volume": 48
+    }
+  },
+  "baselineWithoutTargetDimension": {
+    "tentativeComparable": 143,
+    "abstained": 317,
+    "evidenceInvalid": 34
+  },
+  "dimensionConditionedPreannotation": {
+    "tentativeComparable": 84,
+    "abstained": 376,
+    "evidenceInvalid": 20,
+    "methods": {
+      "explicit-abstention": 376,
+      "native-unit-price": 5,
+      "price-and-package": 79
+    }
+  },
+  "semanticAudit": {
+    "auditPassingComparableSuggestions": 54,
+    "auditPassingAbstentionSuggestions": 376,
+    "quarantinedComparableSuggestions": 30,
+    "quarantineReasons": {
+      "ambiguous-decimal-quantity": 1,
+      "equipment-capacity-as-quantity": 10,
+      "invalid-evidence": 20
+    }
+  },
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "Deterministic checks cannot establish semantic correctness. Two independent reviews and third-party adjudication remain required."
+  },
+  "decision": "retain-as-blinded-review-aid-only"
+}

@@ -23,6 +23,7 @@ export interface ExtractionQueueItem {
   pageId: string;
   siteId: string;
   cardNodeId: string;
+  targetDimension?: Dimension;
 }
 
 export interface ExtractionPreannotation {
@@ -78,9 +79,11 @@ export function preannotateExtraction(
   }
 
   const nativeUnitPrice = selectNativeUnitPrice(textCandidates);
+  const preferredDimension =
+    nativeUnitPrice?.dimension ?? item.targetDimension;
   const quantity = selectGroundedQuantity(
     title.text,
-    nativeUnitPrice?.dimension,
+    preferredDimension,
     nativeUnitPrice?.unit
   );
   const prices = selectPriceCandidates(textCandidates);

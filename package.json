@@ -78,6 +78,7 @@
     "training:review:qwen:artifact-heldout": "bun scripts/build-visual-review-artifact.ts",
     "training:adjudicated:prepare": "bun scripts/prepare-adjudicated-discovery.ts --sources benchmarks/reviews/adjudicated-development-sources.json",
     "training:adjudicated:extraction-queue": "bun scripts/build-extraction-annotation-queue.ts",
+    "training:campaign:extraction-queue": "bun scripts/build-campaign-extraction-queue.ts",
     "training:extraction:preannotate": "bun scripts/build-extraction-preannotations.ts",
     "training:extraction:audit": "bun scripts/audit-extraction-preannotations.ts",
     "training:extraction:prepare": "bun scripts/prepare-silver-extraction.ts",

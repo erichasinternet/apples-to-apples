@@ -10,6 +10,7 @@ import {
 
 interface QueueReport {
   version: number;
+  sourceReviewStatus?: "adjudicated" | "unreviewed-capture";
   queue: Array<
     ExtractionQueueItem & {
       source: {
@@ -68,6 +69,7 @@ const report = {
   createdAt: new Date().toISOString(),
   queuePath: path.relative(process.cwd(), queuePath),
   queueSha256: createHash("sha256").update(queueBytes).digest("hex"),
+  sourceReviewStatus: queue.sourceReviewStatus ?? "adjudicated",
   policy:
     "Deterministic high-precision silver preannotations. Outputs must pass card-local evidence validation. They are never benchmark gold and require independent quality sampling before training eligibility.",
   eligibleForSilverTraining: false,

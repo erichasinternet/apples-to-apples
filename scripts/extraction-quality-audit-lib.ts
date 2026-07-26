@@ -7,7 +7,9 @@ export type ExtractionAuditReason =
   | "image-description-title"
   | "dimension-mismatch"
   | "native-price-math-disagreement"
-  | "physical-dimension-as-quantity";
+  | "physical-dimension-as-quantity"
+  | "equipment-capacity-as-quantity"
+  | "ambiguous-decimal-quantity";
 
 export interface ExtractionQualityAudit {
   id: string;
@@ -15,6 +17,16 @@ export interface ExtractionQualityAudit {
   outcome: ExtractionPreannotation["outcome"];
   eligibleForSilverTraining: boolean;
   reasons: ExtractionAuditReason[];
+}
+
+export function canPromoteSilverTraining(
+  sourceReviewStatus: "adjudicated" | "unreviewed-capture",
+  audits: ExtractionQualityAudit[]
+): boolean {
+  return (
+    sourceReviewStatus === "adjudicated" &&
+    audits.some((audit) => audit.eligibleForSilverTraining)
+  );
 }
 
 export function auditExtractionPreannotation(
@@ -46,6 +58,20 @@ export function auditExtractionPreannotation(
     !looksLikeConsumableLength(title)
   ) {
     reasons.push("physical-dimension-as-quantity");
+  }
+  if (
+    preannotation.method === "price-and-package" &&
+    quantity &&
+    (quantity.dimension === "mass" || quantity.dimension === "volume") &&
+    looksLikeEquipmentCapacity(title)
+  ) {
+    reasons.push("equipment-capacity-as-quantity");
+  }
+  if (
+    quantity &&
+    /\b\d{1,4}\s+\d\s*(?:fl\s*oz|oz|lb|kg|g|ml|l)\b/i.test(title)
+  ) {
+    reasons.push("ambiguous-decimal-quantity");
   }
   if (native && quantity && price && native.dimension === quantity.dimension) {
     const unit = getUnitDefinition(quantity.unit);
@@ -92,4 +118,16 @@ function looksLikeConsumableLength(title: string): boolean {
   return /\b(?:foil|wrap|rope|cord|cable|wire|tape|ribbon|thread|yarn|fabric|chain|hose|tubing|film|liner|paper|sheeting)\b/i.test(
     title
   );
+}
+
+function looksLikeEquipmentCapacity(title: string): boolean {
+  const equipment =
+    /\b(?:capacity|dredge|shaker|sifter|mixer|flour bin|syringe|measuring cup|dispenser|tank)\b/i.test(
+      title
+    );
+  const consumable =
+    /\b(?:food|flour(?!\s+(?:bin|sifter|shield|dredge))|rice|oil|detergent|cleaner|soap|litter|powder|supplement|protein|coffee|tea|herb|chemical|solution|juice|milk|drink|deodorizer)\b/i.test(
+      title
+    );
+  return equipment && !consumable;
 }

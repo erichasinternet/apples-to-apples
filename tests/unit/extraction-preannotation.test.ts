@@ -33,6 +33,39 @@ describe("extraction preannotation", () => {
     expect(result.evidenceValidation).toEqual({ valid: true, issues: [] });
   });
 
+  it("uses the campaign target dimension to avoid capacity-as-quantity labels", () => {
+    const observation = page([
+      node("card", undefined, "article"),
+      node(
+        "title",
+        "card",
+        "h3",
+        "Heavy Duty Trash Bags, 30 gal, 25 Bags/Roll, 8 Rolls/Box"
+      ),
+      node("price", "card", "span", "$82.52")
+    ]);
+    const result = preannotateExtraction(item("count"), observation);
+
+    expect(result.extraction.packageQuantity).toMatchObject({
+      valuePerPackage: 25,
+      packCount: 8,
+      unit: "bag",
+      dimension: "count"
+    });
+  });
+
+  it("abstains when a card only exposes a different physical dimension", () => {
+    const observation = page([
+      node("card", undefined, "article"),
+      node("title", "card", "h3", "Disposable Tuberculin Syringe, 10 mL"),
+      node("price", "card", "span", "$0.57")
+    ]);
+    const result = preannotateExtraction(item("count"), observation);
+
+    expect(result.outcome).toBe("abstained");
+    expect(result.extraction.packageQuantity).toBeUndefined();
+  });
+
   it("uses an unambiguous current price and title quantity", () => {
     const observation = page([
       node("card", undefined, "article"),
@@ -189,12 +222,13 @@ describe("extraction preannotation", () => {
   });
 });
 
-function item() {
+function item(targetDimension?: "mass" | "volume" | "count" | "length" | "area") {
   return {
     id: "shop--query:card",
     pageId: "shop--query",
     siteId: "shop",
-    cardNodeId: "card"
+    cardNodeId: "card",
+    ...(targetDimension ? { targetDimension } : {})
   };
 }
 

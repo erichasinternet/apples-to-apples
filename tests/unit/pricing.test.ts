@@ -68,6 +68,10 @@ describe("quantity parsing", () => {
     expect(extractPackCount("Hand soap, 7.5 oz, Pack of 6 bottles")).toBe(6);
     expect(extractPackCount("Hand soap, 7.5 fl oz, 6/Carton")).toBe(6);
     expect(extractPackCount("Hand soap, 11.25 oz, Total Qty 6")).toBe(6);
+    expect(extractPackCount("100 Count -- 8 Per Case")).toBe(8);
+    expect(extractPackCount("25 Bags/Roll, 8 Rolls/Box")).toBe(8);
+    expect(extractPackCount("1600 mL Refills, Case of 4")).toBe(4);
+    expect(extractPackCount("150 oz Bottle 4 Carton")).toBe(4);
   });
 
   it.each([
