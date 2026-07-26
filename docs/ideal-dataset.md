@@ -493,6 +493,16 @@ round-trips all 935 machine-retained suggestions exactly with zero failures.
 All 954 roots and machine suggestions remain unreviewed and ineligible for
 silver training or benchmark gold.
 
+The paired campaign is deterministically partitioned into ten matching
+ten-page reviewer assignments in
+[`g2-pilot-p10-review-batches.json`](../benchmarks/reviews/g2-pilot-p10-review-batches.json).
+Review identities, review IDs, frozen card roots, source hashes, and blinding
+remain unchanged, so batch submissions can be audited against the full
+campaign. A headed sweep of every batch is recorded in
+[`g2-pilot-p10-review-batch-validation.json`](../benchmarks/reviews/g2-pilot-p10-review-batch-validation.json):
+all 100 screenshots and 954 roots load from the rebased paths with zero console
+errors or writes, and invalid or incomplete submissions remain rejected.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

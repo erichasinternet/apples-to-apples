@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "auditId": "g2-pilot-p10-review-batch-validation",
+  "createdAt": "2026-07-26T09:48:00Z",
+  "source": {
+    "batchManifest": "benchmarks/reviews/g2-pilot-p10-review-batches.json",
+    "batchManifestSha256": "ef9a26f62d010c3512303c59b9840f34fe3a52e11deb2b64662977cbf637b300",
+    "validationReportSha256": [
+      "87fbd1a30f8b77c6bef1378e5e534093fa39533722f54f667d4bbf0dcf07829d",
+      "736738298aec00b402d9fbbc95e2513260d4b5b3b1e830d8edddca363a4bb52c",
+      "255c17666355324d7fa023e1719175581fda433b12c76aaf00299bf0e17af631",
+      "9eb1bb277328c8d51f0d49b064560cc4850f99eda1134479b965a82e65de5c85",
+      "3821b7356a5721991a5204b3ddbefb816a94b974c06695be5142ca8bc096d1c6",
+      "acba008b5d91ee7ab18f5af59e320b4ce1ddc117f6a1dfd063078531e716c603",
+      "25ed62a3b024122f72a767353e64d88d4873ebb17ea7ed745db0c54b491ed58d",
+      "4742ebf3925afa4163e0bba15830c4c92d862301124e3312f9be55817f50c8e1",
+      "77a02477bbbeff73f1ed733ba582f57d5c3d6bc701f6238cc391ca8f0a420394",
+      "41e216244c781c074d0b1ebc9ef1568e2ab0d46749a58caa431f6975b8a027c1"
+    ]
+  },
+  "browser": "headed Playwright Chromium",
+  "batches": 10,
+  "pagesLoaded": 100,
+  "screenshotsLoaded": 100,
+  "candidateCards": 954,
+  "onlyFrozenCardRootOffered": true,
+  "directFrozenCardNavigation": "passed",
+  "nonCandidateAncestor": "rejected-404",
+  "incompleteCoverage": "rejected-422",
+  "consoleErrors": 0,
+  "reviewFilesWritten": 0,
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Workbench validation proves batch integrity and usability, not semantic label correctness."
+  }
+}

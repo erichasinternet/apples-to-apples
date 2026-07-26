@@ -104,6 +104,25 @@ Campaign merging rejects mixed reviewers, mixed cohorts, labels, duplicate pages
 duplicate review IDs, invalid source hashes, and queues without frozen candidate
 card roots. Paths are rebased without changing source evidence.
 
+Partition a large paired campaign into deterministic matching assignments:
+
+```bash
+bun run dataset:reviews:batches -- \
+  --queue-a benchmark-data/review/<campaign>-reviewer-a.json \
+  --queue-b benchmark-data/review/<campaign>-reviewer-b.json \
+  --output-dir benchmark-data/review/<campaign>-batches \
+  --manifest benchmarks/reviews/<campaign>-review-batches.json \
+  --campaign-id <campaign> --pages-per-batch 10
+```
+
+Batching fails unless the two source queues have distinct reviewer identities
+and identical page evidence, source hashes, and frozen card roots. It preserves
+the original review IDs, rebases evidence paths, records hashes for every batch
+queue, and gives both reviewers the same page assignments. Reviewers may work on
+different batches in parallel while writing to their own shared submission
+directory; the original full campaigns remain the source of truth for progress
+auditing and adjudication.
+
 Open one blinded queue or campaign in the local review workbench:
 
 ```bash
