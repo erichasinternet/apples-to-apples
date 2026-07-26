@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Nineteenth unassigned domain-qualification wave. Twenty domains absent from all prior qualification manifests contribute four candidates per target dimension across spice and bulk-food retail, automotive detailing, medical supply, fabric and cord retail, and flooring commerce. Public route probes verified hostname confinement and result-page shape before capture. No site-specific DOM selectors are supplied, and every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "spice-and-tea-exchange",
+      "label": "The Spice & Tea Exchange",
+      "hostname": "www.spiceandtea.com",
+      "stratum": "specialty-spice-and-tea-retail",
+      "searchUrlTemplate": "https://www.spiceandtea.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "cinnamon", "query": "cinnamon", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "whole-spice",
+      "label": "Whole Spice",
+      "hostname": "www.wholespice.com",
+      "stratum": "direct-to-consumer-bulk-spice-retail",
+      "searchUrlTemplate": "https://www.wholespice.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "turmeric", "query": "turmeric", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "raw-spice-bar",
+      "label": "RawSpiceBar",
+      "hostname": "rawspicebar.com",
+      "stratum": "direct-to-consumer-spice-retail",
+      "searchUrlTemplate": "https://rawspicebar.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "cinnamon", "query": "cinnamon", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "ifs-bulk",
+      "label": "IFS Bulk",
+      "hostname": "www.ifsbulk.com",
+      "stratum": "wholesale-bulk-food-retail",
+      "searchUrlTemplate": "https://www.ifsbulk.com/search?q={query}",
+      "queries": [
+        {"id": "almonds", "query": "almonds", "dimension": "mass"},
+        {"id": "rice", "query": "rice", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "yeagers-detailing-supplies",
+      "label": "Yeager's Auto Detailing Supplies",
+      "hostname": "yeagersdetailingsupplies.com",
+      "stratum": "independent-detailing-supply-retail",
+      "searchUrlTemplate": "https://yeagersdetailingsupplies.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-shampoo", "query": "car shampoo", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "infinite-detailing",
+      "label": "Infinite Detailing",
+      "hostname": "shine-supply.com",
+      "stratum": "independent-detailing-retail",
+      "searchUrlTemplate": "https://shine-supply.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-shampoo", "query": "car shampoo", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "super-detail",
+      "label": "Super Detail",
+      "hostname": "www.superdetail.com",
+      "stratum": "professional-detailing-retail",
+      "searchUrlTemplate": "https://www.superdetail.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-shampoo", "query": "car shampoo", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "turtle-wax",
+      "label": "Turtle Wax",
+      "hostname": "www.turtlewax.com",
+      "stratum": "automotive-care-brand-retail",
+      "searchUrlTemplate": "https://www.turtlewax.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-wash", "query": "car wash", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "gdi-medical",
+      "label": "GDI Medical",
+      "hostname": "gdimed.com",
+      "stratum": "medical-consumables-retail",
+      "searchUrlTemplate": "https://gdimed.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "syringes", "query": "syringes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "shop-med-vet",
+      "label": "Med-Vet International",
+      "hostname": "www.shopmedvet.com",
+      "stratum": "medical-and-veterinary-supply-retail",
+      "searchUrlTemplate": "https://www.shopmedvet.com/search?keywords={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "syringes", "query": "syringes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "medical-supply-group",
+      "label": "Medical Supply Group",
+      "hostname": "medicalsupplygroup.com",
+      "stratum": "medical-and-laboratory-supply-retail",
+      "searchUrlTemplate": "https://medicalsupplygroup.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "syringes", "query": "syringes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "med-on-the-go",
+      "label": "MedOnTheGo",
+      "hostname": "www.medonthego.com",
+      "stratum": "online-medical-supply-retail",
+      "searchUrlTemplate": "https://www.medonthego.com/search.asp?keyword={query}",
+      "queries": [
+        {"id": "gloves", "query": "gloves", "dimension": "count"},
+        {"id": "syringes", "query": "syringes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "the-fabric-co",
+      "label": "The Fabric Co",
+      "hostname": "thefabricco.com",
+      "stratum": "decorator-fabric-by-yard-retail",
+      "searchUrlTemplate": "https://thefabricco.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "la-silk-fabric",
+      "label": "LA Silk Fabric",
+      "hostname": "lasilkfabric.com",
+      "stratum": "fashion-fabric-by-yard-retail",
+      "searchUrlTemplate": "https://lasilkfabric.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "silk-fabric", "query": "silk fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "rope-and-cord",
+      "label": "Rope and Cord",
+      "hostname": "ropeandcord.com",
+      "stratum": "rope-by-length-retail",
+      "searchUrlTemplate": "https://ropeandcord.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "cotton-rope", "query": "cotton rope", "dimension": "length"},
+        {"id": "nylon-rope", "query": "nylon rope", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "the-fabric-market",
+      "label": "The Fabric Market",
+      "hostname": "thefabricmarket.com",
+      "stratum": "independent-fabric-by-yard-retail",
+      "searchUrlTemplate": "https://thefabricmarket.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "tile-and-mosaic-depot",
+      "label": "Tile and Mosaic Depot",
+      "hostname": "tileandmosaicdepot.com",
+      "stratum": "online-tile-and-mosaic-retail",
+      "searchUrlTemplate": "https://tileandmosaicdepot.com/search?q={query}",
+      "queries": [
+        {"id": "porcelain-tile", "query": "porcelain tile", "dimension": "area"},
+        {"id": "mosaic-tile", "query": "mosaic tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tilezz",
+      "label": "Tilezz",
+      "hostname": "tilezz.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://tilezz.com/search?q={query}",
+      "queries": [
+        {"id": "porcelain-tile", "query": "porcelain tile", "dimension": "area"},
+        {"id": "mosaic-tile", "query": "mosaic tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "hurst-hardwoods",
+      "label": "Hurst Hardwoods",
+      "hostname": "www.hursthardwoods.com",
+      "stratum": "hardwood-flooring-retail",
+      "searchUrlTemplate": "https://www.hursthardwoods.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "hardwood-flooring", "query": "hardwood flooring", "dimension": "area"},
+        {"id": "unfinished-flooring", "query": "unfinished flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "reserve-hardwood-flooring",
+      "label": "Reserve Hardwood Flooring",
+      "hostname": "www.reservehardwoodflooring.com",
+      "stratum": "specialty-hardwood-flooring-retail",
+      "searchUrlTemplate": "https://www.reservehardwoodflooring.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "hardwood-flooring", "query": "hardwood flooring", "dimension": "area"},
+        {"id": "unfinished-flooring", "query": "unfinished flooring", "dimension": "area"}
+      ]
+    }
+  ]
+}

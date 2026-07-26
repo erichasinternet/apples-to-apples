@@ -90,7 +90,17 @@
     "armour-detail-supply",
     "food-to-live",
     "medex-supply",
-    "spandex-house"
+    "spandex-house",
+    "whole-spice",
+    "yeagers-detailing-supplies",
+    "turtle-wax",
+    "medical-supply-group",
+    "the-fabric-co",
+    "la-silk-fabric",
+    "rope-and-cord",
+    "the-fabric-market",
+    "tile-and-mosaic-depot",
+    "tilezz"
   ],
   "validation": [
     "amazon",

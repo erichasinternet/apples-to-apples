@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "auditId": "g2-pilot-p17-review-batch-validation",
+  "createdAt": "2026-07-26T15:45:39Z",
+  "source": {
+    "batchManifest": "benchmarks/reviews/g2-pilot-p17-review-batches.json",
+    "batchManifestSha256": "126ae54ba5b5c83a27094ba972be1a338aa1a3fd60d0601a08f018ac3d6faa9d",
+    "validationReportSha256": [
+      "bba4be0b6bcc1f993d2c66669e2dd0f7cb960ce2244da72c0715ec76d85f4436",
+      "74478877ca1d81ea8b52074d08b46a109897fc7678d74fc64f369baeb5175e59",
+      "6d8be58d6519bf2b92759536dbfa9ea46a6d3bca804bbb23d3d60873faa4ffee",
+      "314721be95331d7254fb334ab1757092f62ca255ce3dd6d8cdd14b2dc79aa0a9",
+      "a75c38d370cbf5f14b105617f78d60d021bc688ac68bf46335d10dc5ae46f3d6",
+      "63a48e1e62650956b019caaabba2d834b352ff307c916282be8e2dbed5efbf67",
+      "82f3149201073208c30f32aff0f5d3de45195423ed1848cc3d92eb0d2253cf60",
+      "098bce1951504e024d3a83c0688bf9948846e5127e600c942e00d8031fc64322",
+      "0536a370cf2cc70d4493a82b036a9f3d158cb2116aa7d6f5b75af08606882d44",
+      "bfb8e58dbcb6230f578f4ba664ceaadd5e7f39d14c09fc756a0f662992fe5141",
+      "befbec70d8df7f63b38f167c1d749625a383564187c2a9ae49bfcc1d32b82934",
+      "e7b7a37b54f8938501a53b556c9285cb5f9738e17cb0718b10b3fd1e4c25eae9",
+      "c4ed90d5f7ed16cc70eed926570cb807374f190e6d9bc0da6236182847e278bd",
+      "64145022315479ae34d87d24874d3ad82c3fb8e927b39435ce22caeee92c5a12",
+      "a95b7d76386480e275b73cfbd8cb1cc347298aa2c4a7924e9839e541d86f0492",
+      "fda3d86910b65d3774f7da07b13223590ed87c73ab8df69405d1c429014f967c",
+      "0e38e62b2e8fc9e04cbfee610bdbdda35631970bc3f7621e323d7fefc4a7929c",
+      "3e5142e6179d37d4850fe26ae5815f37549c1226b12b8863dc090eed6167e940"
+    ]
+  },
+  "browser": "headed Playwright Chromium",
+  "batches": 18,
+  "pagesLoaded": 176,
+  "screenshotsLoaded": 176,
+  "candidateCards": 1845,
+  "onlyFrozenCardRootOffered": true,
+  "directFrozenCardNavigation": "passed",
+  "nonCandidateAncestor": "rejected-404",
+  "incompleteCoverage": "rejected-422",
+  "consoleErrors": 0,
+  "reviewFilesWritten": 0,
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Workbench validation proves batch integrity and usability, not semantic label correctness."
+  }
+}

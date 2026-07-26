@@ -1,0 +1,440 @@
+{
+  "version": 1,
+  "qualificationId": "wave-19-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-19.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "screeningPageTimeoutMs": 90000,
+    "qualificationPageTimeoutMs": 90000,
+    "screeningCardScreenshotBudgetMs": 12000,
+    "qualificationCardScreenshotBudgetMs": 25000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "exactPageTargeting": true,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "screeningSamplingFinding": "The initial screen selected exactly one page per domain; every follow-up and final capture used explicit page IDs. Group timeouts were retried only as isolated bounded captures.",
+    "manifestIntegrityFinding": "All candidate IDs and hostnames were checked against waves 1-18 before capture. The final manifest is frozen at sourceManifestSha256 43493ae7febbce49c177046c3618229db9a7110423e4e7df66d501ccebddc21c, and all twenty accepted provenance records share that hash."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T14-39-08-409Z",
+      "runManifestSha256": "77e63e9d3cf09fb936b3f7d11f981ffd8f725cb53f60a6e11cb271290b207d13",
+      "purpose": "one-page-per-domain headed screening"
+    },
+    {
+      "runId": "2026-07-26T14-56-24-752Z",
+      "runManifestSha256": "d80878565a494c195beb133d1bb72e2b36dac423351068e64cfb65ff7c8e6858",
+      "purpose": "desktop follow-up and replacement screening"
+    },
+    {
+      "runId": "2026-07-26T15-05-28-486Z",
+      "runManifestSha256": "d8984754005db30a00adce9d1df865ead548353ae6d736ec422c57778017efe8",
+      "purpose": "narrow follow-up screening"
+    },
+    {
+      "runId": "2026-07-26T15-10-58-061Z",
+      "runManifestSha256": "b30ec07e30beab0c8fbbe5543a48f6c90e404476386d33fc16dc79b826045263",
+      "purpose": "frozen-manifest desktop qualification"
+    },
+    {
+      "runId": "2026-07-26T15-14-49-962Z",
+      "runManifestSha256": "484a301098a433dd6b4a34857166180ae97f68b2586b1ab4dc6ef142d7b266d4",
+      "purpose": "frozen-manifest narrow qualification"
+    },
+    {
+      "runId": "2026-07-26T15-16-15-732Z",
+      "runManifestSha256": "80521550d7bc233d0d0116186e56f99d0fa59414297cb0ba10f5bae33f67a835",
+      "purpose": "frozen-manifest desktop recapture"
+    },
+    {
+      "runId": "2026-07-26T15-20-55-437Z",
+      "runManifestSha256": "317dc231dbbd37c711840cf59d2d243acf6cab237f8e078d3244de35e6d4d6d0",
+      "purpose": "frozen-manifest narrow recapture"
+    },
+    {
+      "runId": "2026-07-26T15-27-39-451Z",
+      "runManifestSha256": "521c68ceecfd4a49a17627cd061f3f061be401c062a61dce67918187b729ae7c",
+      "purpose": "isolated Fabric Co desktop retry"
+    },
+    {
+      "runId": "2026-07-26T15-27-54-538Z",
+      "runManifestSha256": "b6c36569538982cd6b965a003ef5772cd6f0ca52332acb591a7e857305458819",
+      "purpose": "isolated Tile and Mosaic Depot desktop retry"
+    },
+    {
+      "runId": "2026-07-26T15-28-20-320Z",
+      "runManifestSha256": "9790abe6f7e33ea49c8048e565a60f4d78a75787587ee9957ab1bfb0798e25c8",
+      "purpose": "isolated Yeager's narrow retry"
+    },
+    {
+      "runId": "2026-07-26T15-28-38-943Z",
+      "runManifestSha256": "14c949e5e812a57d4bed7007acc97ec9f92c21e6b7e0c75042bed45c259f808d",
+      "purpose": "isolated Fabric Market narrow retry"
+    },
+    {
+      "runId": "2026-07-26T15-28-57-746Z",
+      "runManifestSha256": "8a9192d8f6e37af8c5e74cd8e5c1f2008872d87dee768795632c677eed55d758",
+      "purpose": "isolated LA Silk narrow retry"
+    }
+  ],
+  "results": {
+    "spice-and-tea-exchange": {
+      "status": "rejected",
+      "reason": "The screened result page exceeded the fixed 90-second capture bound."
+    },
+    "whole-spice": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "whole-spice--paprika",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "whole-spice--turmeric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent spice grids pass in opposite viewports. Product names and images expose many mass-relevant variants while starting prices and size-absent cards supply abstention cases."
+    },
+    "raw-spice-bar": {
+      "status": "rejected",
+      "reason": "The screened result page exposed no reviewable product roots."
+    },
+    "ifs-bulk": {
+      "status": "rejected",
+      "reason": "The almonds page passed, but the distinct rice page exposed only three roots, below the frozen minimum of eight."
+    },
+    "yeagers-detailing-supplies": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "yeagers-detailing-supplies--wheel-cleaner",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "yeagers-detailing-supplies--car-shampoo",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two automotive-care grids pass in opposite viewports. Gallon and fluid-ounce packaging appears beside tools, starting prices, and query-adjacent products that require explicit abstention."
+    },
+    "infinite-detailing": {
+      "status": "rejected",
+      "reason": "The screened wheel-cleaner page exposed only one root, below the frozen minimum of eight."
+    },
+    "super-detail": {
+      "status": "rejected",
+      "reason": "The first page passed, but the distinct narrow wheel-cleaner page exceeded the fixed capture bound."
+    },
+    "turtle-wax": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "turtle-wax--wheel-cleaner",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "turtle-wax--car-wash",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two branded automotive-care grids pass in opposite viewports. Single bottles, multi-product kits, discounts, and mixed package volumes provide both extraction and bundle abstention evidence."
+    },
+    "gdi-medical": {
+      "status": "rejected",
+      "reason": "A relevant exam-gloves page repeatedly exceeded the fixed 90-second capture bound."
+    },
+    "shop-med-vet": {
+      "status": "rejected",
+      "reason": "The corrected search route was relevant but exceeded the fixed 90-second capture bound."
+    },
+    "medical-supply-group": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "medical-supply-group--exam-gloves",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.014047879450723052,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "medical-supply-group--syringes",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0049,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two medical-consumables grids pass in opposite viewports. Glove and syringe titles expose boxes, cases, sizes, safety variants, and starting prices useful for count extraction and abstention."
+    },
+    "med-on-the-go": {
+      "status": "rejected",
+      "reason": "The syringes page met the minimum, but the complementary desktop gloves page exceeded the fixed capture bound."
+    },
+    "the-fabric-co": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "the-fabric-co--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "the-fabric-co--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two fabric grids pass in opposite viewports. Repeated per-product prices appear with pattern names and material attributes, while missing explicit sell length and physical descriptors create hard negatives."
+    },
+    "la-silk-fabric": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "la-silk-fabric--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "la-silk-fabric--silk-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two visually rich fabric grids pass in opposite viewports. Per-yard language is mixed with width, content, stretch, custom printing, and starting prices that test evidence selection."
+    },
+    "rope-and-cord": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "rope-and-cord--cotton-rope",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "rope-and-cord--nylon-rope",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two rope grids pass in opposite viewports. Samplers, spools, rope types, starting prices, and products sold by length create useful positive and abstention-heavy evidence."
+    },
+    "the-fabric-market": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "the-fabric-market--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "the-fabric-market--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two compact fabric result grids pass in opposite viewports with explicit per-yard prices. Fiber blends, trim, width-like title numbers, and option-dependent products provide semantic traps."
+    },
+    "tile-and-mosaic-depot": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "tile-and-mosaic-depot--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.18509375,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "tile-and-mosaic-depot--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.12322274881516587,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two tile grids pass in opposite viewports. Sheet, box, sample, dimensions, discounts, and lazy-loaded images create area-pricing positives and physical-dimension hard negatives."
+    },
+    "tilezz": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "tilezz--porcelain-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.10427465936018958,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "tilezz--mosaic-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.1480078125,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two tile grids pass in opposite viewports. Cards mix square-foot, sheet, piece, and box pricing with tile dimensions and a small floating chat widget, requiring unit-family normalization and selective abstention."
+    },
+    "hurst-hardwoods": {
+      "status": "rejected",
+      "reason": "The initial page exposed one root and the broader distinct query exceeded the fixed capture bound."
+    },
+    "reserve-hardwood-flooring": {
+      "status": "rejected",
+      "reason": "The narrow page passed, but the complementary desktop hardwood page exposed only one root."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "whole-spice",
+      "yeagers-detailing-supplies",
+      "turtle-wax",
+      "medical-supply-group",
+      "the-fabric-co",
+      "la-silk-fabric",
+      "rope-and-cord",
+      "the-fabric-market",
+      "tile-and-mosaic-depot",
+      "tilezz"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "whole-spice",
+        "cohort": "training"
+      },
+      {
+        "siteId": "yeagers-detailing-supplies",
+        "cohort": "training"
+      },
+      {
+        "siteId": "turtle-wax",
+        "cohort": "training"
+      },
+      {
+        "siteId": "medical-supply-group",
+        "cohort": "training"
+      },
+      {
+        "siteId": "the-fabric-co",
+        "cohort": "training"
+      },
+      {
+        "siteId": "la-silk-fabric",
+        "cohort": "training"
+      },
+      {
+        "siteId": "rope-and-cord",
+        "cohort": "training"
+      },
+      {
+        "siteId": "the-fabric-market",
+        "cohort": "training"
+      },
+      {
+        "siteId": "tile-and-mosaic-depot",
+        "cohort": "training"
+      },
+      {
+        "siteId": "tilezz",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

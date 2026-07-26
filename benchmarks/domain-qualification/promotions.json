@@ -378,6 +378,66 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-18-p00.json",
       "promotedAt": "2026-07-26T13:55:00.000Z"
+    },
+    {
+      "siteId": "whole-spice",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-19-p00.json",
+      "promotedAt": "2026-07-26T15:30:00.000Z"
+    },
+    {
+      "siteId": "yeagers-detailing-supplies",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-19-p00.json",
+      "promotedAt": "2026-07-26T15:30:00.000Z"
+    },
+    {
+      "siteId": "turtle-wax",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-19-p00.json",
+      "promotedAt": "2026-07-26T15:30:00.000Z"
+    },
+    {
+      "siteId": "medical-supply-group",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-19-p00.json",
+      "promotedAt": "2026-07-26T15:30:00.000Z"
+    },
+    {
+      "siteId": "the-fabric-co",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-19-p00.json",
+      "promotedAt": "2026-07-26T15:30:00.000Z"
+    },
+    {
+      "siteId": "la-silk-fabric",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-19-p00.json",
+      "promotedAt": "2026-07-26T15:30:00.000Z"
+    },
+    {
+      "siteId": "rope-and-cord",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-19-p00.json",
+      "promotedAt": "2026-07-26T15:30:00.000Z"
+    },
+    {
+      "siteId": "the-fabric-market",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-19-p00.json",
+      "promotedAt": "2026-07-26T15:30:00.000Z"
+    },
+    {
+      "siteId": "tile-and-mosaic-depot",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-19-p00.json",
+      "promotedAt": "2026-07-26T15:30:00.000Z"
+    },
+    {
+      "siteId": "tilezz",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-19-p00.json",
+      "promotedAt": "2026-07-26T15:30:00.000Z"
     }
   ]
 }

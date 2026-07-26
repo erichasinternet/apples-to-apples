@@ -691,6 +691,38 @@ loads all 156 screenshots and 1,605 roots with zero console errors or writes.
 All roots and machine suggestions remain unreviewed and ineligible for silver
 training or benchmark gold.
 
+Wave 19 screens 20 additional unfamiliar candidates across all five unit
+dimensions. Whole Spice, Yeager's Detailing Supplies, Turtle Wax, Medical
+Supply Group, The Fabric Co, LA Silk Fabric, Rope and Cord, The Fabric Market,
+Tile and Mosaic Depot, and Tilezz qualify on two visually inspected listing
+pages in opposite viewport profiles. Rejected, empty, blocked, low-root, and
+provenance-colliding routes were replaced before promotion, and every accepted
+page was captured against the same final manifest hash. The 20 accepted pages
+add 240 frozen roots spanning sampler and starting-price variants, equipment
+capacity, physical dimensions, sheets, boxes, pieces, kits, irrelevant
+query-adjacent products, and floating-widget hard negatives.
+
+The paired blinded campaign in
+[`g2-pilot-p17.json`](../benchmarks/review-campaigns/g2-pilot-p17.json)
+contains 73 qualified training domains, 176 pages, and 1,845 frozen roots. Its
+deterministic preannotation contains 339 tentative comparables, 1,506 explicit
+abstentions, and four invalid suggestions. The semantic diagnostic in
+[`g2-campaign-preannotation-p16.json`](../benchmarks/reviews/g2-campaign-preannotation-p16.json)
+retains 1,821 suggestions and quarantines 24 semantic traps, including five new
+equipment-capacity cases. The compact audit in
+[`g2-selection-representation-p15.json`](../benchmarks/reviews/g2-selection-representation-p15.json)
+round-trips all 1,821 retained suggestions exactly with zero failures. None of
+these machine suggestions is silver or gold.
+
+The p17 campaign is deterministically partitioned into 18 matching reviewer
+assignments in
+[`g2-pilot-p17-review-batches.json`](../benchmarks/reviews/g2-pilot-p17-review-batches.json).
+The headed validation recorded in
+[`g2-pilot-p17-review-batch-validation.json`](../benchmarks/reviews/g2-pilot-p17-review-batch-validation.json)
+loads all 176 screenshots and 1,845 roots with zero console errors or writes.
+All roots and machine suggestions remain unreviewed and ineligible for silver
+training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

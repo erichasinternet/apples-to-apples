@@ -1,0 +1,593 @@
+{
+  "version": 1,
+  "pilotId": "g2-wave-19-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-26T15:29:09.043Z",
+  "source": {
+    "siteIds": [
+      "whole-spice",
+      "yeagers-detailing-supplies",
+      "turtle-wax",
+      "medical-supply-group",
+      "the-fabric-co",
+      "la-silk-fabric",
+      "rope-and-cord",
+      "the-fabric-market",
+      "tile-and-mosaic-depot",
+      "tilezz"
+    ],
+    "cohort": "training",
+    "strata": [
+      "direct-to-consumer-bulk-spice-retail",
+      "independent-detailing-supply-retail",
+      "automotive-care-brand-retail",
+      "medical-and-laboratory-supply-retail",
+      "decorator-fabric-by-yard-retail",
+      "fashion-fabric-by-yard-retail",
+      "rope-by-length-retail",
+      "independent-fabric-by-yard-retail",
+      "online-tile-and-mosaic-retail",
+      "online-tile-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "43493ae7febbce49c177046c3618229db9a7110423e4e7df66d501ccebddc21c"
+    ],
+    "collectorSha256": [
+      "1873a44b539437111d8100eefbca5d4e84e127f2c10e87344f4e8149a832bcfa"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T15-10-58-061Z",
+      "runManifestSha256": "b30ec07e30beab0c8fbbe5543a48f6c90e404476386d33fc16dc79b826045263",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 25000
+    },
+    {
+      "runId": "2026-07-26T15-14-49-962Z",
+      "runManifestSha256": "484a301098a433dd6b4a34857166180ae97f68b2586b1ab4dc6ef142d7b266d4",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 25000
+    },
+    {
+      "runId": "2026-07-26T15-16-15-732Z",
+      "runManifestSha256": "80521550d7bc233d0d0116186e56f99d0fa59414297cb0ba10f5bae33f67a835",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 25000
+    },
+    {
+      "runId": "2026-07-26T15-20-55-437Z",
+      "runManifestSha256": "317dc231dbbd37c711840cf59d2d243acf6cab237f8e078d3244de35e6d4d6d0",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 25000
+    },
+    {
+      "runId": "2026-07-26T15-27-39-451Z",
+      "runManifestSha256": "521c68ceecfd4a49a17627cd061f3f061be401c062a61dce67918187b729ae7c",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-26T15-27-54-538Z",
+      "runManifestSha256": "b6c36569538982cd6b965a003ef5772cd6f0ca52332acb591a7e857305458819",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-26T15-28-20-320Z",
+      "runManifestSha256": "9790abe6f7e33ea49c8048e565a60f4d78a75787587ee9957ab1bfb0798e25c8",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000
+    },
+    {
+      "runId": "2026-07-26T15-28-38-943Z",
+      "runManifestSha256": "14c949e5e812a57d4bed7007acc97ec9f92c21e6b7e0c75042bed45c259f808d",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-26T15-28-57-746Z",
+      "runManifestSha256": "8a9192d8f6e37af8c5e74cd8e5c1f2008872d87dee768795632c677eed55d758",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 20000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 68,
+    "successfulCaptureAttempts": 45,
+    "acceptedPages": 20,
+    "qualifiedDomains": 10,
+    "rejectedDomains": 10,
+    "excludedRepeatedDomains": 0,
+    "samplingFinding": "The collision gate ran before capture, all final evidence uses explicit page IDs, and every promoted domain contributes two distinct queries in opposite desktop and narrow viewports under one frozen manifest hash."
+  },
+  "captures": [
+    {
+      "siteId": "whole-spice",
+      "pageId": "whole-spice--paprika",
+      "capturedAt": "2026-07-26T15:25:24.385Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 4,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 805,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "61130615abf1213b41e4aec0a0fc3bf15b21fb3bdfee7ec018e84ba2ec14d4a9",
+      "annotationScreenshotSha256": "6c288961f23de6a1aa10c7956daf220012804d38b5a78bea3ca2c34ab179ccde",
+      "provenanceAggregateSha256": "abe5ff07f36fd3c7a862df468d8b885558740042ef3596807d02f57b970a5102",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "whole-spice",
+      "pageId": "whole-spice--turmeric",
+      "capturedAt": "2026-07-26T15:16:23.456Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 4,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 843,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c38a9ff557a2b3cb6012c0dc7992a29d5920790ea78c874906f2eef5a190c3f3",
+      "annotationScreenshotSha256": "e8ca9b7c9353669b7d811be5c46c8335a8b9b7bcbb356c7b4f89664780c11d16",
+      "provenanceAggregateSha256": "1f2bf4ba14c7caf086f9b8bc30b622e0f2d5fc9997070e9ed9e623510d8cb3eb",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "yeagers-detailing-supplies",
+      "pageId": "yeagers-detailing-supplies--wheel-cleaner",
+      "capturedAt": "2026-07-26T15:18:29.543Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 493,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "34b379351e57b544659bc3d5ba3af55bfb09744775f9b7566d65eafe59314ed3",
+      "annotationScreenshotSha256": "14d7bcbfe063bb1d95a36bed4c70c80e86572b9cf07b1cf9d8cad339cb840a1e",
+      "provenanceAggregateSha256": "d036fa66bbd8ec030531842ba57d04d103c655e5dd3b8f68d8d32d7480afcd17",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "yeagers-detailing-supplies",
+      "pageId": "yeagers-detailing-supplies--car-shampoo",
+      "capturedAt": "2026-07-26T15:28:29.137Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 510,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "5d2624ce2aaf125534392f6e8c99d042d8163b7e0eba257acb74362d927d07f9",
+      "annotationScreenshotSha256": "38c036e91309c27cd9debe464a5cd20dd8f2e404f99867b2605fb9a7ecc18174",
+      "provenanceAggregateSha256": "5428d37870934889e9a32bab05faae9959773cb8062a04c168414ad61eb20e81",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "turtle-wax",
+      "pageId": "turtle-wax--wheel-cleaner",
+      "capturedAt": "2026-07-26T15:18:39.903Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 745,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "471127fa86a3a28b9194574f411fd96839ff68bca8dff8009f44404b965fe272",
+      "annotationScreenshotSha256": "6fe521b5e332c66078653607666408087b1be9cd275e9fc73efd63aea6791167",
+      "provenanceAggregateSha256": "c218d72727af74335300e6ca34a1a7e677a0fb22b115ab130bf90b850845c17e",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "turtle-wax",
+      "pageId": "turtle-wax--car-wash",
+      "capturedAt": "2026-07-26T15:21:03.463Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 764,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "385cfa25506e6c6dfc781fbdcc6d219c8f43ec9277c5779a9373acb39bcb94a1",
+      "annotationScreenshotSha256": "6655e30ccaf45613c3a273780bdfc05b7bdda440659cd803e84200811278c99a",
+      "provenanceAggregateSha256": "04e98d0cb3da10bf70dfa3db791c8da43971d6c55090e966f336eb11a742154f",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-supply-group",
+      "pageId": "medical-supply-group--exam-gloves",
+      "capturedAt": "2026-07-26T15:23:27.400Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 290,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.014047879450723052,
+      "queryTokenCoverage": 1,
+      "observationSha256": "a207401137b972d729868a1954e0bbf092e611739d20a457da07a2f3c7ea7478",
+      "annotationScreenshotSha256": "8b8b33acbd164f4cc3de5f7fbf6f2b8f4836f6ec5f7c27c15610fd21d2eff142",
+      "provenanceAggregateSha256": "2aa5ab6515fe7f51a6082ffd2794c2bf792f490f1a3c157ddab8695a3a9147bc",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-supply-group",
+      "pageId": "medical-supply-group--syringes",
+      "capturedAt": "2026-07-26T15:12:13.766Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 327,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0049,
+      "queryTokenCoverage": 1,
+      "observationSha256": "70b259752d7bf10e5a4dd43ba4bfc24d7f9822c23759ba82585cc922fc5d250a",
+      "annotationScreenshotSha256": "bbfe4fe0ac3afc003db594444b6ebe11ee2fe94127199509e4fe9d6e5e502f7c",
+      "provenanceAggregateSha256": "19d5c9ba608277e5aed8ef52facc9e30e160a74b3bf44a39f64c3255d1682de5",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-fabric-co",
+      "pageId": "the-fabric-co--cotton-fabric",
+      "capturedAt": "2026-07-26T15:27:47.613Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1463,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "b8f314cd0b1bc818595cdfaca747c28006fd96da3fb2db0ce214504602e807c8",
+      "annotationScreenshotSha256": "50d52538160a01fd5ba94eeddc4e62b29f624ef3dd57609a3edfda1adb7678cd",
+      "provenanceAggregateSha256": "a7a2f926e58edaacd8137782d924fbc7123a158eef998c6ad7d44be9532f70bc",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-fabric-co",
+      "pageId": "the-fabric-co--linen-fabric",
+      "capturedAt": "2026-07-26T15:15:16.791Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 651,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "7f5c15e7234c7c839459b4ff2d3ad878e169a21b759a0c7dee3f631772c6b984",
+      "annotationScreenshotSha256": "0586c76dc247111855afcb7e510d73b40b7f6c8c276f083f4a0a1b326fbf68b0",
+      "provenanceAggregateSha256": "f8f31665314c210572c29ffe3e00cf2ba7b56d474d55555c977884487d908084",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "la-silk-fabric",
+      "pageId": "la-silk-fabric--cotton-fabric",
+      "capturedAt": "2026-07-26T15:11:07.362Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1334,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "a8a25444e30082987fc7cbfd9bfb5b48dc12631de55dffe645a85669934e3064",
+      "annotationScreenshotSha256": "2d77ec8c70ff3685256036c9d7a90e9215b364c716a7632bc1be0e3256d0c21a",
+      "provenanceAggregateSha256": "1959d4b64019b448a3869d9b5c9e11c751b90c199800fef5a539faa35b883563",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "la-silk-fabric",
+      "pageId": "la-silk-fabric--silk-fabric",
+      "capturedAt": "2026-07-26T15:29:09.043Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1298,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8d7a3102b3cf7b19c053294e2dd7180904ed1e3998035aa01d8fd9f682e8476d",
+      "annotationScreenshotSha256": "7acd9cd9c523079f540a6870e821df1d84c4b672ba92cd994f80e34dcbda7bee",
+      "provenanceAggregateSha256": "c62ae5f845fa3f2644786df1bb2b65f7d2d5ca7847279d4e01f8f83e250718a5",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "rope-and-cord",
+      "pageId": "rope-and-cord--cotton-rope",
+      "capturedAt": "2026-07-26T15:16:32.457Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 300,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "4cdc3dc21a16c56d15a0f67530c553163c39718bc71b9fee02adf42138bb1cac",
+      "annotationScreenshotSha256": "67b39154a3f3faa0a4ec9c14e1ef69ae8f805aee13d0cef702bae8ea035dcc6e",
+      "provenanceAggregateSha256": "ab92023737645b91921d59e115d7fdaebfc6f9c0e5dfde96386c1c7023044dd1",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "rope-and-cord",
+      "pageId": "rope-and-cord--nylon-rope",
+      "capturedAt": "2026-07-26T15:23:17.748Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 242,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "4c6cc322329ee35287d3a2c01a9dee9ca7cf0ff11a562cd05b5f20985e153548",
+      "annotationScreenshotSha256": "6db421695343de66254b7a28f6600d28283d6526c4bcc3afa74a47c6aac8acf7",
+      "provenanceAggregateSha256": "458d1e9108a1e357b49b9fefaac3d790b6246692d1bfa9f5921b1b0ee8f10f95",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-fabric-market",
+      "pageId": "the-fabric-market--cotton-fabric",
+      "capturedAt": "2026-07-26T15:14:16.582Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1238,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "db20db3971da462d9189eb29497177be369c1828195076a16b332193a26d2562",
+      "annotationScreenshotSha256": "a48edd4a036c53aa6465ad0956ed334e27678ae0571dfe2a600364a580a398bc",
+      "provenanceAggregateSha256": "2ea0aaeaed0ca3752a5dc529c2e9daa29b5dee83da971da797826cc9c761e64c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-fabric-market",
+      "pageId": "the-fabric-market--linen-fabric",
+      "capturedAt": "2026-07-26T15:28:50.697Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 442,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "b4110f9876d9228a0fd5e30000e8bd20b5db591aa61dd7a96ae140c3b1bf1c17",
+      "annotationScreenshotSha256": "dbf89b3fd02adaaaad2825091be92d4bee91ec7ebdb6f903c36c25b8e2eddf95",
+      "provenanceAggregateSha256": "1f9cd0f74a5f0b6464ee100c9e1247a57ecf77efee39ca07412a1063a560397e",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tile-and-mosaic-depot",
+      "pageId": "tile-and-mosaic-depot--porcelain-tile",
+      "capturedAt": "2026-07-26T15:28:11.064Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 513,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.18509375,
+      "queryTokenCoverage": 1,
+      "observationSha256": "d4dc5a67629b5b6a74106ce213ba8d3365196ff4edbab511b26e842cd8cd32f1",
+      "annotationScreenshotSha256": "198e8883748e64eaf47af74268bc89cedf0e665ff3e59a3b20d43f06a062ec04",
+      "provenanceAggregateSha256": "e8a59e4ad05d63c77a2d75bedbd5e32c9f5822deaab996c6c876b30afbd42df7",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tile-and-mosaic-depot",
+      "pageId": "tile-and-mosaic-depot--mosaic-tile",
+      "capturedAt": "2026-07-26T15:15:07.066Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 428,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.12322274881516587,
+      "queryTokenCoverage": 1,
+      "observationSha256": "85967af4ade6ea0b470f17d22dbe9089974b656f7884dc80828869c564eb4c01",
+      "annotationScreenshotSha256": "f338340c769ea9f9af3969e7f228e9c701b58d684a202b949cf649615ec41ed9",
+      "provenanceAggregateSha256": "0458a5de4a0aff8e45248f9a330579b5136e9484c6ae38c3e94422008f4264da",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tilezz",
+      "pageId": "tilezz--porcelain-tile",
+      "capturedAt": "2026-07-26T15:21:22.334Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 729,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.10427465936018958,
+      "queryTokenCoverage": 1,
+      "observationSha256": "a2c3c7c61fa9b67190cc53cb6a5fd9a9102ec8e16deb4d309a9361114d7aaf16",
+      "annotationScreenshotSha256": "665b6f61c96cacd0ed51c117b1a1594975f0e99d0cc3cea12650f673b5cb9730",
+      "provenanceAggregateSha256": "0a5b190ecf49a78be2f59a3d63e88892af2e0c3eb55736c1f8c5bd143f478536",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tilezz",
+      "pageId": "tilezz--mosaic-tile",
+      "capturedAt": "2026-07-26T15:12:04.132Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1100,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.1480078125,
+      "queryTokenCoverage": 1,
+      "observationSha256": "6bb453c457493070d837f539873dc4fe83b85e6c5291ff9e910208637c8c6dfe",
+      "annotationScreenshotSha256": "6cea33f56f0a00f772e6c3090bf3e9cc846281a1d2386be510d79a7e57d0ad9e",
+      "provenanceAggregateSha256": "a7925efeee0d3b0b27a6cba60437a80db9fea1f8dcb4165b38573fcdd2c5e1ee",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}
