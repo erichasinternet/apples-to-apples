@@ -1272,6 +1272,102 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-13-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "carpro-us",
+      "cohort": "training",
+      "pageId": "carpro-us--car-wash-shampoo",
+      "captureTimestamp": "2026-07-26T10:27:22.278Z",
+      "observationSha256": "404ef107467cb6d4c39f0b2ec615ed09864e29e2329956ab2d4eb47a2b7306ca",
+      "annotationScreenshotSha256": "0d9e3db3cdf8b3dbd81aebb9612cbad2dc70e4074e34d1ada846452af7916e35",
+      "qualificationReport": "benchmarks/domain-qualification/wave-14-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-14-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "carpro-us",
+      "cohort": "training",
+      "pageId": "carpro-us--wheels-tires-trim",
+      "captureTimestamp": "2026-07-26T10:45:28.953Z",
+      "observationSha256": "d8d1a4bc187e1f1285253b30c10e1e752b593c03d21a1d608b450fb17bc331fb",
+      "annotationScreenshotSha256": "d1847d30da1a7dc5507926bd51a0bb80fea4533918d7581f8ccc62708c6315a1",
+      "qualificationReport": "benchmarks/domain-qualification/wave-14-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-14-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "superior-products",
+      "cohort": "training",
+      "pageId": "superior-products--glass-cleaner",
+      "captureTimestamp": "2026-07-26T10:36:23.210Z",
+      "observationSha256": "34707f7194a8664e3703d38b453b4aa47b879c0deac36ce41fc96284112e098a",
+      "annotationScreenshotSha256": "9d5ac13887ec7a9c8301c58dc81b2843b8e96e869d6d2cfb4b60cfb687455637",
+      "qualificationReport": "benchmarks/domain-qualification/wave-14-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-14-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "superior-products",
+      "cohort": "training",
+      "pageId": "superior-products--car-wash-soap",
+      "captureTimestamp": "2026-07-26T10:43:32.233Z",
+      "observationSha256": "8bb2646f54fbb1029901c27242f80360de01e7a7d4f5820be3063ac48f285ca4",
+      "annotationScreenshotSha256": "8222af898defe376e11609c4ce6e2dda1b3203776111940bc2376e4eec9a6698",
+      "qualificationReport": "benchmarks/domain-qualification/wave-14-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-14-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "georgia-carpet",
+      "cohort": "training",
+      "pageId": "georgia-carpet--carpet-tile",
+      "captureTimestamp": "2026-07-26T10:36:03.597Z",
+      "observationSha256": "1769baf69dbc07bc609e830be286b738a8c4af91451c64b8bc2b47c353b94247",
+      "annotationScreenshotSha256": "b60e3ef2c27fd2ead087a85b1232266d8452120f58d369689aa2754fa569e913",
+      "qualificationReport": "benchmarks/domain-qualification/wave-14-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-14-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "georgia-carpet",
+      "cohort": "training",
+      "pageId": "georgia-carpet--vinyl-flooring",
+      "captureTimestamp": "2026-07-26T10:46:00.569Z",
+      "observationSha256": "bf0e515b6792a1fef6612eb7dc6cf012cf2c7f12b4fe01e0cabb36586ac10de4",
+      "annotationScreenshotSha256": "bb963d19f5d3698f32aaa7f49611628b08d852c8ad0be144a077908b25eaeffb",
+      "qualificationReport": "benchmarks/domain-qualification/wave-14-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-14-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "autogeek",
+      "cohort": "training",
+      "pageId": "autogeek--wheel-and-tire-cleaners",
+      "captureTimestamp": "2026-07-26T10:45:39.913Z",
+      "observationSha256": "f5acc75281365ea84c84eade949114e533b0d8619e1dbe37a2dca57e9d4a1779",
+      "annotationScreenshotSha256": "eb37ea650f2e3deaecc612fe33eedefaab70dbd4158820b1387aea1da7c7a326",
+      "qualificationReport": "benchmarks/domain-qualification/wave-14-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-14-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "autogeek",
+      "cohort": "training",
+      "pageId": "autogeek--car-shampoos",
+      "captureTimestamp": "2026-07-26T10:52:21.125Z",
+      "observationSha256": "255c0499f3ea0a6fe6ac091685d3b79e531364af6d8fbb8843d1623201d333fc",
+      "annotationScreenshotSha256": "4f74e26c34271f9c604efc73ca61f456e650efb80493deb7e714c161bf042552",
+      "qualificationReport": "benchmarks/domain-qualification/wave-14-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-14-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

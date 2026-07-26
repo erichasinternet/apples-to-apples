@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Fourteenth unassigned domain-qualification wave. Twenty genuinely new domains balance all five unit dimensions across specialty food, automotive detailing, medical supply, fabric retail, and flooring commerce. Routes were live-screened before capture, and every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "anthonys-goods",
+      "label": "Anthony's Goods",
+      "hostname": "anthonysgoods.com",
+      "stratum": "natural-ingredient-retail",
+      "searchUrlTemplate": "https://anthonysgoods.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "garlic-powder", "query": "garlic powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "spices-inc",
+      "label": "Spices Inc.",
+      "hostname": "spicesinc.com",
+      "stratum": "culinary-spice-specialty",
+      "searchUrlTemplate": "https://spicesinc.com/search-results?query={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "garlic-powder", "query": "garlic powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "world-spice",
+      "label": "World Spice",
+      "hostname": "worldspice.com",
+      "stratum": "artisan-spice-retail",
+      "searchUrlTemplate": "https://worldspice.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "garlic-powder", "query": "garlic powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "the-spice-way",
+      "label": "The Spice Way",
+      "hostname": "thespiceway.com",
+      "stratum": "direct-to-consumer-spices",
+      "searchUrlTemplate": "https://thespiceway.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "garlic-powder", "query": "garlic powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "chemical-guys",
+      "label": "Chemical Guys",
+      "hostname": "www.chemicalguys.com",
+      "stratum": "automotive-cleaning-manufacturer",
+      "searchUrlTemplate": "https://www.chemicalguys.com/collections/{querySlug}",
+      "queries": [
+        {"id": "car-wash-soaps", "query": "car wash soaps", "querySlug": "car-wash-soaps", "dimension": "volume"},
+        {"id": "wheel-and-tire-cleaner", "query": "wheel and tire cleaner", "querySlug": "wheel-and-tire-cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "autogeek",
+      "label": "Autogeek",
+      "hostname": "www.autogeek.net",
+      "stratum": "automotive-detailing-retail",
+      "searchUrlTemplate": "https://www.autogeek.net/{querySlug}",
+      "queries": [
+        {"id": "car-shampoos", "query": "car shampoos", "querySlug": "washing-1.html", "dimension": "volume"},
+        {"id": "wheel-and-tire-cleaners", "query": "wheel tire cleaners", "querySlug": "tire-wheel-cleaners.html?page=1", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "carpro-us",
+      "label": "Sky's The Limit Car Care",
+      "hostname": "www.carpro-us.com",
+      "stratum": "professional-car-care-retail",
+      "searchUrlTemplate": "https://www.carpro-us.com/{querySlug}",
+      "queries": [
+        {"id": "car-wash-shampoo", "query": "car wash shampoo", "querySlug": "car-wash-shampoo/", "dimension": "volume"},
+        {"id": "wheels-tires-trim", "query": "wheels tires trim", "querySlug": "wheels-tires-trim/?page=1", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "superior-products",
+      "label": "Superior Products",
+      "hostname": "superiorproducts.com",
+      "stratum": "professional-cleaning-chemical-manufacturer",
+      "searchUrlTemplate": "https://superiorproducts.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"},
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "go-bulk-medical",
+      "label": "Go Bulk Medical",
+      "hostname": "gobulkmedical.com",
+      "stratum": "bulk-medical-supply",
+      "searchUrlTemplate": "https://gobulkmedical.com/collections/{querySlug}",
+      "queries": [
+        {"id": "gloves", "query": "gloves", "querySlug": "gloves", "dimension": "count"},
+        {"id": "disposable-medical-supplies", "query": "disposable medical supplies", "querySlug": "disposable-medical-supplies", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "ap-medical-supply",
+      "label": "AP Medical Supply",
+      "hostname": "apmedsupply.com",
+      "stratum": "home-medical-equipment",
+      "searchUrlTemplate": "https://apmedsupply.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "school-health",
+      "label": "School Health",
+      "hostname": "www.schoolhealth.com",
+      "stratum": "school-health-supply",
+      "searchUrlTemplate": "https://www.schoolhealth.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "osm-supplies",
+      "label": "OSM Supplies",
+      "hostname": "www.osmsupplies.com",
+      "stratum": "medical-ppe-wholesale",
+      "searchUrlTemplate": "https://www.osmsupplies.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "face-masks", "query": "face masks", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "fields-fabrics",
+      "label": "Field's Fabrics",
+      "hostname": "shop.fieldsfabrics.com",
+      "stratum": "regional-fabric-retail",
+      "searchUrlTemplate": "https://shop.fieldsfabrics.com/{querySlug}",
+      "queries": [
+        {"id": "cotton-solid-fabrics", "query": "cotton solid fabrics", "querySlug": "Cotton-Solid-Fabrics_bymfg_12-0-1.html", "dimension": "length"},
+        {"id": "cotton-print-fabrics", "query": "cotton print fabrics", "querySlug": "More-Cotton-Print-Fabrics_c_396.html", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "fashion-fabrics-club",
+      "label": "Fashion Fabrics Club",
+      "hostname": "fashionfabricsclub.com",
+      "stratum": "online-fabric-discount",
+      "searchUrlTemplate": "https://fashionfabricsclub.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "cali-fabrics",
+      "label": "Cali Fabrics",
+      "hostname": "califabrics.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://califabrics.com/{querySlug}",
+      "queries": [
+        {"id": "newest-fabrics", "query": "newest fabrics", "querySlug": "our-newest-fabrics/", "dimension": "length"},
+        {"id": "knit-fabrics", "query": "knit fabrics", "querySlug": "knits/", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "hawthorne-supply",
+      "label": "Hawthorne Supply Co.",
+      "hostname": "www.hawthornesupplyco.com",
+      "stratum": "quilting-fabric-retail",
+      "searchUrlTemplate": "https://www.hawthornesupplyco.com/{querySlug}",
+      "queries": [
+        {"id": "fabric-on-sale", "query": "fabric on sale", "querySlug": "fabric-on-sale", "dimension": "length"},
+        {"id": "fabric-precuts", "query": "fabric precuts", "querySlug": "fabric-precuts", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "we-sell-mats",
+      "label": "We Sell Mats",
+      "hostname": "www.wesellmats.com",
+      "stratum": "interlocking-mat-retail",
+      "searchUrlTemplate": "https://www.wesellmats.com/collections/{querySlug}",
+      "queries": [
+        {"id": "foam-fitness-mats", "query": "foam fitness mats", "querySlug": "foam-fitness-mats", "dimension": "area"},
+        {"id": "rubber-fitness-mats", "query": "rubber fitness mats", "querySlug": "rubber-fitness-mats", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "efloors",
+      "label": "Efloors",
+      "hostname": "efloors.com",
+      "stratum": "flooring-catalog-retail",
+      "searchUrlTemplate": "https://efloors.com/{querySlug}",
+      "queries": [
+        {"id": "carpet-tile", "query": "carpet tile", "querySlug": "carpet-tile", "dimension": "area"},
+        {"id": "laminate-flooring", "query": "laminate flooring", "querySlug": "laminate-flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "floor-bros",
+      "label": "Floor Bros",
+      "hostname": "www.floorbros.com",
+      "stratum": "commercial-flooring-catalog",
+      "searchUrlTemplate": "https://www.floorbros.com/{querySlug}",
+      "queries": [
+        {"id": "rubber-flooring", "query": "rubber flooring", "querySlug": "rubber/flexco/", "dimension": "area"},
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "querySlug": "vinyl/artisan-mills-flooring/", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "georgia-carpet",
+      "label": "Georgia Carpet",
+      "hostname": "www.georgiacarpet.com",
+      "stratum": "flooring-wholesale-retail",
+      "searchUrlTemplate": "https://www.georgiacarpet.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"},
+        {"id": "carpet-tile", "query": "carpet tile", "dimension": "area"}
+      ]
+    }
+  ]
+}

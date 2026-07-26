@@ -228,6 +228,30 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-13-p00.json",
       "promotedAt": "2026-07-26T10:10:00.000Z"
+    },
+    {
+      "siteId": "carpro-us",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-14-p00.json",
+      "promotedAt": "2026-07-26T11:00:00.000Z"
+    },
+    {
+      "siteId": "superior-products",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-14-p00.json",
+      "promotedAt": "2026-07-26T11:00:00.000Z"
+    },
+    {
+      "siteId": "georgia-carpet",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-14-p00.json",
+      "promotedAt": "2026-07-26T11:00:00.000Z"
+    },
+    {
+      "siteId": "autogeek",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-14-p00.json",
+      "promotedAt": "2026-07-26T11:00:00.000Z"
     }
   ]
 }

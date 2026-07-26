@@ -7,6 +7,7 @@ export const MINIMUM_QUERY_TOKEN_COVERAGE = 1;
 export interface CorpusQuery {
   id: string;
   query: string;
+  querySlug?: string;
   dimension: Dimension;
 }
 
@@ -233,6 +234,15 @@ export function expandTargets(manifest: CorpusTargetManifest): CaptureTarget[] {
         throw new Error(`Duplicate page id: ${pageId}`);
       }
 
+      const querySlug = query.querySlug ?? slugify(query.query);
+      const url = site.searchUrlTemplate
+        .replaceAll("{query}", encodeURIComponent(query.query))
+        .replaceAll("{querySlug}", querySlug);
+      const parsedUrl = new URL(url);
+      if (parsedUrl.protocol !== "https:" || parsedUrl.hostname !== site.hostname) {
+        throw new Error(`${pageId} expands to an invalid or cross-site URL`);
+      }
+
       pageIds.add(pageId);
       targets.push({
         ...query,
@@ -241,9 +251,7 @@ export function expandTargets(manifest: CorpusTargetManifest): CaptureTarget[] {
         siteLabel: site.label,
         hostname: site.hostname,
         stratum: site.stratum,
-        url: site.searchUrlTemplate
-          .replaceAll("{query}", encodeURIComponent(query.query))
-          .replaceAll("{querySlug}", slugify(query.query))
+        url
       });
     }
   }

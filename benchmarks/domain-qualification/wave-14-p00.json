@@ -1,0 +1,307 @@
+{
+  "version": 1,
+  "qualificationId": "wave-14-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-14.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "screeningPageTimeoutMs": 90000,
+    "qualificationPageTimeoutMs": 90000,
+    "screeningCardScreenshotBudgetMs": 12000,
+    "qualificationCardScreenshotBudgetMs": 12000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "genericConsentActionHandling": true,
+    "offscreenActionExclusion": true,
+    "pointerlessTransparentShellExclusion": true,
+    "persistentCookieConsentHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "queryParametersCountAsQueryEvidence": false,
+    "queryEvidenceScope": "title, pathname, visible headings, and visible status text",
+    "minimumQueryTokenCoverage": 1,
+    "populatedSearchControlsCountAsQueryEvidence": false,
+    "exactPageTargeting": true,
+    "explicitQuerySlugHandling": "Manifest querySlug values are inserted verbatim and must resolve to HTTPS on the declared hostname."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T10-27-15-492Z",
+      "runManifestSha256": "cbe579b83856c0a3ffc315c014cf89c97cf266d6975d09456716815818f951bf",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "one-page headed screening across all 20 candidate domains"
+    },
+    {
+      "runId": "2026-07-26T10-43-09-841Z",
+      "runManifestSha256": "1edc8d8e284f458569ae884defaf7b2b06935ef7766cf8a9ee7cdb0f72fa94ff",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "desktop qualification after correcting explicit route expansion"
+    },
+    {
+      "runId": "2026-07-26T10-48-12-109Z",
+      "runManifestSha256": "401f2209912bbec57a4fc80b0b63adb67699a979a841d64daff7b612a8ce5397",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "narrow qualification for remaining route-corrected candidates"
+    }
+  ],
+  "contractFinding": {
+    "status": "fixed-and-regression-tested",
+    "finding": "The collector previously ignored explicit querySlug fields and always synthesized a slug from query text, silently converting valid nested routes and file-suffix routes into false 404s.",
+    "fix": "Explicit querySlug values are now preserved verbatim, then validated as HTTPS URLs on the declared hostname.",
+    "provenancePolicy": "Captures retain the collector hash used for their own run; first-pass evidence is not rewritten under the fixed collector hash."
+  },
+  "results": {
+    "carpro-us": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "carpro-us--car-wash-shampoo",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 648,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0.07345971563981042,
+          "queryTokenCoverage": 1,
+          "observationSha256": "404ef107467cb6d4c39f0b2ec615ed09864e29e2329956ab2d4eb47a2b7306ca",
+          "annotationScreenshotSha256": "0d9e3db3cdf8b3dbd81aebb9612cbad2dc70e4074e34d1ada846452af7916e35",
+          "provenanceAggregateSha256": "2ec1092e91de3dda7facb880e5ac7c45fec9cda565668ee28f81b5dc15fa9ab5",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "carpro-us--wheels-tires-trim",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 889,
+          "observationTruncated": false,
+          "dismissedObstructions": 2,
+          "unresolvedObstructionCoverage": 0.0049,
+          "queryTokenCoverage": 1,
+          "observationSha256": "d8d1a4bc187e1f1285253b30c10e1e752b593c03d21a1d608b450fb17bc331fb",
+          "annotationScreenshotSha256": "d1847d30da1a7dc5507926bd51a0bb80fea4533918d7581f8ccc62708c6315a1",
+          "provenanceAggregateSha256": "7fc4543ea04ed5fb602db1d9c7c76eee63898bbf2b8710f62b3e40104f899a6c",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent car-care grids pass in distinct desktop and narrow viewports. Cards expose explicit bottle sizes and prices across shampoos, wheel cleaners, tire products, and accessories."
+    },
+    "superior-products": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "superior-products--glass-cleaner",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 10,
+          "candidateScreenshotsCaptured": 10,
+          "observationNodeCount": 528,
+          "observationTruncated": false,
+          "dismissedObstructions": 2,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "34707f7194a8664e3703d38b453b4aa47b879c0deac36ce41fc96284112e098a",
+          "annotationScreenshotSha256": "9d5ac13887ec7a9c8301c58dc81b2843b8e96e869d6d2cfb4b60cfb687455637",
+          "provenanceAggregateSha256": "8d9441180702a0292b25df4dd154d6f4856c5f86f800d97d13db8dd542e3b737",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "superior-products--car-wash-soap",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 1013,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "8bb2646f54fbb1029901c27242f80360de01e7a7d4f5820be3063ac48f285ca4",
+          "annotationScreenshotSha256": "8222af898defe376e11609c4ce6e2dda1b3203776111940bc2376e4eec9a6698",
+          "provenanceAggregateSha256": "a3ab2bd4c67883fc85363a8bfc4f4fc097738a793d9676198e3358206c10fb25",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two professional-cleaning grids pass in distinct viewports. Product cards include explicit one-gallon variants plus accessories and equipment that supply useful hard-negative evidence."
+    },
+    "georgia-carpet": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "georgia-carpet--carpet-tile",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 10,
+          "candidateScreenshotsCaptured": 10,
+          "observationNodeCount": 584,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0.06635071090047394,
+          "queryTokenCoverage": 1,
+          "observationSha256": "1769baf69dbc07bc609e830be286b738a8c4af91451c64b8bc2b47c353b94247",
+          "annotationScreenshotSha256": "b60e3ef2c27fd2ead087a85b1232266d8452120f58d369689aa2754fa569e913",
+          "provenanceAggregateSha256": "8590f844cd3b92d45b232344a7a301a7b06a1696413b1a025959a02b828e7cbd",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "georgia-carpet--vinyl-flooring",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 630,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0.01229375,
+          "queryTokenCoverage": 1,
+          "observationSha256": "bf0e515b6792a1fef6612eb7dc6cf012cf2c7f12b4fe01e0cabb36586ac10de4",
+          "annotationScreenshotSha256": "bb963d19f5d3698f32aaa7f49611628b08d852c8ad0be144a077908b25eaeffb",
+          "provenanceAggregateSha256": "df767e5af3f61630d7646c9721eb9968bf688e10cc72f50485fef54d3a11815a",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two readable flooring result grids pass in distinct viewports. Their mixed relevant and out-of-scope cards deliberately exercise area extraction, misleading dimensions, and abstention."
+    },
+    "autogeek": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "autogeek--wheel-and-tire-cleaners",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 811,
+          "observationTruncated": false,
+          "dismissedObstructions": 9,
+          "unresolvedObstructionCoverage": 0.0049,
+          "queryTokenCoverage": 1,
+          "observationSha256": "f5acc75281365ea84c84eade949114e533b0d8619e1dbe37a2dca57e9d4a1779",
+          "annotationScreenshotSha256": "eb37ea650f2e3deaecc612fe33eedefaab70dbd4158820b1387aea1da7c7a326",
+          "provenanceAggregateSha256": "9228cf6cecfd2acb0640c19192788e972d0ee4c313684f6f75a4f2349b65e56d",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "autogeek--car-shampoos",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 512,
+          "observationTruncated": false,
+          "dismissedObstructions": 4,
+          "unresolvedObstructionCoverage": 0.06516587677725119,
+          "queryTokenCoverage": 1,
+          "observationSha256": "255c0499f3ea0a6fe6ac091685d3b79e531364af6d8fbb8843d1623201d333fc",
+          "annotationScreenshotSha256": "4f74e26c34271f9c604efc73ca61f456e650efb80493deb7e714c161bf042552",
+          "provenanceAggregateSha256": "873d611bf673c0cbe1b0bdd692e80a0be84cb10977a86ea3b5e26d86e8ae612a",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two automotive-detailing grids pass in distinct viewports with unusually strong card-local volume evidence, including selectable milliliter, liter, ounce, and gallon variants."
+    },
+    "anthonys-goods": {
+      "status": "rejected",
+      "reason": "A full-viewport unresolved obstruction left no reviewable candidate evidence."
+    },
+    "spices-inc": {
+      "status": "rejected",
+      "reason": "Rendered result evidence had zero requested-query token coverage."
+    },
+    "world-spice": {
+      "status": "rejected",
+      "reason": "A delayed newsletter modal visibly obscured most product evidence in both desktop and narrow captures; the visual gate failed despite low machine-estimated obstruction."
+    },
+    "the-spice-way": {
+      "status": "rejected",
+      "reason": "Only one candidate root was captured, below the eight-candidate gate."
+    },
+    "chemical-guys": {
+      "status": "rejected",
+      "reason": "The distinct desktop qualification page exceeded the 90-second page bound."
+    },
+    "go-bulk-medical": {
+      "status": "rejected",
+      "reason": "The desktop screening page exceeded the 90-second page bound."
+    },
+    "ap-medical-supply": {
+      "status": "rejected",
+      "reason": "The underpads search exposed only two unrelated roots, below the eight-candidate gate."
+    },
+    "school-health": {
+      "status": "rejected",
+      "reason": "The screening page exceeded the 90-second page bound."
+    },
+    "osm-supplies": {
+      "status": "rejected",
+      "reason": "The screening page exceeded the 90-second page bound."
+    },
+    "fields-fabrics": {
+      "status": "rejected",
+      "reason": "The corrected explicit route exceeded the 90-second page bound."
+    },
+    "fashion-fabrics-club": {
+      "status": "rejected",
+      "reason": "The screening page exceeded the 90-second page bound."
+    },
+    "cali-fabrics": {
+      "status": "rejected",
+      "reason": "A delayed first-order modal visibly obscured desktop evidence, and the narrow page had 27 percent unresolved obstruction coverage."
+    },
+    "hawthorne-supply": {
+      "status": "rejected",
+      "reason": "The screening page exceeded the 90-second page bound."
+    },
+    "we-sell-mats": {
+      "status": "rejected",
+      "reason": "The distinct narrow qualification page exceeded the 90-second page bound."
+    },
+    "efloors": {
+      "status": "rejected",
+      "reason": "Neither the laminate nor carpet category attempt exposed reviewable candidate roots."
+    },
+    "floor-bros": {
+      "status": "rejected",
+      "reason": "The corrected explicit route exceeded the 90-second page bound."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "carpro-us",
+      "superior-products",
+      "georgia-carpet",
+      "autogeek"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "carpro-us",
+        "cohort": "training"
+      },
+      {
+        "siteId": "superior-products",
+        "cohort": "training"
+      },
+      {
+        "siteId": "georgia-carpet",
+        "cohort": "training"
+      },
+      {
+        "siteId": "autogeek",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

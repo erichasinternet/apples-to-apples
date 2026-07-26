@@ -234,6 +234,34 @@ describe("live benchmark corpus", () => {
     );
   });
 
+  it("honors explicit route slugs without rewriting valid site paths", () => {
+    const manifest: CorpusTargetManifest = {
+      version: 1,
+      description: "test",
+      sites: [
+        {
+          id: "shop",
+          label: "Shop",
+          hostname: "shop.example",
+          stratum: "fabric",
+          searchUrlTemplate: "https://shop.example/{querySlug}",
+          queries: [
+            {
+              id: "cotton",
+              query: "cotton fabric",
+              querySlug: "products/Cotton-Fabric_c_42.html?page=1",
+              dimension: "length"
+            }
+          ]
+        }
+      ]
+    };
+
+    expect(expandTargets(manifest)[0]?.url).toBe(
+      "https://shop.example/products/Cotton-Fabric_c_42.html?page=1"
+    );
+  });
+
   it("accepts browser rasterization around fractional annotation bounds", () => {
     expect(
       annotationScreenshotDimensionsMatch(

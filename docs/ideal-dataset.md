@@ -535,6 +535,38 @@ loads all 106 screenshots and 1,021 roots from rebased paths with zero console
 errors or writes. All pages and machine suggestions remain unreviewed and
 ineligible for silver training or benchmark gold.
 
+Wave 14 screens 20 genuinely new domains balanced across all five unit
+dimensions. A capture-contract regression was found and fixed: explicit
+`querySlug` routes are now preserved verbatim and constrained to HTTPS on the
+declared hostname instead of being silently regenerated from query text.
+CarPro US, Superior Products, Georgia Carpet, and Autogeek qualify on two
+visually inspected pages and distinct viewport profiles each. Delayed modal
+overlays on World Spice and Cali Fabrics are rejected by visual review even
+where the machine obstruction estimate was permissive; the remaining failures
+receive bounded dispositions for obstruction, insufficient candidates,
+irrelevant results, or timeouts.
+
+The paired blinded campaign in
+[`g2-pilot-p12.json`](../benchmarks/review-campaigns/g2-pilot-p12.json)
+contains 42 qualified training domains, 114 pages, and 1,109 frozen roots. The
+88-root expansion adds 70 volume-conditioned automotive and professional
+cleaning cards plus 18 deliberately noisy area-conditioned flooring cards. The
+diagnostic in
+[`g2-campaign-preannotation-p11.json`](../benchmarks/reviews/g2-campaign-preannotation-p11.json)
+finds 18 tentative comparables and 70 abstentions in the expansion, with no new
+semantic quarantines. The compact audit in
+[`g2-selection-representation-p10.json`](../benchmarks/reviews/g2-selection-representation-p10.json)
+round-trips all 1,090 machine-retained suggestions exactly with zero failures.
+
+The p12 campaign is deterministically partitioned into 12 matching reviewer
+assignments in
+[`g2-pilot-p12-review-batches.json`](../benchmarks/reviews/g2-pilot-p12-review-batches.json).
+The headed validation recorded in
+[`g2-pilot-p12-review-batch-validation.json`](../benchmarks/reviews/g2-pilot-p12-review-batch-validation.json)
+loads all 114 screenshots and 1,109 roots with zero console errors or writes.
+All roots and machine suggestions remain unreviewed and ineligible for silver
+training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,
