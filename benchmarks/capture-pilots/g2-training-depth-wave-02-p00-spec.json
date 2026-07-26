@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-depth-wave-02-p00",
+  "capturedAt": "2026-07-26T17:55:09.838Z",
+  "sourceManifest": "benchmarks/live-sites/training-depth-wave-02.json",
+  "requestedCaptureAttempts": 40,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T17-29-54-551Z",
+      "pageIds": [
+        "foods-of-nations--chickpeas",
+        "turtle-wax--bug-remover",
+        "armour-detail-supply--tire-shine",
+        "vitality-medical--masks",
+        "yeagers-detailing-supplies--leather-cleaner",
+        "md-supplies--bandages",
+        "tiles-direct--glass-tile",
+        "greatmats--foam-flooring",
+        "allegro-medical--bandages",
+        "ethos-car-care--wheel-cleaner",
+        "artwalk-tile--ceramic-tile",
+        "medical-supply-group--gauze-pads",
+        "the-fabric-market--canvas-fabric",
+        "mexgrocer--masa-harina"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T17-43-11-064Z",
+      "pageIds": [
+        "bulk-priced-food-shoppe--dried-fruit",
+        "foods-of-nations--flour",
+        "tileon--ceramic-tile",
+        "armour-detail-supply--interior-cleaner",
+        "vitality-medical--bandages",
+        "seattle-fabrics--canvas-fabric",
+        "md-supplies--needles",
+        "rockywoods--canvas-fabric",
+        "allegro-medical--needles",
+        "whole-spice--cinnamon",
+        "ethos-car-care--ceramic-coating",
+        "medical-supply-group--masks",
+        "rope-and-cord--polypropylene-rope",
+        "the-fabric-market--upholstery-fabric",
+        "mexgrocer--dried-chiles"
+      ]
+    }
+  ],
+  "samplingFinding": "Twenty-nine of forty unseen query pages on twenty previously qualified training domains passed the frozen capture gates, a 72.5% page yield. Thirty attempts captured successfully; one captured page was rejected for exposing only seven candidate roots. The remaining ten attempts were two blocked annotations and eight navigation timeouts.",
+  "visualValidationFinding": "All twenty-nine accepted full-page annotation views were inspected after capture and showed coherent query-result evidence. The 341 frozen roots span mass, volume, count, length, and area. They include explicit per-yard and per-square-foot prices; package-count versus physical-dimension ambiguity; starting prices, ranges, sales, kits, and samples; query-adjacent semantic hard negatives; and listings where the correct outcome is abstention because quantity or price binding is absent. Minor fixed widgets on Greatmats, Tileon, and Seattle Fabrics remained below the frozen twenty-percent obstruction limit and did not cover the selected evidence."
+}

@@ -800,6 +800,39 @@ Readiness now counts 206 of 480 required training pages, including 102 narrow
 pages, 113 categories, and 67 strata. All roots and machine suggestions remain
 unreviewed and ineligible for silver training or benchmark gold.
 
+Training depth wave 02 adds 29 of 40 attempted unseen query pages across 20
+qualified training domains, a 72.5% page yield. Thirty attempts captured
+successfully; one was rejected for exposing only seven candidate roots, while
+two were blocked and eight timed out. All 29 accepted annotation views passed
+manual visual inspection and add 341 frozen roots across mass, volume, count,
+length, and area. The evidence includes explicit per-yard and per-square-foot
+prices, package-count versus physical-dimension traps, starting prices, ranges,
+sales, kits, samples, semantic hard negatives, and listings that require
+abstention. The immutable evidence and decision are recorded in
+[`g2-training-depth-wave-02-p00.json`](../benchmarks/capture-pilots/g2-training-depth-wave-02-p00.json).
+
+The paired blinded
+[`g2-pilot-p20.json`](../benchmarks/review-campaigns/g2-pilot-p20.json)
+campaign now contains 235 pages and 2,534 frozen roots from the same 80
+qualified training domains. Deterministic preannotation proposes 531
+comparables and 2,003 abstentions, including four invalid suggestions. The
+semantic diagnostic in
+[`g2-campaign-preannotation-p19.json`](../benchmarks/reviews/g2-campaign-preannotation-p19.json)
+retains 2,501 suggestions and quarantines 33 traps. The representation audit in
+[`g2-selection-representation-p18.json`](../benchmarks/reviews/g2-selection-representation-p18.json)
+round-trips all 2,501 retained suggestions exactly with zero failures.
+
+The p20 campaign is partitioned into 24 paired assignments in
+[`g2-pilot-p20-review-batches.json`](../benchmarks/reviews/g2-pilot-p20-review-batches.json).
+The full campaign and every reviewer-A batch passed headed Playwright Chromium
+validation. The aggregate evidence in
+[`g2-pilot-p20-review-batch-validation.json`](../benchmarks/reviews/g2-pilot-p20-review-batch-validation.json)
+loads all 235 screenshots and 2,534 roots with zero console errors or review
+writes. Readiness now counts 235 of 480 required training pages, including 117
+narrow pages, 123 categories, and 67 strata. Human-reviewed products remain
+zero, so all roots and machine suggestions remain ineligible for silver
+training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

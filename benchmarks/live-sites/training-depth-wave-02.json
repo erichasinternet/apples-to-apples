@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Second bounded depth-expansion wave on twenty qualified training domains. Forty unseen listing queries contribute exactly eight targets per supported dimension without changing domain assignments or supplying site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "bulk-priced-food-shoppe",
+      "label": "Bulk Priced Food Shoppe",
+      "hostname": "bulkpricedfoodshoppe.com",
+      "stratum": "independent-bulk-food-retail",
+      "searchUrlTemplate": "https://bulkpricedfoodshoppe.com/search/?q={query}",
+      "queries": [
+        {"id": "rolled-oats", "query": "rolled oats", "dimension": "mass"},
+        {"id": "dried-fruit", "query": "dried fruit", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "mexgrocer",
+      "label": "MexGrocer",
+      "hostname": "www.mexgrocer.com",
+      "stratum": "specialty-grocery-retail",
+      "searchUrlTemplate": "https://www.mexgrocer.com/search?q={query}",
+      "queries": [
+        {"id": "masa-harina", "query": "masa harina", "dimension": "mass"},
+        {"id": "dried-chiles", "query": "dried chiles", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "foods-of-nations",
+      "label": "Foods of Nations",
+      "hostname": "foodsofnations.com",
+      "stratum": "international-grocery-retail",
+      "searchUrlTemplate": "https://foodsofnations.com/search?q={query}",
+      "queries": [
+        {"id": "chickpeas", "query": "chickpeas", "dimension": "mass"},
+        {"id": "flour", "query": "flour", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "whole-spice",
+      "label": "Whole Spice",
+      "hostname": "www.wholespice.com",
+      "stratum": "direct-to-consumer-bulk-spice-retail",
+      "searchUrlTemplate": "https://www.wholespice.com/search?q={query}",
+      "queries": [
+        {"id": "cumin", "query": "cumin", "dimension": "mass"},
+        {"id": "cinnamon", "query": "cinnamon", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "turtle-wax",
+      "label": "Turtle Wax",
+      "hostname": "www.turtlewax.com",
+      "stratum": "automotive-care-brand-retail",
+      "searchUrlTemplate": "https://www.turtlewax.com/search?q={query}",
+      "queries": [
+        {"id": "bug-remover", "query": "bug remover", "dimension": "volume"},
+        {"id": "spray-wax", "query": "spray wax", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "yeagers-detailing-supplies",
+      "label": "Yeager's Auto Detailing Supplies",
+      "hostname": "yeagersdetailingsupplies.com",
+      "stratum": "independent-detailing-supply-retail",
+      "searchUrlTemplate": "https://yeagersdetailingsupplies.com/search?q={query}",
+      "queries": [
+        {"id": "leather-cleaner", "query": "leather cleaner", "dimension": "volume"},
+        {"id": "all-purpose-cleaner", "query": "all purpose cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "armour-detail-supply",
+      "label": "Armour Detail Supply",
+      "hostname": "armourdetailsupply.com",
+      "stratum": "independent-detailing-chemical-brand",
+      "searchUrlTemplate": "https://armourdetailsupply.com/search?q={query}",
+      "queries": [
+        {"id": "tire-shine", "query": "tire shine", "dimension": "volume"},
+        {"id": "interior-cleaner", "query": "interior cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "ethos-car-care",
+      "label": "Ethos Car Care",
+      "hostname": "ethoscarcare.com",
+      "stratum": "direct-to-consumer-car-care",
+      "searchUrlTemplate": "https://ethoscarcare.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "ceramic-coating", "query": "ceramic coating", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "md-supplies",
+      "label": "MD Supplies",
+      "hostname": "mdsupplies.com",
+      "stratum": "independent-medical-supply-retail",
+      "searchUrlTemplate": "https://mdsupplies.com/search?q={query}",
+      "queries": [
+        {"id": "bandages", "query": "bandages", "dimension": "count"},
+        {"id": "needles", "query": "needles", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "medical-supply-group",
+      "label": "Medical Supply Group",
+      "hostname": "medicalsupplygroup.com",
+      "stratum": "medical-and-laboratory-supply-retail",
+      "searchUrlTemplate": "https://medicalsupplygroup.com/search?q={query}",
+      "queries": [
+        {"id": "gauze-pads", "query": "gauze pads", "dimension": "count"},
+        {"id": "masks", "query": "masks", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "allegro-medical",
+      "label": "Allegro Medical",
+      "hostname": "www.allegromedical.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.allegromedical.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "bandages", "query": "bandages", "dimension": "count"},
+        {"id": "needles", "query": "needles", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "vitality-medical",
+      "label": "Vitality Medical",
+      "hostname": "www.vitalitymedical.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.vitalitymedical.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "masks", "query": "masks", "dimension": "count"},
+        {"id": "bandages", "query": "bandages", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "the-fabric-market",
+      "label": "The Fabric Market",
+      "hostname": "thefabricmarket.com",
+      "stratum": "independent-fabric-by-yard-retail",
+      "searchUrlTemplate": "https://thefabricmarket.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "canvas-fabric", "query": "canvas fabric", "dimension": "length"},
+        {"id": "upholstery-fabric", "query": "upholstery fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "rope-and-cord",
+      "label": "Rope and Cord",
+      "hostname": "ropeandcord.com",
+      "stratum": "rope-by-length-retail",
+      "searchUrlTemplate": "https://ropeandcord.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "manila-rope", "query": "manila rope", "dimension": "length"},
+        {"id": "polypropylene-rope", "query": "polypropylene rope", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "rockywoods",
+      "label": "Rockywoods",
+      "hostname": "rockywoods.com",
+      "stratum": "technical-outdoor-fabric",
+      "searchUrlTemplate": "https://rockywoods.com/search?q={query}",
+      "queries": [
+        {"id": "fleece-fabric", "query": "fleece fabric", "dimension": "length"},
+        {"id": "canvas-fabric", "query": "canvas fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "seattle-fabrics",
+      "label": "Seattle Fabrics",
+      "hostname": "www.seattlefabrics.com",
+      "stratum": "outdoor-fabric",
+      "searchUrlTemplate": "https://www.seattlefabrics.com/search.asp?keyword={query}",
+      "queries": [
+        {"id": "nylon-fabric", "query": "nylon fabric", "dimension": "length"},
+        {"id": "canvas-fabric", "query": "canvas fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "tiles-direct",
+      "label": "Tiles Direct",
+      "hostname": "www.tilesdirect.net",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.tilesdirect.net/search.php?search_query={query}",
+      "queries": [
+        {"id": "glass-tile", "query": "glass tile", "dimension": "area"},
+        {"id": "subway-tile", "query": "subway tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "artwalk-tile",
+      "label": "Artwalk Tile",
+      "hostname": "www.artwalktile.com",
+      "stratum": "specialty-tile-retail",
+      "searchUrlTemplate": "https://www.artwalktile.com/search?q={query}",
+      "queries": [
+        {"id": "ceramic-tile", "query": "ceramic tile", "dimension": "area"},
+        {"id": "glass-tile", "query": "glass tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tileon",
+      "label": "TileOn",
+      "hostname": "tileon.com",
+      "stratum": "online-porcelain-tile-retail",
+      "searchUrlTemplate": "https://tileon.com/search?q={query}",
+      "queries": [
+        {"id": "marble-tile", "query": "marble tile", "dimension": "area"},
+        {"id": "ceramic-tile", "query": "ceramic tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "greatmats",
+      "label": "Greatmats",
+      "hostname": "www.greatmats.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.greatmats.com/{querySlug}.php",
+      "queries": [
+        {"id": "foam-flooring", "query": "foam flooring", "dimension": "area"},
+        {"id": "dance-flooring", "query": "dance flooring", "dimension": "area"}
+      ]
+    }
+  ]
+}
