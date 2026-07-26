@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "pilotId": "g2-wave-11-volume-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-26T08:43:22.842Z",
+  "source": {
+    "siteIds": ["alan-janitorial"],
+    "cohort": "training",
+    "strata": ["cleaning-equipment"],
+    "anonymousContext": true,
+    "sourceManifestSha256": ["55bba8c9a2cd2907de14d6db39bf5a1e4ac1c529399e047d7757e2ac8c2fde29"],
+    "collectorSha256": ["c697e549acd6eba4a1c75ae20d8f22aa3a3630046d3529cf2ea62f53b806c29f"]
+  },
+  "runs": [
+    {"runId": "2026-07-26T08-31-41-649Z", "runManifestSha256": "1760918b315b43dbf4ed7d3584052d26fbd40cd2fd1dbc5fbdedc888ee6bd3e3", "pageTimeoutMs": 60000, "cardScreenshotBudgetMs": 10000},
+    {"runId": "2026-07-26T08-42-43-276Z", "runManifestSha256": "fc440c179672722dcbefae482e7bc2266b18fc66c61b93d4314d7ccdf046aa31", "pageTimeoutMs": 90000, "cardScreenshotBudgetMs": 12000}
+  ],
+  "screening": {"requestedCaptureAttempts": 24, "successfulCaptureAttempts": 7, "acceptedPages": 2, "qualifiedDomains": 1, "rejectedDomains": 19},
+  "captures": [
+    {
+      "siteId": "alan-janitorial",
+      "pageId": "alan-janitorial--floor-cleaner",
+      "capturedAt": "2026-07-26T08:32:08.538Z",
+      "viewportProfile": "desktop",
+      "viewport": {"width": 1440, "height": 1000},
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 306,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "7dc0104a73311b0abd5c78ac9f1687bb94b2e2b1e5089ad85b3adec3a266b225",
+      "annotationScreenshotSha256": "8dce3a5f1e901b4f8146c679250c3b9a0e97aeae7e1ca316b7153f3d8df40992",
+      "provenanceAggregateSha256": "0a53b369217245e6f6b46dc1498ac54e4debf13fba37df24f7b2fd54bf71f483",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "alan-janitorial",
+      "pageId": "alan-janitorial--degreaser",
+      "capturedAt": "2026-07-26T08:43:22.842Z",
+      "viewportProfile": "narrow",
+      "viewport": {"width": 390, "height": 844},
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 283,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "706c1b99cd3db076b9887560edad7aed58f7496bea6b85a13cee866ec7f1f6eb",
+      "annotationScreenshotSha256": "175c5705234b99ce9ed9edb697701f492d1ed3133f3e6657ea4cc08331f59926",
+      "provenanceAggregateSha256": "27a3b4d17e0741ee74c467221f166cba588afc03abc46408a12938b63d0adc74",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {"pointerReady": false, "dualReviewed": false, "adjudicated": false, "reason": "Independent human reviews and third-party adjudication are pending."}
+}

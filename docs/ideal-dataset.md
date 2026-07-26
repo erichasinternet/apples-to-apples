@@ -423,6 +423,28 @@ round-trips all 761 machine-retained suggestions exactly across 83 pages and 32
 sites. The image-dependent cases are preserved for independent human review to
 measure whether the eventual model needs a multimodal evidence path.
 
+Wave 11 screens 20 additional unseen domains, 40 target routes, all five
+comparison dimensions, and 20 source strata. Alan Janitorial is the only
+promotion: two visually inspected product grids contribute 16 volume roots with
+explicit gallon, quart, and ounce quantities in DOM-visible titles. The other
+19 candidates have explicit bounded failure dispositions, including insufficient
+candidate counts, severe obstruction, privacy-audit failure, invalid TLS,
+timeouts, dead search routes, and pages without query-relevant product evidence.
+
+The resulting paired blinded campaign in
+[`g2-pilot-p08.json`](../benchmarks/review-campaigns/g2-pilot-p08.json)
+contains 33 qualified training domains, 85 pages, and 794 frozen roots. Its
+headed workbench sweep loaded every screenshot and root, enforced only frozen
+evidence choices, rejected invalid and incomplete submissions, emitted no
+console errors, and wrote no review files. The diagnostic in
+[`g2-campaign-preannotation-p07.json`](../benchmarks/reviews/g2-campaign-preannotation-p07.json)
+finds 12 tentative comparables and four abstentions among the new Alan roots.
+The compact representation audit in
+[`g2-selection-representation-p06.json`](../benchmarks/reviews/g2-selection-representation-p06.json)
+round-trips all 777 machine-retained suggestions exactly with zero failures
+across the full campaign. All 794 roots and machine suggestions remain
+unreviewed and ineligible for silver training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

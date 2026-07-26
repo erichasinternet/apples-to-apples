@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "auditId": "g2-campaign-preannotation-p07",
+  "createdAt": "2026-07-26T08:47:45Z",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p08-reviewer-a-campaign.json",
+    "campaignSha256": "0a94502649e5167e7968333812ac398cc8ae568cead1d33aee4f6fca9697b56e",
+    "queueSha256": "872fb4d87e4ef01bb83cd77f147f95ff16d2e6c083ba9d08a3404a25cae2feb5",
+    "preannotationSha256": "fa3e38b44004df0d8e5e8a13d7bc44a40c73c4c56252654b0ea63442de94032a",
+    "auditSha256": "f95d856c4431a547557b0a321f06f83fe5fe55d09db818cd949f4ac8ac0d2737",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "campaign": {
+    "pages": 85,
+    "cards": 794,
+    "targetDimensions": {
+      "area": 76,
+      "count": 196,
+      "length": 182,
+      "mass": 236,
+      "volume": 104
+    },
+    "candidateEvidence": {
+      "withTitle": 787,
+      "withCurrentPrice": 754,
+      "withNativeUnitPriceInOneNode": 39,
+      "withPackageQuantity": 247
+    }
+  },
+  "dimensionConditionedPreannotation": {
+    "tentativeComparable": 203,
+    "abstained": 591,
+    "evidenceInvalid": 4,
+    "methods": {
+      "explicit-abstention": 591,
+      "native-unit-price": 85,
+      "price-and-package": 118
+    }
+  },
+  "semanticAudit": {
+    "machineAuditPassingComparableSuggestions": 186,
+    "machineAuditPassingAbstentionSuggestions": 591,
+    "quarantinedComparableSuggestions": 17,
+    "quarantinedAbstentionSuggestions": 0,
+    "quarantineReasons": {
+      "ambiguous-decimal-quantity": 1,
+      "equipment-capacity-as-quantity": 10,
+      "invalid-evidence": 4,
+      "physical-dimension-as-quantity": 3
+    }
+  },
+  "newDomainOutcomes": {
+    "alan-janitorial": {
+      "cards": 16,
+      "tentativeComparable": 12,
+      "abstained": 4,
+      "machineAuditPassing": 16
+    }
+  },
+  "representationChanges": [
+    "No extraction heuristic changed for this append-only campaign expansion.",
+    "Added 16 janitorial-chemical roots from two visually inspected product grids with explicit gallon, quart, and ounce quantities in DOM-visible titles.",
+    "Preserved products without complete target-dimension evidence as abstentions rather than inferring quantities from neighboring products or imagery."
+  ],
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "The source cards and all preannotations remain unreviewed. Machine checks can quarantine contradictions but cannot establish semantic correctness; two independent reviews and adjudication remain required."
+  },
+  "decision": "retain-as-blinded-review-aid-only"
+}

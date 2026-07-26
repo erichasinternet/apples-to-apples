@@ -996,6 +996,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-10-volume-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "alan-janitorial",
+      "cohort": "training",
+      "pageId": "alan-janitorial--floor-cleaner",
+      "captureTimestamp": "2026-07-26T08:32:08.538Z",
+      "observationSha256": "7dc0104a73311b0abd5c78ac9f1687bb94b2e2b1e5089ad85b3adec3a266b225",
+      "annotationScreenshotSha256": "8dce3a5f1e901b4f8146c679250c3b9a0e97aeae7e1ca316b7153f3d8df40992",
+      "qualificationReport": "benchmarks/domain-qualification/wave-11-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-11-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "alan-janitorial",
+      "cohort": "training",
+      "pageId": "alan-janitorial--degreaser",
+      "captureTimestamp": "2026-07-26T08:43:22.842Z",
+      "observationSha256": "706c1b99cd3db076b9887560edad7aed58f7496bea6b85a13cee866ec7f1f6eb",
+      "annotationScreenshotSha256": "175c5705234b99ce9ed9edb697701f492d1ed3133f3e6657ea4cc08331f59926",
+      "qualificationReport": "benchmarks/domain-qualification/wave-11-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-11-volume-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

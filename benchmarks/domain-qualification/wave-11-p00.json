@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "qualificationId": "wave-11-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-11.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "screeningPageTimeoutMs": 60000,
+    "qualificationPageTimeoutMs": 90000,
+    "screeningCardScreenshotBudgetMs": 10000,
+    "qualificationCardScreenshotBudgetMs": 12000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "genericConsentActionHandling": true,
+    "offscreenActionExclusion": true,
+    "pointerlessTransparentShellExclusion": true,
+    "persistentCookieConsentHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "queryParametersCountAsQueryEvidence": false,
+    "queryEvidenceScope": "title, pathname, visible headings, and visible status text",
+    "minimumQueryTokenCoverage": 1,
+    "populatedSearchControlsCountAsQueryEvidence": false,
+    "exactPageTargeting": true
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T08-31-41-649Z",
+      "runManifestSha256": "1760918b315b43dbf4ed7d3584052d26fbd40cd2fd1dbc5fbdedc888ee6bd3e3",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 10000,
+      "purpose": "one-page headed screening across all 20 wave-11 domains"
+    },
+    {
+      "runId": "2026-07-26T08-42-43-276Z",
+      "runManifestSha256": "fc440c179672722dcbefae482e7bc2266b18fc66c61b93d4314d7ccdf046aa31",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "exact narrow second-page qualification across four candidates"
+    }
+  ],
+  "results": {
+    "alan-janitorial": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "alan-janitorial--floor-cleaner",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 306,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "7dc0104a73311b0abd5c78ac9f1687bb94b2e2b1e5089ad85b3adec3a266b225",
+          "annotationScreenshotSha256": "8dce3a5f1e901b4f8146c679250c3b9a0e97aeae7e1ca316b7153f3d8df40992",
+          "provenanceAggregateSha256": "0a53b369217245e6f6b46dc1498ac54e4debf13fba37df24f7b2fd54bf71f483",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "alan-janitorial--degreaser",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 283,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "706c1b99cd3db076b9887560edad7aed58f7496bea6b85a13cee866ec7f1f6eb",
+          "annotationScreenshotSha256": "175c5705234b99ce9ed9edb697701f492d1ed3133f3e6657ea4cc08331f59926",
+          "provenanceAggregateSha256": "27a3b4d17e0741ee74c467221f166cba588afc03abc46408a12938b63d0adc74",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two unobstructed chemical grids pass in distinct desktop and narrow viewports with card-local prices and gallon, quart, or ounce quantities."
+    },
+    "source-supply-company": {"status": "rejected", "reason": "No requested-query evidence or reviewable product candidates."},
+    "gnb-janitorial": {"status": "rejected", "reason": "The second page exposed only four candidates, below the frozen minimum of eight."},
+    "atwoods": {"status": "rejected", "reason": "The headed screening target exceeded the 60-second page bound."},
+    "allworld-packaging": {"status": "rejected", "reason": "The narrow second page had only four candidates and 27% unresolved obstruction coverage."},
+    "fastfloors": {"status": "rejected", "reason": "The narrow second page retained an obstruction covering 82% of the viewport."},
+    "rubber-cal": {"status": "rejected", "reason": "The headed screening target exceeded the 60-second page bound."},
+    "zogics": {"status": "rejected", "reason": "The capture failed privacy audit due to serialized phone and street-address content."},
+    "the-packaging-supply": {"status": "rejected", "reason": "TLS hostname validation failed for the proposed search route."},
+    "leslies-pool": {"status": "rejected", "reason": "The headed screening target exceeded the 60-second page bound."},
+    "floors-to-your-home": {"status": "rejected", "reason": "The proposed search route returned HTTP 404 with no query evidence."},
+    "recreation-supply": {"status": "rejected", "reason": "The proposed search route returned HTTP 404 with no query evidence or products."},
+    "carpet-tile-depot": {"status": "rejected", "reason": "The headed screening target exceeded the 60-second page bound."},
+    "peoples-supplies": {"status": "rejected", "reason": "The screen exposed only six candidates, below the frozen minimum of eight."},
+    "online-packaging-store": {"status": "rejected", "reason": "The headed screening target exceeded the 60-second page bound."},
+    "pinch-a-penny": {"status": "rejected", "reason": "No requested-query evidence or reviewable product candidates."},
+    "totalpack": {"status": "rejected", "reason": "No requested-query evidence or reviewable product candidates."},
+    "interface-shop": {"status": "rejected", "reason": "The headed screening target exceeded the 60-second page bound."},
+    "flor": {"status": "rejected", "reason": "No query evidence or candidates were available and a full-viewport obstruction remained."},
+    "parish-supply": {"status": "rejected", "reason": "No requested-query evidence or reviewable product candidates."}
+  },
+  "decision": {
+    "qualifiedDomains": ["alan-janitorial"],
+    "assignedDomains": [{"siteId": "alan-janitorial", "cohort": "training"}],
+    "status": "keep"
+  }
+}

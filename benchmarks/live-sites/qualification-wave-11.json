@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Eleventh unassigned domain-qualification wave. Candidates emphasize volume and area while preserving all five dimensions across janitorial, packaging, flooring, rubber, pool, ranch, and recreation retail. Every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "source-supply-company",
+      "label": "Source Supply Company",
+      "hostname": "sourcesupplycompany.com",
+      "stratum": "janitorial-wholesale",
+      "searchUrlTemplate": "https://sourcesupplycompany.com/search?q={query}",
+      "queries": [
+        {"id": "floor-cleaner", "query": "floor cleaner", "dimension": "volume"},
+        {"id": "hand-soap", "query": "hand soap", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "parish-supply",
+      "label": "Parish Supply",
+      "hostname": "parish-supply.com",
+      "stratum": "janitorial-specialty",
+      "searchUrlTemplate": "https://parish-supply.com/search?q={query}",
+      "queries": [
+        {"id": "floor-cleaner", "query": "floor cleaner", "dimension": "volume"},
+        {"id": "degreaser", "query": "degreaser", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "gnb-janitorial",
+      "label": "G&B Janitorial Supply",
+      "hostname": "gnbinc.com",
+      "stratum": "local-janitorial",
+      "searchUrlTemplate": "https://gnbinc.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "floor-cleaner", "query": "floor cleaner", "dimension": "volume"},
+        {"id": "hand-soap", "query": "hand soap", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "peoples-supplies",
+      "label": "People's Supplies",
+      "hostname": "peoplessupplies.com",
+      "stratum": "facility-supply",
+      "searchUrlTemplate": "https://peoplessupplies.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "floor-cleaner", "query": "floor cleaner", "dimension": "volume"},
+        {"id": "floor-finish", "query": "floor finish", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "alan-janitorial",
+      "label": "Alan Janitorial",
+      "hostname": "www.alanjanitorial.com",
+      "stratum": "cleaning-equipment",
+      "searchUrlTemplate": "https://www.alanjanitorial.com/search?q={query}",
+      "queries": [
+        {"id": "floor-cleaner", "query": "floor cleaner", "dimension": "volume"},
+        {"id": "degreaser", "query": "degreaser", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "zogics",
+      "label": "Zogics",
+      "hostname": "zogics.com",
+      "stratum": "fitness-facility",
+      "searchUrlTemplate": "https://zogics.com/search?q={query}",
+      "queries": [
+        {"id": "floor-cleaner", "query": "floor cleaner", "dimension": "volume"},
+        {"id": "disinfectant", "query": "disinfectant", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "allworld-packaging",
+      "label": "Allworld Packaging",
+      "hostname": "allworldpackaging.com",
+      "stratum": "packaging-wholesale",
+      "searchUrlTemplate": "https://allworldpackaging.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "paper-bags", "query": "paper bags", "dimension": "count"},
+        {"id": "shipping-boxes", "query": "shipping boxes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "online-packaging-store",
+      "label": "Online Packaging Store",
+      "hostname": "onlinepackagingstore.com",
+      "stratum": "custom-packaging",
+      "searchUrlTemplate": "https://onlinepackagingstore.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "mailer-boxes", "query": "mailer boxes", "dimension": "count"},
+        {"id": "paper-bags", "query": "paper bags", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "the-packaging-supply",
+      "label": "The Packaging Supply",
+      "hostname": "www.thepackagingsupply.com",
+      "stratum": "shipping-supply",
+      "searchUrlTemplate": "https://www.thepackagingsupply.com/search?q={query}",
+      "queries": [
+        {"id": "poly-bags", "query": "poly bags", "dimension": "count"},
+        {"id": "shipping-boxes", "query": "shipping boxes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "totalpack",
+      "label": "TOTALPACK",
+      "hostname": "totalpack.com",
+      "stratum": "packaging-industrial",
+      "searchUrlTemplate": "https://totalpack.com/search?q={query}",
+      "queries": [
+        {"id": "poly-bags", "query": "poly bags", "dimension": "count"},
+        {"id": "shipping-boxes", "query": "shipping boxes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "carpet-tile-depot",
+      "label": "Carpet Tile Depot",
+      "hostname": "www.carpettiledepot.com",
+      "stratum": "carpet-discount",
+      "searchUrlTemplate": "https://www.carpettiledepot.com/search?q={query}",
+      "queries": [
+        {"id": "carpet-tile", "query": "carpet tile", "dimension": "area"},
+        {"id": "commercial-carpet", "query": "commercial carpet", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "fastfloors",
+      "label": "FastFloors",
+      "hostname": "www.fastfloors.com",
+      "stratum": "flooring-retail",
+      "searchUrlTemplate": "https://www.fastfloors.com/search?q={query}",
+      "queries": [
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"},
+        {"id": "carpet-tile", "query": "carpet tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "flor",
+      "label": "FLOR",
+      "hostname": "www.flor.com",
+      "stratum": "modular-carpet",
+      "searchUrlTemplate": "https://www.flor.com/search?q={query}",
+      "queries": [
+        {"id": "carpet-tile", "query": "carpet tile", "dimension": "area"},
+        {"id": "area-rug", "query": "area rug", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "interface-shop",
+      "label": "Interface",
+      "hostname": "shop.interface.com",
+      "stratum": "commercial-flooring",
+      "searchUrlTemplate": "https://shop.interface.com/US/en-US/search?text={query}",
+      "queries": [
+        {"id": "carpet-tile", "query": "carpet tile", "dimension": "area"},
+        {"id": "rubber-flooring", "query": "rubber flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "floors-to-your-home",
+      "label": "Floors To Your Home",
+      "hostname": "floorstoyourhome.com",
+      "stratum": "flooring-outlet",
+      "searchUrlTemplate": "https://floorstoyourhome.com/search?q={query}",
+      "queries": [
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"},
+        {"id": "laminate-flooring", "query": "laminate flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "rubber-cal",
+      "label": "Rubber-Cal",
+      "hostname": "rubbercal.com",
+      "stratum": "rubber-products",
+      "searchUrlTemplate": "https://rubbercal.com/search?q={query}",
+      "queries": [
+        {"id": "rubber-roll", "query": "rubber roll", "dimension": "length"},
+        {"id": "rubber-flooring", "query": "rubber flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "leslies-pool",
+      "label": "Leslie's Pool Supplies",
+      "hostname": "lesliespool.com",
+      "stratum": "pool-retail-chain",
+      "searchUrlTemplate": "https://lesliespool.com/search/?q={query}",
+      "queries": [
+        {"id": "pool-algaecide", "query": "pool algaecide", "dimension": "volume"},
+        {"id": "pool-shock", "query": "pool shock", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "pinch-a-penny",
+      "label": "Pinch A Penny",
+      "hostname": "pinchapenny.com",
+      "stratum": "pool-franchise",
+      "searchUrlTemplate": "https://pinchapenny.com/search?q={query}",
+      "queries": [
+        {"id": "pool-algaecide", "query": "pool algaecide", "dimension": "volume"},
+        {"id": "pool-test-strips", "query": "pool test strips", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "atwoods",
+      "label": "Atwoods Ranch & Home",
+      "hostname": "www.atwoods.com",
+      "stratum": "ranch-retail",
+      "searchUrlTemplate": "https://www.atwoods.com/search?q={query}",
+      "queries": [
+        {"id": "pool-algaecide", "query": "pool algaecide", "dimension": "volume"},
+        {"id": "pool-shock", "query": "pool shock", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "recreation-supply",
+      "label": "Recreation Supply Company",
+      "hostname": "www.recsupply.com",
+      "stratum": "recreation-supply",
+      "searchUrlTemplate": "https://www.recsupply.com/search?q={query}",
+      "queries": [
+        {"id": "pool-hose", "query": "pool hose", "dimension": "length"},
+        {"id": "pool-algaecide", "query": "pool algaecide", "dimension": "volume"}
+      ]
+    }
+  ]
+}
