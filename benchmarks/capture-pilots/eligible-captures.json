@@ -756,6 +756,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-07-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "purebulk",
+      "cohort": "training",
+      "pageId": "purebulk--protein-powder",
+      "captureTimestamp": "2026-07-26T06:53:45.643Z",
+      "observationSha256": "6640b6e4fb339be56179e39ecc6f7d89051e9026e645499b00d5cf1023dc089d",
+      "annotationScreenshotSha256": "f1151a341aca6c65ecc8038b04d5d3548fe21189b3452b3bf354850b859a48b4",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-08-purebulk-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "purebulk",
+      "cohort": "training",
+      "pageId": "purebulk--magnesium-powder",
+      "captureTimestamp": "2026-07-26T06:54:41.964Z",
+      "observationSha256": "91dc73aafaeadda4be74bbbc58cdd7db1a38d8706515fd459790213de923cba2",
+      "annotationScreenshotSha256": "986b3fbcc912579716b8684593cc3a40868d664bf6cbbe8347af5bdc427d0ac0",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-08-purebulk-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

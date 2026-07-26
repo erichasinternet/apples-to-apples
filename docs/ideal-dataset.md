@@ -324,6 +324,29 @@ The raw artifact remains ineligible for both silver training and benchmark gold:
 all 580 cards are still unreviewed, and deterministic checks cannot substitute
 for two independent reviews and adjudication.
 
+Wave 08 adds PureBulk after two exact, visually inspected captures passed the
+frozen qualification gate: a narrow protein-powder grid and a desktop
+magnesium-powder grid. Each page contributes ten frozen product roots, including
+bulk-size variants, while article results below the product grid remain useful
+non-candidate evidence. The eligible live campaign now spans 23 newly qualified
+training domains, 65 pages, and 600 frozen roots. All 600 roots remain
+ineligible for silver training and benchmark gold until two independent blinded
+reviews and adjudication are complete.
+
+The expanded blinded campaign and headed workbench evidence are frozen in
+[`g2-pilot-p03.json`](../benchmarks/review-campaigns/g2-pilot-p03.json).
+All 65 screenshots loaded, all 600 offered choices matched the captured card
+roots, invalid submissions were rejected, no console errors occurred, and no
+review files were written by validation. The matching deterministic diagnostic
+is recorded in
+[`g2-campaign-preannotation-p02.json`](../benchmarks/reviews/g2-campaign-preannotation-p02.json);
+it retains 584 of 600 suggestions after semantic quarantine but promotes none.
+The compact representation audit in
+[`g2-selection-representation-p01.json`](../benchmarks/reviews/g2-selection-representation-p01.json)
+round-trips all 584 retained suggestions exactly with zero failures across 65
+pages and 23 sites. This establishes serialization compatibility only, not label
+correctness.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

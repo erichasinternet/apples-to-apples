@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "pilotId": "g2-wave-08-purebulk-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-26T06:54:41.964Z",
+  "source": {
+    "siteIds": ["purebulk"],
+    "cohort": "training",
+    "strata": ["supplements"],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "13b5a2650b9d15647d29d5d4325b5cf23bd34ae7cdcc7229097748c66ac9c88b"
+    ],
+    "collectorSha256": [
+      "3c400ca745c0a5564b3c4e38ef2a092fabb37d2879ac8a00921a0d648656b9bf"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T06-48-59-813Z",
+      "runManifestSha256": "237ae5484738f63b0bcae3fdf030187aa38ad3c73ee889805c43e8e8ee391cb1",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 10000
+    },
+    {
+      "runId": "2026-07-26T06-53-26-685Z",
+      "runManifestSha256": "d6513659c73caaaaea278bb5f5b31966c5db9e1a840a8b24851184699433a4b0",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-26T06-54-22-996Z",
+      "runManifestSha256": "85ead4748ea5715e72dd07750ce4f280e4a0f31761ceca306d178b0ddd797202",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 10,
+    "successfulCaptureAttempts": 3,
+    "acceptedPages": 2,
+    "qualifiedDomains": 1,
+    "rejectedDomains": 7,
+    "pendingDomains": 12
+  },
+  "captures": [
+    {
+      "siteId": "purebulk",
+      "pageId": "purebulk--protein-powder",
+      "capturedAt": "2026-07-26T06:53:45.643Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 10,
+      "candidateScreenshotsCaptured": 10,
+      "observationNodeCount": 280,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0.043140114230161626,
+      "queryTokenCoverage": 1,
+      "observationSha256": "6640b6e4fb339be56179e39ecc6f7d89051e9026e645499b00d5cf1023dc089d",
+      "annotationScreenshotSha256": "f1151a341aca6c65ecc8038b04d5d3548fe21189b3452b3bf354850b859a48b4",
+      "provenanceAggregateSha256": "1503400541aa80e5ef94a4b4bba898ad14807621fb07fe562a12fe733010df1d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "purebulk",
+      "pageId": "purebulk--magnesium-powder",
+      "capturedAt": "2026-07-26T06:54:41.964Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 10,
+      "candidateScreenshotsCaptured": 10,
+      "observationNodeCount": 322,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0.00986111111111111,
+      "queryTokenCoverage": 1,
+      "observationSha256": "91dc73aafaeadda4be74bbbc58cdd7db1a38d8706515fd459790213de923cba2",
+      "annotationScreenshotSha256": "986b3fbcc912579716b8684593cc3a40868d664bf6cbbe8347af5bdc427d0ac0",
+      "provenanceAggregateSha256": "a0bcea236148f6aa4d26764d76907ba569b1feacf0be6c736308d70485bf525c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

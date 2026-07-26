@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "auditId": "g2-campaign-preannotation-p02",
+  "createdAt": "2026-07-26T07:04:00Z",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p03-reviewer-a-campaign.json",
+    "campaignSha256": "968d8b9e2f68908d6f2b2b874a3e4533086f6edff821c8dea38a0a76a52527ce",
+    "queueSha256": "f57db63ef719554cf5db1a6881a1195790ecf43afa80eaff9cbd04a6180e6821",
+    "preannotationSha256": "a58b215a1325944296c78040a301ca6d162a84ef98cc2578d1e99078a99732c9",
+    "auditSha256": "c6a1f4b338a3a864e139d9dccb132517db5bbae6269ff48982f71da5c7717a25",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "campaign": {
+    "pages": 65,
+    "cards": 600,
+    "targetDimensions": {
+      "area": 56,
+      "count": 196,
+      "length": 120,
+      "mass": 180,
+      "volume": 48
+    },
+    "candidateEvidence": {
+      "withTitle": 593,
+      "withCurrentPrice": 580,
+      "withNativeUnitPriceInOneNode": 39,
+      "withPackageQuantity": 227
+    }
+  },
+  "dimensionConditionedPreannotation": {
+    "tentativeComparable": 178,
+    "abstained": 422,
+    "evidenceInvalid": 4,
+    "methods": {
+      "explicit-abstention": 422,
+      "native-unit-price": 85,
+      "price-and-package": 93
+    }
+  },
+  "semanticAudit": {
+    "machineAuditPassingComparableSuggestions": 162,
+    "machineAuditPassingAbstentionSuggestions": 422,
+    "quarantinedComparableSuggestions": 16,
+    "quarantinedAbstentionSuggestions": 0,
+    "quarantineReasons": {
+      "ambiguous-decimal-quantity": 1,
+      "equipment-capacity-as-quantity": 10,
+      "invalid-evidence": 4,
+      "physical-dimension-as-quantity": 2
+    }
+  },
+  "newDomainOutcomes": {
+    "purebulk": {
+      "cards": 20,
+      "tentativeComparable": 5,
+      "abstained": 15,
+      "machineAuditPassing": 20
+    }
+  },
+  "representationChanges": [
+    "No extraction heuristic changed for this append-only campaign expansion.",
+    "Added 20 mass-dimension roots from visually verified desktop and narrow PureBulk search grids."
+  ],
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "The source cards and all preannotations remain unreviewed. Machine checks can quarantine contradictions but cannot establish semantic correctness; two independent reviews and adjudication remain required."
+  },
+  "decision": "retain-as-blinded-review-aid-only"
+}

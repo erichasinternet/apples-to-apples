@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "qualificationId": "wave-08-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-08.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "screeningPageTimeoutMs": 60000,
+    "screeningCardScreenshotBudgetMs": 10000,
+    "qualificationPageTimeoutMs": 90000,
+    "qualificationCardScreenshotBudgetMs": 15000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "genericConsentActionHandling": true,
+    "persistentCookieConsentHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "queryParametersCountAsQueryEvidence": false,
+    "queryEvidenceScope": "title, pathname, visible headings, and visible status text",
+    "minimumQueryTokenCoverage": 1,
+    "populatedSearchControlsCountAsQueryEvidence": false,
+    "exactPageTargeting": true
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T06-48-59-813Z",
+      "runManifestSha256": "237ae5484738f63b0bcae3fdf030187aa38ad3c73ee889805c43e8e8ee391cb1",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 10000,
+      "purpose": "one-page headed screening across eight wave-08 domains"
+    },
+    {
+      "runId": "2026-07-26T06-53-26-685Z",
+      "runManifestSha256": "d6513659c73caaaaea278bb5f5b31966c5db9e1a840a8b24851184699433a4b0",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 15000,
+      "purpose": "exact narrow second-page qualification for PureBulk"
+    },
+    {
+      "runId": "2026-07-26T06-54-22-996Z",
+      "runManifestSha256": "85ead4748ea5715e72dd07750ce4f280e4a0f31761ceca306d178b0ddd797202",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 15000,
+      "purpose": "exact desktop recapture with complete candidate screenshots for PureBulk"
+    }
+  ],
+  "results": {
+    "fabrics-yard": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: HTTP 423; search results evidence only 0% of requested query tokens; no reviewable product candidates."
+    },
+    "oneyard": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: no reviewable product candidates."
+    },
+    "stash-fabrics": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: search results evidence only 50% of requested query tokens; no reviewable product candidates."
+    },
+    "instalinen": {
+      "status": "pending",
+      "reason": "Not sampled in wave-08-p00."
+    },
+    "ifabric": {
+      "status": "pending",
+      "reason": "Not sampled in wave-08-p00."
+    },
+    "fabric-direct": {
+      "status": "pending",
+      "reason": "Not sampled in wave-08-p00."
+    },
+    "apc-fabrics": {
+      "status": "pending",
+      "reason": "Not sampled in wave-08-p00."
+    },
+    "search-for-fabric": {
+      "status": "pending",
+      "reason": "Not sampled in wave-08-p00."
+    },
+    "purebulk": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "purebulk--protein-powder",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 10,
+          "candidateScreenshotsCaptured": 10,
+          "observationNodeCount": 280,
+          "observationTruncated": false,
+          "dismissedObstructions": 12,
+          "unresolvedObstructionCoverage": 0.043140114230161626,
+          "queryTokenCoverage": 1,
+          "observationSha256": "6640b6e4fb339be56179e39ecc6f7d89051e9026e645499b00d5cf1023dc089d",
+          "annotationScreenshotSha256": "f1151a341aca6c65ecc8038b04d5d3548fe21189b3452b3bf354850b859a48b4",
+          "provenanceAggregateSha256": "1503400541aa80e5ef94a4b4bba898ad14807621fb07fe562a12fe733010df1d",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "purebulk--magnesium-powder",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 10,
+          "candidateScreenshotsCaptured": 10,
+          "observationNodeCount": 322,
+          "observationTruncated": false,
+          "dismissedObstructions": 12,
+          "unresolvedObstructionCoverage": 0.00986111111111111,
+          "queryTokenCoverage": 1,
+          "observationSha256": "91dc73aafaeadda4be74bbbc58cdd7db1a38d8706515fd459790213de923cba2",
+          "annotationScreenshotSha256": "986b3fbcc912579716b8684593cc3a40868d664bf6cbbe8347af5bdc427d0ac0",
+          "provenanceAggregateSha256": "a0bcea236148f6aa4d26764d76907ba569b1feacf0be6c736308d70485bf525c",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "country-life-foods": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 60000 ms."
+    },
+    "spotless-supply": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: HTTP 404; search results evidence only 0% of requested query tokens; no reviewable product candidates."
+    },
+    "discount-filters": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: annotation screenshot unavailable; no reviewable product candidates."
+    },
+    "filters-fast": {
+      "status": "pending",
+      "reason": "Not sampled in wave-08-p00."
+    },
+    "paracord-planet": {
+      "status": "pending",
+      "reason": "Not sampled in wave-08-p00."
+    },
+    "atwood-rope": {
+      "status": "pending",
+      "reason": "Not sampled in wave-08-p00."
+    },
+    "morebeer": {
+      "status": "pending",
+      "reason": "Not sampled in wave-08-p00."
+    },
+    "northern-brewer": {
+      "status": "pending",
+      "reason": "Not sampled in wave-08-p00."
+    },
+    "bottle-store": {
+      "status": "pending",
+      "reason": "Not sampled in wave-08-p00."
+    },
+    "specialty-bottle": {
+      "status": "pending",
+      "reason": "Not sampled in wave-08-p00."
+    },
+    "carpet-express": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: HTTP 404; search results evidence only 0% of requested query tokens; no reviewable product candidates."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": ["purebulk"],
+    "assignedDomains": [
+      {
+        "siteId": "purebulk",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

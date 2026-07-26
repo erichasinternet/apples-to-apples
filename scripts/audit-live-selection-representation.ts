@@ -66,6 +66,8 @@ const outputPath = path.resolve(
   optionValue("--output") ??
     "benchmarks/reviews/g2-selection-representation-p00.json",
 );
+const auditId =
+  optionValue("--audit-id") ?? "g2-selection-representation-p00";
 
 const [queueBytes, preannotationBytes, auditBytes] = await Promise.all([
   readFile(queuePath),
@@ -174,7 +176,7 @@ for (const id of auditReport.eligibleIds) {
 
 const report = {
   version: 1,
-  auditId: "g2-selection-representation-p00",
+  auditId,
   targetFormat: "evidence-selection-v1",
   source: {
     campaign: queueReport.sourceCampaign,

@@ -1,0 +1,589 @@
+{
+  "version": 1,
+  "campaignId": "g2-pilot-p03",
+  "createdAt": "2026-07-26T07:05:00.000Z",
+  "cohort": "training",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--exam-gloves",
+      "captureTimestamp": "2026-07-25T23:25:01.909Z",
+      "candidateCardCount": 8,
+      "observationSha256": "e047b39e6bf360895119400292c56071dc2990a4a197c8623962b67910dab8bb",
+      "annotationScreenshotSha256": "4322d661fa67e7f2dd76e8ca8e39a04a5ff89a33426e507c7f3bd87703c2ef5e"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--medical-wipes",
+      "captureTimestamp": "2026-07-25T23:21:28.237Z",
+      "candidateCardCount": 8,
+      "observationSha256": "24b7c98e174d1f0968114f8f1176802d19bd7c579f585bfb907733cac923469d",
+      "annotationScreenshotSha256": "95b0fa05f90e105f94268071582d4635a7a18ace948de9ae3dc7c20301bada44"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--syringes",
+      "captureTimestamp": "2026-07-26T01:24:46.570Z",
+      "candidateCardCount": 8,
+      "observationSha256": "f32759eb9c3b61792a79eb0ab41762c5d770108b020110617234e54738a39840",
+      "annotationScreenshotSha256": "fc42166243c58c03a8a7e0d37f8b698de98566efa542e5481ee2e3990fcbaf2a"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--underpads",
+      "captureTimestamp": "2026-07-26T01:22:10.690Z",
+      "candidateCardCount": 8,
+      "observationSha256": "20902665084ffda5ea31fd4e0088212d455c06cedcd4d8c2a3a9033faf018cc4",
+      "annotationScreenshotSha256": "7dba49b109d256a5aa6bd4017a320a88b9fa3decd02b48214293dce1a39e2d90"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--wound-dressings",
+      "captureTimestamp": "2026-07-26T01:02:14.120Z",
+      "candidateCardCount": 8,
+      "observationSha256": "7730037c658e2eb8e52bdabc332886f683db1be2afa6ae5fda3266ce6246d619",
+      "annotationScreenshotSha256": "ec0bc4eab9139533ed6501e36f08092467815b17984cc8d0e0f579033d62f89d"
+    },
+    {
+      "siteId": "betty-mills",
+      "pageId": "betty-mills--cleaner",
+      "captureTimestamp": "2026-07-25T09:28:32.010Z",
+      "candidateCardCount": 8,
+      "observationSha256": "4a21477030ef26e942bbcb56b5e97bf99d1b1c0edb3eb33c75b6c2c25d96986f",
+      "annotationScreenshotSha256": "eaca024b91f9b0c2a173734ab16253810fa31d29d787adfee12b08f0829bf516"
+    },
+    {
+      "siteId": "betty-mills",
+      "pageId": "betty-mills--trash-bags",
+      "captureTimestamp": "2026-07-25T09:28:24.900Z",
+      "candidateCardCount": 8,
+      "observationSha256": "520eec4c02405231bac97ef78fe01c705e70181ad21f2942bb52cbca0ece9d00",
+      "annotationScreenshotSha256": "f9ce9434a56dfdaef20aab37b70f31b6e218a5408db6a8f261bf8531febb47ba"
+    },
+    {
+      "siteId": "blue-sky-vitamin",
+      "pageId": "blue-sky-vitamin--protein-powder",
+      "captureTimestamp": "2026-07-25T16:12:59.326Z",
+      "candidateCardCount": 8,
+      "observationSha256": "bb14ac1b211e1fb008f0fff30bd50dae4c5af48986e82c3e1bad04d05b72ff32",
+      "annotationScreenshotSha256": "799f80fd7f4abd5c2223c5458d07474e5b1089e44f9e6d46bf1e8eaa13747a6d"
+    },
+    {
+      "siteId": "blue-sky-vitamin",
+      "pageId": "blue-sky-vitamin--vitamins",
+      "captureTimestamp": "2026-07-25T16:15:25.275Z",
+      "candidateCardCount": 8,
+      "observationSha256": "c7ebc1a1ee40fe3dd56380cd91a04c85086779dbdee511f62343291bf9e92d01",
+      "annotationScreenshotSha256": "c6455e3078e84c7d8fca24870ece5e51bd6e0b521cafe6be2b51fa961ef49825"
+    },
+    {
+      "siteId": "coffee-bean-corral",
+      "pageId": "coffee-bean-corral--decaf-coffee",
+      "captureTimestamp": "2026-07-26T00:14:01.158Z",
+      "candidateCardCount": 8,
+      "observationSha256": "279dbf16f53eee2273f086008f69cf8b6b53b32391f720cfe2fcea92b751bca5",
+      "annotationScreenshotSha256": "0cbaa199b8479428c9b70d1049b02fb201d1f1a9276f6dd9cfe994b4d11aa18f"
+    },
+    {
+      "siteId": "coffee-bean-corral",
+      "pageId": "coffee-bean-corral--green-coffee",
+      "captureTimestamp": "2026-07-26T00:17:50.051Z",
+      "candidateCardCount": 8,
+      "observationSha256": "963a3ac1b234ef69f1dd6531043ffd389f502e127027d4eccd0f163c243fa031",
+      "annotationScreenshotSha256": "a07e75359a290d8bb64a470f91cda3bbd4a4f355652afe8a0e64c641ac14c594"
+    },
+    {
+      "siteId": "fabric-mart-fabrics",
+      "pageId": "fabric-mart-fabrics--cotton-fabric",
+      "captureTimestamp": "2026-07-26T05:06:02.973Z",
+      "candidateCardCount": 12,
+      "observationSha256": "7620533ee674562e7cac800b0100991718d8208bd3092e75ff588467e0d83acf",
+      "annotationScreenshotSha256": "4ef19a87156576fc04e26919c20a88e5ab3fff9b12651430e81a272732bfb754"
+    },
+    {
+      "siteId": "fabric-mart-fabrics",
+      "pageId": "fabric-mart-fabrics--linen-fabric",
+      "captureTimestamp": "2026-07-26T05:15:20.743Z",
+      "candidateCardCount": 12,
+      "observationSha256": "f91c652ce78916d194ac96a263ab8f6a32d2b594ca022e219c2de69c1265e61b",
+      "annotationScreenshotSha256": "9934c47b4a31d5b7c932618af47e2ceafe2529f68caf44441ff42ab3fdf668ad"
+    },
+    {
+      "siteId": "fabric-wholesale-direct",
+      "pageId": "fabric-wholesale-direct--cotton-fabric",
+      "captureTimestamp": "2026-07-25T23:23:04.047Z",
+      "candidateCardCount": 8,
+      "observationSha256": "5a1a9dbe767a2168e0941c5b3b1e9e33acd203dcbd6cac4eacbe1df2c2894aeb",
+      "annotationScreenshotSha256": "c9f2545a73133b86b90717503c3470b2b502ec4afdd0bae9abcdc8fca36aa144"
+    },
+    {
+      "siteId": "fabric-wholesale-direct",
+      "pageId": "fabric-wholesale-direct--upholstery-fabric",
+      "captureTimestamp": "2026-07-25T23:25:32.827Z",
+      "candidateCardCount": 8,
+      "observationSha256": "e39c4cb8deab5224fc9d1da620e2cf857cd01fd2fac294c77d724f388928b097",
+      "annotationScreenshotSha256": "94d89c6140b17bfefcd634b400781f54041c4beab7f7e073c6bf673addb96e83"
+    },
+    {
+      "siteId": "fabricworm",
+      "pageId": "fabricworm--canvas-fabric",
+      "captureTimestamp": "2026-07-26T04:59:19.277Z",
+      "candidateCardCount": 12,
+      "observationSha256": "ee56dace94cfcfbe2c7c65391faceee0f9f3a649cd1650807edccc437c82a211",
+      "annotationScreenshotSha256": "e815906b40d2d99a44ecbcc2060002a5811a6e7daa499527dbce8327c0542afd"
+    },
+    {
+      "siteId": "fabricworm",
+      "pageId": "fabricworm--cotton-fabric",
+      "captureTimestamp": "2026-07-26T05:14:55.321Z",
+      "candidateCardCount": 12,
+      "observationSha256": "9ea64c2491c2812219002edca16555ef7e9bfb38eb7f78cf8f243b6c31e1f25b",
+      "annotationScreenshotSha256": "70daa2997950844261c0143cd19ce3fd41d8a369b32ffeef33a87ff5aa90098f"
+    },
+    {
+      "siteId": "food-service-direct",
+      "pageId": "food-service-direct--disposable-cups",
+      "captureTimestamp": "2026-07-26T01:15:42.259Z",
+      "candidateCardCount": 8,
+      "observationSha256": "04fe99534d225a7768c24aa734f64280b97694cb769d4e14477e94fb589ed709",
+      "annotationScreenshotSha256": "2974e066ad8a487f6d471a345de575f18c93a720ac6b90119de59321bd175080"
+    },
+    {
+      "siteId": "food-service-direct",
+      "pageId": "food-service-direct--flour",
+      "captureTimestamp": "2026-07-25T09:03:24.229Z",
+      "candidateCardCount": 8,
+      "observationSha256": "4f239717a791d751aababcd1fef6a9a2d1229d6a32398fb0cd5cb39df93c6067",
+      "annotationScreenshotSha256": "59b52fa3d669604e17e8cd34d0f1accb3c87bad4ae9f89f2e9850558e4b9c3d1"
+    },
+    {
+      "siteId": "food-service-direct",
+      "pageId": "food-service-direct--olive-oil",
+      "captureTimestamp": "2026-07-25T09:04:02.753Z",
+      "candidateCardCount": 8,
+      "observationSha256": "943656ffd418a1f8dd7029805c7ad3ea322f6e01b366ddd1c9c61a6a93bf9524",
+      "annotationScreenshotSha256": "6f03109c126229cbdee63b59e4ed66241efc9fb155841872a2330765f6a444d1"
+    },
+    {
+      "siteId": "food-service-direct",
+      "pageId": "food-service-direct--rice",
+      "captureTimestamp": "2026-07-26T00:58:20.988Z",
+      "candidateCardCount": 8,
+      "observationSha256": "00b3ebca2e2a3493bfdf347fb407fcf4bd1a4c54917c4d2048ad79f949c2f0ea",
+      "annotationScreenshotSha256": "362d2bc991434f6b57ddb5793affce28aaeaa3aca8ac46ed1f55fc2f5e32d893"
+    },
+    {
+      "siteId": "greatmats",
+      "pageId": "greatmats--carpet-tiles",
+      "captureTimestamp": "2026-07-26T05:56:33.923Z",
+      "candidateCardCount": 12,
+      "observationSha256": "d0d9835d01842877db8c0e8e9f07d4aada06bc94977fed69f38960fc84e8a680",
+      "annotationScreenshotSha256": "0fec818b517095d7c0de2cd49fb5884ff2296e59bdc361546bf7b40c3cddee26"
+    },
+    {
+      "siteId": "greatmats",
+      "pageId": "greatmats--plastic-flooring",
+      "captureTimestamp": "2026-07-26T05:58:53.865Z",
+      "candidateCardCount": 12,
+      "observationSha256": "f605ac246e546dbbed6bf0dc15133b1b4726fe71e3ff89c98236eb3b2b7a9ec5",
+      "annotationScreenshotSha256": "0df0e72263efce38d4144d40eeae56576a6714b39ff697fef1a053bcaa5152a6"
+    },
+    {
+      "siteId": "jeffers-pet",
+      "pageId": "jeffers-pet--cat-litter",
+      "captureTimestamp": "2026-07-25T08:46:50.502Z",
+      "candidateCardCount": 8,
+      "observationSha256": "e289912902b2c2167c938f29f36fefb86360df2f08dfd66f310b56a3c35b983c",
+      "annotationScreenshotSha256": "a9a871ad59e0d7d4740a36b956e8496348db60c30a3202027c290866bccd383a"
+    },
+    {
+      "siteId": "jeffers-pet",
+      "pageId": "jeffers-pet--dog-food",
+      "captureTimestamp": "2026-07-26T00:51:56.330Z",
+      "candidateCardCount": 8,
+      "observationSha256": "dca81dc40fcbf1dc8aef6de448a2649de70af807eb3d22e9931eed78421546a1",
+      "annotationScreenshotSha256": "17790bb585324be28ce7027fd258907c23330657fb9f6f60f05aeac51bd30456"
+    },
+    {
+      "siteId": "jeffers-pet",
+      "pageId": "jeffers-pet--dog-waste-bags",
+      "captureTimestamp": "2026-07-25T08:47:01.662Z",
+      "candidateCardCount": 8,
+      "observationSha256": "9e2beb65b0b2e6649a4c44c45b432a3a86b3eb2ca7092fd6834cfb2bb9fe08f3",
+      "annotationScreenshotSha256": "229b6ebcc6891a02a6e0403643be86a8878e649bded1a1c5b251ef40d19605fa"
+    },
+    {
+      "siteId": "katom",
+      "pageId": "katom--flour",
+      "captureTimestamp": "2026-07-25T07:27:54.256Z",
+      "candidateCardCount": 20,
+      "observationSha256": "bfe909695d1ef17e8d73ad6619913166617e066349a93d05be2f8c540d735c08",
+      "annotationScreenshotSha256": "6ee0c8c6d82f27990d97c85d3e441f37b1451df010aa3f533b2b9fdb7eae08e1"
+    },
+    {
+      "siteId": "katom",
+      "pageId": "katom--trash-bags",
+      "captureTimestamp": "2026-07-25T07:25:38.854Z",
+      "candidateCardCount": 20,
+      "observationSha256": "54016464a1f0085ab01f47be9687ea6a6ef9347f9b05bd67d25f994bc46e0eb8",
+      "annotationScreenshotSha256": "527a8ef76b0fc5ef5eeb07e3a5778c6814f5efae6c127c47b298bfe2079f9ce1"
+    },
+    {
+      "siteId": "lambert-vet-supply",
+      "pageId": "lambert-vet-supply--cat-litter",
+      "captureTimestamp": "2026-07-25T15:15:40.466Z",
+      "candidateCardCount": 8,
+      "observationSha256": "2af83635f43a7ca72aeef3a089eaedb8f58289e5c8dbb8a968e9932c6fc0c2d4",
+      "annotationScreenshotSha256": "9295717bb4b1892e1adeaaea8ae6e6b90a24d5caf332a163ec7be79932b47dc9"
+    },
+    {
+      "siteId": "lambert-vet-supply",
+      "pageId": "lambert-vet-supply--flea-treatment",
+      "captureTimestamp": "2026-07-25T15:15:52.285Z",
+      "candidateCardCount": 8,
+      "observationSha256": "0e1c2e82249aee7bb7a4400e78ce0f5b4ebe72be4ddd439a9dda4e4938dd6506",
+      "annotationScreenshotSha256": "a90d129fa703d46291ffcb04a2d7f9442e748611891ee529621639b807ec6002"
+    },
+    {
+      "siteId": "lambert-vet-supply",
+      "pageId": "lambert-vet-supply--puppy-pads",
+      "captureTimestamp": "2026-07-26T00:49:23.326Z",
+      "candidateCardCount": 8,
+      "observationSha256": "33ddd97529b68a9c7a12d3e75141990686144a8e1df2e3d95dc57db83730a077",
+      "annotationScreenshotSha256": "be9ba0cf85065617ea826c10cab9347304bd07178299f261e61655cf834cbca2"
+    },
+    {
+      "siteId": "lambert-vet-supply",
+      "pageId": "lambert-vet-supply--syringes",
+      "captureTimestamp": "2026-07-26T01:15:32.211Z",
+      "candidateCardCount": 8,
+      "observationSha256": "2bba2e716ef983e38eaf5c870593e30ca7a9de9ee28f4a8b5eba71655caeb64d",
+      "annotationScreenshotSha256": "fdd1903b2871f28726fd33f81d191016e934b7286361b314d7bf5fb69e89e9e6"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "pageId": "natural-healthy-concepts--collagen-powder",
+      "captureTimestamp": "2026-07-26T01:22:32.364Z",
+      "candidateCardCount": 8,
+      "observationSha256": "a9dc35217caa11fb9d3f8ed3cd8eca52dd26020f3ba4d16c8c3562d1cbd64918",
+      "annotationScreenshotSha256": "c0aebf177ff51551a7e3eeb28af1dbd19a40b4f5d7bfe8397b896df7b29e921e"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "pageId": "natural-healthy-concepts--fish-oil",
+      "captureTimestamp": "2026-07-26T00:49:09.599Z",
+      "candidateCardCount": 8,
+      "observationSha256": "9857be6ed77915a75e0fbe574d5430ad94ae6a454a21bfcdc46aa764b0652f8d",
+      "annotationScreenshotSha256": "ff4eabd340790fa4ac8e9562588efef78c1863852601eaba544a4b08b1781c41"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "pageId": "natural-healthy-concepts--magnesium",
+      "captureTimestamp": "2026-07-26T01:20:11.419Z",
+      "candidateCardCount": 8,
+      "observationSha256": "2548df59c45c138b0c5f3705bbf9e65e6fc529133298b8861751b6669ce28224",
+      "annotationScreenshotSha256": "44a056945c73d8cc6d4509918c5b18155eb23f8b4948c5f08b24061bff069d13"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "pageId": "natural-healthy-concepts--protein-powder",
+      "captureTimestamp": "2026-07-25T15:56:34.846Z",
+      "candidateCardCount": 8,
+      "observationSha256": "b172c56b748e3ef9c43358d2960b6b7386e5d4f621552f7fca5e12612c02a971",
+      "annotationScreenshotSha256": "6722665d8a6bda2332e0fc53cac5950e6b26a40db56f78eed450c310f18aa91d"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "pageId": "natural-healthy-concepts--vitamins",
+      "captureTimestamp": "2026-07-25T15:56:56.654Z",
+      "candidateCardCount": 8,
+      "observationSha256": "873287791f3ed3f0e770342d03c5eb68d2e16e3878b14f82115e5c1e2a4c5429",
+      "annotationScreenshotSha256": "3b421122d2bd34325f31506c53eef3f26da46a821ae04fe64669899c89172183"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "pageId": "ontime-supplies--copy-paper",
+      "captureTimestamp": "2026-07-26T01:00:16.075Z",
+      "candidateCardCount": 8,
+      "observationSha256": "c1c1c385769273aadd00b9456b884dc4abf013522a721c8fae66e823ca3fa1b4",
+      "annotationScreenshotSha256": "0fa7d1b0bb765fe1e07df5db473df6140c8211a06bea9271bf22277a0eb9e31b"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "pageId": "ontime-supplies--packing-tape",
+      "captureTimestamp": "2026-07-25T23:18:51.841Z",
+      "candidateCardCount": 8,
+      "observationSha256": "dd0a54e0406b84cb3b90dae15116a120da5aff28fec3721a565f9e9f98853db3",
+      "annotationScreenshotSha256": "c08466148f40b8b0c45c1a9b4ffe2f2bd8a01a1ace6b671d3cd624435a5a365c"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "pageId": "ontime-supplies--paper-towels",
+      "captureTimestamp": "2026-07-25T23:21:19.034Z",
+      "candidateCardCount": 8,
+      "observationSha256": "b463120a8f88ed364f7dd94e8a51e301250dc5ebef9febfe6b0e02e2b2cb2dea",
+      "annotationScreenshotSha256": "c92b7abcc8e97d4e66f50eb2f5eeb82fbc54d876c418b59dae71e19ce63929ae"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "pageId": "ontime-supplies--trash-bags",
+      "captureTimestamp": "2026-07-26T01:24:27.316Z",
+      "candidateCardCount": 8,
+      "observationSha256": "a067d18a5e8cb80fcca71a6a39e6449ce69f8a47e58b70849f1d008f1d943e82",
+      "annotationScreenshotSha256": "f8ad3b6c4c1ebc82204c45141c5884912943a38a929da510901d8c429510d352"
+    },
+    {
+      "siteId": "purebulk",
+      "pageId": "purebulk--magnesium-powder",
+      "captureTimestamp": "2026-07-26T06:54:41.964Z",
+      "candidateCardCount": 10,
+      "observationSha256": "91dc73aafaeadda4be74bbbc58cdd7db1a38d8706515fd459790213de923cba2",
+      "annotationScreenshotSha256": "986b3fbcc912579716b8684593cc3a40868d664bf6cbbe8347af5bdc427d0ac0"
+    },
+    {
+      "siteId": "purebulk",
+      "pageId": "purebulk--protein-powder",
+      "captureTimestamp": "2026-07-26T06:53:45.643Z",
+      "candidateCardCount": 10,
+      "observationSha256": "6640b6e4fb339be56179e39ecc6f7d89051e9026e645499b00d5cf1023dc089d",
+      "annotationScreenshotSha256": "f1151a341aca6c65ecc8038b04d5d3548fe21189b3452b3bf354850b859a48b4"
+    },
+    {
+      "siteId": "restaurant-supply",
+      "pageId": "restaurant-supply--flour",
+      "captureTimestamp": "2026-07-25T07:02:32.435Z",
+      "candidateCardCount": 20,
+      "observationSha256": "364b4a05595ce2cf1413a613a14b1b48dd17d8dc397877798ebadf7690cb3789",
+      "annotationScreenshotSha256": "ca300f32211e9aed82a0faa81289cfc0f53f109bea40606d162b0a649aa0c242"
+    },
+    {
+      "siteId": "seattle-fabrics",
+      "pageId": "seattle-fabrics--shock-cord",
+      "captureTimestamp": "2026-07-26T05:59:28.741Z",
+      "candidateCardCount": 12,
+      "observationSha256": "424c66cdec87cc2ed7f472bbff2e1ac421c8ba87d4a1c17ff40124891c5b7c61",
+      "annotationScreenshotSha256": "479097fd46d8376a6111121f572fa47bec0a234aa4414b664e37a0a7b365c53f"
+    },
+    {
+      "siteId": "seattle-fabrics",
+      "pageId": "seattle-fabrics--webbing",
+      "captureTimestamp": "2026-07-26T05:48:47.578Z",
+      "candidateCardCount": 12,
+      "observationSha256": "60c2df696a340c6cb87ce5b8d619a56a4763c083655284208963df1d2431815e",
+      "annotationScreenshotSha256": "1bf0156ba927a64aa6742fff860d6cb5a13f71b54a654aa9f20e61a2172b6de4"
+    },
+    {
+      "siteId": "starwest-botanicals",
+      "pageId": "starwest-botanicals--bulk-herbs",
+      "captureTimestamp": "2026-07-26T00:13:48.953Z",
+      "candidateCardCount": 8,
+      "observationSha256": "a3c2ad0fa68c5f9cbfcc1a62a084b39b416ecba1e69e7ecc651e2e94a036234a",
+      "annotationScreenshotSha256": "619d1a0aa91f06777f0cd287111c098104503c9b20601a8645ce7016d0fcb488"
+    },
+    {
+      "siteId": "starwest-botanicals",
+      "pageId": "starwest-botanicals--loose-leaf-tea",
+      "captureTimestamp": "2026-07-26T00:04:00.924Z",
+      "candidateCardCount": 8,
+      "observationSha256": "25fff867718a04713284a8397a7a5970cc3a7837a09aadb9ef83ca6c81125a82",
+      "annotationScreenshotSha256": "7f0d29181b72bb1f65a3be4ad1e329e90a0e00c77d0fd773dc0ec46ddd4c31cd"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "pageId": "supplement-warehouse--collagen-powder",
+      "captureTimestamp": "2026-07-26T00:51:25.542Z",
+      "candidateCardCount": 8,
+      "observationSha256": "9fa4af7a90c08a2996c169efa2b9f727f65857c55b1ba004ac768ec88615ef2f",
+      "annotationScreenshotSha256": "52b751710e999f053ea5c7d7666376171b057ce2461b9e42eb10a708e20fe18a"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "pageId": "supplement-warehouse--fish-oil",
+      "captureTimestamp": "2026-07-26T01:26:55.670Z",
+      "candidateCardCount": 8,
+      "observationSha256": "e99244e62a953849ad83bb9de4e2ddcc9de7e6a2749eac75417cf972b3c5722c",
+      "annotationScreenshotSha256": "39c366c44e4347e320a9e14137e004178c3a42843ae77943345ee8b03e6a1030"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "pageId": "supplement-warehouse--protein-powder",
+      "captureTimestamp": "2026-07-25T15:54:44.418Z",
+      "candidateCardCount": 8,
+      "observationSha256": "e204a551a748cbedf430b837864a695d3e334e9062439724cd1e2b43862244d0",
+      "annotationScreenshotSha256": "75e60980e83f1c7db731e937bb8eb5fa68f021a5e011c0213f4e853e9aacb703"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "pageId": "supplement-warehouse--vitamins",
+      "captureTimestamp": "2026-07-25T15:54:59.181Z",
+      "candidateCardCount": 8,
+      "observationSha256": "e74b313a99774512c0dda2b9ad1beeb0b4d01707d5a0bc178510c8600390afa8",
+      "annotationScreenshotSha256": "443fec5709f8bdd2cdcc5174ac241d50737ace5ea53d9aaaee47fb4577646c6d"
+    },
+    {
+      "siteId": "the-cary-company",
+      "pageId": "the-cary-company--plastic-bottles",
+      "captureTimestamp": "2026-07-25T23:50:55.279Z",
+      "candidateCardCount": 8,
+      "observationSha256": "abd267241869d0b8e6d57687300406623991c7a4190719e01de6aecb788e0fac",
+      "annotationScreenshotSha256": "43a402799c806a682c02fa9fbc6c5476d5c13985354a5f2efc4e730d761adfca"
+    },
+    {
+      "siteId": "the-cary-company",
+      "pageId": "the-cary-company--spray-bottles",
+      "captureTimestamp": "2026-07-25T23:46:11.268Z",
+      "candidateCardCount": 8,
+      "observationSha256": "9f4ef9411283bd4132047afc08d5c9ea8f7632701ceff3b7206f4d585cdc9d59",
+      "annotationScreenshotSha256": "6f71dd939c5d78654415180cd87b91f337f41409797f73e9e0a77039a0899da9"
+    },
+    {
+      "siteId": "vitality-medical",
+      "pageId": "vitality-medical--adult-briefs",
+      "captureTimestamp": "2026-07-26T00:52:20.932Z",
+      "candidateCardCount": 8,
+      "observationSha256": "e91941c22714055f050cc2d6b2618902f3be18445921c1d431b1f3fbf1dc6fc2",
+      "annotationScreenshotSha256": "fdf2f70619dabf264941aaa2f9493057b3593716cefd8fe8c72e351bc5fa171e"
+    },
+    {
+      "siteId": "vitality-medical",
+      "pageId": "vitality-medical--exam-gloves",
+      "captureTimestamp": "2026-07-25T23:19:12.927Z",
+      "candidateCardCount": 8,
+      "observationSha256": "1394d5b9889a2700bf5ecfe5019ee6e5dd1cc477ae98e4590e7fd45b0344c92a",
+      "annotationScreenshotSha256": "a98a46a90fdd323cef8916e85b230f901fa7fe949b63a04350719e94f96f8b31"
+    },
+    {
+      "siteId": "vitality-medical",
+      "pageId": "vitality-medical--gauze-pads",
+      "captureTimestamp": "2026-07-25T23:19:43.588Z",
+      "candidateCardCount": 8,
+      "observationSha256": "971e9d6391584856e7aad93cef816b73fdcf175fb5bd9b507ca9f9ea39572523",
+      "annotationScreenshotSha256": "d45df44a6386a5a89ed35ac6a5220da9cf2650f3c005b2433e55f5da690a6603"
+    },
+    {
+      "siteId": "vitality-medical",
+      "pageId": "vitality-medical--underpads",
+      "captureTimestamp": "2026-07-26T01:17:48.303Z",
+      "candidateCardCount": 8,
+      "observationSha256": "8b0f0237faec22acb33774955edb5afe5918218c6db6626f35e58ece9ec7eca4",
+      "annotationScreenshotSha256": "92cf41b89692fb48c3cd3fc9ee1068272ff7aa1c476fb41a98c638e3877bfc08"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--floor-cleaner",
+      "captureTimestamp": "2026-07-26T01:24:35.367Z",
+      "candidateCardCount": 8,
+      "observationSha256": "3ddeecb945b120955600c15a891a32dbb6a4905aed909e586e7304ac4a03ac88",
+      "annotationScreenshotSha256": "b8f258b35c35db209735490556bc1512ac062167724abe5c0a2e1dcf150f4af7"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--hand-soap",
+      "captureTimestamp": "2026-07-26T00:51:35.800Z",
+      "candidateCardCount": 8,
+      "observationSha256": "90e4817aaea114758def3d1d4bc45015745166c031a329b4fb1ae783bfb4ebc9",
+      "annotationScreenshotSha256": "a6df425d063cd431434ff35b5135a599bcb0e282239068254114de6066cd656c"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--laundry-detergent",
+      "captureTimestamp": "2026-07-25T23:43:49.188Z",
+      "candidateCardCount": 8,
+      "observationSha256": "6cc0f3b3a0636f63542fe674735413ddb48d1b961e63fac6c550dcf9db4edfc7",
+      "annotationScreenshotSha256": "edc2a14fb55d53078334a86333c71cfdadbfe2c141b9d9aca45626860e7cbb4c"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--paper-towels",
+      "captureTimestamp": "2026-07-25T23:51:30.387Z",
+      "candidateCardCount": 8,
+      "observationSha256": "caf0f28b889c3e3b79016547cd0a9ec6ca6eab5dac4a84c432cd7c4c794964ef",
+      "annotationScreenshotSha256": "b79b5e9dd30841b4774cfa47894454665109e080f60276a125c5548961d2ad07"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--trash-bags",
+      "captureTimestamp": "2026-07-26T01:24:54.293Z",
+      "candidateCardCount": 8,
+      "observationSha256": "f63e65c954d62dc27c9faf75c59925fbaea71235aa9d0ebec8ef768e53fdb027",
+      "annotationScreenshotSha256": "2d64bd5d0b76f5ac3035a2fc7fc28c1f9f585b182975f1cb3bb03518fdb788eb"
+    },
+    {
+      "siteId": "wholesale-marine",
+      "pageId": "wholesale-marine--braided-rope",
+      "captureTimestamp": "2026-07-26T05:02:50.695Z",
+      "candidateCardCount": 12,
+      "observationSha256": "9181b66618cb1ff695943b78540e51807cc1a703cc9d551d42d508da08e7df37",
+      "annotationScreenshotSha256": "39cf48f1c3c8cc83cfa1656048dc83b640c03183af8bdf388c386b1af40f7030"
+    },
+    {
+      "siteId": "wholesale-marine",
+      "pageId": "wholesale-marine--dock-line",
+      "captureTimestamp": "2026-07-26T05:13:15.689Z",
+      "candidateCardCount": 12,
+      "observationSha256": "b28b51f50efc3de86f33813cbb12bbc00ececadb1e15abd452b5deb3bedfef4f",
+      "annotationScreenshotSha256": "6d7884b5e666d2282caba5b350d31c60813b0d9ba473e3be7da110373201fcf8"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--03b62a9cc4cf1a07",
+      "campaignQueueSha256": "968d8b9e2f68908d6f2b2b874a3e4533086f6edff821c8dea38a0a76a52527ce",
+      "sourceQueueSha256": [
+        "7cce9e07e671fa268030a54b957cf61ada8dbe0810e01c52b5e6339105b82e7f",
+        "6cd52dae2cc248d09079a77bc0163c966a0b431592c8f7fb3c6188c89c271c48",
+        "97add65cbc805072ea11c21820390b03383d138bfa99b5250d46db237315f8f4"
+      ],
+      "sourceQueuePageCounts": [
+        63,
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--398a7b8edb075721",
+      "campaignQueueSha256": "b61c2991e6c5c7670ac1cd612977c6f97e9e2a690b8c7ec1ea8df42dde3b10b3",
+      "sourceQueueSha256": [
+        "b509ee4586086807a181acab802e97f443a2648481e4d51ce2e3d9c9ae7c7352",
+        "525883505b3903f7b78d862f25960819c4cda1482c0b6b381cb89fdbd910fba2",
+        "13a91066faf49cda02eca31cd3f6afa51232c4310a6a87746ef96187bed5a4d8"
+      ],
+      "sourceQueuePageCounts": [
+        63,
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--03b62a9cc4cf1a07",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 65,
+    "screenshotsLoaded": 65,
+    "candidateCards": 600,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

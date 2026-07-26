@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "description": "Eighth unassigned domain-qualification wave. Candidates prioritize unfamiliar storefront templates for the underrepresented length dimension, plus bulk mass and case-count pricing. Every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "fabrics-yard",
+      "label": "Fabrics Yard",
+      "hostname": "www.fabricsyard.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://www.fabricsyard.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "oneyard",
+      "label": "OneYard",
+      "hostname": "oneyard.shop",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://oneyard.shop/search?q={query}",
+      "queries": [
+        {
+          "id": "lace-fabric",
+          "query": "lace fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "satin-fabric",
+          "query": "satin fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "stash-fabrics",
+      "label": "Stash Fabrics",
+      "hostname": "www.stashfabrics.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://www.stashfabrics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "canvas-fabric",
+          "query": "canvas fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "instalinen",
+      "label": "Insta Linen",
+      "hostname": "www.instalinen.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://www.instalinen.com/search?q={query}",
+      "queries": [
+        {
+          "id": "natural-linen",
+          "query": "natural linen",
+          "dimension": "length"
+        },
+        {
+          "id": "burlap",
+          "query": "burlap",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "ifabric",
+      "label": "iFabric",
+      "hostname": "www.ifabric.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://www.ifabric.com/search?q={query}",
+      "queries": [
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "outdoor-fabric",
+          "query": "outdoor fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "fabric-direct",
+      "label": "Fabric Direct",
+      "hostname": "www.fabricdirect.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://www.fabricdirect.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "outdoor-fabric",
+          "query": "outdoor fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "apc-fabrics",
+      "label": "APC Fabrics",
+      "hostname": "apcfabrics.org",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://apcfabrics.org/search?q={query}",
+      "queries": [
+        {
+          "id": "bamboo-fabric",
+          "query": "bamboo fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "search-for-fabric",
+      "label": "Search for Fabric",
+      "hostname": "bytheyard.searchforfabric.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://bytheyard.searchforfabric.com/search?q={query}",
+      "queries": [
+        {
+          "id": "knit-fabric",
+          "query": "knit fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "lace-fabric",
+          "query": "lace fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "purebulk",
+      "label": "PureBulk",
+      "hostname": "purebulk.com",
+      "stratum": "supplements",
+      "searchUrlTemplate": "https://purebulk.com/search?q={query}",
+      "queries": [
+        {
+          "id": "protein-powder",
+          "query": "protein powder",
+          "dimension": "mass"
+        },
+        {
+          "id": "magnesium-powder",
+          "query": "magnesium powder",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "country-life-foods",
+      "label": "Country Life Natural Foods",
+      "hostname": "countrylifefoods.com",
+      "stratum": "bulk-grocery",
+      "searchUrlTemplate": "https://countrylifefoods.com/search?q={query}",
+      "queries": [
+        {
+          "id": "rice",
+          "query": "rice",
+          "dimension": "mass"
+        },
+        {
+          "id": "beans",
+          "query": "beans",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "spotless-supply",
+      "label": "Spotless Supply",
+      "hostname": "spotlesscleaningsupply.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://spotlesscleaningsupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paper-towels",
+          "query": "paper towels",
+          "dimension": "count"
+        },
+        {
+          "id": "hand-soap",
+          "query": "hand soap",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "discount-filters",
+      "label": "Discount Filters",
+      "hostname": "www.discountfilters.com",
+      "stratum": "home-supply",
+      "searchUrlTemplate": "https://www.discountfilters.com/search/?q={query}",
+      "queries": [
+        {
+          "id": "air-filters",
+          "query": "air filters",
+          "dimension": "count"
+        },
+        {
+          "id": "furnace-filters",
+          "query": "furnace filters",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "filters-fast",
+      "label": "Filters Fast",
+      "hostname": "www.filtersfast.com",
+      "stratum": "home-supply",
+      "searchUrlTemplate": "https://www.filtersfast.com/search?w={query}",
+      "queries": [
+        {
+          "id": "air-filters",
+          "query": "air filters",
+          "dimension": "count"
+        },
+        {
+          "id": "water-filters",
+          "query": "water filters",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "paracord-planet",
+      "label": "Paracord Planet",
+      "hostname": "www.paracordplanet.com",
+      "stratum": "rope-cordage",
+      "searchUrlTemplate": "https://www.paracordplanet.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "paracord",
+          "query": "paracord",
+          "dimension": "length"
+        },
+        {
+          "id": "shock-cord",
+          "query": "shock cord",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "atwood-rope",
+      "label": "Atwood Rope",
+      "hostname": "atwoodrope.com",
+      "stratum": "rope-cordage",
+      "searchUrlTemplate": "https://atwoodrope.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paracord",
+          "query": "paracord",
+          "dimension": "length"
+        },
+        {
+          "id": "utility-rope",
+          "query": "utility rope",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "morebeer",
+      "label": "MoreBeer",
+      "hostname": "www.morebeer.com",
+      "stratum": "brewing-supply",
+      "searchUrlTemplate": "https://www.morebeer.com/search?search={query}",
+      "queries": [
+        {
+          "id": "hops",
+          "query": "hops",
+          "dimension": "mass"
+        },
+        {
+          "id": "malt-extract",
+          "query": "malt extract",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "northern-brewer",
+      "label": "Northern Brewer",
+      "hostname": "www.northernbrewer.com",
+      "stratum": "brewing-supply",
+      "searchUrlTemplate": "https://www.northernbrewer.com/search?q={query}",
+      "queries": [
+        {
+          "id": "hops",
+          "query": "hops",
+          "dimension": "mass"
+        },
+        {
+          "id": "grain",
+          "query": "grain",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "bottle-store",
+      "label": "BottleStore",
+      "hostname": "www.bottlestore.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.bottlestore.com/search?q={query}",
+      "queries": [
+        {
+          "id": "glass-bottles",
+          "query": "glass bottles",
+          "dimension": "count"
+        },
+        {
+          "id": "plastic-jars",
+          "query": "plastic jars",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "specialty-bottle",
+      "label": "Specialty Bottle",
+      "hostname": "www.specialtybottle.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.specialtybottle.com/search?q={query}",
+      "queries": [
+        {
+          "id": "glass-bottles",
+          "query": "glass bottles",
+          "dimension": "count"
+        },
+        {
+          "id": "metal-tins",
+          "query": "metal tins",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "carpet-express",
+      "label": "Carpet Express",
+      "hostname": "www.carpetexpress.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.carpetexpress.com/search?q={query}",
+      "queries": [
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "dimension": "area"
+        },
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        }
+      ]
+    }
+  ]
+}

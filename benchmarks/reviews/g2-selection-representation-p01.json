@@ -1,0 +1,184 @@
+{
+  "version": 1,
+  "auditId": "g2-selection-representation-p01",
+  "targetFormat": "evidence-selection-v1",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p03-reviewer-a-campaign.json",
+    "campaignSha256": "968d8b9e2f68908d6f2b2b874a3e4533086f6edff821c8dea38a0a76a52527ce",
+    "queueSha256": "f57db63ef719554cf5db1a6881a1195790ecf43afa80eaff9cbd04a6180e6821",
+    "preannotationSha256": "a58b215a1325944296c78040a301ca6d162a84ef98cc2578d1e99078a99732c9",
+    "auditSha256": "c6a1f4b338a3a864e139d9dccb132517db5bbae6269ff48982f71da5c7717a25",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "records": {
+    "requested": 584,
+    "exactRoundTrips": 584,
+    "failures": 0,
+    "pages": 65,
+    "sites": 23
+  },
+  "statuses": {
+    "C": 162,
+    "E": 28,
+    "Q": 394
+  },
+  "representation": {
+    "promptChars": {
+      "min": 2122,
+      "p50": 2704,
+      "p95": 4284,
+      "max": 7808,
+      "mean": 2878.970890410959
+    },
+    "targetChars": {
+      "min": 22,
+      "p50": 22,
+      "p95": 22,
+      "max": 22,
+      "mean": 22
+    },
+    "observationNodes": {
+      "min": 32,
+      "p50": 32,
+      "p95": 32,
+      "max": 39,
+      "mean": 32.071917808219176
+    },
+    "valueCandidates": {
+      "min": 0,
+      "p50": 7,
+      "p95": 27,
+      "max": 84,
+      "mean": 8.986301369863014
+    },
+    "outputGrammar": "T## P## U## Q## K## S#",
+    "generatedValues": false,
+    "generatedDomIds": false
+  },
+  "sites": {
+    "allegro-medical": {
+      "records": 40,
+      "comparable": 1,
+      "abstained": 39
+    },
+    "betty-mills": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "blue-sky-vitamin": {
+      "records": 16,
+      "comparable": 4,
+      "abstained": 12
+    },
+    "coffee-bean-corral": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "fabric-mart-fabrics": {
+      "records": 24,
+      "comparable": 23,
+      "abstained": 1
+    },
+    "fabric-wholesale-direct": {
+      "records": 16,
+      "comparable": 16,
+      "abstained": 0
+    },
+    "fabricworm": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "food-service-direct": {
+      "records": 32,
+      "comparable": 16,
+      "abstained": 16
+    },
+    "greatmats": {
+      "records": 24,
+      "comparable": 23,
+      "abstained": 1
+    },
+    "jeffers-pet": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "katom": {
+      "records": 32,
+      "comparable": 5,
+      "abstained": 27
+    },
+    "lambert-vet-supply": {
+      "records": 32,
+      "comparable": 4,
+      "abstained": 28
+    },
+    "natural-healthy-concepts": {
+      "records": 40,
+      "comparable": 5,
+      "abstained": 35
+    },
+    "ontime-supplies": {
+      "records": 31,
+      "comparable": 15,
+      "abstained": 16
+    },
+    "purebulk": {
+      "records": 20,
+      "comparable": 5,
+      "abstained": 15
+    },
+    "restaurant-supply": {
+      "records": 18,
+      "comparable": 0,
+      "abstained": 18
+    },
+    "seattle-fabrics": {
+      "records": 22,
+      "comparable": 17,
+      "abstained": 5
+    },
+    "starwest-botanicals": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "supplement-warehouse": {
+      "records": 32,
+      "comparable": 13,
+      "abstained": 19
+    },
+    "the-cary-company": {
+      "records": 14,
+      "comparable": 0,
+      "abstained": 14
+    },
+    "vitality-medical": {
+      "records": 32,
+      "comparable": 0,
+      "abstained": 32
+    },
+    "wholesale-janitorial-supply": {
+      "records": 39,
+      "comparable": 13,
+      "abstained": 26
+    },
+    "wholesale-marine": {
+      "records": 24,
+      "comparable": 2,
+      "abstained": 22
+    }
+  },
+  "failures": [],
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "Representation compatibility does not establish label correctness. The source remains unreviewed and requires independent review and adjudication."
+  }
+}

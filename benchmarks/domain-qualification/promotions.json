@@ -132,6 +132,12 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-07-p00.json",
       "promotedAt": "2026-07-26T06:02:00.000Z"
+    },
+    {
+      "siteId": "purebulk",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p00.json",
+      "promotedAt": "2026-07-26T06:56:00.000Z"
     }
   ]
 }
