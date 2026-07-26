@@ -52,7 +52,11 @@ export function dismissVisibleObstruction(): boolean {
       style.visibility !== "hidden" &&
       Number.parseFloat(style.opacity || "1") > 0 &&
       box.width > 0 &&
-      box.height > 0
+      box.height > 0 &&
+      box.right > 0 &&
+      box.bottom > 0 &&
+      box.left < window.innerWidth &&
+      box.top < window.innerHeight
     );
   };
   const obstructionScore = (element: HTMLElement): number => {
@@ -116,7 +120,7 @@ export function dismissVisibleObstruction(): boolean {
   for (const candidate of candidates) {
     if (!isVisible(candidate)) continue;
     const containerScore = obstructionScore(candidate);
-    if (containerScore === 0) continue;
+    if (containerScore < 2) continue;
     const ariaLabel = normalize(candidate.getAttribute("aria-label") ?? "");
     const title = normalize(candidate.getAttribute("title") ?? "");
     const className = normalize(candidate.getAttribute("class") ?? "");
@@ -194,43 +198,26 @@ export function measureVisibleObstructionCoverage(): number {
     !color ||
     color === "transparent" ||
     /^rgba\([^)]*,\s*0(?:\.0+)?\)$/.test(color);
-  const hasVisiblePaint = (root: HTMLElement): boolean => {
-    if ((root.innerText || root.textContent || "").trim()) return true;
-
-    for (const candidate of [
-      root,
-      ...root.querySelectorAll<HTMLElement>("*")
-    ]) {
-      const style = getComputedStyle(candidate);
-      if (
-        style.display === "none" ||
-        style.visibility === "hidden" ||
-        Number.parseFloat(style.opacity || "1") <= 0
-      ) {
-        continue;
-      }
-      if (
-        ["IMG", "PICTURE", "SVG", "CANVAS", "VIDEO"].includes(
-          candidate.tagName
-        )
-      ) {
-        return true;
-      }
-      if (
-        !isTransparent(style.backgroundColor) ||
-        (style.backgroundImage && style.backgroundImage !== "none") ||
-        (style.boxShadow && style.boxShadow !== "none") ||
-        [
-          style.borderTopWidth,
-          style.borderRightWidth,
-          style.borderBottomWidth,
-          style.borderLeftWidth
-        ].some((width) => Number.parseFloat(width) > 0)
-      ) {
-        return true;
-      }
-    }
-    return false;
+  const hasOwnVisiblePaint = (element: HTMLElement): boolean => {
+    const style = getComputedStyle(element);
+    const ownText = [...element.childNodes]
+      .filter((node) => node.nodeType === Node.TEXT_NODE)
+      .map((node) => node.textContent ?? "")
+      .join("")
+      .trim();
+    return (
+      Boolean(ownText) ||
+      ["IMG", "PICTURE", "SVG", "CANVAS", "VIDEO"].includes(element.tagName) ||
+      !isTransparent(style.backgroundColor) ||
+      (style.backgroundImage && style.backgroundImage !== "none") ||
+      (style.boxShadow && style.boxShadow !== "none") ||
+      [
+        style.borderTopWidth,
+        style.borderRightWidth,
+        style.borderBottomWidth,
+        style.borderLeftWidth
+      ].some((width) => Number.parseFloat(width) > 0)
+    );
   };
   const roots: Array<Document | ShadowRoot> = [document];
   const elements: HTMLElement[] = [];
@@ -257,7 +244,7 @@ export function measureVisibleObstructionCoverage(): number {
     if (
       !modal &&
       style.pointerEvents === "none" &&
-      !hasVisiblePaint(element)
+      !hasOwnVisiblePaint(element)
     ) {
       continue;
     }

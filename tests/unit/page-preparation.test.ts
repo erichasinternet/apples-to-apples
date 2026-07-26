@@ -79,6 +79,80 @@ describe("page preparation", () => {
     expect(clicked).not.toHaveBeenCalled();
   });
 
+  it("does not toggle a close-labelled control in a small fixed toolbar", () => {
+    document.body.innerHTML = `
+      <header id="toolbar" style="position: fixed">
+        <label id="cart-close" aria-label="cart close"></label>
+      </header>
+    `;
+    const toolbar = document.querySelector<HTMLElement>("#toolbar")!;
+    const toggle = document.querySelector<HTMLElement>("#cart-close")!;
+    vi.spyOn(toolbar, "getBoundingClientRect").mockReturnValue({
+      x: 920,
+      y: 0,
+      width: 104,
+      height: 64,
+      top: 0,
+      right: 1024,
+      bottom: 64,
+      left: 920,
+      toJSON: () => ({})
+    });
+    vi.spyOn(toggle, "getBoundingClientRect").mockReturnValue({
+      x: 968,
+      y: 16,
+      width: 32,
+      height: 32,
+      top: 16,
+      right: 1000,
+      bottom: 48,
+      left: 968,
+      toJSON: () => ({})
+    });
+    const clicked = vi.fn();
+    toggle.addEventListener("click", clicked);
+
+    expect(dismissVisibleObstruction()).toBe(false);
+    expect(clicked).not.toHaveBeenCalled();
+  });
+
+  it("does not click a close control in an offscreen fixed drawer", () => {
+    document.body.innerHTML = `
+      <aside id="drawer" style="position: fixed">
+        <label id="drawer-close" aria-label="cart close"></label>
+      </aside>
+    `;
+    const drawer = document.querySelector<HTMLElement>("#drawer")!;
+    const close = document.querySelector<HTMLElement>("#drawer-close")!;
+    vi.spyOn(drawer, "getBoundingClientRect").mockReturnValue({
+      x: 1524,
+      y: 0,
+      width: 500,
+      height: 768,
+      top: 0,
+      right: 2024,
+      bottom: 768,
+      left: 1524,
+      toJSON: () => ({})
+    });
+    vi.spyOn(close, "getBoundingClientRect").mockReturnValue({
+      x: 1980,
+      y: 24,
+      width: 20,
+      height: 20,
+      top: 24,
+      right: 2000,
+      bottom: 44,
+      left: 1980,
+      toJSON: () => ({})
+    });
+    const clicked = vi.fn();
+    close.addEventListener("click", clicked);
+
+    expect(dismissVisibleObstruction()).toBe(false);
+    expect(clicked).not.toHaveBeenCalled();
+  });
+
   it("dismisses an explicit close control inside a shallow fixed cookie banner", () => {
     document.body.innerHTML = `
       <aside id="cookie-banner" style="position: fixed">
@@ -89,25 +163,25 @@ describe("page preparation", () => {
     vi.spyOn(document.querySelector<HTMLElement>("#cookie-banner")!, "getBoundingClientRect")
       .mockReturnValue({
         x: 0,
-        y: 900,
-        width: 1440,
+        y: 680,
+        width: 1024,
         height: 80,
-        top: 900,
-        right: 1440,
-        bottom: 980,
+        top: 680,
+        right: 1024,
+        bottom: 760,
         left: 0,
         toJSON: () => ({})
       });
     vi.spyOn(document.querySelector<HTMLButtonElement>("#close-banner")!, "getBoundingClientRect")
       .mockReturnValue({
-        x: 1320,
-        y: 920,
+        x: 900,
+        y: 700,
         width: 100,
         height: 40,
-        top: 920,
-        right: 1420,
-        bottom: 960,
-        left: 1320,
+        top: 700,
+        right: 1000,
+        bottom: 740,
+        left: 900,
         toJSON: () => ({})
       });
     const button = document.querySelector<HTMLButtonElement>("#close-banner")!;
@@ -240,12 +314,12 @@ describe("page preparation", () => {
     const recaptcha = document.querySelector<HTMLIFrameElement>("#recaptcha")!;
     const badgeBounds = {
       x: 320,
-      y: 770,
+      y: 700,
       width: 256,
       height: 60,
-      top: 770,
+      top: 700,
       right: 576,
-      bottom: 830,
+      bottom: 760,
       left: 320,
       toJSON: () => ({})
     };
@@ -318,6 +392,17 @@ describe("page preparation", () => {
     document.body.innerHTML = `
       <div id="notifications" style="position: fixed; pointer-events: none">
         <div></div>
+      </div>
+    `;
+    mockVisibleBounds();
+
+    expect(measureVisibleObstructionCoverage()).toBe(0);
+  });
+
+  it("does not assign a transparent pointerless shell the paint of a small child", () => {
+    document.body.innerHTML = `
+      <div id="shell" style="position: fixed; pointer-events: none">
+        <button id="chat" style="background: red">Chat</button>
       </div>
     `;
     mockVisibleBounds();
