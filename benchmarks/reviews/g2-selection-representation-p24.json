@@ -1,0 +1,469 @@
+{
+  "version": 1,
+  "auditId": "g2-selection-representation-p24",
+  "targetFormat": "evidence-selection-v1",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p26-reviewer-a-campaign.json",
+    "campaignSha256": "6b80fbaf8ef4b3282d1049c236e01152c5b86ed9647113914e4d068c1280f1e3",
+    "queueSha256": "da21e7b3ee8075cc2e84a181773731c9c8d665a6684c51ace55c47874c89feb7",
+    "preannotationSha256": "98247f2917d67f89424cfddeec2da622336dd1cb487505c36a0dab1c43705f9c",
+    "auditSha256": "69ebc6b86da642048382b44a67277b1a7cda0f3cb611912af7be8ec01e78ae1f",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "records": {
+    "requested": 4160,
+    "exactRoundTrips": 4160,
+    "failures": 0,
+    "pages": 378,
+    "sites": 80
+  },
+  "statuses": {
+    "C": 769,
+    "E": 82,
+    "Q": 3309
+  },
+  "representation": {
+    "promptChars": {
+      "min": 2047,
+      "p50": 2505,
+      "p95": 3482,
+      "max": 16226,
+      "mean": 2640.9002403846152
+    },
+    "targetChars": {
+      "min": 22,
+      "p50": 22,
+      "p95": 22,
+      "max": 22,
+      "mean": 22
+    },
+    "observationNodes": {
+      "min": 32,
+      "p50": 32,
+      "p95": 32,
+      "max": 66,
+      "mean": 32.19831730769231
+    },
+    "valueCandidates": {
+      "min": 0,
+      "p50": 6,
+      "p95": 20,
+      "max": 84,
+      "mean": 7.232211538461539
+    },
+    "outputGrammar": "T## P## U## Q## K## S#",
+    "generatedValues": false,
+    "generatedDomIds": false
+  },
+  "sites": {
+    "alan-janitorial": {
+      "records": 76,
+      "comparable": 47,
+      "abstained": 29
+    },
+    "allegro-medical": {
+      "records": 76,
+      "comparable": 1,
+      "abstained": 75
+    },
+    "american-spice": {
+      "records": 60,
+      "comparable": 0,
+      "abstained": 60
+    },
+    "armour-detail-supply": {
+      "records": 60,
+      "comparable": 2,
+      "abstained": 58
+    },
+    "artwalk-tile": {
+      "records": 72,
+      "comparable": 46,
+      "abstained": 26
+    },
+    "atwood-rope": {
+      "records": 58,
+      "comparable": 0,
+      "abstained": 58
+    },
+    "autogeek": {
+      "records": 24,
+      "comparable": 6,
+      "abstained": 18
+    },
+    "betty-mills": {
+      "records": 88,
+      "comparable": 1,
+      "abstained": 87
+    },
+    "blackbird-fabrics": {
+      "records": 60,
+      "comparable": 0,
+      "abstained": 60
+    },
+    "blowout-medical": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "blue-sky-vitamin": {
+      "records": 52,
+      "comparable": 23,
+      "abstained": 29
+    },
+    "bulk-priced-food-shoppe": {
+      "records": 41,
+      "comparable": 3,
+      "abstained": 38
+    },
+    "carpro-us": {
+      "records": 24,
+      "comparable": 12,
+      "abstained": 12
+    },
+    "coffee-bean-corral": {
+      "records": 52,
+      "comparable": 1,
+      "abstained": 51
+    },
+    "core-fabrics": {
+      "records": 72,
+      "comparable": 0,
+      "abstained": 72
+    },
+    "detail-king": {
+      "records": 75,
+      "comparable": 1,
+      "abstained": 74
+    },
+    "discount-school-supply": {
+      "records": 48,
+      "comparable": 0,
+      "abstained": 48
+    },
+    "ethos-car-care": {
+      "records": 72,
+      "comparable": 13,
+      "abstained": 59
+    },
+    "fabric-mart-fabrics": {
+      "records": 24,
+      "comparable": 23,
+      "abstained": 1
+    },
+    "fabric-wholesale-direct": {
+      "records": 52,
+      "comparable": 52,
+      "abstained": 0
+    },
+    "fabricworm": {
+      "records": 36,
+      "comparable": 0,
+      "abstained": 36
+    },
+    "flooret": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "food-service-direct": {
+      "records": 44,
+      "comparable": 17,
+      "abstained": 27
+    },
+    "food-to-live": {
+      "records": 58,
+      "comparable": 0,
+      "abstained": 58
+    },
+    "foods-of-nations": {
+      "records": 48,
+      "comparable": 0,
+      "abstained": 48
+    },
+    "georgia-carpet": {
+      "records": 54,
+      "comparable": 0,
+      "abstained": 54
+    },
+    "grayline-medical": {
+      "records": 72,
+      "comparable": 0,
+      "abstained": 72
+    },
+    "greatmats": {
+      "records": 48,
+      "comparable": 47,
+      "abstained": 1
+    },
+    "jax-wax": {
+      "records": 96,
+      "comparable": 0,
+      "abstained": 96
+    },
+    "jeffers-pet": {
+      "records": 36,
+      "comparable": 0,
+      "abstained": 36
+    },
+    "katom": {
+      "records": 32,
+      "comparable": 5,
+      "abstained": 27
+    },
+    "kleen-rite": {
+      "records": 64,
+      "comparable": 1,
+      "abstained": 63
+    },
+    "la-silk-fabric": {
+      "records": 36,
+      "comparable": 0,
+      "abstained": 36
+    },
+    "lambert-vet-supply": {
+      "records": 32,
+      "comparable": 4,
+      "abstained": 28
+    },
+    "md-supplies": {
+      "records": 94,
+      "comparable": 0,
+      "abstained": 94
+    },
+    "medex-supply": {
+      "records": 60,
+      "comparable": 0,
+      "abstained": 60
+    },
+    "medical-eshop": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "medical-supply-group": {
+      "records": 72,
+      "comparable": 0,
+      "abstained": 72
+    },
+    "medsurg-express": {
+      "records": 60,
+      "comparable": 0,
+      "abstained": 60
+    },
+    "mexgrocer": {
+      "records": 60,
+      "comparable": 49,
+      "abstained": 11
+    },
+    "morebeer": {
+      "records": 36,
+      "comparable": 3,
+      "abstained": 33
+    },
+    "mountainside-medical": {
+      "records": 72,
+      "comparable": 0,
+      "abstained": 72
+    },
+    "myspicer": {
+      "records": 65,
+      "comparable": 0,
+      "abstained": 65
+    },
+    "natural-healthy-concepts": {
+      "records": 52,
+      "comparable": 5,
+      "abstained": 47
+    },
+    "northern-brewer": {
+      "records": 24,
+      "comparable": 11,
+      "abstained": 13
+    },
+    "obsessed-garage": {
+      "records": 60,
+      "comparable": 1,
+      "abstained": 59
+    },
+    "ontime-supplies": {
+      "records": 67,
+      "comparable": 25,
+      "abstained": 42
+    },
+    "paracord-galaxy": {
+      "records": 52,
+      "comparable": 40,
+      "abstained": 12
+    },
+    "paracord-planet": {
+      "records": 47,
+      "comparable": 0,
+      "abstained": 47
+    },
+    "pool-geek": {
+      "records": 52,
+      "comparable": 0,
+      "abstained": 52
+    },
+    "prosource-wholesale": {
+      "records": 32,
+      "comparable": 0,
+      "abstained": 32
+    },
+    "ps-detail-products": {
+      "records": 72,
+      "comparable": 0,
+      "abstained": 72
+    },
+    "purebulk": {
+      "records": 60,
+      "comparable": 8,
+      "abstained": 52
+    },
+    "rehabmart": {
+      "records": 48,
+      "comparable": 2,
+      "abstained": 46
+    },
+    "restaurant-supply": {
+      "records": 18,
+      "comparable": 0,
+      "abstained": 18
+    },
+    "rockywoods": {
+      "records": 44,
+      "comparable": 40,
+      "abstained": 4
+    },
+    "rope-and-cord": {
+      "records": 59,
+      "comparable": 0,
+      "abstained": 59
+    },
+    "search-for-fabric": {
+      "records": 38,
+      "comparable": 0,
+      "abstained": 38
+    },
+    "seattle-fabrics": {
+      "records": 43,
+      "comparable": 21,
+      "abstained": 22
+    },
+    "spandex-house": {
+      "records": 48,
+      "comparable": 0,
+      "abstained": 48
+    },
+    "starwest-botanicals": {
+      "records": 28,
+      "comparable": 0,
+      "abstained": 28
+    },
+    "superior-products": {
+      "records": 69,
+      "comparable": 0,
+      "abstained": 69
+    },
+    "supplement-warehouse": {
+      "records": 32,
+      "comparable": 13,
+      "abstained": 19
+    },
+    "the-cary-company": {
+      "records": 22,
+      "comparable": 0,
+      "abstained": 22
+    },
+    "the-fabric-co": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "the-fabric-market": {
+      "records": 60,
+      "comparable": 0,
+      "abstained": 60
+    },
+    "the-flooring-store": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "tile-and-mosaic-depot": {
+      "records": 72,
+      "comparable": 39,
+      "abstained": 33
+    },
+    "tile-generation": {
+      "records": 57,
+      "comparable": 0,
+      "abstained": 57
+    },
+    "tileon": {
+      "records": 60,
+      "comparable": 60,
+      "abstained": 0
+    },
+    "tiles-direct": {
+      "records": 72,
+      "comparable": 69,
+      "abstained": 3
+    },
+    "tilezz": {
+      "records": 60,
+      "comparable": 20,
+      "abstained": 40
+    },
+    "turtle-wax": {
+      "records": 43,
+      "comparable": 31,
+      "abstained": 12
+    },
+    "utility-direct": {
+      "records": 38,
+      "comparable": 0,
+      "abstained": 38
+    },
+    "vitality-medical": {
+      "records": 68,
+      "comparable": 0,
+      "abstained": 68
+    },
+    "whole-spice": {
+      "records": 84,
+      "comparable": 1,
+      "abstained": 83
+    },
+    "wholesale-janitorial-supply": {
+      "records": 51,
+      "comparable": 20,
+      "abstained": 31
+    },
+    "wholesale-marine": {
+      "records": 60,
+      "comparable": 2,
+      "abstained": 58
+    },
+    "yeagers-detailing-supplies": {
+      "records": 59,
+      "comparable": 4,
+      "abstained": 55
+    },
+    "zelouf-fabrics": {
+      "records": 36,
+      "comparable": 0,
+      "abstained": 36
+    }
+  },
+  "failures": [],
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "Representation compatibility does not establish label correctness. The source remains unreviewed and requires independent review and adjudication."
+  }
+}

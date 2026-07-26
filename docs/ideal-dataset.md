@@ -1011,6 +1011,45 @@ narrow pages, 178 categories, and 67 strata. Human-reviewed products remain
 zero, so all roots and machine suggestions remain ineligible for silver
 training or benchmark gold.
 
+Training depth wave 08 attempted 40 unseen query pages across 20 qualified
+training domains, with exactly eight targets for each supported dimension.
+Nineteen pages passed the machine capture gates; ten attempts were blocked and
+11 ended in bounded navigation or capture errors. Original-resolution visual
+inspection rejected one successful Food to Live capture because an undismissed
+privacy banner covered a selected product title. The accepted 18 pages are a
+45% strict yield and add 212 frozen roots across all five dimensions. Evidence
+includes per-ounce, per-each, per-square-foot, per-yard, per-half-metre, and
+per-metre prices; gallon, quart, ounce, milliliter, kilogram, box-count,
+roll-length, tile-dimension, fabric-width, and medical-dimension expressions;
+starting and sale prices; query-adjacent products and non-product cards; and
+cases where quantity or sale-basis evidence is absent and the correct output is
+abstention. The immutable evidence and decision are recorded in
+[`g2-training-depth-wave-08-p00.json`](../benchmarks/capture-pilots/g2-training-depth-wave-08-p00.json).
+
+The paired blinded
+[`g2-pilot-p26.json`](../benchmarks/review-campaigns/g2-pilot-p26.json)
+campaign contains 378 pages and 4,197 frozen roots from the same 80 qualified
+training domains. Deterministic preannotation proposes 792 comparables and
+3,405 abstentions, including four invalid suggestions. The semantic diagnostic
+in
+[`g2-campaign-preannotation-p25.json`](../benchmarks/reviews/g2-campaign-preannotation-p25.json)
+retains 4,160 suggestions and quarantines 37 traps. The representation audit in
+[`g2-selection-representation-p24.json`](../benchmarks/reviews/g2-selection-representation-p24.json)
+round-trips all 4,160 retained suggestions exactly with zero failures.
+
+The p26 campaign is partitioned into 38 paired assignments in
+[`g2-pilot-p26-review-batches.json`](../benchmarks/reviews/g2-pilot-p26-review-batches.json).
+The full campaign and every reviewer-A batch passed headed Playwright Chromium
+validation. The reusable batch validator starts and cleans up an isolated local
+server for each assignment, rejects any manifest mismatch, and records
+provenance hashes for every validation report. The aggregate evidence in
+[`g2-pilot-p26-review-batch-validation.json`](../benchmarks/reviews/g2-pilot-p26-review-batch-validation.json)
+loads all 378 screenshots and 4,197 roots with zero console errors or review
+writes. Readiness now counts 378 of 480 required training pages, including 195
+narrow pages, 185 categories, and 67 strata. Human-reviewed products remain
+zero, so all roots and machine suggestions remain ineligible for silver
+training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

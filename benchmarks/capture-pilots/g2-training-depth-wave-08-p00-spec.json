@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-depth-wave-08-p00",
+  "capturedAt": "2026-07-26T22:15:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/training-depth-wave-08.json",
+  "requestedCaptureAttempts": 40,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T21-46-48-241Z",
+      "pageIds": [
+        "whole-spice--cloves",
+        "mountainside-medical--syringes",
+        "detail-king--upholstery-cleaner",
+        "core-fabrics--fleece-fabric",
+        "purebulk--calcium-citrate",
+        "tileon--glass-tile",
+        "alan-janitorial--all-purpose-cleaner",
+        "fabric-wholesale-direct--canvas-fabric",
+        "blackbird-fabrics--cotton-twill"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T21-46-59-596Z",
+      "pageIds": [
+        "mountainside-medical--wound-dressings",
+        "whole-spice--nutmeg",
+        "tiles-direct--wall-tile",
+        "fabric-wholesale-direct--flannel-fabric",
+        "alan-janitorial--toilet-cleaner",
+        "detail-king--leather-cleaner",
+        "core-fabrics--rayon-fabric",
+        "purebulk--zinc-powder",
+        "artwalk-tile--wall-tile"
+      ]
+    }
+  ],
+  "samplingFinding": "Nineteen of forty unseen query pages on twenty previously qualified training domains passed the machine capture gates. Ten attempts were blocked and eleven ended in bounded navigation or capture errors. Manual inspection rejected one successful capture because an undismissed privacy banner covered a selected product title. The accepted set is eighteen of forty pages and 212 frozen roots, a 45% strict yield.",
+  "visualValidationFinding": "All nineteen successful full-page annotation views were inspected at original resolution. Eighteen pages and 212 frozen roots were accepted across mass, volume, count, length, and area. Accepted evidence includes native per-ounce, per-each, per-square-foot, per-yard, per-half-metre, and per-metre prices; gallon, quart, ounce, milliliter, kilogram, box-count, roll-length, and physical-dimension expressions; combined sale quantity and product dimensions; starting-price and sale-price variants; product-image measurements, fabric width and weight, tile dimensions, and medical dimensions that must not be mistaken for sale quantity; query-adjacent products, mixed unit bases, blog-card negatives, and listings where quantity or sale-basis evidence is absent and the correct output is abstention. The Food to Live pumpkin-seeds page was rejected because a fixed privacy banner covered one selected product title. Fixed widgets on accepted pages do not cover selected textual title, price, or quantity evidence."
+}

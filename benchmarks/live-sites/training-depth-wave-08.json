@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Eighth bounded depth-expansion wave on twenty qualified training domains. Forty unseen listing queries contribute exactly eight targets per supported dimension without changing domain assignments or supplying site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "purebulk",
+      "label": "PureBulk",
+      "hostname": "purebulk.com",
+      "stratum": "supplements",
+      "searchUrlTemplate": "https://purebulk.com/search?q={query}",
+      "queries": [
+        {"id": "calcium-citrate", "query": "calcium citrate", "dimension": "mass"},
+        {"id": "zinc-powder", "query": "zinc powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "food-to-live",
+      "label": "Food to Live",
+      "hostname": "foodtolive.com",
+      "stratum": "natural-bulk-food-retail",
+      "searchUrlTemplate": "https://foodtolive.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "pumpkin-seeds", "query": "pumpkin seeds", "dimension": "mass"},
+        {"id": "sunflower-seeds", "query": "sunflower seeds", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "whole-spice",
+      "label": "Whole Spice",
+      "hostname": "www.wholespice.com",
+      "stratum": "direct-to-consumer-bulk-spice-retail",
+      "searchUrlTemplate": "https://www.wholespice.com/search?q={query}",
+      "queries": [
+        {"id": "cloves", "query": "cloves", "dimension": "mass"},
+        {"id": "nutmeg", "query": "nutmeg", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "american-spice",
+      "label": "American Spice",
+      "hostname": "www.americanspice.com",
+      "stratum": "bulk-spice-retail",
+      "searchUrlTemplate": "https://www.americanspice.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "onion-powder", "query": "onion powder", "dimension": "mass"},
+        {"id": "black-pepper", "query": "black pepper", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "carpro-us",
+      "label": "Sky's The Limit Car Care",
+      "hostname": "www.carpro-us.com",
+      "stratum": "professional-car-care-retail",
+      "searchUrlTemplate": "https://www.carpro-us.com/{querySlug}",
+      "queries": [
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"},
+        {"id": "interior-cleaner", "query": "interior cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "autogeek",
+      "label": "Autogeek",
+      "hostname": "www.autogeek.net",
+      "stratum": "automotive-detailing-retail",
+      "searchUrlTemplate": "https://www.autogeek.net/{querySlug}",
+      "queries": [
+        {"id": "bug-remover", "query": "bug remover", "dimension": "volume"},
+        {"id": "tire-cleaner", "query": "tire cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "detail-king",
+      "label": "Detail King",
+      "hostname": "www.detailking.com",
+      "stratum": "auto-detailing",
+      "searchUrlTemplate": "https://www.detailking.com/search?q={query}",
+      "queries": [
+        {"id": "upholstery-cleaner", "query": "upholstery cleaner", "dimension": "volume"},
+        {"id": "leather-cleaner", "query": "leather cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "alan-janitorial",
+      "label": "Alan Janitorial",
+      "hostname": "www.alanjanitorial.com",
+      "stratum": "cleaning-equipment",
+      "searchUrlTemplate": "https://www.alanjanitorial.com/search?q={query}",
+      "queries": [
+        {"id": "all-purpose-cleaner", "query": "all purpose cleaner", "dimension": "volume"},
+        {"id": "toilet-cleaner", "query": "toilet cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "blowout-medical",
+      "label": "Blowout Medical",
+      "hostname": "www.blowoutmedical.com",
+      "stratum": "discount-medical-supply",
+      "searchUrlTemplate": "https://www.blowoutmedical.com/{querySlug}",
+      "queries": [
+        {"id": "surgical-masks", "query": "surgical masks", "dimension": "count"},
+        {"id": "disposable-briefs", "query": "disposable briefs", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "medical-eshop",
+      "label": "Medicaleshop",
+      "hostname": "www.medicaleshop.com",
+      "stratum": "home-medical-supply",
+      "searchUrlTemplate": "https://www.medicaleshop.com/{querySlug}",
+      "queries": [
+        {"id": "gauze-pads", "query": "gauze pads", "dimension": "count"},
+        {"id": "face-masks", "query": "face masks", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "mountainside-medical",
+      "label": "Mountainside Medical Equipment",
+      "hostname": "www.mountainside-medical.com",
+      "stratum": "independent-medical-equipment-retail",
+      "searchUrlTemplate": "https://www.mountainside-medical.com/search?q={query}",
+      "queries": [
+        {"id": "syringes", "query": "syringes", "dimension": "count"},
+        {"id": "wound-dressings", "query": "wound dressings", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "discount-school-supply",
+      "label": "Discount School Supply",
+      "hostname": "www.discountschoolsupply.com",
+      "stratum": "early-education-supply",
+      "searchUrlTemplate": "https://www.discountschoolsupply.com/search/?text={query}",
+      "queries": [
+        {"id": "colored-pencils", "query": "colored pencils", "dimension": "count"},
+        {"id": "paint-brushes", "query": "paint brushes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "fabric-mart-fabrics",
+      "label": "Fabric Mart Fabrics",
+      "hostname": "fabricmartfabrics.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://fabricmartfabrics.com/search?q={query}",
+      "queries": [
+        {"id": "wool-fabric", "query": "wool fabric", "dimension": "length"},
+        {"id": "silk-fabric", "query": "silk fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "fabric-wholesale-direct",
+      "label": "Fabric Wholesale Direct",
+      "hostname": "fabricwholesaledirect.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://fabricwholesaledirect.com/search?q={query}",
+      "queries": [
+        {"id": "canvas-fabric", "query": "canvas fabric", "dimension": "length"},
+        {"id": "flannel-fabric", "query": "flannel fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "blackbird-fabrics",
+      "label": "Blackbird Fabrics",
+      "hostname": "www.blackbirdfabrics.com",
+      "stratum": "independent-apparel-fabric-retail",
+      "searchUrlTemplate": "https://www.blackbirdfabrics.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-twill", "query": "cotton twill", "dimension": "length"},
+        {"id": "wool-coating", "query": "wool coating", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "core-fabrics",
+      "label": "Core Fabrics",
+      "hostname": "corefabricstore.com",
+      "stratum": "sustainable-apparel-fabric-retail",
+      "searchUrlTemplate": "https://corefabricstore.com/search?q={query}",
+      "queries": [
+        {"id": "fleece-fabric", "query": "fleece fabric", "dimension": "length"},
+        {"id": "rayon-fabric", "query": "rayon fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "tileon",
+      "label": "TileOn",
+      "hostname": "tileon.com",
+      "stratum": "online-porcelain-tile-retail",
+      "searchUrlTemplate": "https://tileon.com/search?q={query}",
+      "queries": [
+        {"id": "glass-tile", "query": "glass tile", "dimension": "area"},
+        {"id": "mosaic-tile", "query": "mosaic tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tiles-direct",
+      "label": "Tiles Direct",
+      "hostname": "www.tilesdirect.net",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.tilesdirect.net/search.php?search_query={query}",
+      "queries": [
+        {"id": "floor-tile", "query": "floor tile", "dimension": "area"},
+        {"id": "wall-tile", "query": "wall tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "artwalk-tile",
+      "label": "Artwalk Tile",
+      "hostname": "www.artwalktile.com",
+      "stratum": "specialty-tile-retail",
+      "searchUrlTemplate": "https://www.artwalktile.com/search?q={query}",
+      "queries": [
+        {"id": "travertine-tile", "query": "travertine tile", "dimension": "area"},
+        {"id": "wall-tile", "query": "wall tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "greatmats",
+      "label": "Greatmats",
+      "hostname": "www.greatmats.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.greatmats.com/{querySlug}.php",
+      "queries": [
+        {"id": "gym-flooring", "query": "gym flooring", "dimension": "area"},
+        {"id": "foam-tiles", "query": "foam tiles", "dimension": "area"}
+      ]
+    }
+  ]
+}

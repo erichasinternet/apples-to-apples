@@ -43,6 +43,7 @@
     "dataset:reviews:compile": "bun scripts/compile-evidence-adjudication.ts",
     "dataset:reviews:campaign": "bun scripts/merge-evidence-review-queues.ts",
     "dataset:reviews:batches": "bun scripts/build-evidence-review-batches.ts",
+    "dataset:reviews:batches:validate": "bun scripts/validate-evidence-review-batches.ts",
     "dataset:reviews:campaign-report": "bun scripts/build-evidence-review-campaign-report.ts",
     "dataset:reviews:audit": "bun scripts/audit-evidence-review-campaign.ts",
     "dataset:reviews:adjudication-queue": "bun scripts/build-evidence-adjudication-queue.ts",
