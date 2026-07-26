@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Fifth bounded depth-expansion wave on twenty qualified training domains. Forty unseen listing queries contribute exactly eight targets per supported dimension without changing domain assignments or supplying site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "american-spice",
+      "label": "American Spice",
+      "hostname": "www.americanspice.com",
+      "stratum": "bulk-spice-retail",
+      "searchUrlTemplate": "https://www.americanspice.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "turmeric", "query": "turmeric", "dimension": "mass"},
+        {"id": "chili-powder", "query": "chili powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "whole-spice",
+      "label": "Whole Spice",
+      "hostname": "www.wholespice.com",
+      "stratum": "direct-to-consumer-bulk-spice-retail",
+      "searchUrlTemplate": "https://www.wholespice.com/search?q={query}",
+      "queries": [
+        {"id": "cardamom", "query": "cardamom", "dimension": "mass"},
+        {"id": "coriander", "query": "coriander", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "food-to-live",
+      "label": "Food to Live",
+      "hostname": "foodtolive.com",
+      "stratum": "natural-bulk-food-retail",
+      "searchUrlTemplate": "https://foodtolive.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "flax-seeds", "query": "flax seeds", "dimension": "mass"},
+        {"id": "cacao-powder", "query": "cacao powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "purebulk",
+      "label": "PureBulk",
+      "hostname": "purebulk.com",
+      "stratum": "supplements",
+      "searchUrlTemplate": "https://purebulk.com/search?q={query}",
+      "queries": [
+        {"id": "beta-alanine", "query": "beta alanine", "dimension": "mass"},
+        {"id": "glycine-powder", "query": "glycine powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "ps-detail-products",
+      "label": "P&S Detail Products",
+      "hostname": "psdetailproducts.com",
+      "stratum": "professional-detailing-manufacturer",
+      "searchUrlTemplate": "https://psdetailproducts.com/search?q={query}",
+      "queries": [
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"},
+        {"id": "tire-dressing", "query": "tire dressing", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "armour-detail-supply",
+      "label": "Armour Detail Supply",
+      "hostname": "armourdetailsupply.com",
+      "stratum": "independent-detailing-chemical-brand",
+      "searchUrlTemplate": "https://armourdetailsupply.com/search?q={query}",
+      "queries": [
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"},
+        {"id": "tire-cleaner", "query": "tire cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "alan-janitorial",
+      "label": "Alan Janitorial",
+      "hostname": "www.alanjanitorial.com",
+      "stratum": "cleaning-equipment",
+      "searchUrlTemplate": "https://www.alanjanitorial.com/search?q={query}",
+      "queries": [
+        {"id": "dish-soap", "query": "dish soap", "dimension": "volume"},
+        {"id": "laundry-detergent", "query": "laundry detergent", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "jax-wax",
+      "label": "Jax Wax",
+      "hostname": "www.jaxwax.com",
+      "stratum": "regional-detailing-product-brand",
+      "searchUrlTemplate": "https://www.jaxwax.com/search?q={query}",
+      "queries": [
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"},
+        {"id": "tire-dressing", "query": "tire dressing", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "betty-mills",
+      "label": "Betty Mills",
+      "hostname": "www.bettymills.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.bettymills.com/search?q={query}",
+      "queries": [
+        {"id": "paper-towels", "query": "paper towels", "dimension": "count"},
+        {"id": "toilet-paper", "query": "toilet paper", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "rehabmart",
+      "label": "Rehabmart",
+      "hostname": "www.rehabmart.com",
+      "stratum": "rehabilitation-medical-equipment-retail",
+      "searchUrlTemplate": "https://www.rehabmart.com/search/?q={query}",
+      "queries": [
+        {"id": "face-masks", "query": "face masks", "dimension": "count"},
+        {"id": "gauze-pads", "query": "gauze pads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "md-supplies",
+      "label": "MD Supplies",
+      "hostname": "mdsupplies.com",
+      "stratum": "independent-medical-supply-retail",
+      "searchUrlTemplate": "https://mdsupplies.com/search?q={query}",
+      "queries": [
+        {"id": "catheters", "query": "catheters", "dimension": "count"},
+        {"id": "wound-dressings", "query": "wound dressings", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "ontime-supplies",
+      "label": "OnTimeSupplies",
+      "hostname": "www.ontimesupplies.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.ontimesupplies.com/search?query={query}",
+      "queries": [
+        {"id": "pencils", "query": "pencils", "dimension": "count"},
+        {"id": "batteries", "query": "batteries", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "utility-direct",
+      "label": "Utility Direct",
+      "hostname": "utilitydirect.com",
+      "stratum": "arborist-supply",
+      "searchUrlTemplate": "https://utilitydirect.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "climbing-rope", "query": "climbing rope", "dimension": "length"},
+        {"id": "rigging-line", "query": "rigging line", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "search-for-fabric",
+      "label": "Search for Fabric",
+      "hostname": "bytheyard.searchforfabric.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://bytheyard.searchforfabric.com/search?q={query}",
+      "queries": [
+        {"id": "velvet-fabric", "query": "velvet fabric", "dimension": "length"},
+        {"id": "denim-fabric", "query": "denim fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "fabric-wholesale-direct",
+      "label": "Fabric Wholesale Direct",
+      "hostname": "fabricwholesaledirect.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://fabricwholesaledirect.com/search?q={query}",
+      "queries": [
+        {"id": "satin-fabric", "query": "satin fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "seattle-fabrics",
+      "label": "Seattle Fabrics",
+      "hostname": "www.seattlefabrics.com",
+      "stratum": "outdoor-fabric",
+      "searchUrlTemplate": "https://www.seattlefabrics.com/search.asp?keyword={query}",
+      "queries": [
+        {"id": "elastic-cord", "query": "elastic cord", "dimension": "length"},
+        {"id": "nylon-webbing", "query": "nylon webbing", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "tileon",
+      "label": "TileOn",
+      "hostname": "tileon.com",
+      "stratum": "online-porcelain-tile-retail",
+      "searchUrlTemplate": "https://tileon.com/search?q={query}",
+      "queries": [
+        {"id": "marble-tile", "query": "marble tile", "dimension": "area"},
+        {"id": "subway-tile", "query": "subway tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "artwalk-tile",
+      "label": "Artwalk Tile",
+      "hostname": "www.artwalktile.com",
+      "stratum": "specialty-tile-retail",
+      "searchUrlTemplate": "https://www.artwalktile.com/search?q={query}",
+      "queries": [
+        {"id": "glass-tile", "query": "glass tile", "dimension": "area"},
+        {"id": "marble-tile", "query": "marble tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tile-and-mosaic-depot",
+      "label": "Tile and Mosaic Depot",
+      "hostname": "tileandmosaicdepot.com",
+      "stratum": "online-tile-and-mosaic-retail",
+      "searchUrlTemplate": "https://tileandmosaicdepot.com/search?q={query}",
+      "queries": [
+        {"id": "subway-tile", "query": "subway tile", "dimension": "area"},
+        {"id": "stone-tile", "query": "stone tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tile-generation",
+      "label": "Tile Generation",
+      "hostname": "www.tilegeneration.com",
+      "stratum": "online-tile-and-mosaic-retail",
+      "searchUrlTemplate": "https://www.tilegeneration.com/search?q={query}",
+      "queries": [
+        {"id": "subway-tile", "query": "subway tile", "dimension": "area"},
+        {"id": "marble-tile", "query": "marble tile", "dimension": "area"}
+      ]
+    }
+  ]
+}

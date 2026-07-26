@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-depth-wave-05-p00",
+  "capturedAt": "2026-07-26T20:06:15.911Z",
+  "sourceManifest": "benchmarks/live-sites/training-depth-wave-05.json",
+  "requestedCaptureAttempts": 40,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T19-50-46-430Z",
+      "pageIds": [
+        "seattle-fabrics--elastic-cord",
+        "purebulk--beta-alanine",
+        "utility-direct--climbing-rope",
+        "jax-wax--glass-cleaner",
+        "american-spice--turmeric",
+        "ontime-supplies--pencils",
+        "food-to-live--flax-seeds",
+        "tile-generation--subway-tile",
+        "md-supplies--catheters",
+        "search-for-fabric--velvet-fabric",
+        "fabric-wholesale-direct--satin-fabric",
+        "armour-detail-supply--glass-cleaner",
+        "whole-spice--cardamom"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T19-50-57-697Z",
+      "pageIds": [
+        "ps-detail-products--tire-dressing",
+        "food-to-live--cacao-powder",
+        "md-supplies--wound-dressings",
+        "alan-janitorial--laundry-detergent",
+        "american-spice--chili-powder",
+        "tileon--subway-tile",
+        "utility-direct--rigging-line",
+        "jax-wax--tire-dressing",
+        "search-for-fabric--denim-fabric",
+        "betty-mills--toilet-paper",
+        "tile-generation--marble-tile",
+        "whole-spice--coriander",
+        "ontime-supplies--batteries"
+      ]
+    }
+  ],
+  "samplingFinding": "Twenty-seven of forty unseen query pages on twenty previously qualified training domains passed the machine capture gates. One successful capture was rejected because it contained only three frozen roots, all visually irrelevant to the query. The remaining thirteen attempts were four blocked annotations and nine navigation or capture errors. The accepted set is twenty-six of forty pages, a 65% yield.",
+  "visualValidationFinding": "All twenty-seven successful full-page annotation views were inspected. Twenty-six pages and 295 frozen roots were accepted across mass, volume, count, length, and area; the three-root Alan Janitorial dish-soap page was excluded. Accepted evidence includes native square-foot and box-coverage prices; per-yard, pack, case, carton, box, and dozen offers; explicit counts beside capacities and physical dimensions; prices and starting-price ranges without visible sale quantities; rope diameter without sale length; tile dimensions without coverage; fabric listings without visible sale length; query-adjacent accessories, kits, dispensers, cleaners, and unrelated search results; and pages where abstention is required because package quantity or price binding is absent. No fixed obstruction exceeded the frozen twenty-percent limit or covered the selected evidence."
+}
