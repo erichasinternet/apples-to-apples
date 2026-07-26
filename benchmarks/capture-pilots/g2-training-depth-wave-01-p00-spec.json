@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-depth-wave-01-p00",
+  "capturedAt": "2026-07-26T17:13:41.312Z",
+  "sourceManifest": "benchmarks/live-sites/training-depth-wave-01.json",
+  "requestedCaptureAttempts": 20,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T17-02-17-494Z",
+      "pageIds": [
+        "tiles-direct--ceramic-tile",
+        "md-supplies--masks",
+        "medical-supply-group--bandages",
+        "turtle-wax--interior-cleaner",
+        "artwalk-tile--floor-tile",
+        "rope-and-cord--polyester-rope",
+        "yeagers-detailing-supplies--glass-cleaner",
+        "mexgrocer--candy"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T17-08-38-771Z",
+      "pageIds": [
+        "yeagers-detailing-supplies--ceramic-coating",
+        "medical-supply-group--needles",
+        "bulk-priced-food-shoppe--coffee",
+        "turtle-wax--tire-shine"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T17-11-14-045Z",
+      "pageIds": [
+        "rope-and-cord--sisal-rope",
+        "the-fabric-market--denim-fabric",
+        "tiles-direct--marble-tile",
+        "md-supplies--gauze-pads"
+      ]
+    }
+  ],
+  "samplingFinding": "Sixteen of twenty unseen query pages on ten previously qualified training domains passed the frozen capture gates, an 80% page yield. The four rejected attempts were one blocked annotation and three navigation timeouts.",
+  "visualValidationFinding": "All sixteen accepted full-page annotation views were inspected after capture and showed coherent query-result evidence. The set includes explicit per-yard and per-square-foot prices, count-versus-dimension ambiguity, package kits, lazy-image abstentions, and adjacent-result hard negatives. Rope and Cord polyester exposed all twelve frozen roots in the annotation view while only one optional per-card crop completed; the required full-page evidence remained intact."
+}

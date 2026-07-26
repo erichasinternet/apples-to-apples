@@ -763,6 +763,43 @@ loads all 190 screenshots and 2,004 roots with zero console errors or writes.
 The domain gate is complete, but all roots and machine suggestions remain
 unreviewed and ineligible for silver training or benchmark gold.
 
+Training depth wave 01 tests whether qualified domains can supply additional
+unseen listing evidence without adding site-specific selectors. Sixteen of 20
+attempted query pages across ten existing training domains pass the frozen
+machine gates and full-page visual inspection, an 80% page yield. The four
+rejections are one blocked annotation and three navigation timeouts. The
+accepted set adds 189 roots across all five dimensions, including explicit
+per-yard and per-square-foot pricing, count-versus-physical-dimension ambiguity,
+package kits, lazy-image abstentions, and adjacent-result hard negatives. The
+immutable evidence and decision are recorded in
+[`g2-training-depth-wave-01-p00.json`](../benchmarks/capture-pilots/g2-training-depth-wave-01-p00.json).
+The reusable `dataset:depth:promote` command validates provenance, frozen gates,
+domain promotion, and corpus-wide observation uniqueness before updating this
+registry.
+
+The paired blinded campaign in
+[`g2-pilot-p19.json`](../benchmarks/review-campaigns/g2-pilot-p19.json)
+contains the same 80 qualified training domains, 206 pages, and 2,193 frozen
+roots. Its deterministic preannotation contains 446 tentative comparables,
+1,747 explicit abstentions, and four invalid suggestions. The semantic
+diagnostic in
+[`g2-campaign-preannotation-p18.json`](../benchmarks/reviews/g2-campaign-preannotation-p18.json)
+retains 2,162 suggestions and quarantines 31 traps. The compact representation
+audit in
+[`g2-selection-representation-p17.json`](../benchmarks/reviews/g2-selection-representation-p17.json)
+round-trips all 2,162 retained suggestions exactly with zero failures.
+
+The p19 campaign is deterministically partitioned into 21 matching reviewer
+assignments in
+[`g2-pilot-p19-review-batches.json`](../benchmarks/reviews/g2-pilot-p19-review-batches.json).
+The full campaign and every reviewer-A batch were validated in headed
+Playwright Chromium. The aggregate evidence in
+[`g2-pilot-p19-review-batch-validation.json`](../benchmarks/reviews/g2-pilot-p19-review-batch-validation.json)
+loads all 206 screenshots and 2,193 roots with zero console errors or writes.
+Readiness now counts 206 of 480 required training pages, including 102 narrow
+pages, 113 categories, and 67 strata. All roots and machine suggestions remain
+unreviewed and ineligible for silver training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,
@@ -817,4 +854,7 @@ reported separately and do not advance any cohort.
 
 The registry's `observationSha256` is the immutable `observation.json` asset hash
 from `provenance.json`, not the collector's internal observation-content hash in
-`page.json`. Review queues and pilot reports bind to that same asset hash.
+`page.json`. Review queues and training-depth pilot reports bind to that same
+asset hash. The depth report preserves the internal value separately as
+`canonicalObservationSha256`; legacy qualification pilot reports predate that
+separation and must not be used as byte-identity evidence.

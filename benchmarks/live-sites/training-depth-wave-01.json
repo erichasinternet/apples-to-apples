@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "description": "First bounded depth-expansion pilot on ten already-qualified training domains. Twenty unseen query pages add four targets per supported dimension without changing domain assignments or opening validation, selection, or final cohorts. No site-specific DOM selectors are supplied.",
+  "sites": [
+    {
+      "id": "bulk-priced-food-shoppe",
+      "label": "Bulk Priced Food Shoppe",
+      "hostname": "bulkpricedfoodshoppe.com",
+      "stratum": "independent-bulk-food-retail",
+      "searchUrlTemplate": "https://bulkpricedfoodshoppe.com/search/?q={query}",
+      "queries": [
+        {"id": "flour", "query": "flour", "dimension": "mass"},
+        {"id": "coffee", "query": "coffee", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "mexgrocer",
+      "label": "MexGrocer",
+      "hostname": "www.mexgrocer.com",
+      "stratum": "specialty-grocery-retail",
+      "searchUrlTemplate": "https://www.mexgrocer.com/search?q={query}",
+      "queries": [
+        {"id": "spices", "query": "spices", "dimension": "mass"},
+        {"id": "candy", "query": "candy", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "turtle-wax",
+      "label": "Turtle Wax",
+      "hostname": "www.turtlewax.com",
+      "stratum": "automotive-care-brand-retail",
+      "searchUrlTemplate": "https://www.turtlewax.com/search?q={query}",
+      "queries": [
+        {"id": "interior-cleaner", "query": "interior cleaner", "dimension": "volume"},
+        {"id": "tire-shine", "query": "tire shine", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "yeagers-detailing-supplies",
+      "label": "Yeager's Auto Detailing Supplies",
+      "hostname": "yeagersdetailingsupplies.com",
+      "stratum": "independent-detailing-supply-retail",
+      "searchUrlTemplate": "https://yeagersdetailingsupplies.com/search?q={query}",
+      "queries": [
+        {"id": "ceramic-coating", "query": "ceramic coating", "dimension": "volume"},
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "md-supplies",
+      "label": "MD Supplies",
+      "hostname": "mdsupplies.com",
+      "stratum": "independent-medical-supply-retail",
+      "searchUrlTemplate": "https://mdsupplies.com/search?q={query}",
+      "queries": [
+        {"id": "masks", "query": "masks", "dimension": "count"},
+        {"id": "gauze-pads", "query": "gauze pads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "medical-supply-group",
+      "label": "Medical Supply Group",
+      "hostname": "medicalsupplygroup.com",
+      "stratum": "medical-and-laboratory-supply-retail",
+      "searchUrlTemplate": "https://medicalsupplygroup.com/search?q={query}",
+      "queries": [
+        {"id": "needles", "query": "needles", "dimension": "count"},
+        {"id": "bandages", "query": "bandages", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "rope-and-cord",
+      "label": "Rope and Cord",
+      "hostname": "ropeandcord.com",
+      "stratum": "rope-by-length-retail",
+      "searchUrlTemplate": "https://ropeandcord.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "polyester-rope", "query": "polyester rope", "dimension": "length"},
+        {"id": "sisal-rope", "query": "sisal rope", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "the-fabric-market",
+      "label": "The Fabric Market",
+      "hostname": "thefabricmarket.com",
+      "stratum": "independent-fabric-by-yard-retail",
+      "searchUrlTemplate": "https://thefabricmarket.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "denim-fabric", "query": "denim fabric", "dimension": "length"},
+        {"id": "fleece-fabric", "query": "fleece fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "tiles-direct",
+      "label": "Tiles Direct",
+      "hostname": "www.tilesdirect.net",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.tilesdirect.net/search.php?search_query={query}",
+      "queries": [
+        {"id": "ceramic-tile", "query": "ceramic tile", "dimension": "area"},
+        {"id": "marble-tile", "query": "marble tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "artwalk-tile",
+      "label": "Artwalk Tile",
+      "hostname": "www.artwalktile.com",
+      "stratum": "specialty-tile-retail",
+      "searchUrlTemplate": "https://www.artwalktile.com/search?q={query}",
+      "queries": [
+        {"id": "subway-tile", "query": "subway tile", "dimension": "area"},
+        {"id": "floor-tile", "query": "floor tile", "dimension": "area"}
+      ]
+    }
+  ]
+}
