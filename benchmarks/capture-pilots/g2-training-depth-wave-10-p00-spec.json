@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-depth-wave-10-p00",
+  "capturedAt": "2026-07-26T23:36:37.000Z",
+  "sourceManifest": "benchmarks/live-sites/training-depth-wave-10.json",
+  "requestedCaptureAttempts": 40,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T22-59-43-840Z",
+      "pageIds": [
+        "foods-of-nations--beans",
+        "armour-detail-supply--ceramic-spray",
+        "allegro-medical--adult-briefs",
+        "jax-wax--detail-spray",
+        "tiles-direct--floor-tile",
+        "fabricworm--quilting-cotton",
+        "mountainside-medical--cotton-balls",
+        "superior-products--degreaser",
+        "artwalk-tile--travertine-tile",
+        "core-fabrics--canvas-fabric",
+        "whole-spice--black-pepper"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T23-17-58-705Z",
+      "pageIds": [
+        "purebulk--glycine-powder",
+        "tile-and-mosaic-depot--travertine-tile",
+        "allegro-medical--incontinence-pads",
+        "spandex-house--sequin-fabric",
+        "grayline-medical--gauze-pads",
+        "tiles-direct--subway-tile",
+        "fabricworm--organic-cotton",
+        "tilezz--wall-tile",
+        "artwalk-tile--stone-tile",
+        "core-fabrics--denim-fabric",
+        "whole-spice--garlic-powder"
+      ]
+    }
+  ],
+  "samplingFinding": "Twenty-eight of forty unseen query pages on twenty previously qualified training domains produced full-page captures. Ten attempts ended in bounded navigation or capture errors and two were blocked by missing annotation evidence or a full-viewport obstruction. Manual inspection, minimum-root validation, and frozen evidence validation rejected six successful captures. The accepted set is twenty-two of forty pages and 262 frozen roots, a 55% strict yield.",
+  "visualValidationFinding": "All twenty-eight successful full-page annotation views were inspected at original resolution. Twenty-two pages and 262 frozen roots were accepted across mass, volume, count, length, and area. The accepted evidence includes per-square-foot, per-sheet, per-box, per-each, per-half-metre, per-metre, gallon, ounce, package-count, product-dimension, price-range, sale-price, query-adjacent product, and non-product expressions. PureBulk ashwagandha powder, Alan Janitorial hand soap and dish soap, and Superior Products car shampoo were rejected because they produced fewer than eight frozen roots; the two Alan pages were also unrelated to their queries. Armour Detail Supply clay lubricant was rejected because a fixed chat control covered selected product-title evidence. Starwest Botanicals hibiscus flowers was rejected because a fixed discount control covered selected first-row price evidence. Two accepted narrow pages exhausted part of their closeup screenshot budget but retained complete annotation screenshots, complete observations, and multiple valid candidate closeups as required by the frozen promotion policy. Other fixed widgets on accepted pages do not cover selected textual title, price, or quantity evidence."
+}
