@@ -780,6 +780,54 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-08-purebulk-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "search-for-fabric",
+      "cohort": "training",
+      "pageId": "search-for-fabric--knit-fabric",
+      "captureTimestamp": "2026-07-26T07:04:25.489Z",
+      "observationSha256": "52558ad597de5161432e363f555e2f5d826d39fec00dad9609704c8461285fe4",
+      "annotationScreenshotSha256": "ac16e5a01c5b471c1f91ea822808950afcbd0beb65e9a8b837c59107b785d788",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p01.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-08-length-p01.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "search-for-fabric",
+      "cohort": "training",
+      "pageId": "search-for-fabric--lace-fabric",
+      "captureTimestamp": "2026-07-26T07:06:14.501Z",
+      "observationSha256": "482d85ebf080c1dd3c93bc97a83b32e05672d76ffa11677020e5792e7754e16b",
+      "annotationScreenshotSha256": "443da95cd2ab505da53d9b231a0fe2ff4fe39a354134044d038d0a637dbf15e3",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p01.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-08-length-p01.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "paracord-planet",
+      "cohort": "training",
+      "pageId": "paracord-planet--shock-cord",
+      "captureTimestamp": "2026-07-26T07:06:29.477Z",
+      "observationSha256": "42fe0f6b8b2a4ee5fafd7245f2bc77a5159f842f299aa94286c6ccefb910020d",
+      "annotationScreenshotSha256": "307098a662b7b6277078df930c86eda2a52e8a0ca0cc9edb860855f92057c297",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p01.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-08-length-p01.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "paracord-planet",
+      "cohort": "training",
+      "pageId": "paracord-planet--paracord",
+      "captureTimestamp": "2026-07-26T07:06:40.340Z",
+      "observationSha256": "5ddc0c3504a2b76ffa463e9d113974031d6803feba30d39f0b7546667e7eaaab",
+      "annotationScreenshotSha256": "b053c3627be6bb6ceaddb2a1b4f4f48336a36f688cc721d13660f72b1f4c4696",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p01.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-08-length-p01.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

@@ -50,7 +50,9 @@
     "fabric-mart-fabrics",
     "greatmats",
     "seattle-fabrics",
-    "purebulk"
+    "purebulk",
+    "search-for-fabric",
+    "paracord-planet"
   ],
   "validation": [
     "amazon",

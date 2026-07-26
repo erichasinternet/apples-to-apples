@@ -347,6 +347,21 @@ round-trips all 584 retained suggestions exactly with zero failures across 65
 pages and 23 sites. This establishes serialization compatibility only, not label
 correctness.
 
+A second Wave 08 pass qualifies Search for Fabric and Paracord Planet with two
+visually inspected pages and both viewport profiles per domain. It adds 43
+length-dimension roots, bringing the current campaign to 25 qualified training
+domains, 69 pages, and 643 frozen roots. The append-only campaign is recorded in
+[`g2-pilot-p04.json`](../benchmarks/review-campaigns/g2-pilot-p04.json), and its
+headed sweep loaded all 69 screenshots and all 643 frozen roots with no console
+errors or review writes. The deterministic diagnostic in
+[`g2-campaign-preannotation-p03.json`](../benchmarks/reviews/g2-campaign-preannotation-p03.json)
+abstains on 42 of the 43 new roots and quarantines its only tentative comparable.
+This failure on unfamiliar length layouts is retained as evidence for human
+annotation rather than hidden through site-specific extraction changes. The
+selection representation still round-trips all 626 machine-audit-passing
+records exactly in
+[`g2-selection-representation-p02.json`](../benchmarks/reviews/g2-selection-representation-p02.json).
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

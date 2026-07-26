@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "auditId": "g2-selection-representation-p02",
+  "targetFormat": "evidence-selection-v1",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p04-reviewer-a-campaign.json",
+    "campaignSha256": "a9ca3c964bf804cbd29bc4ce00252c84adca47380a165be4f37e7f7ba5c0da1a",
+    "queueSha256": "e088cacf3b0d7bc4e71148b1b90e02306ec8fc9d391dc81361ce853886750fcc",
+    "preannotationSha256": "abdb2186785220f1f2374acc999aaa39ad7a5a3e7c2d9367917ce6c53f176f06",
+    "auditSha256": "597fbc03c9c9f62551240df2f8a2b4e6c5ab4012bc4007c23ba4e91998a8c555",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "records": {
+    "requested": 626,
+    "exactRoundTrips": 626,
+    "failures": 0,
+    "pages": 69,
+    "sites": 25
+  },
+  "statuses": {
+    "C": 162,
+    "E": 28,
+    "Q": 436
+  },
+  "representation": {
+    "promptChars": {
+      "min": 2056,
+      "p50": 2692,
+      "p95": 4151,
+      "max": 7808,
+      "mean": 2849.8402555910543
+    },
+    "targetChars": {
+      "min": 22,
+      "p50": 22,
+      "p95": 22,
+      "max": 22,
+      "mean": 22
+    },
+    "observationNodes": {
+      "min": 32,
+      "p50": 32,
+      "p95": 32,
+      "max": 39,
+      "mean": 32.067092651757186
+    },
+    "valueCandidates": {
+      "min": 0,
+      "p50": 7,
+      "p95": 27,
+      "max": 84,
+      "mean": 8.853035143769969
+    },
+    "outputGrammar": "T## P## U## Q## K## S#",
+    "generatedValues": false,
+    "generatedDomIds": false
+  },
+  "sites": {
+    "allegro-medical": {
+      "records": 40,
+      "comparable": 1,
+      "abstained": 39
+    },
+    "betty-mills": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "blue-sky-vitamin": {
+      "records": 16,
+      "comparable": 4,
+      "abstained": 12
+    },
+    "coffee-bean-corral": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "fabric-mart-fabrics": {
+      "records": 24,
+      "comparable": 23,
+      "abstained": 1
+    },
+    "fabric-wholesale-direct": {
+      "records": 16,
+      "comparable": 16,
+      "abstained": 0
+    },
+    "fabricworm": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "food-service-direct": {
+      "records": 32,
+      "comparable": 16,
+      "abstained": 16
+    },
+    "greatmats": {
+      "records": 24,
+      "comparable": 23,
+      "abstained": 1
+    },
+    "jeffers-pet": {
+      "records": 24,
+      "comparable": 0,
+      "abstained": 24
+    },
+    "katom": {
+      "records": 32,
+      "comparable": 5,
+      "abstained": 27
+    },
+    "lambert-vet-supply": {
+      "records": 32,
+      "comparable": 4,
+      "abstained": 28
+    },
+    "natural-healthy-concepts": {
+      "records": 40,
+      "comparable": 5,
+      "abstained": 35
+    },
+    "ontime-supplies": {
+      "records": 31,
+      "comparable": 15,
+      "abstained": 16
+    },
+    "paracord-planet": {
+      "records": 23,
+      "comparable": 0,
+      "abstained": 23
+    },
+    "purebulk": {
+      "records": 20,
+      "comparable": 5,
+      "abstained": 15
+    },
+    "restaurant-supply": {
+      "records": 18,
+      "comparable": 0,
+      "abstained": 18
+    },
+    "search-for-fabric": {
+      "records": 19,
+      "comparable": 0,
+      "abstained": 19
+    },
+    "seattle-fabrics": {
+      "records": 22,
+      "comparable": 17,
+      "abstained": 5
+    },
+    "starwest-botanicals": {
+      "records": 16,
+      "comparable": 0,
+      "abstained": 16
+    },
+    "supplement-warehouse": {
+      "records": 32,
+      "comparable": 13,
+      "abstained": 19
+    },
+    "the-cary-company": {
+      "records": 14,
+      "comparable": 0,
+      "abstained": 14
+    },
+    "vitality-medical": {
+      "records": 32,
+      "comparable": 0,
+      "abstained": 32
+    },
+    "wholesale-janitorial-supply": {
+      "records": 39,
+      "comparable": 13,
+      "abstained": 26
+    },
+    "wholesale-marine": {
+      "records": 24,
+      "comparable": 2,
+      "abstained": 22
+    }
+  },
+  "failures": [],
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "Representation compatibility does not establish label correctness. The source remains unreviewed and requires independent review and adjudication."
+  }
+}

@@ -138,6 +138,18 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-08-p00.json",
       "promotedAt": "2026-07-26T06:56:00.000Z"
+    },
+    {
+      "siteId": "search-for-fabric",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p01.json",
+      "promotedAt": "2026-07-26T07:08:00.000Z"
+    },
+    {
+      "siteId": "paracord-planet",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-08-p01.json",
+      "promotedAt": "2026-07-26T07:08:00.000Z"
     }
   ]
 }

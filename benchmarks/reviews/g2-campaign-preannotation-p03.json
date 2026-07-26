@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "auditId": "g2-campaign-preannotation-p03",
+  "createdAt": "2026-07-26T07:11:00Z",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p04-reviewer-a-campaign.json",
+    "campaignSha256": "a9ca3c964bf804cbd29bc4ce00252c84adca47380a165be4f37e7f7ba5c0da1a",
+    "queueSha256": "e088cacf3b0d7bc4e71148b1b90e02306ec8fc9d391dc81361ce853886750fcc",
+    "preannotationSha256": "abdb2186785220f1f2374acc999aaa39ad7a5a3e7c2d9367917ce6c53f176f06",
+    "auditSha256": "597fbc03c9c9f62551240df2f8a2b4e6c5ab4012bc4007c23ba4e91998a8c555",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "campaign": {
+    "pages": 69,
+    "cards": 643,
+    "targetDimensions": {
+      "area": 56,
+      "count": 196,
+      "length": 163,
+      "mass": 180,
+      "volume": 48
+    },
+    "candidateEvidence": {
+      "withTitle": 636,
+      "withCurrentPrice": 623,
+      "withNativeUnitPriceInOneNode": 39,
+      "withPackageQuantity": 228
+    }
+  },
+  "dimensionConditionedPreannotation": {
+    "tentativeComparable": 179,
+    "abstained": 464,
+    "evidenceInvalid": 4,
+    "methods": {
+      "explicit-abstention": 464,
+      "native-unit-price": 85,
+      "price-and-package": 94
+    }
+  },
+  "semanticAudit": {
+    "machineAuditPassingComparableSuggestions": 162,
+    "machineAuditPassingAbstentionSuggestions": 464,
+    "quarantinedComparableSuggestions": 17,
+    "quarantinedAbstentionSuggestions": 0,
+    "quarantineReasons": {
+      "ambiguous-decimal-quantity": 1,
+      "equipment-capacity-as-quantity": 10,
+      "invalid-evidence": 4,
+      "physical-dimension-as-quantity": 3
+    }
+  },
+  "newDomainOutcomes": {
+    "search-for-fabric": {
+      "cards": 19,
+      "tentativeComparable": 0,
+      "abstained": 19,
+      "machineAuditPassing": 19
+    },
+    "paracord-planet": {
+      "cards": 24,
+      "tentativeComparable": 1,
+      "abstained": 23,
+      "machineAuditPassing": 23
+    }
+  },
+  "representationChanges": [
+    "No extraction heuristic changed for this append-only campaign expansion.",
+    "Added 43 length-dimension roots from two unfamiliar desktop and narrow search-result templates."
+  ],
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "The source cards and all preannotations remain unreviewed. Machine checks can quarantine contradictions but cannot establish semantic correctness; two independent reviews and adjudication remain required."
+  },
+  "decision": "retain-as-blinded-review-aid-only"
+}

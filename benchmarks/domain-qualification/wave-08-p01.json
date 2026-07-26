@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "qualificationId": "wave-08-p01",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-08.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "screeningPageTimeoutMs": 60000,
+    "screeningCardScreenshotBudgetMs": 10000,
+    "qualificationPageTimeoutMs": 90000,
+    "qualificationCardScreenshotBudgetMs": 15000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "genericConsentActionHandling": true,
+    "persistentCookieConsentHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "queryParametersCountAsQueryEvidence": false,
+    "queryEvidenceScope": "title, pathname, visible headings, and visible status text",
+    "minimumQueryTokenCoverage": 1,
+    "populatedSearchControlsCountAsQueryEvidence": false,
+    "exactPageTargeting": true
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T07-03-22-150Z",
+      "runManifestSha256": "2330ee673ed48917a25d89753606c427cc4038f39af1d09a4b48960ca9f562b9",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 10000,
+      "purpose": "one-page headed screening across six remaining wave-08 length domains"
+    },
+    {
+      "runId": "2026-07-26T07-06-06-576Z",
+      "runManifestSha256": "2c2d7347770b33886522148e367990289b883ae46cc6e659a055ab1d9e1f322f",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 15000,
+      "purpose": "exact narrow second-page qualification for Search for Fabric"
+    },
+    {
+      "runId": "2026-07-26T07-06-22-531Z",
+      "runManifestSha256": "6d12b34a4f83ab9913ab3d1f40da7511f3656cef4931d8d24d85aad6bd4d1632",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 15000,
+      "purpose": "exact desktop recapture with complete candidate screenshots for Paracord Planet"
+    },
+    {
+      "runId": "2026-07-26T07-06-34-213Z",
+      "runManifestSha256": "2b53b0efafdaebb321fde438b09dc25bfd93b741302345c82bfadeff28cea531",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 15000,
+      "purpose": "exact narrow second-page qualification for Paracord Planet"
+    }
+  ],
+  "results": {
+    "fabric-direct": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: HTTP 404; search results evidence only 50% of requested query tokens; no reviewable product candidates."
+    },
+    "ifabric": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: HTTP 404; search results evidence only 50% of requested query tokens; no reviewable product candidates."
+    },
+    "instalinen": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: only one reviewable product candidate."
+    },
+    "apc-fabrics": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: unresolved visible obstruction covers 100% of viewport; no reviewable product candidates."
+    },
+    "search-for-fabric": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "search-for-fabric--knit-fabric",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 9,
+          "candidateScreenshotsCaptured": 9,
+          "observationNodeCount": 197,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "52558ad597de5161432e363f555e2f5d826d39fec00dad9609704c8461285fe4",
+          "annotationScreenshotSha256": "ac16e5a01c5b471c1f91ea822808950afcbd0beb65e9a8b837c59107b785d788",
+          "provenanceAggregateSha256": "142272a9fde2f2d09671f3a9c40650faf8fb2aec141e5ee8688901edb4dceae8",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "search-for-fabric--lace-fabric",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 10,
+          "candidateScreenshotsCaptured": 10,
+          "observationNodeCount": 205,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "482d85ebf080c1dd3c93bc97a83b32e05672d76ffa11677020e5792e7754e16b",
+          "annotationScreenshotSha256": "443da95cd2ab505da53d9b231a0fe2ff4fe39a354134044d038d0a637dbf15e3",
+          "provenanceAggregateSha256": "8ddd9845e4e1cc65f5bdc5583f937158a2f4be2d07e58960b2589935bcec2acc",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "paracord-planet": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "paracord-planet--shock-cord",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 467,
+          "observationTruncated": false,
+          "dismissedObstructions": 4,
+          "unresolvedObstructionCoverage": 0.064,
+          "queryTokenCoverage": 1,
+          "observationSha256": "42fe0f6b8b2a4ee5fafd7245f2bc77a5159f842f299aa94286c6ccefb910020d",
+          "annotationScreenshotSha256": "307098a662b7b6277078df930c86eda2a52e8a0ca0cc9edb860855f92057c297",
+          "provenanceAggregateSha256": "c473853947a2207bb582ed866849d0c6f7d82cd417a5514427fb39019384a863",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "paracord-planet--paracord",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 483,
+          "observationTruncated": false,
+          "dismissedObstructions": 2,
+          "unresolvedObstructionCoverage": 0.07582938388625593,
+          "queryTokenCoverage": 1,
+          "observationSha256": "5ddc0c3504a2b76ffa463e9d113974031d6803feba30d39f0b7546667e7eaaab",
+          "annotationScreenshotSha256": "b053c3627be6bb6ceaddb2a1b4f4f48336a36f688cc721d13660f72b1f4c4696",
+          "provenanceAggregateSha256": "f48b864cf1d1628a978b290f88a70d0d52827ef9a29e242b31fc505566c85975",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    }
+  },
+  "decision": {
+    "qualifiedDomains": ["search-for-fabric", "paracord-planet"],
+    "assignedDomains": [
+      {
+        "siteId": "search-for-fabric",
+        "cohort": "training"
+      },
+      {
+        "siteId": "paracord-planet",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}
