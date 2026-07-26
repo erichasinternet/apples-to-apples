@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "description": "Second qualified-domain expansion screen. It adds two non-overlapping query families on each domain that passed qualified expansion wave 01.",
+  "sites": [
+    {
+      "id": "natural-healthy-concepts",
+      "label": "Natural Healthy Concepts",
+      "hostname": "www.nhc.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://www.nhc.com/search?q={query}",
+      "queries": [
+        { "id": "magnesium", "query": "magnesium", "dimension": "count" },
+        { "id": "collagen-powder", "query": "collagen powder", "dimension": "mass" }
+      ]
+    },
+    {
+      "id": "lambert-vet-supply",
+      "label": "Lambert Vet Supply",
+      "hostname": "www.lambertvetsupply.com",
+      "stratum": "veterinary-supply",
+      "searchUrlTemplate": "https://www.lambertvetsupply.com/search?q={query}",
+      "queries": [
+        { "id": "pet-shampoo", "query": "pet shampoo", "dimension": "volume" },
+        { "id": "syringes", "query": "syringes", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "supplement-warehouse",
+      "label": "Supplement Warehouse",
+      "hostname": "supplementwarehouse.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://supplementwarehouse.com/search?q={query}",
+      "queries": [
+        { "id": "creatine-powder", "query": "creatine powder", "dimension": "mass" },
+        { "id": "fish-oil", "query": "fish oil", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "wholesale-janitorial-supply",
+      "label": "Wholesale Janitorial Supply",
+      "hostname": "www.wholesalejanitorialsupply.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.wholesalejanitorialsupply.com/search.php?search_query={query}",
+      "queries": [
+        { "id": "floor-cleaner", "query": "floor cleaner", "dimension": "volume" },
+        { "id": "trash-bags", "query": "trash bags", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "jeffers-pet",
+      "label": "Jeffers Pet",
+      "hostname": "jefferspet.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://jefferspet.com/search?q={query}",
+      "queries": [
+        { "id": "cat-food", "query": "cat food", "dimension": "mass" },
+        { "id": "pet-shampoo", "query": "pet shampoo", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "vitality-medical",
+      "label": "Vitality Medical",
+      "hostname": "www.vitalitymedical.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.vitalitymedical.com/catalogsearch/result/?q={query}",
+      "queries": [
+        { "id": "syringes", "query": "syringes", "dimension": "count" },
+        { "id": "underpads", "query": "underpads", "dimension": "area" }
+      ]
+    },
+    {
+      "id": "food-service-direct",
+      "label": "FoodServiceDirect",
+      "hostname": "www.foodservicedirect.com",
+      "stratum": "specialty-food",
+      "searchUrlTemplate": "https://www.foodservicedirect.com/search-result?q={query}",
+      "queries": [
+        { "id": "cooking-oil", "query": "cooking oil", "dimension": "volume" },
+        { "id": "disposable-cups", "query": "disposable cups", "dimension": "count" }
+      ]
+    },
+    {
+      "id": "ontime-supplies",
+      "label": "OnTimeSupplies",
+      "hostname": "www.ontimesupplies.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.ontimesupplies.com/search?query={query}",
+      "queries": [
+        { "id": "trash-bags", "query": "trash bags", "dimension": "count" },
+        { "id": "hand-soap", "query": "hand soap", "dimension": "volume" }
+      ]
+    },
+    {
+      "id": "allegro-medical",
+      "label": "Allegro Medical",
+      "hostname": "www.allegromedical.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.allegromedical.com/catalogsearch/result/?q={query}",
+      "queries": [
+        { "id": "syringes", "query": "syringes", "dimension": "count" },
+        { "id": "underpads", "query": "underpads", "dimension": "area" }
+      ]
+    }
+  ]
+}

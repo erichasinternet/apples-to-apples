@@ -1,0 +1,356 @@
+{
+  "version": 1,
+  "pilotId": "g2-qualified-expansion-wave-02-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-26T01:26:55.670Z",
+  "source": {
+    "siteIds": [
+      "lambert-vet-supply",
+      "food-service-direct",
+      "vitality-medical",
+      "natural-healthy-concepts",
+      "allegro-medical",
+      "ontime-supplies",
+      "wholesale-janitorial-supply",
+      "supplement-warehouse"
+    ],
+    "cohort": "training",
+    "strata": [
+      "veterinary-supply",
+      "specialty-food",
+      "medical-supply",
+      "health-supplements",
+      "office-supply",
+      "janitorial-supply"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "136c9c3ddc49cab0b01668926f82a55236032ed27a1dff18b6aede74e98b1aa6"
+    ],
+    "collectorSha256": "bbe94a81d320ffd3e6204360f2e1798f840ed59559f7c0fa94f2a7be294edde6"
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T01-15-20-450Z",
+      "runManifestSha256": "770e3602bb5bd83d52fd9d7e20071468462232d8f8547937164283e9e27790b3",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000
+    }
+  ],
+  "screening": {
+    "requestedPages": 18,
+    "capturedPages": 12,
+    "acceptedPages": 11,
+    "rejectedPages": [
+      {
+        "pageId": "ontime-supplies--hand-soap",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "jeffers-pet--cat-food",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "lambert-vet-supply--pet-shampoo",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "food-service-direct--cooking-oil",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "vitality-medical--syringes",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "jeffers-pet--pet-shampoo",
+        "reason": "capture-timeout"
+      },
+      {
+        "pageId": "supplement-warehouse--creatine-powder",
+        "reason": "visual-obstruction-filter-sheet"
+      }
+    ]
+  },
+  "captures": [
+    {
+      "siteId": "lambert-vet-supply",
+      "pageId": "lambert-vet-supply--syringes",
+      "capturedAt": "2026-07-26T01:15:32.211Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 7,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 788,
+      "observationTruncated": false,
+      "dismissedObstructions": 5,
+      "unresolvedObstructionCoverage": 0.011982014825616722,
+      "queryTokenCoverage": 1,
+      "observationSha256": "2bba2e716ef983e38eaf5c870593e30ca7a9de9ee28f4a8b5eba71655caeb64d",
+      "annotationScreenshotSha256": "fdd1903b2871f28726fd33f81d191016e934b7286361b314d7bf5fb69e89e9e6",
+      "provenanceAggregateSha256": "d67315bcb764ab53041a728786d5ed2080cb06e85cb1ff8b16942f37bda4f48b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "food-service-direct",
+      "pageId": "food-service-direct--disposable-cups",
+      "capturedAt": "2026-07-26T01:15:42.259Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 462,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "04fe99534d225a7768c24aa734f64280b97694cb769d4e14477e94fb589ed709",
+      "annotationScreenshotSha256": "2974e066ad8a487f6d471a345de575f18c93a720ac6b90119de59321bd175080",
+      "provenanceAggregateSha256": "ae2637828f46d5d9dc79a4913c916fb0a3e47a5051e07a12d414508ddf960d4f",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "vitality-medical",
+      "pageId": "vitality-medical--underpads",
+      "capturedAt": "2026-07-26T01:17:48.303Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 479,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8b0f0237faec22acb33774955edb5afe5918218c6db6626f35e58ece9ec7eca4",
+      "annotationScreenshotSha256": "92cf41b89692fb48c3cd3fc9ee1068272ff7aa1c476fb41a98c638e3877bfc08",
+      "provenanceAggregateSha256": "3bd62ac764ca0d62be6b228af7cfacdf7bd7e1851d9a0940a5dc28117b154344",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "pageId": "natural-healthy-concepts--magnesium",
+      "capturedAt": "2026-07-26T01:20:11.419Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 832,
+      "observationTruncated": false,
+      "dismissedObstructions": 9,
+      "unresolvedObstructionCoverage": 0.004111111111111111,
+      "queryTokenCoverage": 1,
+      "observationSha256": "2548df59c45c138b0c5f3705bbf9e65e6fc529133298b8861751b6669ce28224",
+      "annotationScreenshotSha256": "44a056945c73d8cc6d4509918c5b18155eb23f8b4948c5f08b24061bff069d13",
+      "provenanceAggregateSha256": "cfa44079f30c3558810962fdbd0a078d2117fa296ba649a369156c1f7713ef1d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--underpads",
+      "capturedAt": "2026-07-26T01:22:10.690Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 875,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "20902665084ffda5ea31fd4e0088212d455c06cedcd4d8c2a3a9033faf018cc4",
+      "annotationScreenshotSha256": "7dba49b109d256a5aa6bd4017a320a88b9fa3decd02b48214293dce1a39e2d90",
+      "provenanceAggregateSha256": "665aaf4ba2499d6e4fda2e03d8e4f2008000650bdc5249d7c9ca60f534ec4b49",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "pageId": "natural-healthy-concepts--collagen-powder",
+      "capturedAt": "2026-07-26T01:22:32.364Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 791,
+      "observationTruncated": false,
+      "dismissedObstructions": 9,
+      "unresolvedObstructionCoverage": 0.004111111111111111,
+      "queryTokenCoverage": 1,
+      "observationSha256": "a9dc35217caa11fb9d3f8ed3cd8eca52dd26020f3ba4d16c8c3562d1cbd64918",
+      "annotationScreenshotSha256": "c0aebf177ff51551a7e3eeb28af1dbd19a40b4f5d7bfe8397b896df7b29e921e",
+      "provenanceAggregateSha256": "b311078fbba7007c3a24e171c102fd4dd7ea52ba4be6cf99d8139335fb0fb6ab",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "pageId": "ontime-supplies--trash-bags",
+      "capturedAt": "2026-07-26T01:24:27.316Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 1325,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.006791666666666666,
+      "queryTokenCoverage": 1,
+      "observationSha256": "a067d18a5e8cb80fcca71a6a39e6449ce69f8a47e58b70849f1d008f1d943e82",
+      "annotationScreenshotSha256": "f8ad3b6c4c1ebc82204c45141c5884912943a38a929da510901d8c429510d352",
+      "provenanceAggregateSha256": "fa94ae1e8c326de426cddeefe547e5318ce9731d8554387d988f7c34d1f04baf",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--floor-cleaner",
+      "capturedAt": "2026-07-26T01:24:35.367Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 326,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.000029166666666666666,
+      "queryTokenCoverage": 1,
+      "observationSha256": "3ddeecb945b120955600c15a891a32dbb6a4905aed909e586e7304ac4a03ac88",
+      "annotationScreenshotSha256": "b8f258b35c35db209735490556bc1512ac062167724abe5c0a2e1dcf150f4af7",
+      "provenanceAggregateSha256": "bede2c38529db1660e6ce5018e02de10b1c5d5513723ace251fa7e9c598db6dd",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--syringes",
+      "capturedAt": "2026-07-26T01:24:46.570Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 869,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "f32759eb9c3b61792a79eb0ab41762c5d770108b020110617234e54738a39840",
+      "annotationScreenshotSha256": "fc42166243c58c03a8a7e0d37f8b698de98566efa542e5481ee2e3990fcbaf2a",
+      "provenanceAggregateSha256": "4a58140874b76c65824335f8d82664f31290cf433b887550440ee6b9110a07f0",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--trash-bags",
+      "capturedAt": "2026-07-26T01:24:54.293Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 256,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.06751703199052132,
+      "queryTokenCoverage": 1,
+      "observationSha256": "f63e65c954d62dc27c9faf75c59925fbaea71235aa9d0ebec8ef768e53fdb027",
+      "annotationScreenshotSha256": "2d64bd5d0b76f5ac3035a2fc7fc28c1f9f585b182975f1cb3bb03518fdb788eb",
+      "provenanceAggregateSha256": "a3ec44a6774eb6be3b4303720dd5c4234acf42cdb4c8f1b34918f55077e3a7f2",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "pageId": "supplement-warehouse--fish-oil",
+      "capturedAt": "2026-07-26T01:26:55.670Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 365,
+      "observationTruncated": false,
+      "dismissedObstructions": 14,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e99244e62a953849ad83bb9de4e2ddcc9de7e6a2749eac75417cf972b3c5722c",
+      "annotationScreenshotSha256": "39c366c44e4347e320a9e14137e004178c3a42843ae77943345ee8b03e6a1030",
+      "provenanceAggregateSha256": "27a7ecb60fd08c435a3353b8cca1e5d0353edc0dd5660e27b314dfdbe5dad5f3",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "reviewQueues": {
+    "labelVisibility": "no model or peer labels",
+    "reviewerASourceQueueSha256": [
+      "7cd7e220713e7f6db15c61b68b829b4430b12b93c18e807ce55b4f09017bafd7"
+    ],
+    "reviewerBSourceQueueSha256": [
+      "9e735e0cf9658fb3bb8cb5ed06323e85cce5d98ee4dc30c851ce7058945a5279"
+    ]
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

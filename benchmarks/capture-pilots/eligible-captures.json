@@ -504,6 +504,138 @@
       "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-01-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "lambert-vet-supply",
+      "cohort": "training",
+      "pageId": "lambert-vet-supply--syringes",
+      "captureTimestamp": "2026-07-26T01:15:32.211Z",
+      "observationSha256": "2bba2e716ef983e38eaf5c870593e30ca7a9de9ee28f4a8b5eba71655caeb64d",
+      "annotationScreenshotSha256": "fdd1903b2871f28726fd33f81d191016e934b7286361b314d7bf5fb69e89e9e6",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p06.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-02-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "food-service-direct",
+      "cohort": "training",
+      "pageId": "food-service-direct--disposable-cups",
+      "captureTimestamp": "2026-07-26T01:15:42.259Z",
+      "observationSha256": "04fe99534d225a7768c24aa734f64280b97694cb769d4e14477e94fb589ed709",
+      "annotationScreenshotSha256": "2974e066ad8a487f6d471a345de575f18c93a720ac6b90119de59321bd175080",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p01.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-02-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "vitality-medical",
+      "cohort": "training",
+      "pageId": "vitality-medical--underpads",
+      "captureTimestamp": "2026-07-26T01:17:48.303Z",
+      "observationSha256": "8b0f0237faec22acb33774955edb5afe5918218c6db6626f35e58ece9ec7eca4",
+      "annotationScreenshotSha256": "92cf41b89692fb48c3cd3fc9ee1068272ff7aa1c476fb41a98c638e3877bfc08",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-02-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "cohort": "training",
+      "pageId": "natural-healthy-concepts--magnesium",
+      "captureTimestamp": "2026-07-26T01:20:11.419Z",
+      "observationSha256": "2548df59c45c138b0c5f3705bbf9e65e6fc529133298b8861751b6669ce28224",
+      "annotationScreenshotSha256": "44a056945c73d8cc6d4509918c5b18155eb23f8b4948c5f08b24061bff069d13",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p07.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-02-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "allegro-medical",
+      "cohort": "training",
+      "pageId": "allegro-medical--underpads",
+      "captureTimestamp": "2026-07-26T01:22:10.690Z",
+      "observationSha256": "20902665084ffda5ea31fd4e0088212d455c06cedcd4d8c2a3a9033faf018cc4",
+      "annotationScreenshotSha256": "7dba49b109d256a5aa6bd4017a320a88b9fa3decd02b48214293dce1a39e2d90",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-02-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "cohort": "training",
+      "pageId": "natural-healthy-concepts--collagen-powder",
+      "captureTimestamp": "2026-07-26T01:22:32.364Z",
+      "observationSha256": "a9dc35217caa11fb9d3f8ed3cd8eca52dd26020f3ba4d16c8c3562d1cbd64918",
+      "annotationScreenshotSha256": "c0aebf177ff51551a7e3eeb28af1dbd19a40b4f5d7bfe8397b896df7b29e921e",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p07.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-02-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "cohort": "training",
+      "pageId": "ontime-supplies--trash-bags",
+      "captureTimestamp": "2026-07-26T01:24:27.316Z",
+      "observationSha256": "a067d18a5e8cb80fcca71a6a39e6449ce69f8a47e58b70849f1d008f1d943e82",
+      "annotationScreenshotSha256": "f8ad3b6c4c1ebc82204c45141c5884912943a38a929da510901d8c429510d352",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-02-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "cohort": "training",
+      "pageId": "wholesale-janitorial-supply--floor-cleaner",
+      "captureTimestamp": "2026-07-26T01:24:35.367Z",
+      "observationSha256": "3ddeecb945b120955600c15a891a32dbb6a4905aed909e586e7304ac4a03ac88",
+      "annotationScreenshotSha256": "b8f258b35c35db209735490556bc1512ac062167724abe5c0a2e1dcf150f4af7",
+      "qualificationReport": "benchmarks/domain-qualification/wave-04-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-02-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "allegro-medical",
+      "cohort": "training",
+      "pageId": "allegro-medical--syringes",
+      "captureTimestamp": "2026-07-26T01:24:46.570Z",
+      "observationSha256": "f32759eb9c3b61792a79eb0ab41762c5d770108b020110617234e54738a39840",
+      "annotationScreenshotSha256": "fc42166243c58c03a8a7e0d37f8b698de98566efa542e5481ee2e3990fcbaf2a",
+      "qualificationReport": "benchmarks/domain-qualification/wave-03-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-02-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "cohort": "training",
+      "pageId": "wholesale-janitorial-supply--trash-bags",
+      "captureTimestamp": "2026-07-26T01:24:54.293Z",
+      "observationSha256": "f63e65c954d62dc27c9faf75c59925fbaea71235aa9d0ebec8ef768e53fdb027",
+      "annotationScreenshotSha256": "2d64bd5d0b76f5ac3035a2fc7fc28c1f9f585b182975f1cb3bb03518fdb788eb",
+      "qualificationReport": "benchmarks/domain-qualification/wave-04-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-02-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "cohort": "training",
+      "pageId": "supplement-warehouse--fish-oil",
+      "captureTimestamp": "2026-07-26T01:26:55.670Z",
+      "observationSha256": "e99244e62a953849ad83bb9de4e2ddcc9de7e6a2749eac75417cf972b3c5722c",
+      "annotationScreenshotSha256": "39c366c44e4347e320a9e14137e004178c3a42843ae77943345ee8b03e6a1030",
+      "qualificationReport": "benchmarks/domain-qualification/wave-02-p07.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-02-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

@@ -340,13 +340,101 @@
       "candidateCardCount": 8,
       "observationSha256": "7730037c658e2eb8e52bdabc332886f683db1be2afa6ae5fda3266ce6246d619",
       "annotationScreenshotSha256": "ec0bc4eab9139533ed6501e36f08092467815b17984cc8d0e0f579033d62f89d"
+    },
+    {
+      "siteId": "lambert-vet-supply",
+      "pageId": "lambert-vet-supply--syringes",
+      "captureTimestamp": "2026-07-26T01:15:32.211Z",
+      "candidateCardCount": 8,
+      "observationSha256": "2bba2e716ef983e38eaf5c870593e30ca7a9de9ee28f4a8b5eba71655caeb64d",
+      "annotationScreenshotSha256": "fdd1903b2871f28726fd33f81d191016e934b7286361b314d7bf5fb69e89e9e6"
+    },
+    {
+      "siteId": "food-service-direct",
+      "pageId": "food-service-direct--disposable-cups",
+      "captureTimestamp": "2026-07-26T01:15:42.259Z",
+      "candidateCardCount": 8,
+      "observationSha256": "04fe99534d225a7768c24aa734f64280b97694cb769d4e14477e94fb589ed709",
+      "annotationScreenshotSha256": "2974e066ad8a487f6d471a345de575f18c93a720ac6b90119de59321bd175080"
+    },
+    {
+      "siteId": "vitality-medical",
+      "pageId": "vitality-medical--underpads",
+      "captureTimestamp": "2026-07-26T01:17:48.303Z",
+      "candidateCardCount": 8,
+      "observationSha256": "8b0f0237faec22acb33774955edb5afe5918218c6db6626f35e58ece9ec7eca4",
+      "annotationScreenshotSha256": "92cf41b89692fb48c3cd3fc9ee1068272ff7aa1c476fb41a98c638e3877bfc08"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "pageId": "natural-healthy-concepts--magnesium",
+      "captureTimestamp": "2026-07-26T01:20:11.419Z",
+      "candidateCardCount": 8,
+      "observationSha256": "2548df59c45c138b0c5f3705bbf9e65e6fc529133298b8861751b6669ce28224",
+      "annotationScreenshotSha256": "44a056945c73d8cc6d4509918c5b18155eb23f8b4948c5f08b24061bff069d13"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--underpads",
+      "captureTimestamp": "2026-07-26T01:22:10.690Z",
+      "candidateCardCount": 8,
+      "observationSha256": "20902665084ffda5ea31fd4e0088212d455c06cedcd4d8c2a3a9033faf018cc4",
+      "annotationScreenshotSha256": "7dba49b109d256a5aa6bd4017a320a88b9fa3decd02b48214293dce1a39e2d90"
+    },
+    {
+      "siteId": "natural-healthy-concepts",
+      "pageId": "natural-healthy-concepts--collagen-powder",
+      "captureTimestamp": "2026-07-26T01:22:32.364Z",
+      "candidateCardCount": 8,
+      "observationSha256": "a9dc35217caa11fb9d3f8ed3cd8eca52dd26020f3ba4d16c8c3562d1cbd64918",
+      "annotationScreenshotSha256": "c0aebf177ff51551a7e3eeb28af1dbd19a40b4f5d7bfe8397b896df7b29e921e"
+    },
+    {
+      "siteId": "ontime-supplies",
+      "pageId": "ontime-supplies--trash-bags",
+      "captureTimestamp": "2026-07-26T01:24:27.316Z",
+      "candidateCardCount": 8,
+      "observationSha256": "a067d18a5e8cb80fcca71a6a39e6449ce69f8a47e58b70849f1d008f1d943e82",
+      "annotationScreenshotSha256": "f8ad3b6c4c1ebc82204c45141c5884912943a38a929da510901d8c429510d352"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--floor-cleaner",
+      "captureTimestamp": "2026-07-26T01:24:35.367Z",
+      "candidateCardCount": 8,
+      "observationSha256": "3ddeecb945b120955600c15a891a32dbb6a4905aed909e586e7304ac4a03ac88",
+      "annotationScreenshotSha256": "b8f258b35c35db209735490556bc1512ac062167724abe5c0a2e1dcf150f4af7"
+    },
+    {
+      "siteId": "allegro-medical",
+      "pageId": "allegro-medical--syringes",
+      "captureTimestamp": "2026-07-26T01:24:46.570Z",
+      "candidateCardCount": 8,
+      "observationSha256": "f32759eb9c3b61792a79eb0ab41762c5d770108b020110617234e54738a39840",
+      "annotationScreenshotSha256": "fc42166243c58c03a8a7e0d37f8b698de98566efa542e5481ee2e3990fcbaf2a"
+    },
+    {
+      "siteId": "wholesale-janitorial-supply",
+      "pageId": "wholesale-janitorial-supply--trash-bags",
+      "captureTimestamp": "2026-07-26T01:24:54.293Z",
+      "candidateCardCount": 8,
+      "observationSha256": "f63e65c954d62dc27c9faf75c59925fbaea71235aa9d0ebec8ef768e53fdb027",
+      "annotationScreenshotSha256": "2d64bd5d0b76f5ac3035a2fc7fc28c1f9f585b182975f1cb3bb03518fdb788eb"
+    },
+    {
+      "siteId": "supplement-warehouse",
+      "pageId": "supplement-warehouse--fish-oil",
+      "captureTimestamp": "2026-07-26T01:26:55.670Z",
+      "candidateCardCount": 8,
+      "observationSha256": "e99244e62a953849ad83bb9de4e2ddcc9de7e6a2749eac75417cf972b3c5722c",
+      "annotationScreenshotSha256": "39c366c44e4347e320a9e14137e004178c3a42843ae77943345ee8b03e6a1030"
     }
   ],
   "queues": [
     {
       "reviewerId": "reviewer-a",
-      "queueId": "reviewer-a--campaign--521dbe341751acf6",
-      "campaignQueueSha256": "e2be6fcc81bc43c280831e07227fc974f7e2202ef261e9ae2b8b0adf3a077d8a",
+      "queueId": "reviewer-a--campaign--a6480333276198c0",
+      "campaignQueueSha256": "daebfd7d2d67df8d9f10278f550ed160c53259ac15be2490cb79c15311ee775a",
       "sourceQueueSha256": [
         "499c33d55393e43b2c8cc74be8e1cb419bc00ca6c40416a41dd9192fd4a2da33",
         "20f94a43e8059b98d6e7b5771e89df17443a2c65baa6f666caf441b1436c960e",
@@ -355,14 +443,25 @@
         "ab30262a6b1de1ba7779b61dbd3f085bb6b75f711b75a70cb44c978a924899f8",
         "37337d3e25383c07a2d7491a163bbfdb9bbdc6aebd84b8b75e188ec754c88afb",
         "928f105592221655ab48ec209a5540917afcf1c63fed185694b1e936fe7168d8",
-        "c749602fba52db1c64ccadaafd43f787cb269dc303263b54a383c95d9eb02b37"
+        "c749602fba52db1c64ccadaafd43f787cb269dc303263b54a383c95d9eb02b37",
+        "7cd7e220713e7f6db15c61b68b829b4430b12b93c18e807ce55b4f09017bafd7"
       ],
-      "sourceQueuePageCounts": [2, 1, 1, 25, 2, 1, 1, 9]
+      "sourceQueuePageCounts": [
+        2,
+        1,
+        1,
+        25,
+        2,
+        1,
+        1,
+        9,
+        11
+      ]
     },
     {
       "reviewerId": "reviewer-b",
-      "queueId": "reviewer-b--campaign--67c201b292833dae",
-      "campaignQueueSha256": "41084c66adb4460c2ec0c129df9ba7e48c0e20d4f70d23e779fe6dd7ce4c967c",
+      "queueId": "reviewer-b--campaign--9a677dd7912dd966",
+      "campaignQueueSha256": "ebcea23ee969906de19cc1bdfc9f61a17b9b618ce6bd072ba29b8d4ea5285a32",
       "sourceQueueSha256": [
         "6eecdef600b1059e2f5ca37ea9aff8b060e575bcb3aaa1193711a1b2a1464ddd",
         "a63a32083fc767ce1ab7779756b817b3c55be3eafd398ee80113927116bdf96d",
@@ -371,9 +470,20 @@
         "28a726a9d82cde802a11f1dcf13e05ea75fc903dacd814e25d4b774f00ea1b0f",
         "0c7763752533b36749d51c982beb5b6fd239efd2e82e175d8394d042ddcf2d61",
         "67565218805c9b8315ed7e105e562606f159d408a207ac6a5e10d30d4d261951",
-        "94af2d3f932a939e1628548c656218e25b40a83bf67c47d471641774be4c3458"
+        "94af2d3f932a939e1628548c656218e25b40a83bf67c47d471641774be4c3458",
+        "9e735e0cf9658fb3bb8cb5ed06323e85cce5d98ee4dc30c851ce7058945a5279"
       ],
-      "sourceQueuePageCounts": [2, 1, 1, 25, 2, 1, 1, 9]
+      "sourceQueuePageCounts": [
+        2,
+        1,
+        1,
+        25,
+        2,
+        1,
+        1,
+        9,
+        11
+      ]
     }
   ],
   "blinding": {
@@ -384,10 +494,10 @@
   },
   "workbenchValidation": {
     "browser": "headed Playwright Chromium",
-    "pagesLoaded": 42,
-    "screenshotsLoaded": 42,
-    "candidateCards": 372,
-    "selectedCardNodeId": "n1108",
+    "pagesLoaded": 53,
+    "screenshotsLoaded": 53,
+    "candidateCards": 460,
+    "selectedCardNodeId": "n76",
     "onlyFrozenCardRootOffered": true,
     "cardScopedCandidateSelection": "passed",
     "nonCandidateAncestor": "rejected-404",

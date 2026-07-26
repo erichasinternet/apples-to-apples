@@ -205,7 +205,7 @@ reviews and adjudication are complete.
 
 The current multi-page G2 review campaign is recorded in
 [`g2-pilot-p00.json`](../benchmarks/review-campaigns/g2-pilot-p00.json). It
-contains 42 qualification-backed live pages and 372 frozen candidate card
+contains 53 qualification-backed live pages and 460 frozen candidate card
 roots across two independent blinded queues. A headed Chromium smoke test loaded
 all source screenshots, constructed a card-scoped pointer, rejected a product-grid
 ancestor, and rejected incomplete coverage. It still contributes zero gold
@@ -245,6 +245,15 @@ rejected because most captured cards were water-filtration equipment. The nine
 accepted pages add dog food, puppy pads, fish oil, collagen, hand soap, adult
 briefs, rice, copy paper, and wound dressings without claiming any new domain
 qualification.
+
+Qualified expansion wave 02 sampled 18 additional queries across nine promoted
+domains. Twelve pages completed bounded headed capture and 11 passed provenance,
+candidate-count, query-evidence, card-text, price, and visual product-grid checks.
+Six pages timed out, and the Supplement Warehouse creatine page was rejected
+because an open mobile filter sheet obscured the evidence. The accepted pages add
+syringes, underpads, disposable cups, magnesium, collagen, trash bags, floor
+cleaners, and fish oil. Related accessories within valid result grids remain
+frozen as deliberate abstention examples rather than being silently removed.
 
 ## Dataset Growth
 
