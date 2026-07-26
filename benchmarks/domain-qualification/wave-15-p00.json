@@ -1,0 +1,290 @@
+{
+  "version": 1,
+  "qualificationId": "wave-15-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-15.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "screeningPageTimeoutMs": 90000,
+    "qualificationPageTimeoutMs": 90000,
+    "screeningCardScreenshotBudgetMs": 12000,
+    "qualificationCardScreenshotBudgetMs": 12000,
+    "minimumQueryTokenCoverage": 1,
+    "exactPageTargeting": true,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T11-11-46-202Z",
+      "runManifestSha256": "3e40c5478be984751aed141fd87bc0064a32892c17fd6110ba85100d89cf35cc",
+      "purpose": "one-page headed screening across all 20 candidate domains"
+    },
+    {
+      "runId": "2026-07-26T11-24-15-015Z",
+      "runManifestSha256": "7320ffff67645f4302b9e85208278aee2f4da442c193038616a29772d7e6a8b0",
+      "purpose": "narrow opposite-viewport qualification"
+    },
+    {
+      "runId": "2026-07-26T11-26-50-600Z",
+      "runManifestSha256": "63120f8b672c56f639c08b67560711088f8f2455681ae44615bed9f2c8c945c7",
+      "purpose": "desktop opposite-viewport qualification"
+    }
+  ],
+  "results": {
+    "american-spice": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "american-spice--paprika",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.06635071090047394,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "american-spice--garlic-powder",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.006488888888888889,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent spice result grids pass in distinct viewports. Cards contain titles and prices while quantity is usually absent, providing difficult mass abstention evidence."
+    },
+    "blowout-medical": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "blowout-medical--exam-gloves",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "blowout-medical--underpads",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two readable medical-supply grids pass in distinct viewports. Price ranges and option-dependent sell units create useful count abstention cases."
+    },
+    "ethos-car-care": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "ethos-car-care--soap",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "ethos-car-care--interior-cleaner",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two direct-to-consumer car-care grids pass in distinct viewports with explicit gallon products mixed with sprays, kits, and option-dependent cards."
+    },
+    "grayline-medical": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "grayline-medical--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "grayline-medical--underpads",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two clinical-supply grids pass in distinct viewports. Glove titles expose box and case counts, while underpads mostly omit sell-unit counts and require abstention."
+    },
+    "medical-eshop": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "medical-eshop--exam-gloves",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.10390083849799489,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "medical-eshop--underpads",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0018777777777777777,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two home-medical grids pass in distinct viewports. Many cards expose only starting prices and option counts, testing conservative count extraction."
+    },
+    "the-flooring-store": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "the-flooring-store--carpet-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "the-flooring-store--lvp-flooring",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two regional-flooring grids pass in distinct viewports. Carpet tile exposes explicit square-foot pricing while LVP cards provide price-only hard negatives."
+    },
+    "zelouf-fabrics": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "zelouf-fabrics--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.00140625,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "zelouf-fabrics--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.006152023332118119,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent wholesale-fabric grids pass in distinct viewports. Prices are card-local but the by-yard relationship is not, creating useful length abstention evidence."
+    },
+    "adams-polishes": {
+      "status": "rejected",
+      "reason": "The opposite-viewport wheel-cleaner page exceeded the 90-second page bound."
+    },
+    "burlap-and-barrel": {
+      "status": "rejected",
+      "reason": "The screening capture did not produce an annotation screenshot."
+    },
+    "spicely": {
+      "status": "rejected",
+      "reason": "The rendered result page exposed no reviewable candidate roots."
+    },
+    "the-rag-company": {
+      "status": "rejected",
+      "reason": "A large open cart drawer visibly obscured the narrow product evidence, failing visual validation despite the machine obstruction estimate."
+    },
+    "shine-supply": {
+      "status": "rejected",
+      "reason": "The screening page exceeded the 90-second page bound."
+    },
+    "discount-medical-supplies": {
+      "status": "rejected",
+      "reason": "The distinct desktop qualification page exceeded the 90-second page bound."
+    },
+    "threadart": {
+      "status": "rejected",
+      "reason": "The screening page exceeded the 90-second page bound."
+    },
+    "big-z-fabric": {
+      "status": "rejected",
+      "reason": "The rendered result page had only 50 percent requested-query token coverage and no reviewable candidate roots."
+    },
+    "calico-fabric": {
+      "status": "rejected",
+      "reason": "The requested route redirected cross-site to a domain-for-sale page."
+    },
+    "carpet-and-tile-mart": {
+      "status": "rejected",
+      "reason": "The rendered category page exposed no reviewable candidate roots."
+    },
+    "hardwoods-4-less": {
+      "status": "rejected",
+      "reason": "The requested route redirected cross-site to Google and exposed no requested-query evidence."
+    },
+    "riverwoods-flooring": {
+      "status": "rejected",
+      "reason": "The screening page exceeded the 90-second page bound."
+    },
+    "frontier-coop": {
+      "status": "rejected",
+      "reason": "An unresolved obstruction covered 44 percent of the viewport."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "american-spice",
+      "blowout-medical",
+      "ethos-car-care",
+      "grayline-medical",
+      "medical-eshop",
+      "the-flooring-store",
+      "zelouf-fabrics"
+    ],
+    "assignedDomains": [
+      {"siteId": "american-spice", "cohort": "training"},
+      {"siteId": "blowout-medical", "cohort": "training"},
+      {"siteId": "ethos-car-care", "cohort": "training"},
+      {"siteId": "grayline-medical", "cohort": "training"},
+      {"siteId": "medical-eshop", "cohort": "training"},
+      {"siteId": "the-flooring-store", "cohort": "training"},
+      {"siteId": "zelouf-fabrics", "cohort": "training"}
+    ],
+    "status": "keep"
+  }
+}

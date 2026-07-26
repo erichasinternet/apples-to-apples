@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Fifteenth unassigned domain-qualification wave. Twenty genuinely new domains contribute four candidates per target dimension across spice retail, automotive detailing, medical supply, fabric retail, and flooring commerce. Every route was live-screened before capture, and every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "american-spice",
+      "label": "American Spice",
+      "hostname": "www.americanspice.com",
+      "stratum": "bulk-spice-retail",
+      "searchUrlTemplate": "https://www.americanspice.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "garlic-powder", "query": "garlic powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "frontier-coop",
+      "label": "Frontier Co-op",
+      "hostname": "www.frontiercoop.com",
+      "stratum": "cooperative-spice-retail",
+      "searchUrlTemplate": "https://www.frontiercoop.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "garlic-powder", "query": "garlic powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "spicely",
+      "label": "Spicely Organics",
+      "hostname": "www.spicely.com",
+      "stratum": "organic-spice-retail",
+      "searchUrlTemplate": "https://www.spicely.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "chili-powder", "query": "chili powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "burlap-and-barrel",
+      "label": "Burlap & Barrel",
+      "hostname": "www.burlapandbarrel.com",
+      "stratum": "single-origin-spice-retail",
+      "searchUrlTemplate": "https://www.burlapandbarrel.com/search?q={query}",
+      "queries": [
+        {"id": "pepper", "query": "pepper", "dimension": "mass"},
+        {"id": "chili", "query": "chili", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "the-rag-company",
+      "label": "The Rag Company",
+      "hostname": "theragcompany.com",
+      "stratum": "automotive-detailing-retail",
+      "searchUrlTemplate": "https://theragcompany.com/search?q={query}",
+      "queries": [
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"},
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "shine-supply",
+      "label": "Shine Supply",
+      "hostname": "shinesupply.com",
+      "stratum": "professional-detailing-chemical-retail",
+      "searchUrlTemplate": "https://shinesupply.com/search?q={query}",
+      "queries": [
+        {"id": "soap", "query": "soap", "dimension": "volume"},
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "ethos-car-care",
+      "label": "Ethos Car Care",
+      "hostname": "ethoscarcare.com",
+      "stratum": "direct-to-consumer-car-care",
+      "searchUrlTemplate": "https://ethoscarcare.com/search?q={query}",
+      "queries": [
+        {"id": "soap", "query": "soap", "dimension": "volume"},
+        {"id": "interior-cleaner", "query": "interior cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "adams-polishes",
+      "label": "Adam's Polishes",
+      "hostname": "adamspolishes.com",
+      "stratum": "automotive-care-manufacturer",
+      "searchUrlTemplate": "https://adamspolishes.com/search?q={query}",
+      "queries": [
+        {"id": "soap", "query": "soap", "dimension": "volume"},
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "medical-eshop",
+      "label": "Medicaleshop",
+      "hostname": "www.medicaleshop.com",
+      "stratum": "home-medical-supply",
+      "searchUrlTemplate": "https://www.medicaleshop.com/{querySlug}",
+      "queries": [
+        {"id": "exam-gloves", "query": "examination gloves", "querySlug": "category/examination-gloves", "dimension": "count"},
+        {"id": "underpads", "query": "disposable underpads", "querySlug": "category/disposable-underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "blowout-medical",
+      "label": "Blowout Medical",
+      "hostname": "www.blowoutmedical.com",
+      "stratum": "discount-medical-supply",
+      "searchUrlTemplate": "https://www.blowoutmedical.com/{querySlug}",
+      "queries": [
+        {"id": "exam-gloves", "query": "medical gloves", "querySlug": "c-medical-gloves.html", "dimension": "count"},
+        {"id": "underpads", "query": "disposable underpads", "querySlug": "c-disposable-underpads.html", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "grayline-medical",
+      "label": "Grayline Medical",
+      "hostname": "www.graylinemedical.com",
+      "stratum": "clinical-medical-supply",
+      "searchUrlTemplate": "https://www.graylinemedical.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "discount-medical-supplies",
+      "label": "Discount Medical Supplies",
+      "hostname": "discountmedicalsupplies.com",
+      "stratum": "discount-clinical-supply",
+      "searchUrlTemplate": "https://discountmedicalsupplies.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "threadart",
+      "label": "ThreadArt",
+      "hostname": "www.threadart.com",
+      "stratum": "quilting-fabric-retail",
+      "searchUrlTemplate": "https://www.threadart.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "batik-fabric", "query": "batik fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "zelouf-fabrics",
+      "label": "Zelouf Fabrics",
+      "hostname": "zelouffabrics.com",
+      "stratum": "wholesale-fashion-fabric",
+      "searchUrlTemplate": "https://zelouffabrics.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "big-z-fabric",
+      "label": "Big Z Fabric",
+      "hostname": "bigzfabric.com",
+      "stratum": "specialty-fabric-warehouse",
+      "searchUrlTemplate": "https://bigzfabric.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "upholstery-fabric", "query": "upholstery fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "calico-fabric",
+      "label": "Calico",
+      "hostname": "www.calicofabric.com",
+      "stratum": "designer-home-fabric-retail",
+      "searchUrlTemplate": "https://www.calicofabric.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "the-flooring-store",
+      "label": "The Flooring Store",
+      "hostname": "www.theflooringstore.net",
+      "stratum": "regional-flooring-ecommerce",
+      "searchUrlTemplate": "https://www.theflooringstore.net/{querySlug}",
+      "queries": [
+        {"id": "carpet-tile", "query": "carpet tile", "querySlug": "category/carpet-tile", "dimension": "area"},
+        {"id": "lvp-flooring", "query": "lvp flooring", "querySlug": "category/lvp-flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "carpet-and-tile-mart",
+      "label": "Carpet & Tile Mart",
+      "hostname": "shop.carpetmart.com",
+      "stratum": "regional-carpet-flooring-retail",
+      "searchUrlTemplate": "https://shop.carpetmart.com/{querySlug}",
+      "queries": [
+        {"id": "carpet", "query": "carpet", "querySlug": "carpet/", "dimension": "area"},
+        {"id": "luxury-vinyl", "query": "luxury vinyl flooring", "querySlug": "luxury-vinyl-flooring/", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "hardwoods-4-less",
+      "label": "Hardwoods4Less",
+      "hostname": "hardwoods4less.com",
+      "stratum": "online-hardwood-flooring",
+      "searchUrlTemplate": "https://hardwoods4less.com/search?q={query}",
+      "queries": [
+        {"id": "oak-flooring", "query": "oak flooring", "dimension": "area"},
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "riverwoods-flooring",
+      "label": "Riverwoods Flooring",
+      "hostname": "riverwoodsflooring.com",
+      "stratum": "online-premium-flooring",
+      "searchUrlTemplate": "https://riverwoodsflooring.com/search?q={query}",
+      "queries": [
+        {"id": "oak-flooring", "query": "oak flooring", "dimension": "area"},
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"}
+      ]
+    }
+  ]
+}

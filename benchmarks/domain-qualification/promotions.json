@@ -252,6 +252,48 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-14-p00.json",
       "promotedAt": "2026-07-26T11:00:00.000Z"
+    },
+    {
+      "siteId": "american-spice",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-15-p00.json",
+      "promotedAt": "2026-07-26T11:40:00.000Z"
+    },
+    {
+      "siteId": "blowout-medical",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-15-p00.json",
+      "promotedAt": "2026-07-26T11:40:00.000Z"
+    },
+    {
+      "siteId": "ethos-car-care",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-15-p00.json",
+      "promotedAt": "2026-07-26T11:40:00.000Z"
+    },
+    {
+      "siteId": "grayline-medical",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-15-p00.json",
+      "promotedAt": "2026-07-26T11:40:00.000Z"
+    },
+    {
+      "siteId": "medical-eshop",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-15-p00.json",
+      "promotedAt": "2026-07-26T11:40:00.000Z"
+    },
+    {
+      "siteId": "the-flooring-store",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-15-p00.json",
+      "promotedAt": "2026-07-26T11:40:00.000Z"
+    },
+    {
+      "siteId": "zelouf-fabrics",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-15-p00.json",
+      "promotedAt": "2026-07-26T11:40:00.000Z"
     }
   ]
 }

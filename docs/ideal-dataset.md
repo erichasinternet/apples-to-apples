@@ -567,6 +567,37 @@ loads all 114 screenshots and 1,109 roots with zero console errors or writes.
 All roots and machine suggestions remain unreviewed and ineligible for silver
 training or benchmark gold.
 
+Wave 15 screens 20 more unfamiliar domains across all five unit dimensions.
+American Spice, Blowout Medical, Ethos Car Care, Grayline Medical, Medicaleshop,
+The Flooring Store, and Zelouf Fabrics qualify on two visually inspected pages
+in distinct viewport profiles. The accepted evidence deliberately combines
+explicit gallon and square-foot pricing with difficult price-only, range-price,
+option-dependent, and missing-sell-unit cards. The Rag Company is rejected
+after visual inspection found a cart drawer obscuring product evidence despite
+a permissive machine obstruction estimate; every other rejected domain has a
+bounded disposition for timeout, redirect, obstruction, missing screenshot,
+irrelevant results, or insufficient candidates.
+
+The paired blinded campaign in
+[`g2-pilot-p13.json`](../benchmarks/review-campaigns/g2-pilot-p13.json)
+contains 49 qualified training domains, 128 pages, and 1,277 frozen roots. The
+168-root expansion contributes four tentative comparables and 164 abstentions.
+The diagnostic in
+[`g2-campaign-preannotation-p12.json`](../benchmarks/reviews/g2-campaign-preannotation-p12.json)
+retains 1,258 machine suggestions and quarantines 19 known semantic traps. The
+compact audit in
+[`g2-selection-representation-p11.json`](../benchmarks/reviews/g2-selection-representation-p11.json)
+round-trips all 1,258 retained suggestions exactly with zero failures.
+
+The p13 campaign is deterministically partitioned into 13 matching reviewer
+assignments in
+[`g2-pilot-p13-review-batches.json`](../benchmarks/reviews/g2-pilot-p13-review-batches.json).
+The headed validation recorded in
+[`g2-pilot-p13-review-batch-validation.json`](../benchmarks/reviews/g2-pilot-p13-review-batch-validation.json)
+loads all 128 screenshots and 1,277 roots with zero console errors or writes.
+All roots and machine suggestions remain unreviewed and ineligible for silver
+training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,
