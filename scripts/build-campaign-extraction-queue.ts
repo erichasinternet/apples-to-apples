@@ -49,7 +49,7 @@ interface QueueItem {
 
 const campaignPath = path.resolve(
   optionValue("--campaign") ??
-    "benchmark-data/review/g2-pilot-expansion-wave-02-reviewer-a-campaign.json"
+    "benchmark-data/review/g2-pilot-p02-reviewer-a-campaign.json"
 );
 const outputPath = path.resolve(
   optionValue("--output") ??
@@ -217,14 +217,14 @@ function toEvidenceCandidate(node: ObservedNode): EvidenceCandidate {
     candidateTypes.push("current-price");
   }
   if (
-    /(?:[$€£]\s*\d+(?:[.,]\d+)?|\d+(?:[.,]\d+)?\s*¢)\s*(?:\/|\bper\b)\s*(?:fl\s*oz|oz|lb|kg|g|ml|l|ct|count|ea|each|sq\s*ft|sq\s*m|ft|in|yd|m)\b/i.test(
+    /(?:[$€£]\s*\d+(?:[.,]\d+)?|\d+(?:[.,]\d+)?\s*¢)\s*(?:\/|\bper\b)\s*(?:fl\s*oz|oz|lb|kg|g|ml|l|ct|count|ea|each|sq\s*ft|sqft|square\s+feet|sq\s*m|feet|foot|ft|in|yards?|yd|m)\b/i.test(
       content
     )
   ) {
     candidateTypes.push("native-unit-price");
   }
   if (
-    /\b\d+(?:[.,]\d+)?\s*(?:fl\s*oz|ounces?|oz|pounds?|lbs?|grams?|kg|ml|liters?|litres?|count|ct|pack|pk|each|ea|sq\s*ft|square\s+feet|feet|foot|ft|inches?|in|yards?|yd|meters?|metres?|m)\b/i.test(
+    /\b\d+(?:[.,]\d+)?\s*(?:fl\s*oz|ounces?|oz|pounds?|lbs?|grams?|kg|ml|liters?|litres?|count|ct|pack|pk|each|ea|sq\s*ft|sqft|square\s+feet|feet|foot|ft|inches?|in|yards?|yd|meters?|metres?|m)\b/i.test(
       content
     )
   ) {

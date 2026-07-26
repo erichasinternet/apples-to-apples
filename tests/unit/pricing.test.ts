@@ -47,6 +47,20 @@ describe("unit price parsing", () => {
       dimension: "count"
     });
   });
+
+  it("parses common area and length unit-price spellings", () => {
+    expect(parseNativeUnitPrices("$1.84/sqft")[0]).toMatchObject({
+      centsPerUnit: 184,
+      unit: "sq_ft",
+      dimension: "area"
+    });
+    expect(parseNativeUnitPrices("$0.65 per yard")[0]).toMatchObject({
+      centsPerUnit: 65,
+      unit: "yd",
+      dimension: "length"
+    });
+    expect(parseNativeUnitPrices("$9.80 per yard")[0]?.centsPerUnit).toBe(980);
+  });
 });
 
 describe("quantity parsing", () => {
@@ -61,6 +75,19 @@ describe("quantity parsing", () => {
     const selected = selectPackageQuantity(parseQuantities(text));
     expect(selected?.value).toBeCloseTo(value);
     expect(selected?.unit).toBe(unit);
+  });
+
+  it("parses compact quantities without treating attached product codes as count", () => {
+    expect(parseQuantities("Nutrabio Multi Collagen 1lb")).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ value: 1, unit: "lb" })
+      ])
+    );
+    expect(
+      parseQuantities("Trash Bags 100 Box (CLO 78526CT)").some(
+        (quantity) => quantity.value === 78526
+      )
+    ).toBe(false);
   });
 
   it("captures multipack count separately", () => {
@@ -92,6 +119,14 @@ describe("normalization", () => {
     const product = makeProduct("Tidy Cats LightWeight 17 lb Pail", "$24.97 9.2 ¢/oz");
     const normalized = normalizeProduct(product).normalized;
     expect(normalized?.display).toBe("$1.47/lb");
+  });
+
+  it("converts a per-yard price to the preferred per-foot unit", () => {
+    const product = makeProduct("Marine fabric sold by the yard", "$0.65 per yard");
+    const normalized = normalizeProduct(product).normalized;
+    expect(normalized?.unit).toBe("ft");
+    expect(normalized?.centsPerUnit).toBeCloseTo(65 / 3);
+    expect(normalized?.display).toBe("21.7¢/ft");
   });
 
   it("uses package math when native unit price is missing", () => {

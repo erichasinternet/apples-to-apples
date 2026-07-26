@@ -145,7 +145,16 @@ export const UNIT_DEFINITIONS: readonly UnitDefinition[] = [
     unit: "sq_ft",
     dimension: "area",
     label: "sq ft",
-    aliases: ["sq ft", "sq. ft", "sq. ft.", "square foot", "square feet", "ft2", "ft^2"],
+    aliases: [
+      "sq ft",
+      "sq. ft",
+      "sq. ft.",
+      "sqft",
+      "square foot",
+      "square feet",
+      "ft2",
+      "ft^2"
+    ],
     toBase: 1
   },
   {
@@ -154,6 +163,13 @@ export const UNIT_DEFINITIONS: readonly UnitDefinition[] = [
     label: "sq in",
     aliases: ["sq in", "sq. in", "sq. in.", "square inch", "square inches", "in2", "in^2"],
     toBase: 1 / 144
+  },
+  {
+    unit: "yd",
+    dimension: "length",
+    label: "yd",
+    aliases: ["yd", "yd.", "yard", "yards"],
+    toBase: 3
   },
   {
     unit: "ft",

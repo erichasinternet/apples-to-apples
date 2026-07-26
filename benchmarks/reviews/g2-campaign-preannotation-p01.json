@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "auditId": "g2-campaign-preannotation-p01",
+  "createdAt": "2026-07-26T06:20:51Z",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p02-reviewer-a-campaign.json",
+    "campaignSha256": "7cce9e07e671fa268030a54b957cf61ada8dbe0810e01c52b5e6339105b82e7f",
+    "queueSha256": "8eab6e0a5871b604e09e7cdb986dc6a55b9f4d08b1246831f56ccbdad80ff0de",
+    "preannotationSha256": "c884b7848d45565e0c88d8629cfac90828b13ceee7ce5844c736fd090ecfe1e8",
+    "auditSha256": "614426140bfbf2eb651c880c07cf4ff67da025f5b8e480c64a00392c49e9c71e",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "campaign": {
+    "pages": 63,
+    "cards": 580,
+    "targetDimensions": {
+      "area": 56,
+      "count": 196,
+      "length": 120,
+      "mass": 160,
+      "volume": 48
+    },
+    "candidateEvidence": {
+      "withTitle": 573,
+      "withCurrentPrice": 560,
+      "withNativeUnitPriceInOneNode": 39,
+      "withPackageQuantity": 222
+    }
+  },
+  "dimensionConditionedPreannotation": {
+    "tentativeComparable": 173,
+    "abstained": 407,
+    "evidenceInvalid": 4,
+    "methods": {
+      "explicit-abstention": 407,
+      "native-unit-price": 85,
+      "price-and-package": 88
+    }
+  },
+  "semanticAudit": {
+    "machineAuditPassingComparableSuggestions": 157,
+    "machineAuditPassingAbstentionSuggestions": 407,
+    "quarantinedComparableSuggestions": 16,
+    "quarantinedAbstentionSuggestions": 0,
+    "quarantineReasons": {
+      "ambiguous-decimal-quantity": 1,
+      "equipment-capacity-as-quantity": 10,
+      "invalid-evidence": 4,
+      "physical-dimension-as-quantity": 2
+    }
+  },
+  "newDomainOutcomes": {
+    "fabric-mart-fabrics": {
+      "cards": 24,
+      "tentativeComparable": 23,
+      "abstained": 1
+    },
+    "fabricworm": {
+      "cards": 24,
+      "tentativeComparable": 0,
+      "abstained": 24
+    },
+    "greatmats": {
+      "cards": 24,
+      "tentativeComparable": 23,
+      "abstained": 1
+    },
+    "seattle-fabrics": {
+      "cards": 24,
+      "tentativeComparable": 19,
+      "abstained": 5
+    },
+    "wholesale-marine": {
+      "cards": 24,
+      "tentativeComparable": 2,
+      "abstained": 22
+    }
+  },
+  "representationChanges": [
+    "Added yard as a canonical length unit and common sqft spelling as an area alias.",
+    "Allowed a single cited price node to pair with a separate per-foot or per-area label inside the same frozen card.",
+    "Preferred semantic headings and product links over descriptive or promotional image alt text.",
+    "Grounded compact quantities such as 1lb and 1600ml while rejecting implausible attached count product codes."
+  ],
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "The source cards and all preannotations remain unreviewed. Machine checks can quarantine contradictions but cannot establish semantic correctness; two independent reviews and adjudication remain required."
+  },
+  "decision": "retain-as-blinded-review-aid-only"
+}

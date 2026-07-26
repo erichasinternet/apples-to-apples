@@ -23,6 +23,7 @@ export type CanonicalUnit =
   | "bag"
   | "sq_ft"
   | "sq_in"
+  | "yd"
   | "ft"
   | "in";
 

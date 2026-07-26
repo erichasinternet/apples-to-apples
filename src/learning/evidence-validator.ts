@@ -1,4 +1,5 @@
 import { normalizeProduct } from "../core/normalizer";
+import { parseQuantities } from "../core/pricing";
 import type {
   CanonicalUnit,
   Evidence,
@@ -8,7 +9,7 @@ import type {
   UserPreferences
 } from "../core/types";
 import { DEFAULT_PREFERENCES } from "../core/types";
-import { getUnitDefinition } from "../core/units";
+import { getUnitDefinition, getUnitRegexSource } from "../core/units";
 import {
   MODEL_EXTRACTION_VERSION,
   type EvidenceIssue,
@@ -232,7 +233,11 @@ function validateProduct(
     if (
       !Number.isFinite(product.packageQuantity.valuePerPackage) ||
       product.packageQuantity.valuePerPackage <= 0 ||
-      !numbersInText(text).some((value) => approximatelyEqual(value, product.packageQuantity!.valuePerPackage))
+      !quantityValueInText(
+        text,
+        product.packageQuantity.valuePerPackage,
+        product.packageQuantity.unit
+      )
     ) {
       issues.push(
         productIssue(
@@ -450,11 +455,27 @@ function numbersInText(text: string): number[] {
     .filter(Number.isFinite);
 }
 
+function quantityValueInText(
+  text: string,
+  value: number,
+  unit: CanonicalUnit
+): boolean {
+  return (
+    numbersInText(text).some((candidate) =>
+      approximatelyEqual(candidate, value)
+    ) ||
+    parseQuantities(text).some(
+      (candidate) =>
+        candidate.unit === unit && approximatelyEqual(candidate.value, value)
+    )
+  );
+}
+
 function moneyCentsInText(text: string): number[] {
   const values: number[] = [];
   for (const match of text.matchAll(/\$\s*(\d{1,6})(?:[.,](\d{1,2}))?(?![\d.,])/g)) {
     const trailingText = text.slice((match.index ?? 0) + match[0].length);
-    if (/^\s*(?:\/|per\b)/i.test(trailingText)) {
+    if (isDirectUnitPriceSuffix(trailingText)) {
       continue;
     }
     const dollars = Number.parseInt(match[1]!, 10);
@@ -464,12 +485,19 @@ function moneyCentsInText(text: string): number[] {
 
   for (const match of text.matchAll(/\$\s*(\d{1,5})\s+(\d{2})(?=\D|$)/g)) {
     const trailingText = text.slice((match.index ?? 0) + match[0].length);
-    if (/^\s*(?:\/|per\b)/i.test(trailingText)) {
+    if (isDirectUnitPriceSuffix(trailingText)) {
       continue;
     }
     values.push(Number.parseInt(match[1]!, 10) * 100 + Number.parseInt(match[2]!, 10));
   }
   return values;
+}
+
+function isDirectUnitPriceSuffix(value: string): boolean {
+  return new RegExp(
+    `^\\s*(?:\\/|per\\b)\\s*(?:${getUnitRegexSource()})(?=$|[^a-z])`,
+    "i"
+  ).test(value);
 }
 
 function unitPriceCentsInText(text: string, unit: CanonicalUnit): number[] {
@@ -488,6 +516,28 @@ function unitPriceCentsInText(text: string, unit: CanonicalUnit): number[] {
   );
   for (const match of text.matchAll(dollarRegex)) {
     values.push(Number.parseFloat(match[1]!.replace(",", ".")) * 100);
+  }
+  if (
+    values.length === 0 &&
+    new RegExp(
+      `(?:\\/|\\bper\\s+)\\s*(?:${unitSource})(?=$|[^a-z])`,
+      "i"
+    ).test(text)
+  ) {
+    const splitDollarValues = [
+      ...text.matchAll(/\$\s*(\d+(?:[.,]\d+)?)/g)
+    ].map(
+      (match) => Number.parseFloat(match[1]!.replace(",", ".")) * 100
+    );
+    const splitCentValues = [
+      ...text.matchAll(/(\d+(?:[.,]\d+)?)\s*(?:¢|cents?)/gi)
+    ].map((match) => Number.parseFloat(match[1]!.replace(",", ".")));
+    const splitValues = [...splitDollarValues, ...splitCentValues].filter(
+      Number.isFinite
+    );
+    if (splitValues.length === 1) {
+      values.push(splitValues[0]!);
+    }
   }
   return values.filter(Number.isFinite);
 }

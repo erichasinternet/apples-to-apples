@@ -203,7 +203,7 @@ machine and visual capture validation, immutable provenance, and two blinded
 review queues. It contributes zero gold products until both independent human
 reviews and adjudication are complete.
 
-The current multi-page G2 review campaign is recorded in
+The initial multi-page G2 review campaign is recorded in
 [`g2-pilot-p00.json`](../benchmarks/review-campaigns/g2-pilot-p00.json). It
 contains 53 qualification-backed live pages and 460 frozen candidate card
 roots across two independent blinded queues. A headed Chromium smoke test loaded
@@ -312,6 +312,17 @@ and identified equipment capacity, lost decimal separators, and ungrounded
 numbers as concrete failure modes. The entire artifact remains ineligible for
 silver training and benchmark gold because deterministic agreement is not an
 independent semantic review.
+
+The append-only 580-card rerun is recorded in
+[`g2-campaign-preannotation-p01.json`](../benchmarks/reviews/g2-campaign-preannotation-p01.json).
+It adds the wave-06 and wave-07 evidence, recognizes yard and common square-foot
+spellings, grounds strictly paired price and per-unit sibling nodes, and prefers
+semantic product links over image descriptions. The pass produced 173 tentative
+comparables and 407 abstentions. Evidence validation rejected four records, and
+the semantic audit retained 157 comparable suggestions while quarantining 16.
+The raw artifact remains ineligible for both silver training and benchmark gold:
+all 580 cards are still unreviewed, and deterministic checks cannot substitute
+for two independent reviews and adjudication.
 
 ## Dataset Growth
 

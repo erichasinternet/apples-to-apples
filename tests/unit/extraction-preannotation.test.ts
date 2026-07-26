@@ -33,6 +33,50 @@ describe("extraction preannotation", () => {
     expect(result.evidenceValidation).toEqual({ valid: true, issues: [] });
   });
 
+  it("grounds a split square-foot unit price", () => {
+    const observation = page([
+      node("card", undefined, "li"),
+      node("title", "card", "h2", "Carpet Tile 24x24 Inches"),
+      node("price-group", "card", "div"),
+      node("unit-price", "price-group", "span", "$1.84"),
+      node("unit-label", "price-group", "span", "/sqft")
+    ]);
+
+    const result = preannotateExtraction(item("area"), observation);
+
+    expect(result.outcome).toBe("comparable");
+    expect(result.extraction.nativeUnitPrice).toMatchObject({
+      centsPerUnit: 184,
+      unit: "sq_ft",
+      dimension: "area"
+    });
+    expect(result.evidenceValidation).toEqual({ valid: true, issues: [] });
+  });
+
+  it("grounds a current price whose title marks it per foot", () => {
+    const observation = page([
+      node("card", undefined, "li"),
+      node(
+        "title",
+        "card",
+        "h2",
+        "Double Braided Nylon Rope - Per Foot"
+      ),
+      node("price", "card", "span", "$0.52")
+    ]);
+
+    const result = preannotateExtraction(item("length"), observation);
+
+    expect(result.outcome).toBe("comparable");
+    expect(result.extraction.nativeUnitPrice).toMatchObject({
+      centsPerUnit: 52,
+      unit: "ft",
+      dimension: "length",
+      evidenceNodeIds: ["price", "title"]
+    });
+    expect(result.evidenceValidation).toEqual({ valid: true, issues: [] });
+  });
+
   it("uses the campaign target dimension to avoid capacity-as-quantity labels", () => {
     const observation = page([
       node("card", undefined, "article"),
@@ -217,6 +261,33 @@ describe("extraction preannotation", () => {
 
     expect(result.extraction.title.value).toBe(
       "Fortifying Shampoo for Dry Hair"
+    );
+    expect(result.evidenceValidation.valid).toBe(true);
+  });
+
+  it("prefers a product link over promotional and descriptive image text", () => {
+    const observation = page([
+      node("card", undefined, "article"),
+      node(
+        "product-link",
+        "card",
+        "a",
+        "Pale Robins Egg Blue Cotton/Silk Lawn 55W"
+      ),
+      node(
+        "product-image",
+        "card",
+        "img",
+        "A close-up of dark olive green fabric arranged in a spiral."
+      ),
+      node("sale-image", "card", "img", "65% Off!"),
+      node("unit", "card", "span", "$14.00 per yard")
+    ]);
+
+    const result = preannotateExtraction(item("length"), observation);
+
+    expect(result.extraction.title.value).toBe(
+      "Pale Robins Egg Blue Cotton/Silk Lawn 55W"
     );
     expect(result.evidenceValidation.valid).toBe(true);
   });

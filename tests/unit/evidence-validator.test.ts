@@ -30,6 +30,66 @@ describe("model evidence validator", () => {
     expect(result.products[0]?.normalized?.centsPerUnit).toBeCloseTo(22.875);
   });
 
+  it("accepts a package price followed by a slash and numeric quantity", () => {
+    const text = '1" Nylon Webbing @ $93.50 / 100 YARD ROLL';
+    const observation = makeObservation([
+      node("card", undefined),
+      node("title", "card", text)
+    ]);
+    const output = extraction({
+      cardNodeId: "card",
+      title: { value: text, evidenceNodeIds: ["title"] },
+      currentPrice: {
+        cents: 9350,
+        currency: "USD",
+        evidenceNodeIds: ["title"]
+      },
+      packageQuantity: {
+        valuePerPackage: 100,
+        unit: "yd",
+        dimension: "length",
+        packCount: 1,
+        evidenceNodeIds: ["title"]
+      }
+    });
+
+    const result = validateModelExtraction(output, observation);
+
+    expect(result.valid).toBe(true);
+    expect(result.products[0]?.normalized?.centsPerUnit).toBeCloseTo(
+      9350 / 300
+    );
+  });
+
+  it("accepts a compact package quantity cited in the title", () => {
+    const observation = makeObservation([
+      node("card", undefined),
+      node("title", "card", "Nutrabio Multi Collagen 1lb"),
+      node("price", "card", "$34.99")
+    ]);
+    const output = extraction({
+      cardNodeId: "card",
+      title: {
+        value: "Nutrabio Multi Collagen 1lb",
+        evidenceNodeIds: ["title"]
+      },
+      currentPrice: {
+        cents: 3499,
+        currency: "USD",
+        evidenceNodeIds: ["price"]
+      },
+      packageQuantity: {
+        valuePerPackage: 1,
+        unit: "lb",
+        dimension: "mass",
+        packCount: 1,
+        evidenceNodeIds: ["title"]
+      }
+    });
+
+    expect(validateModelExtraction(output, observation).valid).toBe(true);
+  });
+
   it("multiplies a grounded reversed multipack without asking the model for the total", () => {
     const observation = makeObservation([
       node("card", undefined),

@@ -123,7 +123,7 @@ export function parseNativeUnitPrices(text: string): NativeUnitPrice[] {
     }
 
     prices.push({
-      centsPerUnit: dollarAmount ? amount * 100 : amount,
+      centsPerUnit: roundUnitPrice(dollarAmount ? amount * 100 : amount),
       unit: unit.unit,
       dimension: unit.dimension,
       sourceText: match[0],
@@ -132,6 +132,10 @@ export function parseNativeUnitPrices(text: string): NativeUnitPrice[] {
   }
 
   return prices;
+}
+
+function roundUnitPrice(value: number): number {
+  return Math.round(value * 1_000_000) / 1_000_000;
 }
 
 export function parseQuantities(text: string): Quantity[] {
@@ -147,7 +151,15 @@ export function parseQuantities(text: string): Quantity[] {
   ) => {
     const definition = parseUnit(rawUnit);
 
-    if (!definition || !Number.isFinite(value) || value <= 0 || value > 100_000) {
+    if (
+      !definition ||
+      !Number.isFinite(value) ||
+      value <= 0 ||
+      value > 100_000 ||
+      (definition.unit === "each" &&
+        value >= 10_000 &&
+        /^\d{5,}(?:ct\.?|count|each|ea)$/i.test(sourceText))
+    ) {
       return;
     }
 

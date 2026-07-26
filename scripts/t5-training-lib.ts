@@ -313,7 +313,7 @@ function extractionPrompt(observation: PageObservation, cardNodeId: string): str
     "Use an abstainReason when current price and comparable quantity are not visibly supported.",
     "Allowed abstainReason values: insufficient-evidence, conditional-price, price-range, unselected-variant, ambiguous-quantity, unsupported-unit, not-a-product.",
     "Allowed dimension values: mass, volume, count, area, length.",
-    "Allowed unit values: oz, lb, g, kg, fl_oz, ml, l, gal, qt, pt, cup, each, roll, sheet, load, pod, tablet, capsule, diaper, bag, sq_ft, sq_in, ft, in.",
+    "Allowed unit values: oz, lb, g, kg, fl_oz, ml, l, gal, qt, pt, cup, each, roll, sheet, load, pod, tablet, capsule, diaper, bag, sq_ft, sq_in, yd, ft, in.",
     "Only include nativeUnitPrice when the page visibly lists it; do not derive it from price and quantity.",
     "Do not calculate normalized unit price and do not invent node IDs.",
     `OBSERVATION: ${serializeObservation(observation)}`

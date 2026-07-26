@@ -7,7 +7,9 @@ import {
 } from "../src/core/pricing";
 import {
   convertQuantityToBase,
-  getUnitDefinition
+  getUnitDefinition,
+  getUnitRegexSource,
+  parseUnit
 } from "../src/core/units";
 import type { CanonicalUnit, Dimension } from "../src/core/types";
 import type {
@@ -59,6 +61,7 @@ interface NativeUnitCandidate extends TextCandidate {
   unit: CanonicalUnit;
   dimension: Dimension;
   sourceText: string;
+  evidenceNodeIds: string[];
 }
 
 export function preannotateExtraction(
@@ -78,7 +81,14 @@ export function preannotateExtraction(
     throw new Error(`${item.id}: reviewed card has no groundable title`);
   }
 
-  const nativeUnitPrice = selectNativeUnitPrice(textCandidates);
+  const prices = selectPriceCandidates(textCandidates);
+  const nativeUnitPrice =
+    selectNativeUnitPrice(textCandidates) ??
+    selectSplitNativeUnitPrice(
+      textCandidates,
+      prices,
+      item.targetDimension
+    );
   const preferredDimension =
     nativeUnitPrice?.dimension ?? item.targetDimension;
   const quantity = selectGroundedQuantity(
@@ -86,7 +96,6 @@ export function preannotateExtraction(
     preferredDimension,
     nativeUnitPrice?.unit
   );
-  const prices = selectPriceCandidates(textCandidates);
   const currentPrice = selectUnambiguousPrice(
     prices,
     nativeUnitPrice,
@@ -115,7 +124,7 @@ export function preannotateExtraction(
         centsPerUnit: nativeUnitPrice.centsPerUnit,
         unit: nativeUnitPrice.unit,
         dimension: nativeUnitPrice.dimension,
-        evidenceNodeIds: [nativeUnitPrice.nodeId]
+        evidenceNodeIds: nativeUnitPrice.evidenceNodeIds
       },
       ...(quantity
         ? {
@@ -237,9 +246,9 @@ function cleanTitle(value: string): string | undefined {
 
 function titleScore(node: ObservedNode, text: string): number {
   return (
-    Number(/^h[1-6]$/i.test(node.tag)) * 100 +
-    Number(node.tag === "img" && Boolean(node.attributes?.alt)) * 80 +
-    Number(node.tag === "a") * 50 +
+    Number(/^h[1-6]$/i.test(node.tag)) * 120 +
+    Number(node.tag === "a") * 90 +
+    Number(node.tag === "img" && Boolean(node.attributes?.alt)) * 40 +
     Number(/\b(?:oz|lb|ct|count|pack|roll|sheet|ml|liter|sq\s*ft)\b/i.test(text)) *
       20 +
     Math.min(20, text.split(/\s+/).length)
@@ -257,7 +266,8 @@ function selectNativeUnitPrice(
         centsPerUnit: value.centsPerUnit,
         unit: value.unit,
         dimension: value.dimension,
-        sourceText: value.sourceText
+        sourceText: value.sourceText,
+        evidenceNodeIds: [candidate.nodeId]
       }))
   );
   return values.sort(
@@ -266,6 +276,73 @@ function selectNativeUnitPrice(
       nativeUnitPreference(right) - nativeUnitPreference(left) ||
       left.nodeId.localeCompare(right.nodeId)
   )[0];
+}
+
+function selectSplitNativeUnitPrice(
+  candidates: TextCandidate[],
+  prices: PriceCandidate[],
+  targetDimension?: Dimension
+): NativeUnitCandidate | undefined {
+  const eligiblePrices = prices.filter((candidate) => candidate.score >= 0);
+  if (
+    (targetDimension !== "area" && targetDimension !== "length") ||
+    eligiblePrices.length !== 1
+  ) {
+    return undefined;
+  }
+
+  const units = candidates
+    .flatMap((candidate) =>
+      parsePerUnitLabels(candidate.text).map((unit) => ({
+        ...candidate,
+        ...unit
+      }))
+    )
+    .filter(
+      (candidate) =>
+        candidate.dimension === targetDimension &&
+        candidate.nodeId !== eligiblePrices[0]!.nodeId
+    )
+    .sort(
+      (left, right) =>
+        left.descendantCount - right.descendantCount ||
+        left.nodeId.localeCompare(right.nodeId)
+    );
+  const unit = units[0];
+  const price = eligiblePrices[0];
+  if (!unit || !price) return undefined;
+
+  return {
+    ...unit,
+    centsPerUnit: price.cents,
+    sourceText: `${price.text} ${unit.sourceText}`,
+    evidenceNodeIds: [price.nodeId, unit.nodeId]
+  };
+}
+
+function parsePerUnitLabels(
+  text: string
+): Array<{
+  unit: CanonicalUnit;
+  dimension: Dimension;
+  sourceText: string;
+}> {
+  const pattern = new RegExp(
+    `(?:/|\\bper\\s+)\\s*(${getUnitRegexSource()})(?=\\b|\\W)`,
+    "gi"
+  );
+  return [...text.matchAll(pattern)].flatMap((match) => {
+    const definition = match[1] ? parseUnit(match[1]) : undefined;
+    return definition
+      ? [
+          {
+            unit: definition.unit,
+            dimension: definition.dimension,
+            sourceText: match[0]
+          }
+        ]
+      : [];
+  });
 }
 
 function normalizeUnitPriceText(value: string): string {
