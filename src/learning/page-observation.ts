@@ -99,7 +99,8 @@ export function capturePageObservation(options: ObservationCaptureOptions): Page
     (element): element is HTMLElement => element instanceof HTMLElement
   );
 
-  for (const [index, element] of allElements.entries()) {
+  for (let index = 0; index < allElements.length; index += 1) {
+    const element = allElements[index]!;
     if (!element.hasAttribute("data-ata-benchmark-node")) {
       element.setAttribute("data-ata-benchmark-node", `n${index}`);
     }

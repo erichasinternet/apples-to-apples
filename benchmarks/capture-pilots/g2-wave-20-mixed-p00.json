@@ -1,0 +1,404 @@
+{
+  "version": 1,
+  "pilotId": "g2-wave-20-mixed-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-26T16:46:42.400Z",
+  "source": {
+    "siteIds": [
+      "bulk-priced-food-shoppe",
+      "md-supplies",
+      "tile-generation",
+      "mexgrocer",
+      "tiles-direct",
+      "foods-of-nations",
+      "artwalk-tile"
+    ],
+    "cohort": "training",
+    "strata": [
+      "independent-bulk-food-retail",
+      "independent-medical-supply-retail",
+      "online-tile-and-mosaic-retail",
+      "specialty-grocery-retail",
+      "online-tile-retail",
+      "international-grocery-retail",
+      "specialty-tile-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "f9c2adbb878cd5bc1115e42febdc29905266f3fc17e91d7b54a20b143c6e4e27"
+    ],
+    "collectorSha256": [
+      "6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T16-38-36-286Z",
+      "runManifestSha256": "abf5b85e9ce84202497cf1c5444d2d7045c943ef5b4d4dd2d5f6981c8ad5099c",
+      "pageTimeoutMs": 120000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-26T16-37-44-606Z",
+      "runManifestSha256": "8384f2fd28a968c73a15551071af8d6fd7f2545bff2d2d011dbf385006db3016",
+      "pageTimeoutMs": 120000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-26T16-42-24-912Z",
+      "runManifestSha256": "535e6744ef423dec872ad4041aa1c1f595288ff0f7610944fba348772fcc9944",
+      "pageTimeoutMs": 120000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-26T16-46-33-803Z",
+      "runManifestSha256": "0dba910780d58f3fe2f68763cd11a5335baed96cc2f5f55ab1582acf8b2781ab",
+      "pageTimeoutMs": 120000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "captures": [
+    {
+      "siteId": "bulk-priced-food-shoppe",
+      "pageId": "bulk-priced-food-shoppe--rice",
+      "capturedAt": "2026-07-26T16:42:02.274Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 288,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.008858913598250091,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ebbca763ca0b3f969c858bec2f6fccd185589d9b6e819d3b7596fe79fffdb901",
+      "annotationScreenshotSha256": "2ec43619bab160d335d8b43469481adae3e3e34519364d9c7b3d8474538c02a0",
+      "provenanceAggregateSha256": "3e7717f428cf97ff717210a317ce1b3eca5e22d361f209a49f7f8f943d5b0f05",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "bulk-priced-food-shoppe",
+      "pageId": "bulk-priced-food-shoppe--almonds",
+      "capturedAt": "2026-07-26T16:37:50.776Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 452,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0036,
+      "queryTokenCoverage": 1,
+      "observationSha256": "d9dce2034ad121611e30f1fba70c6a2c1eb45821b6c4571474cfadcd9b01d5f3",
+      "annotationScreenshotSha256": "6cc9d47e15bf485cd3c9c3482c6484862406715af5e3a9926e2975e5de3d90db",
+      "provenanceAggregateSha256": "89a17c571350c8eef8390e6b5cc4c9d45bf8195df63c55a624e6ab82314bb548",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "md-supplies",
+      "pageId": "md-supplies--syringes",
+      "capturedAt": "2026-07-26T16:38:47.545Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 660,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "cbbce4602c1d867d3d8a3e6ef2b3756787c7d658942e9bbf116d29142b5e89a2",
+      "annotationScreenshotSha256": "68be64e3a9b34215b41c2063f72d8377c518eb5ff91881d4b525aaddf67457f1",
+      "provenanceAggregateSha256": "9b0507edfd5a67ddd5d05674a215e3f6e46abdf060582c1006502eb0e84bf14a",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "md-supplies",
+      "pageId": "md-supplies--exam-gloves",
+      "capturedAt": "2026-07-26T16:42:38.627Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1612,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "7b6ed7306f19a96e24f293ef1af1c4bc62486ed97c8958a34fd457dd879c44e9",
+      "annotationScreenshotSha256": "dc350d7dd099977931a5cafe7637c43d07cf29eaee8b37b31f90e82cb2a68c67",
+      "provenanceAggregateSha256": "bf96a6fb5d7996eca71bff26a29130b9c3ba95cbe099b003c208e511a87cdeb6",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tile-generation",
+      "pageId": "tile-generation--porcelain-tile",
+      "capturedAt": "2026-07-26T16:38:59.079Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 9,
+      "candidateScreenshotsCaptured": 9,
+      "observationNodeCount": 97,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "af4a8fd6b0c4d21b7f7c005c5d52fc0c1c0ccbb9733d090cc86eb85c7fc200b5",
+      "annotationScreenshotSha256": "1e743b8ef0b8881e9304ad3d81b3a36a8ef298517ddd4dfd205e8aa07943ee9f",
+      "provenanceAggregateSha256": "33070fb3bb88c965ca75d07dcfe264d61e07e28a4eb6d0dc1da9f122a65f9813",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tile-generation",
+      "pageId": "tile-generation--mosaic-tile",
+      "capturedAt": "2026-07-26T16:42:54.118Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 10,
+      "candidateScreenshotsCaptured": 10,
+      "observationNodeCount": 101,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "eb4b5eb93082dc128e60b57eb55210082862a4416d77301d81cc454ab53ecc5e",
+      "annotationScreenshotSha256": "440fa4f55ac24c3889ad761d3973f0f1c6d3347bf12961ae06bb0528dfe9293c",
+      "provenanceAggregateSha256": "a912dec3367dc0ff4004eb5324a68af1ae9b82e1e43996e578fe349986131ca0",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mexgrocer",
+      "pageId": "mexgrocer--rice",
+      "capturedAt": "2026-07-26T16:39:09.029Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 400,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.01708895370032811,
+      "queryTokenCoverage": 1,
+      "observationSha256": "f2cdf4ca9cf16ae79d8e68959a0cf3d52377f3af2215e6e5adc21a9c7b82c6d7",
+      "annotationScreenshotSha256": "bdd9f13b64f8dfa66b8ce6801956c2dd6ea47f890d8ae4f7eb2b7868c9ca2a0d",
+      "provenanceAggregateSha256": "fee7bf64cdc19f8c570fe9226c32d7797adf028dafe6ecba89d86936c3786951",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mexgrocer",
+      "pageId": "mexgrocer--beans",
+      "capturedAt": "2026-07-26T16:43:03.769Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 457,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.00390625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "b7b5c2e86b71a9643ccffa9de8b13e86c505e4a6b4390d238dd72985917bda11",
+      "annotationScreenshotSha256": "14d666f768fe0bf868a7c16dc47498753c14a3434e2319d532542c0cb2211a29",
+      "provenanceAggregateSha256": "17ce1b30d55601115a496168858cb244118c440a284222d65bc5770bca2981dd",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tiles-direct",
+      "pageId": "tiles-direct--mosaic-tile",
+      "capturedAt": "2026-07-26T16:39:17.263Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 258,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.07340417654028436,
+      "queryTokenCoverage": 1,
+      "observationSha256": "b23153dc41fb5a7f5511ba3f15351bf10dae07b006c38f8ff28aa41369bbd4e7",
+      "annotationScreenshotSha256": "21d78cd423ee4a13799981a6249afaa540a70860577d27aa51f00bfc685cb0b7",
+      "provenanceAggregateSha256": "a5db20baec4487d8193fb5fbcc81b3fb4b0431ae42f479f40240947ecf00cdbc",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tiles-direct",
+      "pageId": "tiles-direct--porcelain-tile",
+      "capturedAt": "2026-07-26T16:43:11.919Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 1,
+      "observationNodeCount": 302,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "b7cc665b48f3964ec23b78bfbfc89bdf3b4885425e15462f58d1e4d21e6a436e",
+      "annotationScreenshotSha256": "37319d79e3aabc59c5de99334ee9168cd8e6051a7970e83034627cff5096961c",
+      "provenanceAggregateSha256": "3c384ccc21f127fdf1e9f60c882c8c888a24470f7fbeb8a1b3ab85200ee3ded0",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "foods-of-nations",
+      "pageId": "foods-of-nations--lentils",
+      "capturedAt": "2026-07-26T16:42:11.087Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 502,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "365fdc3e76920246619677c608605555816e5ec9ff9b236f348e7e8ad9a04b67",
+      "annotationScreenshotSha256": "88754b847f31fbd8df8c1180e0c25319eaf5ae4d94a48c93b33310e2c6f37818",
+      "provenanceAggregateSha256": "114ba8c8a78c7e26dd14182e3f326a4c79f74b73764e073ed5bc0be4460a67fd",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "foods-of-nations",
+      "pageId": "foods-of-nations--rice",
+      "capturedAt": "2026-07-26T16:46:17.099Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 507,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "15a2b01f800b10b94527544b7a9617f76ecffd5ad1e86d4c76fce4d00ff0f03f",
+      "annotationScreenshotSha256": "b37437843adfabb3ef1bc75958be1cf0751f2cc15e09a0c5019d1735a32ff117",
+      "provenanceAggregateSha256": "905c443c6686105d2af0d28cc3fc08a99da8f52bc8bdb61f6fad45a242139d67",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "artwalk-tile",
+      "pageId": "artwalk-tile--mosaic-tile",
+      "capturedAt": "2026-07-26T16:43:51.170Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2045,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "d2bf2becf56eb3f8bc05334e01ff4cee018a069d71f93e1387291f7d813ef27c",
+      "annotationScreenshotSha256": "5ab25360dd0fd9d97c6bfe9d3fae4e31b96b2750fbb0b8b3486065225a0e2a4c",
+      "provenanceAggregateSha256": "c8e84eb3920a6e2475e3f3671b93269f34efe7d6bbaeabf3a9a3ae8322e24e9b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "artwalk-tile",
+      "pageId": "artwalk-tile--porcelain-tile",
+      "capturedAt": "2026-07-26T16:46:42.400Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 961,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "d37febf3ab1d581cce7c9591ede81b8092f6af84d25811aa7622e7642cb88a8f",
+      "annotationScreenshotSha256": "faa5dfc2a7e01e0cb8b3f37456a11a911fb63827d234ccca77132266f2a0c1d1",
+      "provenanceAggregateSha256": "99cff758a772b53277c8b8bfcfdf95aa12cb0d8a2f9379c235f40a33a7221bc0",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

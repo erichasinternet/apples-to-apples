@@ -723,6 +723,46 @@ loads all 176 screenshots and 1,845 roots with zero console errors or writes.
 All roots and machine suggestions remain unreviewed and ineligible for silver
 training or benchmark gold.
 
+Wave 20 screens 20 additional unfamiliar candidates across all five unit
+dimensions. Bulk Priced Food Shoppe, MD Supplies, Tile Generation, MexGrocer,
+Tiles Direct, Foods of Nations, and Artwalk Tile qualify on two visually
+inspected listing pages in opposite viewport profiles. Every accepted page has
+full query-token coverage, at least eight frozen roots, complete screenshots,
+an untruncated observation, and the same final qualification-manifest and
+collector hashes. The 14 accepted pages add 159 roots spanning package mass,
+medical counts, square-foot and each pricing, starting prices, physical
+dimensions, samples, mixed result types, and query-adjacent hard negatives.
+
+The generic collector was hardened during live screening without introducing
+site-specific selectors. Page-evaluated scans no longer rely on mutable
+`Array.prototype.entries`, result-summary text can supply explicit query
+evidence, scored linked result candidates are considered when semantic
+containers are absent, SVG text access is guarded, and small accessible chat
+embeds remain subject to the existing obstruction limit. Regression tests
+cover the iterator mutation, result-summary evidence, and chat-widget cases.
+
+The paired blinded campaign in
+[`g2-pilot-p18.json`](../benchmarks/review-campaigns/g2-pilot-p18.json)
+contains 80 qualified training domains, 190 pages, and 2,004 frozen roots,
+reaching the planned training-domain coverage gate. Its deterministic
+preannotation contains 392 tentative comparables, 1,612 explicit abstentions,
+and four invalid suggestions. The semantic diagnostic in
+[`g2-campaign-preannotation-p17.json`](../benchmarks/reviews/g2-campaign-preannotation-p17.json)
+retains 1,980 suggestions, quarantines 24 semantic traps, and marks no
+suggestion as silver or gold. The compact audit in
+[`g2-selection-representation-p16.json`](../benchmarks/reviews/g2-selection-representation-p16.json)
+round-trips all 1,980 retained suggestions exactly with zero failures.
+
+The p18 campaign is deterministically partitioned into 19 matching reviewer
+assignments in
+[`g2-pilot-p18-review-batches.json`](../benchmarks/reviews/g2-pilot-p18-review-batches.json).
+The full campaign and every reviewer-A batch were validated in headed
+Playwright Chromium. The aggregate evidence in
+[`g2-pilot-p18-review-batch-validation.json`](../benchmarks/reviews/g2-pilot-p18-review-batch-validation.json)
+loads all 190 screenshots and 2,004 roots with zero console errors or writes.
+The domain gate is complete, but all roots and machine suggestions remain
+unreviewed and ineligible for silver training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

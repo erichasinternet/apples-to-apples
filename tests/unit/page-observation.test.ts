@@ -143,4 +143,38 @@ describe("page observation capture", () => {
     expect(root?.bounds).toMatchObject({ width: 600, height: 800 });
     expect(observation.nodes.some((node) => node.tag === "article")).toBe(true);
   });
+
+  it("does not trust page-mutated Array iterator methods", () => {
+    document.body.innerHTML = `
+      <main>
+        <article><span>$12.00 for 24 count</span></article>
+      </main>
+    `;
+    vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockReturnValue({
+      x: 0,
+      y: 0,
+      width: 100,
+      height: 20,
+      top: 0,
+      right: 100,
+      bottom: 20,
+      left: 0,
+      toJSON: () => ({})
+    });
+    const originalEntries = Array.prototype.entries;
+    Array.prototype.entries = function <T>(this: T[]): ArrayIterator<[number, T]> {
+      if (this[0] instanceof HTMLElement) {
+        throw new Error("page replaced element-array entries");
+      }
+      return originalEntries.call(this);
+    };
+
+    try {
+      const observation = capturePageObservation({ pageId: "mutated-array-prototype" });
+
+      expect(observation.nodes.some((node) => node.tag === "article")).toBe(true);
+    } finally {
+      Array.prototype.entries = originalEntries;
+    }
+  });
 });

@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "auditId": "g2-pilot-p18-review-batch-validation",
+  "createdAt": "2026-07-26T16:55:00Z",
+  "source": {
+    "batchManifest": "benchmarks/reviews/g2-pilot-p18-review-batches.json",
+    "batchManifestSha256": "edbb6a1196b0d0672ce8240e9406fd2ab8b806416b38724c8479b7250633bc76",
+    "validationReportSha256": [
+      "d78a8e9728e1714bcf29f3ff4d7fd346f2abda8ed5549c0855349be52d2a2e5f",
+      "fcafd530f317f6b83d0e9a09bd05e386c26a4d7dbb96fd7047ea7591f547fc10",
+      "2ea74d6d2b8e9867c3018204fa6e72cd01c25a27836e515cf1a43e096caf5b80",
+      "91131e58efe51c1348bded1a293307efae1dabb98eea2a879b501f52b122ce15",
+      "d8b3828980ce91079fc6a35e69a0255d676499af08fa7e78179ef4754f634681",
+      "bce7f3ec858f3cba4f7a74a2b4417733eaff981e8e0ef85343f6a3b2b6bd1ec9",
+      "d0ebf970dd9c7331371b657bce40472460ab9f83122435172bb50b40531a8c74",
+      "15f7c613934f5a854ff7be9f6cc9b75b2c468161da434eaf991b573e6fc6c4f7",
+      "56178eadc951d0c79ccd7b832cd343976a68c9b73bc5338302777bc23a6eb97d",
+      "d2608affb12021122e0a8a1dd453c233993070dce7fdca98f42d3df37e4da2b3",
+      "2c122d32faecad86131d9c3f3076e261e4a1face910480215159fd99a56f2214",
+      "0fcd6139a53bb570c6b9c56ef1341085653a7cbc78a00bf2778ae6ba3ff24c45",
+      "3a48978020c3ca3385f4b8ee689b533a4ed84c8e67cddc259e15a4d4ea1501e8",
+      "0b3b9ade096350e9d4742d2ca871d10bc2f511fcc96db995c3f2212f506674fb",
+      "a1b2b6257c09859f98faa71d6a2060ff85c065910f0b1a013d22b9a85c7013c9",
+      "e739641c656d4fea5514239a994b8387ec83b1c82b6f74e5d62215729bed66ae",
+      "2ef4639eb97051d6a997703078e6df0ca78a498c002b483fcb8935f0c24c61a3",
+      "f00f71bf1a9478772b78c66f266610ed730640efdf085601e166c9c4b6e7d6f6",
+      "52ddd2bcc365bcecd2cf944e3f2af64ca294aac0e04eaa5eb95716a9f95f5f5c"
+    ]
+  },
+  "browser": "headed Playwright Chromium",
+  "batches": 19,
+  "pagesLoaded": 190,
+  "screenshotsLoaded": 190,
+  "candidateCards": 2004,
+  "onlyFrozenCardRootOffered": true,
+  "directFrozenCardNavigation": "passed",
+  "nonCandidateAncestor": "rejected-404",
+  "incompleteCoverage": "rejected-422",
+  "consoleErrors": 0,
+  "reviewFilesWritten": 0,
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Workbench validation proves batch integrity and usability, not semantic label correctness."
+  }
+}

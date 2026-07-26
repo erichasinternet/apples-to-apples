@@ -438,6 +438,48 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-19-p00.json",
       "promotedAt": "2026-07-26T15:30:00.000Z"
+    },
+    {
+      "siteId": "bulk-priced-food-shoppe",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-20-p00.json",
+      "promotedAt": "2026-07-26T16:47:00.000Z"
+    },
+    {
+      "siteId": "md-supplies",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-20-p00.json",
+      "promotedAt": "2026-07-26T16:47:00.000Z"
+    },
+    {
+      "siteId": "tile-generation",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-20-p00.json",
+      "promotedAt": "2026-07-26T16:47:00.000Z"
+    },
+    {
+      "siteId": "mexgrocer",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-20-p00.json",
+      "promotedAt": "2026-07-26T16:47:00.000Z"
+    },
+    {
+      "siteId": "tiles-direct",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-20-p00.json",
+      "promotedAt": "2026-07-26T16:47:00.000Z"
+    },
+    {
+      "siteId": "foods-of-nations",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-20-p00.json",
+      "promotedAt": "2026-07-26T16:47:00.000Z"
+    },
+    {
+      "siteId": "artwalk-tile",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-20-p00.json",
+      "promotedAt": "2026-07-26T16:47:00.000Z"
     }
   ]
 }

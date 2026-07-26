@@ -340,10 +340,37 @@ async function capturePage(
       })
       .map((element) => element.value.trim())
       .filter(Boolean);
+    const resultSummaryText = [
+      ...document.querySelectorAll<HTMLElement>("body *")
+    ]
+      .filter((element) => {
+        const style = getComputedStyle(element);
+        const box = element.getBoundingClientRect();
+        const text = (element.innerText || element.textContent || "")
+          .replace(/\s+/g, " ")
+          .trim();
+        return (
+          style.display !== "none" &&
+          style.visibility !== "hidden" &&
+          box.width > 0 &&
+          box.height > 0 &&
+          text.length <= 240 &&
+          /\b(?:search\s+)?results?\s+for\b/i.test(text)
+        );
+      })
+      .map((element) =>
+        (element.innerText || element.textContent || "")
+          .replace(/\s+/g, " ")
+          .trim()
+      )
+      .filter(Boolean);
 
     return {
       headings: visibleText("h1, h2, [role='heading']"),
-      statusText: visibleText("[role='status'], [aria-live]"),
+      statusText: [
+        ...visibleText("[role='status'], [aria-live]"),
+        ...resultSummaryText
+      ],
       searchValues
     };
   });
@@ -464,7 +491,8 @@ async function capturePage(
     const allElements = [root, ...root.querySelectorAll("*")].filter(
       (element): element is HTMLElement => element instanceof HTMLElement
     );
-    for (const [index, element] of allElements.entries()) {
+    for (let index = 0; index < allElements.length; index += 1) {
+      const element = allElements[index]!;
       element.setAttribute("data-ata-benchmark-node", `n${index}`);
     }
 
@@ -486,7 +514,7 @@ async function capturePage(
       }
 
       let value = 4;
-      if (element.querySelector("a[href]")) value += 2;
+      if (element.matches("a[href]") || element.querySelector("a[href]")) value += 2;
       if (element.querySelector("img, picture")) value += 1;
       if (/\b(add|cart|buy|pickup|delivery|ship|subscribe)\b/i.test(text)) value += 1;
       if (/\b(oz|lb|count|ct|pack|roll|sheet|ml|liter|gallon|tablet|capsule|sq ft)\b/i.test(text)) value += 2;
@@ -501,6 +529,7 @@ async function capturePage(
       "[itemtype*='Product']",
       "article",
       "li",
+      "a[href]",
       "[data-testid*='product' i]",
       "[data-test*='product' i]",
       "[class*='product' i]"
@@ -590,7 +619,8 @@ async function capturePage(
     const selectedElements = new Set<HTMLElement>();
     const selectedHrefs = new Set<string>();
 
-    for (const [groupIndex, group] of groupEntries.entries()) {
+    for (let groupIndex = 0; groupIndex < groupEntries.length; groupIndex += 1) {
+      const group = groupEntries[groupIndex]!;
       for (const card of group.cards) {
         if (selected.length >= candidateLimit) break;
         if (selectedElements.has(card)) continue;

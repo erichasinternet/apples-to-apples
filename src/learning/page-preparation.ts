@@ -168,7 +168,7 @@ export function dismissVisibleObstruction(): boolean {
   }
 
   const nonContentEmbedTitle =
-    /^(?:(?:button to )?(?:launch|open) (?:a )?(?:chat|messaging)(?: window)?|(?:google )?recaptcha)$/;
+    /^(?:(?:button to )?(?:launch|open) (?:a )?(?:chat|messaging)(?: window)?|opens? a (?:widget|window) where you can chat\b.*|(?:google )?recaptcha)$/;
   for (const iframe of document.querySelectorAll<HTMLIFrameElement>("iframe[title]")) {
     const title = normalize(iframe.title);
     if (!nonContentEmbedTitle.test(title) || !isVisible(iframe)) continue;
@@ -181,7 +181,7 @@ export function dismissVisibleObstruction(): boolean {
 
     const box = fixedContainer.getBoundingClientRect();
     const coverage = (box.width * box.height) / Math.max(1, window.innerWidth * window.innerHeight);
-    if (coverage > 0.15) continue;
+    if (coverage > 0.2) continue;
 
     fixedContainer.dataset.ataSuppressedNonContentEmbed = "true";
     fixedContainer.style.setProperty("display", "none", "important");

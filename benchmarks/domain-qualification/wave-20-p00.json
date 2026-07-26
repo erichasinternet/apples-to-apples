@@ -1,0 +1,319 @@
+{
+  "version": 1,
+  "qualificationId": "wave-20-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-20.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "screeningPageTimeoutMs": 120000,
+    "qualificationPageTimeoutMs": 120000,
+    "screeningCardScreenshotBudgetMs": 15000,
+    "qualificationCardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "exactPageTargeting": true,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "screeningSamplingFinding": "Exploration used exact page IDs and bounded headed Chromium captures. Failed groups were narrowed to isolated retries; no failed target was inferred as passing.",
+    "manifestIntegrityFinding": "All candidate IDs and hostnames were checked against waves 1-19 before capture. The final manifest is frozen at sourceManifestSha256 f9c2adbb878cd5bc1115e42febdc29905266f3fc17e91d7b54a20b143c6e4e27, and all fourteen accepted provenance records share that hash and collector hash 6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T16-38-36-286Z",
+      "runManifestSha256": "abf5b85e9ce84202497cf1c5444d2d7045c943ef5b4d4dd2d5f6981c8ad5099c",
+      "purpose": "frozen-manifest qualification capture"
+    },
+    {
+      "runId": "2026-07-26T16-37-44-606Z",
+      "runManifestSha256": "8384f2fd28a968c73a15551071af8d6fd7f2545bff2d2d011dbf385006db3016",
+      "purpose": "frozen-manifest qualification capture"
+    },
+    {
+      "runId": "2026-07-26T16-42-24-912Z",
+      "runManifestSha256": "535e6744ef423dec872ad4041aa1c1f595288ff0f7610944fba348772fcc9944",
+      "purpose": "frozen-manifest qualification capture"
+    },
+    {
+      "runId": "2026-07-26T16-46-33-803Z",
+      "runManifestSha256": "0dba910780d58f3fe2f68763cd11a5335baed96cc2f5f55ab1582acf8b2781ab",
+      "purpose": "isolated frozen-manifest Artwalk Tile narrow retry"
+    }
+  ],
+  "results": {
+    "truly-good-foods": {
+      "status": "rejected",
+      "reason": "The screened result routes did not produce two reviewable pages within the fixed capture bounds."
+    },
+    "bulk-priced-food-shoppe": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "bulk-priced-food-shoppe--rice",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.008858913598250091,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "bulk-priced-food-shoppe--almonds",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0036,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent bulk-food grids pass in opposite viewports. Bag sizes, case counts, explicit prices, and accessory or category text provide mass extraction and abstention evidence."
+    },
+    "mexgrocer": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "mexgrocer--rice",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.01708895370032811,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "mexgrocer--beans",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.00390625,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two specialty-grocery grids pass in opposite viewports. Package mass, multipacks, cookware, and editorial results create both unit-pricing candidates and query-adjacent abstention cases."
+    },
+    "foods-of-nations": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "foods-of-nations--lentils",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "foods-of-nations--rice",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two international-grocery grids pass in opposite viewports. Package mass, starting prices, lazy images, and mixed grocery results provide extraction and abstention evidence."
+    },
+    "detailing-com": {
+      "status": "rejected",
+      "reason": "The narrow result page passed, but the distinct desktop page exceeded the fixed 120-second capture bound."
+    },
+    "autoality": {
+      "status": "rejected",
+      "reason": "The screened routes did not produce two coherent pages with the required query evidence and minimum root count."
+    },
+    "the-house-of-rags": {
+      "status": "rejected",
+      "reason": "The screened routes did not produce two coherent pages with the required query evidence and minimum root count."
+    },
+    "p-and-s-detail-products": {
+      "status": "rejected",
+      "reason": "The screened routes did not produce two qualifying pages within the fixed capture bounds."
+    },
+    "med-supplies-com": {
+      "status": "rejected",
+      "reason": "The screened routes failed to produce two reviewable result pages within the fixed capture bounds."
+    },
+    "wilburn-medical": {
+      "status": "rejected",
+      "reason": "The screened routes failed to produce two reviewable result pages within the fixed capture bounds."
+    },
+    "bttn": {
+      "status": "rejected",
+      "reason": "The screened routes failed to produce two reviewable result pages within the fixed capture bounds."
+    },
+    "md-supplies": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "md-supplies--syringes",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "md-supplies--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two medical-consumables grids pass in opposite viewports. Syringe and glove listings expose boxes, packs, gauge and volume dimensions, and starting prices useful for count extraction and physical-dimension abstention."
+    },
+    "spoonflower": {
+      "status": "rejected",
+      "reason": "The screened routes did not expose the required query evidence and minimum candidate roots."
+    },
+    "farmhouse-fabrics": {
+      "status": "rejected",
+      "reason": "The screened routes did not produce two qualifying result pages within the fixed capture bounds."
+    },
+    "a-thrifty-notion": {
+      "status": "rejected",
+      "reason": "The screened routes did not produce two qualifying result pages within the fixed capture bounds."
+    },
+    "sewing-supply-depot": {
+      "status": "rejected",
+      "reason": "The screened routes did not produce two qualifying result pages within the fixed capture bounds."
+    },
+    "tiles-direct": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "tiles-direct--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.07340417654028436,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "tiles-direct--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two tile grids pass in opposite viewports. Cards expose square-foot and per-unit prices alongside samples, sheets, and physical dimensions that require selective normalization."
+    },
+    "tile-generation": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "tile-generation--porcelain-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 9,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "tile-generation--mosaic-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 10,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two tile result lists pass in opposite viewports. Sheet prices, product dimensions, samples, and area-relevant titles create useful area-pricing positives and physical-dimension hard negatives."
+    },
+    "mosaic-tile-direct": {
+      "status": "rejected",
+      "reason": "Although generic collection completed after iterator hardening, the narrow page was dominated by static navigation and did not expose a visually reviewable product grid."
+    },
+    "artwalk-tile": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "artwalk-tile--mosaic-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "artwalk-tile--porcelain-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two tile grids pass in opposite viewports. Square-foot and each prices appear beside product dimensions, samples, sheets, and mixed tile formats, requiring unit-family normalization and abstention."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "bulk-priced-food-shoppe",
+      "md-supplies",
+      "tile-generation",
+      "mexgrocer",
+      "tiles-direct",
+      "foods-of-nations",
+      "artwalk-tile"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "bulk-priced-food-shoppe",
+        "cohort": "training"
+      },
+      {
+        "siteId": "md-supplies",
+        "cohort": "training"
+      },
+      {
+        "siteId": "tile-generation",
+        "cohort": "training"
+      },
+      {
+        "siteId": "mexgrocer",
+        "cohort": "training"
+      },
+      {
+        "siteId": "tiles-direct",
+        "cohort": "training"
+      },
+      {
+        "siteId": "foods-of-nations",
+        "cohort": "training"
+      },
+      {
+        "siteId": "artwalk-tile",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

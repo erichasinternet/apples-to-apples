@@ -141,6 +141,15 @@ describe("live benchmark corpus", () => {
         searchValues: ["vitamins"]
       })
     ).toBe(1);
+    expect(
+      calculateSearchResultQueryCoverage("brown rice", {
+        title: "Search",
+        pathname: "/search/",
+        headings: ["Search"],
+        statusText: ["Showing 1 to 18 of 57 Results for 'brown rice'"],
+        searchValues: []
+      })
+    ).toBe(1);
   });
 
   it("requires every meaningful query token outside the populated search box", () => {

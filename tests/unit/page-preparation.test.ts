@@ -304,6 +304,32 @@ describe("page preparation", () => {
     expect(launcher.style.getPropertyPriority("display")).toBe("important");
   });
 
+  it("suppresses a standard accessible chat widget within the obstruction gate", () => {
+    document.body.innerHTML = `
+      <iframe
+        id="launcher"
+        title="Opens a widget where you can chat to one of our agents"
+        style="position: fixed"
+      ></iframe>
+    `;
+    const launcher = document.querySelector<HTMLIFrameElement>("#launcher")!;
+    vi.spyOn(launcher, "getBoundingClientRect").mockReturnValue({
+      x: 123,
+      y: 622,
+      width: 260,
+      height: 215,
+      top: 622,
+      right: 383,
+      bottom: 837,
+      left: 123,
+      toJSON: () => ({})
+    });
+
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(launcher.dataset.ataSuppressedNonContentEmbed).toBe("true");
+    expect(launcher.style.getPropertyValue("display")).toBe("none");
+  });
+
   it("suppresses the small fixed container of a reCAPTCHA badge", () => {
     document.body.innerHTML = `
       <div id="badge" style="position: fixed">

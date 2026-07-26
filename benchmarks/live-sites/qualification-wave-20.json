@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Twentieth unassigned domain-qualification wave. Twenty domains absent from all prior qualification manifests contribute four candidates per target dimension across bulk-food and spice retail, automotive detailing, medical supply, fabric retail, and tile commerce. Public route probes verified result-page reachability before capture. No site-specific DOM selectors are supplied, and every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "truly-good-foods",
+      "label": "Truly Good Foods",
+      "hostname": "www.trulygoodfoods.com",
+      "stratum": "snack-and-bulk-food-retail",
+      "searchUrlTemplate": "https://www.trulygoodfoods.com/search/?q={query}",
+      "queries": [
+        {"id": "almonds", "query": "almonds", "dimension": "mass"},
+        {"id": "rice", "query": "rice", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "bulk-priced-food-shoppe",
+      "label": "Bulk Priced Food Shoppe",
+      "hostname": "bulkpricedfoodshoppe.com",
+      "stratum": "independent-bulk-food-retail",
+      "searchUrlTemplate": "https://bulkpricedfoodshoppe.com/search/?q={query}",
+      "queries": [
+        {"id": "almonds", "query": "almonds", "dimension": "mass"},
+        {"id": "rice", "query": "rice", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "mexgrocer",
+      "label": "MexGrocer",
+      "hostname": "www.mexgrocer.com",
+      "stratum": "specialty-grocery-retail",
+      "searchUrlTemplate": "https://www.mexgrocer.com/search?q={query}",
+      "queries": [
+        {"id": "rice", "query": "rice", "dimension": "mass"},
+        {"id": "beans", "query": "beans", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "foods-of-nations",
+      "label": "Foods of Nations",
+      "hostname": "foodsofnations.com",
+      "stratum": "international-grocery-retail",
+      "searchUrlTemplate": "https://foodsofnations.com/search?q={query}",
+      "queries": [
+        {"id": "rice", "query": "rice", "dimension": "mass"},
+        {"id": "lentils", "query": "lentils", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "detailing-com",
+      "label": "Detailing.com",
+      "hostname": "detailing.com",
+      "stratum": "professional-detailing-supply-retail",
+      "searchUrlTemplate": "https://detailing.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-shampoo", "query": "car shampoo", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "autoality",
+      "label": "Autoality",
+      "hostname": "www.autoality.com",
+      "stratum": "professional-detailing-retail",
+      "searchUrlTemplate": "https://www.autoality.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-shampoo", "query": "car shampoo", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "the-house-of-rags",
+      "label": "The House of Rags",
+      "hostname": "thehouseofrags.com",
+      "stratum": "independent-detailing-retail",
+      "searchUrlTemplate": "https://thehouseofrags.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-shampoo", "query": "car shampoo", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "p-and-s-detail-products",
+      "label": "P&S Detail Products",
+      "hostname": "pandsdetailproducts.com",
+      "stratum": "automotive-care-brand-retail",
+      "searchUrlTemplate": "https://pandsdetailproducts.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-shampoo", "query": "car shampoo", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "med-supplies-com",
+      "label": "MedSupplies.com",
+      "hostname": "www.medsupplies.com",
+      "stratum": "direct-to-consumer-medical-supply-retail",
+      "searchUrlTemplate": "https://www.medsupplies.com/index.php?main_page=advanced_search_result&search_in_description=1&keyword={query}",
+      "queries": [
+        {"id": "syringes", "query": "syringes", "dimension": "count"},
+        {"id": "alcohol-pads", "query": "alcohol pads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "wilburn-medical",
+      "label": "Wilburn Medical",
+      "hostname": "wilburnmedicalusa.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://wilburnmedicalusa.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "test-strips", "query": "test strips", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "bttn",
+      "label": "bttn",
+      "hostname": "bttnusa.com",
+      "stratum": "online-medical-supply-marketplace",
+      "searchUrlTemplate": "https://bttnusa.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "syringes", "query": "syringes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "md-supplies",
+      "label": "MD Supplies",
+      "hostname": "mdsupplies.com",
+      "stratum": "independent-medical-supply-retail",
+      "searchUrlTemplate": "https://mdsupplies.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "syringes", "query": "syringes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "spoonflower",
+      "label": "Spoonflower",
+      "hostname": "www.spoonflower.com",
+      "stratum": "print-on-demand-fabric-retail",
+      "searchUrlTemplate": "https://www.spoonflower.com/en/shop?on=fabric&q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "farmhouse-fabrics",
+      "label": "Farmhouse Fabrics",
+      "hostname": "farmhousefabrics.com",
+      "stratum": "specialty-sewing-fabric-retail",
+      "searchUrlTemplate": "https://farmhousefabrics.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "a-thrifty-notion",
+      "label": "A Thrifty Notion",
+      "hostname": "athriftynotion.com",
+      "stratum": "deadstock-and-secondhand-fabric-retail",
+      "searchUrlTemplate": "https://athriftynotion.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "sewing-supply-depot",
+      "label": "Sewing Supply Depot",
+      "hostname": "sewingsupplydepot.com",
+      "stratum": "sewing-fabric-and-notions-retail",
+      "searchUrlTemplate": "https://sewingsupplydepot.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "flannel-fabric", "query": "flannel fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "tiles-direct",
+      "label": "Tiles Direct",
+      "hostname": "www.tilesdirect.net",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.tilesdirect.net/search.php?search_query={query}",
+      "queries": [
+        {"id": "porcelain-tile", "query": "porcelain tile", "dimension": "area"},
+        {"id": "mosaic-tile", "query": "mosaic tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tile-generation",
+      "label": "Tile Generation",
+      "hostname": "www.tilegeneration.com",
+      "stratum": "online-tile-and-mosaic-retail",
+      "searchUrlTemplate": "https://www.tilegeneration.com/search?q={query}",
+      "queries": [
+        {"id": "porcelain-tile", "query": "porcelain tile", "dimension": "area"},
+        {"id": "mosaic-tile", "query": "mosaic tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "mosaic-tile-direct",
+      "label": "Mosaic Tile Direct",
+      "hostname": "mosaictiledirect.net",
+      "stratum": "mosaic-and-tile-retail",
+      "searchUrlTemplate": "https://mosaictiledirect.net/search?q={query}",
+      "queries": [
+        {"id": "porcelain-tile", "query": "porcelain tile", "dimension": "area"},
+        {"id": "mosaic-tile", "query": "mosaic tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "artwalk-tile",
+      "label": "Artwalk Tile",
+      "hostname": "www.artwalktile.com",
+      "stratum": "specialty-tile-retail",
+      "searchUrlTemplate": "https://www.artwalktile.com/search?q={query}",
+      "queries": [
+        {"id": "porcelain-tile", "query": "porcelain tile", "dimension": "area"},
+        {"id": "mosaic-tile", "query": "mosaic tile", "dimension": "area"}
+      ]
+    }
+  ]
+}
