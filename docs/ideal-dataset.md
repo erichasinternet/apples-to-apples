@@ -629,6 +629,38 @@ loads all 138 screenshots and 1,389 roots with zero console errors or writes.
 All roots and machine suggestions remain unreviewed and ineligible for silver
 training or benchmark gold.
 
+Wave 17 screens 20 additional unfamiliar domains across all five unit
+dimensions. Obsessed Garage, MedSurg Express, Mountainside Medical, Jax Wax,
+and TileOn qualify on two visually inspected listing pages in opposite viewport
+profiles. All ten accepted pages were recaptured against the same final
+qualification-manifest hash after exploratory Fabrics-Store routes were rejected,
+so no provisional provenance enters the eligible registry. The accepted
+evidence adds case and box counts, physical-dimension hard negatives,
+option-dependent automotive products, explicit square-foot prices, and
+abstention-heavy listings. Two Obsessed Garage narrow roots are partly covered
+by floating widgets and remain review-time abstention candidates rather than
+silently trusted labels.
+
+The paired blinded campaign in
+[`g2-pilot-p15.json`](../benchmarks/review-campaigns/g2-pilot-p15.json)
+contains 59 qualified training domains, 148 pages, and 1,509 frozen roots. Its
+deterministic preannotation contains 298 tentative comparables, 1,211 explicit
+abstentions, and four invalid suggestions. The semantic diagnostic in
+[`g2-campaign-preannotation-p14.json`](../benchmarks/reviews/g2-campaign-preannotation-p14.json)
+retains 1,490 suggestions, quarantines the same 19 known semantic traps, and
+marks no suggestion as silver or gold. The compact audit in
+[`g2-selection-representation-p13.json`](../benchmarks/reviews/g2-selection-representation-p13.json)
+round-trips all 1,490 retained suggestions exactly with zero failures.
+
+The p15 campaign is deterministically partitioned into 15 matching reviewer
+assignments in
+[`g2-pilot-p15-review-batches.json`](../benchmarks/reviews/g2-pilot-p15-review-batches.json).
+The headed validation recorded in
+[`g2-pilot-p15-review-batch-validation.json`](../benchmarks/reviews/g2-pilot-p15-review-batch-validation.json)
+loads all 148 screenshots and 1,509 roots with zero console errors or writes.
+All roots and machine suggestions remain unreviewed and ineligible for silver
+training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

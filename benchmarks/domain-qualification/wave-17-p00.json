@@ -1,0 +1,285 @@
+{
+  "version": 1,
+  "qualificationId": "wave-17-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-17.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "screeningPageTimeoutMs": 90000,
+    "qualificationPageTimeoutMs": 90000,
+    "screeningCardScreenshotBudgetMs": 12000,
+    "qualificationCardScreenshotBudgetMs": 12000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "exactPageTargeting": true,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "screeningSamplingFinding": "The initial headed screen used --per-site 1 --limit 20, producing one balanced target per domain. Opposite-viewport follow-ups used explicit page IDs.",
+    "manifestIntegrityFinding": "Exploratory Fabrics-Store query substitutions failed the query-evidence gate and were discarded. Every accepted page was recaptured under the final candidate manifest; all ten accepted provenance records share sourceManifestSha256 29c7a627cd0ae661731f09cad19c9a01061aca5b2b4bd61ee800b56962e0383d."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T12-31-19-617Z",
+      "runManifestSha256": "9b459a39a059478b465a1675481decab8f7cbb6589f6ba941f8b3bbc28582ee5",
+      "purpose": "balanced headed mixed-viewport screening across all twenty domains"
+    },
+    {
+      "runId": "2026-07-26T12-45-39-253Z",
+      "runManifestSha256": "a63dd0f657834aae4444320e2612fe47da07af11fd3cabaa516833644c883b6c",
+      "purpose": "initial explicit Obsessed Garage desktop follow-up; superseded by provenance-normalized recapture"
+    },
+    {
+      "runId": "2026-07-26T12-46-20-709Z",
+      "runManifestSha256": "3ec37c0c0dda08229b334c3b30a7c985c3a41d76f9e8896932e3da895f47a843",
+      "purpose": "initial explicit narrow follow-ups and rejection evidence"
+    },
+    {
+      "runId": "2026-07-26T12-51-28-126Z",
+      "runManifestSha256": "4a61705a73abd3b8de1bb26407d60884a493832916d56659ff2176a03069498c",
+      "purpose": "transient Jax Wax retry; superseded by provenance-normalized recapture"
+    },
+    {
+      "runId": "2026-07-26T12-51-59-033Z",
+      "runManifestSha256": "891fd318768978b8b085fe5a38d2874b77e5c820bb49bcc405b0dc8ef24dde59",
+      "purpose": "transient TileOn retry; superseded by provenance-normalized recapture"
+    },
+    {
+      "runId": "2026-07-26T12-53-25-775Z",
+      "runManifestSha256": "0530956f5106c0711f3dabdf9ceb450d362b0373afa87e9c525debabaf833639",
+      "purpose": "rejected exploratory Fabrics-Store canvas route"
+    },
+    {
+      "runId": "2026-07-26T12-54-38-958Z",
+      "runManifestSha256": "1c230ea90777652c2da2e5aa4f1ec3a7508132eda9652a395105ca577f463a12",
+      "purpose": "rejected exploratory Fabrics-Store handkerchief route"
+    },
+    {
+      "runId": "2026-07-26T12-56-24-312Z",
+      "runManifestSha256": "462a5e39f17e531c6091ec94f5f981caec4dbcedbb67074b1845e19eaf66be68",
+      "purpose": "final provenance-normalized desktop qualification"
+    },
+    {
+      "runId": "2026-07-26T12-59-38-534Z",
+      "runManifestSha256": "589d0a6e58824f5843909101879ff2b15736873fc69758b6a385329b82a9fbd3",
+      "purpose": "final explicit Obsessed Garage desktop qualification"
+    },
+    {
+      "runId": "2026-07-26T12-59-55-947Z",
+      "runManifestSha256": "176125ffdfd908f275d6ad907ac820c68c83f29829a618a91c6f7928d84b3df9",
+      "purpose": "final provenance-normalized narrow qualification"
+    },
+    {
+      "runId": "2026-07-26T13-03-07-437Z",
+      "runManifestSha256": "f5f094e9c7f17753336c66c3a6fb5523df01c54e5da37866501892d9b9f44846",
+      "purpose": "final explicit Obsessed Garage narrow qualification"
+    }
+  ],
+  "results": {
+    "obsessed-garage": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "obsessed-garage--wheel-cleaner",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.027160043747721473,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "obsessed-garage--car-shampoo",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.006208333333333333,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent premium-detailing grids pass in opposite viewports. Variant starting prices, kits, tools, and size-absent chemical listings provide realistic volume extraction and abstention cases. Two narrow roots are partly occluded by floating widgets but ten roots remain fully readable."
+    },
+    "medsurg-express": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "medsurg-express--underpads",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "medsurg-express--exam-gloves",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two unobstructed medical-supply listings pass in opposite viewports with explicit cases of 50, 100, 120, 150, 200, 500, and 1000 plus deliberate physical-dimension ambiguity."
+    },
+    "mountainside-medical": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "mountainside-medical--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "mountainside-medical--underpads",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two readable medical-equipment grids pass in opposite viewports. Product variants expose box and pair counts while dimensions, unrelated search-tail items, and missing counts provide hard negatives."
+    },
+    "jax-wax": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "jax-wax--interior-cleaner",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.005833333333333334,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "jax-wax--wheel-cleaner",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.025519504192489974,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent automotive-detailing grids pass in opposite viewports. Product ranges, bundles, brushes, applicators, and chemical names without explicit sell volume provide useful abstention-heavy evidence."
+    },
+    "tileon": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "tileon--floor-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.007721527777777778,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "tileon--porcelain-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.06516587677725119,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two readable tile grids pass in opposite viewports with repeated current and struck-through prices per square foot plus per-box prices and square-foot coverage."
+    },
+    "penzeys": {
+      "status": "rejected",
+      "reason": "The screened page had zero requested-query token coverage and an unresolved obstruction above the visual acceptance bound."
+    },
+    "coffee-bean-direct": {
+      "status": "rejected",
+      "reason": "The rendered result page exposed no requested-query evidence and no reviewable candidate roots."
+    },
+    "fresh-roasted-coffee": {
+      "status": "rejected",
+      "reason": "An unresolved obstruction covered the full screened viewport."
+    },
+    "bulk-supplements": {
+      "status": "rejected",
+      "reason": "The screened target exceeded the 90-second page bound."
+    },
+    "cougar-chemical": {
+      "status": "rejected",
+      "reason": "The rendered result page exposed no reviewable candidate roots."
+    },
+    "malco-automotive": {
+      "status": "rejected",
+      "reason": "The screened target exceeded the 90-second page bound."
+    },
+    "save-rite-medical": {
+      "status": "rejected",
+      "reason": "The page exposed twelve candidate roots but the required annotation screenshot was unavailable."
+    },
+    "frontline-usa": {
+      "status": "rejected",
+      "reason": "The screened page exposed only four candidate roots, below the frozen minimum of eight."
+    },
+    "the-linen-lab": {
+      "status": "rejected",
+      "reason": "The screened target exceeded the 90-second page bound."
+    },
+    "bh-linen": {
+      "status": "rejected",
+      "reason": "The screened page exposed only one candidate root, below the frozen minimum of eight."
+    },
+    "fabrics-store": {
+      "status": "rejected",
+      "reason": "The first page passed, but the distinct narrow qualification route and two exploratory alternatives failed the requested-query token evidence gate."
+    },
+    "house-fabric": {
+      "status": "rejected",
+      "reason": "The screened page exposed roots but had zero requested-query token coverage."
+    },
+    "portofino-flooring": {
+      "status": "rejected",
+      "reason": "The screened target exceeded the 90-second page bound."
+    },
+    "tiletopia": {
+      "status": "rejected",
+      "reason": "The desktop page passed, but an unresolved cookie obstruction covered 45 percent of the distinct narrow qualification viewport."
+    },
+    "budget-friendly-floors": {
+      "status": "rejected",
+      "reason": "The rendered result page exposed no reviewable candidate roots."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "obsessed-garage",
+      "medsurg-express",
+      "mountainside-medical",
+      "jax-wax",
+      "tileon"
+    ],
+    "assignedDomains": [
+      {"siteId": "obsessed-garage", "cohort": "training"},
+      {"siteId": "medsurg-express", "cohort": "training"},
+      {"siteId": "mountainside-medical", "cohort": "training"},
+      {"siteId": "jax-wax", "cohort": "training"},
+      {"siteId": "tileon", "cohort": "training"}
+    ],
+    "status": "keep"
+  }
+}

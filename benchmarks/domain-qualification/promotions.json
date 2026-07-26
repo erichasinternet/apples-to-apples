@@ -324,6 +324,36 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-16-p00.json",
       "promotedAt": "2026-07-26T12:20:00.000Z"
+    },
+    {
+      "siteId": "obsessed-garage",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "promotedAt": "2026-07-26T13:10:00.000Z"
+    },
+    {
+      "siteId": "medsurg-express",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "promotedAt": "2026-07-26T13:10:00.000Z"
+    },
+    {
+      "siteId": "mountainside-medical",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "promotedAt": "2026-07-26T13:10:00.000Z"
+    },
+    {
+      "siteId": "jax-wax",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "promotedAt": "2026-07-26T13:10:00.000Z"
+    },
+    {
+      "siteId": "tileon",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "promotedAt": "2026-07-26T13:10:00.000Z"
     }
   ]
 }

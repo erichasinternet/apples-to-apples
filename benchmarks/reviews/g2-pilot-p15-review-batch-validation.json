@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "auditId": "g2-pilot-p15-review-batch-validation",
+  "createdAt": "2026-07-26T13:19:33Z",
+  "source": {
+    "batchManifest": "benchmarks/reviews/g2-pilot-p15-review-batches.json",
+    "batchManifestSha256": "0b9772f87ee1a383b6473e094371e141802d8577b4fe179ffa98bac813016e82",
+    "validationReportSha256": [
+      "b34540aaa9cca9f0a4f455b61f08051b7c4a6a27b5f4a4d4341d20fa49a5cf54",
+      "08e52ebf9b59b9c1c32a0c39408907eb1fc0f1d535ac7a4caf3ed976709cadee",
+      "a1fb445a2581d0989c34eab01ab39ea47f7033687d14ba37119da406eb735230",
+      "8aab1ba49d1ea35daba91b87017f7bb0780890b3df59f3f3fa261c2a2bd0577d",
+      "aeb6900f7e5de5c36cfeda560053f78602725c73238404fb21723f7b6a7fae1d",
+      "791f05c447ce987555623b250c21a54176297a05b2d5b370c12af8ee981546f0",
+      "2168c50b75cbfe3881435b345e726673013af84d77088a3237d69be1cc2fae50",
+      "cb283c96f04e81e95321c44465102e21ec863a35c367f00db9e3cbbe55a798ed",
+      "c9602979b85030e91ef1dc69c2d8b4cdae4de9fb0b6bdfb61a65e1bbd0996772",
+      "5185ce5e9c1502f716d21e5dc7bb97e4ccfb7627ef839f4ae30527a2e6e6eece",
+      "180496b2131f21d7c601cd4f1dd3320e6f9b6efb2d00324021886200c95f8054",
+      "bc3dc185eea00b5f0a41d1cad31b658d3d82fc591baff5c5a6537a5f70312c8a",
+      "784e5faedfb1e19cd2a50637b520a7c5d38ed6794f47b1a6f4b043833b57f11e",
+      "c78f44f59b16b1f30115d78b0a9ff578808da91b945fa02834258930b95fbbb8",
+      "5f70a16df8e4cc382075134169bc02bd16f44cdc2488c8a8c94f18db466a1c58"
+    ]
+  },
+  "browser": "headed Playwright Chromium",
+  "batches": 15,
+  "pagesLoaded": 148,
+  "screenshotsLoaded": 148,
+  "candidateCards": 1509,
+  "onlyFrozenCardRootOffered": true,
+  "directFrozenCardNavigation": "passed",
+  "nonCandidateAncestor": "rejected-404",
+  "incompleteCoverage": "rejected-422",
+  "consoleErrors": 0,
+  "reviewFilesWritten": 0,
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Workbench validation proves batch integrity and usability, not semantic label correctness."
+  }
+}

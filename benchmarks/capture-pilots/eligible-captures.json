@@ -1656,6 +1656,126 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-16-mixed-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "mountainside-medical",
+      "cohort": "training",
+      "pageId": "mountainside-medical--exam-gloves",
+      "captureTimestamp": "2026-07-26T12:56:33.254Z",
+      "observationSha256": "9bcad119b0b6f510ce90af6594d2c13049672f4d4c58904ae8b7c6c81cd7d3d5",
+      "annotationScreenshotSha256": "2ba387c0905799664cee8af3373d9363d66bef1343ddba51750fe03db1ad4bd7",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-17-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medsurg-express",
+      "cohort": "training",
+      "pageId": "medsurg-express--underpads",
+      "captureTimestamp": "2026-07-26T12:56:42.199Z",
+      "observationSha256": "25d79d38f5a6de963408ef3b214e06fe3562b29e9d92bd94d4b6e2e3c5f25db1",
+      "annotationScreenshotSha256": "24e3f8a55c44f42593aee570fcaf8d1ea13b0172124cfe6712cb2f9a57f8ce36",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-17-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tileon",
+      "cohort": "training",
+      "pageId": "tileon--floor-tile",
+      "captureTimestamp": "2026-07-26T12:57:27.143Z",
+      "observationSha256": "945c79da2e410850ee03c57bff2dca9862e6ee9bb8cf438461d5bb711ad41c34",
+      "annotationScreenshotSha256": "035de1b8a3c94e2f534ae4b128df03354381903233b554bee5c0728c64644bdb",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-17-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "jax-wax",
+      "cohort": "training",
+      "pageId": "jax-wax--interior-cleaner",
+      "captureTimestamp": "2026-07-26T12:59:22.965Z",
+      "observationSha256": "4c8d0eed56c93609dffce7e01e0a0df6f1b1be3b7792c807dcf1909825e25a51",
+      "annotationScreenshotSha256": "0fbebd11f22409a908ecf248c0364ae2a6906535e0abc713f002fa8a3cc5acc6",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-17-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "obsessed-garage",
+      "cohort": "training",
+      "pageId": "obsessed-garage--car-shampoo",
+      "captureTimestamp": "2026-07-26T12:59:47.417Z",
+      "observationSha256": "b487f4e7f37e6eb7d5c22dc59478a661ed97fd6cd92ff5614ef7e095f54a7519",
+      "annotationScreenshotSha256": "19284e5e299097b0793a1b1d4b9e5796b58d659ef654ce295c46e3f3ffbfd698",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-17-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mountainside-medical",
+      "cohort": "training",
+      "pageId": "mountainside-medical--underpads",
+      "captureTimestamp": "2026-07-26T13:00:03.669Z",
+      "observationSha256": "5204feb7cfcdd9fa506bbafe2bab3d43d4c567bac503ce8842d3df517bc54487",
+      "annotationScreenshotSha256": "bb82870558cfc08a4fc911d011e426df3abda0e72caad3d35b804ece61e6dc1a",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-17-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medsurg-express",
+      "cohort": "training",
+      "pageId": "medsurg-express--exam-gloves",
+      "captureTimestamp": "2026-07-26T13:00:13.342Z",
+      "observationSha256": "1059e64da59f0af5b22b84735ebb714a790318df71a10fbdba3d473643f7e560",
+      "annotationScreenshotSha256": "ba6591ee5904b2c7578ab543d82ed09253075377e7e3d531e7bb2f91bcce5a3f",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-17-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tileon",
+      "cohort": "training",
+      "pageId": "tileon--porcelain-tile",
+      "captureTimestamp": "2026-07-26T13:00:57.140Z",
+      "observationSha256": "1facc5920b9c6899ebdbd20142354fe592788ab8ad96d725aedc7d2d2c702f1d",
+      "annotationScreenshotSha256": "e6147a4c2a0db64c49a7c7b2d3a4d260c807ea45d87ef38eee5c042658b6db70",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-17-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "jax-wax",
+      "cohort": "training",
+      "pageId": "jax-wax--wheel-cleaner",
+      "captureTimestamp": "2026-07-26T13:02:52.509Z",
+      "observationSha256": "ee2f4e61fbb0deec414d8d1aa0587f2269e98930a97fe5bc2cbe516afed55f88",
+      "annotationScreenshotSha256": "2c0629a8632bbdeac7c556cdcccf5ef8f06fa719a98031b221ad7e9a15af78dd",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-17-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "obsessed-garage",
+      "cohort": "training",
+      "pageId": "obsessed-garage--wheel-cleaner",
+      "captureTimestamp": "2026-07-26T13:03:16.334Z",
+      "observationSha256": "59f1b12c55d0365061622d9ae4d290f7d9c79b07f80088237fdccf9d4e17ac70",
+      "annotationScreenshotSha256": "297e41c24512b22556557d27dbe25bd37deb78aab09c75752f41de580df2307f",
+      "qualificationReport": "benchmarks/domain-qualification/wave-17-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-17-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

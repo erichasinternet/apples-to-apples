@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Seventeenth unassigned domain-qualification wave. Twenty genuinely new domains contribute four candidates per target dimension across specialty coffee and supplements, automotive detailing, medical supply, fabric retail, and flooring commerce. Route screening verifies only HTTPS reachability and hostname confinement; no site-specific DOM selectors are supplied. Every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "penzeys",
+      "label": "Penzeys Spices",
+      "hostname": "www.penzeys.com",
+      "stratum": "mail-order-spice-retail",
+      "searchUrlTemplate": "https://www.penzeys.com/search/?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "garlic-powder", "query": "garlic powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "coffee-bean-direct",
+      "label": "Coffee Bean Direct",
+      "hostname": "www.coffeebeandirect.com",
+      "stratum": "direct-to-consumer-coffee-roaster",
+      "searchUrlTemplate": "https://www.coffeebeandirect.com/search?q={query}",
+      "queries": [
+        {"id": "whole-bean-coffee", "query": "whole bean coffee", "dimension": "mass"},
+        {"id": "decaf-coffee", "query": "decaf coffee", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "fresh-roasted-coffee",
+      "label": "Fresh Roasted Coffee",
+      "hostname": "www.freshroastedcoffee.com",
+      "stratum": "specialty-coffee-ecommerce",
+      "searchUrlTemplate": "https://www.freshroastedcoffee.com/search?q={query}",
+      "queries": [
+        {"id": "whole-bean-coffee", "query": "whole bean coffee", "dimension": "mass"},
+        {"id": "organic-coffee", "query": "organic coffee", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "bulk-supplements",
+      "label": "BulkSupplements.com",
+      "hostname": "www.bulksupplements.com",
+      "stratum": "bulk-supplement-manufacturer",
+      "searchUrlTemplate": "https://www.bulksupplements.com/search?q={query}",
+      "queries": [
+        {"id": "protein-powder", "query": "protein powder", "dimension": "mass"},
+        {"id": "creatine-powder", "query": "creatine powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "obsessed-garage",
+      "label": "Obsessed Garage",
+      "hostname": "www.obsessedgarage.com",
+      "stratum": "premium-detailing-retail",
+      "searchUrlTemplate": "https://www.obsessedgarage.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-shampoo", "query": "car shampoo", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "cougar-chemical",
+      "label": "Cougar Chemical",
+      "hostname": "cougarchemical.com",
+      "stratum": "industrial-detailing-chemical-supply",
+      "searchUrlTemplate": "https://cougarchemical.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "malco-automotive",
+      "label": "Malco Automotive",
+      "hostname": "malcoautomotive.com",
+      "stratum": "professional-automotive-chemical-brand",
+      "searchUrlTemplate": "https://malcoautomotive.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "jax-wax",
+      "label": "Jax Wax",
+      "hostname": "www.jaxwax.com",
+      "stratum": "regional-detailing-product-brand",
+      "searchUrlTemplate": "https://www.jaxwax.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "interior-cleaner", "query": "interior cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "mountainside-medical",
+      "label": "Mountainside Medical Equipment",
+      "hostname": "www.mountainside-medical.com",
+      "stratum": "independent-medical-equipment-retail",
+      "searchUrlTemplate": "https://www.mountainside-medical.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "save-rite-medical",
+      "label": "Save Rite Medical",
+      "hostname": "www.saveritemedical.com",
+      "stratum": "discount-home-medical-supply",
+      "searchUrlTemplate": "https://www.saveritemedical.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "frontline-usa",
+      "label": "Frontline USA",
+      "hostname": "frontlineusa.com",
+      "stratum": "disposable-emergency-medical-supply",
+      "searchUrlTemplate": "https://frontlineusa.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "medsurg-express",
+      "label": "MedSurg Express",
+      "hostname": "medsurgexpress.com",
+      "stratum": "medical-surgical-supply-retail",
+      "searchUrlTemplate": "https://medsurgexpress.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "the-linen-lab",
+      "label": "The Linen Lab",
+      "hostname": "www.thelinenlab.com",
+      "stratum": "specialty-linen-fabric-retail",
+      "searchUrlTemplate": "https://www.thelinenlab.com/search?q={query}",
+      "queries": [
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"},
+        {"id": "linen-canvas", "query": "linen canvas", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "bh-linen",
+      "label": "BH Linen",
+      "hostname": "www.bhlinen.com",
+      "stratum": "wholesale-linen-fabric-supplier",
+      "searchUrlTemplate": "https://www.bhlinen.com/search?q={query}",
+      "queries": [
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"},
+        {"id": "linen-blend", "query": "linen blend", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "fabrics-store",
+      "label": "Fabrics-Store.com",
+      "hostname": "www.fabrics-store.com",
+      "stratum": "online-linen-fabric-specialist",
+      "searchUrlTemplate": "https://www.fabrics-store.com/search?query={query}",
+      "queries": [
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"},
+        {"id": "handkerchief", "query": "handkerchief", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "house-fabric",
+      "label": "House Fabric",
+      "hostname": "www.housefabric.com",
+      "stratum": "decorator-fabric-retail",
+      "searchUrlTemplate": "https://www.housefabric.com/Search?Keywords={query}",
+      "queries": [
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"},
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "portofino-flooring",
+      "label": "Portofino Flooring",
+      "hostname": "portofinoflooring.com",
+      "stratum": "direct-to-consumer-flooring-retail",
+      "searchUrlTemplate": "https://portofinoflooring.com/search?q={query}",
+      "queries": [
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"},
+        {"id": "oak-flooring", "query": "oak flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tiletopia",
+      "label": "Tiletopia",
+      "hostname": "tiletopia.com",
+      "stratum": "online-designer-tile-retail",
+      "searchUrlTemplate": "https://tiletopia.com/search?q={query}",
+      "queries": [
+        {"id": "porcelain-tile", "query": "porcelain tile", "dimension": "area"},
+        {"id": "floor-tile", "query": "floor tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "budget-friendly-floors",
+      "label": "Budget Friendly Floors",
+      "hostname": "budgetfriendlyfloors.com",
+      "stratum": "discount-flooring-ecommerce",
+      "searchUrlTemplate": "https://budgetfriendlyfloors.com/search?q={query}",
+      "queries": [
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"},
+        {"id": "laminate-flooring", "query": "laminate flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tileon",
+      "label": "TileOn",
+      "hostname": "tileon.com",
+      "stratum": "online-porcelain-tile-retail",
+      "searchUrlTemplate": "https://tileon.com/search?q={query}",
+      "queries": [
+        {"id": "porcelain-tile", "query": "porcelain tile", "dimension": "area"},
+        {"id": "floor-tile", "query": "floor tile", "dimension": "area"}
+      ]
+    }
+  ]
+}
