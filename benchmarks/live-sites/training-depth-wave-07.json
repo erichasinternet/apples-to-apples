@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Seventh bounded depth-expansion wave on twenty qualified training domains. Forty unseen listing queries contribute exactly eight targets per supported dimension without changing domain assignments or supplying site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "restaurant-supply",
+      "label": "RestaurantSupply.com",
+      "hostname": "www.restaurantsupply.com",
+      "stratum": "restaurant-supply",
+      "searchUrlTemplate": "https://www.restaurantsupply.com/search?q={query}",
+      "queries": [
+        {"id": "baking-soda", "query": "baking soda", "dimension": "mass"},
+        {"id": "corn-starch", "query": "corn starch", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "morebeer",
+      "label": "MoreBeer",
+      "hostname": "www.morebeer.com",
+      "stratum": "brewing-supply",
+      "searchUrlTemplate": "https://www.morebeer.com/search?search={query}",
+      "queries": [
+        {"id": "corn-sugar", "query": "corn sugar", "dimension": "mass"},
+        {"id": "yeast-nutrient", "query": "yeast nutrient", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "northern-brewer",
+      "label": "Northern Brewer",
+      "hostname": "www.northernbrewer.com",
+      "stratum": "brewing-supply",
+      "searchUrlTemplate": "https://www.northernbrewer.com/search?q={query}",
+      "queries": [
+        {"id": "priming-sugar", "query": "priming sugar", "dimension": "mass"},
+        {"id": "brewing-salts", "query": "brewing salts", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "starwest-botanicals",
+      "label": "Starwest Botanicals",
+      "hostname": "www.starwest-botanicals.com",
+      "stratum": "botanical-ingredients",
+      "searchUrlTemplate": "https://www.starwest-botanicals.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "hibiscus-flowers", "query": "hibiscus flowers", "dimension": "mass"},
+        {"id": "turmeric-root", "query": "turmeric root", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "kleen-rite",
+      "label": "Kleen-Rite",
+      "hostname": "www.kleen-ritecorp.com",
+      "stratum": "car-wash-supply",
+      "searchUrlTemplate": "https://www.kleen-ritecorp.com/search.aspx?searchterm={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "bug-remover", "query": "bug remover", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "ps-detail-products",
+      "label": "P&S Detail Products",
+      "hostname": "psdetailproducts.com",
+      "stratum": "professional-detailing-manufacturer",
+      "searchUrlTemplate": "https://psdetailproducts.com/search?q={query}",
+      "queries": [
+        {"id": "all-purpose-cleaner", "query": "all purpose cleaner", "dimension": "volume"},
+        {"id": "ceramic-coating", "query": "ceramic coating", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "obsessed-garage",
+      "label": "Obsessed Garage",
+      "hostname": "www.obsessedgarage.com",
+      "stratum": "premium-detailing-retail",
+      "searchUrlTemplate": "https://www.obsessedgarage.com/search?q={query}",
+      "queries": [
+        {"id": "ceramic-coating", "query": "ceramic coating", "dimension": "volume"},
+        {"id": "drying-aid", "query": "drying aid", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "the-cary-company",
+      "label": "The Cary Company",
+      "hostname": "www.thecarycompany.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.thecarycompany.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "plastic-jugs", "query": "plastic jugs", "dimension": "volume"},
+        {"id": "glass-bottles", "query": "glass bottles", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "rehabmart",
+      "label": "Rehabmart",
+      "hostname": "www.rehabmart.com",
+      "stratum": "rehabilitation-medical-equipment-retail",
+      "searchUrlTemplate": "https://www.rehabmart.com/search/?q={query}",
+      "queries": [
+        {"id": "disposable-briefs", "query": "disposable briefs", "dimension": "count"},
+        {"id": "bandages", "query": "bandages", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "jeffers-pet",
+      "label": "Jeffers Pet",
+      "hostname": "jefferspet.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://jefferspet.com/search?q={query}",
+      "queries": [
+        {"id": "puppy-pads", "query": "puppy pads", "dimension": "count"},
+        {"id": "pet-syringes", "query": "pet syringes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "ontime-supplies",
+      "label": "OnTimeSupplies",
+      "hostname": "www.ontimesupplies.com",
+      "stratum": "office-supply",
+      "searchUrlTemplate": "https://www.ontimesupplies.com/search?query={query}",
+      "queries": [
+        {"id": "notebooks", "query": "notebooks", "dimension": "count"},
+        {"id": "markers", "query": "markers", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "betty-mills",
+      "label": "Betty Mills",
+      "hostname": "www.bettymills.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.bettymills.com/search?q={query}",
+      "queries": [
+        {"id": "disposable-cups", "query": "disposable cups", "dimension": "count"},
+        {"id": "napkins", "query": "napkins", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "la-silk-fabric",
+      "label": "LA Silk Fabric",
+      "hostname": "lasilkfabric.com",
+      "stratum": "fashion-fabric-by-yard-retail",
+      "searchUrlTemplate": "https://lasilkfabric.com/search?q={query}",
+      "queries": [
+        {"id": "satin-fabric", "query": "satin fabric", "dimension": "length"},
+        {"id": "velvet-fabric", "query": "velvet fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "the-fabric-co",
+      "label": "The Fabric Co",
+      "hostname": "thefabricco.com",
+      "stratum": "decorator-fabric-by-yard-retail",
+      "searchUrlTemplate": "https://thefabricco.com/search?q={query}",
+      "queries": [
+        {"id": "upholstery-fabric", "query": "upholstery fabric", "dimension": "length"},
+        {"id": "velvet-fabric", "query": "velvet fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "spandex-house",
+      "label": "Spandex House",
+      "hostname": "www.spandexhouse.com",
+      "stratum": "stretch-fabric-specialist",
+      "searchUrlTemplate": "https://www.spandexhouse.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "nylon-fabric", "query": "nylon fabric", "dimension": "length"},
+        {"id": "velvet-fabric", "query": "velvet fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "zelouf-fabrics",
+      "label": "Zelouf Fabrics",
+      "hostname": "zelouffabrics.com",
+      "stratum": "wholesale-fashion-fabric",
+      "searchUrlTemplate": "https://zelouffabrics.com/search?q={query}",
+      "queries": [
+        {"id": "organza-fabric", "query": "organza fabric", "dimension": "length"},
+        {"id": "velvet-fabric", "query": "velvet fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "georgia-carpet",
+      "label": "Georgia Carpet",
+      "hostname": "www.georgiacarpet.com",
+      "stratum": "flooring-wholesale-retail",
+      "searchUrlTemplate": "https://www.georgiacarpet.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "engineered-hardwood", "query": "engineered hardwood", "dimension": "area"},
+        {"id": "area-rugs", "query": "area rugs", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "prosource-wholesale",
+      "label": "ProSource Wholesale",
+      "hostname": "www.prosourcewholesale.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.prosourcewholesale.com/products/list?query={query}",
+      "queries": [
+        {"id": "ceramic-tile", "query": "ceramic tile", "dimension": "area"},
+        {"id": "porcelain-tile", "query": "porcelain tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tile-and-mosaic-depot",
+      "label": "Tile and Mosaic Depot",
+      "hostname": "tileandmosaicdepot.com",
+      "stratum": "online-tile-and-mosaic-retail",
+      "searchUrlTemplate": "https://tileandmosaicdepot.com/search?q={query}",
+      "queries": [
+        {"id": "travertine-tile", "query": "travertine tile", "dimension": "area"},
+        {"id": "pebble-tile", "query": "pebble tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "tilezz",
+      "label": "Tilezz",
+      "hostname": "tilezz.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://tilezz.com/search?q={query}",
+      "queries": [
+        {"id": "floor-tile", "query": "floor tile", "dimension": "area"},
+        {"id": "wall-tile", "query": "wall tile", "dimension": "area"}
+      ]
+    }
+  ]
+}

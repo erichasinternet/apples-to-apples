@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-depth-wave-07-p00",
+  "capturedAt": "2026-07-26T21:25:16.423Z",
+  "sourceManifest": "benchmarks/live-sites/training-depth-wave-07.json",
+  "requestedCaptureAttempts": 40,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T21-04-09-828Z",
+      "pageIds": [
+        "zelouf-fabrics--organza-fabric",
+        "la-silk-fabric--satin-fabric",
+        "rehabmart--disposable-briefs",
+        "betty-mills--disposable-cups",
+        "jeffers-pet--puppy-pads",
+        "ontime-supplies--notebooks",
+        "kleen-rite--wheel-cleaner",
+        "spandex-house--nylon-fabric",
+        "ps-detail-products--all-purpose-cleaner",
+        "georgia-carpet--engineered-hardwood",
+        "obsessed-garage--ceramic-coating"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-26T21-04-36-393Z",
+      "pageIds": [
+        "kleen-rite--bug-remover",
+        "tile-and-mosaic-depot--pebble-tile",
+        "georgia-carpet--area-rugs",
+        "ps-detail-products--ceramic-coating",
+        "rehabmart--bandages",
+        "spandex-house--velvet-fabric",
+        "betty-mills--napkins"
+      ]
+    }
+  ],
+  "samplingFinding": "Twenty-five of forty unseen query pages on twenty previously qualified training domains passed the machine capture gates. One attempt was blocked and fourteen ended in navigation, launch, or capture errors. Seven successful captures were then rejected: one exposed only four frozen roots, two returned irrelevant or no-result product sets, and four had fixed promotions covering selected product evidence. The accepted set is eighteen of forty pages and 212 frozen roots, a 45% strict yield.",
+  "visualValidationFinding": "All twenty-five successful full-page annotation views were inspected. Eighteen pages and 212 frozen roots were accepted across mass, volume, count, length, and area. Accepted evidence includes native per-each, per-carton, per-pack, per-sheet, and per-square-foot prices; explicit ounce, gallon, count, case, pack, sheet, box, yard, and physical-dimension expressions; combined package-count and physical-quantity offers; prices and starting-price ranges without visible sale quantities; cup capacity, bandage dimensions, fabric width and stretch, rug and flooring dimensions, and product-image quantities that must not be mistaken for sale quantity; query-adjacent products and accessories; and pages where abstention is required because quantity, price binding, or sale basis is absent. Rejections were the four-root Northern Brewer page below the frozen eight-root minimum, two Restaurant Supply pages with false-match or no-result content, two Starwest Botanicals pages whose fixed discount bar covered first-row prices, the Obsessed Garage drying-aid page whose contact overlay covered a selected card, and the MoreBeer page whose promotion covered selected titles. No accepted page has selected textual price or quantity evidence covered by a fixed obstruction."
+}
