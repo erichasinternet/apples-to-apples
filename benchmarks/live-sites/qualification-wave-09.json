@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "description": "Ninth unassigned domain-qualification wave. Candidates prioritize unfamiliar storefronts for the underrepresented volume and area dimensions, with packaging count, fabric length, bulk mass, and mixed-result hard negatives. Every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "detail-king",
+      "label": "Detail King",
+      "hostname": "www.detailking.com",
+      "stratum": "auto-detailing",
+      "searchUrlTemplate": "https://www.detailking.com/search?q={query}",
+      "queries": [
+        {
+          "id": "car-wash-soap",
+          "query": "car wash soap",
+          "dimension": "volume"
+        },
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "lotioncrafter",
+      "label": "Lotioncrafter",
+      "hostname": "lotioncrafter.com",
+      "stratum": "cosmetic-ingredients",
+      "searchUrlTemplate": "https://lotioncrafter.com/search?q={query}",
+      "queries": [
+        {
+          "id": "face-serum",
+          "query": "face serum",
+          "dimension": "volume"
+        },
+        {
+          "id": "hyaluronic-acid",
+          "query": "hyaluronic acid",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "making-cosmetics",
+      "label": "MakingCosmetics",
+      "hostname": "www.makingcosmetics.com",
+      "stratum": "cosmetic-ingredients",
+      "searchUrlTemplate": "https://www.makingcosmetics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "carrier-oil",
+          "query": "carrier oil",
+          "dimension": "volume"
+        },
+        {
+          "id": "clay-powder",
+          "query": "clay powder",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "bulk-natural-oils",
+      "label": "Jedwards International",
+      "hostname": "bulknaturaloils.com",
+      "stratum": "bulk-oils",
+      "searchUrlTemplate": "https://bulknaturaloils.com/index.php?route=product/search&search={query}",
+      "queries": [
+        {
+          "id": "carrier-oil",
+          "query": "carrier oil",
+          "dimension": "volume"
+        },
+        {
+          "id": "cocoa-butter",
+          "query": "cocoa butter",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "uno-clean",
+      "label": "UnoClean",
+      "hostname": "www.unoclean.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.unoclean.com/search.aspx?keyword={query}",
+      "queries": [
+        {
+          "id": "floor-cleaner",
+          "query": "floor cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "hand-soap",
+          "query": "hand soap",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "kleen-rite",
+      "label": "Kleen-Rite",
+      "hostname": "www.kleen-ritecorp.com",
+      "stratum": "car-wash-supply",
+      "searchUrlTemplate": "https://www.kleen-ritecorp.com/search.aspx?searchterm={query}",
+      "queries": [
+        {
+          "id": "car-wash-soap",
+          "query": "car wash soap",
+          "dimension": "volume"
+        },
+        {
+          "id": "tire-cleaner",
+          "query": "tire cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "new-directions-aromatics",
+      "label": "New Directions Aromatics",
+      "hostname": "www.newdirectionsaromatics.com",
+      "stratum": "aromatics",
+      "searchUrlTemplate": "https://www.newdirectionsaromatics.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "essential-oil",
+          "query": "essential oil",
+          "dimension": "volume"
+        },
+        {
+          "id": "carrier-oil",
+          "query": "carrier oil",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "bramble-berry",
+      "label": "Bramble Berry",
+      "hostname": "www.brambleberry.com",
+      "stratum": "soapmaking",
+      "searchUrlTemplate": "https://www.brambleberry.com/search?q={query}",
+      "queries": [
+        {
+          "id": "fragrance-oil",
+          "query": "fragrance oil",
+          "dimension": "volume"
+        },
+        {
+          "id": "soap-base",
+          "query": "soap base",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "floorzz",
+      "label": "Floorzz",
+      "hostname": "floorzz.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://floorzz.com/search?q={query}",
+      "queries": [
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "laminate-flooring",
+          "query": "laminate flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "home-outlet",
+      "label": "Home Outlet",
+      "hostname": "homeoutlet.com",
+      "stratum": "home-improvement",
+      "searchUrlTemplate": "https://homeoutlet.com/search?q={query}",
+      "queries": [
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "prosource-wholesale",
+      "label": "ProSource Wholesale",
+      "hostname": "www.prosourcewholesale.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.prosourcewholesale.com/products/list?query={query}",
+      "queries": [
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "tile-outlets",
+      "label": "Tile Outlets of America",
+      "hostname": "www.tileoutlets.com",
+      "stratum": "tile",
+      "searchUrlTemplate": "https://www.tileoutlets.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "flooring-market",
+      "label": "Flooring Market",
+      "hostname": "flooringmarket.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://flooringmarket.com/search?q={query}",
+      "queries": [
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "hardwood-flooring",
+          "query": "hardwood flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "we-ship-floors",
+      "label": "WeShipFloors",
+      "hostname": "weshipfloors.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://weshipfloors.com/search?q={query}",
+      "queries": [
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "laminate-flooring",
+          "query": "laminate flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "tile-and-mosaics",
+      "label": "Tile and Mosaics",
+      "hostname": "www.tileandmosaics.com",
+      "stratum": "tile",
+      "searchUrlTemplate": "https://www.tileandmosaics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "sks-bottle",
+      "label": "SKS Bottle",
+      "hostname": "www.sks-bottle.com",
+      "stratum": "packaging",
+      "searchUrlTemplate": "https://www.sks-bottle.com/search?q={query}",
+      "queries": [
+        {
+          "id": "glass-bottle",
+          "query": "glass bottle",
+          "dimension": "count"
+        },
+        {
+          "id": "plastic-jar",
+          "query": "plastic jar",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "container-and-packaging",
+      "label": "Container and Packaging",
+      "hostname": "www.containerandpackaging.com",
+      "stratum": "packaging",
+      "searchUrlTemplate": "https://www.containerandpackaging.com/search?q={query}",
+      "queries": [
+        {
+          "id": "glass-bottle",
+          "query": "glass bottle",
+          "dimension": "count"
+        },
+        {
+          "id": "plastic-jar",
+          "query": "plastic jar",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "fabric-warehouse",
+      "label": "Fabric Warehouse",
+      "hostname": "fabricwarehouse.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://fabricwarehouse.com/search.php?search_query_adv={query}",
+      "queries": [
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "outdoor-fabric",
+          "query": "outdoor fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "sf-herb",
+      "label": "San Francisco Herb Company",
+      "hostname": "www.sfherb.com",
+      "stratum": "bulk-herbs",
+      "searchUrlTemplate": "https://www.sfherb.com/search.asp?keyword={query}",
+      "queries": [
+        {
+          "id": "chamomile",
+          "query": "chamomile",
+          "dimension": "mass"
+        },
+        {
+          "id": "peppercorn",
+          "query": "peppercorn",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "flooring-stores",
+      "label": "FlooringStores",
+      "hostname": "www.flooringstores.com",
+      "stratum": "flooring-marketplace",
+      "searchUrlTemplate": "https://www.flooringstores.com/search?q={query}",
+      "queries": [
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "dimension": "area"
+        }
+      ]
+    }
+  ]
+}

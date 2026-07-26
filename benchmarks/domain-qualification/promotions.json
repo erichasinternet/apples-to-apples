@@ -168,6 +168,24 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-08-p02.json",
       "promotedAt": "2026-07-26T07:18:00.000Z"
+    },
+    {
+      "siteId": "detail-king",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-09-p00.json",
+      "promotedAt": "2026-07-26T08:00:00.000Z"
+    },
+    {
+      "siteId": "kleen-rite",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-09-p00.json",
+      "promotedAt": "2026-07-26T08:00:00.000Z"
+    },
+    {
+      "siteId": "prosource-wholesale",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-09-p00.json",
+      "promotedAt": "2026-07-26T08:00:00.000Z"
     }
   ]
 }

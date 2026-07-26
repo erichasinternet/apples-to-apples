@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "auditId": "g2-campaign-preannotation-p05",
+  "createdAt": "2026-07-26T08:08:00Z",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p06-reviewer-a-campaign.json",
+    "campaignSha256": "1d7449ac5e09eccfb39051a28c293ce42a0071d6958d0823b3342bc99b0e3841",
+    "queueSha256": "5b04a70cc79277f94eb96c29e182cca3af05695c2621de3d52e41ff4610f2a33",
+    "preannotationSha256": "8b96fa2fbcac45d4b28343ecc7babeaf6c36b8c2e3bc54b8d58606c7e979e739",
+    "auditSha256": "46ff00d7385a4b99a5a1788d46dcd487837e490bf748d785f30ad694ad94c1cb",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "campaign": {
+    "pages": 81,
+    "cards": 762,
+    "targetDimensions": {
+      "area": 76,
+      "count": 196,
+      "length": 182,
+      "mass": 228,
+      "volume": 80
+    },
+    "candidateEvidence": {
+      "withTitle": 755,
+      "withCurrentPrice": 722,
+      "withNativeUnitPriceInOneNode": 39,
+      "withPackageQuantity": 246
+    }
+  },
+  "dimensionConditionedPreannotation": {
+    "tentativeComparable": 191,
+    "abstained": 571,
+    "evidenceInvalid": 4,
+    "methods": {
+      "explicit-abstention": 571,
+      "native-unit-price": 85,
+      "price-and-package": 106
+    }
+  },
+  "semanticAudit": {
+    "machineAuditPassingComparableSuggestions": 174,
+    "machineAuditPassingAbstentionSuggestions": 571,
+    "quarantinedComparableSuggestions": 17,
+    "quarantinedAbstentionSuggestions": 0,
+    "quarantineReasons": {
+      "ambiguous-decimal-quantity": 1,
+      "equipment-capacity-as-quantity": 10,
+      "invalid-evidence": 4,
+      "physical-dimension-as-quantity": 3
+    }
+  },
+  "newDomainOutcomes": {
+    "detail-king": {
+      "cards": 16,
+      "tentativeComparable": 0,
+      "abstained": 16,
+      "machineAuditPassing": 16
+    },
+    "kleen-rite": {
+      "cards": 16,
+      "tentativeComparable": 0,
+      "abstained": 16,
+      "machineAuditPassing": 16
+    },
+    "prosource-wholesale": {
+      "cards": 20,
+      "tentativeComparable": 0,
+      "abstained": 20,
+      "machineAuditPassing": 20
+    }
+  },
+  "representationChanges": [
+    "No extraction heuristic changed for this append-only campaign expansion.",
+    "The generic page-preparation layer now ignores offscreen close controls and transparent pointerless shells when qualifying live evidence.",
+    "Added 52 roots from unfamiliar automotive-chemical and flooring storefronts, including hidden-size variants and price-absent hard negatives."
+  ],
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "The source cards and all preannotations remain unreviewed. Machine checks can quarantine contradictions but cannot establish semantic correctness; two independent reviews and adjudication remain required."
+  },
+  "decision": "retain-as-blinded-review-aid-only"
+}

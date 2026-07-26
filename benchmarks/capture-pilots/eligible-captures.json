@@ -900,6 +900,78 @@
       "pilotReport": "benchmarks/capture-pilots/g2-wave-08-mixed-p02.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "detail-king",
+      "cohort": "training",
+      "pageId": "detail-king--car-wash-soap",
+      "captureTimestamp": "2026-07-26T07:52:12.166Z",
+      "observationSha256": "9bc301c9d946c1a1cf804b9876e17c322902ccc1d50abd24c6f609a7afecfed6",
+      "annotationScreenshotSha256": "559b2ee7c76d9aa112f6920600ac51c07e556b76295807edbbe1d7457b805ddb",
+      "qualificationReport": "benchmarks/domain-qualification/wave-09-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-09-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "detail-king",
+      "cohort": "training",
+      "pageId": "detail-king--wheel-cleaner",
+      "captureTimestamp": "2026-07-26T07:55:12.267Z",
+      "observationSha256": "b3f61d2cce22f01343e38482282ee82e0db39360d1e5cd5b460593c22b04c7b0",
+      "annotationScreenshotSha256": "ce90622e2da389f154fcbbb720b8b02cc8980b5fe8f038d410b7a8f4e66201b7",
+      "qualificationReport": "benchmarks/domain-qualification/wave-09-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-09-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "kleen-rite",
+      "cohort": "training",
+      "pageId": "kleen-rite--tire-cleaner",
+      "captureTimestamp": "2026-07-26T07:56:18.178Z",
+      "observationSha256": "3c3a1d1d2ae9c53cebc94802567a6544457ab3b67b6cedf9e6ca472c0ae1d7ff",
+      "annotationScreenshotSha256": "bd0e68d37e730c0bd2df1148d16cd43b303abc8df43cc11fb62b3603e93204da",
+      "qualificationReport": "benchmarks/domain-qualification/wave-09-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-09-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "kleen-rite",
+      "cohort": "training",
+      "pageId": "kleen-rite--car-wash-soap",
+      "captureTimestamp": "2026-07-26T07:56:50.123Z",
+      "observationSha256": "a25064724346070e3ffb2f4fdfeeab9a5a0b96f651a79c831f24f57cc2365fea",
+      "annotationScreenshotSha256": "cf8b530f90ce446f054b66e8148627cd4efd6ba46caa3adabb0fa78d67b91d2a",
+      "qualificationReport": "benchmarks/domain-qualification/wave-09-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-09-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "prosource-wholesale",
+      "cohort": "training",
+      "pageId": "prosource-wholesale--vinyl-flooring",
+      "captureTimestamp": "2026-07-26T07:29:01.102Z",
+      "observationSha256": "897943428291cafe98c9a9ce4fbe00e73bf9a771dc3a08512ed5895f78a1e55e",
+      "annotationScreenshotSha256": "bd0ecc8b946a79d919fe39f45a7a5a866e16ccfc3fa331b9bad22429ffa2c888",
+      "qualificationReport": "benchmarks/domain-qualification/wave-09-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-09-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "prosource-wholesale",
+      "cohort": "training",
+      "pageId": "prosource-wholesale--carpet-tile",
+      "captureTimestamp": "2026-07-26T07:54:42.122Z",
+      "observationSha256": "2e4bf4e3bddbc47fc0e761bd53d44796f126d99e0d36a934d682d60a46f7cb5f",
+      "annotationScreenshotSha256": "718d075d5c2c0a88544cbbb68c7dd03b5a2a8179a2b522158c0b8dd75d7ccde0",
+      "qualificationReport": "benchmarks/domain-qualification/wave-09-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-09-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

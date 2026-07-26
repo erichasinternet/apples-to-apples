@@ -378,6 +378,30 @@ quarantined. The compact representation audit in
 round-trips all 693 retained suggestions exactly across 75 pages and 28 sites.
 All 710 roots remain unreviewed and ineligible for training or benchmark gold.
 
+Wave 09 qualifies Detail King, Kleen-Rite, and ProSource Wholesale and records
+explicit failures for the other 17 candidates. The three unfamiliar domains add
+two volume storefronts and one area storefront, including hidden-size variants,
+price-absent products, and mixed product negatives. The frozen campaign in
+[`g2-pilot-p06.json`](../benchmarks/review-campaigns/g2-pilot-p06.json)
+contains 31 qualified training domains, 81 pages, and 762 roots. Its headed
+workbench sweep loaded all 81 screenshots and all 762 frozen roots, rejected
+non-candidate and incomplete submissions, emitted no console errors, and wrote
+no review files.
+
+Live qualification exposed two generic page-preparation defects. Offscreen
+fixed drawers could be toggled by close-labelled controls, and transparent
+pointerless shells could inherit visible paint from small descendants and be
+misclassified as full-screen obstructions. The collector now requires
+viewport-intersecting dismissal controls inside a qualifying container and
+measures an obstruction shell's own paint. Regression tests cover both cases.
+The diagnostic in
+[`g2-campaign-preannotation-p05.json`](../benchmarks/reviews/g2-campaign-preannotation-p05.json)
+abstains on all 52 new roots. The compact representation audit in
+[`g2-selection-representation-p04.json`](../benchmarks/reviews/g2-selection-representation-p04.json)
+round-trips all 745 retained suggestions exactly with zero failures across 81
+pages and 31 sites. These results remain diagnostic only: all 762 roots are
+unreviewed and ineligible for training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

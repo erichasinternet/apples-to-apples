@@ -1,0 +1,284 @@
+{
+  "version": 1,
+  "qualificationId": "wave-09-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-09.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "screeningPageTimeoutMs": 60000,
+    "qualificationPageTimeoutMs": 120000,
+    "screeningCardScreenshotBudgetMs": 10000,
+    "qualificationCardScreenshotBudgetMs": 12000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "genericConsentActionHandling": true,
+    "offscreenActionExclusion": true,
+    "pointerlessTransparentShellExclusion": true,
+    "persistentCookieConsentHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "queryParametersCountAsQueryEvidence": false,
+    "queryEvidenceScope": "title, pathname, visible headings, and visible status text",
+    "minimumQueryTokenCoverage": 1,
+    "populatedSearchControlsCountAsQueryEvidence": false,
+    "exactPageTargeting": true
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T07-28-39-266Z",
+      "runManifestSha256": "783962d9af39f4c4bc84c4f559091fd6b4350476385d993ea52cbd3c524e0d12",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 10000,
+      "purpose": "one-page headed screening across all 20 wave-09 domains"
+    },
+    {
+      "runId": "2026-07-26T07-44-21-993Z",
+      "runManifestSha256": "41c9a16c913130a3687ee749b5032f7c42011070aa7ca22804af81faea81a032",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 15000,
+      "purpose": "headed obstruction regression screen across three volume candidates"
+    },
+    {
+      "runId": "2026-07-26T07-47-51-864Z",
+      "runManifestSha256": "ac13b5e4420471aebab50b71aa772ee1659b1efc8ad6174561133df5265808f7",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 15000,
+      "purpose": "headed offscreen drawer regression screen"
+    },
+    {
+      "runId": "2026-07-26T07-52-02-850Z",
+      "runManifestSha256": "c11b4febcd2888b8cfe81f62b5302e7bc497e9b41c2e8705b048b8f08b9efc09",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "corrected exact desktop capture for Detail King"
+    },
+    {
+      "runId": "2026-07-26T07-54-21-441Z",
+      "runManifestSha256": "88b9fe511a434828b04fed2e7a5fd3151a880d3ad755177e5ec6a19552d1ff38",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "exact narrow second-page qualification for Detail King, ProSource, and WeShipFloors"
+    },
+    {
+      "runId": "2026-07-26T07-56-01-658Z",
+      "runManifestSha256": "c7b4cbb10c25e24f099312204821d62ee03f8214f5aed35d2dec4082e5376f3c",
+      "pageTimeoutMs": 120000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "HTTP/2-disabled exact desktop qualification for Kleen-Rite"
+    },
+    {
+      "runId": "2026-07-26T07-56-33-609Z",
+      "runManifestSha256": "2bb0daff7e00663d082588ef55ce2c1c2fd591d0047ae34a316e7e51758f8424",
+      "pageTimeoutMs": 120000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "HTTP/2-disabled exact narrow qualification for Kleen-Rite"
+    }
+  ],
+  "results": {
+    "detail-king": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "detail-king--car-wash-soap",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 622,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0.005754855685763889,
+          "queryTokenCoverage": 1,
+          "observationSha256": "9bc301c9d946c1a1cf804b9876e17c322902ccc1d50abd24c6f609a7afecfed6",
+          "annotationScreenshotSha256": "559b2ee7c76d9aa112f6920600ac51c07e556b76295807edbbe1d7457b805ddb",
+          "provenanceAggregateSha256": "81d85e2c0850dd688c570dbe770827c02f864e98683d679e5f9c00ee14d5e19b",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "detail-king--wheel-cleaner",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 632,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0.014218009478672985,
+          "queryTokenCoverage": 1,
+          "observationSha256": "b3f61d2cce22f01343e38482282ee82e0db39360d1e5cd5b460593c22b04c7b0",
+          "annotationScreenshotSha256": "ce90622e2da389f154fcbbb720b8b02cc8980b5fe8f038d410b7a8f4e66201b7",
+          "provenanceAggregateSha256": "d83260b2e5fab456bbe55f07ec399bcda9b3e0437f0d706fddfc62833617922d",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "lotioncrafter": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 60000 ms."
+    },
+    "making-cosmetics": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 60000 ms."
+    },
+    "bulk-natural-oils": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 60000 ms."
+    },
+    "uno-clean": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: search results evidence only 0% of requested query tokens and an unresolved obstruction covered 100% of the viewport."
+    },
+    "kleen-rite": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "kleen-rite--tire-cleaner",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 2179,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0.0040104166666666665,
+          "queryTokenCoverage": 1,
+          "observationSha256": "3c3a1d1d2ae9c53cebc94802567a6544457ab3b67b6cedf9e6ca472c0ae1d7ff",
+          "annotationScreenshotSha256": "bd0e68d37e730c0bd2df1148d16cd43b303abc8df43cc11fb62b3603e93204da",
+          "provenanceAggregateSha256": "5db98dd40258c401da30db96897e23be4c1d68cd40d5793840c7ad658e5c6da3",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "kleen-rite--car-wash-soap",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 1727,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0.017544659132336857,
+          "queryTokenCoverage": 1,
+          "observationSha256": "a25064724346070e3ffb2f4fdfeeab9a5a0b96f651a79c831f24f57cc2365fea",
+          "annotationScreenshotSha256": "cf8b530f90ce446f054b66e8148627cd4efd6ba46caa3adabb0fa78d67b91d2a",
+          "provenanceAggregateSha256": "fd58be7a4ab424055743506c17cac405faf0bf2c30038bf6f8cd315f19b636a3",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "new-directions-aromatics": {
+      "status": "discard",
+      "reason": "Screening reached a Cloudflare attention page with no reviewable product candidates."
+    },
+    "bramble-berry": {
+      "status": "discard",
+      "reason": "A full-screen promotional iframe remained visible and covered 100% of the viewport; its close action was not exposed with safe generic semantics."
+    },
+    "floorzz": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 60000 ms."
+    },
+    "home-outlet": {
+      "status": "discard",
+      "reason": "Screening exposed no requested-query evidence and no reviewable product candidates."
+    },
+    "prosource-wholesale": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "prosource-wholesale--vinyl-flooring",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 3542,
+          "observationTruncated": false,
+          "dismissedObstructions": 12,
+          "unresolvedObstructionCoverage": 0.09181438802083333,
+          "queryTokenCoverage": 1,
+          "observationSha256": "897943428291cafe98c9a9ce4fbe00e73bf9a771dc3a08512ed5895f78a1e55e",
+          "annotationScreenshotSha256": "bd0ecc8b946a79d919fe39f45a7a5a866e16ccfc3fa331b9bad22429ffa2c888",
+          "provenanceAggregateSha256": "666059c7c6e0eade15ea0d66991ff66b8d657952b2eccd9ad90b90c13eda2a70",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "prosource-wholesale--carpet-tile",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 669,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "2e4bf4e3bddbc47fc0e761bd53d44796f126d99e0d36a934d682d60a46f7cb5f",
+          "annotationScreenshotSha256": "718d075d5c2c0a88544cbbb68c7dd03b5a2a8179a2b522158c0b8dd75d7ccde0",
+          "provenanceAggregateSha256": "a8ce70db5ed264a5d36e6a23496026a7ccd1f95ea9bb991fcf85c657d8022ef0",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ]
+    },
+    "tile-outlets": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 60000 ms."
+    },
+    "flooring-market": {
+      "status": "discard",
+      "reason": "The search page exposed only one reviewable product candidate, below the frozen minimum of eight."
+    },
+    "we-ship-floors": {
+      "status": "discard",
+      "reason": "The desktop page passed screening, but the distinct narrow page failed because a chat promotion covered 26% of the viewport."
+    },
+    "tile-and-mosaics": {
+      "status": "discard",
+      "reason": "Screening exposed no reviewable product roots and could not capture an annotation screenshot."
+    },
+    "sks-bottle": {
+      "status": "discard",
+      "reason": "The supplied route resolved to an advanced-search form with no requested-query evidence or reviewable products."
+    },
+    "container-and-packaging": {
+      "status": "discard",
+      "reason": "The supplied search route returned HTTP 404 with no requested-query evidence or reviewable products."
+    },
+    "fabric-warehouse": {
+      "status": "discard",
+      "reason": "Screening did not pass the frozen gate: target capture exceeded 60000 ms."
+    },
+    "sf-herb": {
+      "status": "discard",
+      "reason": "The route exposed no requested-query evidence and only two reviewable candidates."
+    },
+    "flooring-stores": {
+      "status": "discard",
+      "reason": "The marketplace search exposed only four reviewable candidates, below the frozen minimum of eight."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "detail-king",
+      "kleen-rite",
+      "prosource-wholesale"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "detail-king",
+        "cohort": "training"
+      },
+      {
+        "siteId": "kleen-rite",
+        "cohort": "training"
+      },
+      {
+        "siteId": "prosource-wholesale",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}
