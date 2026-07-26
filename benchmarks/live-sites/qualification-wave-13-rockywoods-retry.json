@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "description": "Bounded desktop retry for Rockywoods' second qualification page after the narrow evidence capture exceeded its timeout.",
+  "sites": [
+    {
+      "id": "rockywoods",
+      "label": "Rockywoods",
+      "hostname": "rockywoods.com",
+      "stratum": "technical-outdoor-fabric",
+      "searchUrlTemplate": "https://rockywoods.com/search?q={query}",
+      "queries": [
+        {
+          "id": "nylon-fabric",
+          "query": "nylon fabric",
+          "dimension": "length"
+        }
+      ]
+    }
+  ]
+}

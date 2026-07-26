@@ -1200,6 +1200,78 @@
       "pilotReport": "benchmarks/capture-pilots/g2-qualified-expansion-wave-03-volume-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "discount-school-supply",
+      "cohort": "training",
+      "pageId": "discount-school-supply--markers",
+      "captureTimestamp": "2026-07-26T09:53:10.438Z",
+      "observationSha256": "9eccd21f3de907625f7757201c29988f4df0c95095d242f031452842d918bcc2",
+      "annotationScreenshotSha256": "8424c2f18bd6b688019a1b9150003f3ecebe79e19489af82ac7b9d7b301924d1",
+      "qualificationReport": "benchmarks/domain-qualification/wave-13-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-13-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "discount-school-supply",
+      "cohort": "training",
+      "pageId": "discount-school-supply--construction-paper",
+      "captureTimestamp": "2026-07-26T10:01:17.977Z",
+      "observationSha256": "901cfc00fc272e955f8da41bce818becc91abccc0031966fb3e84b9540ead9a3",
+      "annotationScreenshotSha256": "3035f8843ffa35c06ce4ab2c3331f24df01be900d575fe21c009ed5f104650dc",
+      "qualificationReport": "benchmarks/domain-qualification/wave-13-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-13-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "myspicer",
+      "cohort": "training",
+      "pageId": "myspicer--garlic-powder",
+      "captureTimestamp": "2026-07-26T09:56:13.710Z",
+      "observationSha256": "151299f17c189cd5a3817e94f5ac79b5e54948791565b62c4600a06e75f2119c",
+      "annotationScreenshotSha256": "1b5682880fa757f496c69cf9a91cd0202400099fcc941bd352d5ff8eba313b6b",
+      "qualificationReport": "benchmarks/domain-qualification/wave-13-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-13-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "myspicer",
+      "cohort": "training",
+      "pageId": "myspicer--chili-powder",
+      "captureTimestamp": "2026-07-26T10:01:26.910Z",
+      "observationSha256": "ee89fef7f992de58672cd0120a042722b30f91001b3fdd8347fb413af20335e2",
+      "annotationScreenshotSha256": "af30de124f50779b427b19f0c5e7840e5d20675c9ca9f54c77f803741639b683",
+      "qualificationReport": "benchmarks/domain-qualification/wave-13-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-13-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "rockywoods",
+      "cohort": "training",
+      "pageId": "rockywoods--webbing",
+      "captureTimestamp": "2026-07-26T09:55:58.035Z",
+      "observationSha256": "50893778238eafba0e3796516359ddcb0df61741a0c7831b3124b986c01ae6ab",
+      "annotationScreenshotSha256": "7987cf1e34ef8a100dc4be25c1f468716ac2629befcf72d46371f18d22ea56ed",
+      "qualificationReport": "benchmarks/domain-qualification/wave-13-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-13-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "rockywoods",
+      "cohort": "training",
+      "pageId": "rockywoods--nylon-fabric",
+      "captureTimestamp": "2026-07-26T10:04:07.192Z",
+      "observationSha256": "8324405d5a6a63201675913e579199db93ded392e4a382e9d1f3615ab68be73a",
+      "annotationScreenshotSha256": "26889ff139b419a17cde5b8be7c1aa49d9015417c627d5bf47e421d37c140894",
+      "qualificationReport": "benchmarks/domain-qualification/wave-13-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-wave-13-mixed-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

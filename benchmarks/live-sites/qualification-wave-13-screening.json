@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "description": "Thirteenth unassigned domain-qualification wave. Candidates balance all five dimensions across specialty ingredients, institutional cleaning, medical and education supply, technical fabric and webbing, and flooring retail. Every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "olivenation",
+      "label": "OliveNation",
+      "hostname": "www.olivenation.com",
+      "stratum": "specialty-baking-ingredients",
+      "searchUrlTemplate": "https://www.olivenation.com/search.php?search_query={query}&section=product",
+      "queries": [
+        {"id": "cocoa-powder", "query": "cocoa powder", "dimension": "mass"},
+        {"id": "almond-flour", "query": "almond flour", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "san-francisco-herb",
+      "label": "San Francisco Herb Co.",
+      "hostname": "www.sfherb.com",
+      "stratum": "bulk-herbs",
+      "searchUrlTemplate": "https://www.sfherb.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "loose-leaf-tea", "query": "loose leaf tea", "dimension": "mass"},
+        {"id": "garlic-powder", "query": "garlic powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "myspicer",
+      "label": "MySpicer",
+      "hostname": "www.myspicer.com",
+      "stratum": "wholesale-spices",
+      "searchUrlTemplate": "https://www.myspicer.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "garlic-powder", "query": "garlic powder", "dimension": "mass"},
+        {"id": "chili-powder", "query": "chili powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "north-bay-trading",
+      "label": "North Bay Trading Co.",
+      "hostname": "www.northbaytrading.com",
+      "stratum": "dehydrated-food-specialty",
+      "searchUrlTemplate": "https://www.northbaytrading.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "dried-fruit", "query": "dried fruit", "dimension": "mass"},
+        {"id": "dried-vegetables", "query": "dried vegetables", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "cleanfreak",
+      "label": "CleanFreak",
+      "hostname": "www.cleanfreak.com",
+      "stratum": "commercial-cleaning-equipment",
+      "searchUrlTemplate": "https://www.cleanfreak.com/search?q={query}",
+      "queries": [
+        {"id": "floor-cleaner", "query": "floor cleaner", "dimension": "volume"},
+        {"id": "hand-soap", "query": "hand soap", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "jon-don",
+      "label": "Jon-Don",
+      "hostname": "www.jondon.com",
+      "stratum": "restoration-supply",
+      "searchUrlTemplate": "https://www.jondon.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "carpet-cleaner", "query": "carpet cleaner", "dimension": "volume"},
+        {"id": "disinfectant", "query": "disinfectant", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "unoclean",
+      "label": "UnoClean",
+      "hostname": "www.unoclean.com",
+      "stratum": "janitorial-equipment",
+      "searchUrlTemplate": "https://www.unoclean.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "floor-cleaner", "query": "floor cleaner", "dimension": "volume"},
+        {"id": "hand-soap", "query": "hand soap", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "vitacost",
+      "label": "Vitacost",
+      "hostname": "www.vitacost.com",
+      "stratum": "online-health-retail",
+      "searchUrlTemplate": "https://www.vitacost.com/productsearch.aspx?t={query}",
+      "queries": [
+        {"id": "liquid-vitamin", "query": "liquid vitamin", "dimension": "volume"},
+        {"id": "liquid-collagen", "query": "liquid collagen", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "discount-school-supply",
+      "label": "Discount School Supply",
+      "hostname": "www.discountschoolsupply.com",
+      "stratum": "early-education-supply",
+      "searchUrlTemplate": "https://www.discountschoolsupply.com/search/?text={query}",
+      "queries": [
+        {"id": "markers", "query": "markers", "dimension": "count"},
+        {"id": "construction-paper", "query": "construction paper", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "medline-at-home",
+      "label": "Medline at Home",
+      "hostname": "athome.medline.com",
+      "stratum": "home-medical-supply",
+      "searchUrlTemplate": "https://athome.medline.com/en/search/?text={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "full-source",
+      "label": "Full Source",
+      "hostname": "www.fullsource.com",
+      "stratum": "workplace-safety-supply",
+      "searchUrlTemplate": "https://www.fullsource.com/search/?q={query}",
+      "queries": [
+        {"id": "work-gloves", "query": "work gloves", "dimension": "count"},
+        {"id": "safety-glasses", "query": "safety glasses", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "health-products-for-you",
+      "label": "Health Products For You",
+      "hostname": "www.healthproductsforyou.com",
+      "stratum": "consumer-medical-supply",
+      "searchUrlTemplate": "https://www.healthproductsforyou.com/search.html?query={query}",
+      "queries": [
+        {"id": "wound-dressings", "query": "wound dressings", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "strapworks",
+      "label": "Strapworks",
+      "hostname": "www.strapworks.com",
+      "stratum": "webbing-and-straps",
+      "searchUrlTemplate": "https://www.strapworks.com/search?q={query}",
+      "queries": [
+        {"id": "nylon-webbing", "query": "nylon webbing", "dimension": "length"},
+        {"id": "polyester-webbing", "query": "polyester webbing", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "rockywoods",
+      "label": "Rockywoods",
+      "hostname": "rockywoods.com",
+      "stratum": "technical-outdoor-fabric",
+      "searchUrlTemplate": "https://rockywoods.com/search?q={query}",
+      "queries": [
+        {"id": "nylon-fabric", "query": "nylon fabric", "dimension": "length"},
+        {"id": "webbing", "query": "webbing", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "vogue-fabrics",
+      "label": "Vogue Fabrics",
+      "hostname": "www.voguefabricsstore.com",
+      "stratum": "fashion-fabric-retail",
+      "searchUrlTemplate": "https://www.voguefabricsstore.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "denver-fabrics",
+      "label": "Denver Fabrics",
+      "hostname": "www.denverfabrics.com",
+      "stratum": "discount-fabric-retail",
+      "searchUrlTemplate": "https://www.denverfabrics.com/search?query={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "modutile",
+      "label": "ModuTile",
+      "hostname": "modutile.com",
+      "stratum": "modular-flooring",
+      "searchUrlTemplate": "https://modutile.com/pc/modular-flooring/{querySlug}/",
+      "queries": [
+        {"id": "garage-flooring", "query": "garage flooring", "querySlug": "garage", "dimension": "area"},
+        {"id": "basement-flooring", "query": "basement flooring", "querySlug": "basement", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "mats-inc",
+      "label": "Mats Inc.",
+      "hostname": "www.matsinc.com",
+      "stratum": "commercial-flooring-distributor",
+      "searchUrlTemplate": "https://www.matsinc.com/search/?q={query}",
+      "queries": [
+        {"id": "carpet-tile", "query": "carpet tile", "dimension": "area"},
+        {"id": "rubber-flooring", "query": "rubber flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "rubber-flooring-experts",
+      "label": "Rubber Flooring Experts",
+      "hostname": "www.rubberflooringexperts.com",
+      "stratum": "rubber-flooring-specialty",
+      "searchUrlTemplate": "https://www.rubberflooringexperts.com/search?q={query}",
+      "queries": [
+        {"id": "rubber-tiles", "query": "rubber tiles", "dimension": "area"},
+        {"id": "rubber-rolls", "query": "rubber rolls", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "mat-supplier-group",
+      "label": "Mat Supplier Group",
+      "hostname": "matsuppliergroup.com",
+      "stratum": "commercial-matting",
+      "searchUrlTemplate": "https://matsuppliergroup.com/search?q={query}",
+      "queries": [
+        {"id": "rubber-mats", "query": "rubber mats", "dimension": "area"},
+        {"id": "entrance-mats", "query": "entrance mats", "dimension": "area"}
+      ]
+    }
+  ]
+}

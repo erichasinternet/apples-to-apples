@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "auditId": "g2-campaign-preannotation-p10",
+  "createdAt": "2026-07-26T10:14:41Z",
+  "source": {
+    "campaign": "benchmark-data/review/g2-pilot-p11-reviewer-a-campaign.json",
+    "campaignSha256": "cc92e23ace350b61dc547f64e9ae4333abca52825c29c9e1273800cd6d64f062",
+    "queueSha256": "ff9c5171c9efc4dcc9e91beb76926cb877efb542ecabe3371a14d7fc02acebe3",
+    "preannotationSha256": "6e92eedd39ec505fb097387833659cbdbd060eeb1d89384cc644bbeacd4b71d6",
+    "auditSha256": "cc0dc11e6ae32c708e96449fd66a5bd8d1fea88f7731e0641e258a06b197c86d",
+    "sourceReviewStatus": "unreviewed-capture"
+  },
+  "campaign": {
+    "pages": 106,
+    "cards": 1021,
+    "targetDimensions": {
+      "area": 88,
+      "count": 220,
+      "length": 234,
+      "mass": 259,
+      "volume": 220
+    },
+    "candidateEvidence": {
+      "withTitle": 1014,
+      "withCurrentPrice": 981,
+      "withNativeUnitPriceInOneNode": 39,
+      "withPackageQuantity": 309
+    }
+  },
+  "dimensionConditionedPreannotation": {
+    "tentativeComparable": 250,
+    "abstained": 771,
+    "evidenceInvalid": 4,
+    "methods": {
+      "explicit-abstention": 771,
+      "native-unit-price": 117,
+      "price-and-package": 133
+    }
+  },
+  "semanticAudit": {
+    "machineAuditPassingComparableSuggestions": 231,
+    "machineAuditPassingAbstentionSuggestions": 771,
+    "quarantinedComparableSuggestions": 19,
+    "quarantinedAbstentionSuggestions": 0,
+    "quarantineReasons": {
+      "ambiguous-decimal-quantity": 1,
+      "equipment-capacity-as-quantity": 10,
+      "invalid-evidence": 4,
+      "physical-dimension-as-quantity": 5
+    }
+  },
+  "expansionOutcomes": {
+    "pages": 6,
+    "cards": 67,
+    "targetDimensions": {
+      "count": 24,
+      "length": 20,
+      "mass": 23
+    },
+    "tentativeComparable": 20,
+    "abstained": 47,
+    "machineAuditPassing": 67,
+    "quarantined": 0,
+    "pagesWithTentativeComparables": {
+      "rockywoods--nylon-fabric": 8,
+      "rockywoods--webbing": 12
+    },
+    "hardNegativePages": {
+      "discount-school-supply--construction-paper": 12,
+      "discount-school-supply--markers": 12,
+      "myspicer--chili-powder": 12,
+      "myspicer--garlic-powder": 11
+    }
+  },
+  "representationChanges": [
+    "No extraction heuristic changed for this append-only campaign expansion.",
+    "Added 20 length-conditioned roots with explicit sold-per-yard pricing and potentially distracting width, denier, millimeter, ounce, and per-foot terms.",
+    "Added 24 count-conditioned education-supply roots whose truncated titles, dimensions, variants, and image-only package claims require conservative abstention.",
+    "Added 23 mass-conditioned wholesale-spice hard negatives whose price ranges cannot be paired with a card-local package quantity.",
+    "All 67 new roots pass the semantic machine audit, but remain diagnostic and unreviewed."
+  ],
+  "eligibility": {
+    "silverTraining": false,
+    "benchmarkGold": false,
+    "reason": "The source cards and all preannotations remain unreviewed. Machine checks can quarantine contradictions but cannot establish semantic correctness; two independent reviews and adjudication remain required."
+  },
+  "decision": "retain-as-blinded-review-aid-only"
+}

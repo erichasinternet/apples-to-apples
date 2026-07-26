@@ -1,0 +1,248 @@
+{
+  "version": 1,
+  "qualificationId": "wave-13-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-13.json",
+  "screeningManifest": "benchmarks/live-sites/qualification-wave-13-screening.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "screeningPageTimeoutMs": 90000,
+    "qualificationPageTimeoutMs": 90000,
+    "screeningCardScreenshotBudgetMs": 12000,
+    "qualificationCardScreenshotBudgetMs": 12000,
+    "retryCardScreenshotBudgetMs": 10000,
+    "lateObstructionRecheck": true,
+    "openShadowRootObstructionHandling": true,
+    "genericConsentActionHandling": true,
+    "offscreenActionExclusion": true,
+    "pointerlessTransparentShellExclusion": true,
+    "persistentCookieConsentHandling": true,
+    "finalPreScreenshotObstructionGate": true,
+    "queryParametersCountAsQueryEvidence": false,
+    "queryEvidenceScope": "title, pathname, visible headings, and visible status text",
+    "minimumQueryTokenCoverage": 1,
+    "populatedSearchControlsCountAsQueryEvidence": false,
+    "exactPageTargeting": true
+  },
+  "runs": [
+    {
+      "runId": "2026-07-26T09-52-17-207Z",
+      "runManifestSha256": "8785e33b50f0401f38689a9293c6c8e30c156a258da66647f56990de6c500c97",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "one-page headed screening across the original 20-site source manifest"
+    },
+    {
+      "runId": "2026-07-26T10-00-59-717Z",
+      "runManifestSha256": "d41c0afe5cf8d31f3303ae19936977a8e15d4a4abf6d36703329be753407fc3b",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 12000,
+      "purpose": "distinct second-page qualification across three visually accepted candidates"
+    },
+    {
+      "runId": "2026-07-26T10-03-57-282Z",
+      "runManifestSha256": "7edf363f495b6392af7459dae1cf1db8b98782ef9f9046736ba6632bfe6ec4ee",
+      "pageTimeoutMs": 90000,
+      "cardScreenshotBudgetMs": 10000,
+      "purpose": "bounded desktop retry for Rockywoods after narrow evidence capture timed out"
+    }
+  ],
+  "screeningExclusions": {
+    "vitacost": "Already assigned to the frozen development set; blocked capture was excluded.",
+    "olivenation": "Already screened in wave 07; timed-out capture was excluded.",
+    "san-francisco-herb": "Already screened in wave 09; blocked capture was excluded.",
+    "cleanfreak": "Already screened in wave 02; cross-site redirect was excluded.",
+    "unoclean": "Already screened in wave 09; blocked capture was excluded."
+  },
+  "results": {
+    "discount-school-supply": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "discount-school-supply--markers",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 1190,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0.00140625,
+          "queryTokenCoverage": 1,
+          "observationSha256": "9eccd21f3de907625f7757201c29988f4df0c95095d242f031452842d918bcc2",
+          "annotationScreenshotSha256": "8424c2f18bd6b688019a1b9150003f3ecebe79e19489af82ac7b9d7b301924d1",
+          "provenanceAggregateSha256": "f23f6370577e8f26d38a9a7e3ff8955a4817c3413cb6a5e30fff178c1de1ea09",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "discount-school-supply--construction-paper",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 1361,
+          "observationTruncated": false,
+          "dismissedObstructions": 1,
+          "unresolvedObstructionCoverage": 0.006152023332118119,
+          "queryTokenCoverage": 1,
+          "observationSha256": "901cfc00fc272e955f8da41bce818becc91abccc0031966fb3e84b9540ead9a3",
+          "annotationScreenshotSha256": "3035f8843ffa35c06ce4ab2c3331f24df01be900d575fe21c009ed5f104650dc",
+          "provenanceAggregateSha256": "1d1ec307949224ee8ee4ed73decba0ba6f0f590183a9e9abbc21345fc874f895",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent education-supply product grids pass in distinct desktop and narrow viewports. Titles expose count-bearing marker and paper packages alongside incomplete and variant-dependent cases."
+    },
+    "myspicer": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "myspicer--garlic-powder",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 11,
+          "candidateScreenshotsCaptured": 11,
+          "observationNodeCount": 415,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "151299f17c189cd5a3817e94f5ac79b5e54948791565b62c4600a06e75f2119c",
+          "annotationScreenshotSha256": "1b5682880fa757f496c69cf9a91cd0202400099fcc941bd352d5ff8eba313b6b",
+          "provenanceAggregateSha256": "73231f32b666ba65b9787f01898770cbfc869c453161363883dc4284f00b76d6",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "myspicer--chili-powder",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 417,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "ee89fef7f992de58672cd0120a042722b30f91001b3fdd8347fb413af20335e2",
+          "annotationScreenshotSha256": "af30de124f50779b427b19f0c5e7840e5d20675c9ca9f54c77f803741639b683",
+          "provenanceAggregateSha256": "e6e8ee8d48b4e2957861402d9f43caaad660115c84392dccd0513cab483fca78",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two relevant wholesale-spice grids pass in distinct viewports and deliberately contribute hard negatives: cards expose variant price ranges without card-local package quantities, requiring abstention."
+    },
+    "rockywoods": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "rockywoods--webbing",
+          "viewportProfile": "narrow",
+          "httpStatus": 200,
+          "candidateCount": 12,
+          "candidateScreenshotsCaptured": 12,
+          "observationNodeCount": 532,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "50893778238eafba0e3796516359ddcb0df61741a0c7831b3124b986c01ae6ab",
+          "annotationScreenshotSha256": "7987cf1e34ef8a100dc4be25c1f468716ac2629befcf72d46371f18d22ea56ed",
+          "provenanceAggregateSha256": "69c50ddabae52a9314164ab4a19561437153315633e92632dcef8f427130d30c",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "rockywoods--nylon-fabric",
+          "viewportProfile": "desktop",
+          "httpStatus": 200,
+          "candidateCount": 8,
+          "candidateScreenshotsCaptured": 8,
+          "observationNodeCount": 2712,
+          "observationTruncated": false,
+          "dismissedObstructions": 0,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "observationSha256": "8324405d5a6a63201675913e579199db93ded392e4a382e9d1f3615ab68be73a",
+          "annotationScreenshotSha256": "26889ff139b419a17cde5b8be7c1aa49d9015417c627d5bf47e421d37c140894",
+          "provenanceAggregateSha256": "9a0765ed5958a604587472837d0961eb34378c462dc7aa1095555a9057939716",
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two relevant technical webbing and fabric grids pass in distinct viewports with explicit sold-per-yard pricing, plus width, denier, and weight terms that test semantic quantity selection."
+    },
+    "north-bay-trading": {
+      "status": "rejected",
+      "reason": "The proposed dried-vegetables route returned HTTP 404 without requested-query evidence or reviewable products."
+    },
+    "jon-don": {
+      "status": "rejected",
+      "reason": "The proposed disinfectant route failed navigation because the site served an invalid TLS certificate."
+    },
+    "medline-at-home": {
+      "status": "rejected",
+      "reason": "The proposed underpads route returned HTTP 403 without requested-query evidence or reviewable products."
+    },
+    "full-source": {
+      "status": "rejected",
+      "reason": "The proposed work-gloves route returned HTTP 500 without screenshots, requested-query evidence, or reviewable products."
+    },
+    "health-products-for-you": {
+      "status": "rejected",
+      "reason": "The proposed underpads route returned HTTP 404 without requested-query evidence or reviewable products."
+    },
+    "strapworks": {
+      "status": "rejected",
+      "reason": "The proposed nylon-webbing route returned HTTP 404 without requested-query evidence or reviewable products."
+    },
+    "vogue-fabrics": {
+      "status": "rejected",
+      "reason": "The proposed cotton-fabric route returned HTTP 404 without requested-query evidence or reviewable products."
+    },
+    "denver-fabrics": {
+      "status": "rejected",
+      "reason": "Visible search-result evidence covered only half of the requested query tokens and no reviewable products were found."
+    },
+    "modutile": {
+      "status": "rejected",
+      "reason": "The proposed garage-flooring route returned HTTP 404 with no reviewable product candidates."
+    },
+    "mats-inc": {
+      "status": "rejected",
+      "reason": "The rubber-flooring screening target exceeded the 90-second page bound."
+    },
+    "rubber-flooring-experts": {
+      "status": "rejected",
+      "reason": "The proposed rubber-tiles route returned HTTP 404, covered only half of the requested query tokens, and exposed no reviewable products."
+    },
+    "mat-supplier-group": {
+      "status": "rejected",
+      "reason": "The proposed hostname did not resolve."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "discount-school-supply",
+      "myspicer",
+      "rockywoods"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "discount-school-supply",
+        "cohort": "training"
+      },
+      {
+        "siteId": "myspicer",
+        "cohort": "training"
+      },
+      {
+        "siteId": "rockywoods",
+        "cohort": "training"
+      }
+    ],
+    "status": "keep"
+  }
+}

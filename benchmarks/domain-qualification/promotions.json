@@ -210,6 +210,24 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-12-p00.json",
       "promotedAt": "2026-07-26T09:05:00.000Z"
+    },
+    {
+      "siteId": "discount-school-supply",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-13-p00.json",
+      "promotedAt": "2026-07-26T10:10:00.000Z"
+    },
+    {
+      "siteId": "myspicer",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-13-p00.json",
+      "promotedAt": "2026-07-26T10:10:00.000Z"
+    },
+    {
+      "siteId": "rockywoods",
+      "cohort": "training",
+      "qualificationReport": "benchmarks/domain-qualification/wave-13-p00.json",
+      "promotedAt": "2026-07-26T10:10:00.000Z"
     }
   ]
 }

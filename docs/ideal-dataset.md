@@ -503,6 +503,38 @@ campaign. A headed sweep of every batch is recorded in
 all 100 screenshots and 954 roots load from the rebased paths with zero console
 errors or writes, and invalid or incomplete submissions remain rejected.
 
+Wave 13 screens 15 genuinely new domains after excluding five repeated domains
+from the canonical registry while preserving the exact original screening
+manifest for provenance. Discount School Supply, MySpicer, and Rockywoods
+qualify on two visually inspected pages and distinct viewport profiles each.
+The other 12 candidates receive explicit bounded failure dispositions for
+blocked routes, invalid TLS, unresolved DNS, incomplete query evidence, or
+timeouts. The six accepted pages add 67 roots: 24 count-oriented education
+supply cards, 23 wholesale-spice variant hard negatives, and 20 explicit
+sold-per-yard fabric and webbing cards.
+
+The paired blinded campaign in
+[`g2-pilot-p11.json`](../benchmarks/review-campaigns/g2-pilot-p11.json)
+contains 38 qualified training domains, 106 pages, and 1,021 frozen roots. A
+headed workbench sweep loaded every screenshot and root, enforced only frozen
+evidence choices, rejected invalid and incomplete submissions, emitted no
+console errors, and wrote no review files. The diagnostic in
+[`g2-campaign-preannotation-p10.json`](../benchmarks/reviews/g2-campaign-preannotation-p10.json)
+finds 20 tentative comparables on Rockywoods and conservatively abstains on all
+47 Discount School Supply and MySpicer hard negatives. The semantic audit adds
+no new quarantines. The compact audit in
+[`g2-selection-representation-p09.json`](../benchmarks/reviews/g2-selection-representation-p09.json)
+round-trips all 1,002 machine-retained suggestions exactly with zero failures.
+
+The p11 campaign is deterministically partitioned into eleven matching reviewer
+assignments in
+[`g2-pilot-p11-review-batches.json`](../benchmarks/reviews/g2-pilot-p11-review-batches.json).
+The headed validation recorded in
+[`g2-pilot-p11-review-batch-validation.json`](../benchmarks/reviews/g2-pilot-p11-review-batch-validation.json)
+loads all 106 screenshots and 1,021 roots from rebased paths with zero console
+errors or writes. All pages and machine suggestions remain unreviewed and
+ineligible for silver training or benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

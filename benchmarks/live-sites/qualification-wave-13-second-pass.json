@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "description": "Second-page qualification pass for the three wave-13 domains whose first page passed machine and visual review. Domains remain unassigned until this distinct page also passes.",
+  "sites": [
+    {
+      "id": "discount-school-supply",
+      "label": "Discount School Supply",
+      "hostname": "www.discountschoolsupply.com",
+      "stratum": "early-education-supply",
+      "searchUrlTemplate": "https://www.discountschoolsupply.com/search/?text={query}",
+      "queries": [
+        {
+          "id": "construction-paper",
+          "query": "construction paper",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "rockywoods",
+      "label": "Rockywoods",
+      "hostname": "rockywoods.com",
+      "stratum": "technical-outdoor-fabric",
+      "searchUrlTemplate": "https://rockywoods.com/search?q={query}",
+      "queries": [
+        {
+          "id": "nylon-fabric",
+          "query": "nylon fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "myspicer",
+      "label": "MySpicer",
+      "hostname": "www.myspicer.com",
+      "stratum": "wholesale-spices",
+      "searchUrlTemplate": "https://www.myspicer.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "chili-powder",
+          "query": "chili powder",
+          "dimension": "mass"
+        }
+      ]
+    }
+  ]
+}
