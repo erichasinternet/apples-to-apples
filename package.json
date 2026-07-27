@@ -28,6 +28,7 @@
     "test:e2e": "bun run build && playwright test",
     "test:live": "LIVE_SHOPPING_TESTS=1 bun run build && playwright test tests/e2e/live-sites.spec.ts",
     "benchmark:collect": "bun scripts/collect-live-corpus.ts",
+    "benchmark:collect:bounded": "bun scripts/collect-live-corpus-bounded.ts",
     "benchmark:coverage": "bun scripts/report-corpus-coverage.ts",
     "benchmark:evaluate": "bun scripts/evaluate-live-corpus.ts",
     "benchmark:model:evaluate": "bun scripts/evaluate-model-corpus.ts",
