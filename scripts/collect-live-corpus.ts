@@ -46,6 +46,7 @@ import {
 interface CollectorOptions {
   targetsPath: string;
   outputRoot: string;
+  runId?: string;
   headed: boolean;
   disableHttp2: boolean;
   limit?: number;
@@ -147,9 +148,11 @@ if (targets.length === 0) {
   throw new Error("No capture targets matched the supplied options.");
 }
 
-const runId = new Date().toISOString().replace(/[:.]/g, "-");
+const runId =
+  options.runId ??
+  `${new Date().toISOString().replace(/[:.]/g, "-")}--p${process.pid}`;
 const runDirectory = path.join(options.outputRoot, runId);
-await mkdir(runDirectory, { recursive: true });
+await mkdir(runDirectory, { recursive: false });
 
 const runResults: Array<{
   pageId: string;
@@ -1168,6 +1171,7 @@ function parseOptions(args: string[]): CollectorOptions {
   const narrowShare = Number.parseFloat(values.get("--narrow-share") ?? "0.25");
   const siteIds = parseCsv(values.get("--sites") ?? "");
   const pageIds = parseCsv(values.get("--pages") ?? "");
+  const runId = values.get("--run-id");
 
   if (
     (limit !== undefined && (!Number.isFinite(limit) || limit <= 0)) ||
@@ -1192,10 +1196,14 @@ function parseOptions(args: string[]): CollectorOptions {
   ) {
     throw new Error("--pages cannot be combined with --sites, --limit, or --per-site.");
   }
+  if (runId && !/^[a-zA-Z0-9][a-zA-Z0-9._-]*$/.test(runId)) {
+    throw new Error("--run-id must be a safe path segment.");
+  }
 
   return {
     targetsPath: path.resolve(values.get("--targets") ?? "benchmarks/live-sites/targets.json"),
     outputRoot: path.resolve(values.get("--output") ?? "benchmark-data/live"),
+    ...(runId ? { runId } : {}),
     headed: flags.has("--headed"),
     disableHttp2: flags.has("--disable-http2"),
     ...(limit === undefined ? {} : { limit }),

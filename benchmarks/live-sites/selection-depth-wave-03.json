@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "description": "Bounded supplemental selection-depth wave after wave 02 reached 118 of 120 structurally eligible pages. Eight unseen, high-coherence listing queries provide a strict visual-review reserve without changing the frozen domain assignment or using site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "cougar-chemical",
+      "label": "Cougar Chemical",
+      "hostname": "cougarchemical.com",
+      "stratum": "industrial-detailing-chemical-supply",
+      "searchUrlTemplate": "https://cougarchemical.com/search?q={query}",
+      "queries": [
+        {
+          "id": "glass-cleaner",
+          "query": "glass cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "discount-medical-supplies",
+      "label": "Discount Medical Supplies",
+      "hostname": "www.discountmedicalsupplies.com",
+      "stratum": "discount-medical-supply",
+      "searchUrlTemplate": "https://www.discountmedicalsupplies.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wound-dressings",
+          "query": "wound dressings",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "gorgeous-fabrics",
+      "label": "Gorgeous Fabrics",
+      "hostname": "gorgeousfabrics.com",
+      "stratum": "independent-designer-fabric-retail",
+      "searchUrlTemplate": "https://gorgeousfabrics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "satin-fabric",
+          "query": "satin fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "mineral-tiles",
+      "label": "Mineral Tiles",
+      "hostname": "www.mineraltiles.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.mineraltiles.com/search?q={query}",
+      "queries": [
+        {
+          "id": "travertine-tile",
+          "query": "travertine tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "restaurantware",
+      "label": "Restaurantware",
+      "hostname": "www.restaurantware.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.restaurantware.com/search?q={query}",
+      "queries": [
+        {
+          "id": "food-trays",
+          "query": "food trays",
+          "dimension": "count"
+        },
+        {
+          "id": "portion-cups",
+          "query": "portion cups",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "save-rite-medical",
+      "label": "Save Rite Medical",
+      "hostname": "www.saveritemedical.com",
+      "stratum": "discount-home-medical-supply",
+      "searchUrlTemplate": "https://www.saveritemedical.com/search?q={query}",
+      "queries": [
+        {
+          "id": "surgical-masks",
+          "query": "surgical masks",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "shop-med-vet",
+      "label": "ShopMedVet.com",
+      "hostname": "www.shopmedvet.com",
+      "stratum": "medical-and-veterinary-supply-retail",
+      "searchUrlTemplate": "https://www.shopmedvet.com/search?keywords={query}",
+      "queries": [
+        {
+          "id": "needles-with-syringes",
+          "query": "needles with syringes",
+          "dimension": "count"
+        }
+      ]
+    }
+  ]
+}

@@ -1710,6 +1710,40 @@ conflicts, or overlap. The campaign registry now validates 61 campaigns, 6,681
 pages, and 71,555 frozen roots. These pages are reviewable evidence, not gold:
 two independent semantic reviews and third-party adjudication remain mandatory.
 
+The second selection-depth wave reserved three additional unseen queries on each
+qualified domain. All 60 pages completed in isolated headed Chromium processes
+with zero hard timeouts. Machine and original-resolution visual review accepted
+42 pages and 500 roots; 18 pages were rejected for too few roots, weak query
+coherence, or evidence covered by a fixed consent or discount surface. The
+frozen decision record is
+[`g2-selection-depth-wave-02-p00.json`](../benchmarks/capture-pilots/g2-selection-depth-wave-02-p00.json).
+
+A supplemental eight-page wave then closed the remaining two-page structural
+gap without relaxing the gate. Seven pages and 82 roots passed; Mineral Tiles
+travertine tile was rejected because its structurally clean roots were mostly
+generic porcelain and mosaic products. During collection, concurrent bounded
+jobs exposed a millisecond run-directory collision. Bounded collectors now
+assign explicit process-bound run IDs, and concurrent headed reruns produced
+distinct complete directories. The accepted evidence is frozen in
+[`g2-selection-depth-wave-03-p00.json`](../benchmarks/capture-pilots/g2-selection-depth-wave-03-p00.json).
+
+The combined blinded
+[`g2-selection-p14.json`](../benchmarks/review-campaigns/g2-selection-p14.json)
+campaign contains all 49 accepted pages and 582 roots from these two waves.
+Both provenance-bound queues and all five paired reviewer batches passed headed
+Playwright Chromium validation: every screenshot and root loaded, direct root
+navigation passed, invalid roots and incomplete submissions were rejected, and
+there were zero console errors or review writes. The independence audit now
+locates all 645 eligible captures and verifies 7,352 active roots with no
+duplicates, conflicts, or overlap. The campaign registry validates 62 campaigns,
+6,730 pages, and 72,137 roots.
+
+Selection now exceeds its structural minimum with 125 eligible pages across all
+20 qualified domains, including 64 narrow-viewport pages. It is not semantically
+ready: the product, comparable, abstention, pointer, agreement, and challenge
+metrics remain zero until two independent reviewers complete the queues and a
+third party adjudicates disagreements.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

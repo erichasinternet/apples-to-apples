@@ -1,0 +1,1480 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-depth-wave-02-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T09:51:17.000Z",
+  "source": {
+    "siteIds": [
+      "best-laminate",
+      "burlap-and-barrel",
+      "correct-products",
+      "cougar-chemical",
+      "discount-medical-supplies",
+      "fat-quarter-shop",
+      "gorgeous-fabrics",
+      "in-the-swim",
+      "medical-mega",
+      "mineral-tiles",
+      "restaurantware",
+      "save-rite-medical",
+      "shop-med-vet",
+      "super-detail",
+      "floorzz",
+      "leslies-pool",
+      "sunplay",
+      "the-linen-lab"
+    ],
+    "cohort": "selection",
+    "strata": [
+      "laminate-flooring-specialty",
+      "single-origin-spice-retail",
+      "esd-packaging",
+      "industrial-detailing-chemical-supply",
+      "discount-clinical-supply",
+      "national-quilting-fabric-retail",
+      "independent-designer-fabric-retail",
+      "aquatic-retail",
+      "flooring",
+      "food-service-packaging-retail",
+      "discount-home-medical-supply",
+      "medical-and-veterinary-supply-retail",
+      "professional-detailing-retail",
+      "pool-retail-chain",
+      "water-care",
+      "specialty-linen-fabric-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "899cb109216655fa02fb9a1a4ccecd84d383f727d5133550c5b4dd780b19b3b8"
+    ],
+    "collectorSha256": [
+      "7b0d6e7e88ddb12234def7ab68515b0b1061271971a7b6b20950b7d18f226c44"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T09-31-52-995Z",
+      "runManifestSha256": "7c0644aa889ea3784ffbc2ed3ebca9ec31239be2990aef64d4fa211ac2ded87e",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-32-12-848Z",
+      "runManifestSha256": "91f8207a3bb3189d8abe193a48636e283255e18ea9d8226487d859ca47304900",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-32-32-314Z",
+      "runManifestSha256": "ca02387302c4b992700f0ccf6deb2c20a5d6a46b490f3874de24a2dc0760922c",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-32-51-276Z",
+      "runManifestSha256": "84de8c139ecaeb83a37c06c209ff8a903ce92e9a19686bb66da1f4576bd5d14c",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-33-10-216Z",
+      "runManifestSha256": "c5f446736634518bb4916d3a3d928b99c53531e1c6c8bddd5cf5f5e970fac526",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-33-25-874Z",
+      "runManifestSha256": "80606908c753cbfb2ba28decfe08bb0cab5ca7dff558f68101a8fd39606e3972",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-33-41-971Z",
+      "runManifestSha256": "ece768ba6154dc4477b6b6f69f05ef783c1cb3453024be4c09f8bcd047e078bb",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-33-48-630Z",
+      "runManifestSha256": "72e1828ab4f6781071e1ddf7a6b05240a2b9c3249900024bbe87e76059a55473",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-33-55-661Z",
+      "runManifestSha256": "871a95c4c24de42a9a3cd03d4fefd92b2316c8cefb02714a6fd964dc899fb8a6",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-34-06-838Z",
+      "runManifestSha256": "38e56c873297ea14dc80dd41543dcd732ad70406ae594b010d4332e1d64d44cc",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-34-17-883Z",
+      "runManifestSha256": "6794c138b9e6d9870865f19119240fd04c29f26e57a71d229289a3e120576164",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-34-26-902Z",
+      "runManifestSha256": "a1cebed857e2daa4d30921ba47be59c56deeec4a5d26a25aa30b569e295ad42b",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-34-35-725Z",
+      "runManifestSha256": "f374e563bda0aae58d3c183a96c13d616a0d89696e0be209cc86bc6c7594ad82",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-34-49-451Z",
+      "runManifestSha256": "1b44715d3baafb39faed654523d3d128d19cd901c79a87836b8b7fd9222fb723",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-35-03-233Z",
+      "runManifestSha256": "afda5df2da162ff24217ed4a7542749ebf5f619a712d8212d2deb4c6b52d1f99",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-35-20-707Z",
+      "runManifestSha256": "cc604fa8edd32b7930b5e80dd48ef86244660de470aec1f7f49761dc13809bbd",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-35-38-028Z",
+      "runManifestSha256": "4dcc62dd2a782e01390cee9e996ef257b2ecf04c8d13c7ce4fb35885acc38b6d",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-35-47-570Z",
+      "runManifestSha256": "46241506d80f88a3ca55445e42ca862920eabadb91da92fe045b74b4dbf93a06",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-35-57-336Z",
+      "runManifestSha256": "7837b83910f69880038777313d5f10a725c39f1bd5b1ba4c4c1009d383e4dc38",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-36-09-879Z",
+      "runManifestSha256": "70feba2f0f4d56ad6dee9a129433651004c018e51e1476fe894b155cdb407319",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-36-22-290Z",
+      "runManifestSha256": "6dba5d315d93bc73a99d176644f49d4501b734415637bb792bfdf0cfe1f60bb2",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-36-38-013Z",
+      "runManifestSha256": "2e11ce95412591c329bb3f54ed886aac759d7b4442e8be83a88f3a716f1cd2b2",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-36-56-137Z",
+      "runManifestSha256": "abede421dafe7b2982effdc5b98864bd6849f79900a8eebaaac143f05dc71bcb",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-37-13-818Z",
+      "runManifestSha256": "8e0034f9ee456d6fef241e38914c8b6a2baef2b4e356c328d3dd99749775080e",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-37-24-009Z",
+      "runManifestSha256": "e78cacf4315d74f33f05b973dd1dc272645dd34e3bb27b9f8422514530568b43",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-37-32-907Z",
+      "runManifestSha256": "2745ca67ebf3ad10988a91793c87cc36bc0e60320ded7d4e13cbe046b330b393",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-37-42-196Z",
+      "runManifestSha256": "7ecbdab670056d32a0ff153cbcbb41429e8fb704e618a5d275110a2f73577efa",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-38-00-073Z",
+      "runManifestSha256": "ad94925097ca7d385b97130a209ec70c9783a4b559f52697114d98d916af9d87",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-38-09-053Z",
+      "runManifestSha256": "fd637b10df9f54524b362e36a0983fd15cdca1dddd6e9e6a2402159b0ba9cd55",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-38-27-054Z",
+      "runManifestSha256": "822d876d2ad1d8c1363fa6d44093e6894e22f1d228e782407218485594e60618",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-38-55-499Z",
+      "runManifestSha256": "e2d9c5ca9c53b20465736db20991c994e7691a2bd2f00e9713649470d57ba22c",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-39-14-556Z",
+      "runManifestSha256": "8a0dd606ee004387119c967914a535f790e29adcb1e1c7bbab69ecfb8b57da78",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-39-32-568Z",
+      "runManifestSha256": "e71de1c3969bdc6e7f271a4f4530164a2684598c55a404adf15dfd9ef2403768",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-39-49-588Z",
+      "runManifestSha256": "3cf50341a1079b27b50854746d3e23389525334f9c10f21fe492d8201933a7cd",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-39-56-004Z",
+      "runManifestSha256": "fd88589249e36949c38b48f33b45da3453ea4e19fefda033e6a794fb3fc87fe5",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-40-05-312Z",
+      "runManifestSha256": "800c7dcfa52128e128d9121185cf866014e9df82385de160074a698b3d4452cb",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-40-14-088Z",
+      "runManifestSha256": "8292ebf091403fb69dc6bfb7264e8d62c40bf3db65de4d6e0b51e2785a5db195",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-40-28-588Z",
+      "runManifestSha256": "65ad0617c21b7e25c775475e98d07039d7f5263b032e22197f68b520f81c9abc",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-40-45-733Z",
+      "runManifestSha256": "3bb9556f5a60e63601003171820062eff5c243070412b9b5666610cb1214ee2f",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-40-54-641Z",
+      "runManifestSha256": "66c87beb943b62605611d90a4049078cb60b48aa58b358fd776aa9db1db91d82",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-41-07-235Z",
+      "runManifestSha256": "e7f4d06a43e147403f27307d61173f7e464a45bee6288b6c2aa373f4c72f5cf4",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-41-22-883Z",
+      "runManifestSha256": "68abe5b60419456b30c3ad8020a9d8b0828376cf2b96a5a737147bd4f2d67ac9",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-41-37-638Z",
+      "runManifestSha256": "2781fa661613fda33ed64150e504100f6192f2cbdfea813fee8344e13980c6b3",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-41-55-668Z",
+      "runManifestSha256": "c96a047c7bcefa7c3b01bb30c65dbd44efba52dfc1b773c015571e5d9dba9826",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-42-14-956Z",
+      "runManifestSha256": "70a7cd33ac2f0a63864756591d810544804a48114180adb55d3ee3c1cb1a7916",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-42-32-528Z",
+      "runManifestSha256": "3bc988a4206cf5bb44b0545b3567ce5110e03e8c4610389e08cc0218be1d4298",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-42-50-113Z",
+      "runManifestSha256": "1fcd7e5b25e70ae9fdf68acc80000f9fe09baffccc2838ba27ec44d0514caac9",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-43-00-118Z",
+      "runManifestSha256": "5490516cdd26c0f05154aa0f89e973c40158ca551f7c1f536f77a410802541c9",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-43-10-483Z",
+      "runManifestSha256": "df6c83831fab79e15c93273937ba30bfbdc81cb2a634fea5cddbee62656d7671",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-43-19-659Z",
+      "runManifestSha256": "7e93274052d0885e928d34844158205ac62787603ee836befab73ad1d2d35bd3",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-43-28-110Z",
+      "runManifestSha256": "b334fb6196122a1e4a4f284dfb151dfd37f61259c3695961cb03c8fadeb2b2d4",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-43-37-933Z",
+      "runManifestSha256": "0bf6a71594ea0c439639341bde2b6eb450bf882f45125d216085d92525394cff",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-43-47-175Z",
+      "runManifestSha256": "7ad418df63099c021d3911181cc1f4b2daf86000b4641c36966db49c0898a349",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-44-05-026Z",
+      "runManifestSha256": "e1b39f82ebf9d2f1c990fae6ef68490e1c90017c1f9d359ce5383d48dba516be",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-44-22-066Z",
+      "runManifestSha256": "6865c50c2164f70ea26e520da5b51de878d3cef4e160415d899871a3c56537ca",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-44-31-513Z",
+      "runManifestSha256": "84e3b7a36ab1730f69d81561e8e0cd052ecb0ccc3ab36794ccd002304244e524",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-44-40-945Z",
+      "runManifestSha256": "d8c0d65f645374fd32a02d5c9ede99a8d211aae7eaca9b0e76a9e7ffbcccb634",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-44-59-805Z",
+      "runManifestSha256": "82e4eca9446facbe19309d36e3d28afd87d863513eb42925830b3ae9ca27f096",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-45-19-173Z",
+      "runManifestSha256": "1ab4eba7b7465aca32c895d29294e031310546a202de999306b6348e0dd69fc1",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-45-29-075Z",
+      "runManifestSha256": "cdfca425af4263671ca932e36f292226bebf6313e75cc4499db0ea422b9ffe52",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 60,
+    "successfulCaptureAttempts": 60,
+    "acceptedPages": 42,
+    "rejectedPages": 18,
+    "acceptanceRate": 0.7,
+    "candidateCardRoots": 500,
+    "samplingFinding": "All sixty unseen query pages on twenty qualified selection domains completed under isolated headed Chromium process bounds with zero parent hard timeouts. Frozen minimum-root, query-relevance, screenshot-evidence, obstruction, and original-resolution visual checks accepted forty-two pages and rejected eighteen, a 70% strict yield.",
+    "visualValidationFinding": "All fifty-six machine-qualified full-page annotation screenshots and every accepted frozen root were inspected at original resolution. Four pages were machine-rejected for fewer than eight candidate roots. Fourteen more were visually rejected because the selected products were unrelated to the query, the result set was dominated by adjacent products or general assortments, or a fixed consent or discount surface covered selected evidence. The forty-two accepted pages preserve coherent title, price, quantity, and native unit-price evidence or legitimate abstention cases across area, mass, count, volume, and length."
+  },
+  "captures": [
+    {
+      "siteId": "best-laminate",
+      "pageId": "best-laminate--luxury-vinyl-plank",
+      "capturedAt": "2026-07-27T09:32:11.140Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 759,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0.138328125,
+      "queryTokenCoverage": 1,
+      "observationSha256": "4d2dd83a90ab792cc7a9ffeec7fef8ace3d3829125adcadee7dee1b3200445d2",
+      "canonicalObservationSha256": "99680e6fc4feca1cd22f5216357a08909659d4b5d9eadbdd328363eb4ac17e5d",
+      "annotationScreenshotSha256": "c1cb3d5a80964035277efe74b8ae3efb6620d9633b702d5e6ae1d582beb31923",
+      "provenanceAggregateSha256": "18deeab51983959ff31026c8213f7e5ffc949742b9edc3a57acc0e9f01f03465",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "burlap-and-barrel",
+      "pageId": "burlap-and-barrel--spice-blends",
+      "capturedAt": "2026-07-27T09:32:48.901Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1308,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "cb4ab44b206b9ecb29010212e138c8f6fa832fd4518dd0aa85f5afe677c0da9b",
+      "canonicalObservationSha256": "de0cdf3e2556b4e63bc298e449efe3f46dcec8516b4f531e1a8b8a0f437e48fa",
+      "annotationScreenshotSha256": "3d3d556c1a020d4ea50ad0ee827173aa44ac56fe53bfaed4691db483f12ac90f",
+      "provenanceAggregateSha256": "2a38a789c71b8afbacd14ea7b28f736539e97db6c848ec35d6d03341a2d17d3c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "correct-products",
+      "pageId": "correct-products--bubble-mailers",
+      "capturedAt": "2026-07-27T09:33:24.667Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 753,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0009930555555555556,
+      "queryTokenCoverage": 1,
+      "observationSha256": "a11553ea00abb36bfe635e1e6fa103ff5f67eebd3d1b285cfec58cb424e6c3c0",
+      "canonicalObservationSha256": "98550f005b374cc05f5f8338665c9f2ac33e467643c45de0b91ba23722115507",
+      "annotationScreenshotSha256": "43ca6fcf905ccb3e8c4d98579a8037686b342ddcabd0064afd3f861e770fff87",
+      "provenanceAggregateSha256": "b065b160e3fdf9afe78007199cec9c30b0cf01d24cf45060c28d1a0de60fc7b5",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "correct-products",
+      "pageId": "correct-products--static-shielding-bags",
+      "capturedAt": "2026-07-27T09:33:40.537Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1720,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0009930555555555556,
+      "queryTokenCoverage": 1,
+      "observationSha256": "34a9792186bf79a9ba04b95d3e179418454bc8346065ca282f95053de6c1e060",
+      "canonicalObservationSha256": "1b7ba45c638f9ad4a02fb4ab75d07c6fe239e684e71b596045d26096cd54d562",
+      "annotationScreenshotSha256": "0e5505e07a4d6cea0c701fe87bd73f5c6120c1cf8980efc038cd5b6e0c3e28a1",
+      "provenanceAggregateSha256": "27d98fc49afcae5fa73529e562ef15eb3fb759a027ccf63c4f68e6d6d57e7ff3",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "cougar-chemical",
+      "pageId": "cougar-chemical--degreaser",
+      "capturedAt": "2026-07-27T09:33:47.444Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 191,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "942b03665d4e8f5f5d88940c48fa8dae0f80df6c15699ebce07dcca71228f71f",
+      "canonicalObservationSha256": "822491aae9b8a5a8cacdbffca6be95946c8e732da338061811d8294eb7a38cc0",
+      "annotationScreenshotSha256": "c0d1a79c66998dca06ab8bd0882d6944dfa791726a335da4fae93593489a7947",
+      "provenanceAggregateSha256": "a143aaab66e09a809503e3dec84809bf70c6b885ca569d8d27d00f240878bfb4",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "cougar-chemical",
+      "pageId": "cougar-chemical--ceramic-coating",
+      "capturedAt": "2026-07-27T09:33:54.479Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 221,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "d0be74b6bea2c63eafffda8fb67e58d3765129e74e826956fcf6f4c1c5aa092f",
+      "canonicalObservationSha256": "a62c221f548a7b653351e70c1b71efa037e0aca8ccd7f3fb475ae7e5681c0e91",
+      "annotationScreenshotSha256": "7fb2f9f406262cbc54f60875cd92a22ef360bede9407b696e3dce900984f15f8",
+      "provenanceAggregateSha256": "ade3ea5a577e06b62e13bed0329cb91fbfdacdc3ac0f1c97c58c3a2bb49da294",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "discount-medical-supplies",
+      "pageId": "discount-medical-supplies--syringes",
+      "capturedAt": "2026-07-27T09:34:25.675Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 5,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 835,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "408120d0e5c06249004293c728b1f071baedf0c98f1da2d0baa0f64e8273807d",
+      "canonicalObservationSha256": "7a25d1e9df4d0c3afdfeb6309f6253af90b48992f2f6f9f929048b23197f4e1d",
+      "annotationScreenshotSha256": "f1d365ef3c5933efdaddcfaefaad68b486c3043f17683df5f02037a614be3a5a",
+      "provenanceAggregateSha256": "19dc15eaec3670bec34c257fb1ef796680628785f9340d8446415f57721e07b6",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "discount-medical-supplies",
+      "pageId": "discount-medical-supplies--alcohol-prep-pads",
+      "capturedAt": "2026-07-27T09:34:34.491Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 5,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 831,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8ff84cf33891d364dc18dd9ed8f199c3a38b007ab80ba89c4901cceb5867dc42",
+      "canonicalObservationSha256": "d9e9835f75749eb91bd081e90cd4bd0c1ee1ed9e537f8e4497ce2c4c3afe11f2",
+      "annotationScreenshotSha256": "7c96c2b80207413d01961c1e5ad8799345a3b40f51a127c8d270b6827496a112",
+      "provenanceAggregateSha256": "9d0468a12241be9f5e72f3de97ad2dcee6dac23b54226f5fd09b34f46c87d1d2",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fat-quarter-shop",
+      "pageId": "fat-quarter-shop--rayon-fabric",
+      "capturedAt": "2026-07-27T09:34:47.668Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1147,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "9b2d1aadf585208fac74b3d5b9356cad6109e2d8ad1aadf179f20f7f3f2163a7",
+      "canonicalObservationSha256": "f161eb922da08fd1642cdd3164016b3ccad84418c7d1026b9d5e6965ca9ce1c9",
+      "annotationScreenshotSha256": "89aead6be9dc25e6dfce5ccd20a9b1b17b6d74cc9d8354ad74d3c70ae0997ada",
+      "provenanceAggregateSha256": "8e6a1036a4939928f75f3819266494ce885b50e190fabe8b2ca539fbdf313ffc",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fat-quarter-shop",
+      "pageId": "fat-quarter-shop--backing-fabric",
+      "capturedAt": "2026-07-27T09:35:01.137Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1298,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "beed08257a33e4f1712df1bc846e91a4e33978dd4bb2417254e515c7b6c9cdea",
+      "canonicalObservationSha256": "fd609352728aa4a6da43d953be7b8d23ff152be2e290e34170ec0943b44280a2",
+      "annotationScreenshotSha256": "17d0daaeb998eaae3273e394157ad684c778e9d564f78812ff258e82f56ddca6",
+      "provenanceAggregateSha256": "6ea931a6209ef8e3ae716bbf8a9ef70cac855fd9a90767180ecb96b247e1a80e",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "pageId": "gorgeous-fabrics--jersey-fabric",
+      "capturedAt": "2026-07-27T09:35:46.182Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 519,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.00384375,
+      "queryTokenCoverage": 1,
+      "observationSha256": "a42ae5c82b1f7be9c7e66a0f0983695cc31f149eaf9a82695ebf1142655cb259",
+      "canonicalObservationSha256": "7ea4212b6f1d2a467e3b5748f641b8281e49042f172a30bb3ea16003ead6a3bd",
+      "annotationScreenshotSha256": "33d65b0485837bf8a27aed0a09fe9c9d5e09dda8280215d19aeb26fa66db7677",
+      "provenanceAggregateSha256": "caca864c327a536a472db2591873a14989a532bd7c6a097bb558342b7fd4a705",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "pageId": "gorgeous-fabrics--ponte-knit",
+      "capturedAt": "2026-07-27T09:35:55.929Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 529,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.00384375,
+      "queryTokenCoverage": 1,
+      "observationSha256": "d3064aace060d8dcb5c71e498e052a826262b12490bd647825d3375797b88537",
+      "canonicalObservationSha256": "139270907da0f1c482a864e831adc7f5ffbc07f14e4959923947ebc52a23d5f1",
+      "annotationScreenshotSha256": "6c594e452b5cb014439dc8078ed8ce02a0fc5b7aa5b2f25f8166b4b043c00176",
+      "provenanceAggregateSha256": "6ad74ecb9faa0e708e1aba420410e74512cb5199530425b117dfc6fb2401b125",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "in-the-swim",
+      "pageId": "in-the-swim--pool-stain-remover",
+      "capturedAt": "2026-07-27T09:36:20.965Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1621,
+      "observationTruncated": false,
+      "dismissedObstructions": 5,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8d08c7d38c597d70901c293637e1208af497cccd8f45d41976ca5ccef5fac846",
+      "canonicalObservationSha256": "3f84db0052b556cf95834e142760f8e00116ee5810f0908fbd2041a5420029d2",
+      "annotationScreenshotSha256": "76f3feb96046e9fb447a02cd9a13a4f50d3f83ef74b3006587e7d1621258c90a",
+      "provenanceAggregateSha256": "f91a8646ebf310e6f34cad529cb42b4b074f174f874c27ab9d57f03ac1aa561c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-mega",
+      "pageId": "medical-mega--syringes",
+      "capturedAt": "2026-07-27T09:36:54.668Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2318,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c21c2734e84f62947067a42f19aee813f8a17843a641aaeaa9702f0c36d09758",
+      "canonicalObservationSha256": "bd982fd91f9d2cf88c02eeb8e11a4435244b2b094168c8909dfc099f9ddb77cf",
+      "annotationScreenshotSha256": "2ce8bb7513bb3b03c023b3d3eb916287d04bb6a66824696dada971f64a185fcd",
+      "provenanceAggregateSha256": "d9dc34eab1db3cd1b3ed6a8e6d7a9fedf6a77e9b85553f19d47778cbed794e0c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mineral-tiles",
+      "pageId": "mineral-tiles--marble-tile",
+      "capturedAt": "2026-07-27T09:37:12.458Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 515,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.0016,
+      "queryTokenCoverage": 1,
+      "observationSha256": "36ac5c9968da077ea70df28c167b71203955fbbae01fdb3f876057ab346a703e",
+      "canonicalObservationSha256": "7dd9f5fd5b52f728d2aa4561fcff15d905951d3239494d55f512ed6e098d9253",
+      "annotationScreenshotSha256": "0f6b4473f4ceba8738645b3090e782e5b43407ab6582a84436ff6540126bbab5",
+      "provenanceAggregateSha256": "944a0f5af9bbc656e2f8d6faf888cbf726f4b4f481817afe5a8888afa068082d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "restaurantware",
+      "pageId": "restaurantware--takeout-containers",
+      "capturedAt": "2026-07-27T09:37:22.691Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1591,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.027890541330973306,
+      "queryTokenCoverage": 1,
+      "observationSha256": "90ac20aaecdcd44ed495e1fbf049e60947415ba22757d44a34ee146fdc5e1497",
+      "canonicalObservationSha256": "0f3515be434d4225b10213497c516f946b7348e6501ef39debb20acb796609d8",
+      "annotationScreenshotSha256": "91c1d824e058d6bd5417ea3c55498806558b08fe93e622778f035c4bb1b5dffd",
+      "provenanceAggregateSha256": "98a1e7c615e19e4f744f7df6adbda2b6cedef0e792b4ff678f59cab29ed8008d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "pageId": "save-rite-medical--syringes",
+      "capturedAt": "2026-07-27T09:37:31.588Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 688,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.005218032662736045,
+      "queryTokenCoverage": 1,
+      "observationSha256": "9efee66f2262c2177caa34772b833970c68cef9278fa3d3cd581f8d007d25807",
+      "canonicalObservationSha256": "f3f5c56e64d486a3c873caa20a369c3a7bdf11e16d156fa874691df357ae02be",
+      "annotationScreenshotSha256": "50ead107f0b689045ee278a22f4c4bb0d1324d82de04101529965c93521d762d",
+      "provenanceAggregateSha256": "a647272453a152ab9262261339b0283f0ac83802c26445dd06ab627566de2f27",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "pageId": "shop-med-vet--catheters",
+      "capturedAt": "2026-07-27T09:37:40.725Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2214,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "fcf4561da79f215d77a2c7b9217eac18af5a17b335b2e9ff5e0a95d05e223730",
+      "canonicalObservationSha256": "e655c45d8dd775bc98e9d02f299cfb95894d4f3a6d23e0ce739fecbd90ec0e4a",
+      "annotationScreenshotSha256": "71fc1e7dbde098597bb288d0322690528c616bbc9cb6944fab94c46868253f4d",
+      "provenanceAggregateSha256": "13de63fe8b90cfd513aefd7b55268ea45b54ccdc87528a26b282f1093cb060d4",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "super-detail",
+      "pageId": "super-detail--interior-cleaner",
+      "capturedAt": "2026-07-27T09:38:07.868Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 377,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "0a220be076c8b3169583f8163a7b34650050597d95d46c35a0d3b532afda3c4f",
+      "canonicalObservationSha256": "47b632f1b2b0800c481b10ffa22cb4736519f50ba1a37e077c205cd60dafe8ea",
+      "annotationScreenshotSha256": "0af4bef1d9a98cb6a95079a0493f56f143620250a0abc4669d34bcc460441e87",
+      "provenanceAggregateSha256": "538eb1f551f7dc7d4900d3ba0c02d623ef15c01f318cf8d9a9763d25cea9cfd4",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "burlap-and-barrel",
+      "pageId": "burlap-and-barrel--chile-powders",
+      "capturedAt": "2026-07-27T09:39:30.965Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 601,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "32d97f6a5a28bb1d9e96d1fd694327fff308784b2c05be63ff218faa1e22ce96",
+      "canonicalObservationSha256": "b1f19af4bab1640ab0c5a85c42672243644899ed92e3bb87bcdca034075aa4cd",
+      "annotationScreenshotSha256": "a736884c5abfc273b161ed07d09a85d925ccb29021244c142ae4c33211e99e5e",
+      "provenanceAggregateSha256": "627af3a362411713aaa41eecad1a1decefc1c20cef1a52409348d0e3f9c1023c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "cougar-chemical",
+      "pageId": "cougar-chemical--carpet-cleaner",
+      "capturedAt": "2026-07-27T09:39:54.899Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 208,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e47dfb8afadbabe370c09859e95f343b5d8f6e07946976c635e8e7d9e4f2cca7",
+      "canonicalObservationSha256": "0a4338abaa6e76f5d9c53b820ba7ec28853a75afb7374ee90f3a13b55712c7c0",
+      "annotationScreenshotSha256": "56d2f9dccd03aabb5e4c67899ccffecf0f8c8a8cea5154ab2e3fe8ef69d4b084",
+      "provenanceAggregateSha256": "7199149adfbc4ac68e330451d779a27e8d4c4aa60e34656d095dfa947ee379b3",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "discount-medical-supplies",
+      "pageId": "discount-medical-supplies--adhesive-bandages",
+      "capturedAt": "2026-07-27T09:40:12.916Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 5,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 703,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c5c5a02f8962992c285156a7ae855f948278764140213b817519d6d7ab526765",
+      "canonicalObservationSha256": "79ae3970d93c7321775195f2e6b530a5f9115f193d0d11c45cd6d9935e039981",
+      "annotationScreenshotSha256": "9a26b3a5ff6424c61039d0500f83bcbb7038aceb75f6b44686d67364e6c8d536",
+      "provenanceAggregateSha256": "8679ebdfec75b791c85b84c751f885a3babfe287788d5156bc2f42d0a6e5d026",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fat-quarter-shop",
+      "pageId": "fat-quarter-shop--minky-fabric",
+      "capturedAt": "2026-07-27T09:40:27.110Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1193,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "99dd3137c23ac81159d9c749c419c1dd99e92647c884d728b51150a98bfce04e",
+      "canonicalObservationSha256": "58306137694f7a7a2c4f7744e3015f72581529f25a7e17ef1ffd76aa8c3ea8fd",
+      "annotationScreenshotSha256": "c9c7e9413e87d11c0dbd5cf4616f5562e5039585dda30e974514d77f7b048a3e",
+      "provenanceAggregateSha256": "741f9eeb2b7c48c67a30e26191aaa9e44f1cc13070f2c634f272313d6bccd60e",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "floorzz",
+      "pageId": "floorzz--porcelain-tile",
+      "capturedAt": "2026-07-27T09:40:44.577Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 625,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "03a165910beabee11958732d095ea93cc5217827c3858f654f2a583196452dec",
+      "canonicalObservationSha256": "573098e778cbaf99cbf503812d5b7bd3c9b3d4831f2e778d837e89dddf924b32",
+      "annotationScreenshotSha256": "d64895efdc62cc50c994cf459fd5de5f1dfd3fbb39c85061d3274f01495022ee",
+      "provenanceAggregateSha256": "1b6f31cdf16ae812da31429ee2b02427258defc0ac92e02ed65b0e2e6f1e22f5",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "pageId": "gorgeous-fabrics--crepe-fabric",
+      "capturedAt": "2026-07-27T09:40:53.501Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 501,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.010367868209989063,
+      "queryTokenCoverage": 1,
+      "observationSha256": "1a5e3134a4f60600cd10b7c30510d8ad100042348fa84351585471d269acc208",
+      "canonicalObservationSha256": "578107f83a739adcefd3199411a8ca4d63c2132b0ed6f172f1ed6f9419d1064a",
+      "annotationScreenshotSha256": "196fd8e674ed71d653374ee559cb56e13cc480c056bd9b707f54cb3f2ca96850",
+      "provenanceAggregateSha256": "6e167e8128e59f89d79caaa2c140b3b833fb05d330c404fe3a7d6acca2372c2e",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "in-the-swim",
+      "pageId": "in-the-swim--phosphate-remover",
+      "capturedAt": "2026-07-27T09:41:05.997Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1382,
+      "observationTruncated": false,
+      "dismissedObstructions": 5,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "019db030b7243123929ed9bf4b1e318d261e0a277b8fa70c6fd2a04b34b9da88",
+      "canonicalObservationSha256": "d79a44a2e10f5018c5bcf2b9074286b1f9ee517dff7ace3f1ba59d34b272e5f5",
+      "annotationScreenshotSha256": "9b6aa24b19d2f709b205e613bc76f45f2dd0802556950ae361404ddff834aea2",
+      "provenanceAggregateSha256": "2fa4a830172defcaeb6fd80d6e6e6981d5f99ea0b61debe2a7b988fa9d65ebe8",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "leslies-pool",
+      "pageId": "leslies-pool--phosphate-remover",
+      "capturedAt": "2026-07-27T09:41:21.522Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1569,
+      "observationTruncated": false,
+      "dismissedObstructions": 4,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "813ed2301a8da2dc4f319277320ce425e209cd9cfc2e3a492b5f380d4aa929fa",
+      "canonicalObservationSha256": "13005c206a8b03defdcdc935ce15a6c6f9e29dbdab6cb1a49dc0c156f4618752",
+      "annotationScreenshotSha256": "283c540a4596e8a49d92d7acbcedff9ee0e8298417d6a1579596cbd061d41ac8",
+      "provenanceAggregateSha256": "0e107af8ddd170a5dde616e28714f01c85ad43b8d77918151fafd5d1b7493f2d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "leslies-pool",
+      "pageId": "leslies-pool--pool-stain-remover",
+      "capturedAt": "2026-07-27T09:41:36.266Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1552,
+      "observationTruncated": false,
+      "dismissedObstructions": 4,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c34f24c5f974eb56f384297f446a695403a846dfabdc2620b9de210acb543e29",
+      "canonicalObservationSha256": "2e39ba9a92ac20c17a67525d1c45b15377f8752e8a9cb3c4c61e9441b8f2a413",
+      "annotationScreenshotSha256": "4cce7c6fd4f9bce49225e37c7022a274cb041903785b6581ed87e4d85afdd9ac",
+      "provenanceAggregateSha256": "cc787e0c566d6489f9bf50742d6498c92a3ef1b9dc153352c99166c0ce39cd42",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-mega",
+      "pageId": "medical-mega--adhesive-bandages",
+      "capturedAt": "2026-07-27T09:41:54.284Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1666,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "45443d2dac3ab5505ccd9fe7abcc9496edeb964a1d13391d790b9ddce145ab16",
+      "canonicalObservationSha256": "315628b6a8113da70d783a38f1341223dd8ed8614f10c2f45f950875926c4505",
+      "annotationScreenshotSha256": "a18d6180c2253d6cb4aa69e061165e8511c719860476e8a47f47b4b087be5db1",
+      "provenanceAggregateSha256": "d73d98d8597e9968c1930b7443825691b5290e21cfa15cbd6052c9d3f211b9d8",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-mega",
+      "pageId": "medical-mega--lancets",
+      "capturedAt": "2026-07-27T09:42:13.582Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1542,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "46ffb95a569e419e79feb3088fbeb17185376ec5208eeab7c7bcae2ed4782fb6",
+      "canonicalObservationSha256": "4f6a37943113aba79a412f728df0b4c5d58979afbe940216cacc7e2cc6689f4f",
+      "annotationScreenshotSha256": "8d87db50b07740d587bb952ab3c6fa7152035f29bc267bdd7c0488d85a9b387b",
+      "provenanceAggregateSha256": "62315a77a73c92441ea22caa8c6e6d8e18199e990e20f6ab3f1d8e5a06cd6f99",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mineral-tiles",
+      "pageId": "mineral-tiles--pebble-tile",
+      "capturedAt": "2026-07-27T09:42:31.347Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 470,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.006999635435654393,
+      "queryTokenCoverage": 1,
+      "observationSha256": "62ae0d75a4e86b79f86a4c2ed16b2b3e6389e6d25748bfee5db473cac9cc87f8",
+      "canonicalObservationSha256": "fbeebe2e2ac16b16cfe6c3b3cb57db45537ecd2913d42c323744bb6cff163293",
+      "annotationScreenshotSha256": "bc4922f166f82865f0ebe4af337a37055a4b48a58b96eabdf7160f32484b45dc",
+      "provenanceAggregateSha256": "f0b0ddb5e6cca27040c574b5bf259ea74f8a755cce6339fbc24165bc4ead31c7",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mineral-tiles",
+      "pageId": "mineral-tiles--metal-tile",
+      "capturedAt": "2026-07-27T09:42:48.912Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 546,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.006999635435654393,
+      "queryTokenCoverage": 1,
+      "observationSha256": "98a0242efe04991dcdfa988239960092c4cb54948821ed2f7ca0c2e03bc094b7",
+      "canonicalObservationSha256": "0bece846de76bb8a3dcd630ab52347eab575d83b4958e30f1d347e4c669ed490",
+      "annotationScreenshotSha256": "1b5992d438aa9ba901db34027fc4c1f309297d5946e75955f33472c2995151a0",
+      "provenanceAggregateSha256": "04e5dff63b99678fe16acdacfd75c4afcdbecf09ea25e78172c685ed269cc014",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "restaurantware",
+      "pageId": "restaurantware--drinking-straws",
+      "capturedAt": "2026-07-27T09:42:58.906Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 820,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.050795965487908615,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8bb584a123964b2d8e7dc5af6cfb6d0736ef76031f2ce3cfa2b22128f5699d2b",
+      "canonicalObservationSha256": "11416cd97884400ff0396991952b7c092a4b1e6b156479729f12911f8f4219a3",
+      "annotationScreenshotSha256": "39ea54fa651e2118aba83e656aeca2ffac3444a4cb46aa273667c42ac48476a8",
+      "provenanceAggregateSha256": "f2eb10b07ae619bbb0b31f2a28e1ac3977c86047199d2e1007d92b87a4232000",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "restaurantware",
+      "pageId": "restaurantware--plastic-cups",
+      "capturedAt": "2026-07-27T09:43:09.196Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 793,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.050795965487908615,
+      "queryTokenCoverage": 1,
+      "observationSha256": "274cc131b80f55feca445f955d16d51fdb3fae2d7dab57e52c6bd9242a0f4e14",
+      "canonicalObservationSha256": "d82ad9b4507718d93d99642671432385a9277ebfa27db315e6c0ae6361ddd9f4",
+      "annotationScreenshotSha256": "b3267a03ca49ec9f88933b44cb66f909f61b6efe0eb4773637a2bc2b1aae7fca",
+      "provenanceAggregateSha256": "e3785c0fde97a29428f0ef2781b17c79719b0471540f5b0bd83a20156d237448",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "pageId": "save-rite-medical--wound-dressings",
+      "capturedAt": "2026-07-27T09:43:18.490Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 577,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.01769702172913866,
+      "queryTokenCoverage": 1,
+      "observationSha256": "5eade9dd64ef85edd947f855cfa2d78166d4b63d2c92b81998aae861c49d9097",
+      "canonicalObservationSha256": "874b35f1b2adc9fbc581fb849197f94151bd43edf7d7c55cc64f5555e676dd4e",
+      "annotationScreenshotSha256": "ee15766cf4ef0ad5c1f33c60264fcc94bd1af7d22af911f217cd876e484c26f4",
+      "provenanceAggregateSha256": "baabc0cbbbde65aa982369928aeef0c25e7f5b6826d234d420e92980cf5c6591",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "pageId": "save-rite-medical--alcohol-prep-pads",
+      "capturedAt": "2026-07-27T09:43:26.948Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 504,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.01769702172913866,
+      "queryTokenCoverage": 1,
+      "observationSha256": "9c91b07fb68482d580565448763c0008d0d20e328be8c78768890d369a49143a",
+      "canonicalObservationSha256": "c0b418b9cdd3488eab0aa6edeff0db24b9a641291bfc64ad13a3f3f013fec811",
+      "annotationScreenshotSha256": "262f61e8dfdbd2b10a9a20be7f57be061fa14f84ebb728855b3d81e1fb3b722a",
+      "provenanceAggregateSha256": "55bf18352cb5d1cf57bfa323f7fd6a97a9593d7a6fe0ad3126b81031e52cc38b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "pageId": "shop-med-vet--bandages",
+      "capturedAt": "2026-07-27T09:43:36.680Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 10,
+      "candidateScreenshotsCaptured": 10,
+      "observationNodeCount": 2345,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.02564102564102564,
+      "queryTokenCoverage": 1,
+      "observationSha256": "f712683d4c2d938d76025bc4a53bb5e893f32d87d55c47dbadebf508b2a6bc5b",
+      "canonicalObservationSha256": "1266d0097cff5c0e91117eb14acd6599536da17be4acd60af53b716db356e04c",
+      "annotationScreenshotSha256": "414e5e51e4a089f6e14063c8311ed045b7112137ba8561585dbe15ac1c95ea87",
+      "provenanceAggregateSha256": "4ee2c8a2ade6606ba4e2b243eb4b27926336f71a3e989c0d84d20c985edd04f8",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "pageId": "shop-med-vet--lancets",
+      "capturedAt": "2026-07-27T09:43:46.011Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 10,
+      "candidateScreenshotsCaptured": 10,
+      "observationNodeCount": 2197,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.02564102564102564,
+      "queryTokenCoverage": 1,
+      "observationSha256": "896420dc263ff63e70abb53db28fee23aad3ef28b9cc2d2dbdfa1eb29c3655a2",
+      "canonicalObservationSha256": "92d005934da87f0003c6d7140c111e21b21adb4327410041b3150a689c407eff",
+      "annotationScreenshotSha256": "38a759ce5d227384f076337d2995b0752757c3247b3e3b449febf348f1da22d3",
+      "provenanceAggregateSha256": "8598493cff694230af9fdd47fc2d73b1a67e80da5fb37d659a3b8e44809bff6b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "sunplay",
+      "pageId": "sunplay--phosphate-remover",
+      "capturedAt": "2026-07-27T09:44:03.802Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 624,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.023666302102321058,
+      "queryTokenCoverage": 1,
+      "observationSha256": "5201dc6f1ae7129d63a674c9ef4e0c3a93e36a7eb4b3babbdfdf1af241e26c00",
+      "canonicalObservationSha256": "4711f924179c7ea93b9166d3bee5b64a35ab27bc4bce459b932f4d7d15d81ea7",
+      "annotationScreenshotSha256": "44e133708e65f717e19fe96f42c47966304f09372d87cc7fd88644f1f79faf98",
+      "provenanceAggregateSha256": "e36ddd25ecf46bcc8eb2bde02b10bbd03f94e8e08d1cabde746c40b79ef77069",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "super-detail",
+      "pageId": "super-detail--tire-dressing",
+      "capturedAt": "2026-07-27T09:44:30.388Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 428,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e3f7c0602778403e14845c728cdc6b59218e9824868770dc949ad17f53589eea",
+      "canonicalObservationSha256": "9b8cc865a8358bce6c634112245b16626b26d9105f0a25cbfbc5bbffb054fdcf",
+      "annotationScreenshotSha256": "3aa57cbce51bfe864d9ad95e2da12e935ea2ad8accbbda9e67e4e30bdc670ab2",
+      "provenanceAggregateSha256": "2a593f93f5e68a750cc2ec4f127d72289f45277e6308dce8978a8d52e95613a7",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "super-detail",
+      "pageId": "super-detail--ceramic-coating",
+      "capturedAt": "2026-07-27T09:44:39.802Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 422,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ab4fd99874378efb9407464f7cf633ee3aa098846dc4bf946c23c152464383fe",
+      "canonicalObservationSha256": "494324be1ef4fcefe7fa86181a9f0d89e2302cc46c737b4049929624c1570886",
+      "annotationScreenshotSha256": "730865d5f8c705d53238a2b6dad77ca6dd4b286819e34ac832def098e948a761",
+      "provenanceAggregateSha256": "9a58fdb2066e51442580cb2b163d7509afa1bcdddc62a4f117980e74e430dd45",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-linen-lab",
+      "pageId": "the-linen-lab--linen-denim",
+      "capturedAt": "2026-07-27T09:45:37.037Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 411,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e982c48f4c08bf8b280aadd717b6f1329040f4a7ebfa98e48afa67583ab1e49f",
+      "canonicalObservationSha256": "e1aac648fe27eb30d37f53faf98afac7f8cc02108947dc74bd9decafd9d5e568",
+      "annotationScreenshotSha256": "136b18ee5992c015b07ad7c9c36602b3aabaec3b5be81ed077a2ee6741920714",
+      "provenanceAggregateSha256": "4d0baf609aaa8cfea2fe8643d359e7281d26d2046631fc798fa764dfa3c4ec2b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-depth-wave-03-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T10:03:51.000Z",
+  "source": {
+    "siteIds": [
+      "cougar-chemical",
+      "gorgeous-fabrics",
+      "restaurantware",
+      "save-rite-medical",
+      "discount-medical-supplies",
+      "shop-med-vet"
+    ],
+    "cohort": "selection",
+    "strata": [
+      "industrial-detailing-chemical-supply",
+      "independent-designer-fabric-retail",
+      "food-service-packaging-retail",
+      "discount-home-medical-supply",
+      "discount-medical-supply",
+      "medical-and-veterinary-supply-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "7d4f76b061c66e7d589f6ed28afb73d680bc1dd8f5de8e469ecd4424be73280b"
+    ],
+    "collectorSha256": [
+      "6f7ed0d9cae8516b792f2c0e5798a7a8b350efc5b5dd2d5ce8d9724e4d3d3762"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T10-00-29-443Z--p92088--001",
+      "runManifestSha256": "6d1c449b2206e2965d73e5d5012749bd3285e072edb91008d093697c4eadeac2",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T10-00-29-443Z--p92088--002",
+      "runManifestSha256": "54f88f623a098575213215bea06656c74719c0e039f94357edf4584a74a3dc4c",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T10-00-29-443Z--p92088--003",
+      "runManifestSha256": "9f3dbb29db02ea3e95de4b5d5105da22aa5093f6426198ae00b6b6611d02d21b",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T10-00-29-443Z--p92088--004",
+      "runManifestSha256": "3feafaec05c14c3b86a398cafb7d4c40ec41db24accdbae0279cef350a94bc5a",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T10-01-33-634Z--p92622--001",
+      "runManifestSha256": "c7ea3dc3e6ba0963aae9c7426a07801e17ce875a92aff8e2a0d8815888e82f0c",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T10-01-33-634Z--p92622--002",
+      "runManifestSha256": "a5c5257fb55258fa95f805990291e5395d8c7ed9d2de570c842df8f1b81958f2",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T10-01-33-634Z--p92622--003",
+      "runManifestSha256": "8ed18fa9cc97751ce4b0ba51fabe991874bb6352858e830bc13a717ed5b189b4",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T10-01-33-634Z--p92622--004",
+      "runManifestSha256": "4b08fc8d0f76758cfbff531213248f6fcbc5b3577d0d7ef60911dc446e110538",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 8,
+    "successfulCaptureAttempts": 8,
+    "acceptedPages": 7,
+    "rejectedPages": 1,
+    "acceptanceRate": 0.875,
+    "candidateCardRoots": 82,
+    "samplingFinding": "All eight unseen high-coherence reserve queries completed in isolated headed Chromium process bounds with zero hard timeouts. The collector was also rerun concurrently after adding process-bound explicit run IDs; all eight concurrent child directories remained distinct. Frozen machine and original-resolution visual checks accepted seven pages and rejected one, an 87.5% strict yield.",
+    "visualValidationFinding": "All eight full-page annotation screenshots and every accepted frozen root were inspected at original resolution. Mineral Tiles travertine tile was rejected because the visible selected roots were dominated by generic white porcelain and mosaic products despite clean structural evidence. The seven accepted pages preserve coherent product title, price, quantity, and native unit-price evidence across volume, length, and count."
+  },
+  "captures": [
+    {
+      "siteId": "cougar-chemical",
+      "pageId": "cougar-chemical--glass-cleaner",
+      "capturedAt": "2026-07-27T10:00:36.101Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 213,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "02b2be4c56ea9ccc07031d338e51471d4ddd93c3bfe774c7c2f8fb7e974b423f",
+      "canonicalObservationSha256": "466ed06a31b35cb89c6bc604a2c034bb7210dfe74105a26a0af7c15024e25065",
+      "annotationScreenshotSha256": "38eaec15c4eb45523d606d7df45130d142a31e692794b25c0e950ed771c7a428",
+      "provenanceAggregateSha256": "f8eba6be8c3118f4ea49c9781e4006451cd6e238855336c7f9d28bf1dcb4e84f",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "pageId": "gorgeous-fabrics--satin-fabric",
+      "capturedAt": "2026-07-27T10:00:45.167Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 521,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.00384375,
+      "queryTokenCoverage": 1,
+      "observationSha256": "5d5a74b544f8f1eaaf7ee739100775579965f4fc162308cf2e8688bc1a4332d1",
+      "canonicalObservationSha256": "b7f0e0520a59c1cd5bfc77c84e2c25776ab6606560371e458a8b03f32579a0c4",
+      "annotationScreenshotSha256": "69eeaa158db8c900ccc4f9a1537ce2250036046f8299a499c92322f17818b1c6",
+      "provenanceAggregateSha256": "fa0e8c3dd3f779534d286b2af76f0fc91a4c4ab1d8dab94a956a104f66378119",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "restaurantware",
+      "pageId": "restaurantware--food-trays",
+      "capturedAt": "2026-07-27T10:00:55.476Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1688,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.027890541330973306,
+      "queryTokenCoverage": 1,
+      "observationSha256": "f0c5ac7d7a5a3cc421a30371c939b4701ce796ba37af33efc7bd2f89a1d438d6",
+      "canonicalObservationSha256": "f185ec4b7bf45c6c23d82962b687a0e8aa67ae597b9e74da9420cc3ac2d7ca2f",
+      "annotationScreenshotSha256": "bd80bd229a2dbda14df3e2e988136901100b89c4fc1dad99e77a794aa369316b",
+      "provenanceAggregateSha256": "67513f8f8bf44243c1b8eece9da051a2035ccfe45a81f6454685ac3cc8a48174",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "pageId": "save-rite-medical--surgical-masks",
+      "capturedAt": "2026-07-27T10:01:04.617Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 676,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.005221503443188138,
+      "queryTokenCoverage": 1,
+      "observationSha256": "d6ef852f23ca865b2da044a2a0dbca68a133649e7ffa3adde86d82a3f14ac5fa",
+      "canonicalObservationSha256": "faf7d9361c89be4f20b7b52d91d65f61f45a29ea55d1d6708bcc3ee2a074558a",
+      "annotationScreenshotSha256": "f6796ffe6932b99b1f98753c9eca571305197f88ff23effeada836912bc724b1",
+      "provenanceAggregateSha256": "5c2922cc6a6ff243d5dae728b1a4209a4f4886d02ce5cbbd3614a7dc350474fb",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "discount-medical-supplies",
+      "pageId": "discount-medical-supplies--wound-dressings",
+      "capturedAt": "2026-07-27T10:01:41.847Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 5,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 715,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "5424e3546d6a2431270631e226ce359e7dd7ae0894a41c56218fddaba739d0bc",
+      "canonicalObservationSha256": "d21af191b9f2250f816c439ad335b0032e261e1a118df78695bcb116e57458f9",
+      "annotationScreenshotSha256": "8e6ee151972bd1533e8f48d9d992407e8333cfeee8a02c0edf31452cef06fee5",
+      "provenanceAggregateSha256": "2ec9efe5ced562728c54789634d597b274f7197c94d78aa81ee6863a7ccf2fdb",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "restaurantware",
+      "pageId": "restaurantware--portion-cups",
+      "capturedAt": "2026-07-27T10:02:10.188Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 817,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.050795965487908615,
+      "queryTokenCoverage": 1,
+      "observationSha256": "0e408503a454c8c6884ea56df7c64579ff40f5c55aafb796fb2cb0cb84dcaff3",
+      "canonicalObservationSha256": "2c5129df7589946a5ad36049a951037f784d16a343c29c5a6e1fcf483f0adf02",
+      "annotationScreenshotSha256": "5588b4c91273a458bca3462c3fea453a12b37e0b426d1972721672d2392e57f4",
+      "provenanceAggregateSha256": "4750812e4a77a42ccbbd5c33f936a7267adab33bdeba94da53466b83d45ac549",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "pageId": "shop-med-vet--needles-with-syringes",
+      "capturedAt": "2026-07-27T10:02:19.959Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 10,
+      "candidateScreenshotsCaptured": 10,
+      "observationNodeCount": 2393,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.02564102564102564,
+      "queryTokenCoverage": 1,
+      "observationSha256": "7f4676fc2a0dcaee6bf867a5696a35590b7c7b71f46c25b04b3e700fbf45b5a6",
+      "canonicalObservationSha256": "915a4c189e9e0ec56fb2276f7ae5050c75bc24d7fca81d7c37ae4366bb84d33b",
+      "annotationScreenshotSha256": "a034566088c8b5b684a778e3f34284ea9f250f20c856399c959533cbdac2fe3c",
+      "provenanceAggregateSha256": "cd93dc452e96c1463f2890077f549b445afd4adf4bec361a0963db53421a37e2",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

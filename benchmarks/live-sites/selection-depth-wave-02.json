@@ -1,0 +1,486 @@
+{
+  "version": 1,
+  "description": "Second bounded depth-expansion wave on all twenty qualified selection domains. Sixty unseen listing queries provide three reserve pages per domain so strict visual rejection can still close the remaining forty-four-page structural gap without changing the frozen domain assignment or using site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "best-laminate",
+      "label": "Bestlaminate",
+      "hostname": "www.bestlaminate.com",
+      "stratum": "laminate-flooring-specialty",
+      "searchUrlTemplate": "https://www.bestlaminate.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "luxury-vinyl-plank",
+          "query": "luxury vinyl plank",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-underlayment",
+          "query": "floor underlayment",
+          "dimension": "area"
+        },
+        {
+          "id": "wall-planks",
+          "query": "wall planks",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "burlap-and-barrel",
+      "label": "Burlap & Barrel",
+      "hostname": "www.burlapandbarrel.com",
+      "stratum": "single-origin-spice-retail",
+      "searchUrlTemplate": "https://www.burlapandbarrel.com/search?q={query}",
+      "queries": [
+        {
+          "id": "spice-blends",
+          "query": "spice blends",
+          "dimension": "mass"
+        },
+        {
+          "id": "chile-powders",
+          "query": "chile powders",
+          "dimension": "mass"
+        },
+        {
+          "id": "whole-spices",
+          "query": "whole spices",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "correct-products",
+      "label": "Correct Products",
+      "hostname": "www.correctproducts.com",
+      "stratum": "esd-packaging",
+      "searchUrlTemplate": "https://www.correctproducts.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "bubble-mailers",
+          "query": "bubble mailers",
+          "dimension": "count"
+        },
+        {
+          "id": "zip-ties",
+          "query": "zip ties",
+          "dimension": "count"
+        },
+        {
+          "id": "static-shielding-bags",
+          "query": "static shielding bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "cougar-chemical",
+      "label": "Cougar Chemical",
+      "hostname": "cougarchemical.com",
+      "stratum": "industrial-detailing-chemical-supply",
+      "searchUrlTemplate": "https://cougarchemical.com/search?q={query}",
+      "queries": [
+        {
+          "id": "degreaser",
+          "query": "degreaser",
+          "dimension": "volume"
+        },
+        {
+          "id": "carpet-cleaner",
+          "query": "carpet cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "ceramic-coating",
+          "query": "ceramic coating",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "detailing-com",
+      "label": "Detailing.com",
+      "hostname": "detailing.com",
+      "stratum": "professional-detailing-supply-retail",
+      "searchUrlTemplate": "https://detailing.com/search?q={query}",
+      "queries": [
+        {
+          "id": "interior-detailer",
+          "query": "interior detailer",
+          "dimension": "volume"
+        },
+        {
+          "id": "tire-dressing",
+          "query": "tire dressing",
+          "dimension": "volume"
+        },
+        {
+          "id": "ceramic-coating",
+          "query": "ceramic coating",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "discount-medical-supplies",
+      "label": "Discount Medical Supplies",
+      "hostname": "discountmedicalsupplies.com",
+      "stratum": "discount-clinical-supply",
+      "searchUrlTemplate": "https://discountmedicalsupplies.com/search?q={query}",
+      "queries": [
+        {
+          "id": "syringes",
+          "query": "syringes",
+          "dimension": "count"
+        },
+        {
+          "id": "adhesive-bandages",
+          "query": "adhesive bandages",
+          "dimension": "count"
+        },
+        {
+          "id": "alcohol-prep-pads",
+          "query": "alcohol prep pads",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "fat-quarter-shop",
+      "label": "Fat Quarter Shop",
+      "hostname": "www.fatquartershop.com",
+      "stratum": "national-quilting-fabric-retail",
+      "searchUrlTemplate": "https://www.fatquartershop.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "rayon-fabric",
+          "query": "rayon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "minky-fabric",
+          "query": "minky fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "backing-fabric",
+          "query": "backing fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "floorzz",
+      "label": "Floorzz",
+      "hostname": "floorzz.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://floorzz.com/search?q={query}",
+      "queries": [
+        {
+          "id": "luxury-vinyl-plank",
+          "query": "luxury vinyl plank",
+          "dimension": "area"
+        },
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "waterproof-laminate",
+          "query": "waterproof laminate",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "gorgeous-fabrics",
+      "label": "Gorgeous Fabrics",
+      "hostname": "gorgeousfabrics.com",
+      "stratum": "independent-designer-fabric-retail",
+      "searchUrlTemplate": "https://gorgeousfabrics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "jersey-fabric",
+          "query": "jersey fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "crepe-fabric",
+          "query": "crepe fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "ponte-knit",
+          "query": "ponte knit",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "in-the-swim",
+      "label": "In The Swim",
+      "hostname": "www.intheswim.com",
+      "stratum": "aquatic-retail",
+      "searchUrlTemplate": "https://www.intheswim.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-enzyme",
+          "query": "pool enzyme",
+          "dimension": "volume"
+        },
+        {
+          "id": "phosphate-remover",
+          "query": "phosphate remover",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-stain-remover",
+          "query": "pool stain remover",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "leslies-pool",
+      "label": "Leslie's Pool Supplies",
+      "hostname": "lesliespool.com",
+      "stratum": "pool-retail-chain",
+      "searchUrlTemplate": "https://lesliespool.com/search/?q={query}",
+      "queries": [
+        {
+          "id": "pool-enzyme",
+          "query": "pool enzyme",
+          "dimension": "volume"
+        },
+        {
+          "id": "phosphate-remover",
+          "query": "phosphate remover",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-stain-remover",
+          "query": "pool stain remover",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "medical-mega",
+      "label": "Medical Mega",
+      "hostname": "medicalmega.com",
+      "stratum": "discount-clinical-supply",
+      "searchUrlTemplate": "https://medicalmega.com/?search_query={query}",
+      "queries": [
+        {
+          "id": "syringes",
+          "query": "syringes",
+          "dimension": "count"
+        },
+        {
+          "id": "adhesive-bandages",
+          "query": "adhesive bandages",
+          "dimension": "count"
+        },
+        {
+          "id": "lancets",
+          "query": "lancets",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "mineral-tiles",
+      "label": "Mineral Tiles",
+      "hostname": "www.mineraltiles.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.mineraltiles.com/search?q={query}",
+      "queries": [
+        {
+          "id": "marble-tile",
+          "query": "marble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "pebble-tile",
+          "query": "pebble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "metal-tile",
+          "query": "metal tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "restaurantware",
+      "label": "Restaurantware",
+      "hostname": "www.restaurantware.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.restaurantware.com/search?q={query}",
+      "queries": [
+        {
+          "id": "takeout-containers",
+          "query": "takeout containers",
+          "dimension": "count"
+        },
+        {
+          "id": "drinking-straws",
+          "query": "drinking straws",
+          "dimension": "count"
+        },
+        {
+          "id": "plastic-cups",
+          "query": "plastic cups",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "save-rite-medical",
+      "label": "Save Rite Medical",
+      "hostname": "www.saveritemedical.com",
+      "stratum": "discount-home-medical-supply",
+      "searchUrlTemplate": "https://www.saveritemedical.com/search?q={query}",
+      "queries": [
+        {
+          "id": "syringes",
+          "query": "syringes",
+          "dimension": "count"
+        },
+        {
+          "id": "wound-dressings",
+          "query": "wound dressings",
+          "dimension": "count"
+        },
+        {
+          "id": "alcohol-prep-pads",
+          "query": "alcohol prep pads",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "shop-med-vet",
+      "label": "ShopMedVet.com",
+      "hostname": "www.shopmedvet.com",
+      "stratum": "medical-and-veterinary-supply-retail",
+      "searchUrlTemplate": "https://www.shopmedvet.com/search?keywords={query}",
+      "queries": [
+        {
+          "id": "catheters",
+          "query": "catheters",
+          "dimension": "count"
+        },
+        {
+          "id": "bandages",
+          "query": "bandages",
+          "dimension": "count"
+        },
+        {
+          "id": "lancets",
+          "query": "lancets",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "sunplay",
+      "label": "Sunplay",
+      "hostname": "www.sunplay.com",
+      "stratum": "water-care",
+      "searchUrlTemplate": "https://www.sunplay.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-enzyme",
+          "query": "pool enzyme",
+          "dimension": "volume"
+        },
+        {
+          "id": "phosphate-remover",
+          "query": "phosphate remover",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-defoamer",
+          "query": "pool defoamer",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "super-detail",
+      "label": "Super Detail",
+      "hostname": "www.superdetail.com",
+      "stratum": "professional-detailing-retail",
+      "searchUrlTemplate": "https://www.superdetail.com/search?q={query}",
+      "queries": [
+        {
+          "id": "interior-cleaner",
+          "query": "interior cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "tire-dressing",
+          "query": "tire dressing",
+          "dimension": "volume"
+        },
+        {
+          "id": "ceramic-coating",
+          "query": "ceramic coating",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "tea-forte",
+      "label": "Tea Forte",
+      "hostname": "teaforte.com",
+      "stratum": "specialty-tea-brand-retail",
+      "searchUrlTemplate": "https://teaforte.com/search?q={query}&type=product",
+      "queries": [
+        {
+          "id": "chai-tea",
+          "query": "chai tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "oolong-tea",
+          "query": "oolong tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "white-tea",
+          "query": "white tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "the-linen-lab",
+      "label": "The Linen Lab",
+      "hostname": "www.thelinenlab.com",
+      "stratum": "specialty-linen-fabric-retail",
+      "searchUrlTemplate": "https://www.thelinenlab.com/search?q={query}",
+      "queries": [
+        {
+          "id": "linen-voile",
+          "query": "linen voile",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-jersey",
+          "query": "linen jersey",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-denim",
+          "query": "linen denim",
+          "dimension": "length"
+        }
+      ]
+    }
+  ]
+}

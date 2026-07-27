@@ -1,4 +1,4 @@
-import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { runBoundedProcess } from "./bounded-process-lib";
 
@@ -14,12 +14,12 @@ interface ChildRunManifest {
 
 const options = parseOptions(process.argv.slice(2));
 await mkdir(options.outputRoot, { recursive: true });
-const batchId = new Date().toISOString().replace(/[:.]/g, "-");
+const batchId = `${new Date().toISOString().replace(/[:.]/g, "-")}--p${process.pid}`;
 const results = [];
 
 for (const [index, pageId] of options.pageIds.entries()) {
   process.stdout.write(`[${index + 1}/${options.pageIds.length}] ${pageId}\n`);
-  const runsBefore = await runDirectories(options.outputRoot);
+  const runId = `${batchId}--${String(index + 1).padStart(3, "0")}`;
   const childArgs = [
     "scripts/collect-live-corpus.ts",
     "--targets",
@@ -28,6 +28,8 @@ for (const [index, pageId] of options.pageIds.entries()) {
     options.outputRoot,
     "--pages",
     pageId,
+    "--run-id",
+    runId,
     "--viewport",
     options.viewport,
     "--page-timeout-ms",
@@ -44,10 +46,7 @@ for (const [index, pageId] of options.pageIds.entries()) {
     timeoutMs: options.processTimeoutMs,
     onOutput: (chunk) => process.stdout.write(indent(chunk))
   });
-  const newRuns = [...(await runDirectories(options.outputRoot))]
-    .filter((entry) => !runsBefore.has(entry))
-    .sort();
-  const runDirectory = newRuns.at(-1);
+  const runDirectory = child.exitCode === 0 || child.timedOut ? runId : undefined;
   const manifest = runDirectory
     ? await readRunManifest(path.join(options.outputRoot, runDirectory))
     : null;
@@ -175,14 +174,6 @@ function parseOptions(args: string[]): {
     headed: flags.has("--headed"),
     disableHttp2: flags.has("--disable-http2")
   };
-}
-
-async function runDirectories(root: string): Promise<Set<string>> {
-  return new Set(
-    (await readdir(root, { withFileTypes: true }))
-      .filter((entry) => entry.isDirectory())
-      .map((entry) => entry.name)
-  );
 }
 
 async function readRunManifest(

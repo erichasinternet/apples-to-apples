@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-depth-wave-03-p00",
+  "capturedAt": "2026-07-27T10:03:51.000Z",
+  "sourceManifest": "benchmarks/live-sites/selection-depth-wave-03.json",
+  "requestedCaptureAttempts": 8,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T10-00-29-443Z--p92088--001",
+      "pageIds": ["cougar-chemical--glass-cleaner"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T10-00-29-443Z--p92088--002",
+      "pageIds": ["gorgeous-fabrics--satin-fabric"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T10-00-29-443Z--p92088--003",
+      "pageIds": ["restaurantware--food-trays"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T10-00-29-443Z--p92088--004",
+      "pageIds": ["save-rite-medical--surgical-masks"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T10-01-33-634Z--p92622--001",
+      "pageIds": ["discount-medical-supplies--wound-dressings"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T10-01-33-634Z--p92622--002",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T10-01-33-634Z--p92622--003",
+      "pageIds": ["restaurantware--portion-cups"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T10-01-33-634Z--p92622--004",
+      "pageIds": ["shop-med-vet--needles-with-syringes"]
+    }
+  ],
+  "samplingFinding": "All eight unseen high-coherence reserve queries completed in isolated headed Chromium process bounds with zero hard timeouts. The collector was also rerun concurrently after adding process-bound explicit run IDs; all eight concurrent child directories remained distinct. Frozen machine and original-resolution visual checks accepted seven pages and rejected one, an 87.5% strict yield.",
+  "visualValidationFinding": "All eight full-page annotation screenshots and every accepted frozen root were inspected at original resolution. Mineral Tiles travertine tile was rejected because the visible selected roots were dominated by generic white porcelain and mosaic products despite clean structural evidence. The seven accepted pages preserve coherent product title, price, quantity, and native unit-price evidence across volume, length, and count."
+}

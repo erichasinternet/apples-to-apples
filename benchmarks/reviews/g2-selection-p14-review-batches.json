@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p14",
+  "createdAt": "2026-07-27T10:05:14.654Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--4467d95b63075c00",
+      "path": "benchmark-data/review/g2-selection-p14/reviewer-a.json",
+      "sha256": "a53ab2e08ef0f5e907ed62df3bbce80acf344a1903f7e49fc1994d2264ec7ee5",
+      "pages": 49
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--fc1a7fbeaa9cfc0b",
+      "path": "benchmark-data/review/g2-selection-p14/reviewer-b.json",
+      "sha256": "90a0e226950ba34b03c46c19bfbeff2ca97be8b2716756c4bd2f5c3feffc70a5",
+      "pages": 49
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 5,
+    "pages": 49,
+    "candidateCards": 582
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p14--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "best-laminate--luxury-vinyl-plank",
+        "burlap-and-barrel--chile-powders",
+        "burlap-and-barrel--spice-blends",
+        "correct-products--bubble-mailers",
+        "correct-products--static-shielding-bags",
+        "cougar-chemical--carpet-cleaner",
+        "cougar-chemical--ceramic-coating",
+        "cougar-chemical--degreaser",
+        "cougar-chemical--glass-cleaner",
+        "discount-medical-supplies--adhesive-bandages"
+      ],
+      "pages": 10,
+      "candidateCards": 120,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--3bd9883be661c21a",
+          "path": "benchmark-data/review/g2-selection-p14-review-batches/reviewer-a--batch-01.json",
+          "sha256": "f765daea4fa0971b32128d36b9a978747be5b721a45b21cc037c32854dca22f4"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--7aed819fae4553df",
+          "path": "benchmark-data/review/g2-selection-p14-review-batches/reviewer-b--batch-01.json",
+          "sha256": "f8781b8d56202bc0feba5f6f8f8e9a065c047e9ae005a4448b2c422f12ce4eeb"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-selection-p14--batch-02",
+      "batchNumber": 2,
+      "pageIds": [
+        "discount-medical-supplies--alcohol-prep-pads",
+        "discount-medical-supplies--syringes",
+        "discount-medical-supplies--wound-dressings",
+        "fat-quarter-shop--backing-fabric",
+        "fat-quarter-shop--minky-fabric",
+        "fat-quarter-shop--rayon-fabric",
+        "floorzz--porcelain-tile",
+        "gorgeous-fabrics--crepe-fabric",
+        "gorgeous-fabrics--jersey-fabric",
+        "gorgeous-fabrics--ponte-knit"
+      ],
+      "pages": 10,
+      "candidateCards": 120,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-02--b137d14e36cc5f74",
+          "path": "benchmark-data/review/g2-selection-p14-review-batches/reviewer-a--batch-02.json",
+          "sha256": "bab9216cd902765ac0d3554771aea0ee6f487ed815adf74619db0aac93a8af02"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-02--859434e08d3335c4",
+          "path": "benchmark-data/review/g2-selection-p14-review-batches/reviewer-b--batch-02.json",
+          "sha256": "b2784c1ceae57d1841d12efba0e7795c56b1db0f7cd00a979d93e14abf6692b5"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-selection-p14--batch-03",
+      "batchNumber": 3,
+      "pageIds": [
+        "gorgeous-fabrics--satin-fabric",
+        "in-the-swim--phosphate-remover",
+        "in-the-swim--pool-stain-remover",
+        "leslies-pool--phosphate-remover",
+        "leslies-pool--pool-stain-remover",
+        "medical-mega--adhesive-bandages",
+        "medical-mega--lancets",
+        "medical-mega--syringes",
+        "mineral-tiles--marble-tile",
+        "mineral-tiles--metal-tile"
+      ],
+      "pages": 10,
+      "candidateCards": 120,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-03--aadbf11880b5655e",
+          "path": "benchmark-data/review/g2-selection-p14-review-batches/reviewer-a--batch-03.json",
+          "sha256": "8160210334e6463b0ab49ff6214295b4e71e390aa4acbbb559e86808fb682f86"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-03--f73725b1350117be",
+          "path": "benchmark-data/review/g2-selection-p14-review-batches/reviewer-b--batch-03.json",
+          "sha256": "30377bfbfee82c65e1af6ffb9cacdc448c984c102bf8703094fa5967f745947c"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-selection-p14--batch-04",
+      "batchNumber": 4,
+      "pageIds": [
+        "mineral-tiles--pebble-tile",
+        "restaurantware--drinking-straws",
+        "restaurantware--food-trays",
+        "restaurantware--plastic-cups",
+        "restaurantware--portion-cups",
+        "restaurantware--takeout-containers",
+        "save-rite-medical--alcohol-prep-pads",
+        "save-rite-medical--surgical-masks",
+        "save-rite-medical--syringes",
+        "save-rite-medical--wound-dressings"
+      ],
+      "pages": 10,
+      "candidateCards": 120,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-04--67d14b4b36578972",
+          "path": "benchmark-data/review/g2-selection-p14-review-batches/reviewer-a--batch-04.json",
+          "sha256": "a2f5c619a0b28960fe84c9d5f4478e86b848803c01fb05157e94f25056e01246"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-04--b973f451d64a935f",
+          "path": "benchmark-data/review/g2-selection-p14-review-batches/reviewer-b--batch-04.json",
+          "sha256": "fac93114bc9f4820e7a6389b08601d87b0c4b0cf50f30d595e9200a3602f8fbb"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-selection-p14--batch-05",
+      "batchNumber": 5,
+      "pageIds": [
+        "shop-med-vet--bandages",
+        "shop-med-vet--catheters",
+        "shop-med-vet--lancets",
+        "shop-med-vet--needles-with-syringes",
+        "sunplay--phosphate-remover",
+        "super-detail--ceramic-coating",
+        "super-detail--interior-cleaner",
+        "super-detail--tire-dressing",
+        "the-linen-lab--linen-denim"
+      ],
+      "pages": 9,
+      "candidateCards": 102,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-05--c91e7c2371970df6",
+          "path": "benchmark-data/review/g2-selection-p14-review-batches/reviewer-a--batch-05.json",
+          "sha256": "4631a7741d78f390b20fc5283c9c8bff3ebdc2efa11606fbcab4a5acc0ff8c60"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-05--a4a808a208fc4b9f",
+          "path": "benchmark-data/review/g2-selection-p14-review-batches/reviewer-b--batch-05.json",
+          "sha256": "7c209ee5dec5a841ab589d66c980773b7e178d3a67bcc10b9cd34dcddc255a5f"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}
