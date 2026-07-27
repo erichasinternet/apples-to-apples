@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p00",
+  "createdAt": "2026-07-27T02:47:14.000Z",
+  "cohort": "selection",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "detailing-com",
+      "pageId": "detailing-com--car-shampoo",
+      "captureTimestamp": "2026-07-27T02:42:37.893Z",
+      "candidateCardCount": 12,
+      "observationSha256": "131e616bdc110f47f668aafd62d5bd6e05f3311a8b44a59189591c920a9831ea",
+      "annotationScreenshotSha256": "3c8bdbee7dec435892bfa07e5a972272eeb338f95c6756b97c405879604046c8"
+    },
+    {
+      "siteId": "detailing-com",
+      "pageId": "detailing-com--wheel-cleaner",
+      "captureTimestamp": "2026-07-27T02:39:16.603Z",
+      "candidateCardCount": 12,
+      "observationSha256": "ad54c0d7ff3e6cb219e02d246b5f57812945f656682347f6e3c57c8d2054a290",
+      "annotationScreenshotSha256": "3ee6e94a2776b5ddf8b56d69e720338e336ae0b2a4fd5a63ec7ae262f8989d73"
+    },
+    {
+      "siteId": "super-detail",
+      "pageId": "super-detail--car-shampoo",
+      "captureTimestamp": "2026-07-27T02:38:54.933Z",
+      "candidateCardCount": 12,
+      "observationSha256": "340d051b636f30012aa51ff207a238a80670eb456df8690a7807932fcc5aff09",
+      "annotationScreenshotSha256": "e8ca60505ff5fcf821cd41b562e5711aa4ce8bf7bf73b4339fbcd4accc7726c4"
+    },
+    {
+      "siteId": "super-detail",
+      "pageId": "super-detail--wheel-cleaner",
+      "captureTimestamp": "2026-07-27T02:42:27.577Z",
+      "candidateCardCount": 12,
+      "observationSha256": "2ff93ec7d355068706577f4365eed3a42caee7291003067e7fdd270faef812f4",
+      "annotationScreenshotSha256": "1935944279b7eabb9812e65c2896a10080f575abeb39fb5814453e8c4d726977"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--aa52fcc51a117764",
+      "campaignQueueSha256": "f0508765bb12bb829c7b2b93d12626c2972ed579841885ee03ad2b90f614a406",
+      "sourceQueueSha256": [
+        "a056dbe0d38f6dc960fa40fba11a64d186e706ba3988fc6801256e700e319718",
+        "a7870d4d9fbf0314f7a211f8f51df24630bfae8360e0b6458646a315c1ae0d38",
+        "c27302ea243b689886f69cfd6de32d85c5e8606903fa5d9f8ccbafdd8d4aa1e0",
+        "58fd9aff805f4e8d4f086656901a95e8b818c8ee4ac8bb94859c975e0becb9de"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--28786c75ce6d3edd",
+      "campaignQueueSha256": "223487ab3834b00fe3d428e79afbd02049fa88123cf01e9958cda0f8a8c813d4",
+      "sourceQueueSha256": [
+        "424d9966c99f1d76bab21c9cf396031ef72b564214831357cab62cfb6f92e102",
+        "485fb23d2a80c68f673e918b0e9430626b008df65502311ff41aa25559075c9c",
+        "31b9dfd81e6b641ab6f6ae3ee1dbdd7464adeb204103c3facce4011762232aa6",
+        "ca1869b3126f11230aea35424b24752b6a591ae12cffd2c7a04fa0aaf716cd90"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--aa52fcc51a117764",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 4,
+    "screenshotsLoaded": 4,
+    "candidateCards": 48,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

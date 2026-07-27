@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p00",
+  "capturedAt": "2026-07-27T02:42:39.499Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-qualification-retry-p00.json",
+  "requestedCaptureAttempts": 4,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T02-38-46-838Z",
+      "pageIds": [
+        "super-detail--car-shampoo"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T02-42-19-505Z",
+      "pageIds": [
+        "super-detail--wheel-cleaner"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T02-39-06-731Z",
+      "pageIds": [
+        "detailing-com--wheel-cleaner"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T02-42-28-686Z",
+      "pageIds": [
+        "detailing-com--car-shampoo"
+      ]
+    }
+  ],
+  "samplingFinding": "Super Detail and Detailing.com were two of ten disjoint, unassigned domains in a bounded held-out retry. They were assigned to selection only after two fresh opposite-viewport pages passed per domain.",
+  "visualValidationFinding": "Original-resolution annotation screenshots and all forty-eight root closeups were inspected. All four pages show coherent requested-query detailing products with readable price and package evidence."
+}

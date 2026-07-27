@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "description": "Capture-only retry manifest for ten unassigned qualification candidates with prior evidence of at least one reviewable listing page. The sites remain defined by their original qualification waves and stay unassigned until two fresh opposite-viewport captures pass the frozen machine and visual gate.",
+  "sites": [
+    {
+      "id": "car-supplies-warehouse",
+      "label": "Car Supplies Warehouse",
+      "hostname": "www.carsupplieswarehouse.com",
+      "stratum": "detailing-warehouse",
+      "searchUrlTemplate": "https://www.carsupplieswarehouse.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-wash-soap", "query": "car wash soap", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "fabrics-store",
+      "label": "Fabrics-Store.com",
+      "hostname": "www.fabrics-store.com",
+      "stratum": "online-linen-fabric-specialist",
+      "searchUrlTemplate": "https://www.fabrics-store.com/search?query={query}",
+      "queries": [
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"},
+        {"id": "handkerchief", "query": "handkerchief", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "tiletopia",
+      "label": "Tiletopia",
+      "hostname": "tiletopia.com",
+      "stratum": "online-designer-tile-retail",
+      "searchUrlTemplate": "https://tiletopia.com/search?q={query}",
+      "queries": [
+        {"id": "porcelain-tile", "query": "porcelain tile", "dimension": "area"},
+        {"id": "floor-tile", "query": "floor tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "hyperclean-store",
+      "label": "HyperClean Store",
+      "hostname": "hypercleanstore.com",
+      "stratum": "professional-detailing-chemical-brand",
+      "searchUrlTemplate": "https://hypercleanstore.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "foam-wash", "query": "foam wash", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "exmed",
+      "label": "Express Medical Supply",
+      "hostname": "www.exmed.net",
+      "stratum": "home-medical-supply-retail",
+      "searchUrlTemplate": "https://www.exmed.net/search.php?search_query={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "parentgiving",
+      "label": "Parentgiving",
+      "hostname": "www.parentgiving.com",
+      "stratum": "caregiver-medical-supply-retail",
+      "searchUrlTemplate": "https://www.parentgiving.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "ifs-bulk",
+      "label": "IFS Bulk",
+      "hostname": "www.ifsbulk.com",
+      "stratum": "wholesale-bulk-food-retail",
+      "searchUrlTemplate": "https://www.ifsbulk.com/search?q={query}",
+      "queries": [
+        {"id": "almonds", "query": "almonds", "dimension": "mass"},
+        {"id": "rice", "query": "rice", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "super-detail",
+      "label": "Super Detail",
+      "hostname": "www.superdetail.com",
+      "stratum": "professional-detailing-retail",
+      "searchUrlTemplate": "https://www.superdetail.com/search?q={query}",
+      "queries": [
+        {"id": "car-shampoo", "query": "car shampoo", "dimension": "volume"},
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "reserve-hardwood-flooring",
+      "label": "Reserve Hardwood Flooring",
+      "hostname": "www.reservehardwoodflooring.com",
+      "stratum": "specialty-hardwood-flooring-retail",
+      "searchUrlTemplate": "https://www.reservehardwoodflooring.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "hardwood-flooring", "query": "hardwood flooring", "dimension": "area"},
+        {"id": "unfinished-flooring", "query": "unfinished flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "detailing-com",
+      "label": "Detailing.com",
+      "hostname": "detailing.com",
+      "stratum": "professional-detailing-supply-retail",
+      "searchUrlTemplate": "https://detailing.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-shampoo", "query": "car shampoo", "dimension": "volume"}
+      ]
+    }
+  ]
+}

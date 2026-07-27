@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p00",
+  "candidateManifest": "benchmarks/live-sites/heldout-qualification-retry-p00.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "0750420b24c91aabe6881db009cb6a52401117fd0f8eee10827e16f692310f76",
+    "narrowBatchSha256": "3f688aa4802e9dd08a53be4a89f42fc8379065c86070cab4ad4cd6d087c9e071",
+    "processIsolationFinding": "All eighteen headed capture children completed under isolated process-group bounds with zero hard timeouts.",
+    "samplingFinding": "Ten previously unassigned candidates with prior partial evidence received a fresh desktop capture. Eight visually accepted desktop pages received a distinct narrow capture. Three domains passed both viewports; no old partial capture was reused.",
+    "manifestIntegrityFinding": "All accepted captures use the frozen retry manifest hash 6046e68071f79d7f83dc1d57cd955f6f1880d3593ede2825be5826c88fe05d2d and collector hash 6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T02-38-21-767Z",
+      "runManifestSha256": "4eae46f852b97be81b243464209df86dbb6d81687dae49830726535560c6312d",
+      "purpose": "Parentgiving desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T02-41-55-107Z",
+      "runManifestSha256": "3a092707c90689394f4b56441a6839bb88ee3390f59440e7750f4a87916f9884",
+      "purpose": "Parentgiving narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T02-38-46-838Z",
+      "runManifestSha256": "8dc70dd03161a828975cf9824fd8862798044f06ad8d6d37959f792bd85eb945",
+      "purpose": "Super Detail desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T02-42-19-505Z",
+      "runManifestSha256": "8d34525e8936e6277fd42664f222c043711d6c834e3758c164434d6cd92047c7",
+      "purpose": "Super Detail narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T02-39-06-731Z",
+      "runManifestSha256": "604b3409670be8a94fb163c62f47a033e26cb7cced1a86dfe473f169b8d7ef60",
+      "purpose": "Detailing.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T02-42-28-686Z",
+      "runManifestSha256": "0370432d915295cf834b1861722248eba0ea93f62b8f3243b1674de3adb0d83c",
+      "purpose": "Detailing.com narrow qualification capture"
+    }
+  ],
+  "results": {
+    "car-supplies-warehouse": {
+      "status": "rejected",
+      "reason": "The coherent desktop wheel-cleaner page passed, but an unresolved promotion covered 33 percent of the distinct narrow viewport."
+    },
+    "fabrics-store": {
+      "status": "rejected",
+      "reason": "The desktop linen grid passed, but the distinct narrow page exposed no rendered result-context evidence for the requested handkerchief query."
+    },
+    "tiletopia": {
+      "status": "rejected",
+      "reason": "The coherent desktop porcelain-tile page passed, but unresolved cookie UI covered 45 percent of the distinct narrow viewport."
+    },
+    "hyperclean-store": {
+      "status": "rejected",
+      "reason": "The desktop page passed numeric checks, but original-resolution visual review showed a mostly generic catalog rather than coherent wheel-cleaner results."
+    },
+    "exmed": {
+      "status": "rejected",
+      "reason": "The coherent desktop exam-gloves page passed, but unresolved security UI exceeded the 20 percent obstruction gate on the distinct narrow page."
+    },
+    "parentgiving": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "parentgiving--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 10,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.005969111124674479,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "parentgiving--underpads",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.02143638352169158,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent medical-consumables grids pass in opposite viewports. Product cards expose box counts, selected and starting prices, sale prices, and size-dependent variants useful for count extraction and abstention."
+    },
+    "ifs-bulk": {
+      "status": "rejected",
+      "reason": "The coherent desktop almond page passed, but the distinct narrow rice page exposed only three frozen roots."
+    },
+    "super-detail": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "super-detail--car-shampoo",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0049,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "super-detail--wheel-cleaner",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.02143638352169158,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent professional-detailing grids pass in opposite viewports. Cards include starting prices, sales, concentrates, mixed bottle and gallon sizes, and a small number of query-adjacent accessories."
+    },
+    "reserve-hardwood-flooring": {
+      "status": "rejected",
+      "reason": "The fresh desktop page exposed only one frozen root, below the minimum of eight."
+    },
+    "detailing-com": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "detailing-com--wheel-cleaner",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.061541167534722226,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "detailing-com--car-shampoo",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.027949933163203305,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent detailing-supply grids pass in opposite viewports. Cards expose explicit package sizes, gallon and metric units, sale prices, stock states, and lazy-loaded image variants."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "parentgiving",
+      "super-detail",
+      "detailing-com"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "parentgiving",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "super-detail",
+        "cohort": "selection"
+      },
+      {
+        "siteId": "detailing-com",
+        "cohort": "selection"
+      }
+    ],
+    "status": "keep"
+  }
+}

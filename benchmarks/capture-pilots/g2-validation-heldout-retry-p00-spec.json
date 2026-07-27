@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p00",
+  "capturedAt": "2026-07-27T02:42:13.608Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-qualification-retry-p00.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T02-38-21-767Z",
+      "pageIds": [
+        "parentgiving--exam-gloves"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T02-41-55-107Z",
+      "pageIds": [
+        "parentgiving--underpads"
+      ]
+    }
+  ],
+  "samplingFinding": "Parentgiving was one of ten disjoint, unassigned domains in a bounded held-out retry. It alone was assigned to validation after two fresh opposite-viewport pages passed.",
+  "visualValidationFinding": "Original-resolution annotation screenshots and all twenty-two root closeups were inspected. Both pages show coherent requested-query medical product grids with readable price and package evidence."
+}

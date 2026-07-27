@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T02:42:13.608Z",
+  "source": {
+    "siteIds": [
+      "parentgiving"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "caregiver-medical-supply-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "6046e68071f79d7f83dc1d57cd955f6f1880d3593ede2825be5826c88fe05d2d"
+    ],
+    "collectorSha256": [
+      "6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T02-38-21-767Z",
+      "runManifestSha256": "4eae46f852b97be81b243464209df86dbb6d81687dae49830726535560c6312d",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T02-41-55-107Z",
+      "runManifestSha256": "3a092707c90689394f4b56441a6839bb88ee3390f59440e7750f4a87916f9884",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 22,
+    "samplingFinding": "Parentgiving was one of ten disjoint, unassigned domains in a bounded held-out retry. It alone was assigned to validation after two fresh opposite-viewport pages passed.",
+    "visualValidationFinding": "Original-resolution annotation screenshots and all twenty-two root closeups were inspected. Both pages show coherent requested-query medical product grids with readable price and package evidence."
+  },
+  "captures": [
+    {
+      "siteId": "parentgiving",
+      "pageId": "parentgiving--exam-gloves",
+      "capturedAt": "2026-07-27T02:38:39.370Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 10,
+      "candidateScreenshotsCaptured": 10,
+      "observationNodeCount": 204,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0.005969111124674479,
+      "queryTokenCoverage": 1,
+      "observationSha256": "b907834a074eb17974f23b881b78c94cbcac110afcee81114d1d1356535e7ac7",
+      "canonicalObservationSha256": "00f318ed1f433966f54e927f8e69aeb2cb3d1896a658577067bd845002756324",
+      "annotationScreenshotSha256": "681026bf18e902063198a915820e03082d2dd115518c6543ff4bc9e442764bac",
+      "provenanceAggregateSha256": "c17b74f6172dc954bb9ef314ec2fb1a46034cb4ad46a97000f803f597e51768e",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "parentgiving",
+      "pageId": "parentgiving--underpads",
+      "capturedAt": "2026-07-27T02:42:11.897Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 466,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0.02143638352169158,
+      "queryTokenCoverage": 1,
+      "observationSha256": "fa417ab317333382fe2c2be6897c67dd78e949cc1afe2e2b103a8c947e50ad07",
+      "canonicalObservationSha256": "bb0a444c45a4b4fa64df6f325a59c855383a5d54c1022815a303dcfd49ba68e0",
+      "annotationScreenshotSha256": "3f0c442b33102c4a9f9e96fe70ab5df871e7fde678ba7c9439ba7f2c5d06abca",
+      "provenanceAggregateSha256": "c27ba34660023b4cc1f3c4030cfa024cc230f2e60acd50c62796c2d9ed4dafb8",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

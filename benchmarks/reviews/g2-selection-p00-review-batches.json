@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p00",
+  "createdAt": "2026-07-27T02:47:44.547Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--aa52fcc51a117764",
+      "path": "benchmark-data/review/g2-selection-p00-reviewer-a-campaign.json",
+      "sha256": "f0508765bb12bb829c7b2b93d12626c2972ed579841885ee03ad2b90f614a406",
+      "pages": 4
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--28786c75ce6d3edd",
+      "path": "benchmark-data/review/g2-selection-p00-reviewer-b-campaign.json",
+      "sha256": "223487ab3834b00fe3d428e79afbd02049fa88123cf01e9958cda0f8a8c813d4",
+      "pages": 4
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 4,
+    "candidateCards": 48
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p00--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "detailing-com--car-shampoo",
+        "detailing-com--wheel-cleaner",
+        "super-detail--car-shampoo",
+        "super-detail--wheel-cleaner"
+      ],
+      "pages": 4,
+      "candidateCards": 48,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--d8809ac29765826b",
+          "path": "benchmark-data/review/g2-selection-p00-review-batches/reviewer-a--batch-01.json",
+          "sha256": "6a73bdb034b919c83fb728238d0d1b41f28b67447ca177549b2ef3d0edfc935b"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--57fef1872da1a05a",
+          "path": "benchmark-data/review/g2-selection-p00-review-batches/reviewer-b--batch-01.json",
+          "sha256": "f445b910fa3789ab3da67bf82f940ccae85a1251c58950cfa7f090f508f23e24"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

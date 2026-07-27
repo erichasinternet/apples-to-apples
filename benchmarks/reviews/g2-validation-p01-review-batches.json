@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p01",
+  "createdAt": "2026-07-27T02:47:44.483Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--4abcffd342084365",
+      "path": "benchmark-data/review/g2-validation-p01-reviewer-a-campaign.json",
+      "sha256": "accd855c22fd79af09687ccc6097856a20a579cffd9ebb3394679d55393a360d",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--53d0e74032293d4d",
+      "path": "benchmark-data/review/g2-validation-p01-reviewer-b-campaign.json",
+      "sha256": "4325866361032617e7c78eabfd83b9212d371542c344852f114213bf549be907",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 22
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p01--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "parentgiving--exam-gloves",
+        "parentgiving--underpads"
+      ],
+      "pages": 2,
+      "candidateCards": 22,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--02dec669441d92b2",
+          "path": "benchmark-data/review/g2-validation-p01-review-batches/reviewer-a--batch-01.json",
+          "sha256": "7ebff35c3528aec9c5a9304a7b11ebc806b5fef5a8bb8ddd50622750affb109a"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--1648739297b6b2a4",
+          "path": "benchmark-data/review/g2-validation-p01-review-batches/reviewer-b--batch-01.json",
+          "sha256": "784a194877a3ab7150a97d1c3d2c2151b22eb534cfc9098f5dda5e1c93e23cdc"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

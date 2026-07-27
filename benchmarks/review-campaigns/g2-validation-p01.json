@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p01",
+  "createdAt": "2026-07-27T02:47:14.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "parentgiving",
+      "pageId": "parentgiving--exam-gloves",
+      "captureTimestamp": "2026-07-27T02:38:39.370Z",
+      "candidateCardCount": 10,
+      "observationSha256": "b907834a074eb17974f23b881b78c94cbcac110afcee81114d1d1356535e7ac7",
+      "annotationScreenshotSha256": "681026bf18e902063198a915820e03082d2dd115518c6543ff4bc9e442764bac"
+    },
+    {
+      "siteId": "parentgiving",
+      "pageId": "parentgiving--underpads",
+      "captureTimestamp": "2026-07-27T02:42:11.897Z",
+      "candidateCardCount": 12,
+      "observationSha256": "fa417ab317333382fe2c2be6897c67dd78e949cc1afe2e2b103a8c947e50ad07",
+      "annotationScreenshotSha256": "3f0c442b33102c4a9f9e96fe70ab5df871e7fde678ba7c9439ba7f2c5d06abca"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--4abcffd342084365",
+      "campaignQueueSha256": "accd855c22fd79af09687ccc6097856a20a579cffd9ebb3394679d55393a360d",
+      "sourceQueueSha256": [
+        "12da7d75099ede526bfa8fba72f28415e28178f056967209a9e0c4a224c7fa8d",
+        "d12a2e4b7ac8aff60712d8c66ed301c78f2beb0df409da8396a36561a68bc58a"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--53d0e74032293d4d",
+      "campaignQueueSha256": "4325866361032617e7c78eabfd83b9212d371542c344852f114213bf549be907",
+      "sourceQueueSha256": [
+        "f01834087121f424e7e8c2ced7272620ae0c39eb38c85d05a38a0411d03cf57c",
+        "0f9fda39f589d44363fc1fa9974514561fb0d04ec1d9dfceb4e178872f1512c4"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--4abcffd342084365",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 22,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

@@ -115,7 +115,8 @@
     "cvs",
     "lowes",
     "staples",
-    "publix"
+    "publix",
+    "parentgiving"
   ],
   "selection": [
     "petflow",
@@ -127,7 +128,9 @@
     "aldi",
     "kohls",
     "ace-hardware",
-    "ebay"
+    "ebay",
+    "super-detail",
+    "detailing-com"
   ],
   "final": [],
   "retired": [

@@ -5784,6 +5784,78 @@
       "pilotReport": "benchmarks/capture-pilots/g2-validation-petsmart-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "parentgiving",
+      "cohort": "validation",
+      "pageId": "parentgiving--exam-gloves",
+      "captureTimestamp": "2026-07-27T02:38:39.370Z",
+      "observationSha256": "b907834a074eb17974f23b881b78c94cbcac110afcee81114d1d1356535e7ac7",
+      "annotationScreenshotSha256": "681026bf18e902063198a915820e03082d2dd115518c6543ff4bc9e442764bac",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "parentgiving",
+      "cohort": "validation",
+      "pageId": "parentgiving--underpads",
+      "captureTimestamp": "2026-07-27T02:42:11.897Z",
+      "observationSha256": "fa417ab317333382fe2c2be6897c67dd78e949cc1afe2e2b103a8c947e50ad07",
+      "annotationScreenshotSha256": "3f0c442b33102c4a9f9e96fe70ab5df871e7fde678ba7c9439ba7f2c5d06abca",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "super-detail",
+      "cohort": "selection",
+      "pageId": "super-detail--car-shampoo",
+      "captureTimestamp": "2026-07-27T02:38:54.933Z",
+      "observationSha256": "340d051b636f30012aa51ff207a238a80670eb456df8690a7807932fcc5aff09",
+      "annotationScreenshotSha256": "e8ca60505ff5fcf821cd41b562e5711aa4ce8bf7bf73b4339fbcd4accc7726c4",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "super-detail",
+      "cohort": "selection",
+      "pageId": "super-detail--wheel-cleaner",
+      "captureTimestamp": "2026-07-27T02:42:27.577Z",
+      "observationSha256": "2ff93ec7d355068706577f4365eed3a42caee7291003067e7fdd270faef812f4",
+      "annotationScreenshotSha256": "1935944279b7eabb9812e65c2896a10080f575abeb39fb5814453e8c4d726977",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "detailing-com",
+      "cohort": "selection",
+      "pageId": "detailing-com--wheel-cleaner",
+      "captureTimestamp": "2026-07-27T02:39:16.603Z",
+      "observationSha256": "ad54c0d7ff3e6cb219e02d246b5f57812945f656682347f6e3c57c8d2054a290",
+      "annotationScreenshotSha256": "3ee6e94a2776b5ddf8b56d69e720338e336ae0b2a4fd5a63ec7ae262f8989d73",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "detailing-com",
+      "cohort": "selection",
+      "pageId": "detailing-com--car-shampoo",
+      "captureTimestamp": "2026-07-27T02:42:37.893Z",
+      "observationSha256": "131e616bdc110f47f668aafd62d5bd6e05f3311a8b44a59189591c920a9831ea",
+      "annotationScreenshotSha256": "3c8bdbee7dec435892bfa07e5a972272eeb338f95c6756b97c405879604046c8",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

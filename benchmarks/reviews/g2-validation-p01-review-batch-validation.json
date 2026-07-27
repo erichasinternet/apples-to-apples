@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "auditId": "g2-validation-p01-review-batch-validation",
+  "createdAt": "2026-07-27T02:47:45.387Z",
+  "source": {
+    "batchManifest": "benchmarks/reviews/g2-validation-p01-review-batches.json",
+    "batchManifestSha256": "d8c67648731690f3ca16173462bae4848ab0bdb0b7860917bf2a02fc12e80f5f",
+    "validationReportSha256": [
+      "e0023ccf55e48c93993071ef63aaefc07df4a001e22762fc6c75c7f00baae435"
+    ]
+  },
+  "browser": "headed Playwright Chromium",
+  "batches": 1,
+  "pagesLoaded": 2,
+  "screenshotsLoaded": 2,
+  "candidateCards": 22,
+  "consoleErrors": 0,
+  "reviewFilesWritten": 0,
+  "onlyFrozenCardRootOffered": true,
+  "directFrozenCardNavigation": "passed",
+  "nonCandidateAncestor": "rejected-404",
+  "incompleteCoverage": "rejected-422",
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Workbench validation proves batch integrity and usability, not semantic label correctness."
+  }
+}

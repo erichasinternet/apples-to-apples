@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T02:42:39.499Z",
+  "source": {
+    "siteIds": [
+      "super-detail",
+      "detailing-com"
+    ],
+    "cohort": "selection",
+    "strata": [
+      "professional-detailing-retail",
+      "professional-detailing-supply-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "6046e68071f79d7f83dc1d57cd955f6f1880d3593ede2825be5826c88fe05d2d"
+    ],
+    "collectorSha256": [
+      "6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T02-38-46-838Z",
+      "runManifestSha256": "8dc70dd03161a828975cf9824fd8862798044f06ad8d6d37959f792bd85eb945",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T02-42-19-505Z",
+      "runManifestSha256": "8d34525e8936e6277fd42664f222c043711d6c834e3758c164434d6cd92047c7",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T02-39-06-731Z",
+      "runManifestSha256": "604b3409670be8a94fb163c62f47a033e26cb7cced1a86dfe473f169b8d7ef60",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T02-42-28-686Z",
+      "runManifestSha256": "0370432d915295cf834b1861722248eba0ea93f62b8f3243b1674de3adb0d83c",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 4,
+    "successfulCaptureAttempts": 4,
+    "acceptedPages": 4,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 48,
+    "samplingFinding": "Super Detail and Detailing.com were two of ten disjoint, unassigned domains in a bounded held-out retry. They were assigned to selection only after two fresh opposite-viewport pages passed per domain.",
+    "visualValidationFinding": "Original-resolution annotation screenshots and all forty-eight root closeups were inspected. All four pages show coherent requested-query detailing products with readable price and package evidence."
+  },
+  "captures": [
+    {
+      "siteId": "super-detail",
+      "pageId": "super-detail--car-shampoo",
+      "capturedAt": "2026-07-27T02:38:54.933Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 368,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0049,
+      "queryTokenCoverage": 1,
+      "observationSha256": "340d051b636f30012aa51ff207a238a80670eb456df8690a7807932fcc5aff09",
+      "canonicalObservationSha256": "ec5ac6b0950644099f517e5eeaacc023a42a80264ef9d1463bda7efb420e1dd0",
+      "annotationScreenshotSha256": "e8ca60505ff5fcf821cd41b562e5711aa4ce8bf7bf73b4339fbcd4accc7726c4",
+      "provenanceAggregateSha256": "2251c227426b015d6a45f9925b00c4f645214748e9ba7ea3926f3f4b583b9ac2",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "super-detail",
+      "pageId": "super-detail--wheel-cleaner",
+      "capturedAt": "2026-07-27T02:42:27.577Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 403,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.02143638352169158,
+      "queryTokenCoverage": 1,
+      "observationSha256": "2ff93ec7d355068706577f4365eed3a42caee7291003067e7fdd270faef812f4",
+      "canonicalObservationSha256": "5454248971ea18403846679c35eb4f50357e1eec61403f206e7e9eb827fbc0c2",
+      "annotationScreenshotSha256": "1935944279b7eabb9812e65c2896a10080f575abeb39fb5814453e8c4d726977",
+      "provenanceAggregateSha256": "969554285d5be58a7e3631fb180be581f66dd349b811e4644ae3f562a13f16d6",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "detailing-com",
+      "pageId": "detailing-com--wheel-cleaner",
+      "capturedAt": "2026-07-27T02:39:16.603Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1134,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.061541167534722226,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ad54c0d7ff3e6cb219e02d246b5f57812945f656682347f6e3c57c8d2054a290",
+      "canonicalObservationSha256": "c518b5dad0ef2875e20a24c8dbecd08f9b04ca7ec943ebd90c50461379c4b1f8",
+      "annotationScreenshotSha256": "3ee6e94a2776b5ddf8b56d69e720338e336ae0b2a4fd5a63ec7ae262f8989d73",
+      "provenanceAggregateSha256": "ee6bcfabc464445d83f4e2bcbec1135adb287c07dc84b69ed79b1a93e9ee3b38",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "detailing-com",
+      "pageId": "detailing-com--car-shampoo",
+      "capturedAt": "2026-07-27T02:42:37.893Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 910,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.027949933163203305,
+      "queryTokenCoverage": 1,
+      "observationSha256": "131e616bdc110f47f668aafd62d5bd6e05f3311a8b44a59189591c920a9831ea",
+      "canonicalObservationSha256": "68b700cd7cd2add9aa6a48b63b125fb0aa8e345bd53860a9a7084a6fe07d32ae",
+      "annotationScreenshotSha256": "3c8bdbee7dec435892bfa07e5a972272eeb338f95c6756b97c405879604046c8",
+      "provenanceAggregateSha256": "0819651ec35e9e6b3b629c9df2fec46d5b3d516e3462c87b65aa15c7b46478e9",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

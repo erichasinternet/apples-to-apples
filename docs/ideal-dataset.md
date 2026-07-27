@@ -1243,6 +1243,26 @@ errors or review writes; the aggregate batch evidence is in
 No semantic reviews have been completed, so these roots remain ineligible for
 benchmark gold.
 
+A bounded retry then revisited 10 still-unassigned qualification candidates
+with prior partial evidence. All 18 isolated headed Chromium children
+completed without a hard timeout. Eight desktop pages passed visual review and
+received a distinct narrow capture; Parentgiving, Super Detail, and
+Detailing.com were the only domains to pass both viewport gates. The exact
+accept/reject evidence is recorded in
+[`heldout-retry-p00.json`](../benchmarks/domain-qualification/heldout-retry-p00.json).
+Parentgiving adds 2 validation pages and 22 roots, while the two detailing
+retailers add 4 selection pages and 48 roots. Held-out structure is now 2
+qualified validation domains with 4 pages and 2 qualified selection domains
+with 4 pages, each at 50% narrow-viewport coverage.
+
+The paired blinded
+[`g2-validation-p01.json`](../benchmarks/review-campaigns/g2-validation-p01.json)
+and
+[`g2-selection-p00.json`](../benchmarks/review-campaigns/g2-selection-p00.json)
+campaigns cover all 6 new pages and 70 roots. Both complete campaigns and both
+paired assignments passed headed Playwright Chromium with zero console errors
+or review writes. Human semantic reviews and adjudication remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

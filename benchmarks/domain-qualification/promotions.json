@@ -486,6 +486,24 @@
       "cohort": "validation",
       "qualificationReport": "benchmarks/domain-qualification/heldout-existing-p00.json",
       "promotedAt": "2026-07-27T02:30:00.000Z"
+    },
+    {
+      "siteId": "parentgiving",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p00.json",
+      "promotedAt": "2026-07-27T02:45:00.000Z"
+    },
+    {
+      "siteId": "super-detail",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p00.json",
+      "promotedAt": "2026-07-27T02:45:00.000Z"
+    },
+    {
+      "siteId": "detailing-com",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p00.json",
+      "promotedAt": "2026-07-27T02:45:00.000Z"
     }
   ]
 }
