@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-correction-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T05:51:23.000Z",
+  "source": {
+    "siteIds": [
+      "artwalk-tile"
+    ],
+    "cohort": "training",
+    "strata": [
+      "specialty-tile-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "db06a2ce69bc5cf32bf7d134bf7552cdc701f0a0cdb40a56ae6cf4410492d351"
+    ],
+    "collectorSha256": [
+      "b1c2d8b33f471eb189de7c7df5d7e1642d2aa58655ae0756658ffb4a6e49c9cc"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T05-51-02-081Z",
+      "runManifestSha256": "f9d105db42e1d5345ad85ad31e2762ec4830a555c601f8f2420e711a589ecde3",
+      "pageTimeoutMs": 120000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 1,
+    "successfulCaptureAttempts": 1,
+    "acceptedPages": 1,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 12,
+    "samplingFinding": "A headed Chromium recapture of the exact eligible Artwalk Tile limestone query produced twelve leaf-most product roots. An automated ancestry audit found no overlap among the replacement roots.",
+    "visualValidationFinding": "The full-page annotation and all twelve frozen product cards were inspected. The search query is visible, results are coherent tile products, title and price evidence is unobstructed, and the cards include both per-square-foot and per-each pricing cases."
+  },
+  "captures": [
+    {
+      "siteId": "artwalk-tile",
+      "pageId": "artwalk-tile--limestone-tile",
+      "capturedAt": "2026-07-27T05:51:11.086Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2061,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "95deaf4f7862dbaf876b6bbf6b5f2ae3486937e7dd170c8480c1b6d0a1090541",
+      "canonicalObservationSha256": "ec85bd281da8ac770a880bcb65b44b51b336594c849091c4c3af65cde99b95d0",
+      "annotationScreenshotSha256": "a2317996a599ed851b6bbdc71a55104ab002b5a5700c32521cc12a393f99fd73",
+      "provenanceAggregateSha256": "2274e6a62fa144927a82460f350c212f2b9e3f308ad8e82e342298f9de83554a",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [
+    {
+      "pageId": "artwalk-tile--limestone-tile",
+      "priorObservationSha256": "94bb01f39b1bfaa699ebcf7d5f12f1c66f9ad6b48efe4297ccbf787190f6fd53",
+      "reason": "The superseded capture froze one product-grid ancestor together with a descendant product card. The replacement was collected after enforcing leaf-most, non-overlapping candidate roots.",
+      "retiredAt": "2026-07-27T05:47:52.000Z"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

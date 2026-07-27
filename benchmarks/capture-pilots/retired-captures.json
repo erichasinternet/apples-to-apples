@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "captures": [
+    {
+      "siteId": "artwalk-tile",
+      "cohort": "training",
+      "pageId": "artwalk-tile--limestone-tile",
+      "captureTimestamp": "2026-07-26T22:33:55.412Z",
+      "observationSha256": "94bb01f39b1bfaa699ebcf7d5f12f1c66f9ad6b48efe4297ccbf787190f6fd53",
+      "annotationScreenshotSha256": "445d0793fbaf96290a251b86d6d86c95188f57d5f155571774f007665248fff7",
+      "qualificationReport": "benchmarks/domain-qualification/wave-20-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-training-depth-wave-09-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed",
+      "retiredAt": "2026-07-27T05:47:52.000Z",
+      "reason": "The superseded capture froze one product-grid ancestor together with a descendant product card. The replacement was collected after enforcing leaf-most, non-overlapping candidate roots.",
+      "replacementPilotReport": "benchmarks/capture-pilots/g2-training-correction-p00.json"
+    }
+  ]
+}

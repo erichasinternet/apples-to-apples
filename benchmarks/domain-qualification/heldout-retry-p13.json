@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p13",
+  "candidateManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p13.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "85f73f09d19b3cc9380abe4b530316966e3a8dbd79de4b3a67b4661b1bc57aa0",
+    "remediationDesktopBatchSha256": "5d016a28fde6d47898cef22c84fc748b849c47723c14bba3ad5406b35647565a",
+    "narrowBatchSha256": "10da26333360d587a5ce2833733f237ff547d14e6c4218f691f7262ed2519959",
+    "processIsolationFinding": "All fourteen headed capture children completed under isolated process-group bounds with zero parent hard timeouts.",
+    "samplingFinding": "Ten fresh, disjoint domains balanced across all five dimensions received desktop captures. Clean Garage and Associated Bag passed the numeric desktop gate and were recaptured after a generic leaf-most candidate-root invariant removed overlapping ancestors. Distinct narrow queries then rejected both pairs: Clean Garage selected only seven coherent liquid cleaners among five accessories or coatings, and Associated Bag produced no reviewable roots. All ten domains remain in the yield denominator.",
+    "manifestIntegrityFinding": "The discard wave uses frozen manifest hash a96ff762e713981039afae7cea66ff52694094bf2b734f5a1c70211a03edb8a3 and collector hash 5e3dae811235e393aa56cc82bdb0ed3d44b3daa02fd0e913a1c568711100164b."
+  },
+  "runs": [],
+  "results": {
+    "atlantic-spice": {
+      "status": "rejected",
+      "reason": "Semantic search recovery failed; the desktop route returned HTTP 404 with no requested-query evidence or reviewable product candidates."
+    },
+    "spices-inc": {
+      "status": "rejected",
+      "reason": "The desktop page exposed twelve roots but no requested-query evidence, so the frozen relevance gate failed."
+    },
+    "clean-garage": {
+      "status": "rejected",
+      "reason": "The desktop car-wash-soap page passed after leaf-most root remediation, but the distinct narrow wheel-cleaner page contained five brushes, coating products, or kits and only seven coherent liquid cleaners, below the frozen minimum of eight."
+    },
+    "detailed-image": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 403 with no requested-query evidence or reviewable product candidates."
+    },
+    "associated-bag": {
+      "status": "rejected",
+      "reason": "The remediated desktop poly-bag page exposed eleven independent row or product-group roots, but the distinct narrow trash-bag query produced no reviewable product candidates."
+    },
+    "health-products-for-you": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 404 with no requested-query evidence or reviewable product candidates."
+    },
+    "vogue-fabrics": {
+      "status": "rejected",
+      "reason": "The desktop page retained only half of the requested-query evidence, so it failed the frozen relevance gate."
+    },
+    "denver-fabrics": {
+      "status": "rejected",
+      "reason": "The desktop page retained only half of the requested-query evidence and exposed no reviewable product candidates."
+    },
+    "american-floor-mats": {
+      "status": "rejected",
+      "reason": "Semantic search recovered complete requested-query evidence but exposed only one reviewable root, below the frozen minimum of eight."
+    },
+    "flooring-liquidators": {
+      "status": "rejected",
+      "reason": "The desktop page retained only half of the requested-query evidence and exposed no reviewable product candidates."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [],
+    "assignedDomains": [],
+    "status": "discard"
+  }
+}

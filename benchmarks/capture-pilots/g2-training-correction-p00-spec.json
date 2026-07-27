@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-correction-p00",
+  "capturedAt": "2026-07-27T05:51:23.000Z",
+  "sourceManifest": "benchmarks/live-sites/training-depth-wave-09.json",
+  "requestedCaptureAttempts": 1,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T05-51-02-081Z",
+      "pageIds": [
+        "artwalk-tile--limestone-tile"
+      ]
+    }
+  ],
+  "replacements": [
+    {
+      "pageId": "artwalk-tile--limestone-tile",
+      "priorObservationSha256": "94bb01f39b1bfaa699ebcf7d5f12f1c66f9ad6b48efe4297ccbf787190f6fd53",
+      "reason": "The superseded capture froze one product-grid ancestor together with a descendant product card. The replacement was collected after enforcing leaf-most, non-overlapping candidate roots."
+    }
+  ],
+  "samplingFinding": "A headed Chromium recapture of the exact eligible Artwalk Tile limestone query produced twelve leaf-most product roots. An automated ancestry audit found no overlap among the replacement roots.",
+  "visualValidationFinding": "The full-page annotation and all twelve frozen product cards were inspected. The search query is visible, results are coherent tile products, title and price evidence is unobstructed, and the cards include both per-square-foot and per-each pricing cases."
+}

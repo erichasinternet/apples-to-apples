@@ -5,6 +5,12 @@ import {
   validateCaptureProvenance,
   type CaptureProvenance
 } from "./capture-provenance-lib";
+import {
+  prepareCaptureReplacements,
+  type CaptureReplacementSpec,
+  type RegistrableCaptureEntry,
+  type RetiredCaptureEntry
+} from "./capture-retirement-lib";
 
 interface DepthSpec {
   version: 1;
@@ -18,6 +24,7 @@ interface DepthSpec {
   }>;
   samplingFinding: string;
   visualValidationFinding: string;
+  replacements?: CaptureReplacementSpec[];
 }
 
 interface TargetManifest {
@@ -87,18 +94,12 @@ interface PromotionManifest {
 
 interface EligibleCaptureManifest {
   version: 1;
-  captures: Array<{
-    siteId: string;
-    cohort: "training" | "validation" | "selection" | "final";
-    pageId: string;
-    captureTimestamp: string;
-    observationSha256: string;
-    annotationScreenshotSha256: string;
-    qualificationReport: string;
-    pilotReport: string;
-    machineValidation: "passed";
-    visualValidation: "passed";
-  }>;
+  captures: RegistrableCaptureEntry[];
+}
+
+interface RetiredCaptureManifest {
+  version: 1;
+  captures: RetiredCaptureEntry[];
 }
 
 const options = optionMap(process.argv.slice(2));
@@ -111,6 +112,10 @@ const registryPath = path.resolve(
 const promotionPath = path.resolve(
   options.get("--promotions") ??
     "benchmarks/domain-qualification/promotions.json"
+);
+const retiredRegistryPath = path.resolve(
+  options.get("--retired-registry") ??
+    "benchmarks/capture-pilots/retired-captures.json"
 );
 
 const spec = await readJson<DepthSpec>(specPath);
@@ -126,21 +131,43 @@ if (
 }
 
 const manifestPath = path.resolve(spec.sourceManifest);
-const [manifestBytes, manifest, promotions, registry] = await Promise.all([
-  readFile(manifestPath),
-  readJson<TargetManifest>(manifestPath),
-  readJson<PromotionManifest>(promotionPath),
-  readJson<EligibleCaptureManifest>(registryPath)
-]);
+const [manifestBytes, manifest, promotions, registry, retiredRegistry] =
+  await Promise.all([
+    readFile(manifestPath),
+    readJson<TargetManifest>(manifestPath),
+    readJson<PromotionManifest>(promotionPath),
+    readJson<EligibleCaptureManifest>(registryPath),
+    readJson<RetiredCaptureManifest>(retiredRegistryPath)
+  ]);
 const sourceManifestSha256 = sha256(manifestBytes);
 const sites = new Map(manifest.sites.map((site) => [site.id, site]));
 const promotionBySite = new Map(
   promotions.promotions.map((promotion) => [promotion.siteId, promotion])
 );
 const pilotReport = path.relative(process.cwd(), outputPath);
-const retainedRegistryCaptures = registry.captures.filter(
-  (capture) => capture.pilotReport !== pilotReport
-);
+const replacementState = prepareCaptureReplacements({
+  captures: registry.captures,
+  retiredCaptures: retiredRegistry.captures,
+  replacements: spec.replacements ?? [],
+  replacementPilotReport: pilotReport,
+  retiredAt: spec.capturedAt
+});
+const pilotReplacements = (spec.replacements ?? []).map((replacement) => {
+  const retirement = replacementState.retiredCaptures.find(
+    (capture) =>
+      capture.pageId === replacement.pageId &&
+      capture.observationSha256 === replacement.priorObservationSha256 &&
+      capture.replacementPilotReport === pilotReport
+  );
+  if (!retirement) {
+    throw new Error(`${replacement.pageId}: replacement retirement is absent`);
+  }
+  return {
+    ...replacement,
+    retiredAt: retirement.retiredAt
+  };
+});
+const retainedRegistryCaptures = replacementState.retainedCaptures;
 const existingPages = new Set(
   retainedRegistryCaptures.map((capture) => capture.pageId)
 );
@@ -292,6 +319,11 @@ if (requestedCaptureAttempts !== spec.requestedCaptureAttempts) {
 if (acceptedPages.size > spec.requestedCaptureAttempts) {
   throw new Error("Accepted pages exceed requested capture attempts.");
 }
+for (const pageId of replacementState.replacementPageIds) {
+  if (!acceptedPages.has(pageId)) {
+    throw new Error(`${pageId}: replacement page was not accepted`);
+  }
+}
 const acceptedSiteIds = [
   ...new Set(reportCaptures.map((capture) => capture.siteId))
 ];
@@ -330,6 +362,7 @@ const pilot = {
     visualValidationFinding: spec.visualValidationFinding
   },
   captures: reportCaptures,
+  replacements: pilotReplacements,
   eligibility: {
     pointerReady: false,
     dualReviewed: false,
@@ -344,12 +377,22 @@ const updatedRegistry: EligibleCaptureManifest = {
 
 await Promise.all([
   mkdir(path.dirname(outputPath), { recursive: true }),
-  mkdir(path.dirname(registryPath), { recursive: true })
+  mkdir(path.dirname(registryPath), { recursive: true }),
+  mkdir(path.dirname(retiredRegistryPath), { recursive: true })
 ]);
 await writeFile(outputPath, `${JSON.stringify(pilot, null, 2)}\n`, "utf8");
 await writeFile(
   registryPath,
   `${JSON.stringify(updatedRegistry, null, 2)}\n`,
+  "utf8"
+);
+await writeFile(
+  retiredRegistryPath,
+  `${JSON.stringify(
+    { version: 1, captures: replacementState.retiredCaptures },
+    null,
+    2
+  )}\n`,
   "utf8"
 );
 process.stdout.write(
@@ -361,8 +404,10 @@ process.stdout.write(
       acceptedPages: acceptedPages.size,
       candidateCardRoots: pilot.screening.candidateCardRoots,
       eligibleCaptures: updatedRegistry.captures.length,
+      retiredCaptures: replacementState.retiredCaptures.length,
       output: outputPath,
-      registry: registryPath
+      registry: registryPath,
+      retiredRegistry: retiredRegistryPath
     },
     null,
     2
@@ -385,7 +430,7 @@ function optionMap(args: string[]): Map<string, string> {
     const value = args[index + 1];
     if (!name?.startsWith("--") || !value || value.startsWith("--")) {
       throw new Error(
-        "Usage: bun scripts/promote-training-depth-captures.ts --spec spec.json --output pilot.json [--registry eligible-captures.json] [--promotions promotions.json]"
+        "Usage: bun scripts/promote-training-depth-captures.ts --spec spec.json --output pilot.json [--registry eligible-captures.json] [--retired-registry retired-captures.json] [--promotions promotions.json]"
       );
     }
     values.set(name, value);

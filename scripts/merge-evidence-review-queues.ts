@@ -45,8 +45,8 @@ function parseOptions(args: string[]): { output: string; inputs: string[] } {
   const inputs = args.filter(
     (_, index) => index !== outputIndex && index !== outputIndex + 1
   );
-  if (inputs.length < 2 || inputs.some((value) => value.startsWith("--"))) {
-    throw new Error("At least two source queue paths are required.");
+  if (inputs.length < 1 || inputs.some((value) => value.startsWith("--"))) {
+    throw new Error("At least one source queue path is required.");
   }
   return { output: path.resolve(outputValue), inputs };
 }

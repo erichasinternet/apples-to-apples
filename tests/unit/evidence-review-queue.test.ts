@@ -6,6 +6,16 @@ import {
 } from "../../scripts/evidence-review-queue-lib";
 
 describe("evidence review campaigns", () => {
+  it("builds a campaign from one corrected capture run", () => {
+    const campaign = mergeEvidenceReviewQueues(
+      [source("page-a", "run-a")],
+      "/repo/benchmark-data/review/campaign.json"
+    );
+
+    expect(campaign.items.map((item) => item.pageId)).toEqual(["page-a"]);
+    expect(campaign.sourceQueues).toHaveLength(1);
+  });
+
   it("merges, rebases, sorts, and hashes blinded queues deterministically", () => {
     const left = source("page-b", "run-b");
     const right = source("page-a", "run-a");

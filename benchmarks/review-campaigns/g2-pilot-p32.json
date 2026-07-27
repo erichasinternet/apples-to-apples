@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "campaignId": "g2-pilot-p32",
+  "createdAt": "2026-07-27T05:52:26.000Z",
+  "cohort": "training",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "artwalk-tile",
+      "pageId": "artwalk-tile--limestone-tile",
+      "captureTimestamp": "2026-07-27T05:51:11.086Z",
+      "candidateCardCount": 12,
+      "observationSha256": "95deaf4f7862dbaf876b6bbf6b5f2ae3486937e7dd170c8480c1b6d0a1090541",
+      "annotationScreenshotSha256": "a2317996a599ed851b6bbdc71a55104ab002b5a5700c32521cc12a393f99fd73"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--8b2df069c93ebb44",
+      "campaignQueueSha256": "6b2866a10e97ce66084216925903cf0bbe3912423aa02f2c15c78e5d330eee81",
+      "sourceQueueSha256": [
+        "8a026b75c153f6bd4ded301d5a62ab64f65f0034d1020024c567a0c5c62f30e6"
+      ],
+      "sourceQueuePageCounts": [
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--748568c950730a47",
+      "campaignQueueSha256": "1cd3b618c39dd3d1833be228ec23a2de2748cde1643a94a38ccfa3112d529089",
+      "sourceQueueSha256": [
+        "057fd7166ecf694e168b61acce3f6780266156bf8d79eb61a6bcdd4c5f9948d5"
+      ],
+      "sourceQueuePageCounts": [
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--8b2df069c93ebb44",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 1,
+    "screenshotsLoaded": 1,
+    "candidateCards": 12,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

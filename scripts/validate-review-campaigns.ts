@@ -1,10 +1,19 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import type { EligibleCaptureEntry } from "./capture-eligibility-lib";
+import {
+  matchesCampaignCaptureEvidence,
+  type RetiredCaptureEntry
+} from "./capture-retirement-lib";
 
 interface EligibleCaptureManifest {
   version: 1;
   captures: EligibleCaptureEntry[];
+}
+
+interface RetiredCaptureManifest {
+  version: 1;
+  captures: RetiredCaptureEntry[];
 }
 
 interface ReviewCampaign {
@@ -52,9 +61,14 @@ interface ReviewCampaign {
 
 const SHA256 = /^[a-f0-9]{64}$/;
 const campaignDirectory = path.resolve("benchmarks/review-campaigns");
-const eligible = await readJson<EligibleCaptureManifest>(
-  path.resolve("benchmarks/capture-pilots/eligible-captures.json")
-);
+const [eligible, retired] = await Promise.all([
+  readJson<EligibleCaptureManifest>(
+    path.resolve("benchmarks/capture-pilots/eligible-captures.json")
+  ),
+  readJson<RetiredCaptureManifest>(
+    path.resolve("benchmarks/capture-pilots/retired-captures.json")
+  )
+]);
 const eligibleByPage = new Map(
   eligible.captures.map((capture) => [capture.pageId, capture])
 );
@@ -65,6 +79,7 @@ const errors: string[] = [];
 const seenCampaigns = new Set<string>();
 let pages = 0;
 let candidateCards = 0;
+let historicalRetiredPages = 0;
 
 for (const filename of files) {
   const campaign = await readJson<ReviewCampaign>(
@@ -98,17 +113,18 @@ for (const filename of files) {
     }
     campaignCandidates += page.candidateCardCount;
     const capture = eligibleByPage.get(page.pageId);
-    if (
-      !capture ||
-      capture.siteId !== page.siteId ||
-      capture.cohort !== campaign.cohort ||
-      capture.captureTimestamp !== page.captureTimestamp ||
-      capture.observationSha256 !== page.observationSha256 ||
-      capture.annotationScreenshotSha256 !==
-        page.annotationScreenshotSha256
-    ) {
-      errors.push(`${prefix} page is not exact eligible evidence: ${page.pageId}`);
+    const exactEligible =
+      capture &&
+      matchesCampaignCaptureEvidence(capture, page, campaign.cohort);
+    const exactRetired = retired.captures.some((retiredCapture) =>
+      matchesCampaignCaptureEvidence(retiredCapture, page, campaign.cohort)
+    );
+    if (!exactEligible && !exactRetired) {
+      errors.push(
+        `${prefix} page is not exact eligible or retired evidence: ${page.pageId}`
+      );
     }
+    if (!exactEligible && exactRetired) historicalRetiredPages += 1;
   }
 
   const reviewers = new Set(campaign.queues.map((queue) => queue.reviewerId));
@@ -177,6 +193,7 @@ process.stdout.write(
       campaigns: files.length,
       pages,
       candidateCards,
+      historicalRetiredPages,
       errors
     },
     null,

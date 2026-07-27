@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "description": "Fresh held-out qualification of ten unassigned domains whose earlier acquisition screening failed on stale routes or incomplete requested-query evidence. None entered training or a prior held-out retry. The frozen wave evaluates generic semantic search recovery with two domains per supported dimension.",
+  "sites": [
+    {
+      "id": "atlantic-spice",
+      "label": "Atlantic Spice Company",
+      "hostname": "www.atlanticspice.com",
+      "stratum": "spice-wholesale",
+      "searchUrlTemplate": "https://www.atlanticspice.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "ginger-powder",
+          "query": "ginger powder",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "spices-inc",
+      "label": "Spices Inc.",
+      "hostname": "spicesinc.com",
+      "stratum": "culinary-spice-specialty",
+      "searchUrlTemplate": "https://spicesinc.com/search-results?query={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "garlic-powder",
+          "query": "garlic powder",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "clean-garage",
+      "label": "The Clean Garage",
+      "hostname": "clean-garage.com",
+      "stratum": "detailing-specialty",
+      "searchUrlTemplate": "https://clean-garage.com/search?q={query}",
+      "queries": [
+        {
+          "id": "car-wash-soap",
+          "query": "car wash soap",
+          "dimension": "volume"
+        },
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "detailed-image",
+      "label": "Detailed Image",
+      "hostname": "www.detailedimage.com",
+      "stratum": "professional-detailing",
+      "searchUrlTemplate": "https://www.detailedimage.com/Search/?query={query}",
+      "queries": [
+        {
+          "id": "car-wash-soap",
+          "query": "car wash soap",
+          "dimension": "volume"
+        },
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "associated-bag",
+      "label": "Associated Bag",
+      "hostname": "www.associatedbag.com",
+      "stratum": "industrial-bag-supply",
+      "searchUrlTemplate": "https://www.associatedbag.com/search.aspx?keyword={query}",
+      "queries": [
+        {
+          "id": "poly-bags",
+          "query": "poly bags",
+          "dimension": "count"
+        },
+        {
+          "id": "trash-bags",
+          "query": "trash bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "health-products-for-you",
+      "label": "Health Products For You",
+      "hostname": "www.healthproductsforyou.com",
+      "stratum": "consumer-medical-supply",
+      "searchUrlTemplate": "https://www.healthproductsforyou.com/search.html?query={query}",
+      "queries": [
+        {
+          "id": "wound-dressings",
+          "query": "wound dressings",
+          "dimension": "count"
+        },
+        {
+          "id": "underpads",
+          "query": "underpads",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "vogue-fabrics",
+      "label": "Vogue Fabrics",
+      "hostname": "www.voguefabricsstore.com",
+      "stratum": "fashion-fabric-retail",
+      "searchUrlTemplate": "https://www.voguefabricsstore.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "denver-fabrics",
+      "label": "Denver Fabrics",
+      "hostname": "www.denverfabrics.com",
+      "stratum": "discount-fabric-retail",
+      "searchUrlTemplate": "https://www.denverfabrics.com/search?query={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "american-floor-mats",
+      "label": "American Floor Mats",
+      "hostname": "www.americanfloormats.com",
+      "stratum": "floor-coverings",
+      "searchUrlTemplate": "https://www.americanfloormats.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "rubber-flooring",
+          "query": "rubber flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "flooring-liquidators",
+      "label": "Flooring Liquidators",
+      "hostname": "flooringliquidators.net",
+      "stratum": "regional-flooring-chain",
+      "searchUrlTemplate": "https://flooringliquidators.net/search?q={query}",
+      "queries": [
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "laminate-flooring",
+          "query": "laminate flooring",
+          "dimension": "area"
+        }
+      ]
+    }
+  ]
+}

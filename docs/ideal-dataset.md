@@ -1468,6 +1468,32 @@ candidate domains remain in the qualification-yield denominator. The eligible
 registry now contains 520 exact capture identities. Human semantic reviews and
 adjudication remain pending.
 
+A fourteenth bounded retry tested 10 fresh, disjoint domains balanced across all
+five unit dimensions. All 14 isolated headed Chromium children completed
+without a parent hard timeout. Clean Garage and Associated Bag passed the
+desktop numeric gate, and a generic leaf-most candidate-root invariant removed
+an overlapping table ancestor found during evidence inspection. Distinct narrow
+queries then rejected both pairs: Clean Garage had only seven coherent liquid
+wheel cleaners after excluding accessories and coatings, while Associated Bag
+produced no reviewable trash-bag roots. No domain qualified, no split assignment
+changed, and all 10 domains remain in the qualification-yield denominator.
+
+A full audit of the 520 eligible captures found one older Artwalk Tile page with
+an overlapping product-grid ancestor and child card. After replacement, the
+reproducible
+[`candidate-root-independence-audit.json`](../benchmarks/capture-pilots/candidate-root-independence-audit.json)
+locates all 520 exact capture identities and verifies all 5,861 active roots are
+independent. The exact old evidence was retired without rewriting its historical
+campaign provenance, and a visually inspected headed recapture replaced it under
+[`g2-training-correction-p00.json`](../benchmarks/capture-pilots/g2-training-correction-p00.json).
+The replacement contains 12 independent roots and is isolated in blinded
+dual-review campaign
+[`g2-pilot-p32.json`](../benchmarks/review-campaigns/g2-pilot-p32.json), whose
+headed workbench validation loaded all evidence with zero console errors and
+zero review writes. The active eligible registry remains at 520 exact capture
+identities; one superseded identity is preserved in the retirement registry.
+Human semantic reviews and adjudication remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

@@ -9,6 +9,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import type { PageObservation } from "../src/learning/contracts";
+import { selectIndependentCandidateRootIds } from "../src/learning/candidate-roots";
 import {
   navigateForObservation,
   shouldAttemptSemanticSearchRoute,
@@ -107,6 +108,7 @@ const collectorSourcePaths = [
   fileURLToPath(import.meta.url),
   path.resolve("scripts/capture-provenance-lib.ts"),
   path.resolve("scripts/live-corpus-lib.ts"),
+  path.resolve("src/learning/candidate-roots.ts"),
   path.resolve("src/learning/page-navigation.ts"),
   path.resolve("src/learning/page-observation.ts"),
   path.resolve("src/learning/page-preparation.ts")
@@ -702,9 +704,18 @@ async function capturePage(
   }, maxCards);
 
   const finalUrl = sanitizeCaptureUrl(page.url());
-  const candidates = JSON.parse(
+  const extractedCandidates = JSON.parse(
     redactSensitiveCaptureText(JSON.stringify(extracted.candidates))
   ) as CandidateCapture[];
+  const independentCandidateIds = new Set(
+    selectIndependentCandidateRootIds(
+      observation.nodes,
+      extractedCandidates.map((candidate) => candidate.nodeId)
+    )
+  );
+  const candidates = extractedCandidates.filter((candidate) =>
+    independentCandidateIds.has(candidate.nodeId)
+  );
   const sanitizedTarget = {
     ...target,
     url: sanitizeCaptureUrl(target.url)

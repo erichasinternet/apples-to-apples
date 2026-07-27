@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { PageObservation } from "../src/learning/contracts";
+import { selectIndependentCandidateRootIds } from "../src/learning/candidate-roots";
 import {
   validateCaptureProvenance,
   type CaptureProvenance
@@ -70,9 +71,14 @@ for (const entry of selectCapturedReviewPages(run.results, options.pageIds)) {
     )
   );
   const candidateCardNodeIds = candidates.map((candidate) => candidate.nodeId);
+  const independentCandidateCardNodeIds = selectIndependentCandidateRootIds(
+    observation.nodes,
+    candidateCardNodeIds
+  );
   if (
     candidateCardNodeIds.length !== page.candidateCount ||
     new Set(candidateCardNodeIds).size !== candidateCardNodeIds.length ||
+    independentCandidateCardNodeIds.length !== candidateCardNodeIds.length ||
     candidateCardNodeIds.some(
       (nodeId) => !observation.nodes.some((node) => node.id === nodeId)
     )

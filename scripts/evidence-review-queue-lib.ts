@@ -150,8 +150,8 @@ export function mergeEvidenceReviewQueues(
   sources: readonly EvidenceReviewQueueSource[],
   outputFilename: string
 ): EvidenceReviewQueue {
-  if (sources.length < 2) {
-    throw new Error("A review campaign requires at least two source queues.");
+  if (sources.length < 1) {
+    throw new Error("A review campaign requires at least one source queue.");
   }
   const ordered = [...sources].sort((left, right) =>
     left.queue.queueId.localeCompare(right.queue.queueId)
