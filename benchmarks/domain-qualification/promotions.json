@@ -666,6 +666,42 @@
       "cohort": "selection",
       "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p20.json",
       "promotedAt": "2026-07-27T07:49:00.000Z"
+    },
+    {
+      "siteId": "fusion-teas",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/wave-21-p00.json",
+      "promotedAt": "2026-07-27T08:19:18.000Z"
+    },
+    {
+      "siteId": "supply-clinic",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/wave-21-p00.json",
+      "promotedAt": "2026-07-27T08:19:18.000Z"
+    },
+    {
+      "siteId": "medical-supply-pros",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/wave-21-p00.json",
+      "promotedAt": "2026-07-27T08:19:18.000Z"
+    },
+    {
+      "siteId": "classic-modern-fabrics",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/wave-21-p00.json",
+      "promotedAt": "2026-07-27T08:19:18.000Z"
+    },
+    {
+      "siteId": "sos-pool",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/wave-21-p00.json",
+      "promotedAt": "2026-07-27T08:19:18.000Z"
+    },
+    {
+      "siteId": "restaurantware",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/wave-21-p00.json",
+      "promotedAt": "2026-07-27T08:19:18.000Z"
     }
   ]
 }

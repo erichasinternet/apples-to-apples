@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p13",
+  "createdAt": "2026-07-27T08:23:00.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "classic-modern-fabrics",
+      "pageId": "classic-modern-fabrics--cotton-fabric",
+      "captureTimestamp": "2026-07-27T08:03:39.269Z",
+      "candidateCardCount": 12,
+      "observationSha256": "c0cd3f0546fc74cadce6a35474d75e5fc44b9fe52a9bf7621d75a045bab368ce",
+      "annotationScreenshotSha256": "9fe9c79e833a959fb7cc820532c89a085c1d78210183aa72bcfe4db701c910fe"
+    },
+    {
+      "siteId": "classic-modern-fabrics",
+      "pageId": "classic-modern-fabrics--linen-fabric",
+      "captureTimestamp": "2026-07-27T08:12:06.070Z",
+      "candidateCardCount": 12,
+      "observationSha256": "f65ead33af0331fe565536d0c3c847a57aab5ed2a4273f5fb820381fe0869895",
+      "annotationScreenshotSha256": "50989624f2890ebf2c94ee5df6ac8fb3e20d68c56fc50d1c352e3a125ebfc947"
+    },
+    {
+      "siteId": "fusion-teas",
+      "pageId": "fusion-teas--green-tea",
+      "captureTimestamp": "2026-07-27T08:10:07.999Z",
+      "candidateCardCount": 12,
+      "observationSha256": "2271256acd7b588178945b14f2dea2350b1e0dc07c1e3613f8cec761b8282ebe",
+      "annotationScreenshotSha256": "aa7438d061e2e8ce649d5fc061d2dc330818e7ea72bf2a84ca428df955d5b22f"
+    },
+    {
+      "siteId": "fusion-teas",
+      "pageId": "fusion-teas--loose-leaf-tea",
+      "captureTimestamp": "2026-07-27T08:01:04.919Z",
+      "candidateCardCount": 12,
+      "observationSha256": "7f7b39dbb3d0733665bacf61efb46729ff93fc3465c5522b8c70fa4f0fd6d553",
+      "annotationScreenshotSha256": "261373661d86452f31b722cbf4da35a06cfc736e94c312fb736bf1b2f9fd0a90"
+    },
+    {
+      "siteId": "medical-supply-pros",
+      "pageId": "medical-supply-pros--exam-gloves",
+      "captureTimestamp": "2026-07-27T08:03:19.461Z",
+      "candidateCardCount": 12,
+      "observationSha256": "6db2dd065a2d3dfc0ddbc7bf99782705d34fa1c2f6c1987fe89a8d8ce8808a7d",
+      "annotationScreenshotSha256": "6b81e0f6270c25d16027afd80aed151f30ccee51caa467f1861ed5c27bc1b384"
+    },
+    {
+      "siteId": "medical-supply-pros",
+      "pageId": "medical-supply-pros--syringes",
+      "captureTimestamp": "2026-07-27T08:11:46.768Z",
+      "candidateCardCount": 12,
+      "observationSha256": "fa0ace95080bf952197ad483b91c1806074ec45f1504732206713086aa703bf5",
+      "annotationScreenshotSha256": "8c644f8363f63baf374503d497544cc063c39799bfc632ab239c27aaf4136113"
+    },
+    {
+      "siteId": "sos-pool",
+      "pageId": "sos-pool--pool-algaecide",
+      "captureTimestamp": "2026-07-27T08:05:41.388Z",
+      "candidateCardCount": 12,
+      "observationSha256": "f9296548cd0f0d94de962d446a65f765d5bb85ad855163de149b0299b963b1bd",
+      "annotationScreenshotSha256": "b8163af0acf28f269b3e70f0c61dfc7ffa9077b2a4d478c2e51a12809c7f0f53"
+    },
+    {
+      "siteId": "sos-pool",
+      "pageId": "sos-pool--pool-clarifier",
+      "captureTimestamp": "2026-07-27T08:12:44.550Z",
+      "candidateCardCount": 12,
+      "observationSha256": "7d5b80b3668e20d72079470673132d35383a09e0d9283cd1e7cb6449c172a3fd",
+      "annotationScreenshotSha256": "b10e7ebfac735db253e10e104ca456de31d76646bd488f5885f21fe68688c983"
+    },
+    {
+      "siteId": "supply-clinic",
+      "pageId": "supply-clinic--exam-gloves",
+      "captureTimestamp": "2026-07-27T08:02:24.790Z",
+      "candidateCardCount": 12,
+      "observationSha256": "59761c76f840e179a4289e4b7c7c82c4613d48ad6552442f0c921e6587633258",
+      "annotationScreenshotSha256": "06208efee13b9044599879b2876ded518a60b1edddf478cc0bfe89848b610c56"
+    },
+    {
+      "siteId": "supply-clinic",
+      "pageId": "supply-clinic--face-masks",
+      "captureTimestamp": "2026-07-27T08:11:02.293Z",
+      "candidateCardCount": 12,
+      "observationSha256": "698cff79a73749e7ab259a2ecdbd2217eda5878528c87c3aec79b1562821f6c9",
+      "annotationScreenshotSha256": "045f3f6963233eb0b3b4c77611465eb352d5d01644850e2ceac7ad4b439ccfce"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--cefdd44f424de193",
+      "campaignQueueSha256": "00171096a4af4df31fe9e23cb11bbaa2d2b73c1e64d629439c6b6a4c6950d294",
+      "sourceQueueSha256": [
+        "b27b78c9942bb27a1a862366b7faba5fc465c9c6e57f0d1df778960122596f2e",
+        "6d8039af1e11e319e26668b7850928ec7b55fa803a85e5674415400560deb79f",
+        "21071f562859c4e0c98be707bc374e600ba87fbb06f184a8e4a36ab18a7d6c25",
+        "f027387ac22974ab836eb7f86bc6943e58b5c61b1ddcd8e0ba9274e0f1c85b59",
+        "d18d9694692d4dac4c8fa040c4859bb295db1fb27d611281f6b3fa604a3e995f",
+        "89597365a771e34bf93644f7b8dc97f3ea0a23181a1477887045602344977985",
+        "f1372a3f1f5f92532a96b82646703b71d8c5b24f936489e6b114ce21b2172323",
+        "52e9cd87f5f41271ef0476cd47916600697c2e88d892c58450570f3b2eab75f7",
+        "02d82bd5131406cf1c11e582d5c2af1db212ced4fe71c7734f5bc111e938aa5e",
+        "f2d1f36ac667ef3295e59f3c15dfbed7c7a0dc26c7b0c36c00be721831c4c306"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--b840c4686675dde6",
+      "campaignQueueSha256": "6dd12f3f7bf34b75dada993989b2692648cec6a35305f2885340c8b1b2f6b2ee",
+      "sourceQueueSha256": [
+        "eeb06edd2651da626b5d83b1717e09eabddf365e224ab7d12453e26aba4bee23",
+        "1ddcc8667affd13c37cf5cc762204e2792e1ab03f4f03a93d7c974aaee7dd02a",
+        "5d620fa953a61aae8734275124b27dd7d2cd0d83354f34daacae7435c9fa5739",
+        "645d62aa4fe23cbff3f7941801f516705913e0cc28ecd6404ef96e4a5a2b4e4f",
+        "7ba28a1e64598ec465d749b16872e0718a622bef9d3117d2d45f9f7e44960bc9",
+        "451f9b5d7ab530b0f59c754d63bab52b54d9a9ba5f08e947514c7ddf5fbf840c",
+        "b4c2794d77e3c49af3743749453e75376e9b2d5f00d6bf51718fa978d2e148f7",
+        "aba19b6b2583aaf10fb04a55b6183afcd3c5b48b59a9f09c1bf28b68cffa784b",
+        "b2a06ec6e056f7bb7383d69d79ebe427da60eabedcc257b9772e18a2df22c9ba",
+        "a5e2fc4cf3da10204e441c710a4b2d92add112242d03c455d163d188613bb3ce"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--cefdd44f424de193",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 10,
+    "screenshotsLoaded": 10,
+    "candidateCards": 120,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

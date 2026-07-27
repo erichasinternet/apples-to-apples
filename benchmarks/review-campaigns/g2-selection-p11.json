@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p11",
+  "createdAt": "2026-07-27T08:23:00.000Z",
+  "cohort": "selection",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "restaurantware",
+      "pageId": "restaurantware--paper-cups",
+      "captureTimestamp": "2026-07-27T08:03:07.118Z",
+      "candidateCardCount": 12,
+      "observationSha256": "000d6b13e747e81343676b4c1d2cb2d186b9bb96c5eba741e354df098811f23e",
+      "annotationScreenshotSha256": "2366dad2a404c964405c38deef6091d38c23bd612c16e9b10858e453646fa9e8"
+    },
+    {
+      "siteId": "restaurantware",
+      "pageId": "restaurantware--trash-bags",
+      "captureTimestamp": "2026-07-27T08:11:34.790Z",
+      "candidateCardCount": 12,
+      "observationSha256": "3d90f7334cba7788bdd3f9390d5db6221c09b097a98f80f903d3730797db7172",
+      "annotationScreenshotSha256": "dc29982089e853c827e8222bf7509eb3603b8e18cb8e8b7c3dfaec814050a29d"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--5b33664719d07cfe",
+      "campaignQueueSha256": "5217c1f737aced0a4a1b034bc448491737bd6da43b8a936cf801a6298572c7f6",
+      "sourceQueueSha256": [
+        "3c237d025380a1598b4b9504739ae6bfa161df70079e7e390bc35a46ed97ea07",
+        "cce30613e3c8b747c158d8d65c3b9709c7fd50ff7600695fc8de43ed599d1ffb"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--a53c90bb37425338",
+      "campaignQueueSha256": "80e32d05ccbc668f1d2ec3e93c243614401a322f51b03222fd8d49c7fe548b55",
+      "sourceQueueSha256": [
+        "c93b786c686ef5878353c07d690d280bba64db2c8ce43c3ddecdb3dbe8dabd7e",
+        "5d99543bad5eebc0aef544e5a398b84082544d00c3c0d1ea2095fa3fe592ec3e"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--5b33664719d07cfe",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

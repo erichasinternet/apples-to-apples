@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p13",
+  "createdAt": "2026-07-27T08:22:15.914Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--cefdd44f424de193",
+      "path": "benchmark-data/review/g2-validation-p13/reviewer-a.json",
+      "sha256": "00171096a4af4df31fe9e23cb11bbaa2d2b73c1e64d629439c6b6a4c6950d294",
+      "pages": 10
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--b840c4686675dde6",
+      "path": "benchmark-data/review/g2-validation-p13/reviewer-b.json",
+      "sha256": "6dd12f3f7bf34b75dada993989b2692648cec6a35305f2885340c8b1b2f6b2ee",
+      "pages": 10
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 10,
+    "candidateCards": 120
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p13--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "classic-modern-fabrics--cotton-fabric",
+        "classic-modern-fabrics--linen-fabric",
+        "fusion-teas--green-tea",
+        "fusion-teas--loose-leaf-tea",
+        "medical-supply-pros--exam-gloves",
+        "medical-supply-pros--syringes",
+        "sos-pool--pool-algaecide",
+        "sos-pool--pool-clarifier",
+        "supply-clinic--exam-gloves",
+        "supply-clinic--face-masks"
+      ],
+      "pages": 10,
+      "candidateCards": 120,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--4fd029a3e01fc3ee",
+          "path": "benchmark-data/review/g2-validation-p13-review-batches/reviewer-a--batch-01.json",
+          "sha256": "b1687793d1145738d3415eb826166f829f54617543361634d5e3a861544af856"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--82c0526c3cf7cc6b",
+          "path": "benchmark-data/review/g2-validation-p13-review-batches/reviewer-b--batch-01.json",
+          "sha256": "3a82db57c048d81cc12280445ade927e4b4bebc9b802be4cb2a631c7fc411143"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

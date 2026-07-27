@@ -1616,6 +1616,39 @@ qualification-yield denominator, and the ranked retry frame now has zero
 untried candidates. Human semantic reviews, adjudication, and final-cohort
 collection remain pending.
 
+A twenty-first qualification wave moved beyond the exhausted retry frame and
+froze 20 genuinely new domains with zero prior ID or hostname overlap. The frame
+balanced eight queries per unit dimension across specialty tea, nuts, medical
+supplies, food-service supplies, fabric, tile, and pool care. Every domain
+received a desktop screen; 11 survivors received a distinct-query narrow
+capture. Fusion Teas, Supply Clinic, Restaurantware, Medical Supply Pros,
+Classic Modern Fabrics, and SOS Pool passed both views with 12 independent roots
+per page, complete query evidence, no truncation, and obstruction below the
+frozen 20% ceiling.
+
+Original-resolution review remained authoritative over numeric metrics. It
+rejected Harney & Sons, Metro Textiles NYC, and Oasis Tile for open overlays;
+Black Rabbit Fabric for unsupported CAD pricing; Diflart and Pool Parts To Go
+for incoherent query results; and the remaining candidates for root-count,
+query-evidence, redirect, or navigation failures. All 20 outcomes remain in
+[`wave-21-p00.json`](../benchmarks/domain-qualification/wave-21-p00.json).
+Fusion Teas, Supply Clinic, Medical Supply Pros, Classic Modern Fabrics, and SOS
+Pool add 10 pages to validation, completing its 20-domain structural gate.
+Restaurantware adds two count pages to selection, which now has 17 qualified
+domains and needs three more.
+
+The blinded
+[`g2-validation-p13.json`](../benchmarks/review-campaigns/g2-validation-p13.json)
+and
+[`g2-selection-p11.json`](../benchmarks/review-campaigns/g2-selection-p11.json)
+campaigns and their paired reviewer batches passed headed Playwright Chromium
+with all 144 frozen roots loaded, zero console errors, and zero review writes.
+The independence audit locates all 554 eligible captures and verifies 6,269
+active roots with no duplicates, conflicts, or overlap. The campaign registry
+now validates 59 campaigns, 6,639 pages, and 71,054 frozen roots. Independent
+semantic reviews, adjudication, selection-domain completion, and final-cohort
+collection remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

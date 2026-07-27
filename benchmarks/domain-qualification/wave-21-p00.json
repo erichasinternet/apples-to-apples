@@ -1,0 +1,333 @@
+{
+  "version": 1,
+  "qualificationId": "wave-21-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-21.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "ef3dd5d5374859408fc8f3d717d91a8ac8adb6efd32b283834b2e85f3b3150de",
+    "narrowBatchSha256": "fc3b80356b4709bf9b184ecabe841e62e1ad334ec92d7c71e362914364c733da",
+    "processIsolationFinding": "All thirty-one headed qualification children completed under isolated process-group bounds with zero parent hard timeouts.",
+    "samplingFinding": "All twenty fresh domains received a desktop screen. Eleven desktop survivors received an independent-query narrow capture. Six domains passed both the unchanged machine gate and original-resolution visual review; the other fourteen remain in the yield denominator.",
+    "manifestIntegrityFinding": "Candidate IDs and hostnames have zero overlap with waves 1-20. All completed captures use frozen manifest hash 0d6edccf2c36b925bb5a5144eb87460df9e73ddcdc81c88dc3f84e4aff554ca3 and collector hash 7b0d6e7e88ddb12234def7ab68515b0b1061271971a7b6b20950b7d18f226c44."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T08-00-56-654Z",
+      "runManifestSha256": "36104d976fa34b905771cf311893bdd26b7f592950606e50ef8f18e54f505caa",
+      "purpose": "Fusion Teas desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-09-59-523Z",
+      "runManifestSha256": "bae9c58e48a9f71665438cfdef164a15ea4234c9b858e2c1915fb2b2bbf304fe",
+      "purpose": "Fusion Teas narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-01-47-595Z",
+      "runManifestSha256": "63befca0fa59128b5bd083bf55f2f2654845bbb458437ce1079877a9e5d643d7",
+      "purpose": "Supply Clinic desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-10-26-579Z",
+      "runManifestSha256": "0b2a3f8ce881b041e8352f671e5f81b5188d50332f1177b9e196637020fbb8a2",
+      "purpose": "Supply Clinic narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-02-50-165Z",
+      "runManifestSha256": "ddf0af857ef21a96826153b8a8d0dbbad013c9f529650d877d660a2b1e5275e6",
+      "purpose": "Restaurantware desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-11-26-139Z",
+      "runManifestSha256": "010b239904f199cae199ff8097de192279315c78c687cc6445494e4c255bfec8",
+      "purpose": "Restaurantware narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-03-08-633Z",
+      "runManifestSha256": "7e287a767a1b44f1dfb03d84f48058181030f0e1a249bb52d275c86b7c730b4d",
+      "purpose": "Medical Supply Pros desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-11-36-034Z",
+      "runManifestSha256": "351fe3a3306853ddaabb7cae33e32668c9cd49c0f9a9362374d415cbf632df36",
+      "purpose": "Medical Supply Pros narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-03-22-532Z",
+      "runManifestSha256": "6c571960d04fab0cac4b098ac5d138781b3da82edf37830f6c693bb6de1fa78e",
+      "purpose": "Classic Modern Fabrics desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-11-49-517Z",
+      "runManifestSha256": "a9254ccd28465607c1cadd764ab0c24fc0ba9a37069fdb1c5db1fa35e75e5aeb",
+      "purpose": "Classic Modern Fabrics narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-05-30-999Z",
+      "runManifestSha256": "7156179be1fb07119413078c4de158a67693fe0c558ee0a61cf0468204ab9db4",
+      "purpose": "SOS Pool desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-12-33-414Z",
+      "runManifestSha256": "230b3a66bfa613ff4cba5258ba1754cd7c7a41adf4eab4bf4ebaf76202ca142f",
+      "purpose": "SOS Pool narrow qualification capture"
+    }
+  ],
+  "results": {
+    "fusion-teas": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "fusion-teas--loose-leaf-tea",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "fusion-teas--green-tea",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tea result grids expose coherent loose-leaf products, accessories, price ranges, package evidence, and query-adjacent abstention cases."
+    },
+    "harney-and-sons": {
+      "status": "rejected",
+      "reason": "The narrow page passed numeric checks, but original-resolution review found an open sort sheet obscuring the product grid."
+    },
+    "we-got-nuts": {
+      "status": "rejected",
+      "reason": "The desktop almonds route produced no reviewable product roots."
+    },
+    "the-tea-spot": {
+      "status": "rejected",
+      "reason": "The desktop loose-leaf-tea route produced no reviewable product roots."
+    },
+    "supply-clinic": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "supply-clinic--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "supply-clinic--face-masks",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport medical-consumables grids expose coherent glove and mask products with box counts, variants, current prices, sale prices, and count-normalization evidence."
+    },
+    "tiger-medical": {
+      "status": "rejected",
+      "reason": "The desktop glove page passed, but the distinct narrow syringe page retained none of the requested-query evidence."
+    },
+    "restaurantware": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "restaurantware--paper-cups",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.027890541330973306,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "restaurantware--trash-bags",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.050795965487908615,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport food-service grids expose cups and liners with case counts, volume or size descriptors, current prices, and strong count-normalization evidence."
+    },
+    "medical-supply-pros": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "medical-supply-pros--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "medical-supply-pros--syringes",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport medical-supply grids expose gloves, syringes, and query-adjacent needles with box counts, gauge and volume descriptors, range prices, and selective abstention evidence."
+    },
+    "classic-modern-fabrics": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "classic-modern-fabrics--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.004669444444444445,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "classic-modern-fabrics--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.020427755498845547,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport fabric grids expose cotton, linen, blends, yard bundles, current and sale prices, and length-normalization evidence."
+    },
+    "metro-textiles-nyc": {
+      "status": "rejected",
+      "reason": "The desktop page passed numeric checks, but original-resolution review found a newsletter modal obscuring the product grid."
+    },
+    "black-rabbit-fabric": {
+      "status": "rejected",
+      "reason": "The desktop product grid is denominated in CAD, outside the frozen en-US/USD claim; unsupported currencies must abstain."
+    },
+    "fabric-shack": {
+      "status": "rejected",
+      "reason": "The desktop page passed, but the distinct narrow flannel route produced no reviewable product roots."
+    },
+    "modwalls": {
+      "status": "rejected",
+      "reason": "The desktop route redirected cross-site to Google, retained no query evidence, and produced no reviewable product roots."
+    },
+    "diflart": {
+      "status": "rejected",
+      "reason": "The desktop porcelain query returned mirror, glass, and marble products rather than eight coherent porcelain products."
+    },
+    "oasis-tile": {
+      "status": "rejected",
+      "reason": "The narrow page passed numeric checks, but original-resolution review found a newsletter modal and dim overlay obscuring the product grid."
+    },
+    "tile-america": {
+      "status": "rejected",
+      "reason": "The desktop porcelain-tile route produced no reviewable product roots."
+    },
+    "pool-parts-to-go": {
+      "status": "rejected",
+      "reason": "The desktop query returned brushes, pumps, and filters and retained a large subscription modal rather than a coherent algaecide grid."
+    },
+    "sos-pool": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "sos-pool--pool-algaecide",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "sos-pool--pool-clarifier",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport pool-chemical grids expose algaecides and clarifiers with liquid or solid package quantities, current and list prices, treatment capacity, and query-adjacent abstention cases."
+    },
+    "pool-web": {
+      "status": "rejected",
+      "reason": "The desktop page passed visual review, but the distinct narrow clarifier route exposed seven candidate roots, below the frozen minimum of eight."
+    },
+    "ez-test-pools": {
+      "status": "rejected",
+      "reason": "The desktop route retained only half of the requested-query evidence and produced no reviewable product roots."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "fusion-teas",
+      "supply-clinic",
+      "restaurantware",
+      "medical-supply-pros",
+      "classic-modern-fabrics",
+      "sos-pool"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "fusion-teas",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "supply-clinic",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "medical-supply-pros",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "classic-modern-fabrics",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "sos-pool",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "restaurantware",
+        "cohort": "selection"
+      }
+    ],
+    "status": "keep"
+  }
+}

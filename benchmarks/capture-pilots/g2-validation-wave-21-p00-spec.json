@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-wave-21-p00",
+  "capturedAt": "2026-07-27T08:19:18.000Z",
+  "sourceManifest": "benchmarks/live-sites/qualification-wave-21.json",
+  "requestedCaptureAttempts": 10,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-00-56-654Z",
+      "pageIds": ["fusion-teas--loose-leaf-tea"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-09-59-523Z",
+      "pageIds": ["fusion-teas--green-tea"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-01-47-595Z",
+      "pageIds": ["supply-clinic--exam-gloves"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-10-26-579Z",
+      "pageIds": ["supply-clinic--face-masks"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-03-08-633Z",
+      "pageIds": ["medical-supply-pros--exam-gloves"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-11-36-034Z",
+      "pageIds": ["medical-supply-pros--syringes"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-03-22-532Z",
+      "pageIds": ["classic-modern-fabrics--cotton-fabric"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-11-49-517Z",
+      "pageIds": ["classic-modern-fabrics--linen-fabric"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-05-30-999Z",
+      "pageIds": ["sos-pool--pool-algaecide"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-12-33-414Z",
+      "pageIds": ["sos-pool--pool-clarifier"]
+    }
+  ],
+  "samplingFinding": "Five fresh wave-21 domains passed independent opposite-viewport captures and were assigned to validation, bringing the qualified validation registry to its twenty-domain gate.",
+  "visualValidationFinding": "All ten original-resolution annotation screenshots and 120 frozen roots were inspected. Product grids are coherent and unobscured, with mass, count, length, and volume evidence plus query-adjacent abstention cases."
+}

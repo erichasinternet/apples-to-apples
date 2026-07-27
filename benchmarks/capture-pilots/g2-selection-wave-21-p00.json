@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-wave-21-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T08:19:18.000Z",
+  "source": {
+    "siteIds": [
+      "restaurantware"
+    ],
+    "cohort": "selection",
+    "strata": [
+      "food-service-packaging-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "0d6edccf2c36b925bb5a5144eb87460df9e73ddcdc81c88dc3f84e4aff554ca3"
+    ],
+    "collectorSha256": [
+      "7b0d6e7e88ddb12234def7ab68515b0b1061271971a7b6b20950b7d18f226c44"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T08-02-50-165Z",
+      "runManifestSha256": "ddf0af857ef21a96826153b8a8d0dbbad013c9f529650d877d660a2b1e5275e6",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T08-11-26-139Z",
+      "runManifestSha256": "010b239904f199cae199ff8097de192279315c78c687cc6445494e4c255bfec8",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "Restaurantware passed fresh opposite-viewport wave-21 count-product captures and was assigned to selection.",
+    "visualValidationFinding": "Both original-resolution annotation screenshots and twenty-four frozen roots were inspected. The grids expose coherent cups and liners with case counts, package sizes, prices, and count-normalization evidence."
+  },
+  "captures": [
+    {
+      "siteId": "restaurantware",
+      "pageId": "restaurantware--paper-cups",
+      "capturedAt": "2026-07-27T08:03:07.118Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1432,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.027890541330973306,
+      "queryTokenCoverage": 1,
+      "observationSha256": "000d6b13e747e81343676b4c1d2cb2d186b9bb96c5eba741e354df098811f23e",
+      "canonicalObservationSha256": "4baae8d0c07c0a94fae7fc32cc50ca1349b6f13392a4b59c2ce4c21f1e4d327a",
+      "annotationScreenshotSha256": "2366dad2a404c964405c38deef6091d38c23bd612c16e9b10858e453646fa9e8",
+      "provenanceAggregateSha256": "d5dd1dc1317bbf61f2e483e3ff9825628c4556b1b0e07a3138011fb14ebb72e9",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "restaurantware",
+      "pageId": "restaurantware--trash-bags",
+      "capturedAt": "2026-07-27T08:11:34.790Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 789,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.050795965487908615,
+      "queryTokenCoverage": 1,
+      "observationSha256": "3d90f7334cba7788bdd3f9390d5db6221c09b097a98f80f903d3730797db7172",
+      "canonicalObservationSha256": "347824652a9e1417ac2a5873cf22a2803aa7485c8b37d4e29cba462c09d14f5f",
+      "annotationScreenshotSha256": "dc29982089e853c827e8222bf7509eb3603b8e18cb8e8b7c3dfaec814050a29d",
+      "provenanceAggregateSha256": "c036cd6511c706703e4c4763d605304e78bf68043d5141769e69c51658959065",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

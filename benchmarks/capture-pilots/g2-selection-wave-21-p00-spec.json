@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-wave-21-p00",
+  "capturedAt": "2026-07-27T08:19:18.000Z",
+  "sourceManifest": "benchmarks/live-sites/qualification-wave-21.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-02-50-165Z",
+      "pageIds": ["restaurantware--paper-cups"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-11-26-139Z",
+      "pageIds": ["restaurantware--trash-bags"]
+    }
+  ],
+  "samplingFinding": "Restaurantware passed fresh opposite-viewport wave-21 count-product captures and was assigned to selection.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots and twenty-four frozen roots were inspected. The grids expose coherent cups and liners with case counts, package sizes, prices, and count-normalization evidence."
+}

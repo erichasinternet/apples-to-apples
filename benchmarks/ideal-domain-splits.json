@@ -129,7 +129,12 @@
     "north-bay-trading",
     "pinch-a-penny",
     "recreation-supply",
-    "rubber-flooring-experts"
+    "rubber-flooring-experts",
+    "fusion-teas",
+    "supply-clinic",
+    "medical-supply-pros",
+    "classic-modern-fabrics",
+    "sos-pool"
   ],
   "selection": [
     "petflow",
@@ -157,7 +162,8 @@
     "cougar-chemical",
     "in-the-swim",
     "leslies-pool",
-    "sunplay"
+    "sunplay",
+    "restaurantware"
   ],
   "final": [],
   "retired": [

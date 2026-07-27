@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p11",
+  "createdAt": "2026-07-27T08:22:15.930Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--5b33664719d07cfe",
+      "path": "benchmark-data/review/g2-selection-p11/reviewer-a.json",
+      "sha256": "5217c1f737aced0a4a1b034bc448491737bd6da43b8a936cf801a6298572c7f6",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--a53c90bb37425338",
+      "path": "benchmark-data/review/g2-selection-p11/reviewer-b.json",
+      "sha256": "80e32d05ccbc668f1d2ec3e93c243614401a322f51b03222fd8d49c7fe548b55",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p11--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "restaurantware--paper-cups",
+        "restaurantware--trash-bags"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--fe0d4bbd16f12b61",
+          "path": "benchmark-data/review/g2-selection-p11-review-batches/reviewer-a--batch-01.json",
+          "sha256": "54b354628bf3f815930fa96b8fac20998092d73692c5dd8a13cf34cba5d20837"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--c111e661cd554583",
+          "path": "benchmark-data/review/g2-selection-p11-review-batches/reviewer-b--batch-01.json",
+          "sha256": "137fcf8a6d23e835ea4b4250e22d400f11220d79b5ec8b94ab392791661abfdb"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

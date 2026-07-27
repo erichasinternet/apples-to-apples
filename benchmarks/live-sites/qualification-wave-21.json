@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "description": "Twenty-first unassigned domain-qualification wave. Twenty domains absent from every prior qualification manifest contribute four candidates per primary unit dimension across tea and nut retail, medical and food-service supply, fabric retail, tile commerce, and pool supply. Public route probes verified two query-bearing result pages per domain before capture. No site-specific DOM selectors are supplied, and every domain remains unassigned until two distinct pages pass the frozen machine and visual qualification gate.",
+  "sites": [
+    {
+      "id": "fusion-teas",
+      "label": "Fusion Teas",
+      "hostname": "www.fusionteas.com",
+      "stratum": "independent-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://www.fusionteas.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "loose-leaf-tea",
+          "query": "loose leaf tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "green-tea",
+          "query": "green tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "harney-and-sons",
+      "label": "Harney & Sons",
+      "hostname": "www.harney.com",
+      "stratum": "national-specialty-tea-retail",
+      "searchUrlTemplate": "https://www.harney.com/search?q={query}",
+      "queries": [
+        {
+          "id": "loose-leaf-tea",
+          "query": "loose leaf tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "green-tea",
+          "query": "green tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "we-got-nuts",
+      "label": "We Got Nuts",
+      "hostname": "wegotnuts.com",
+      "stratum": "direct-to-consumer-nut-retail",
+      "searchUrlTemplate": "https://wegotnuts.com/search?q={query}",
+      "queries": [
+        {
+          "id": "almonds",
+          "query": "almonds",
+          "dimension": "mass"
+        },
+        {
+          "id": "cashews",
+          "query": "cashews",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "the-tea-spot",
+      "label": "The Tea Spot",
+      "hostname": "www.theteaspot.com",
+      "stratum": "specialty-tea-brand-retail",
+      "searchUrlTemplate": "https://www.theteaspot.com/search?q={query}",
+      "queries": [
+        {
+          "id": "loose-leaf-tea",
+          "query": "loose leaf tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "green-tea",
+          "query": "green tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "supply-clinic",
+      "label": "Supply Clinic",
+      "hostname": "www.supplyclinic.com",
+      "stratum": "dental-and-medical-supply-marketplace",
+      "searchUrlTemplate": "https://www.supplyclinic.com/search?q={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "face-masks",
+          "query": "face masks",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "tiger-medical",
+      "label": "Tiger Medical",
+      "hostname": "www.tigermedical.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://www.tigermedical.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "syringes",
+          "query": "syringes",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "restaurantware",
+      "label": "Restaurantware",
+      "hostname": "www.restaurantware.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.restaurantware.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paper-cups",
+          "query": "paper cups",
+          "dimension": "count"
+        },
+        {
+          "id": "trash-bags",
+          "query": "trash bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "medical-supply-pros",
+      "label": "Medical Supply Pros",
+      "hostname": "medicalsupplypros.com",
+      "stratum": "direct-to-consumer-medical-supply-retail",
+      "searchUrlTemplate": "https://medicalsupplypros.com/search?q={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "syringes",
+          "query": "syringes",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "classic-modern-fabrics",
+      "label": "Classic Modern Fabrics",
+      "hostname": "classicmodernfabrics.com",
+      "stratum": "independent-apparel-fabric-retail",
+      "searchUrlTemplate": "https://classicmodernfabrics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "metro-textiles-nyc",
+      "label": "Metro Textiles NYC",
+      "hostname": "metrotextilesnyc.com",
+      "stratum": "urban-apparel-fabric-retail",
+      "searchUrlTemplate": "https://metrotextilesnyc.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "black-rabbit-fabric",
+      "label": "Black Rabbit Fabric",
+      "hostname": "blackrabbitfabric.com",
+      "stratum": "independent-knit-fabric-retail",
+      "searchUrlTemplate": "https://blackrabbitfabric.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "jersey-fabric",
+          "query": "jersey fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "fabric-shack",
+      "label": "Fabric Shack",
+      "hostname": "www.fabricshack.com",
+      "stratum": "independent-quilting-fabric-retail",
+      "searchUrlTemplate": "https://www.fabricshack.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "flannel-fabric",
+          "query": "flannel fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "modwalls",
+      "label": "Modwalls",
+      "hostname": "modwalls.com",
+      "stratum": "designer-tile-retail",
+      "searchUrlTemplate": "https://modwalls.com/search?q={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "diflart",
+      "label": "Diflart",
+      "hostname": "diflart.com",
+      "stratum": "direct-to-consumer-mosaic-tile-retail",
+      "searchUrlTemplate": "https://diflart.com/search?q={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "oasis-tile",
+      "label": "Oasis Tile",
+      "hostname": "oasistile.com",
+      "stratum": "specialty-stone-and-tile-retail",
+      "searchUrlTemplate": "https://oasistile.com/search?q={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "tile-america",
+      "label": "Tile America",
+      "hostname": "www.tileamerica.com",
+      "stratum": "regional-tile-retail",
+      "searchUrlTemplate": "https://www.tileamerica.com/search?q={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "pool-parts-to-go",
+      "label": "Pool Parts To Go",
+      "hostname": "poolpartstogo.com",
+      "stratum": "direct-to-consumer-pool-supply-retail",
+      "searchUrlTemplate": "https://poolpartstogo.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-clarifier",
+          "query": "pool clarifier",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "sos-pool",
+      "label": "SOS Pool & Spa Supplies",
+      "hostname": "www.sospool.com",
+      "stratum": "independent-pool-supply-retail",
+      "searchUrlTemplate": "https://www.sospool.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-clarifier",
+          "query": "pool clarifier",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "pool-web",
+      "label": "Poolweb",
+      "hostname": "www.poolweb.com",
+      "stratum": "commercial-and-residential-pool-supply-retail",
+      "searchUrlTemplate": "https://www.poolweb.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-clarifier",
+          "query": "pool clarifier",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "ez-test-pools",
+      "label": "EZ Pool & Spa Supply",
+      "hostname": "www.eztestpools.com",
+      "stratum": "regional-pool-and-spa-supply-retail",
+      "searchUrlTemplate": "https://www.eztestpools.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-clarifier",
+          "query": "pool clarifier",
+          "dimension": "volume"
+        }
+      ]
+    }
+  ]
+}
