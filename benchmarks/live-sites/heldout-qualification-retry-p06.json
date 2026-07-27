@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "description": "Seventh capture-only held-out retry manifest with two unassigned modern-commerce domains per supported dimension. Every site remains unassigned until two fresh opposite-viewport pages pass the frozen machine and visual gate.",
+  "sites": [
+    {
+      "id": "p-and-s-detail-products",
+      "label": "P&S Detail Products",
+      "hostname": "pandsdetailproducts.com",
+      "stratum": "automotive-care-brand-retail",
+      "searchUrlTemplate": "https://pandsdetailproducts.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "car-shampoo",
+          "query": "car shampoo",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "shine-supply",
+      "label": "Shine Supply",
+      "hostname": "shinesupply.com",
+      "stratum": "professional-detailing-chemical-retail",
+      "searchUrlTemplate": "https://shinesupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "soap",
+          "query": "soap",
+          "dimension": "volume"
+        },
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "bttn",
+      "label": "bttn",
+      "hostname": "bttnusa.com",
+      "stratum": "online-medical-supply-marketplace",
+      "searchUrlTemplate": "https://bttnusa.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "syringes",
+          "query": "syringes",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "store-supply-warehouse",
+      "label": "Store Supply Warehouse",
+      "hostname": "www.storesupply.com",
+      "stratum": "retail-supply",
+      "searchUrlTemplate": "https://www.storesupply.com/search?keyword={query}",
+      "queries": [
+        {
+          "id": "shopping-bags",
+          "query": "shopping bags",
+          "dimension": "count"
+        },
+        {
+          "id": "price-tags",
+          "query": "price tags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "west-coast-paracord",
+      "label": "West Coast Paracord",
+      "hostname": "www.westcoastparacord.com",
+      "stratum": "paracord-manufacturer",
+      "searchUrlTemplate": "https://www.westcoastparacord.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paracord",
+          "query": "paracord",
+          "dimension": "length"
+        },
+        {
+          "id": "shock-cord",
+          "query": "shock cord",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "spoonflower",
+      "label": "Spoonflower",
+      "hostname": "www.spoonflower.com",
+      "stratum": "print-on-demand-fabric-retail",
+      "searchUrlTemplate": "https://www.spoonflower.com/en/shop?on=fabric&q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "bedrosians",
+      "label": "Bedrosians Tile & Stone",
+      "hostname": "www.bedrosians.com",
+      "stratum": "national-tile-and-stone-retail",
+      "searchUrlTemplate": "https://www.bedrosians.com/en/search/?q={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "mosaic-tile-direct",
+      "label": "Mosaic Tile Direct",
+      "hostname": "mosaictiledirect.net",
+      "stratum": "mosaic-and-tile-retail",
+      "searchUrlTemplate": "https://mosaictiledirect.net/search?q={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "sincerely-nuts",
+      "label": "Sincerely Nuts",
+      "hostname": "sincerelynuts.com",
+      "stratum": "direct-to-consumer-nut-retail",
+      "searchUrlTemplate": "https://sincerelynuts.com/search?q={query}",
+      "queries": [
+        {
+          "id": "almonds",
+          "query": "almonds",
+          "dimension": "mass"
+        },
+        {
+          "id": "cashews",
+          "query": "cashews",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "truly-good-foods",
+      "label": "Truly Good Foods",
+      "hostname": "www.trulygoodfoods.com",
+      "stratum": "snack-and-bulk-food-retail",
+      "searchUrlTemplate": "https://www.trulygoodfoods.com/search/?q={query}",
+      "queries": [
+        {
+          "id": "almonds",
+          "query": "almonds",
+          "dimension": "mass"
+        },
+        {
+          "id": "rice",
+          "query": "rice",
+          "dimension": "mass"
+        }
+      ]
+    }
+  ]
+}

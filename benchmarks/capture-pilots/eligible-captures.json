@@ -6072,6 +6072,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p03.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "mosaic-tile-direct",
+      "cohort": "validation",
+      "pageId": "mosaic-tile-direct--porcelain-tile",
+      "captureTimestamp": "2026-07-27T03:54:22.352Z",
+      "observationSha256": "47925bf65bd5c7d5df455adca1efbff0aec39538fe432385cc5117185b9669e2",
+      "annotationScreenshotSha256": "27c1660defcaa63ee5758297049e587081a1e22f5456fa9cf875bf600d903f58",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p06.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p04.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mosaic-tile-direct",
+      "cohort": "validation",
+      "pageId": "mosaic-tile-direct--mosaic-tile",
+      "captureTimestamp": "2026-07-27T03:55:50.947Z",
+      "observationSha256": "db1b7e6227e02c21eab5d76d38ed275cc5979ca2ebfa1d42fc3609c0cb6a03d1",
+      "annotationScreenshotSha256": "dd2d237f6f559a59d3b5ec65e79c4b4d27b6f9e225df859a9f58273bd714dce3",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p06.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p04.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

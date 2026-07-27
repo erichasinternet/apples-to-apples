@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p04",
+  "capturedAt": "2026-07-27T03:57:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-qualification-retry-p06.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-54-12-538Z",
+      "pageIds": [
+        "mosaic-tile-direct--porcelain-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-55-41-649Z",
+      "pageIds": [
+        "mosaic-tile-direct--mosaic-tile"
+      ]
+    }
+  ],
+  "samplingFinding": "Mosaic Tile Direct was the only one of ten disjoint, unassigned p06 domains to pass two fresh opposite-viewport pages. It was assigned to validation after the frozen gate.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots and all candidate closeups were inspected. The twenty-four frozen roots show coherent requested-query tile products with readable regular and sale prices and physical tile dimensions."
+}

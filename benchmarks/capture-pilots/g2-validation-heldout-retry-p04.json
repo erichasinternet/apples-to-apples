@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p04",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T03:57:00.000Z",
+  "source": {
+    "siteIds": [
+      "mosaic-tile-direct"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "mosaic-and-tile-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "fb192bdb74cc499758007224c61d9116f6024a2a16e5354899eab390764275bf"
+    ],
+    "collectorSha256": [
+      "6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T03-54-12-538Z",
+      "runManifestSha256": "7605b054781ff872c11a278352e7308ba178a2b5f736b460ddc59cbc77e00a0f",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T03-55-41-649Z",
+      "runManifestSha256": "70bb70ac230d3736d6b7b1afc1d70a7bc2a58e9693970507553029c8b7f2ae86",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "Mosaic Tile Direct was the only one of ten disjoint, unassigned p06 domains to pass two fresh opposite-viewport pages. It was assigned to validation after the frozen gate.",
+    "visualValidationFinding": "Both original-resolution annotation screenshots and all candidate closeups were inspected. The twenty-four frozen roots show coherent requested-query tile products with readable regular and sale prices and physical tile dimensions."
+  },
+  "captures": [
+    {
+      "siteId": "mosaic-tile-direct",
+      "pageId": "mosaic-tile-direct--porcelain-tile",
+      "capturedAt": "2026-07-27T03:54:22.352Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2251,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.0054444444444444445,
+      "queryTokenCoverage": 1,
+      "observationSha256": "47925bf65bd5c7d5df455adca1efbff0aec39538fe432385cc5117185b9669e2",
+      "canonicalObservationSha256": "ab41d4463c69e4514639dfd91e8a2e8a424cdb10fbc86bd9f522771652069da6",
+      "annotationScreenshotSha256": "27c1660defcaa63ee5758297049e587081a1e22f5456fa9cf875bf600d903f58",
+      "provenanceAggregateSha256": "ab1a6a9d5819be457f2012ec983d58b761466962f1d462573ba58f7d19c6716f",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mosaic-tile-direct",
+      "pageId": "mosaic-tile-direct--mosaic-tile",
+      "capturedAt": "2026-07-27T03:55:50.947Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2092,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.023818203912990644,
+      "queryTokenCoverage": 1,
+      "observationSha256": "db1b7e6227e02c21eab5d76d38ed275cc5979ca2ebfa1d42fc3609c0cb6a03d1",
+      "canonicalObservationSha256": "dd6d0b13d475a6b99a803623457c837af0a13231e47166ea8c8fa2e7bd44b6b4",
+      "annotationScreenshotSha256": "dd2d237f6f559a59d3b5ec65e79c4b4d27b6f9e225df859a9f58273bd714dce3",
+      "provenanceAggregateSha256": "a4081d228726166aab4065274a68e5e5a780e5d5e1ad1fa29255e6aaddf480fc",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

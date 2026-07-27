@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "description": "Sixth capture-only held-out retry manifest with two unassigned domains per supported dimension. Every site remains unassigned until two fresh opposite-viewport pages pass the frozen machine and visual gate.",
+  "sites": [
+    {
+      "id": "new-directions-aromatics",
+      "label": "New Directions Aromatics",
+      "hostname": "www.newdirectionsaromatics.com",
+      "stratum": "aromatics",
+      "searchUrlTemplate": "https://www.newdirectionsaromatics.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "essential-oil",
+          "query": "essential oil",
+          "dimension": "volume"
+        },
+        {
+          "id": "carrier-oil",
+          "query": "carrier oil",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "paint-supply",
+      "label": "Paint Supply",
+      "hostname": "www.paintsupply.com",
+      "stratum": "paint",
+      "searchUrlTemplate": "https://www.paintsupply.com/search/?q={query}",
+      "queries": [
+        {
+          "id": "interior-paint",
+          "query": "interior paint",
+          "dimension": "volume"
+        },
+        {
+          "id": "deck-stain",
+          "query": "deck stain",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "tape-jungle",
+      "label": "Tape Jungle",
+      "hostname": "tapejungle.com",
+      "stratum": "adhesive-tape-specialty",
+      "searchUrlTemplate": "https://tapejungle.com/search?q={query}",
+      "queries": [
+        {
+          "id": "packing-tape",
+          "query": "packing tape",
+          "dimension": "count"
+        },
+        {
+          "id": "masking-tape",
+          "query": "masking tape",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "pos-paper",
+      "label": "POSPaper",
+      "hostname": "www.pospaper.com",
+      "stratum": "paper-supply",
+      "searchUrlTemplate": "https://www.pospaper.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "thermal-paper-rolls",
+          "query": "thermal paper rolls",
+          "dimension": "count"
+        },
+        {
+          "id": "receipt-paper-rolls",
+          "query": "receipt paper rolls",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "wesbell-wire-and-cable",
+      "label": "WesBell Wire and Cable",
+      "hostname": "wesbellwireandcable.com",
+      "stratum": "electrical-supply",
+      "searchUrlTemplate": "https://wesbellwireandcable.com/search?q={query}",
+      "queries": [
+        {
+          "id": "thhn-wire",
+          "query": "THHN wire",
+          "dimension": "length"
+        },
+        {
+          "id": "welding-cable",
+          "query": "welding cable",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "strapworks",
+      "label": "Strapworks",
+      "hostname": "www.strapworks.com",
+      "stratum": "webbing-and-straps",
+      "searchUrlTemplate": "https://www.strapworks.com/search?q={query}",
+      "queries": [
+        {
+          "id": "nylon-webbing",
+          "query": "nylon webbing",
+          "dimension": "length"
+        },
+        {
+          "id": "polyester-webbing",
+          "query": "polyester webbing",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "flor",
+      "label": "FLOR",
+      "hostname": "www.flor.com",
+      "stratum": "modular-carpet",
+      "searchUrlTemplate": "https://www.flor.com/search?q={query}",
+      "queries": [
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "dimension": "area"
+        },
+        {
+          "id": "area-rug",
+          "query": "area rug",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "modutile",
+      "label": "ModuTile",
+      "hostname": "modutile.com",
+      "stratum": "modular-flooring",
+      "searchUrlTemplate": "https://modutile.com/pc/modular-flooring/{querySlug}/",
+      "queries": [
+        {
+          "id": "garage-flooring",
+          "query": "garage flooring",
+          "querySlug": "garage",
+          "dimension": "area"
+        },
+        {
+          "id": "basement-flooring",
+          "query": "basement flooring",
+          "querySlug": "basement",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "fresh-roasted-coffee",
+      "label": "Fresh Roasted Coffee",
+      "hostname": "www.freshroastedcoffee.com",
+      "stratum": "specialty-coffee-ecommerce",
+      "searchUrlTemplate": "https://www.freshroastedcoffee.com/search?q={query}",
+      "queries": [
+        {
+          "id": "whole-bean-coffee",
+          "query": "whole bean coffee",
+          "dimension": "mass"
+        },
+        {
+          "id": "organic-coffee",
+          "query": "organic coffee",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "country-life-foods",
+      "label": "Country Life Natural Foods",
+      "hostname": "countrylifefoods.com",
+      "stratum": "bulk-grocery",
+      "searchUrlTemplate": "https://countrylifefoods.com/search?q={query}",
+      "queries": [
+        {
+          "id": "rice",
+          "query": "rice",
+          "dimension": "mass"
+        },
+        {
+          "id": "beans",
+          "query": "beans",
+          "dimension": "mass"
+        }
+      ]
+    }
+  ]
+}

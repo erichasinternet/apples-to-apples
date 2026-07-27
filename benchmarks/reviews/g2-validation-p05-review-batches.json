@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p05",
+  "createdAt": "2026-07-27T03:58:46.911Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--63148586ef0c08eb",
+      "path": "benchmark-data/review/g2-validation-p05/reviewer-a.json",
+      "sha256": "04fd5e48f34521a43b4b32a95123ff79cd00b4c46f828b572a507ce923809277",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--0aad3fce3c444cd9",
+      "path": "benchmark-data/review/g2-validation-p05/reviewer-b.json",
+      "sha256": "238f2e65aee0453313b705999e92e87ac8d9b8ff4e862ebdbf3b098f4dcc6d31",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p05--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "mosaic-tile-direct--mosaic-tile",
+        "mosaic-tile-direct--porcelain-tile"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--a51be3024de31352",
+          "path": "benchmark-data/review/g2-validation-p05-review-batches/reviewer-a--batch-01.json",
+          "sha256": "b80012a5fd73b580270f866d27033a4d030f465b6735e5affd2ee91164c56ea0"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--5e46fb1500b89120",
+          "path": "benchmark-data/review/g2-validation-p05-review-batches/reviewer-b--batch-01.json",
+          "sha256": "e51f029dc0ac8690c72fb17eb9a711cd1eb31f05446105a2946c2bcad466bc22"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

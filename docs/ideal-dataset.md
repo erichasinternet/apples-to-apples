@@ -1336,6 +1336,29 @@ with all 48 frozen roots loaded, zero console errors, and zero review writes.
 The eligible registry now contains 506 exact capture identities. Human semantic
 reviews and adjudication remain pending.
 
+A sixth bounded retry tested 10 disjoint domains across all five dimensions.
+All 10 isolated headed Chromium children completed without a hard timeout, but
+none passed the frozen desktop gate. Stale 404 routes, absent candidates,
+incomplete requested-query evidence, full-viewport obstruction, and one
+six-root page are recorded without promotion in
+[`heldout-retry-p05.json`](../benchmarks/domain-qualification/heldout-retry-p05.json).
+This zero-yield wave remains in the qualification record so acquisition yield
+is not computed from successful storefronts alone.
+
+A seventh bounded retry tested 10 additional disjoint domains across all five
+dimensions. All 12 isolated headed Chromium children completed without a hard
+timeout. Two desktop pages advanced to distinct narrow queries; strict machine
+and original-resolution visual review rejected Shine Supply for query-adjacent
+accessory contamination and qualified Mosaic Tile Direct. The accepted domain
+adds 2 validation pages and 24 area roots. Qualified held-out structure is now
+7 validation domains with 14 pages and 7 selection domains with 14 pages, both
+at 50% narrow-viewport coverage. The blinded
+[`g2-validation-p05.json`](../benchmarks/review-campaigns/g2-validation-p05.json)
+campaign and its paired reviewer batch passed headed Playwright Chromium with
+all 24 frozen roots loaded, zero console errors, and zero review writes. The
+eligible registry now contains 508 exact capture identities. Human semantic
+reviews and adjudication remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

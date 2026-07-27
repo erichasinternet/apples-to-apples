@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p05",
+  "candidateManifest": "benchmarks/live-sites/heldout-qualification-retry-p05.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "0ca98012345b1e406a749ce3b581127ea8797979ca8585e352cedf5152e1d94e",
+    "processIsolationFinding": "All ten headed desktop capture children completed under isolated process-group bounds with zero hard timeouts.",
+    "samplingFinding": "Ten disjoint, unassigned domains received a fresh desktop capture. No page passed the frozen machine gate, so no narrow capture was justified and no old partial capture was reused.",
+    "manifestIntegrityFinding": "The discard wave uses the frozen retry manifest hash 7bfadc9186c8ae87777bc9d0ca2abeb72db733877343307a907a26dcae59b461."
+  },
+  "runs": [],
+  "results": {
+    "new-directions-aromatics": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no reviewable product candidates."
+    },
+    "paint-supply": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 404, exposed only half of the requested-query evidence, and produced no reviewable product candidates."
+    },
+    "tape-jungle": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 404, exposed only half of the requested-query evidence, and produced no reviewable product candidates."
+    },
+    "pos-paper": {
+      "status": "rejected",
+      "reason": "The desktop route exposed only one-third of the requested-query evidence and no reviewable product candidates."
+    },
+    "wesbell-wire-and-cable": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 404 with zero requested-query evidence and no reviewable product candidates."
+    },
+    "strapworks": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 404 with zero requested-query evidence and no reviewable product candidates."
+    },
+    "flor": {
+      "status": "rejected",
+      "reason": "The desktop route exposed twelve roots, but unresolved visible obstruction covered the full viewport and requested-query evidence was absent."
+    },
+    "modutile": {
+      "status": "rejected",
+      "reason": "The desktop page was visually reachable but exposed only six candidate roots, below the frozen minimum of eight."
+    },
+    "fresh-roasted-coffee": {
+      "status": "rejected",
+      "reason": "The desktop route exposed twelve roots and complete query evidence, but unresolved visible obstruction covered the full viewport."
+    },
+    "country-life-foods": {
+      "status": "rejected",
+      "reason": "The desktop route exposed complete query evidence but no reviewable product candidates."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [],
+    "assignedDomains": [],
+    "status": "discard"
+  }
+}

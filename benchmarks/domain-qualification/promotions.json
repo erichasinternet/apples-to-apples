@@ -558,6 +558,12 @@
       "cohort": "selection",
       "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p04.json",
       "promotedAt": "2026-07-27T03:41:00.000Z"
+    },
+    {
+      "siteId": "mosaic-tile-direct",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p06.json",
+      "promotedAt": "2026-07-27T03:57:00.000Z"
     }
   ]
 }

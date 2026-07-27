@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p06",
+  "candidateManifest": "benchmarks/live-sites/heldout-qualification-retry-p06.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "935b4fba06b96501bdceb0733f2cdb931fae45212c1779cb439fc51527074e20",
+    "narrowBatchSha256": "2f08260140f6a30be4d2f0192236964524c010e9962854cbb3e01796267254f7",
+    "processIsolationFinding": "All twelve headed capture children completed under isolated process-group bounds with zero hard timeouts.",
+    "samplingFinding": "Ten disjoint, unassigned domains received a fresh desktop capture. Two desktop pages passed machine and original-resolution visual review and received a distinct narrow capture. Mosaic Tile Direct passed both viewport gates; no old partial capture was reused.",
+    "manifestIntegrityFinding": "Both accepted captures use the frozen retry manifest hash fb192bdb74cc499758007224c61d9116f6024a2a16e5354899eab390764275bf and collector hash 6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T03-54-12-538Z",
+      "runManifestSha256": "7605b054781ff872c11a278352e7308ba178a2b5f736b460ddc59cbc77e00a0f",
+      "purpose": "Mosaic Tile Direct desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-55-41-649Z",
+      "runManifestSha256": "70bb70ac230d3736d6b7b1afc1d70a7bc2a58e9693970507553029c8b7f2ae86",
+      "purpose": "Mosaic Tile Direct narrow qualification capture"
+    }
+  ],
+  "results": {
+    "p-and-s-detail-products": {
+      "status": "rejected",
+      "reason": "The desktop navigation failed with a TLS protocol error and produced no reviewable capture."
+    },
+    "shine-supply": {
+      "status": "rejected",
+      "reason": "The desktop soap page passed, but original-resolution review of the distinct narrow wheel-cleaner page found half of the frozen roots were kits, brushes, or a mitt rather than wheel-cleaning liquids."
+    },
+    "bttn": {
+      "status": "rejected",
+      "reason": "The desktop page exposed twelve roots but no requested-query evidence."
+    },
+    "store-supply-warehouse": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 404 with no reviewable product candidates."
+    },
+    "west-coast-paracord": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 404 with no reviewable product candidates."
+    },
+    "spoonflower": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no requested-query evidence, no reviewable roots, and unresolved obstruction over the full viewport."
+    },
+    "bedrosians": {
+      "status": "rejected",
+      "reason": "The desktop route exposed only half of the requested-query evidence and no reviewable product candidates."
+    },
+    "mosaic-tile-direct": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "mosaic-tile-direct--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0054444444444444445,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "mosaic-tile-direct--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.023818203912990644,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent tile grids pass in opposite viewports. Frozen roots expose regular and sale prices, physical tile dimensions, porcelain and mosaic descriptors, and no native area denominator, creating useful abstention cases."
+    },
+    "sincerely-nuts": {
+      "status": "rejected",
+      "reason": "The desktop route exposed complete query evidence but no reviewable product candidates."
+    },
+    "truly-good-foods": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no requested-query evidence, no reviewable roots, and unresolved obstruction over nearly the full viewport."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "mosaic-tile-direct"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "mosaic-tile-direct",
+        "cohort": "validation"
+      }
+    ],
+    "status": "keep"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p05",
+  "createdAt": "2026-07-27T03:58:00.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "mosaic-tile-direct",
+      "pageId": "mosaic-tile-direct--mosaic-tile",
+      "captureTimestamp": "2026-07-27T03:55:50.947Z",
+      "candidateCardCount": 12,
+      "observationSha256": "db1b7e6227e02c21eab5d76d38ed275cc5979ca2ebfa1d42fc3609c0cb6a03d1",
+      "annotationScreenshotSha256": "dd2d237f6f559a59d3b5ec65e79c4b4d27b6f9e225df859a9f58273bd714dce3"
+    },
+    {
+      "siteId": "mosaic-tile-direct",
+      "pageId": "mosaic-tile-direct--porcelain-tile",
+      "captureTimestamp": "2026-07-27T03:54:22.352Z",
+      "candidateCardCount": 12,
+      "observationSha256": "47925bf65bd5c7d5df455adca1efbff0aec39538fe432385cc5117185b9669e2",
+      "annotationScreenshotSha256": "27c1660defcaa63ee5758297049e587081a1e22f5456fa9cf875bf600d903f58"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--63148586ef0c08eb",
+      "campaignQueueSha256": "04fd5e48f34521a43b4b32a95123ff79cd00b4c46f828b572a507ce923809277",
+      "sourceQueueSha256": [
+        "39922d2832ad3ab22d0000a88479aefa6d616daae3a155d1d43e2a5758fa7ee7",
+        "16a34a8d0c9c51b5caac71a8300f4cd483c2f32d5fed930262ccd37f41285b5b"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--0aad3fce3c444cd9",
+      "campaignQueueSha256": "238f2e65aee0453313b705999e92e87ac8d9b8ff4e862ebdbf3b098f4dcc6d31",
+      "sourceQueueSha256": [
+        "b778a69e9ff5b0b8b939ab5525b6ddab1da7ee67817f64253b32a19328faa3dd",
+        "00725e6ac4397e60c9b465847151fc94de4a83ed8650c2fd7b814addc5d6dd03"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--63148586ef0c08eb",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}
