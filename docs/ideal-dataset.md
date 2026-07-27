@@ -1581,6 +1581,41 @@ active roots with no overlap. The campaign registry now validates 55 campaigns,
 qualification-yield denominator; human semantic reviews and adjudication remain
 pending.
 
+A twentieth bounded retry screened 10 more never-retried domains across 10
+strata, balanced with two primary candidates per unit dimension. Doheny's was
+the only page to reach the numeric root gate, but original-resolution review
+showed a late subscription modal covering the product grid. Atwoods exposed
+only six roots. The remaining routes failed HTTP, TLS, DNS, redirect, query
+evidence, candidate-root, or obstruction requirements. No domain advanced to an
+independent narrow query, and all 10 outcomes remain in
+[`heldout-retry-p19.json`](../benchmarks/domain-qualification/heldout-retry-p19.json).
+No split assignment, campaign, or eligible capture was added.
+
+A final residual retry screened all 12 domains left in the frozen ranking frame:
+four area candidates, one count candidate, one length candidate, and six volume
+candidates. Rubber Flooring Experts and Sunplay passed distinct desktop and
+narrow queries with 12 independent roots per page, complete query evidence, no
+truncation, and obstruction below the frozen 20% limit. Original-resolution
+review rejected House Fabric because only six roots were linen, Infinite
+Detailing because its roots were a mixed detailing catalog, and Pressure Washer
+Products because its roots were equipment rather than house-wash chemicals.
+The remaining seven domains failed root-count, HTTP, DNS, privacy, or navigation
+requirements. Rubber Flooring Experts adds two area pages to validation; Sunplay
+adds two volume pages to selection. Qualified held-out structure is now 15
+validation domains with 30 pages and 16 selection domains with 32 pages, both at
+50% narrow-viewport coverage. The blinded
+[`g2-validation-p12.json`](../benchmarks/review-campaigns/g2-validation-p12.json)
+and
+[`g2-selection-p10.json`](../benchmarks/review-campaigns/g2-selection-p10.json)
+campaigns and their paired reviewer batches passed headed Playwright Chromium
+with all 48 frozen roots loaded, zero console errors, and zero review writes.
+The independence audit locates all 542 eligible captures and verifies 6,125
+active roots with no overlap. The campaign registry now validates 57 campaigns,
+6,627 pages, and 70,910 frozen roots. All 12 candidate domains remain in the
+qualification-yield denominator, and the ranked retry frame now has zero
+untried candidates. Human semantic reviews, adjudication, and final-cohort
+collection remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

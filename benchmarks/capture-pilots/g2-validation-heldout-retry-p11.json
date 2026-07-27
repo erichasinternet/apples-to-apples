@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p11",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T07:49:00.000Z",
+  "source": {
+    "siteIds": [
+      "rubber-flooring-experts"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "rubber-flooring-specialty"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "e07dfafff8b1bda1381f8a2649e702097903354c37d9ba3b672b7998aee06150"
+    ],
+    "collectorSha256": [
+      "7b0d6e7e88ddb12234def7ab68515b0b1061271971a7b6b20950b7d18f226c44"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T07-40-35-553Z",
+      "runManifestSha256": "88ac04c98aa6aacfea1cc864522307c7228484f5bd08e3946a74bfcb392d40fd",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T07-45-09-660Z",
+      "runManifestSha256": "79ef6b6c9fc415d0f1bc22de73d6840c5257568b4cbcc8f91b7441048f63339c",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "Rubber Flooring Experts passed fresh opposite-viewport p20 area-product captures and was assigned to validation under the frozen gate.",
+    "visualValidationFinding": "Both original-resolution annotation screenshots were inspected. The twenty-four frozen roots show coherent rubber tiles, rolls, and mats with readable product identity, prices or price ranges, dimensions, thicknesses, and area-bearing package evidence."
+  },
+  "captures": [
+    {
+      "siteId": "rubber-flooring-experts",
+      "pageId": "rubber-flooring-experts--rubber-tiles",
+      "capturedAt": "2026-07-27T07:40:48.689Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 264,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "7f959aea2bed89c659fd816760b4302cb04ad78d619f07ca5b27b992cebf5080",
+      "canonicalObservationSha256": "d1dcfa622857bde7f8899b2b99c95033779b493b42b4d13c9279f7f41e8bac85",
+      "annotationScreenshotSha256": "785f69590a40197b8834d9aa47a2c28e1d7633fe69b404a7ecb03f600aaa5c9d",
+      "provenanceAggregateSha256": "9dd601101df3185357ed6fc3c7df11f94a518064dc76eb92af4d618bbaafce27",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "rubber-flooring-experts",
+      "pageId": "rubber-flooring-experts--rubber-rolls",
+      "capturedAt": "2026-07-27T07:45:22.666Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 229,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0663229413507109,
+      "queryTokenCoverage": 1,
+      "observationSha256": "7a537a031f09f27bdd9a6984a8f97ba53c0413e1b9ac7baf7739886b95ddebcd",
+      "canonicalObservationSha256": "3b47ee4d7745206f98dbcdf13c51bf2891a58c6549ec6aa441288e71c3656edb",
+      "annotationScreenshotSha256": "4e2700b9a81cc15c7b8cc5fdac6177ffd3f5fd78446c7661fd5f4345a02f6b51",
+      "provenanceAggregateSha256": "d9ba3634acad28ed4d656c6ec291f8b1683629bdad73c75e410851fb24df507d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

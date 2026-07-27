@@ -6456,6 +6456,54 @@
       "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p10.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "rubber-flooring-experts",
+      "cohort": "validation",
+      "pageId": "rubber-flooring-experts--rubber-tiles",
+      "captureTimestamp": "2026-07-27T07:40:48.689Z",
+      "observationSha256": "7f959aea2bed89c659fd816760b4302cb04ad78d619f07ca5b27b992cebf5080",
+      "annotationScreenshotSha256": "785f69590a40197b8834d9aa47a2c28e1d7633fe69b404a7ecb03f600aaa5c9d",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p20.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p11.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "rubber-flooring-experts",
+      "cohort": "validation",
+      "pageId": "rubber-flooring-experts--rubber-rolls",
+      "captureTimestamp": "2026-07-27T07:45:22.666Z",
+      "observationSha256": "7a537a031f09f27bdd9a6984a8f97ba53c0413e1b9ac7baf7739886b95ddebcd",
+      "annotationScreenshotSha256": "4e2700b9a81cc15c7b8cc5fdac6177ffd3f5fd78446c7661fd5f4345a02f6b51",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p20.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p11.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "sunplay",
+      "cohort": "selection",
+      "pageId": "sunplay--pool-algaecide",
+      "captureTimestamp": "2026-07-27T07:42:04.657Z",
+      "observationSha256": "5c4a95cb0f2a1b4ab6112dc5fd12561eaee1db1d63e5cf08c3903dc5d95d6e2d",
+      "annotationScreenshotSha256": "f3d0d32d398597ee4bc98647833c9b80bf2c65b3d7565309597f677acb8e12d7",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p20.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p10.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "sunplay",
+      "cohort": "selection",
+      "pageId": "sunplay--pool-clarifier",
+      "captureTimestamp": "2026-07-27T07:45:40.224Z",
+      "observationSha256": "027408cc7dbf05702bd66f7ae217ad77a70c560d78013c2d3e3dd3a38f36e8e4",
+      "annotationScreenshotSha256": "0d40de83fc847da18db904e0ad7bbbeda04a1d312a76dbeab9b61ad8ae05ec7c",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p20.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p10.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

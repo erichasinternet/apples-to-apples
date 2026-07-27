@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "description": "Twentieth bounded held-out qualification retry across ten never-retried domains and ten strata. Desktop screening is balanced with two candidates per unit dimension; independent narrow queries may exercise a different dimension where the retailer catalog naturally spans unit families.",
+  "sites": [
+    {
+      "id": "cleaners-supply",
+      "label": "Cleaner's Supply",
+      "hostname": "www.cleanersupply.com",
+      "stratum": "commercial-cleaning",
+      "searchUrlTemplate": "https://www.cleanersupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "garment-bags",
+          "query": "garment bags",
+          "dimension": "count"
+        },
+        {
+          "id": "laundry-detergent",
+          "query": "laundry detergent",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "royal-swimming-pools",
+      "label": "Royal Swimming Pools",
+      "hostname": "www.royalswimmingpools.com",
+      "stratum": "pool-construction",
+      "searchUrlTemplate": "https://www.royalswimmingpools.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "pool-test-strips",
+          "query": "pool test strips",
+          "dimension": "count"
+        },
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "dohenys",
+      "label": "Doheny's",
+      "hostname": "www.doheny.com",
+      "stratum": "pool-maintenance",
+      "searchUrlTemplate": "https://www.doheny.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-shock",
+          "query": "pool shock",
+          "dimension": "mass"
+        },
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "atwoods",
+      "label": "Atwoods Ranch & Home",
+      "hostname": "www.atwoods.com",
+      "stratum": "ranch-retail",
+      "searchUrlTemplate": "https://www.atwoods.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-shock",
+          "query": "pool shock",
+          "dimension": "mass"
+        },
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "calico-fabric",
+      "label": "Calico",
+      "hostname": "www.calicofabric.com",
+      "stratum": "designer-home-fabric-retail",
+      "searchUrlTemplate": "https://www.calicofabric.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "prowash-supply",
+      "label": "ProWash Supply",
+      "hostname": "prowashsupply.com",
+      "stratum": "pressure-washing",
+      "searchUrlTemplate": "https://prowashsupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pressure-hose",
+          "query": "pressure hose",
+          "dimension": "length"
+        },
+        {
+          "id": "degreaser",
+          "query": "degreaser",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "ambient-bamboo",
+      "label": "Ambient",
+      "hostname": "www.ambientbp.com",
+      "stratum": "direct-to-consumer-bamboo-flooring",
+      "searchUrlTemplate": "https://www.ambientbp.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "bamboo-flooring",
+          "query": "bamboo flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "oak-flooring",
+          "query": "oak flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "mats-inc",
+      "label": "Mats Inc.",
+      "hostname": "www.matsinc.com",
+      "stratum": "commercial-flooring-distributor",
+      "searchUrlTemplate": "https://www.matsinc.com/search/?q={query}",
+      "queries": [
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "dimension": "area"
+        },
+        {
+          "id": "rubber-flooring",
+          "query": "rubber flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "backdrop",
+      "label": "Backdrop",
+      "hostname": "www.backdrophome.com",
+      "stratum": "paint",
+      "searchUrlTemplate": "https://www.backdrophome.com/search?q={query}",
+      "queries": [
+        {
+          "id": "interior-paint",
+          "query": "interior paint",
+          "dimension": "volume"
+        },
+        {
+          "id": "exterior-paint",
+          "query": "exterior paint",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "jon-don",
+      "label": "Jon-Don",
+      "hostname": "www.jondon.com",
+      "stratum": "restoration-supply",
+      "searchUrlTemplate": "https://www.jondon.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "carpet-cleaner",
+          "query": "carpet cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "disinfectant",
+          "query": "disinfectant",
+          "dimension": "volume"
+        }
+      ]
+    }
+  ]
+}

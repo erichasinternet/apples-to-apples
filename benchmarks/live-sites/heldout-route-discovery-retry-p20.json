@@ -1,0 +1,238 @@
+{
+  "version": 1,
+  "description": "Residual held-out qualification retry over all twelve never-retried domains remaining after p19. This exhaustion wave preserves the residual pool as found: four area domains, one count domain, one length domain, and six volume domains, with no remaining mass candidate. Independent narrow queries are frozen before capture.",
+  "sites": [
+    {
+      "id": "carpet-and-tile-mart",
+      "label": "Carpet & Tile Mart",
+      "hostname": "shop.carpetmart.com",
+      "stratum": "regional-carpet-flooring-retail",
+      "searchUrlTemplate": "https://shop.carpetmart.com/{querySlug}",
+      "queries": [
+        {
+          "id": "carpet",
+          "query": "carpet",
+          "querySlug": "carpet/",
+          "dimension": "area"
+        },
+        {
+          "id": "luxury-vinyl",
+          "query": "luxury vinyl flooring",
+          "querySlug": "luxury-vinyl-flooring/",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "efloors",
+      "label": "Efloors",
+      "hostname": "efloors.com",
+      "stratum": "flooring-catalog-retail",
+      "searchUrlTemplate": "https://efloors.com/{querySlug}",
+      "queries": [
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "querySlug": "carpet-tile",
+          "dimension": "area"
+        },
+        {
+          "id": "laminate-flooring",
+          "query": "laminate flooring",
+          "querySlug": "laminate-flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "rubber-flooring-experts",
+      "label": "Rubber Flooring Experts",
+      "hostname": "www.rubberflooringexperts.com",
+      "stratum": "rubber-flooring-specialty",
+      "searchUrlTemplate": "https://www.rubberflooringexperts.com/search?q={query}",
+      "queries": [
+        {
+          "id": "rubber-tiles",
+          "query": "rubber tiles",
+          "dimension": "area"
+        },
+        {
+          "id": "rubber-rolls",
+          "query": "rubber rolls",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "mat-supplier-group",
+      "label": "Mat Supplier Group",
+      "hostname": "matsuppliergroup.com",
+      "stratum": "commercial-matting",
+      "searchUrlTemplate": "https://matsuppliergroup.com/search?q={query}",
+      "queries": [
+        {
+          "id": "rubber-mats",
+          "query": "rubber mats",
+          "dimension": "area"
+        },
+        {
+          "id": "entrance-mats",
+          "query": "entrance mats",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "medline-at-home",
+      "label": "Medline at Home",
+      "hostname": "athome.medline.com",
+      "stratum": "home-medical-supply",
+      "searchUrlTemplate": "https://athome.medline.com/en/search/?text={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "underpads",
+          "query": "underpads",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "house-fabric",
+      "label": "House Fabric",
+      "hostname": "www.housefabric.com",
+      "stratum": "decorator-fabric-retail",
+      "searchUrlTemplate": "https://www.housefabric.com/Search?Keywords={query}",
+      "queries": [
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "sunplay",
+      "label": "Sunplay",
+      "hostname": "www.sunplay.com",
+      "stratum": "water-care",
+      "searchUrlTemplate": "https://www.sunplay.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-clarifier",
+          "query": "pool clarifier",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "infinite-detailing",
+      "label": "Infinite Detailing",
+      "hostname": "shine-supply.com",
+      "stratum": "independent-detailing-retail",
+      "searchUrlTemplate": "https://shine-supply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "car-shampoo",
+          "query": "car shampoo",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "pressure-washer-products",
+      "label": "Pressure Washer Products",
+      "hostname": "pressurewasherproducts.com",
+      "stratum": "pressure-washing",
+      "searchUrlTemplate": "https://pressurewasherproducts.com/search?q={query}",
+      "queries": [
+        {
+          "id": "house-wash",
+          "query": "house wash",
+          "dimension": "volume"
+        },
+        {
+          "id": "degreaser",
+          "query": "degreaser",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "zogics",
+      "label": "Zogics",
+      "hostname": "zogics.com",
+      "stratum": "fitness-facility",
+      "searchUrlTemplate": "https://zogics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "floor-cleaner",
+          "query": "floor cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "disinfectant",
+          "query": "disinfectant",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "catalog-cleaning-supply",
+      "label": "Catalog Cleaning Supply",
+      "hostname": "catalogcleaningsupply.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://catalogcleaningsupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "floor-cleaner",
+          "query": "floor cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "hand-soap",
+          "query": "hand soap",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "clean-it-supply",
+      "label": "CleanItSupply",
+      "hostname": "www.cleanitsupply.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.cleanitsupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "floor-cleaner",
+          "query": "floor cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "hand-soap",
+          "query": "hand soap",
+          "dimension": "volume"
+        }
+      ]
+    }
+  ]
+}

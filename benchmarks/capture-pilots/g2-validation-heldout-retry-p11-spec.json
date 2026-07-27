@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p11",
+  "capturedAt": "2026-07-27T07:49:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p20.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T07-40-35-553Z",
+      "pageIds": [
+        "rubber-flooring-experts--rubber-tiles"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T07-45-09-660Z",
+      "pageIds": [
+        "rubber-flooring-experts--rubber-rolls"
+      ]
+    }
+  ],
+  "samplingFinding": "Rubber Flooring Experts passed fresh opposite-viewport p20 area-product captures and was assigned to validation under the frozen gate.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots were inspected. The twenty-four frozen roots show coherent rubber tiles, rolls, and mats with readable product identity, prices or price ranges, dimensions, thicknesses, and area-bearing package evidence."
+}

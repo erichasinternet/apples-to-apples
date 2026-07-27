@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p10",
+  "createdAt": "2026-07-27T07:51:18.848Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--2a2616fb74530c78",
+      "path": "benchmark-data/review/g2-selection-p10/reviewer-a.json",
+      "sha256": "c6936954f3d32a36bc2b4643070c3a96341c689e36cb487d8b17e5fe91fbd005",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--bcf47249aa8eba4a",
+      "path": "benchmark-data/review/g2-selection-p10/reviewer-b.json",
+      "sha256": "f323057322f8f261cb43283e2efa953ed3441740a38c4c65db74708f3d241d42",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p10--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "sunplay--pool-algaecide",
+        "sunplay--pool-clarifier"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--befc6bc3be4d900a",
+          "path": "benchmark-data/review/g2-selection-p10-review-batches/reviewer-a--batch-01.json",
+          "sha256": "8b56653fb645112b8d85ffb0d44477ac4f5dd6e3434169a94616f868bd4a408f"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--053e8972b9f2f8c5",
+          "path": "benchmark-data/review/g2-selection-p10-review-batches/reviewer-b--batch-01.json",
+          "sha256": "f2c7a59b8fb7616a72473e507db7971b1f72543f790482580c01f162e44467ea"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

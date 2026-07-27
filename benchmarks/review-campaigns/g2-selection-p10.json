@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p10",
+  "createdAt": "2026-07-27T07:52:00.000Z",
+  "cohort": "selection",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "sunplay",
+      "pageId": "sunplay--pool-algaecide",
+      "captureTimestamp": "2026-07-27T07:42:04.657Z",
+      "candidateCardCount": 12,
+      "observationSha256": "5c4a95cb0f2a1b4ab6112dc5fd12561eaee1db1d63e5cf08c3903dc5d95d6e2d",
+      "annotationScreenshotSha256": "f3d0d32d398597ee4bc98647833c9b80bf2c65b3d7565309597f677acb8e12d7"
+    },
+    {
+      "siteId": "sunplay",
+      "pageId": "sunplay--pool-clarifier",
+      "captureTimestamp": "2026-07-27T07:45:40.224Z",
+      "candidateCardCount": 12,
+      "observationSha256": "027408cc7dbf05702bd66f7ae217ad77a70c560d78013c2d3e3dd3a38f36e8e4",
+      "annotationScreenshotSha256": "0d40de83fc847da18db904e0ad7bbbeda04a1d312a76dbeab9b61ad8ae05ec7c"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--2a2616fb74530c78",
+      "campaignQueueSha256": "c6936954f3d32a36bc2b4643070c3a96341c689e36cb487d8b17e5fe91fbd005",
+      "sourceQueueSha256": [
+        "6be061b27c19557b0a2057c50f5fbb8ce63f44a40a280b7ac8f1619dabbff382",
+        "168fb2c8da4e37cec4d63b7727d9b2b86911d93cccf17e28e333bbbeb5fd6a87"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--bcf47249aa8eba4a",
+      "campaignQueueSha256": "f323057322f8f261cb43283e2efa953ed3441740a38c4c65db74708f3d241d42",
+      "sourceQueueSha256": [
+        "a2eb2af94c573cf55589fc87f472cfd2fea9da52431f86fac5aaf8a5555d83ae",
+        "3da6d28f6de2a13af2523ca522ba6f9ce686afdcb6c63650413277d568ad7b87"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--2a2616fb74530c78",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

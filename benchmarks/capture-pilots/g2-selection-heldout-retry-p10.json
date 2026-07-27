@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p10",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T07:49:00.000Z",
+  "source": {
+    "siteIds": [
+      "sunplay"
+    ],
+    "cohort": "selection",
+    "strata": [
+      "water-care"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "e07dfafff8b1bda1381f8a2649e702097903354c37d9ba3b672b7998aee06150"
+    ],
+    "collectorSha256": [
+      "7b0d6e7e88ddb12234def7ab68515b0b1061271971a7b6b20950b7d18f226c44"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T07-41-44-894Z",
+      "runManifestSha256": "282370ccdcbbdd3c61de7865d6c093a4d973e37535de44d398ac5db17836c64e",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T07-45-23-782Z",
+      "runManifestSha256": "02e3c560ddbf2e09fd71e6668cbfcca224c7669be1d2c95e76d3f145d1ee086f",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "Sunplay passed fresh opposite-viewport p20 liquid water-care captures and was assigned to selection under the frozen gate.",
+    "visualValidationFinding": "Both original-resolution annotation screenshots were inspected. The twenty-four frozen roots show coherent pool algaecides and clarifiers with readable product identity, current prices, liquid container sizes, and query-adjacent water-treatment products retained as abstention evidence."
+  },
+  "captures": [
+    {
+      "siteId": "sunplay",
+      "pageId": "sunplay--pool-algaecide",
+      "capturedAt": "2026-07-27T07:42:04.657Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 819,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.186,
+      "queryTokenCoverage": 1,
+      "observationSha256": "5c4a95cb0f2a1b4ab6112dc5fd12561eaee1db1d63e5cf08c3903dc5d95d6e2d",
+      "canonicalObservationSha256": "265ea90f441ae9b225484c5e448ae30d41998ae41a6f1b45f8e3421992477351",
+      "annotationScreenshotSha256": "f3d0d32d398597ee4bc98647833c9b80bf2c65b3d7565309597f677acb8e12d7",
+      "provenanceAggregateSha256": "c2d397407b1df86f3a9ef4b3cfec60ab4394f8ab1f1758cadffabd976802a979",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "sunplay",
+      "pageId": "sunplay--pool-clarifier",
+      "capturedAt": "2026-07-27T07:45:40.224Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 626,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.023666302102321058,
+      "queryTokenCoverage": 1,
+      "observationSha256": "027408cc7dbf05702bd66f7ae217ad77a70c560d78013c2d3e3dd3a38f36e8e4",
+      "canonicalObservationSha256": "2fc9afcd7fd1f6809355dc99debe1e9c5b5d49849fa278d48b90d31944c7bc04",
+      "annotationScreenshotSha256": "0d40de83fc847da18db904e0ad7bbbeda04a1d312a76dbeab9b61ad8ae05ec7c",
+      "provenanceAggregateSha256": "da86a163423cd331db3d64c18fdf58dff2f6c0ffacace31886c0c7f93c4d29cc",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

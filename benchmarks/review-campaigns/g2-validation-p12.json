@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p12",
+  "createdAt": "2026-07-27T07:52:00.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "rubber-flooring-experts",
+      "pageId": "rubber-flooring-experts--rubber-rolls",
+      "captureTimestamp": "2026-07-27T07:45:22.666Z",
+      "candidateCardCount": 12,
+      "observationSha256": "7a537a031f09f27bdd9a6984a8f97ba53c0413e1b9ac7baf7739886b95ddebcd",
+      "annotationScreenshotSha256": "4e2700b9a81cc15c7b8cc5fdac6177ffd3f5fd78446c7661fd5f4345a02f6b51"
+    },
+    {
+      "siteId": "rubber-flooring-experts",
+      "pageId": "rubber-flooring-experts--rubber-tiles",
+      "captureTimestamp": "2026-07-27T07:40:48.689Z",
+      "candidateCardCount": 12,
+      "observationSha256": "7f959aea2bed89c659fd816760b4302cb04ad78d619f07ca5b27b992cebf5080",
+      "annotationScreenshotSha256": "785f69590a40197b8834d9aa47a2c28e1d7633fe69b404a7ecb03f600aaa5c9d"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--eaaf0af72d7cfe05",
+      "campaignQueueSha256": "a5aeca08b20029b4190c9e5aad128ad7866d3acaa8fadaad98583c910352b87a",
+      "sourceQueueSha256": [
+        "f7d76561a4d51abd69b96f208749bfc27c9b06b5e88650ec7633fdcca9a2848c",
+        "6e7a2020d9f52499b83f151481bf3516b8c91323ac14f1ca28c346ba3d84257e"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--a34b3154ef61549a",
+      "campaignQueueSha256": "e2886d7dfd36200009ded26c4b0af50a42d968d72843cf529cc0df60bdf0856d",
+      "sourceQueueSha256": [
+        "3bb7a4f1e8ebc29feecc1d62676a27117b07e3848aba1e290ef69f3bc7ca41e7",
+        "a87ae42fd2d36118f5e873011dc67ecb532569e72c003a185146626578a656c5"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--eaaf0af72d7cfe05",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

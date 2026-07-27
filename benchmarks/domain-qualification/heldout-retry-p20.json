@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p20",
+  "candidateManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p20.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "021ce504e264b10cab592fc411ce33289064e575f93cb87f4a1877a4093251cf",
+    "narrowBatchSha256": "2a0c8e92ee20d15edb998b6ba0d248d8e20b3803e6228deff1edcc5075072247",
+    "processIsolationFinding": "All fourteen headed qualification children completed under isolated process-group bounds with zero parent hard timeouts.",
+    "samplingFinding": "All twelve domains remaining in the frozen retry frame after p19 received a desktop screen. Rubber Flooring Experts and Sunplay passed the unchanged desktop gate and then passed independent-query narrow follow-up. The other ten domains failed candidate-root, query-relevance, DNS, HTTP, privacy, or visual-coherence requirements and did not advance. All twelve domains remain in the yield denominator, and the ranked retry frame is now exhausted.",
+    "manifestIntegrityFinding": "All completed captures use frozen retry manifest hash e07dfafff8b1bda1381f8a2649e702097903354c37d9ba3b672b7998aee06150 and collector hash 7b0d6e7e88ddb12234def7ab68515b0b1061271971a7b6b20950b7d18f226c44."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T07-40-19-978Z",
+      "runManifestSha256": "9736f1bec198b2ae22ba9e9d1781e70c3590d74cdd876c9e13f5e007f165a97d",
+      "purpose": "Carpet & Tile Mart desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-40-28-605Z",
+      "runManifestSha256": "3ad542f920cd1fc2aac0353a16f48f7c794dd1ea3aa1fe696e1eb5b852209d75",
+      "purpose": "Efloors desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-40-35-553Z",
+      "runManifestSha256": "88ac04c98aa6aacfea1cc864522307c7228484f5bd08e3946a74bfcb392d40fd",
+      "purpose": "Rubber Flooring Experts desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T07-40-49-896Z",
+      "runManifestSha256": "a8afbd4f1ae95287ed97514b5b898b3213156045430999030955677c8d51bc4e",
+      "purpose": "Mat Supplier Group desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-40-51-659Z",
+      "runManifestSha256": "0835ede08e21ce0ced49afa4971375c13786f95f109d78f9e318abc8d65c9b4c",
+      "purpose": "Medline at Home desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-41-36-847Z",
+      "runManifestSha256": "830e9b2c2d1252782097dd49bc98eff3c7d92bd47c2d7fbd35da28b927607386",
+      "purpose": "House Fabric desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-41-44-894Z",
+      "runManifestSha256": "282370ccdcbbdd3c61de7865d6c093a4d973e37535de44d398ac5db17836c64e",
+      "purpose": "Sunplay desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T07-42-05-940Z",
+      "runManifestSha256": "966c075130400286f017014fb7fbc13d1a20c4b50930e3eb5811532a5eadb21c",
+      "purpose": "Infinite Detailing desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-42-15-198Z",
+      "runManifestSha256": "da768dfed38ea48a2e4e04ee69dfa144432acff858c3b78c19be7b508fb277f2",
+      "purpose": "Pressure Washer Products desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-42-26-853Z",
+      "runManifestSha256": "55645059506f3ea4d778f7d6cbd29eb2696304356541499afe67e45937283f95",
+      "purpose": "Zogics desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-42-52-290Z",
+      "runManifestSha256": "e4ebff8978ad6a7b643b71522ed6e6b88eb97f65b8618d7bc1471c3309421d2e",
+      "purpose": "Catalog Cleaning Supply desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-42-52-974Z",
+      "runManifestSha256": "5eeb245a7ac1877b5740f161112bf8c18dccfa785563016e29ec922fbeef5700",
+      "purpose": "CleanItSupply desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-45-09-660Z",
+      "runManifestSha256": "79ef6b6c9fc415d0f1bc22de73d6840c5257568b4cbcc8f91b7441048f63339c",
+      "purpose": "Rubber Flooring Experts narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T07-45-23-782Z",
+      "runManifestSha256": "02e3c560ddbf2e09fd71e6668cbfcca224c7669be1d2c95e76d3f145d1ee086f",
+      "purpose": "Sunplay narrow qualification capture"
+    }
+  ],
+  "results": {
+    "carpet-and-tile-mart": {
+      "status": "rejected",
+      "reason": "The desktop carpet route retained complete query evidence but produced no reviewable product roots."
+    },
+    "efloors": {
+      "status": "rejected",
+      "reason": "The desktop carpet-tile route exposed only one reviewable product root, below the frozen minimum of eight."
+    },
+    "rubber-flooring-experts": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "rubber-flooring-experts--rubber-tiles",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "rubber-flooring-experts--rubber-rolls",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0663229413507109,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport search grids expose coherent rubber tiles, rolls, and mats with product identity, current or range prices, dimensions, thicknesses, and area-bearing package evidence."
+    },
+    "mat-supplier-group": {
+      "status": "rejected",
+      "reason": "The desktop rubber-mats route failed navigation because the hostname did not resolve."
+    },
+    "medline-at-home": {
+      "status": "rejected",
+      "reason": "The desktop exam-gloves route returned HTTP 403, retained none of the requested-query evidence, and produced no reviewable product roots."
+    },
+    "house-fabric": {
+      "status": "rejected",
+      "reason": "The desktop linen-fabric route passed machine checks with twelve roots, but original-resolution and root-text review found only six linen products; six unrelated poplin products reduced relevant evidence below the frozen minimum."
+    },
+    "sunplay": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "sunplay--pool-algaecide",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.186,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "sunplay--pool-clarifier",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.023666302102321058,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport water-care grids expose coherent pool algaecides and clarifiers with product identity, current prices, liquid container sizes, and query-adjacent treatment products retained as abstention evidence."
+    },
+    "infinite-detailing": {
+      "status": "rejected",
+      "reason": "The desktop wheel-cleaner route passed machine checks with twelve roots, but original-resolution review showed a mixed detailing catalog without eight coherent wheel-cleaning products."
+    },
+    "pressure-washer-products": {
+      "status": "rejected",
+      "reason": "The desktop house-wash route passed machine checks with twelve roots, but original-resolution review showed guns, soft-wash kits, nozzles, and hoses rather than eight coherent house-wash chemical products."
+    },
+    "zogics": {
+      "status": "rejected",
+      "reason": "The desktop floor-cleaner capture failed the required privacy audit because retained HTML contained phone and street-address data."
+    },
+    "catalog-cleaning-supply": {
+      "status": "rejected",
+      "reason": "The desktop floor-cleaner route failed navigation because the hostname did not resolve."
+    },
+    "clean-it-supply": {
+      "status": "rejected",
+      "reason": "The desktop floor-cleaner route failed navigation because the hostname did not resolve."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "rubber-flooring-experts",
+      "sunplay"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "rubber-flooring-experts",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "sunplay",
+        "cohort": "selection"
+      }
+    ],
+    "status": "keep"
+  }
+}

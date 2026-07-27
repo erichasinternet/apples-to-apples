@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p10",
+  "capturedAt": "2026-07-27T07:49:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p20.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T07-41-44-894Z",
+      "pageIds": [
+        "sunplay--pool-algaecide"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T07-45-23-782Z",
+      "pageIds": [
+        "sunplay--pool-clarifier"
+      ]
+    }
+  ],
+  "samplingFinding": "Sunplay passed fresh opposite-viewport p20 liquid water-care captures and was assigned to selection under the frozen gate.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots were inspected. The twenty-four frozen roots show coherent pool algaecides and clarifiers with readable product identity, current prices, liquid container sizes, and query-adjacent water-treatment products retained as abstention evidence."
+}

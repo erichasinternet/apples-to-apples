@@ -654,6 +654,18 @@
       "cohort": "selection",
       "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p18.json",
       "promotedAt": "2026-07-27T07:23:01.000Z"
+    },
+    {
+      "siteId": "rubber-flooring-experts",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p20.json",
+      "promotedAt": "2026-07-27T07:49:00.000Z"
+    },
+    {
+      "siteId": "sunplay",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p20.json",
+      "promotedAt": "2026-07-27T07:49:00.000Z"
     }
   ]
 }

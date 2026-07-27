@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p19",
+  "candidateManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p19.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "92b0addd3361510e9c14c0039201baf7adc6e3e4b223152d9db71d5d872ad67a",
+    "processIsolationFinding": "All ten headed qualification children completed under isolated process-group bounds with zero parent hard timeouts.",
+    "samplingFinding": "Ten disjoint, never-retried domains across ten strata received a desktop screen balanced with two primary candidates per unit dimension. Doheny's was the only page with complete query evidence and at least eight roots, but original-resolution review showed a late subscription modal covering the product grid. Atwoods exposed six roots and all other pages failed route, query-evidence, candidate-root, redirect, obstruction, or navigation checks. No site advanced to an independent narrow query. All ten domains remain in the yield denominator.",
+    "manifestIntegrityFinding": "All completed captures use frozen retry manifest hash 65acb378c0cd88803acfa7fb4696a73e893a41be7c6d99554de1ad021d6edb2e and collector hash 7b0d6e7e88ddb12234def7ab68515b0b1061271971a7b6b20950b7d18f226c44."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T07-32-47-333Z",
+      "runManifestSha256": "c3e645adc191e4658b2d643b58388ae820f3a7437d26eb8fa84df08240b070ce",
+      "purpose": "Cleaner's Supply desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-33-39-500Z",
+      "runManifestSha256": "206d7ad5ea165b080213777a9559e97ac2994ee48080b6981f703ef6fe4c7037",
+      "purpose": "Royal Swimming Pools desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-34-06-442Z",
+      "runManifestSha256": "cde11b9702d281cfe703f0c798941d897bff0823a3d40f5f9bcb87f6ac30fbdf",
+      "purpose": "Doheny's desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-34-17-586Z",
+      "runManifestSha256": "80b4ca28d2c8b76b3e04f006b5761538f2f6496c47322442914af20c35404f5a",
+      "purpose": "Atwoods desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-34-35-151Z",
+      "runManifestSha256": "c9c89c97f33cdca66abed4aded5d5d15e8b0da3f275e0413b960023f4f68d258",
+      "purpose": "Calico desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-35-21-934Z",
+      "runManifestSha256": "b697c95c8d6ff613207475e03eab10de7bdea60233a1c238830c8229eae18a76",
+      "purpose": "ProWash Supply desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-35-29-489Z",
+      "runManifestSha256": "9f2e741fb371805d432ab8019a14a7b6c5bb50cd54eab366ba4520dcbbd11d7a",
+      "purpose": "Ambient desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-35-59-264Z",
+      "runManifestSha256": "9cac7e31ad287c9fd7d9ccd8fd4dae61eeab0a6f412a68df8eff5c2a4bfa3596",
+      "purpose": "Mats Inc. desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-36-26-785Z",
+      "runManifestSha256": "4e093a195d61e39c057760ac2a01e941feb0c3b145f7f0fa1d72f48e647d89da",
+      "purpose": "Backdrop desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-36-42-253Z",
+      "runManifestSha256": "d94b29a46c129c0438a5160006806a885b472cd9b5a4b3be96f81087e3466671",
+      "purpose": "Jon-Don desktop screen"
+    }
+  ],
+  "results": {
+    "cleaners-supply": {
+      "status": "rejected",
+      "reason": "The desktop garment-bags route returned HTTP 403, retained none of the requested-query evidence, and produced no reviewable product roots."
+    },
+    "royal-swimming-pools": {
+      "status": "rejected",
+      "reason": "The desktop pool-test-strips route retained none of the requested-query evidence and produced no reviewable product roots."
+    },
+    "dohenys": {
+      "status": "rejected",
+      "reason": "The desktop pool-shock route passed machine checks with twelve coherent roots, but original-resolution review showed a late subscription modal covering the product grid, so the required visual-validation gate failed."
+    },
+    "atwoods": {
+      "status": "rejected",
+      "reason": "The desktop pool-shock route exposed only six reviewable product roots, below the frozen minimum of eight."
+    },
+    "calico-fabric": {
+      "status": "rejected",
+      "reason": "The desktop cotton-fabric route redirected cross-site to a domain-for-sale page, retained none of the requested-query evidence, and produced no reviewable product roots."
+    },
+    "prowash-supply": {
+      "status": "rejected",
+      "reason": "The desktop pressure-hose route retained complete query evidence but produced no reviewable product roots."
+    },
+    "ambient-bamboo": {
+      "status": "rejected",
+      "reason": "The desktop bamboo-flooring route retained none of the requested-query evidence and produced no reviewable product roots."
+    },
+    "mats-inc": {
+      "status": "rejected",
+      "reason": "The desktop carpet-tile route redirected cross-site to Matter Surfaces, retained none of the requested-query evidence, and produced no reviewable product roots."
+    },
+    "backdrop": {
+      "status": "rejected",
+      "reason": "The desktop interior-paint route exposed no reviewable product roots and retained an unresolved obstruction covering 94% of the viewport."
+    },
+    "jon-don": {
+      "status": "rejected",
+      "reason": "The desktop carpet-cleaner route failed navigation because the site served an expired TLS certificate."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [],
+    "assignedDomains": [],
+    "status": "reject"
+  }
+}
