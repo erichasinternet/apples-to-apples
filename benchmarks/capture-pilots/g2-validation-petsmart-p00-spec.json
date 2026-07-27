@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-petsmart-p00",
+  "capturedAt": "2026-07-27T02:27:02.218Z",
+  "sourceManifest": "benchmarks/live-sites/targets.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T02-24-16-509Z",
+      "pageIds": [
+        "petsmart--cat-litter"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T02-26-43-259Z",
+      "pageIds": [
+        "petsmart--aquarium-conditioner"
+      ]
+    }
+  ],
+  "samplingFinding": "A bounded headed audit attempted all sixteen frozen validation and selection domains. PetSmart was the only domain to pass the two-page, two-viewport acquisition and visual-review gate.",
+  "visualValidationFinding": "Original-resolution annotation screenshots and all twenty-four captured root closeups were inspected. Both pages show coherent requested-query product listings with readable product, price, and package evidence and no material obstruction."
+}

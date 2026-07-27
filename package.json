@@ -38,6 +38,7 @@
     "dataset:readiness": "bun scripts/report-ideal-dataset-readiness.ts",
     "dataset:domains:validate": "bun scripts/validate-domain-qualification.ts",
     "dataset:depth:promote": "bun scripts/promote-training-depth-captures.ts",
+    "dataset:captures:promote": "bun scripts/promote-training-depth-captures.ts",
     "dataset:reviews:queue": "bun scripts/build-evidence-review-queue.ts",
     "dataset:reviews:candidates": "bun scripts/list-evidence-candidates.ts",
     "dataset:reviews:score": "bun scripts/score-evidence-reviews.ts",

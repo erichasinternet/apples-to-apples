@@ -480,6 +480,12 @@
       "cohort": "training",
       "qualificationReport": "benchmarks/domain-qualification/wave-20-p00.json",
       "promotedAt": "2026-07-26T16:47:00.000Z"
+    },
+    {
+      "siteId": "petsmart",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-existing-p00.json",
+      "promotedAt": "2026-07-27T02:30:00.000Z"
     }
   ]
 }

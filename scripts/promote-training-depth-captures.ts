@@ -148,6 +148,9 @@ const existingObservationHashes = new Set(
   retainedRegistryCaptures.map((capture) => capture.observationSha256)
 );
 const acceptedPages = new Set<string>();
+const acceptedCohorts = new Set<
+  "training" | "validation" | "selection" | "final"
+>();
 const collectorHashes = new Set<string>();
 const reportRuns = [];
 const reportCaptures = [];
@@ -191,9 +194,10 @@ for (const runSpec of spec.runs) {
     );
     if (!site) throw new Error(`${pageId}: page is absent from source manifest`);
     const promotion = promotionBySite.get(site.id);
-    if (promotion?.cohort !== "training") {
-      throw new Error(`${pageId}: site lacks a training-domain promotion`);
+    if (!promotion) {
+      throw new Error(`${pageId}: site lacks a domain promotion`);
     }
+    acceptedCohorts.add(promotion.cohort);
 
     const pageDirectory = path.join(runDirectory, pageId);
     const [page, provenance] = await Promise.all([
@@ -267,7 +271,7 @@ for (const runSpec of spec.runs) {
     });
     registryCaptures.push({
       siteId: site.id,
-      cohort: "training" as const,
+      cohort: promotion.cohort,
       pageId,
       captureTimestamp: page.capturedAt,
       observationSha256: observation.sha256,
@@ -294,6 +298,10 @@ const acceptedSiteIds = [
 const acceptedStrata = [
   ...new Set(acceptedSiteIds.map((siteId) => sites.get(siteId)!.stratum))
 ];
+if (acceptedCohorts.size !== 1) {
+  throw new Error("A capture pilot must contain exactly one promoted cohort.");
+}
+const cohort = [...acceptedCohorts][0]!;
 const pilot = {
   version: 1,
   pilotId: spec.pilotId,
@@ -301,7 +309,7 @@ const pilot = {
   capturedAt: spec.capturedAt,
   source: {
     siteIds: acceptedSiteIds,
-    cohort: "training",
+    cohort,
     strata: acceptedStrata,
     anonymousContext: true,
     sourceManifestSha256: [sourceManifestSha256],

@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-existing-p00",
+  "candidateManifest": "benchmarks/live-sites/targets.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 30000,
+    "parentProcessHardTimeoutMs": 45000,
+    "cardScreenshotBudgetMs": 10000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "processIsolationFinding": "Each attempted page ran in its own OS process group under the bounded collector. A stalled PetFlow attempt was terminated without blocking later pages or interacting with the user's browser.",
+    "samplingFinding": "The first qualification pass covered all sixteen frozen validation and selection domains. Fourteen failed acquisition outright, FreshDirect failed visual review, and PetSmart alone produced two coherent listing pages in opposite viewport profiles.",
+    "manifestIntegrityFinding": "Both accepted captures use the frozen targets manifest hash 055cf4a57c6d821a966d02ca8c6368733b39cf06a8e3ed1e999ceedc73c0b97f and collector hash 6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T02-24-16-509Z",
+      "runManifestSha256": "d02b897964ced1e35fdf0b802ed9a23b8414873214fc4d5b89915115d57b511d",
+      "purpose": "isolated PetSmart desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T02-26-43-259Z",
+      "runManifestSha256": "0bc74d841492abc194819f7beb5cc1c5da423b66e8560fd1900edff50a174e7b",
+      "purpose": "isolated PetSmart narrow qualification capture"
+    }
+  ],
+  "results": {
+    "amazon": {
+      "status": "rejected",
+      "reason": "The anonymous headed capture returned HTTP 503."
+    },
+    "petsmart": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "petsmart--cat-litter",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0016,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "petsmart--aquarium-conditioner",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "The desktop cat-litter grid and narrow aquarium-conditioner grid are coherent requested-query result sets. Together they provide mass and volume evidence, twelve independently reviewable roots per page, complete closeups, and opposite viewport coverage."
+    },
+    "cvs": {
+      "status": "rejected",
+      "reason": "The anonymous headed capture returned HTTP 403."
+    },
+    "lowes": {
+      "status": "rejected",
+      "reason": "The anonymous headed capture reached a bot challenge."
+    },
+    "staples": {
+      "status": "rejected",
+      "reason": "The page did not complete within the fixed capture bound."
+    },
+    "publix": {
+      "status": "rejected",
+      "reason": "The captured viewport was fully obstructed and did not expose reviewable product evidence."
+    },
+    "petflow": {
+      "status": "rejected",
+      "reason": "The isolated retry completed with HTTP 404."
+    },
+    "big-lots": {
+      "status": "rejected",
+      "reason": "The anonymous headed capture returned HTTP 404."
+    },
+    "weis-markets": {
+      "status": "rejected",
+      "reason": "The configured hostname failed DNS resolution."
+    },
+    "rite-aid": {
+      "status": "rejected",
+      "reason": "The anonymous headed capture was blocked."
+    },
+    "freshdirect": {
+      "status": "rejected",
+      "reason": "Machine capture completed, but visual review found the annotation region horizontally displaced and clipping most card evidence."
+    },
+    "instacart": {
+      "status": "rejected",
+      "reason": "The page did not complete within the fixed capture bound."
+    },
+    "aldi": {
+      "status": "rejected",
+      "reason": "The anonymous headed capture returned HTTP 404."
+    },
+    "kohls": {
+      "status": "rejected",
+      "reason": "The anonymous headed capture reached a bot challenge."
+    },
+    "ace-hardware": {
+      "status": "rejected",
+      "reason": "The anonymous headed capture returned HTTP 403."
+    },
+    "ebay": {
+      "status": "rejected",
+      "reason": "The anonymous headed capture returned HTTP 403."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "petsmart"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "petsmart",
+        "cohort": "validation"
+      }
+    ],
+    "status": "keep"
+  }
+}

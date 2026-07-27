@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p00",
+  "createdAt": "2026-07-27T02:33:10.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--aquarium-conditioner",
+      "captureTimestamp": "2026-07-27T02:27:00.735Z",
+      "candidateCardCount": 12,
+      "observationSha256": "5b2af4265804644a96796204860aa6d3176f34abecf681ae3208531a82828f7e",
+      "annotationScreenshotSha256": "30d318f8f61e43b3e3111c137cb4a996810587499302c6dc8bf6d46774075bf7"
+    },
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--cat-litter",
+      "captureTimestamp": "2026-07-27T02:24:34.807Z",
+      "candidateCardCount": 12,
+      "observationSha256": "17950128637e79bfb285b6b16e5ac51f62c3ac148d0efaed43e4750d27a501c3",
+      "annotationScreenshotSha256": "a28df2cfee8b6de181c7e169f940368e068edc7ceb75fc7af543d5b2322845cd"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--d13bac5f627ae482",
+      "campaignQueueSha256": "671874d5def189e077052f714ef2fd4a9b4c2197c158b2de1f12e203182c8834",
+      "sourceQueueSha256": [
+        "2f1356b3bacab832c524804e20123dc4abdd497e0f32cee83666a994e53611f1",
+        "d07f3b9b3e2f2ded9a2925250ffd7b9feb856408410ead8b0cebbec84ddd2626"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--79cba12e9243330a",
+      "campaignQueueSha256": "df732b8406dd3d646da0d0cdec4ee98645d53be00485c3eb9f0ee9c47c418fc3",
+      "sourceQueueSha256": [
+        "bc66135cb62abb528b140224594c656ff43d814a255d7d18d2474c81109079e7",
+        "e41ba10b6bbd789f9fa8d8dc3039a9555413765403314a3c8c98f622de67633f"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--d13bac5f627ae482",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

@@ -5760,6 +5760,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-training-depth-wave-13-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "petsmart",
+      "cohort": "validation",
+      "pageId": "petsmart--cat-litter",
+      "captureTimestamp": "2026-07-27T02:24:34.807Z",
+      "observationSha256": "17950128637e79bfb285b6b16e5ac51f62c3ac148d0efaed43e4750d27a501c3",
+      "annotationScreenshotSha256": "a28df2cfee8b6de181c7e169f940368e068edc7ceb75fc7af543d5b2322845cd",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-existing-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-petsmart-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "petsmart",
+      "cohort": "validation",
+      "pageId": "petsmart--aquarium-conditioner",
+      "captureTimestamp": "2026-07-27T02:27:00.735Z",
+      "observationSha256": "5b2af4265804644a96796204860aa6d3176f34abecf681ae3208531a82828f7e",
+      "annotationScreenshotSha256": "30d318f8f61e43b3e3111c137cb4a996810587499302c6dc8bf6d46774075bf7",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-existing-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-petsmart-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

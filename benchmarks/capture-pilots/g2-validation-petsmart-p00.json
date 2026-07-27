@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-petsmart-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T02:27:02.218Z",
+  "source": {
+    "siteIds": [
+      "petsmart"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "specialty-pet"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "055cf4a57c6d821a966d02ca8c6368733b39cf06a8e3ed1e999ceedc73c0b97f"
+    ],
+    "collectorSha256": [
+      "6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T02-24-16-509Z",
+      "runManifestSha256": "d02b897964ced1e35fdf0b802ed9a23b8414873214fc4d5b89915115d57b511d",
+      "pageTimeoutMs": 30000,
+      "cardScreenshotBudgetMs": 10000
+    },
+    {
+      "runId": "2026-07-27T02-26-43-259Z",
+      "runManifestSha256": "0bc74d841492abc194819f7beb5cc1c5da423b66e8560fd1900edff50a174e7b",
+      "pageTimeoutMs": 30000,
+      "cardScreenshotBudgetMs": 10000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "A bounded headed audit attempted all sixteen frozen validation and selection domains. PetSmart was the only domain to pass the two-page, two-viewport acquisition and visual-review gate.",
+    "visualValidationFinding": "Original-resolution annotation screenshots and all twenty-four captured root closeups were inspected. Both pages show coherent requested-query product listings with readable product, price, and package evidence and no material obstruction."
+  },
+  "captures": [
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--cat-litter",
+      "capturedAt": "2026-07-27T02:24:34.807Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 10,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1609,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0016,
+      "queryTokenCoverage": 1,
+      "observationSha256": "17950128637e79bfb285b6b16e5ac51f62c3ac148d0efaed43e4750d27a501c3",
+      "canonicalObservationSha256": "67705f6365fe3f31f849cb5d776c9aa6deb7514333322a6b9328b360d46790cc",
+      "annotationScreenshotSha256": "a28df2cfee8b6de181c7e169f940368e068edc7ceb75fc7af543d5b2322845cd",
+      "provenanceAggregateSha256": "929f2d1e780dacdf8d97584e7dac3ad4b86d5486904cb29f73bd93d07bf522ba",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--aquarium-conditioner",
+      "capturedAt": "2026-07-27T02:27:00.735Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 10,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1511,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "5b2af4265804644a96796204860aa6d3176f34abecf681ae3208531a82828f7e",
+      "canonicalObservationSha256": "3af84eab6063f2a3fc568eb01fc0c4bff709fef4a5eef77cee4abe68e03ce62d",
+      "annotationScreenshotSha256": "30d318f8f61e43b3e3111c137cb4a996810587499302c6dc8bf6d46774075bf7",
+      "provenanceAggregateSha256": "217381a289589255bcad22d12776b2dce59cf3e6940ec229fd9f63e61375fb15",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

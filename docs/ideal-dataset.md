@@ -1222,6 +1222,27 @@ including 244 narrow pages, 250 categories, and 70 strata. Human-reviewed
 products remain zero, so all roots and machine suggestions remain ineligible
 for silver training or benchmark gold.
 
+The first frozen held-out audit attempted all 16 initially assigned validation
+and selection domains with isolated headed Chromium processes and a parent
+hard timeout. Fourteen domains failed acquisition, and FreshDirect failed
+visual review because its annotation region clipped the product evidence.
+PetSmart alone passed the two-page qualification gate. Its desktop cat-litter
+and narrow aquarium-conditioner pages add 24 frozen roots across mass and
+volume, giving validation 1 qualified domain and 2 eligible pages. The exact
+decision and provenance are recorded in
+[`heldout-existing-p00.json`](../benchmarks/domain-qualification/heldout-existing-p00.json)
+and
+[`g2-validation-petsmart-p00.json`](../benchmarks/capture-pilots/g2-validation-petsmart-p00.json).
+
+The paired blinded
+[`g2-validation-p00.json`](../benchmarks/review-campaigns/g2-validation-p00.json)
+campaign covers both validation pages and all 24 roots. The full campaign and
+its paired assignment passed headed Playwright Chromium with zero console
+errors or review writes; the aggregate batch evidence is in
+[`g2-validation-p00-review-batch-validation.json`](../benchmarks/reviews/g2-validation-p00-review-batch-validation.json).
+No semantic reviews have been completed, so these roots remain ineligible for
+benchmark gold.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

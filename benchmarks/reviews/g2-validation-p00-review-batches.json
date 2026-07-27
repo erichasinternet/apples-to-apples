@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p00",
+  "createdAt": "2026-07-27T02:33:26.247Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--d13bac5f627ae482",
+      "path": "benchmark-data/review/g2-validation-p00-reviewer-a-campaign.json",
+      "sha256": "671874d5def189e077052f714ef2fd4a9b4c2197c158b2de1f12e203182c8834",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--79cba12e9243330a",
+      "path": "benchmark-data/review/g2-validation-p00-reviewer-b-campaign.json",
+      "sha256": "df732b8406dd3d646da0d0cdec4ee98645d53be00485c3eb9f0ee9c47c418fc3",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p00--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "petsmart--aquarium-conditioner",
+        "petsmart--cat-litter"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--dd2a43e2b7b53755",
+          "path": "benchmark-data/review/g2-validation-p00-review-batches/reviewer-a--batch-01.json",
+          "sha256": "0d68225ceae2d5e03048a5a4724039f1f7dc5f1c2b19b4d7ba84d654aa12d2bd"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--fd4c2da0c41900dc",
+          "path": "benchmark-data/review/g2-validation-p00-review-batches/reviewer-b--batch-01.json",
+          "sha256": "7d19fb8b1a14546fd2893ac74097e9c9fadcd0a66dc8620db08b6faa92f79075"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}
