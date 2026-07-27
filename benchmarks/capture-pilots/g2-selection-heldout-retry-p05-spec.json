@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p05",
+  "capturedAt": "2026-07-27T04:46:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-qualification-retry-p10.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T04-43-56-767Z",
+      "pageIds": [
+        "mineral-tiles--porcelain-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T04-44-43-589Z",
+      "pageIds": [
+        "mineral-tiles--mosaic-tile"
+      ]
+    }
+  ],
+  "samplingFinding": "Mineral Tiles passed two fresh opposite-viewport p10 recaptures after a generic, unit-tested fixed-chat-launcher remediation and was assigned to selection after the frozen gate.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots and all candidate closeups were inspected. The twenty-four frozen roots show coherent porcelain- and mosaic-tile products with readable sale badges, per-square-foot prices, sample prices, dimensions, materials, and ratings."
+}

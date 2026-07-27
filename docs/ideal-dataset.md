@@ -1405,6 +1405,28 @@ all 24 frozen roots loaded, zero console errors, and zero review writes. The
 eligible registry now contains 512 exact capture identities. Human semantic
 reviews and adjudication remain pending.
 
+An eleventh bounded retry revisited 10 additional unassigned domains across all
+five dimensions. All 17 isolated headed Chromium children completed without a
+parent hard timeout. Five desktop pages passed the numeric machine gate, and
+original-resolution review advanced Mary Jo Fabrics, Floor & Decor, and Mineral
+Tiles to distinct narrow queries. Mary Jo Fabrics returned generic quilting and
+novelty cotton rather than upholstery products. The two flooring pairs initially
+failed because small fixed chat launchers covered selected card text. Live DOM
+diagnosis identified generic fixed-launcher semantics and geometry; a bounded,
+unit-tested collector fix then removed those launchers without suppressing
+ordinary fixed controls or large chat surfaces. Fresh opposite-viewport
+recaptures qualified both flooring domains. They add 2 validation pages and 2
+selection pages with 48 total area roots. Qualified held-out structure is now 9
+validation domains with 18 pages and 9 selection domains with 18 pages, both at
+50% narrow-viewport coverage. The blinded
+[`g2-validation-p07.json`](../benchmarks/review-campaigns/g2-validation-p07.json)
+and
+[`g2-selection-p05.json`](../benchmarks/review-campaigns/g2-selection-p05.json)
+campaigns and their paired reviewer batches passed headed Playwright Chromium
+with all 48 frozen roots loaded, zero console errors, and zero review writes.
+The eligible registry now contains 516 exact capture identities. Human semantic
+reviews and adjudication remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

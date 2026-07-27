@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p07",
+  "createdAt": "2026-07-27T04:50:00.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "floor-and-decor",
+      "pageId": "floor-and-decor--floor-tile",
+      "captureTimestamp": "2026-07-27T04:43:52.955Z",
+      "candidateCardCount": 12,
+      "observationSha256": "337856c85edc45cefff1f4a6354a92e603a3975995c24efa61397ccd82907787",
+      "annotationScreenshotSha256": "309c3c0441f9e0e9cfd51d558e39ec0c43c5e397b8f809f875bf0cd2bb3d74d0"
+    },
+    {
+      "siteId": "floor-and-decor",
+      "pageId": "floor-and-decor--vinyl-flooring",
+      "captureTimestamp": "2026-07-27T04:44:38.277Z",
+      "candidateCardCount": 12,
+      "observationSha256": "bdcad5f8afdbcba4bd77e7674635842d9744b210e660c48a4e4e5d17ec9a4147",
+      "annotationScreenshotSha256": "6d432b9a90942323e4f6631f575add2ed8b8750ff64326016f85150591b69ad7"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--48694a40234040d3",
+      "campaignQueueSha256": "a4654380f527411c7f63e405d41300ecefe96fbebed2276eb2be7a4b96e052a6",
+      "sourceQueueSha256": [
+        "72422d81fd215b2ce36ba7a76fb2a56c9893d4a29c2a989ab21442fe76463838",
+        "7a1a184b771dbe28433421ad0f41261495689bc614aa1fb968277e6dc4344cd0"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--8b8158d3477d99cf",
+      "campaignQueueSha256": "50ef66abcbf4fd4ee86850713139e4042e60b7fba393b30d878bf1f550b7a26c",
+      "sourceQueueSha256": [
+        "7b79f5c4c853565c2ea86275e88960e9fdb613ee498d2b7bd5a55c7bd266aeb0",
+        "efa99c7d6781470cf7b91bd76ba74d2850994e1e910bf882ed32e1518f9ba77f"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--48694a40234040d3",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

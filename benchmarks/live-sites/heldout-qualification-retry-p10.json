@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "description": "Eleventh capture-only held-out retry manifest with two previously unassigned transient-failure domains per supported dimension. Every site remains unassigned until two fresh opposite-viewport pages pass the frozen machine and visual gate.",
+  "sites": [
+    {
+      "id": "one-stop-auto-detail-supply",
+      "label": "One Stop Auto Detail Supply",
+      "hostname": "www.onestopautodetailsupply.com",
+      "stratum": "local-detailing-supply",
+      "searchUrlTemplate": "https://www.onestopautodetailsupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "car-wash-soap",
+          "query": "car wash soap",
+          "dimension": "volume"
+        },
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "malco-automotive",
+      "label": "Malco Automotive",
+      "hostname": "malcoautomotive.com",
+      "stratum": "professional-automotive-chemical-brand",
+      "searchUrlTemplate": "https://malcoautomotive.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "car-wash-soap",
+          "query": "car wash soap",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "frontline-usa",
+      "label": "Frontline USA",
+      "hostname": "frontlineusa.com",
+      "stratum": "disposable-emergency-medical-supply",
+      "searchUrlTemplate": "https://frontlineusa.com/search?q={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "underpads",
+          "query": "underpads",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "med-supplies-com",
+      "label": "MedSupplies.com",
+      "hostname": "www.medsupplies.com",
+      "stratum": "direct-to-consumer-medical-supply-retail",
+      "searchUrlTemplate": "https://www.medsupplies.com/index.php?main_page=advanced_search_result&search_in_description=1&keyword={query}",
+      "queries": [
+        {
+          "id": "syringes",
+          "query": "syringes",
+          "dimension": "count"
+        },
+        {
+          "id": "alcohol-pads",
+          "query": "alcohol pads",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "hawthorne-supply",
+      "label": "Hawthorne Supply Co.",
+      "hostname": "www.hawthornesupplyco.com",
+      "stratum": "quilting-fabric-retail",
+      "searchUrlTemplate": "https://www.hawthornesupplyco.com/{querySlug}",
+      "queries": [
+        {
+          "id": "fabric-on-sale",
+          "query": "fabric on sale",
+          "querySlug": "fabric-on-sale",
+          "dimension": "length"
+        },
+        {
+          "id": "fabric-precuts",
+          "query": "fabric precuts",
+          "querySlug": "fabric-precuts",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "mary-jo-fabrics",
+      "label": "Mary Jo Fabrics",
+      "hostname": "maryjofabrics.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://maryjofabrics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "floor-and-decor",
+      "label": "Floor & Decor",
+      "hostname": "www.flooranddecor.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.flooranddecor.com/search?q={query}",
+      "queries": [
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        },
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "mineral-tiles",
+      "label": "Mineral Tiles",
+      "hostname": "www.mineraltiles.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.mineraltiles.com/search?q={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "spice-and-tea-exchange",
+      "label": "The Spice & Tea Exchange",
+      "hostname": "www.spiceandtea.com",
+      "stratum": "specialty-spice-and-tea-retail",
+      "searchUrlTemplate": "https://www.spiceandtea.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "cinnamon",
+          "query": "cinnamon",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "penzeys",
+      "label": "Penzeys Spices",
+      "hostname": "www.penzeys.com",
+      "stratum": "mail-order-spice-retail",
+      "searchUrlTemplate": "https://www.penzeys.com/search/?q={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "garlic-powder",
+          "query": "garlic powder",
+          "dimension": "mass"
+        }
+      ]
+    }
+  ]
+}

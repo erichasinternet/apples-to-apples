@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p06",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T04:46:00.000Z",
+  "source": {
+    "siteIds": [
+      "floor-and-decor"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "flooring"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "bf5c636ff9d5e8182fa89e6b6af707df371e1b761b762793dd1a100fd5881160"
+    ],
+    "collectorSha256": [
+      "6ef13d05773332ae7e416b3a07c06f4341f368e3b13b6ff8261053d3128ec1a4"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T04-43-34-530Z",
+      "runManifestSha256": "0cd07054058456ea599233ba81e27c3291056fddc4ed463ea9bf6385d0ff2b7f",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T04-44-19-735Z",
+      "runManifestSha256": "f0413664d9590fc46bec2b37d5f13eb3f60d5fa5e555dbd7207e16d2f9a1946c",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "Floor & Decor passed two fresh opposite-viewport p10 recaptures after a generic, unit-tested fixed-chat-launcher remediation and was assigned to validation after the frozen gate.",
+    "visualValidationFinding": "Both original-resolution annotation screenshots and all candidate closeups were inspected. The twenty-four frozen roots show coherent floor-tile and vinyl-flooring products with readable per-square-foot prices, ranges, physical dimensions, finish variants, and comparison controls."
+  },
+  "captures": [
+    {
+      "siteId": "floor-and-decor",
+      "pageId": "floor-and-decor--floor-tile",
+      "capturedAt": "2026-07-27T04:43:52.955Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1849,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "337856c85edc45cefff1f4a6354a92e603a3975995c24efa61397ccd82907787",
+      "canonicalObservationSha256": "a06dadb2aae0b3f2d01a0ed2f9365b876ece3ce37e5f8ab72430f0b11bfcddde",
+      "annotationScreenshotSha256": "309c3c0441f9e0e9cfd51d558e39ec0c43c5e397b8f809f875bf0cd2bb3d74d0",
+      "provenanceAggregateSha256": "e0061a5cf55dfdb68c849b928a56ac3ca87d7859e114066fd3b0f66613efac3a",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "floor-and-decor",
+      "pageId": "floor-and-decor--vinyl-flooring",
+      "capturedAt": "2026-07-27T04:44:38.277Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1119,
+      "observationTruncated": false,
+      "dismissedObstructions": 4,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "bdcad5f8afdbcba4bd77e7674635842d9744b210e660c48a4e4e5d17ec9a4147",
+      "canonicalObservationSha256": "981f57de707b4b3e34453689e87fd196dd38a54d39346f55f60d890015ecb9fc",
+      "annotationScreenshotSha256": "6d432b9a90942323e4f6631f575add2ed8b8750ff64326016f85150591b69ad7",
+      "provenanceAggregateSha256": "31865b9504802375afdd433c9bbfeb981e82dc8073636a6ba8208d886463fd7c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

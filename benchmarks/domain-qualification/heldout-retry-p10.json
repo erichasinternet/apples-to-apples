@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p10",
+  "candidateManifest": "benchmarks/live-sites/heldout-qualification-retry-p10.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "23c1f170605e20255ae936cb6b543da29d6f621a0a32020ea79fef051051359f",
+    "narrowBatchSha256": "88137afeca090e191ccadfb2b2d1f851cc2a29354cd0000924109cc573cfd7fa",
+    "remediationDesktopBatchSha256": "fd27af86dd11475c14faea869c76dfb8d59c3b023aa0b7ac866d23de0f10b17b",
+    "remediationNarrowBatchSha256": "0562ff35b71ddb759860cc6c37098b56a852dcd8ad4e9dafc076e983a33a7cb7",
+    "processIsolationFinding": "All seventeen headed capture children completed under isolated process-group bounds with zero parent hard timeouts.",
+    "samplingFinding": "Ten disjoint, unassigned domains received a fresh desktop capture. Five desktop pages passed the numeric machine gate; original-resolution review advanced Mary Jo Fabrics, Floor & Decor, and Mineral Tiles to distinct narrow queries. Review then exposed a generic collector defect: small fixed chat launchers covered card text on the two otherwise valid flooring pairs. A geometry- and semantics-bounded fix was unit-tested, and only those two frozen pairs were recaptured in both viewports. Both repaired pairs passed; no old partial capture was promoted.",
+    "manifestIntegrityFinding": "All accepted captures use the frozen retry manifest hash bf5c636ff9d5e8182fa89e6b6af707df371e1b761b762793dd1a100fd5881160 and remediated collector hash 6ef13d05773332ae7e416b3a07c06f4341f368e3b13b6ff8261053d3128ec1a4."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T04-43-34-530Z",
+      "runManifestSha256": "0cd07054058456ea599233ba81e27c3291056fddc4ed463ea9bf6385d0ff2b7f",
+      "purpose": "Floor & Decor remediated desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T04-43-56-767Z",
+      "runManifestSha256": "58c486742fd56c1fce4d1bf4102c72346c48bb0bb547ea0cf55a7f9cf0ef3ad4",
+      "purpose": "Mineral Tiles remediated desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T04-44-19-735Z",
+      "runManifestSha256": "f0413664d9590fc46bec2b37d5f13eb3f60d5fa5e555dbd7207e16d2f9a1946c",
+      "purpose": "Floor & Decor remediated narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T04-44-43-589Z",
+      "runManifestSha256": "d7dae0dc74682a3051f6c019639904271aff280a54d51dc1f72ed477ef418653",
+      "purpose": "Mineral Tiles remediated narrow qualification capture"
+    }
+  ],
+  "results": {
+    "one-stop-auto-detail-supply": {
+      "status": "rejected",
+      "reason": "The desktop route exposed complete requested-query evidence but no reviewable product candidates."
+    },
+    "malco-automotive": {
+      "status": "rejected",
+      "reason": "The desktop route exposed twelve roots and complete query evidence, but the wheel-cleaner results broadened into unrelated degreasers, interior cleaners, and other products before eight coherent roots."
+    },
+    "frontline-usa": {
+      "status": "rejected",
+      "reason": "The desktop route exposed only four reviewable roots, below the frozen minimum of eight."
+    },
+    "med-supplies-com": {
+      "status": "rejected",
+      "reason": "The desktop route exposed only four roots and no requested-query evidence."
+    },
+    "hawthorne-supply": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no reviewable product candidates."
+    },
+    "mary-jo-fabrics": {
+      "status": "rejected",
+      "reason": "The coherent cotton-fabric desktop page passed, but the distinct upholstery-fabric query returned generic quilting and novelty cotton fabrics rather than a coherent upholstery result set."
+    },
+    "floor-and-decor": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "floor-and-decor--floor-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "floor-and-decor--vinyl-flooring",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent flooring grids pass in opposite viewports after the generic collector remediation. Cards expose current per-square-foot prices, ranges, product dimensions, finish variants, and comparison controls without covered textual evidence."
+    },
+    "mineral-tiles": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "mineral-tiles--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0016,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "mineral-tiles--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.006999635435654393,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent tile grids pass in opposite viewports after the generic collector remediation. Cards expose sale badges, current per-square-foot prices, sample prices, dimensions, materials, and ratings without covered textual evidence."
+    },
+    "spice-and-tea-exchange": {
+      "status": "rejected",
+      "reason": "The desktop search broadened into unrelated peppers and blends after six paprika products, before the frozen minimum of eight coherent roots."
+    },
+    "penzeys": {
+      "status": "rejected",
+      "reason": "The desktop route exposed only one reviewable root, below the frozen minimum of eight."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "floor-and-decor",
+      "mineral-tiles"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "floor-and-decor",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "mineral-tiles",
+        "cohort": "selection"
+      }
+    ],
+    "status": "keep"
+  }
+}

@@ -277,6 +277,81 @@ describe("page preparation", () => {
     expect(clicked).toHaveBeenCalledOnce();
   });
 
+  it("suppresses a small fixed chat launcher from generic accessibility metadata", () => {
+    document.body.innerHTML = `
+      <div
+        id="launcher"
+        role="button"
+        aria-label="Chat widget toggle"
+        style="position: fixed"
+      ></div>
+    `;
+    const launcher = document.querySelector<HTMLElement>("#launcher")!;
+    vi.spyOn(launcher, "getBoundingClientRect").mockReturnValue({
+      x: 944,
+      y: 688,
+      width: 56,
+      height: 56,
+      top: 688,
+      right: 1000,
+      bottom: 744,
+      left: 944,
+      toJSON: () => ({})
+    });
+
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(launcher.dataset.ataSuppressedNonContentLauncher).toBe("true");
+    expect(launcher.style.getPropertyValue("display")).toBe("none");
+    expect(launcher.style.getPropertyPriority("display")).toBe("important");
+  });
+
+  it("suppresses a small fixed chat launcher from generic class and text", () => {
+    document.body.innerHTML = `
+      <div id="launcher" class="b-chat" style="position: fixed">
+        Chat Feedback
+      </div>
+    `;
+    const launcher = document.querySelector<HTMLElement>("#launcher")!;
+    vi.spyOn(launcher, "getBoundingClientRect").mockReturnValue({
+      x: 944,
+      y: 688,
+      width: 60,
+      height: 60,
+      top: 688,
+      right: 1004,
+      bottom: 748,
+      left: 944,
+      toJSON: () => ({})
+    });
+
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(launcher.dataset.ataSuppressedNonContentLauncher).toBe("true");
+    expect(launcher.style.getPropertyValue("display")).toBe("none");
+  });
+
+  it("does not suppress a large fixed chat surface without an explicit close action", () => {
+    document.body.innerHTML = `
+      <section id="chat-window" style="position: fixed">Chat with support</section>
+    `;
+    const chatWindow = document.querySelector<HTMLElement>("#chat-window")!;
+    vi.spyOn(chatWindow, "getBoundingClientRect").mockReturnValue({
+      x: 624,
+      y: 268,
+      width: 360,
+      height: 460,
+      top: 268,
+      right: 984,
+      bottom: 728,
+      left: 624,
+      toJSON: () => ({})
+    });
+
+    expect(dismissVisibleObstruction()).toBe(false);
+    expect(
+      chatWindow.dataset.ataSuppressedNonContentLauncher
+    ).toBeUndefined();
+  });
+
   it("suppresses a small fixed messaging launcher iframe", () => {
     document.body.innerHTML = `
       <iframe

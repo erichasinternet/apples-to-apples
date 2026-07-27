@@ -167,6 +167,54 @@ export function dismissVisibleObstruction(): boolean {
     return true;
   }
 
+  const nonContentLauncherSemantics =
+    /(?:^|[-_\s])(chat|messaging|feedback)(?:[-_\s]|$)/;
+  for (const root of roots) {
+    for (const element of root.querySelectorAll<HTMLElement>("*")) {
+      if (element instanceof HTMLIFrameElement) continue;
+      if (!isVisible(element)) continue;
+
+      const descriptor = [
+        element.id,
+        element.getAttribute("class") ?? "",
+        element.getAttribute("aria-label") ?? "",
+        element.getAttribute("title") ?? "",
+        element.innerText || element.textContent || ""
+      ]
+        .map(normalize)
+        .join(" ");
+      if (!nonContentLauncherSemantics.test(descriptor)) continue;
+
+      let fixedContainer: HTMLElement | null = element;
+      while (
+        fixedContainer &&
+        getComputedStyle(fixedContainer).position !== "fixed"
+      ) {
+        const parent: HTMLElement | null = fixedContainer.parentElement;
+        if (parent) {
+          fixedContainer = parent;
+        } else {
+          const host = fixedContainer.getRootNode();
+          fixedContainer =
+            host instanceof ShadowRoot && host.host instanceof HTMLElement
+              ? host.host
+              : null;
+        }
+      }
+      if (!fixedContainer || !isVisible(fixedContainer)) continue;
+
+      const box = fixedContainer.getBoundingClientRect();
+      const coverage =
+        (box.width * box.height) /
+        Math.max(1, window.innerWidth * window.innerHeight);
+      if (coverage > 0.02) continue;
+
+      fixedContainer.dataset.ataSuppressedNonContentLauncher = "true";
+      fixedContainer.style.setProperty("display", "none", "important");
+      return true;
+    }
+  }
+
   const nonContentEmbedTitle =
     /^(?:(?:button to )?(?:launch|open) (?:a )?(?:chat|messaging)(?: window)?|opens? a (?:widget|window) where you can chat\b.*|(?:google )?recaptcha)$/;
   for (const iframe of document.querySelectorAll<HTMLIFrameElement>("iframe[title]")) {

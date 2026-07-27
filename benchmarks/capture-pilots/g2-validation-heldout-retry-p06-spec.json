@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p06",
+  "capturedAt": "2026-07-27T04:46:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-qualification-retry-p10.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T04-43-34-530Z",
+      "pageIds": [
+        "floor-and-decor--floor-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T04-44-19-735Z",
+      "pageIds": [
+        "floor-and-decor--vinyl-flooring"
+      ]
+    }
+  ],
+  "samplingFinding": "Floor & Decor passed two fresh opposite-viewport p10 recaptures after a generic, unit-tested fixed-chat-launcher remediation and was assigned to validation after the frozen gate.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots and all candidate closeups were inspected. The twenty-four frozen roots show coherent floor-tile and vinyl-flooring products with readable per-square-foot prices, ranges, physical dimensions, finish variants, and comparison controls."
+}

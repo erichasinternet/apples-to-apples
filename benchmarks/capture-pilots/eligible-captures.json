@@ -6144,6 +6144,54 @@
       "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p05.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "floor-and-decor",
+      "cohort": "validation",
+      "pageId": "floor-and-decor--floor-tile",
+      "captureTimestamp": "2026-07-27T04:43:52.955Z",
+      "observationSha256": "337856c85edc45cefff1f4a6354a92e603a3975995c24efa61397ccd82907787",
+      "annotationScreenshotSha256": "309c3c0441f9e0e9cfd51d558e39ec0c43c5e397b8f809f875bf0cd2bb3d74d0",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p10.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p06.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "floor-and-decor",
+      "cohort": "validation",
+      "pageId": "floor-and-decor--vinyl-flooring",
+      "captureTimestamp": "2026-07-27T04:44:38.277Z",
+      "observationSha256": "bdcad5f8afdbcba4bd77e7674635842d9744b210e660c48a4e4e5d17ec9a4147",
+      "annotationScreenshotSha256": "6d432b9a90942323e4f6631f575add2ed8b8750ff64326016f85150591b69ad7",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p10.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p06.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mineral-tiles",
+      "cohort": "selection",
+      "pageId": "mineral-tiles--porcelain-tile",
+      "captureTimestamp": "2026-07-27T04:44:13.352Z",
+      "observationSha256": "2d8b4823b035554ecfa9a1846f00c25586b16cb64a185b4d6a89618c575a0b32",
+      "annotationScreenshotSha256": "b0ae90737aafd7b0e433b2116f05771c60405f17617f19e2f88d0ab116ef9f3b",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p10.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p05.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mineral-tiles",
+      "cohort": "selection",
+      "pageId": "mineral-tiles--mosaic-tile",
+      "captureTimestamp": "2026-07-27T04:44:59.925Z",
+      "observationSha256": "ac356ba32f33d16c0a113d7dca4d02633142f38dba226d95022a41555b708276",
+      "annotationScreenshotSha256": "e247ffd8bf3963f886003f69ff7352985e8de9ff91fb1f88d2a4264e08752bcd",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p10.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p05.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

@@ -576,6 +576,18 @@
       "cohort": "validation",
       "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p09.json",
       "promotedAt": "2026-07-27T04:27:00.000Z"
+    },
+    {
+      "siteId": "floor-and-decor",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p10.json",
+      "promotedAt": "2026-07-27T04:46:00.000Z"
+    },
+    {
+      "siteId": "mineral-tiles",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p10.json",
+      "promotedAt": "2026-07-27T04:46:00.000Z"
     }
   ]
 }

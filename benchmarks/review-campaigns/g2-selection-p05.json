@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p05",
+  "createdAt": "2026-07-27T04:50:00.000Z",
+  "cohort": "selection",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "mineral-tiles",
+      "pageId": "mineral-tiles--mosaic-tile",
+      "captureTimestamp": "2026-07-27T04:44:59.925Z",
+      "candidateCardCount": 12,
+      "observationSha256": "ac356ba32f33d16c0a113d7dca4d02633142f38dba226d95022a41555b708276",
+      "annotationScreenshotSha256": "e247ffd8bf3963f886003f69ff7352985e8de9ff91fb1f88d2a4264e08752bcd"
+    },
+    {
+      "siteId": "mineral-tiles",
+      "pageId": "mineral-tiles--porcelain-tile",
+      "captureTimestamp": "2026-07-27T04:44:13.352Z",
+      "candidateCardCount": 12,
+      "observationSha256": "2d8b4823b035554ecfa9a1846f00c25586b16cb64a185b4d6a89618c575a0b32",
+      "annotationScreenshotSha256": "b0ae90737aafd7b0e433b2116f05771c60405f17617f19e2f88d0ab116ef9f3b"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--477cf1838f93547c",
+      "campaignQueueSha256": "a406d9b0d351f013fd04d81fa7e8bf1e57fe23a86664273346daa698a69400b1",
+      "sourceQueueSha256": [
+        "772b70f7d2bcb810f4ff287d98a3fbd63387ce440f3dd3da39925e73ee2d1810",
+        "f34b456f92875c0c423c5d2920c3f20ee2cdae6b83825683e2f3cccc114fa51d"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--090b97825fa2d783",
+      "campaignQueueSha256": "b327694813035101a8c1cadfcc20baa9cda81d08d0980cca8967f12f4ace9c2c",
+      "sourceQueueSha256": [
+        "41eb51526dbb020c76833a6c4280feed6468425fb1e6826e69caf5e35bd73c17",
+        "0be6cccd4c05c41371e08ad0721817afef5cdb592166c0aeecbd87fed8e6b277"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--477cf1838f93547c",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

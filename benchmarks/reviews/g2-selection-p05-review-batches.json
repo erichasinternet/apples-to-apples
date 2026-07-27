@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p05",
+  "createdAt": "2026-07-27T04:49:31.354Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--477cf1838f93547c",
+      "path": "benchmark-data/review/g2-selection-p05/reviewer-a.json",
+      "sha256": "a406d9b0d351f013fd04d81fa7e8bf1e57fe23a86664273346daa698a69400b1",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--090b97825fa2d783",
+      "path": "benchmark-data/review/g2-selection-p05/reviewer-b.json",
+      "sha256": "b327694813035101a8c1cadfcc20baa9cda81d08d0980cca8967f12f4ace9c2c",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p05--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "mineral-tiles--mosaic-tile",
+        "mineral-tiles--porcelain-tile"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--6ecec74f6f9ff9d9",
+          "path": "benchmark-data/review/g2-selection-p05-review-batches/reviewer-a--batch-01.json",
+          "sha256": "daa01dba8b27061b7cdb597bf569f012e62ce07c5c982560912d918cbee6d635"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--ec3ea4e74df66f07",
+          "path": "benchmark-data/review/g2-selection-p05-review-batches/reviewer-b--batch-01.json",
+          "sha256": "5afc4f3df33c39b6bf6f1f7ec46188ac46034d69a73406f584f07eccd412719b"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

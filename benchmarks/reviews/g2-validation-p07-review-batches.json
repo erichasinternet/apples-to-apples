@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p07",
+  "createdAt": "2026-07-27T04:49:31.354Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--48694a40234040d3",
+      "path": "benchmark-data/review/g2-validation-p07/reviewer-a.json",
+      "sha256": "a4654380f527411c7f63e405d41300ecefe96fbebed2276eb2be7a4b96e052a6",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--8b8158d3477d99cf",
+      "path": "benchmark-data/review/g2-validation-p07/reviewer-b.json",
+      "sha256": "50ef66abcbf4fd4ee86850713139e4042e60b7fba393b30d878bf1f550b7a26c",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p07--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "floor-and-decor--floor-tile",
+        "floor-and-decor--vinyl-flooring"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--025e91dc94458581",
+          "path": "benchmark-data/review/g2-validation-p07-review-batches/reviewer-a--batch-01.json",
+          "sha256": "ba04a29c744092dfb68a4bee4a37977ff72da276416f1131bc627208eeb74f75"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--6908f8bc76d49e6a",
+          "path": "benchmark-data/review/g2-validation-p07-review-batches/reviewer-b--batch-01.json",
+          "sha256": "2d637d4d4a454d276519dee33c9880b073f9e0e01b312e83cfbf7d859baac965"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}
