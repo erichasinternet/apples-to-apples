@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p06",
+  "createdAt": "2026-07-27T05:21:44.938Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--3981bc862c34fa5e",
+      "path": "benchmark-data/review/g2-selection-p06/reviewer-a.json",
+      "sha256": "8500194917803a6a100b46a32376da2fe22b523c6ad4f0ad8d93f78e1f51be02",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--dbf967421bb2947c",
+      "path": "benchmark-data/review/g2-selection-p06/reviewer-b.json",
+      "sha256": "66b588492ca154519109f50a6b4a060255a32e718cb36af295f5681a41c40741",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p06--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "medical-mega--exam-gloves",
+        "medical-mega--underpads"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--974c9cb8cb69f577",
+          "path": "benchmark-data/review/g2-selection-p06-review-batches/reviewer-a--batch-01.json",
+          "sha256": "07c68ce656f88f7e8ea2f221d58eba4f2db9f82e2f0488318a07d0937f9efd9f"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--ddd502ca8484b63a",
+          "path": "benchmark-data/review/g2-selection-p06-review-batches/reviewer-b--batch-01.json",
+          "sha256": "d2ceeb230836356b5efb45cf2f2aa87852151c0fc6ae7fbad4cbc8ff4f7bab39"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

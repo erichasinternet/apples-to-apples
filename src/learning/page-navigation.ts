@@ -76,6 +76,13 @@ export function isTransientNavigationError(error: unknown): boolean {
   return TRANSIENT_NAVIGATION_ERROR.test(error instanceof Error ? error.message : String(error));
 }
 
+export function shouldAttemptSemanticSearchRoute(
+  httpStatus: number | undefined,
+  queryTokenCoverage: number
+): boolean {
+  return (httpStatus !== undefined && httpStatus >= 400) || queryTokenCoverage < 1;
+}
+
 export async function submitSemanticSearch(
   page: Page,
   query: string

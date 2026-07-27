@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p06",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T05:21:00.000Z",
+  "source": {
+    "siteIds": [
+      "medical-mega"
+    ],
+    "cohort": "selection",
+    "strata": [
+      "discount-clinical-supply"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "300e20d0be454a333118711bb510b3388220635672207ee7ff8c3c01eb43b19c"
+    ],
+    "collectorSha256": [
+      "a9b9577bd511609d69e6cd036402714040b62f985eecc5be80b2c9d2473cad06"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T05-15-13-948Z",
+      "runManifestSha256": "3c8eda4034f666ceccedffe099959e2451754672b68e3d3374dd2cada7c2281c",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T05-18-33-207Z",
+      "runManifestSha256": "36869ec5a439cf3c6162d84c4cfd94c2d1cc4a8d5acf665b755f133de93b9ac3",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "Medical Mega passed two fresh opposite-viewport p12 captures after site-independent semantic search recovered incomplete storefront routes and was assigned to selection under the frozen gate.",
+    "visualValidationFinding": "Both original-resolution annotation screenshots and all candidate closeups were inspected. The twenty-four frozen roots show coherent exam-glove and underpad grids with readable current and ranged prices, box or pack evidence where offered, dimensions, variants, and ambiguous products available for explicit abstention."
+  },
+  "captures": [
+    {
+      "siteId": "medical-mega",
+      "pageId": "medical-mega--exam-gloves",
+      "capturedAt": "2026-07-27T05:16:05.228Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2195,
+      "observationTruncated": false,
+      "dismissedObstructions": 8,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "d4826095faf99204dc5b473f8e78178c5bde57a478b421bd191b2ba9e787f1c2",
+      "canonicalObservationSha256": "ef511512f8df2de5fd8d22522c5d72ba03bd2e2ec782fc6385c0c80c16ebddeb",
+      "annotationScreenshotSha256": "d3e61ba82d242a758110d4e972608187a9757275bf77286395cb35814dc802da",
+      "provenanceAggregateSha256": "baa3380e5496d72c9d5499acf1cc04b954dfccaf609d9299e7b45a27744c173b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-mega",
+      "pageId": "medical-mega--underpads",
+      "capturedAt": "2026-07-27T05:19:23.268Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1732,
+      "observationTruncated": false,
+      "dismissedObstructions": 8,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "f04809d6a36e6e9c936323815d0b5fc177baee3e482072790430ec1f8d1fb12b",
+      "canonicalObservationSha256": "8dd40c910089f8f520f130b7fdebdc9453f40fc7970821442520ccf4be412104",
+      "annotationScreenshotSha256": "113a975baed9018fec4318676088f91858efdbb567ff1899893f21e5e15c57b9",
+      "provenanceAggregateSha256": "4ceeaa33e4886dac1cb086f74d5107ddd0cedef7f693c30e850f6a1451f62688",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

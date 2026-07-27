@@ -6216,6 +6216,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p07.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-mega",
+      "cohort": "selection",
+      "pageId": "medical-mega--exam-gloves",
+      "captureTimestamp": "2026-07-27T05:16:05.228Z",
+      "observationSha256": "d4826095faf99204dc5b473f8e78178c5bde57a478b421bd191b2ba9e787f1c2",
+      "annotationScreenshotSha256": "d3e61ba82d242a758110d4e972608187a9757275bf77286395cb35814dc802da",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p12.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p06.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-mega",
+      "cohort": "selection",
+      "pageId": "medical-mega--underpads",
+      "captureTimestamp": "2026-07-27T05:19:23.268Z",
+      "observationSha256": "f04809d6a36e6e9c936323815d0b5fc177baee3e482072790430ec1f8d1fb12b",
+      "annotationScreenshotSha256": "113a975baed9018fec4318676088f91858efdbb567ff1899893f21e5e15c57b9",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p12.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p06.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

@@ -594,6 +594,12 @@
       "cohort": "validation",
       "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p11.json",
       "promotedAt": "2026-07-27T05:08:00.000Z"
+    },
+    {
+      "siteId": "medical-mega",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p12.json",
+      "promotedAt": "2026-07-27T05:21:00.000Z"
     }
   ]
 }

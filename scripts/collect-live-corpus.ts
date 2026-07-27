@@ -11,6 +11,7 @@ import path from "node:path";
 import type { PageObservation } from "../src/learning/contracts";
 import {
   navigateForObservation,
+  shouldAttemptSemanticSearchRoute,
   submitSemanticSearch
 } from "../src/learning/page-navigation";
 import { capturePageObservation } from "../src/learning/page-observation";
@@ -299,7 +300,12 @@ async function capturePage(
   let dismissedObstructions = await settlePageForCapture(page);
   let searchState = await readSearchPageState(page, target.query);
 
-  if (response && response.status() >= 400) {
+  if (
+    shouldAttemptSemanticSearchRoute(
+      response?.status(),
+      searchState.queryTokenCoverage
+    )
+  ) {
     const discovery = await attemptSemanticSearchRoute(
       page,
       target,

@@ -1448,6 +1448,26 @@ candidate domains remain in the qualification-yield denominator. The eligible
 registry now contains 518 exact capture identities. Human semantic reviews and
 adjudication remain pending.
 
+A thirteenth bounded retry tested 10 more disjoint, unassigned domains balanced
+across all five unit dimensions. All 12 isolated headed Chromium children
+completed without a parent hard timeout; one page reached its separate 60-second
+capture deadline. A unit-tested policy expanded semantic search recovery to HTTP
+errors or incomplete requested-query evidence while leaving healthy,
+complete-evidence routes untouched. Two desktop pages passed the frozen numeric
+gate and original-resolution review advanced Medical Mega and Bedrosians to
+distinct narrow queries. Bedrosians retained only half of the requested-query
+evidence with zero roots, while Medical Mega qualified with coherent exam-glove
+and underpad grids. It adds 2 selection pages and 24 count roots. Qualified
+held-out structure is now balanced at 10 validation domains with 20 pages and 10
+selection domains with 20 pages, both at 50% narrow-viewport coverage. The
+blinded
+[`g2-selection-p06.json`](../benchmarks/review-campaigns/g2-selection-p06.json)
+campaign and its paired reviewer batch passed headed Playwright Chromium with
+all 24 frozen roots loaded, zero console errors, and zero review writes. All 10
+candidate domains remain in the qualification-yield denominator. The eligible
+registry now contains 520 exact capture identities. Human semantic reviews and
+adjudication remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

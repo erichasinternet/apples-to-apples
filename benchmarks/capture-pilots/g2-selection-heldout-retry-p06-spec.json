@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p06",
+  "capturedAt": "2026-07-27T05:21:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p12.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T05-15-13-948Z",
+      "pageIds": [
+        "medical-mega--exam-gloves"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T05-18-33-207Z",
+      "pageIds": [
+        "medical-mega--underpads"
+      ]
+    }
+  ],
+  "samplingFinding": "Medical Mega passed two fresh opposite-viewport p12 captures after site-independent semantic search recovered incomplete storefront routes and was assigned to selection under the frozen gate.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots and all candidate closeups were inspected. The twenty-four frozen roots show coherent exam-glove and underpad grids with readable current and ranged prices, box or pack evidence where offered, dimensions, variants, and ambiguous products available for explicit abstention."
+}

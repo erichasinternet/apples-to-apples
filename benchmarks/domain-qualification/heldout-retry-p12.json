@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p12",
+  "candidateManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p12.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "4c8acce679bea3ad2e53f44ddeb102eedced137ec0d69da662b2f8f5c0ae5d86",
+    "narrowBatchSha256": "b4db36cb66dcd8608287f3db3749f8be6235789b3cd1c378a4e93cbbf90ff7c1",
+    "processIsolationFinding": "All twelve headed capture children completed under isolated process-group bounds with zero parent hard timeouts. Store Supply Warehouse reached its separate 60000 ms page deadline.",
+    "samplingFinding": "Ten disjoint, unassigned domains with stale routes or incomplete requested-query evidence received a fresh desktop capture. The generic semantic-search fallback was expanded under a unit-tested policy to activate for HTTP errors or incomplete query evidence while leaving healthy complete-evidence pages untouched. Two desktop pages passed the frozen numeric gate and original-resolution review advanced Medical Mega and Bedrosians to distinct narrow queries. Bedrosians failed to recover complete narrow-query evidence; only Medical Mega passed the paired gate. All ten candidate domains remain in the yield denominator.",
+    "manifestIntegrityFinding": "Both accepted captures use frozen retry manifest hash 300e20d0be454a333118711bb510b3388220635672207ee7ff8c3c01eb43b19c and collector hash a9b9577bd511609d69e6cd036402714040b62f985eecc5be80b2c9d2473cad06."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T05-15-13-948Z",
+      "runManifestSha256": "3c8eda4034f666ceccedffe099959e2451754672b68e3d3374dd2cada7c2281c",
+      "purpose": "Medical Mega desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T05-18-33-207Z",
+      "runManifestSha256": "36869ec5a439cf3c6162d84c4cfd94c2d1cc4a8d5acf665b755f133de93b9ac3",
+      "purpose": "Medical Mega narrow qualification capture"
+    }
+  ],
+  "results": {
+    "mountain-rose-herbs": {
+      "status": "rejected",
+      "reason": "Semantic search recovered complete requested-query evidence, but a visible obstruction covered over 99% of the viewport and no reviewable product candidates were captured."
+    },
+    "candle-science": {
+      "status": "rejected",
+      "reason": "The desktop route exposed complete requested-query evidence but no reviewable product candidates."
+    },
+    "paint-supply": {
+      "status": "rejected",
+      "reason": "Semantic search recovered complete requested-query evidence but exposed only five reviewable roots, below the frozen minimum of eight."
+    },
+    "new-directions-aromatics": {
+      "status": "rejected",
+      "reason": "The desktop route exposed complete requested-query evidence but no reviewable product candidates."
+    },
+    "store-supply-warehouse": {
+      "status": "rejected",
+      "reason": "The desktop capture reached the frozen 60000 ms page deadline and produced no reviewable page artifact."
+    },
+    "medical-mega": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "medical-mega--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "medical-mega--underpads",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent medical-supply grids pass in opposite viewports after site-independent semantic search discovery. Frozen card roots expose product identities, current and ranged prices, box or pack quantities where offered, dimensions, variants, and explicit ambiguous cases suitable for abstention."
+    },
+    "wesbell-wire-and-cable": {
+      "status": "rejected",
+      "reason": "Semantic search recovered complete requested-query evidence but exposed only one reviewable root, below the frozen minimum of eight."
+    },
+    "strapworks": {
+      "status": "rejected",
+      "reason": "Semantic search discovery failed and the frozen route returned HTTP 403 with no requested-query evidence or reviewable product candidates."
+    },
+    "bedrosians": {
+      "status": "rejected",
+      "reason": "The coherent porcelain-tile desktop page passed, but the distinct narrow floor-tile query retained only half of the requested-query evidence and exposed no reviewable product candidates."
+    },
+    "tilebar": {
+      "status": "rejected",
+      "reason": "The desktop route exposed complete requested-query evidence but only one reviewable root, below the frozen minimum of eight."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "medical-mega"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "medical-mega",
+        "cohort": "selection"
+      }
+    ],
+    "status": "keep"
+  }
+}

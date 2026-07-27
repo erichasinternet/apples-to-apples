@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "description": "Targeted held-out retry of ten unassigned domains whose prior routes returned HTTP errors or incomplete requested-query evidence. The frozen wave evaluates generic semantic search-route discovery with two domains per supported dimension.",
+  "sites": [
+    {
+      "id": "mountain-rose-herbs",
+      "label": "Mountain Rose Herbs",
+      "hostname": "mountainroseherbs.com",
+      "stratum": "botanical-and-herbal-supply",
+      "searchUrlTemplate": "https://mountainroseherbs.com/search?query={query}",
+      "queries": [
+        {
+          "id": "bulk-herbs",
+          "query": "bulk herbs",
+          "dimension": "mass"
+        },
+        {
+          "id": "culinary-spices",
+          "query": "culinary spices",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "candle-science",
+      "label": "CandleScience",
+      "hostname": "www.candlescience.com",
+      "stratum": "craft-supply",
+      "searchUrlTemplate": "https://www.candlescience.com/search/?q={query}",
+      "queries": [
+        {
+          "id": "candle-wax",
+          "query": "candle wax",
+          "dimension": "mass"
+        },
+        {
+          "id": "soy-wax",
+          "query": "soy wax",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "paint-supply",
+      "label": "Paint Supply",
+      "hostname": "www.paintsupply.com",
+      "stratum": "paint",
+      "searchUrlTemplate": "https://www.paintsupply.com/search/?q={query}",
+      "queries": [
+        {
+          "id": "interior-paint",
+          "query": "interior paint",
+          "dimension": "volume"
+        },
+        {
+          "id": "deck-stain",
+          "query": "deck stain",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "new-directions-aromatics",
+      "label": "New Directions Aromatics",
+      "hostname": "www.newdirectionsaromatics.com",
+      "stratum": "aromatics",
+      "searchUrlTemplate": "https://www.newdirectionsaromatics.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "essential-oil",
+          "query": "essential oil",
+          "dimension": "volume"
+        },
+        {
+          "id": "carrier-oil",
+          "query": "carrier oil",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "store-supply-warehouse",
+      "label": "Store Supply Warehouse",
+      "hostname": "www.storesupply.com",
+      "stratum": "retail-supply",
+      "searchUrlTemplate": "https://www.storesupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "shopping-bags",
+          "query": "shopping bags",
+          "dimension": "count"
+        },
+        {
+          "id": "price-tags",
+          "query": "price tags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "medical-mega",
+      "label": "Medical Mega",
+      "hostname": "medicalmega.com",
+      "stratum": "discount-clinical-supply",
+      "searchUrlTemplate": "https://medicalmega.com/search?q={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "underpads",
+          "query": "underpads",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "wesbell-wire-and-cable",
+      "label": "WesBell Wire and Cable",
+      "hostname": "wesbellwireandcable.com",
+      "stratum": "electrical-supply",
+      "searchUrlTemplate": "https://wesbellwireandcable.com/search?q={query}",
+      "queries": [
+        {
+          "id": "thhn-wire",
+          "query": "THHN wire",
+          "dimension": "length"
+        },
+        {
+          "id": "welding-cable",
+          "query": "welding cable",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "strapworks",
+      "label": "Strapworks",
+      "hostname": "www.strapworks.com",
+      "stratum": "webbing-and-straps",
+      "searchUrlTemplate": "https://www.strapworks.com/search?q={query}",
+      "queries": [
+        {
+          "id": "nylon-webbing",
+          "query": "nylon webbing",
+          "dimension": "length"
+        },
+        {
+          "id": "polyester-webbing",
+          "query": "polyester webbing",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "bedrosians",
+      "label": "Bedrosians Tile & Stone",
+      "hostname": "www.bedrosians.com",
+      "stratum": "national-tile-and-stone-retail",
+      "searchUrlTemplate": "https://www.bedrosians.com/en/search/?q={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "tilebar",
+      "label": "TileBar",
+      "hostname": "www.tilebar.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.tilebar.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        },
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        }
+      ]
+    }
+  ]
+}

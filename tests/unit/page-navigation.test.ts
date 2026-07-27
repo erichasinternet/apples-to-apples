@@ -2,6 +2,7 @@ import type { Page } from "@playwright/test";
 import {
   isTransientNavigationError,
   navigateForObservation,
+  shouldAttemptSemanticSearchRoute,
   submitSemanticSearch
 } from "../../src/learning/page-navigation";
 
@@ -129,6 +130,13 @@ describe("observation navigation", () => {
       submitted: false,
       openedSearch: false
     });
+  });
+
+  it("limits semantic route recovery to HTTP failures or incomplete query evidence", () => {
+    expect(shouldAttemptSemanticSearchRoute(200, 1)).toBe(false);
+    expect(shouldAttemptSemanticSearchRoute(undefined, 1)).toBe(false);
+    expect(shouldAttemptSemanticSearchRoute(404, 1)).toBe(true);
+    expect(shouldAttemptSemanticSearchRoute(200, 0.5)).toBe(true);
   });
 });
 

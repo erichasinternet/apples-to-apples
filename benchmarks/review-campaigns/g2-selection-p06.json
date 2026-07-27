@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p06",
+  "createdAt": "2026-07-27T05:22:00.000Z",
+  "cohort": "selection",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "medical-mega",
+      "pageId": "medical-mega--exam-gloves",
+      "captureTimestamp": "2026-07-27T05:16:05.228Z",
+      "candidateCardCount": 12,
+      "observationSha256": "d4826095faf99204dc5b473f8e78178c5bde57a478b421bd191b2ba9e787f1c2",
+      "annotationScreenshotSha256": "d3e61ba82d242a758110d4e972608187a9757275bf77286395cb35814dc802da"
+    },
+    {
+      "siteId": "medical-mega",
+      "pageId": "medical-mega--underpads",
+      "captureTimestamp": "2026-07-27T05:19:23.268Z",
+      "candidateCardCount": 12,
+      "observationSha256": "f04809d6a36e6e9c936323815d0b5fc177baee3e482072790430ec1f8d1fb12b",
+      "annotationScreenshotSha256": "113a975baed9018fec4318676088f91858efdbb567ff1899893f21e5e15c57b9"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--3981bc862c34fa5e",
+      "campaignQueueSha256": "8500194917803a6a100b46a32376da2fe22b523c6ad4f0ad8d93f78e1f51be02",
+      "sourceQueueSha256": [
+        "f729660f41945bd25d20d24d817e62796e4f71ff49942f246104bf482d3bc8db",
+        "8a951fdf7ad14448e5f3f2507fb0e6e2c639d338632f877b23663c66347666a9"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--dbf967421bb2947c",
+      "campaignQueueSha256": "66b588492ca154519109f50a6b4a060255a32e718cb36af295f5681a41c40741",
+      "sourceQueueSha256": [
+        "0c63f5379ef4bd517bd17d7481e24c6ed2951a38951a1a3e5fe06e373da7ae8b",
+        "00557423cf7c7f41f1a8e2681fe6b8bcf76b8cec12f7b423834d115bc765ca42"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--3981bc862c34fa5e",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}
