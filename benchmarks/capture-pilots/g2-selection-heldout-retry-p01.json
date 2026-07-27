@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p01",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T03:08:00.000Z",
+  "source": {
+    "siteIds": [
+      "discount-medical-supplies",
+      "shop-med-vet"
+    ],
+    "cohort": "selection",
+    "strata": [
+      "discount-clinical-supply",
+      "medical-and-veterinary-supply-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "daea650df1196701bf927fb4680f4cdc9e90e6769969be05b562ba3d5849b47c"
+    ],
+    "collectorSha256": [
+      "6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T03-04-10-417Z",
+      "runManifestSha256": "dff581c3790e9fe77f3784a09aef0868f2e8e389e95b6eceaf22f5572bd6d93a",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T03-07-05-667Z",
+      "runManifestSha256": "7e6756c035b6fd9214588d4dc041b30dfeeb56ad4e44056fbc56d24664a91113",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T03-04-19-842Z",
+      "runManifestSha256": "1e6016dd50fe956a6aaf50192654354e0290b6ba8be09dbd7bc5eaefac66056e",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T03-07-15-273Z",
+      "runManifestSha256": "ba7c49bafc1318dc40d9a6c24d37885def68baa5e6f2982357c32cd53c79e12c",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 4,
+    "successfulCaptureAttempts": 4,
+    "acceptedPages": 4,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 46,
+    "samplingFinding": "Discount Medical Supplies and Shop Med Vet were two of ten disjoint, unassigned domains in a bounded held-out retry. They were assigned to selection only after two fresh opposite-viewport pages passed per domain.",
+    "visualValidationFinding": "Original-resolution annotation screenshots and all forty-six root closeups were inspected. All four pages show coherent requested-query medical or veterinary supply products with readable price and package evidence."
+  },
+  "captures": [
+    {
+      "siteId": "discount-medical-supplies",
+      "pageId": "discount-medical-supplies--exam-gloves",
+      "capturedAt": "2026-07-27T03:04:18.664Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 5,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 834,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.0049,
+      "queryTokenCoverage": 1,
+      "observationSha256": "75bef91b0494127aaddab58d0864634e2d79a8e62fa38e535cbaa7eac50f7600",
+      "canonicalObservationSha256": "cb337459b6c51698b50e7fb226b1c88f577b21c4cf62411e0910e6652d958cfe",
+      "annotationScreenshotSha256": "09f762259162845edb4b6fdee395f4eafce1dda7201ed01b6cec36e2941b0601",
+      "provenanceAggregateSha256": "78ed0d252f4fb6c41daf3657a7632f7992a0e15ae89c639153a797cfc7e3079b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "discount-medical-supplies",
+      "pageId": "discount-medical-supplies--underpads",
+      "capturedAt": "2026-07-27T03:07:14.105Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 5,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 702,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.014047879450723052,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c3378a38fee4074eaec4a13a627f191d706e78b67095cb34f6522cf7e2861904",
+      "canonicalObservationSha256": "e2f65d3a95d8be057268c738d4d3f5b28da8a44463b9b245cf45858cb134d582",
+      "annotationScreenshotSha256": "f134cead4a97b67604fb3ec032b884ddab071aa086daf807b4568f9ed3c779be",
+      "provenanceAggregateSha256": "2231ef7b413018520ce55af6382909c7c67218bbdbff755e926401d806a22332",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "pageId": "shop-med-vet--exam-gloves",
+      "capturedAt": "2026-07-27T03:04:31.091Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2143,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0.00986111111111111,
+      "queryTokenCoverage": 1,
+      "observationSha256": "59c6be95dca2c0e59368b3d4bf598c1fe9d9166588a8926da5d80ccdff07dc1f",
+      "canonicalObservationSha256": "787d286682b7fa929536311d89cea973a9d12092bf23a48d906169774e9c0cd0",
+      "annotationScreenshotSha256": "49b65bfed322fc70fc79c2a046e281a81120ede9a8e6c4d81458f0c1af569a1a",
+      "provenanceAggregateSha256": "7c357024888d40b2427f7124cd4b55757d321ef057c9abe978e69856e559b9e0",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "pageId": "shop-med-vet--syringes",
+      "capturedAt": "2026-07-27T03:07:26.630Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 10,
+      "candidateScreenshotsCaptured": 10,
+      "observationNodeCount": 2397,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0.043140114230161626,
+      "queryTokenCoverage": 1,
+      "observationSha256": "295d4f9b5e89b8bc0f3b7a7660aac9815b757d8b3504c9cc0a43a7c21b40ac0e",
+      "canonicalObservationSha256": "0f168acd4a40cd0ef8c4a77aa77895f1cc71e67fc98feff048803fe299634fd1",
+      "annotationScreenshotSha256": "03ad614629af6a0ea20c21dd28110cb8d03cbc2ecbc708c97aa9a01902c7c4f6",
+      "provenanceAggregateSha256": "903f23e567907fa46d404d5b1c8a65856e5bc773f0a807071c94316394460464",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

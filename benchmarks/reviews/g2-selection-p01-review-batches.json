@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p01",
+  "createdAt": "2026-07-27T03:14:05.961Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--7858ba4a3a6c620b",
+      "path": "benchmark-data/review/g2-selection-p01/reviewer-a.json",
+      "sha256": "3c4b12db786e8b913d7e72ad143fcc97b0de10aaf4607eff32e8b7ab9d4a814a",
+      "pages": 4
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--1da7d9714121e1ec",
+      "path": "benchmark-data/review/g2-selection-p01/reviewer-b.json",
+      "sha256": "913fe07a0562b943ef32b78ded37ac2f6581ba0912f12766082856856df96494",
+      "pages": 4
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 4,
+    "candidateCards": 46
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p01--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "discount-medical-supplies--exam-gloves",
+        "discount-medical-supplies--underpads",
+        "shop-med-vet--exam-gloves",
+        "shop-med-vet--syringes"
+      ],
+      "pages": 4,
+      "candidateCards": 46,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--46423e585901e603",
+          "path": "benchmark-data/review/g2-selection-p01-review-batches/reviewer-a--batch-01.json",
+          "sha256": "853cf64e00c4b77612b89acfc5c7bd8cadc9f1db3d8abf6ff3cc52779a0ff6e1"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--9fd94651fb16088a",
+          "path": "benchmark-data/review/g2-selection-p01-review-batches/reviewer-b--batch-01.json",
+          "sha256": "be382fd6b777512a62276e862bd42e7908ba07652b61e95ceb6923098e0d7dc8"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

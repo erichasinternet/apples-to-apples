@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p02",
+  "candidateManifest": "benchmarks/live-sites/heldout-qualification-retry-p02.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "62596b8f44563be42929ee120318805374ab5d108a60a13018a77947ca7f00b6",
+    "narrowBatchSha256": "d8028632e818cadad3cd0f2d2969dc7bdb76d49930bcafe09a75fdd9e05059fe",
+    "processIsolationFinding": "All seventeen headed capture children completed under isolated process-group bounds with zero hard timeouts.",
+    "samplingFinding": "Ten unassigned candidates received a fresh desktop capture. Seven visually accepted desktop pages received a distinct narrow capture. Discount Medical Supplies and Shop Med Vet passed both viewport gates; no old partial capture was reused.",
+    "manifestIntegrityFinding": "All four accepted captures use the frozen retry manifest hash daea650df1196701bf927fb4680f4cdc9e90e6769969be05b562ba3d5849b47c and collector hash 6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T03-04-10-417Z",
+      "runManifestSha256": "dff581c3790e9fe77f3784a09aef0868f2e8e389e95b6eceaf22f5572bd6d93a",
+      "purpose": "Discount Medical Supplies desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-07-05-667Z",
+      "runManifestSha256": "7e6756c035b6fd9214588d4dc041b30dfeeb56ad4e44056fbc56d24664a91113",
+      "purpose": "Discount Medical Supplies narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-04-19-842Z",
+      "runManifestSha256": "1e6016dd50fe956a6aaf50192654354e0290b6ba8be09dbd7bc5eaefac66056e",
+      "purpose": "Shop Med Vet desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-07-15-273Z",
+      "runManifestSha256": "ba7c49bafc1318dc40d9a6c24d37885def68baa5e6f2982357c32cd53c79e12c",
+      "purpose": "Shop Med Vet narrow qualification capture"
+    }
+  ],
+  "results": {
+    "allworld-packaging": {
+      "status": "rejected",
+      "reason": "The coherent desktop paper-bag page passed, but unresolved promotion UI covered 27 percent of the distinct narrow shipping-box viewport."
+    },
+    "fastfloors": {
+      "status": "rejected",
+      "reason": "The coherent desktop vinyl-flooring page passed, but unresolved UI covered 82 percent of the distinct narrow carpet-tile viewport."
+    },
+    "world-spice": {
+      "status": "rejected",
+      "reason": "The desktop page passed numeric checks, but original-resolution visual review showed a large delayed newsletter modal obscuring most product evidence."
+    },
+    "we-sell-mats": {
+      "status": "rejected",
+      "reason": "The desktop page was coherent, but original-resolution visual review found only one actual distinct product in the narrow rubber-fitness-mats collection despite inflated frozen candidate roots."
+    },
+    "discount-medical-supplies": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "discount-medical-supplies--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0049,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "discount-medical-supplies--underpads",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.014047879450723052,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent medical-supply grids pass in opposite viewports. Cards expose prices, case and box quantities, size variants, starting-price offers, and products where sale basis must be distinguished from descriptive medical dimensions."
+    },
+    "shop-med-vet": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "shop-med-vet--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.00986111111111111,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "shop-med-vet--syringes",
+          "viewportProfile": "narrow",
+          "candidateCount": 10,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.043140114230161626,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent medical and veterinary supply grids pass in opposite viewports. Cards expose unit counts, pack and case offers, gauge and volume descriptors, price ranges, and product variants that require precise evidence binding."
+    },
+    "med-on-the-go": {
+      "status": "rejected",
+      "reason": "The desktop page passed numeric checks, but original-resolution visual review found a 597-result set dominated by catheter kits, procedure kits, dressings, tape, and other query-adjacent products rather than coherent glove listings."
+    },
+    "organic-cotton-plus": {
+      "status": "rejected",
+      "reason": "The desktop page was coherent, but original-resolution visual review found too few actual distinct products in the narrow cotton-rope page despite inflated frozen candidate roots."
+    },
+    "berlin-packaging": {
+      "status": "rejected",
+      "reason": "The desktop plastic-bottle page was plausible, but the distinct narrow glass-jars capture contained zero query evidence."
+    },
+    "candle-science": {
+      "status": "rejected",
+      "reason": "The fresh desktop candle-wax page exposed no reviewable product roots."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "discount-medical-supplies",
+      "shop-med-vet"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "discount-medical-supplies",
+        "cohort": "selection"
+      },
+      {
+        "siteId": "shop-med-vet",
+        "cohort": "selection"
+      }
+    ],
+    "status": "keep"
+  }
+}

@@ -5880,6 +5880,54 @@
       "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p01.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "discount-medical-supplies",
+      "cohort": "selection",
+      "pageId": "discount-medical-supplies--exam-gloves",
+      "captureTimestamp": "2026-07-27T03:04:18.664Z",
+      "observationSha256": "75bef91b0494127aaddab58d0864634e2d79a8e62fa38e535cbaa7eac50f7600",
+      "annotationScreenshotSha256": "09f762259162845edb4b6fdee395f4eafce1dda7201ed01b6cec36e2941b0601",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p02.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p01.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "discount-medical-supplies",
+      "cohort": "selection",
+      "pageId": "discount-medical-supplies--underpads",
+      "captureTimestamp": "2026-07-27T03:07:14.105Z",
+      "observationSha256": "c3378a38fee4074eaec4a13a627f191d706e78b67095cb34f6522cf7e2861904",
+      "annotationScreenshotSha256": "f134cead4a97b67604fb3ec032b884ddab071aa086daf807b4568f9ed3c779be",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p02.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p01.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "cohort": "selection",
+      "pageId": "shop-med-vet--exam-gloves",
+      "captureTimestamp": "2026-07-27T03:04:31.091Z",
+      "observationSha256": "59c6be95dca2c0e59368b3d4bf598c1fe9d9166588a8926da5d80ccdff07dc1f",
+      "annotationScreenshotSha256": "49b65bfed322fc70fc79c2a046e281a81120ede9a8e6c4d81458f0c1af569a1a",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p02.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p01.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "cohort": "selection",
+      "pageId": "shop-med-vet--syringes",
+      "captureTimestamp": "2026-07-27T03:07:26.630Z",
+      "observationSha256": "295d4f9b5e89b8bc0f3b7a7660aac9815b757d8b3504c9cc0a43a7c21b40ac0e",
+      "annotationScreenshotSha256": "03ad614629af6a0ea20c21dd28110cb8d03cbc2ecbc708c97aa9a01902c7c4f6",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p02.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p01.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

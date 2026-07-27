@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p01",
+  "capturedAt": "2026-07-27T03:08:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-qualification-retry-p02.json",
+  "requestedCaptureAttempts": 4,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-04-10-417Z",
+      "pageIds": [
+        "discount-medical-supplies--exam-gloves"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-07-05-667Z",
+      "pageIds": [
+        "discount-medical-supplies--underpads"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-04-19-842Z",
+      "pageIds": [
+        "shop-med-vet--exam-gloves"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-07-15-273Z",
+      "pageIds": [
+        "shop-med-vet--syringes"
+      ]
+    }
+  ],
+  "samplingFinding": "Discount Medical Supplies and Shop Med Vet were two of ten disjoint, unassigned domains in a bounded held-out retry. They were assigned to selection only after two fresh opposite-viewport pages passed per domain.",
+  "visualValidationFinding": "Original-resolution annotation screenshots and all forty-six root closeups were inspected. All four pages show coherent requested-query medical or veterinary supply products with readable price and package evidence."
+}

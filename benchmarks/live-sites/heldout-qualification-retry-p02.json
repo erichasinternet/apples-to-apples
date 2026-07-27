@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "description": "Third capture-only held-out retry manifest prioritizing underrepresented count, mass, area, length, and volume strata. Every site remains unassigned until two fresh opposite-viewport pages pass the frozen machine and visual gate.",
+  "sites": [
+    {
+      "id": "allworld-packaging",
+      "label": "Allworld Packaging",
+      "hostname": "allworldpackaging.com",
+      "stratum": "packaging-wholesale",
+      "searchUrlTemplate": "https://allworldpackaging.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "paper-bags", "query": "paper bags", "dimension": "count"},
+        {"id": "shipping-boxes", "query": "shipping boxes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "fastfloors",
+      "label": "FastFloors",
+      "hostname": "www.fastfloors.com",
+      "stratum": "flooring-retail",
+      "searchUrlTemplate": "https://www.fastfloors.com/search?q={query}",
+      "queries": [
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"},
+        {"id": "carpet-tile", "query": "carpet tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "world-spice",
+      "label": "World Spice",
+      "hostname": "worldspice.com",
+      "stratum": "artisan-spice-retail",
+      "searchUrlTemplate": "https://worldspice.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "garlic-powder", "query": "garlic powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "we-sell-mats",
+      "label": "We Sell Mats",
+      "hostname": "www.wesellmats.com",
+      "stratum": "interlocking-mat-retail",
+      "searchUrlTemplate": "https://www.wesellmats.com/collections/{querySlug}",
+      "queries": [
+        {"id": "foam-fitness-mats", "query": "foam fitness mats", "querySlug": "foam-fitness-mats", "dimension": "area"},
+        {"id": "rubber-fitness-mats", "query": "rubber fitness mats", "querySlug": "rubber-fitness-mats", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "discount-medical-supplies",
+      "label": "Discount Medical Supplies",
+      "hostname": "discountmedicalsupplies.com",
+      "stratum": "discount-clinical-supply",
+      "searchUrlTemplate": "https://discountmedicalsupplies.com/search?q={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "shop-med-vet",
+      "label": "Med-Vet International",
+      "hostname": "www.shopmedvet.com",
+      "stratum": "medical-and-veterinary-supply-retail",
+      "searchUrlTemplate": "https://www.shopmedvet.com/search?keywords={query}",
+      "queries": [
+        {"id": "exam-gloves", "query": "exam gloves", "dimension": "count"},
+        {"id": "syringes", "query": "syringes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "med-on-the-go",
+      "label": "MedOnTheGo",
+      "hostname": "www.medonthego.com",
+      "stratum": "online-medical-supply-retail",
+      "searchUrlTemplate": "https://www.medonthego.com/search.asp?keyword={query}",
+      "queries": [
+        {"id": "gloves", "query": "gloves", "dimension": "count"},
+        {"id": "syringes", "query": "syringes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "organic-cotton-plus",
+      "label": "Organic Cotton Plus",
+      "hostname": "organiccottonplus.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://organiccottonplus.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "cotton-rope", "query": "cotton rope", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "berlin-packaging",
+      "label": "Berlin Packaging",
+      "hostname": "www.berlinpackaging.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.berlinpackaging.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "plastic-bottles", "query": "plastic bottles", "dimension": "volume"},
+        {"id": "glass-jars", "query": "glass jars", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "candle-science",
+      "label": "CandleScience",
+      "hostname": "www.candlescience.com",
+      "stratum": "craft-supply",
+      "searchUrlTemplate": "https://www.candlescience.com/search/?q={query}",
+      "queries": [
+        {"id": "candle-wax", "query": "candle wax", "dimension": "mass"},
+        {"id": "candle-wicks", "query": "candle wicks", "dimension": "count"}
+      ]
+    }
+  ]
+}

@@ -1278,6 +1278,25 @@ eligible registry now contains 490 exact capture identities; these new roots
 remain ineligible for benchmark gold until two independent human reviews and
 third-party adjudication are complete.
 
+A third bounded retry tested 10 more unassigned domains across packaging,
+flooring, spices, fitness mats, medical supplies, textiles, and candle
+materials. All 17 isolated headed Chromium children completed without a hard
+timeout. Seven desktop pages advanced to distinct narrow queries, but strict
+machine and original-resolution visual review qualified only Discount Medical
+Supplies and Shop Med Vet. The eight rejected domains retained explicit
+obstruction, query-coherence, distinct-product-count, or missing-evidence
+failures in
+[`heldout-retry-p02.json`](../benchmarks/domain-qualification/heldout-retry-p02.json).
+The two qualified domains add 4 selection pages and 46 roots, increasing
+qualified selection coverage to 4 domains, 8 pages, and 4 narrow-viewport
+pages. The blinded
+[`g2-selection-p01.json`](../benchmarks/review-campaigns/g2-selection-p01.json)
+campaign and paired reviewer batch both passed headed Playwright Chromium with
+all 46 frozen roots loaded, zero console errors, and zero review writes. The
+eligible registry now contains 494 exact capture identities. These roots remain
+ineligible for benchmark gold until two independent human reviews and
+third-party adjudication are complete.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

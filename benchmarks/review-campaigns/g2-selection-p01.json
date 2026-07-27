@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p01",
+  "createdAt": "2026-07-27T03:10:00.000Z",
+  "cohort": "selection",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "discount-medical-supplies",
+      "pageId": "discount-medical-supplies--exam-gloves",
+      "captureTimestamp": "2026-07-27T03:04:18.664Z",
+      "candidateCardCount": 12,
+      "observationSha256": "75bef91b0494127aaddab58d0864634e2d79a8e62fa38e535cbaa7eac50f7600",
+      "annotationScreenshotSha256": "09f762259162845edb4b6fdee395f4eafce1dda7201ed01b6cec36e2941b0601"
+    },
+    {
+      "siteId": "discount-medical-supplies",
+      "pageId": "discount-medical-supplies--underpads",
+      "captureTimestamp": "2026-07-27T03:07:14.105Z",
+      "candidateCardCount": 12,
+      "observationSha256": "c3378a38fee4074eaec4a13a627f191d706e78b67095cb34f6522cf7e2861904",
+      "annotationScreenshotSha256": "f134cead4a97b67604fb3ec032b884ddab071aa086daf807b4568f9ed3c779be"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "pageId": "shop-med-vet--exam-gloves",
+      "captureTimestamp": "2026-07-27T03:04:31.091Z",
+      "candidateCardCount": 12,
+      "observationSha256": "59c6be95dca2c0e59368b3d4bf598c1fe9d9166588a8926da5d80ccdff07dc1f",
+      "annotationScreenshotSha256": "49b65bfed322fc70fc79c2a046e281a81120ede9a8e6c4d81458f0c1af569a1a"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "pageId": "shop-med-vet--syringes",
+      "captureTimestamp": "2026-07-27T03:07:26.630Z",
+      "candidateCardCount": 10,
+      "observationSha256": "295d4f9b5e89b8bc0f3b7a7660aac9815b757d8b3504c9cc0a43a7c21b40ac0e",
+      "annotationScreenshotSha256": "03ad614629af6a0ea20c21dd28110cb8d03cbc2ecbc708c97aa9a01902c7c4f6"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--7858ba4a3a6c620b",
+      "campaignQueueSha256": "3c4b12db786e8b913d7e72ad143fcc97b0de10aaf4607eff32e8b7ab9d4a814a",
+      "sourceQueueSha256": [
+        "eb50e0eaae36b54c4a7fad150722924c66104c5662c69ea806af1e829c043972",
+        "4760527f94e879e0b6cf7b6c5d97e03a4f4014671845bb9bc50c4acaacf4009b",
+        "377b7475effef4e6891d9bc78837dda95a51a79c609da7069b65928c3b684893",
+        "4d9fbeb06443781f1f0900f917f1f834c0558dc64e6bcdbe0c7b7c4265835a04"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--1da7d9714121e1ec",
+      "campaignQueueSha256": "913fe07a0562b943ef32b78ded37ac2f6581ba0912f12766082856856df96494",
+      "sourceQueueSha256": [
+        "0079d5926a449a899a9a4efdbd2e56c1149b3f51f755e6d79d58a966e2cdd862",
+        "842fe60dda5a57697349094910e0ef4d7e2e3ad2e2c0e48097fcac21ca403e0b",
+        "44ff840bd9784c4fde940a8c3eb021272f07506cb394dd011142c06e57868a2c",
+        "3ff1989df88a9940ec89dccec4708c33478cb5248114356103006b45dedd3a90"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--7858ba4a3a6c620b",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 4,
+    "screenshotsLoaded": 4,
+    "candidateCards": 46,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}
