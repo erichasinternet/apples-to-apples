@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p08",
+  "capturedAt": "2026-07-27T06:24:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p14.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T06-21-34-299Z",
+      "pageIds": [
+        "farmhouse-fabrics--cotton-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T06-22-35-378Z",
+      "pageIds": [
+        "farmhouse-fabrics--linen-fabric"
+      ]
+    }
+  ],
+  "samplingFinding": "Farmhouse Fabrics passed two fresh opposite-viewport p14 captures after a generic visible-obstruction correction and was assigned to validation under the frozen gate.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots and all candidate closeups were inspected. The twenty-four frozen roots show coherent cotton and linen fabric cards with readable titles, widths, fiber content, prices, and quantity controls."
+}

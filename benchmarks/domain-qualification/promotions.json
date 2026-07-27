@@ -600,6 +600,24 @@
       "cohort": "selection",
       "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p12.json",
       "promotedAt": "2026-07-27T05:21:00.000Z"
+    },
+    {
+      "siteId": "correct-products",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p14.json",
+      "promotedAt": "2026-07-27T06:24:00.000Z"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p14.json",
+      "promotedAt": "2026-07-27T06:24:00.000Z"
+    },
+    {
+      "siteId": "best-laminate",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p14.json",
+      "promotedAt": "2026-07-27T06:24:00.000Z"
     }
   ]
 }

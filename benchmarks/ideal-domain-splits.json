@@ -124,7 +124,8 @@
     "mosaic-tile-direct",
     "go-bulk-medical",
     "floor-and-decor",
-    "fabric-direct"
+    "fabric-direct",
+    "farmhouse-fabrics"
   ],
   "selection": [
     "petflow",
@@ -146,7 +147,9 @@
     "burlap-and-barrel",
     "the-linen-lab",
     "mineral-tiles",
-    "medical-mega"
+    "medical-mega",
+    "correct-products",
+    "best-laminate"
   ],
   "final": [],
   "retired": [

@@ -1494,6 +1494,28 @@ zero review writes. The active eligible registry remains at 520 exact capture
 identities; one superseded identity is preserved in the retirement registry.
 Human semantic reviews and adjudication remain pending.
 
+A fifteenth bounded retry screened 10 never-retried, disjoint domains with two
+candidates per unit dimension. Three domains qualified after original-resolution
+evidence exposed and verified two generic collector defects: transparent closed
+fixed drawers were incorrectly counted as visible obstructions, and two-column
+responsive rows could replace standard explicit product identities as candidate
+roots. Unit-tested obstruction handling and atomic identity preservation produced
+six final captures under one collector hash. Correct Products contributes count
+evidence, Farmhouse Fabrics contributes length evidence, and Bestlaminate
+contributes area evidence. Each domain passes distinct desktop and narrow queries
+with 12 independent roots per page, complete query evidence, no truncation, and
+obstruction coverage below the frozen 20% limit. Qualified held-out structure is
+now 11 validation domains with 22 pages and 12 selection domains with 24 pages,
+both at 50% narrow-viewport coverage. The blinded
+[`g2-validation-p09.json`](../benchmarks/review-campaigns/g2-validation-p09.json)
+and
+[`g2-selection-p07.json`](../benchmarks/review-campaigns/g2-selection-p07.json)
+campaigns and their paired reviewer batches passed headed Playwright Chromium
+with all 72 frozen roots loaded, zero console errors, and zero review writes.
+All 10 candidate domains remain in the qualification-yield denominator. The
+eligible registry now contains 526 exact capture identities; human semantic
+reviews and adjudication remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

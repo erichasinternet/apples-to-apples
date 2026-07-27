@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p07",
+  "capturedAt": "2026-07-27T06:24:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p14.json",
+  "requestedCaptureAttempts": 4,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T06-21-18-545Z",
+      "pageIds": [
+        "correct-products--poly-bags"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T06-21-51-958Z",
+      "pageIds": [
+        "best-laminate--vinyl-flooring"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T06-22-20-471Z",
+      "pageIds": [
+        "correct-products--shipping-labels"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T06-22-53-399Z",
+      "pageIds": [
+        "best-laminate--laminate-flooring"
+      ]
+    }
+  ],
+  "samplingFinding": "Correct Products and Bestlaminate passed fresh opposite-viewport p14 pairs after generic obstruction and atomic product-root corrections and were assigned to selection under the frozen gate.",
+  "visualValidationFinding": "All four original-resolution annotation screenshots and all candidate closeups were inspected. The forty-eight frozen roots show atomic industrial-packaging and flooring cards with readable product identity, current price, quantity or area basis, and explicit ambiguous cases for abstention."
+}

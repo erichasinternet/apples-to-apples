@@ -6240,6 +6240,78 @@
       "pilotReport": "benchmarks/capture-pilots/g2-training-correction-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "cohort": "validation",
+      "pageId": "farmhouse-fabrics--cotton-fabric",
+      "captureTimestamp": "2026-07-27T06:21:50.788Z",
+      "observationSha256": "613c72b8a3fa32b2f7d7a7cee1e43c7e153d69f67fe6ca04890db27dd77f4585",
+      "annotationScreenshotSha256": "e45a6a65c16791900899651e580853d28115afd4469cec9df225d1c6a620119e",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p14.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p08.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "cohort": "validation",
+      "pageId": "farmhouse-fabrics--linen-fabric",
+      "captureTimestamp": "2026-07-27T06:22:52.303Z",
+      "observationSha256": "0e3406c221dfda33c5a5e59e0e40081f48cdb604c61f4f596debee903b92d72b",
+      "annotationScreenshotSha256": "3e446974fb7cd7654999dbe085a39caa2846723b46bbd88ffa30cee84544d1ee",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p14.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p08.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "correct-products",
+      "cohort": "selection",
+      "pageId": "correct-products--poly-bags",
+      "captureTimestamp": "2026-07-27T06:21:32.911Z",
+      "observationSha256": "47ab6062cf4dae276287d351a8c0b6d251496af83f70f379c6d6df41b86949c1",
+      "annotationScreenshotSha256": "a16458cfa39e74dd2260f1ee865b93da4039cf06fff716e7a5d82d57d798d98b",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p14.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p07.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "best-laminate",
+      "cohort": "selection",
+      "pageId": "best-laminate--vinyl-flooring",
+      "captureTimestamp": "2026-07-27T06:22:11.790Z",
+      "observationSha256": "ff93033941c1c1eff4f45fce73b993c7e6673a9d4ce3f91ba92688f0838256af",
+      "annotationScreenshotSha256": "1d38ef016fd61f0058449024c18d79beb7e88cef16728f73a092750c02a5fc3a",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p14.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p07.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "correct-products",
+      "cohort": "selection",
+      "pageId": "correct-products--shipping-labels",
+      "captureTimestamp": "2026-07-27T06:22:34.278Z",
+      "observationSha256": "1f1f37261cf825984845d7b954d68e969a0ad2859cd7381d371b9e59f5e9f843",
+      "annotationScreenshotSha256": "918e6637f88318c5e61242ea34976688fb1de234907c4c518e90228f8fe11dce",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p14.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p07.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "best-laminate",
+      "cohort": "selection",
+      "pageId": "best-laminate--laminate-flooring",
+      "captureTimestamp": "2026-07-27T06:23:02.857Z",
+      "observationSha256": "bc7b2f87c684ac89d71ba25b0dfcc26a90ab74538551cbfc16624924450de3a9",
+      "annotationScreenshotSha256": "3ae33fc466a917a35dba74d5503621685acbb34f97bf1ff72f0cf35b495b5171",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p14.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p07.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

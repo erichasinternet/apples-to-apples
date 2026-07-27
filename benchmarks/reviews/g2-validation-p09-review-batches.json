@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p09",
+  "createdAt": "2026-07-27T06:29:21.850Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--bc79a6c2cf88fb86",
+      "path": "benchmark-data/review/g2-validation-p09/reviewer-a.json",
+      "sha256": "0071ab873eac6c837a9b93f5846eaf884a0835a98017bf92288b7bd4ed62378a",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--9e62b5973a461bfa",
+      "path": "benchmark-data/review/g2-validation-p09/reviewer-b.json",
+      "sha256": "4da9983e94fe6f8dc1ad76ee5729101c8a6685e0d6317a667be5e550b55b3768",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p09--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "farmhouse-fabrics--cotton-fabric",
+        "farmhouse-fabrics--linen-fabric"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--896f898c5135afea",
+          "path": "benchmark-data/review/g2-validation-p09-review-batches/reviewer-a--batch-01.json",
+          "sha256": "90525330382d6523743192ffdcb52544511bac98514ca9ff7c37ddbf6770a08a"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--3f1c6312e9441490",
+          "path": "benchmark-data/review/g2-validation-p09-review-batches/reviewer-b--batch-01.json",
+          "sha256": "be96835af0dfd929f59c25a75108a935ce58821d897ce4fe1d09a6a30a5fb480"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

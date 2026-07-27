@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p14",
+  "candidateManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p14.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "initialDesktopBatchSha256": "58664d7a6c4a2f80f310ca01182dd90c7caefeb5a784f7f6d13b0bb58dc33754",
+    "acceptedDesktopBatchSha256": "551525cc6be6ed5edf5bde1ab999c382fe3eb15de2dc8baf69cc8458d0b8e960",
+    "acceptedNarrowBatchSha256": "8ed7b8df967fe02b30ce8f59981986c905dbb991e4bc27147e370a5981d3ece6",
+    "processIsolationFinding": "All sixteen final headed qualification and accepted-capture children completed under isolated process-group bounds with zero parent hard timeouts.",
+    "samplingFinding": "Ten disjoint, never-retried domains balanced across all five dimensions received a desktop screen. Correct Products passed directly. Original-resolution review proved that Farmhouse Fabrics was rejected by a transparent full-viewport fixed mini-cart shell and that Bestlaminate was rejected by a standard visible consent panel. Generic, unit-tested obstruction handling corrected both cases. Narrow review then exposed two-product responsive row roots on Correct Products; explicit standard product identities are now preserved as atomic roots. Final recapture under one collector hash produced three qualifying opposite-viewport domain pairs. All ten domains remain in the yield denominator.",
+    "manifestIntegrityFinding": "All six accepted captures use frozen retry manifest hash 2a70e5339b249250c6e263b2ef06051ead616a5fb99d30cc55e44eee6acbd47d and collector hash cdc056b57f525ae389e514a3beea6bcd02c5c1512ccb691d2f73e81bc748f8ab."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T06-21-18-545Z",
+      "runManifestSha256": "2c538bf9e86be66fb57a03775159eaf17bbb5688c75e240dd76f3048ce484161",
+      "purpose": "Correct Products desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T06-21-34-299Z",
+      "runManifestSha256": "ba8133dc03cbe3140999998e41ac6043ede43810c465e424830a95bffa57d339",
+      "purpose": "Farmhouse Fabrics desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T06-21-51-958Z",
+      "runManifestSha256": "10020cffab977af266a1094168c30bba8d2dd3c705aada62e9d48ae4a6732fdd",
+      "purpose": "Bestlaminate desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T06-22-20-471Z",
+      "runManifestSha256": "951f67d0b1d3b5e325a83df05654b6abf257ce9005d7ced7a847ffb487915cdb",
+      "purpose": "Correct Products narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T06-22-35-378Z",
+      "runManifestSha256": "86a6cd4e68504b0a7ad2029495e158fcb861dd6f9f2f6dbabac021e6ddf09e45",
+      "purpose": "Farmhouse Fabrics narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T06-22-53-399Z",
+      "runManifestSha256": "0bb02682b06f2df492edf267064b8a357fedf45aeb41e2f4f93b532b0139f592",
+      "purpose": "Bestlaminate narrow qualification capture"
+    }
+  ],
+  "results": {
+    "anthonys-goods": {
+      "status": "rejected",
+      "reason": "The desktop route produced no reviewable product candidates."
+    },
+    "coffee-bean-direct": {
+      "status": "rejected",
+      "reason": "The desktop route redirected cross-site to Google, retained none of the requested-query evidence, and produced no reviewable product candidates."
+    },
+    "the-house-of-rags": {
+      "status": "rejected",
+      "reason": "The desktop route produced no reviewable product candidates."
+    },
+    "ecos-paints": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 403, retained none of the requested-query evidence, and produced no reviewable product candidates."
+    },
+    "correct-products": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "correct-products--poly-bags",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0009930555555555556,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "correct-products--shipping-labels",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.02564102564102564,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent industrial-packaging grids pass in opposite viewports. Atomic frozen roots expose one product identity, current price, dimensions, and case or roll count per card, including explicit quantity evidence for normalized count pricing."
+    },
+    "totalpack": {
+      "status": "rejected",
+      "reason": "The desktop route produced no reviewable product candidates."
+    },
+    "a-thrifty-notion": {
+      "status": "rejected",
+      "reason": "The desktop route redirected cross-site to Google, retained none of the requested-query evidence, and produced no reviewable product candidates."
+    },
+    "farmhouse-fabrics": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "farmhouse-fabrics--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "farmhouse-fabrics--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent specialty-fabric grids pass in opposite viewports after a transparent closed drawer shell was excluded from visible-obstruction coverage. Frozen roots expose fabric titles, widths, fiber content, prices, and quantity controls for length normalization and abstention."
+    },
+    "commercial-mats-rubber": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 404 and produced no reviewable product candidates."
+    },
+    "best-laminate": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "best-laminate--vinyl-flooring",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.138328125,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "best-laminate--laminate-flooring",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.05924170616113744,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent flooring grids pass in opposite viewports after a standard consent rejection was handled. Frozen roots expose one flooring product, current or sale price, and explicit per-square-foot evidence per card."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "correct-products",
+      "farmhouse-fabrics",
+      "best-laminate"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "correct-products",
+        "cohort": "selection"
+      },
+      {
+        "siteId": "farmhouse-fabrics",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "best-laminate",
+        "cohort": "selection"
+      }
+    ],
+    "status": "keep"
+  }
+}

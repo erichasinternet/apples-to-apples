@@ -17,6 +17,7 @@ export function dismissVisibleObstruction(): boolean {
     "maybe later",
     "continue without",
     "do not sell or share",
+    "reject non-essential",
     "reject all",
     "decline",
     "got it",
@@ -40,6 +41,7 @@ export function dismissVisibleObstruction(): boolean {
     "maybe later",
     "continue without",
     "do not sell or share",
+    "reject non-essential",
     "reject all",
     "decline"
   ]);
@@ -289,13 +291,7 @@ export function measureVisibleObstructionCoverage(): number {
       "dialog[open], [role='dialog'], [role='alertdialog'], [aria-modal='true']"
     );
     if (!modal && style.position !== "fixed") continue;
-    if (
-      !modal &&
-      style.pointerEvents === "none" &&
-      !hasOwnVisiblePaint(element)
-    ) {
-      continue;
-    }
+    if (!modal && !hasOwnVisiblePaint(element)) continue;
     const box = element.getBoundingClientRect();
     const width = Math.max(
       0,

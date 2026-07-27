@@ -474,10 +474,13 @@ async function capturePage(
       return value;
     };
 
-    const selector = [
+    const productIdentitySelector = [
       "[data-asin]:not([data-asin=''])",
       "[data-item-id]",
-      "[itemtype*='Product']",
+      "[itemtype*='Product']"
+    ].join(",");
+    const selector = [
+      productIdentitySelector,
       "article",
       "li",
       "a[href]",
@@ -501,9 +504,34 @@ async function capturePage(
     };
 
     const candidateElements = ranked.map((candidate) => candidate.element);
+    const explicitProductCards = new Set<HTMLElement>();
+    for (const element of candidateElements) {
+      const card = element.matches(productIdentitySelector)
+        ? element
+        : element.closest<HTMLElement>(productIdentitySelector);
+      if (card && root.contains(card) && score(card) >= 7) {
+        explicitProductCards.add(card);
+      }
+    }
     const findRepeatedGroup = (
       element: HTMLElement
     ): { card: HTMLElement; container: HTMLElement } | undefined => {
+      const explicitCard = element.matches(productIdentitySelector)
+        ? element
+        : element.closest<HTMLElement>(productIdentitySelector);
+      if (explicitCard && explicitProductCards.has(explicitCard)) {
+        let container = explicitCard.parentElement;
+        while (container && root.contains(container)) {
+          const containedCards = [...explicitProductCards].filter(
+            (card) => container!.contains(card)
+          );
+          if (containedCards.length >= 3 && containedCards.length <= 120) {
+            return { card: explicitCard, container };
+          }
+          container = container.parentElement;
+        }
+      }
+
       let ancestor = element.parentElement;
 
       while (ancestor && root.contains(ancestor)) {

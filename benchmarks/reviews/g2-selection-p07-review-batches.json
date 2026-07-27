@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p07",
+  "createdAt": "2026-07-27T06:29:21.869Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--7f70486d80c6ac39",
+      "path": "benchmark-data/review/g2-selection-p07/reviewer-a.json",
+      "sha256": "88fcedba68fb15d623b272e7fd0c416db5d54cce066821f4ebf3d7daf24ecf73",
+      "pages": 4
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--c8c9e55ac97a9c95",
+      "path": "benchmark-data/review/g2-selection-p07/reviewer-b.json",
+      "sha256": "639cdd5349678dae0e6f65214de83b51c70541cb234780f741ffdfe89218f0c3",
+      "pages": 4
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 4,
+    "candidateCards": 48
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p07--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "best-laminate--laminate-flooring",
+        "best-laminate--vinyl-flooring",
+        "correct-products--poly-bags",
+        "correct-products--shipping-labels"
+      ],
+      "pages": 4,
+      "candidateCards": 48,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--569956c47cea3cf1",
+          "path": "benchmark-data/review/g2-selection-p07-review-batches/reviewer-a--batch-01.json",
+          "sha256": "1eeb1638071feb815bfedf5be4e69bab42092f4165ef874fa09783944ea4001b"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--2e00957697432e23",
+          "path": "benchmark-data/review/g2-selection-p07-review-batches/reviewer-b--batch-01.json",
+          "sha256": "3a81b6959086a65fe32164960d4bf2f9bee24689fa8ac7550cd792a41b4a14b2"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p08",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T06:24:00.000Z",
+  "source": {
+    "siteIds": [
+      "farmhouse-fabrics"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "specialty-sewing-fabric-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "2a70e5339b249250c6e263b2ef06051ead616a5fb99d30cc55e44eee6acbd47d"
+    ],
+    "collectorSha256": [
+      "cdc056b57f525ae389e514a3beea6bcd02c5c1512ccb691d2f73e81bc748f8ab"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T06-21-34-299Z",
+      "runManifestSha256": "ba8133dc03cbe3140999998e41ac6043ede43810c465e424830a95bffa57d339",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T06-22-35-378Z",
+      "runManifestSha256": "86a6cd4e68504b0a7ad2029495e158fcb861dd6f9f2f6dbabac021e6ddf09e45",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "Farmhouse Fabrics passed two fresh opposite-viewport p14 captures after a generic visible-obstruction correction and was assigned to validation under the frozen gate.",
+    "visualValidationFinding": "Both original-resolution annotation screenshots and all candidate closeups were inspected. The twenty-four frozen roots show coherent cotton and linen fabric cards with readable titles, widths, fiber content, prices, and quantity controls."
+  },
+  "captures": [
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--cotton-fabric",
+      "capturedAt": "2026-07-27T06:21:50.788Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1266,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "613c72b8a3fa32b2f7d7a7cee1e43c7e153d69f67fe6ca04890db27dd77f4585",
+      "canonicalObservationSha256": "4af08b5663530473a997b4982094eda1e7ec3ea45d0c535c1d41f97717502b2a",
+      "annotationScreenshotSha256": "e45a6a65c16791900899651e580853d28115afd4469cec9df225d1c6a620119e",
+      "provenanceAggregateSha256": "fca476d6b4130abe89ebeaee82414aa0df5d1452b54339aff37ec8b93961709b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--linen-fabric",
+      "capturedAt": "2026-07-27T06:22:52.303Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1028,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "0e3406c221dfda33c5a5e59e0e40081f48cdb604c61f4f596debee903b92d72b",
+      "canonicalObservationSha256": "bdd0e891e906cca98556c015c44fa5a3c2736564937df8afc1736c6daa30542a",
+      "annotationScreenshotSha256": "3e446974fb7cd7654999dbe085a39caa2846723b46bbd88ffa30cee84544d1ee",
+      "provenanceAggregateSha256": "e422bd5f5cb0b95a556551aa7af98aa95ca80f32ef0fbffee985be0d9d164792",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

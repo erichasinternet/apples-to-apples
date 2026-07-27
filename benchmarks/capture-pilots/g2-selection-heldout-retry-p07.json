@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p07",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T06:24:00.000Z",
+  "source": {
+    "siteIds": [
+      "correct-products",
+      "best-laminate"
+    ],
+    "cohort": "selection",
+    "strata": [
+      "esd-packaging",
+      "laminate-flooring-specialty"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "2a70e5339b249250c6e263b2ef06051ead616a5fb99d30cc55e44eee6acbd47d"
+    ],
+    "collectorSha256": [
+      "cdc056b57f525ae389e514a3beea6bcd02c5c1512ccb691d2f73e81bc748f8ab"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T06-21-18-545Z",
+      "runManifestSha256": "2c538bf9e86be66fb57a03775159eaf17bbb5688c75e240dd76f3048ce484161",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T06-21-51-958Z",
+      "runManifestSha256": "10020cffab977af266a1094168c30bba8d2dd3c705aada62e9d48ae4a6732fdd",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T06-22-20-471Z",
+      "runManifestSha256": "951f67d0b1d3b5e325a83df05654b6abf257ce9005d7ced7a847ffb487915cdb",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T06-22-53-399Z",
+      "runManifestSha256": "0bb02682b06f2df492edf267064b8a357fedf45aeb41e2f4f93b532b0139f592",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 4,
+    "successfulCaptureAttempts": 4,
+    "acceptedPages": 4,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 48,
+    "samplingFinding": "Correct Products and Bestlaminate passed fresh opposite-viewport p14 pairs after generic obstruction and atomic product-root corrections and were assigned to selection under the frozen gate.",
+    "visualValidationFinding": "All four original-resolution annotation screenshots and all candidate closeups were inspected. The forty-eight frozen roots show atomic industrial-packaging and flooring cards with readable product identity, current price, quantity or area basis, and explicit ambiguous cases for abstention."
+  },
+  "captures": [
+    {
+      "siteId": "correct-products",
+      "pageId": "correct-products--poly-bags",
+      "capturedAt": "2026-07-27T06:21:32.911Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1335,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0009930555555555556,
+      "queryTokenCoverage": 1,
+      "observationSha256": "47ab6062cf4dae276287d351a8c0b6d251496af83f70f379c6d6df41b86949c1",
+      "canonicalObservationSha256": "dce15e72ee916cd6ef97a3e70ad448a57674ceae0f34bf2dec6f2a2dc6194425",
+      "annotationScreenshotSha256": "a16458cfa39e74dd2260f1ee865b93da4039cf06fff716e7a5d82d57d798d98b",
+      "provenanceAggregateSha256": "8a797ebabc8161e6e754529c058d4e9f3b2764f6519f07a4efca75009a0d3c2c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "best-laminate",
+      "pageId": "best-laminate--vinyl-flooring",
+      "capturedAt": "2026-07-27T06:22:11.790Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 831,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0.138328125,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ff93033941c1c1eff4f45fce73b993c7e6673a9d4ce3f91ba92688f0838256af",
+      "canonicalObservationSha256": "6bdf897d2cd3de300d667a7948ed1f2a91db262e260dacb029c42f7434257f9c",
+      "annotationScreenshotSha256": "1d38ef016fd61f0058449024c18d79beb7e88cef16728f73a092750c02a5fc3a",
+      "provenanceAggregateSha256": "98a8a6e871715f15a582cb94d9193f9d25ffaffe3fefda66b5e28e1015b1efbd",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "correct-products",
+      "pageId": "correct-products--shipping-labels",
+      "capturedAt": "2026-07-27T06:22:34.278Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1013,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.02564102564102564,
+      "queryTokenCoverage": 1,
+      "observationSha256": "1f1f37261cf825984845d7b954d68e969a0ad2859cd7381d371b9e59f5e9f843",
+      "canonicalObservationSha256": "cdb70736991ef862868c43a3a8ebaafd13cfef25e50ba3f102e61b35123786ee",
+      "annotationScreenshotSha256": "918e6637f88318c5e61242ea34976688fb1de234907c4c518e90228f8fe11dce",
+      "provenanceAggregateSha256": "b5e560843092974f6779ec147e51d8d8dd7fb4c379c897550f32490456a42c76",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "best-laminate",
+      "pageId": "best-laminate--laminate-flooring",
+      "capturedAt": "2026-07-27T06:23:02.857Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 735,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0.05924170616113744,
+      "queryTokenCoverage": 1,
+      "observationSha256": "bc7b2f87c684ac89d71ba25b0dfcc26a90ab74538551cbfc16624924450de3a9",
+      "canonicalObservationSha256": "4adf40180754529553cb1cd93b62d1b27b4aa899f7b4bae64058f0efd280c7b0",
+      "annotationScreenshotSha256": "3ae33fc466a917a35dba74d5503621685acbb34f97bf1ff72f0cf35b495b5171",
+      "provenanceAggregateSha256": "419e8dc9f39753fc5498a0e2d8db4c10a2e3dd1e94f79b131f7693bfbd89d54a",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

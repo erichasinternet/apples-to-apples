@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "description": "Fifteenth bounded held-out qualification retry across ten never-retried domains, balanced with two candidates per unit dimension. Routes and queries are inherited from prior acquisition manifests; generic semantic search recovery and candidate extraction remain site-agnostic.",
+  "sites": [
+    {
+      "id": "anthonys-goods",
+      "label": "Anthony's Goods",
+      "hostname": "anthonysgoods.com",
+      "stratum": "natural-ingredient-retail",
+      "searchUrlTemplate": "https://anthonysgoods.com/search?q={query}",
+      "queries": [
+        {"id": "paprika", "query": "paprika", "dimension": "mass"},
+        {"id": "garlic-powder", "query": "garlic powder", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "coffee-bean-direct",
+      "label": "Coffee Bean Direct",
+      "hostname": "www.coffeebeandirect.com",
+      "stratum": "direct-to-consumer-coffee-roaster",
+      "searchUrlTemplate": "https://www.coffeebeandirect.com/search?q={query}",
+      "queries": [
+        {"id": "whole-bean-coffee", "query": "whole bean coffee", "dimension": "mass"},
+        {"id": "decaf-coffee", "query": "decaf coffee", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "the-house-of-rags",
+      "label": "The House of Rags",
+      "hostname": "thehouseofrags.com",
+      "stratum": "independent-detailing-retail",
+      "searchUrlTemplate": "https://thehouseofrags.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-shampoo", "query": "car shampoo", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "ecos-paints",
+      "label": "ECOS Paints",
+      "hostname": "ecospaints.net",
+      "stratum": "paint",
+      "searchUrlTemplate": "https://ecospaints.net/search?q={query}",
+      "queries": [
+        {"id": "interior-paint", "query": "interior paint", "dimension": "volume"},
+        {"id": "floor-paint", "query": "floor paint", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "correct-products",
+      "label": "Correct Products",
+      "hostname": "www.correctproducts.com",
+      "stratum": "esd-packaging",
+      "searchUrlTemplate": "https://www.correctproducts.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "poly-bags", "query": "poly bags", "dimension": "count"},
+        {"id": "shipping-labels", "query": "shipping labels", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "totalpack",
+      "label": "TOTALPACK",
+      "hostname": "totalpack.com",
+      "stratum": "packaging-industrial",
+      "searchUrlTemplate": "https://totalpack.com/search?q={query}",
+      "queries": [
+        {"id": "poly-bags", "query": "poly bags", "dimension": "count"},
+        {"id": "shipping-boxes", "query": "shipping boxes", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "a-thrifty-notion",
+      "label": "A Thrifty Notion",
+      "hostname": "athriftynotion.com",
+      "stratum": "deadstock-and-secondhand-fabric-retail",
+      "searchUrlTemplate": "https://athriftynotion.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "farmhouse-fabrics",
+      "label": "Farmhouse Fabrics",
+      "hostname": "farmhousefabrics.com",
+      "stratum": "specialty-sewing-fabric-retail",
+      "searchUrlTemplate": "https://farmhousefabrics.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "commercial-mats-rubber",
+      "label": "Commercial Mats and Rubber",
+      "hostname": "commercialmatsandrubber.com",
+      "stratum": "floor-coverings",
+      "searchUrlTemplate": "https://commercialmatsandrubber.com/search?q={query}",
+      "queries": [
+        {"id": "rubber-flooring", "query": "rubber flooring", "dimension": "area"},
+        {"id": "carpet-tile", "query": "carpet tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "best-laminate",
+      "label": "Bestlaminate",
+      "hostname": "www.bestlaminate.com",
+      "stratum": "laminate-flooring-specialty",
+      "searchUrlTemplate": "https://www.bestlaminate.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"},
+        {"id": "laminate-flooring", "query": "laminate flooring", "dimension": "area"}
+      ]
+    }
+  ]
+}

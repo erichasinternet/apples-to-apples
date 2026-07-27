@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p07",
+  "createdAt": "2026-07-27T06:25:00.000Z",
+  "cohort": "selection",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "best-laminate",
+      "pageId": "best-laminate--laminate-flooring",
+      "captureTimestamp": "2026-07-27T06:23:02.857Z",
+      "candidateCardCount": 12,
+      "observationSha256": "bc7b2f87c684ac89d71ba25b0dfcc26a90ab74538551cbfc16624924450de3a9",
+      "annotationScreenshotSha256": "3ae33fc466a917a35dba74d5503621685acbb34f97bf1ff72f0cf35b495b5171"
+    },
+    {
+      "siteId": "best-laminate",
+      "pageId": "best-laminate--vinyl-flooring",
+      "captureTimestamp": "2026-07-27T06:22:11.790Z",
+      "candidateCardCount": 12,
+      "observationSha256": "ff93033941c1c1eff4f45fce73b993c7e6673a9d4ce3f91ba92688f0838256af",
+      "annotationScreenshotSha256": "1d38ef016fd61f0058449024c18d79beb7e88cef16728f73a092750c02a5fc3a"
+    },
+    {
+      "siteId": "correct-products",
+      "pageId": "correct-products--poly-bags",
+      "captureTimestamp": "2026-07-27T06:21:32.911Z",
+      "candidateCardCount": 12,
+      "observationSha256": "47ab6062cf4dae276287d351a8c0b6d251496af83f70f379c6d6df41b86949c1",
+      "annotationScreenshotSha256": "a16458cfa39e74dd2260f1ee865b93da4039cf06fff716e7a5d82d57d798d98b"
+    },
+    {
+      "siteId": "correct-products",
+      "pageId": "correct-products--shipping-labels",
+      "captureTimestamp": "2026-07-27T06:22:34.278Z",
+      "candidateCardCount": 12,
+      "observationSha256": "1f1f37261cf825984845d7b954d68e969a0ad2859cd7381d371b9e59f5e9f843",
+      "annotationScreenshotSha256": "918e6637f88318c5e61242ea34976688fb1de234907c4c518e90228f8fe11dce"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--7f70486d80c6ac39",
+      "campaignQueueSha256": "88fcedba68fb15d623b272e7fd0c416db5d54cce066821f4ebf3d7daf24ecf73",
+      "sourceQueueSha256": [
+        "248c23d7231cbe3f7b640f03d2ef6362b17c0ef826e35b331056ea68994d97c7",
+        "088066e3ac32ff25454d0e0cc216af68d5bcc2b3610e94171b6bbe71bdff8f9a",
+        "d009fcdb89ca5fdce280cde6ca49a86d1f82b782fac177ba3350c2d446f0c5d4",
+        "18f4542967f33057624468e3255d802241b131b6668e5d1b6b0260e5dbbc3830"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--c8c9e55ac97a9c95",
+      "campaignQueueSha256": "639cdd5349678dae0e6f65214de83b51c70541cb234780f741ffdfe89218f0c3",
+      "sourceQueueSha256": [
+        "6a29919bb86710da0c67e55189633c04d92ea724ee41f4904313859811115771",
+        "a1c0d35db1b24500c9663b7a064e1b50e24adf5a737697e8e08e2fae51a8fba4",
+        "616e80ac6896f492ba8606063cd395b84ce38cd2ed54629fc427581d54042efa",
+        "622d0347389dccb1fa4624e5aef82ec2a614a0255f6ac27579ec170ce5726425"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--7f70486d80c6ac39",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 4,
+    "screenshotsLoaded": 4,
+    "candidateCards": 48,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

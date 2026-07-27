@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p09",
+  "createdAt": "2026-07-27T06:25:00.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--cotton-fabric",
+      "captureTimestamp": "2026-07-27T06:21:50.788Z",
+      "candidateCardCount": 12,
+      "observationSha256": "613c72b8a3fa32b2f7d7a7cee1e43c7e153d69f67fe6ca04890db27dd77f4585",
+      "annotationScreenshotSha256": "e45a6a65c16791900899651e580853d28115afd4469cec9df225d1c6a620119e"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--linen-fabric",
+      "captureTimestamp": "2026-07-27T06:22:52.303Z",
+      "candidateCardCount": 12,
+      "observationSha256": "0e3406c221dfda33c5a5e59e0e40081f48cdb604c61f4f596debee903b92d72b",
+      "annotationScreenshotSha256": "3e446974fb7cd7654999dbe085a39caa2846723b46bbd88ffa30cee84544d1ee"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--bc79a6c2cf88fb86",
+      "campaignQueueSha256": "0071ab873eac6c837a9b93f5846eaf884a0835a98017bf92288b7bd4ed62378a",
+      "sourceQueueSha256": [
+        "e51f3f84825bf06a9b1f65727b05b30c37d168dbf777e5a3096f07c70776774c",
+        "3ac29732e6c14ddcec275ac4dc5278b996565768fa541d14ceadbdff6953f366"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--9e62b5973a461bfa",
+      "campaignQueueSha256": "4da9983e94fe6f8dc1ad76ee5729101c8a6685e0d6317a667be5e550b55b3768",
+      "sourceQueueSha256": [
+        "a40f67cb318e4cd9e53db0eaa86c588e96144ef4fd3e39f74d834f2d0b8eaf60",
+        "041d613f79596df2f19d5f6ac4c4226ca4b08f33c53efacf2585c580e577eaea"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--bc79a6c2cf88fb86",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

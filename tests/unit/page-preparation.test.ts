@@ -39,7 +39,8 @@ describe("page preparation", () => {
 
   it.each([
     "Do not sell or share",
-    "No, I'll pay full price"
+    "No, I'll pay full price",
+    "Reject Non-Essential"
   ])("recognizes a generic refusal action: %s", (label) => {
     document.body.innerHTML = `
       <section role="dialog" style="position: fixed">
@@ -509,6 +510,42 @@ describe("page preparation", () => {
     mockVisibleBounds();
 
     expect(measureVisibleObstructionCoverage()).toBe(0);
+  });
+
+  it("ignores a transparent interactive fixed shell with no paint of its own", () => {
+    document.body.innerHTML = `
+      <div id="drawer-shell" style="position: fixed; pointer-events: auto">
+        <aside>Your shopping cart is empty.</aside>
+      </div>
+    `;
+    mockVisibleBounds();
+
+    expect(measureVisibleObstructionCoverage()).toBe(0);
+  });
+
+  it("still measures a semantic dialog inside a transparent fixed shell", () => {
+    document.body.innerHTML = `
+      <div id="shell" style="position: fixed; pointer-events: auto">
+        <section id="dialog" role="dialog"></section>
+      </div>
+    `;
+    mockVisibleBounds();
+    vi.spyOn(
+      document.querySelector<HTMLElement>("#dialog")!,
+      "getBoundingClientRect"
+    ).mockReturnValue({
+      x: 0,
+      y: 0,
+      width: 512,
+      height: 384,
+      top: 0,
+      right: 512,
+      bottom: 384,
+      left: 0,
+      toJSON: () => ({})
+    });
+
+    expect(measureVisibleObstructionCoverage()).toBeCloseTo(0.25);
   });
 
   it("still measures a painted pointerless fixed backdrop", () => {
