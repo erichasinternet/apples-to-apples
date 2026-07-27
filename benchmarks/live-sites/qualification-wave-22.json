@@ -1,0 +1,500 @@
+{
+  "version": 1,
+  "description": "Twenty-second unassigned domain-qualification wave. Twenty-six domains absent from every prior live-site manifest contribute six candidates per weakest selection-cohort dimension across fabric retail, tile and flooring commerce, and specialty tea and coffee retail, plus four count and four volume controls. Public route probes verified two query-bearing result pages per domain before capture. No site-specific DOM selectors are supplied, and every domain remains unassigned until two distinct pages pass the frozen machine and original-resolution visual qualification gate.",
+  "sites": [
+    {
+      "id": "cotton-fabric-store",
+      "label": "Cotton Fabric",
+      "hostname": "cottonfabric.com",
+      "stratum": "independent-quilting-fabric-retail",
+      "searchUrlTemplate": "https://cottonfabric.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "fabricland-online",
+      "label": "Fabricland Online",
+      "hostname": "www.fabriclandonline.com",
+      "stratum": "national-fabric-retail",
+      "searchUrlTemplate": "https://www.fabriclandonline.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "flannel-fabric",
+          "query": "flannel fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "fat-quarter-shop",
+      "label": "Fat Quarter Shop",
+      "hostname": "www.fatquartershop.com",
+      "stratum": "national-quilting-fabric-retail",
+      "searchUrlTemplate": "https://www.fatquartershop.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "flannel-fabric",
+          "query": "flannel fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "surge-fabric-shop",
+      "label": "Surge Fabric Shop",
+      "hostname": "surgefabricshop.com",
+      "stratum": "independent-apparel-fabric-retail",
+      "searchUrlTemplate": "https://surgefabricshop.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "gorgeous-fabrics",
+      "label": "Gorgeous Fabrics",
+      "hostname": "gorgeousfabrics.com",
+      "stratum": "independent-designer-fabric-retail",
+      "searchUrlTemplate": "https://gorgeousfabrics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "eos-fabrics",
+      "label": "EOS Fabrics",
+      "hostname": "eosfabrics.com",
+      "stratum": "independent-designer-fabric-retail",
+      "searchUrlTemplate": "https://eosfabrics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "round-eye-supply",
+      "label": "Round Eye Supply",
+      "hostname": "roundeyesupply.com",
+      "stratum": "food-service-supply-retail",
+      "searchUrlTemplate": "https://roundeyesupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paper-cups",
+          "query": "paper cups",
+          "dimension": "count"
+        },
+        {
+          "id": "trash-bags",
+          "query": "trash bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "supply-box",
+      "label": "Supply Box",
+      "hostname": "www.supplybox.com",
+      "stratum": "business-and-food-service-supply-retail",
+      "searchUrlTemplate": "https://www.supplybox.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paper-cups",
+          "query": "paper cups",
+          "dimension": "count"
+        },
+        {
+          "id": "trash-bags",
+          "query": "trash bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "mfi-medical",
+      "label": "MFI Medical",
+      "hostname": "mfimedical.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://mfimedical.com/search?q={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "face-masks",
+          "query": "face masks",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "buy-medical",
+      "label": "BuyMedical",
+      "hostname": "www.buymedical.com",
+      "stratum": "direct-to-consumer-medical-supply-retail",
+      "searchUrlTemplate": "https://www.buymedical.com/search?q={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "face-masks",
+          "query": "face masks",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "wall-and-tile",
+      "label": "Wall and Tile",
+      "hostname": "www.wallandtile.com",
+      "stratum": "national-tile-retail",
+      "searchUrlTemplate": "https://www.wallandtile.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "tile-market-of-delaware",
+      "label": "Tile Market of Delaware",
+      "hostname": "tilemarketofde.com",
+      "stratum": "regional-tile-and-stone-retail",
+      "searchUrlTemplate": "https://tilemarketofde.com/search?q={query}",
+      "queries": [
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "selected-tile",
+      "label": "Selected Tile",
+      "hostname": "selectedtile.com",
+      "stratum": "direct-to-consumer-tile-retail",
+      "searchUrlTemplate": "https://selectedtile.com/search?q={query}",
+      "queries": [
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "nfm",
+      "label": "NFM",
+      "hostname": "www.nfm.com",
+      "stratum": "regional-home-furnishings-retail",
+      "searchUrlTemplate": "https://www.nfm.com/search?q={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "cle-tile",
+      "label": "clé tile",
+      "hostname": "www.cletile.com",
+      "stratum": "designer-tile-retail",
+      "searchUrlTemplate": "https://www.cletile.com/search?q={query}",
+      "queries": [
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "artistic-tile",
+      "label": "Artistic Tile",
+      "hostname": "www.artistictile.com",
+      "stratum": "designer-tile-retail",
+      "searchUrlTemplate": "https://www.artistictile.com/search?view=shop&q={query}",
+      "queries": [
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "swimming-pool-supply-usa",
+      "label": "Swimming Pool Supply USA",
+      "hostname": "swimmingpoolsupplyusa.com",
+      "stratum": "pool-chemical-and-equipment-retail",
+      "searchUrlTemplate": "https://swimmingpoolsupplyusa.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-clarifier",
+          "query": "pool clarifier",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "barista-underground",
+      "label": "Barista Underground",
+      "hostname": "www.baristaunderground.com",
+      "stratum": "specialty-beverage-supply-retail",
+      "searchUrlTemplate": "https://www.baristaunderground.com/search?q={query}",
+      "queries": [
+        {
+          "id": "coffee-syrup",
+          "query": "coffee syrup",
+          "dimension": "volume"
+        },
+        {
+          "id": "fruit-syrup",
+          "query": "fruit syrup",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "coffee-am",
+      "label": "CoffeeAM",
+      "hostname": "www.coffeeam.com",
+      "stratum": "coffee-and-beverage-retail",
+      "searchUrlTemplate": "https://www.coffeeam.com/search?q={query}",
+      "queries": [
+        {
+          "id": "coffee-syrup",
+          "query": "coffee syrup",
+          "dimension": "volume"
+        },
+        {
+          "id": "fruit-syrup",
+          "query": "fruit syrup",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "bossen-store",
+      "label": "Bossen Store",
+      "hostname": "www.bossenstore.com",
+      "stratum": "specialty-beverage-supply-retail",
+      "searchUrlTemplate": "https://www.bossenstore.com/search?q={query}",
+      "queries": [
+        {
+          "id": "coffee-syrup",
+          "query": "coffee syrup",
+          "dimension": "volume"
+        },
+        {
+          "id": "fruit-syrup",
+          "query": "fruit syrup",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "tea-forte",
+      "label": "Tea Forté",
+      "hostname": "teaforte.com",
+      "stratum": "specialty-tea-brand-retail",
+      "searchUrlTemplate": "https://teaforte.com/search?q={query}&type=product",
+      "queries": [
+        {
+          "id": "green-tea",
+          "query": "green tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "black-tea",
+          "query": "black tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "rishi-tea",
+      "label": "Rishi Tea",
+      "hostname": "www.rishi-tea.com",
+      "stratum": "specialty-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://www.rishi-tea.com/search?q={query}&type=product",
+      "queries": [
+        {
+          "id": "green-tea",
+          "query": "green tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "black-tea",
+          "query": "black tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "upton-tea",
+      "label": "Upton Tea Imports",
+      "hostname": "www.uptontea.com",
+      "stratum": "specialty-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://www.uptontea.com/search?q={query}",
+      "queries": [
+        {
+          "id": "green-tea",
+          "query": "green tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "black-tea",
+          "query": "black tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "counter-culture-coffee",
+      "label": "Counter Culture Coffee",
+      "hostname": "counterculturecoffee.com",
+      "stratum": "specialty-coffee-roaster-retail",
+      "searchUrlTemplate": "https://counterculturecoffee.com/search?q={query}",
+      "queries": [
+        {
+          "id": "coffee-beans",
+          "query": "coffee beans",
+          "dimension": "mass"
+        },
+        {
+          "id": "decaf-coffee",
+          "query": "decaf coffee",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "stumptown-coffee",
+      "label": "Stumptown Coffee Roasters",
+      "hostname": "www.stumptowncoffee.com",
+      "stratum": "specialty-coffee-roaster-retail",
+      "searchUrlTemplate": "https://www.stumptowncoffee.com/search?q={query}",
+      "queries": [
+        {
+          "id": "coffee-beans",
+          "query": "coffee beans",
+          "dimension": "mass"
+        },
+        {
+          "id": "decaf-coffee",
+          "query": "decaf coffee",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "death-wish-coffee",
+      "label": "Death Wish Coffee",
+      "hostname": "www.deathwishcoffee.com",
+      "stratum": "direct-to-consumer-coffee-brand-retail",
+      "searchUrlTemplate": "https://www.deathwishcoffee.com/search?q={query}",
+      "queries": [
+        {
+          "id": "coffee-beans",
+          "query": "coffee beans",
+          "dimension": "mass"
+        },
+        {
+          "id": "decaf-coffee",
+          "query": "decaf coffee",
+          "dimension": "mass"
+        }
+      ]
+    }
+  ]
+}

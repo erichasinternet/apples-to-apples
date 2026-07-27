@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-wave-22-p00",
+  "capturedAt": "2026-07-27T08:58:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/qualification-wave-22.json",
+  "requestedCaptureAttempts": 6,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-41-44-390Z",
+      "pageIds": ["fat-quarter-shop--cotton-fabric"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-51-53-783Z",
+      "pageIds": ["fat-quarter-shop--flannel-fabric"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-42-16-606Z",
+      "pageIds": ["gorgeous-fabrics--cotton-fabric"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-52-03-767Z",
+      "pageIds": ["gorgeous-fabrics--linen-fabric"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-46-49-708Z",
+      "pageIds": ["tea-forte--green-tea"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T08-53-55-788Z",
+      "pageIds": ["tea-forte--black-tea"]
+    }
+  ],
+  "samplingFinding": "Fat Quarter Shop, Gorgeous Fabrics, and Tea Forte passed fresh opposite-viewport wave-22 captures and were assigned to selection, closing its twenty-qualified-domain structural gate.",
+  "visualValidationFinding": "All six original-resolution annotation screenshots and seventy-two frozen roots were inspected. The fabric grids expose explicit per-yard prices across two engines; the tea grids expose pack, serving, one-pound, sale, member-price, and abstention cases."
+}

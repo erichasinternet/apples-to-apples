@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-wave-22-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T08:58:00.000Z",
+  "source": {
+    "siteIds": [
+      "fat-quarter-shop",
+      "gorgeous-fabrics",
+      "tea-forte"
+    ],
+    "cohort": "selection",
+    "strata": [
+      "national-quilting-fabric-retail",
+      "independent-designer-fabric-retail",
+      "specialty-tea-brand-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "4f2b4d2e2d842eac587eb3e2391e3781a79cd72fcaa127be6257c6e455fb3ba5"
+    ],
+    "collectorSha256": [
+      "7b0d6e7e88ddb12234def7ab68515b0b1061271971a7b6b20950b7d18f226c44"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T08-41-44-390Z",
+      "runManifestSha256": "e11cf5dd2e5eadb5a13b106b11286b54ee23a47b61dbba9fda4a2255150b9064",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T08-51-53-783Z",
+      "runManifestSha256": "75fd1a22a3aed74c40b857b460619eca582f14697eeabd18ae9a424c20c90010",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T08-42-16-606Z",
+      "runManifestSha256": "d1a0aafba45498f6cfb337e061602d0800bf78aac5b630a376bbcb53a2c63893",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T08-52-03-767Z",
+      "runManifestSha256": "3b7f8bcbebdd25db00ea5dfa7c1b328e9ac169b76ab82ac66c99b96936165bc4",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T08-46-49-708Z",
+      "runManifestSha256": "4c7b4073270164008a11dbe508fd30ed4598aeaf521bd6cff1fcbe0b03dce357",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T08-53-55-788Z",
+      "runManifestSha256": "164ddb48ef64670986f830bece256fcee722243f89ea1e14503f92079b367641",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 6,
+    "successfulCaptureAttempts": 6,
+    "acceptedPages": 6,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 72,
+    "samplingFinding": "Fat Quarter Shop, Gorgeous Fabrics, and Tea Forte passed fresh opposite-viewport wave-22 captures and were assigned to selection, closing its twenty-qualified-domain structural gate.",
+    "visualValidationFinding": "All six original-resolution annotation screenshots and seventy-two frozen roots were inspected. The fabric grids expose explicit per-yard prices across two engines; the tea grids expose pack, serving, one-pound, sale, member-price, and abstention cases."
+  },
+  "captures": [
+    {
+      "siteId": "fat-quarter-shop",
+      "pageId": "fat-quarter-shop--cotton-fabric",
+      "capturedAt": "2026-07-27T08:41:55.837Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1170,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8bfa8caa30c7adefdc554c16924421e0da00e569d3694d4eb13ae683c8cd12f3",
+      "canonicalObservationSha256": "032f1b7966103524c20ac42e173b3166cf08fc8dbf625cc6c50e26b7fb714726",
+      "annotationScreenshotSha256": "76da523d121c4eb52b6d1b1c6425dac9596d8ed37b116f7dadd49ab356a322d5",
+      "provenanceAggregateSha256": "87750bb39b4a15400fc1a2a402653f065088342e105a25ee1dc5907c7e94f2e0",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fat-quarter-shop",
+      "pageId": "fat-quarter-shop--flannel-fabric",
+      "capturedAt": "2026-07-27T08:52:02.335Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1075,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "1f3d95b32d7dc6ab7301444a23caf140c9064f959d9c8d88a8ce2a11b9bf3d79",
+      "canonicalObservationSha256": "85eeeb4fdbb2c21b8b558e23ac9d6698c00fe8bee0775f5c3ed82829048ff20e",
+      "annotationScreenshotSha256": "f9fc7fa77e88e5eb89f90940ffe11e2b4705186459a8fdbc8031f3a67617130f",
+      "provenanceAggregateSha256": "4362a3f70e00a48bcfb8db0f8e3a7f90b0bf700355f5a79e942e7d3b32a2eef7",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "pageId": "gorgeous-fabrics--cotton-fabric",
+      "capturedAt": "2026-07-27T08:42:24.668Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 523,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.00384375,
+      "queryTokenCoverage": 1,
+      "observationSha256": "20073b42ce98ddb5c0982884a7fb4193b77950799271c9e1d6441b08e95571cc",
+      "canonicalObservationSha256": "b8896eea4b01ba2b3f5f9f2c11a0437a129f39752b9bc2ce52b159a8159d24e2",
+      "annotationScreenshotSha256": "adaaec28e1059ff7202e1e46fc050bb38ab7a7e83f4d25e480a227040327ab79",
+      "provenanceAggregateSha256": "bcc469d2cfd181a62aba6e02c670b21799861d621b0f6442accdb576997732e3",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "pageId": "gorgeous-fabrics--linen-fabric",
+      "capturedAt": "2026-07-27T08:52:11.761Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 526,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.010367868209989063,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c694f187ae313fe5b382485d20cdf34ef9024eb7481fc265798192c3c5b45ddc",
+      "canonicalObservationSha256": "ae75b8c68163d04ca8dbb9e47b30c3a609d5fd9b335d2cacf16eafb55c2c14bc",
+      "annotationScreenshotSha256": "89df8b3ea806175caf7f1e70add33c14d5961a867f7091772a8f37e8fe982aea",
+      "provenanceAggregateSha256": "a26ee18daa562fae3c9b0b5cee00a41bbebd15d5e62bf3e87414b27126207269",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tea-forte",
+      "pageId": "tea-forte--green-tea",
+      "capturedAt": "2026-07-27T08:47:06.937Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 3757,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "44545efb7af6eaf992ecb461791e50a6ae7e02bb8f526262aa5c521d6bd83ca8",
+      "canonicalObservationSha256": "0f4e75b56c79452e15570d0a343bd512d3b4f575a6329d092b6c358c3a966016",
+      "annotationScreenshotSha256": "ed4ef82322e4d8d7d308d5e68853c43e7468d667bd13ec4e9a111250283a47e7",
+      "provenanceAggregateSha256": "8eedcd91920c60091757f9e55d8f83f8998916239c08f5bb1dff8ac282c2a9d5",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tea-forte",
+      "pageId": "tea-forte--black-tea",
+      "capturedAt": "2026-07-27T08:54:13.478Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 4257,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c9d6f12c1c7be214761e2031f6e4b2a444d127975c63d339037bde7363ed2e5c",
+      "canonicalObservationSha256": "5db34b62a06c89f2eda5905119222633b59ad7f43f318cb4e75152c922b6d7b0",
+      "annotationScreenshotSha256": "675514b11994f69a265ea9d4654b1bdb513ae80b5400e05b371339c981289c77",
+      "provenanceAggregateSha256": "ddff2db70d273c969bbee2f1c972941f09fe3bd8ea29b360051277d10ecbdc40",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

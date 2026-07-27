@@ -6648,6 +6648,78 @@
       "pilotReport": "benchmarks/capture-pilots/g2-selection-wave-21-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "fat-quarter-shop",
+      "cohort": "selection",
+      "pageId": "fat-quarter-shop--cotton-fabric",
+      "captureTimestamp": "2026-07-27T08:41:55.837Z",
+      "observationSha256": "8bfa8caa30c7adefdc554c16924421e0da00e569d3694d4eb13ae683c8cd12f3",
+      "annotationScreenshotSha256": "76da523d121c4eb52b6d1b1c6425dac9596d8ed37b116f7dadd49ab356a322d5",
+      "qualificationReport": "benchmarks/domain-qualification/wave-22-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-wave-22-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fat-quarter-shop",
+      "cohort": "selection",
+      "pageId": "fat-quarter-shop--flannel-fabric",
+      "captureTimestamp": "2026-07-27T08:52:02.335Z",
+      "observationSha256": "1f3d95b32d7dc6ab7301444a23caf140c9064f959d9c8d88a8ce2a11b9bf3d79",
+      "annotationScreenshotSha256": "f9fc7fa77e88e5eb89f90940ffe11e2b4705186459a8fdbc8031f3a67617130f",
+      "qualificationReport": "benchmarks/domain-qualification/wave-22-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-wave-22-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "cohort": "selection",
+      "pageId": "gorgeous-fabrics--cotton-fabric",
+      "captureTimestamp": "2026-07-27T08:42:24.668Z",
+      "observationSha256": "20073b42ce98ddb5c0982884a7fb4193b77950799271c9e1d6441b08e95571cc",
+      "annotationScreenshotSha256": "adaaec28e1059ff7202e1e46fc050bb38ab7a7e83f4d25e480a227040327ab79",
+      "qualificationReport": "benchmarks/domain-qualification/wave-22-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-wave-22-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "cohort": "selection",
+      "pageId": "gorgeous-fabrics--linen-fabric",
+      "captureTimestamp": "2026-07-27T08:52:11.761Z",
+      "observationSha256": "c694f187ae313fe5b382485d20cdf34ef9024eb7481fc265798192c3c5b45ddc",
+      "annotationScreenshotSha256": "89df8b3ea806175caf7f1e70add33c14d5961a867f7091772a8f37e8fe982aea",
+      "qualificationReport": "benchmarks/domain-qualification/wave-22-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-wave-22-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tea-forte",
+      "cohort": "selection",
+      "pageId": "tea-forte--green-tea",
+      "captureTimestamp": "2026-07-27T08:47:06.937Z",
+      "observationSha256": "44545efb7af6eaf992ecb461791e50a6ae7e02bb8f526262aa5c521d6bd83ca8",
+      "annotationScreenshotSha256": "ed4ef82322e4d8d7d308d5e68853c43e7468d667bd13ec4e9a111250283a47e7",
+      "qualificationReport": "benchmarks/domain-qualification/wave-22-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-wave-22-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tea-forte",
+      "cohort": "selection",
+      "pageId": "tea-forte--black-tea",
+      "captureTimestamp": "2026-07-27T08:54:13.478Z",
+      "observationSha256": "c9d6f12c1c7be214761e2031f6e4b2a444d127975c63d339037bde7363ed2e5c",
+      "annotationScreenshotSha256": "675514b11994f69a265ea9d4654b1bdb513ae80b5400e05b371339c981289c77",
+      "qualificationReport": "benchmarks/domain-qualification/wave-22-p00.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-wave-22-p00.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

@@ -702,6 +702,24 @@
       "cohort": "selection",
       "qualificationReport": "benchmarks/domain-qualification/wave-21-p00.json",
       "promotedAt": "2026-07-27T08:19:18.000Z"
+    },
+    {
+      "siteId": "fat-quarter-shop",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/wave-22-p00.json",
+      "promotedAt": "2026-07-27T08:58:00.000Z"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/wave-22-p00.json",
+      "promotedAt": "2026-07-27T08:58:00.000Z"
+    },
+    {
+      "siteId": "tea-forte",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/wave-22-p00.json",
+      "promotedAt": "2026-07-27T08:58:00.000Z"
     }
   ]
 }

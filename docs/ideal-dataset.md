@@ -1649,6 +1649,40 @@ now validates 59 campaigns, 6,639 pages, and 71,054 frozen roots. Independent
 semantic reviews, adjudication, selection-domain completion, and final-cohort
 collection remain pending.
 
+A twenty-second qualification wave froze 26 more domains with zero prior ID or
+hostname overlap. It deliberately oversampled selection's weakest dimensions
+with six fabric-by-length, six tile-by-area, and six tea-or-coffee-by-mass
+domains, while retaining four count and four volume controls so measured yield
+could not be mistaken for a dimension-specific gain. Public route probes
+rejected blocked, parked, and broken storefronts before capture. All 26 domains
+received a headed desktop screen; 16 visual survivors received a distinct-query
+narrow capture. All 42 isolated children completed with zero hard timeouts.
+
+Original-resolution review again overruled misleading machine passes. It
+rejected search and newsletter overlays, incoherent results, absent prices,
+underfilled candidate sets, and a full-viewport obstruction. Thirteen domains
+passed the frozen two-page gate and remain recorded in
+[`wave-22-p00.json`](../benchmarks/domain-qualification/wave-22-p00.json).
+Fat Quarter Shop and Gorgeous Fabrics add explicit per-yard evidence; Tea Forte
+adds packs, servings, one-pound pouches, sale and member prices, and selective
+abstentions. Assigning those three to selection completes its 20-qualified-domain
+structural gate while improving the previously sparse length and mass strata.
+The other ten qualified domains remain unassigned rather than being forced into
+already-full development cohorts.
+
+The blinded
+[`g2-selection-p12.json`](../benchmarks/review-campaigns/g2-selection-p12.json)
+campaign and its paired reviewer batch passed headed Playwright Chromium with
+all six screenshots and 72 frozen roots loaded, zero console errors, and zero
+review writes. Direct candidate navigation passed; non-candidate ancestors and
+incomplete submissions were rejected with 404 and 422 responses. The
+independence audit now locates all 560 eligible captures and verifies 6,341
+active roots with no duplicates, conflicts, or overlap. The campaign registry
+validates 60 campaigns, 6,645 pages, and 71,126 frozen roots. Training,
+validation, and selection now meet their 80, 20, and 20 qualified-domain gates.
+Independent semantic reviews, adjudication, held-out depth collection, and the
+sealed final cohort remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

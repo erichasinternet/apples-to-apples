@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p12",
+  "createdAt": "2026-07-27T09:03:00.000Z",
+  "cohort": "selection",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "fat-quarter-shop",
+      "pageId": "fat-quarter-shop--cotton-fabric",
+      "captureTimestamp": "2026-07-27T08:41:55.837Z",
+      "candidateCardCount": 12,
+      "observationSha256": "8bfa8caa30c7adefdc554c16924421e0da00e569d3694d4eb13ae683c8cd12f3",
+      "annotationScreenshotSha256": "76da523d121c4eb52b6d1b1c6425dac9596d8ed37b116f7dadd49ab356a322d5"
+    },
+    {
+      "siteId": "fat-quarter-shop",
+      "pageId": "fat-quarter-shop--flannel-fabric",
+      "captureTimestamp": "2026-07-27T08:52:02.335Z",
+      "candidateCardCount": 12,
+      "observationSha256": "1f3d95b32d7dc6ab7301444a23caf140c9064f959d9c8d88a8ce2a11b9bf3d79",
+      "annotationScreenshotSha256": "f9fc7fa77e88e5eb89f90940ffe11e2b4705186459a8fdbc8031f3a67617130f"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "pageId": "gorgeous-fabrics--cotton-fabric",
+      "captureTimestamp": "2026-07-27T08:42:24.668Z",
+      "candidateCardCount": 12,
+      "observationSha256": "20073b42ce98ddb5c0982884a7fb4193b77950799271c9e1d6441b08e95571cc",
+      "annotationScreenshotSha256": "adaaec28e1059ff7202e1e46fc050bb38ab7a7e83f4d25e480a227040327ab79"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "pageId": "gorgeous-fabrics--linen-fabric",
+      "captureTimestamp": "2026-07-27T08:52:11.761Z",
+      "candidateCardCount": 12,
+      "observationSha256": "c694f187ae313fe5b382485d20cdf34ef9024eb7481fc265798192c3c5b45ddc",
+      "annotationScreenshotSha256": "89df8b3ea806175caf7f1e70add33c14d5961a867f7091772a8f37e8fe982aea"
+    },
+    {
+      "siteId": "tea-forte",
+      "pageId": "tea-forte--black-tea",
+      "captureTimestamp": "2026-07-27T08:54:13.478Z",
+      "candidateCardCount": 12,
+      "observationSha256": "c9d6f12c1c7be214761e2031f6e4b2a444d127975c63d339037bde7363ed2e5c",
+      "annotationScreenshotSha256": "675514b11994f69a265ea9d4654b1bdb513ae80b5400e05b371339c981289c77"
+    },
+    {
+      "siteId": "tea-forte",
+      "pageId": "tea-forte--green-tea",
+      "captureTimestamp": "2026-07-27T08:47:06.937Z",
+      "candidateCardCount": 12,
+      "observationSha256": "44545efb7af6eaf992ecb461791e50a6ae7e02bb8f526262aa5c521d6bd83ca8",
+      "annotationScreenshotSha256": "ed4ef82322e4d8d7d308d5e68853c43e7468d667bd13ec4e9a111250283a47e7"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--eb81e76ec07c5856",
+      "campaignQueueSha256": "691de3797ad84dfb91aef4376727be23314e33570f0f7e5f138ba645303321c4",
+      "sourceQueueSha256": [
+        "7d1b3d745fa92e15a7e6038dda78ddb5cb062ebd1701daa6c7197b9820d14d05",
+        "6766d10789219cd4dd1105f3fd13e845284c1e2aa54cf71439b043d540eecbd7",
+        "d066952b82c3c5a3769d9d5c0b9c0b67b5fec14a800548ef10efcc2e520dd817",
+        "c1fd9e1efeaa0d02366f12df885a9e67d4c75d432c0f3b2c43653d0e2a3325a7",
+        "e0066c000ba655e8bd79ca639871db978d926a5e1790f3ef63be587762ad2bd8",
+        "b8213e6dd9b36a6a01aaad9b51dc34069cad6e87454a01d4df16fea9516b9cbb"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--2e5be217a8e1dd21",
+      "campaignQueueSha256": "100792dd70528834541d6d055fc66ab0b3c56030e62628dc4be51773a1bbf3b5",
+      "sourceQueueSha256": [
+        "c1c4c2c55716270120b7a7eae6828f3ca2fcc723adf1bc96195c4dac3d041a2e",
+        "beb9338929621d275cecc5e8f4b49300646b5a11a1da2c46a4d2ab6df1bdfe28",
+        "b380c29728d22f52a84983fea07b548cb49574af71ca163559502aab20d0c8f4",
+        "7f26594ab0391e699a2c81aece96c2c8d6f74fa94b16005ea95ed0af049e548b",
+        "1a58655ea4163651898c45466daad314c86f45a16160f36ac92c61271cc8cda3",
+        "bb4ba32d5810e85eb9249486981f4845796943ade3c7cff769e424739988535a"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--eb81e76ec07c5856",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 6,
+    "screenshotsLoaded": 6,
+    "candidateCards": 72,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

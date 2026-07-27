@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p12",
+  "createdAt": "2026-07-27T09:01:44.885Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--eb81e76ec07c5856",
+      "path": "benchmark-data/review/g2-selection-p12/reviewer-a.json",
+      "sha256": "691de3797ad84dfb91aef4376727be23314e33570f0f7e5f138ba645303321c4",
+      "pages": 6
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--2e5be217a8e1dd21",
+      "path": "benchmark-data/review/g2-selection-p12/reviewer-b.json",
+      "sha256": "100792dd70528834541d6d055fc66ab0b3c56030e62628dc4be51773a1bbf3b5",
+      "pages": 6
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 6,
+    "candidateCards": 72
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p12--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "fat-quarter-shop--cotton-fabric",
+        "fat-quarter-shop--flannel-fabric",
+        "gorgeous-fabrics--cotton-fabric",
+        "gorgeous-fabrics--linen-fabric",
+        "tea-forte--black-tea",
+        "tea-forte--green-tea"
+      ],
+      "pages": 6,
+      "candidateCards": 72,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--f0d9acaaedf8e41c",
+          "path": "benchmark-data/review/g2-selection-p12-review-batches/reviewer-a--batch-01.json",
+          "sha256": "ae5fb51feab216dddb5b645678589d2eb2f649f5fa82b4d3e6eceecba304a63c"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--0614c27bef353cb0",
+          "path": "benchmark-data/review/g2-selection-p12-review-batches/reviewer-b--batch-01.json",
+          "sha256": "3a3a1f631a731c8dc1cd0f58a7a9f5709fe89801a42f0025289c29a344325627"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

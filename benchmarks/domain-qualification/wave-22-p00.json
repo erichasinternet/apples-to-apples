@@ -1,0 +1,476 @@
+{
+  "version": 1,
+  "qualificationId": "wave-22-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-22.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "b876c0c48742c7062a1c77b3ee8f0b25e345eefac65f0a75d5aa3bfe24462ba0",
+    "narrowBatchSha256": "b22f0a15e8352021f171d16331887bef9ab99915f0ddeca6656b3a7627d345ad",
+    "processIsolationFinding": "All forty-two headed qualification children completed under isolated process-group bounds with zero parent hard timeouts.",
+    "samplingFinding": "All twenty-six fresh domains received a desktop screen. Sixteen desktop survivors received an independent-query narrow capture. Thirteen domains passed the unchanged machine gate and original-resolution visual review; the other thirteen remain in the yield denominator.",
+    "manifestIntegrityFinding": "Candidate IDs and hostnames have zero overlap with waves 1-21. All completed captures use frozen manifest hash 4f2b4d2e2d842eac587eb3e2391e3781a79cd72fcaa127be6257c6e455fb3ba5 and collector hash a55cf12199d91b33750cfb6cc8786f2f8ed737eb8ab63152474d08d30ed3e7ac."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T08-41-44-390Z",
+      "runManifestSha256": "e11cf5dd2e5eadb5a13b106b11286b54ee23a47b61dbba9fda4a2255150b9064",
+      "purpose": "Fat Quarter Shop desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-51-53-783Z",
+      "runManifestSha256": "75fd1a22a3aed74c40b857b460619eca582f14697eeabd18ae9a424c20c90010",
+      "purpose": "Fat Quarter Shop narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-42-16-606Z",
+      "runManifestSha256": "d1a0aafba45498f6cfb337e061602d0800bf78aac5b630a376bbcb53a2c63893",
+      "purpose": "Gorgeous Fabrics desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-52-03-767Z",
+      "runManifestSha256": "3b7f8bcbebdd25db00ea5dfa7c1b328e9ac169b76ab82ac66c99b96936165bc4",
+      "purpose": "Gorgeous Fabrics narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-46-49-708Z",
+      "runManifestSha256": "4c7b4073270164008a11dbe508fd30ed4598aeaf521bd6cff1fcbe0b03dce357",
+      "purpose": "Tea Forte desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T08-53-55-788Z",
+      "runManifestSha256": "164ddb48ef64670986f830bece256fcee722243f89ea1e14503f92079b367641",
+      "purpose": "Tea Forte narrow qualification capture"
+    }
+  ],
+  "results": {
+    "cotton-fabric-store": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "cotton-fabric-store--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0011111111111111111,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "cotton-fabric-store--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.004860857941426662,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport fabric result grids expose coherent yardage products, current prices, related-search negatives, and length-normalization abstention cases."
+    },
+    "fabricland-online": {
+      "status": "rejected",
+      "reason": "The desktop page passed numeric checks, but original-resolution review found the search interface expanded over the results and obscuring most products."
+    },
+    "fat-quarter-shop": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "fat-quarter-shop--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "fat-quarter-shop--flannel-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport quilting grids expose yardage and charm-pack products with explicit per-yard or per-pack prices, sale states, and length-versus-count abstention cases."
+    },
+    "surge-fabric-shop": {
+      "status": "rejected",
+      "reason": "The desktop page passed numeric checks, but original-resolution review found a signup modal obscuring the product grid."
+    },
+    "gorgeous-fabrics": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "gorgeous-fabrics--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.00384375,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "gorgeous-fabrics--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.010367868209989063,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport designer-fabric grids expose coherent cotton and linen products with explicit per-yard prices and clean product-root boundaries."
+    },
+    "eos-fabrics": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "eos-fabrics--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.11987196180555555,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "eos-fabrics--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.07960604265402843,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport apparel-fabric grids expose coherent cotton and linen products with explicit per-yard prices, facets, and variant controls."
+    },
+    "round-eye-supply": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "round-eye-supply--paper-cups",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0025,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "round-eye-supply--trash-bags",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.01093693036820999,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport food-service grids expose cups and liners with case quantities, current prices, sizes, and count-normalization evidence."
+    },
+    "supply-box": {
+      "status": "rejected",
+      "reason": "The desktop route retained none of the requested-query evidence."
+    },
+    "mfi-medical": {
+      "status": "rejected",
+      "reason": "The narrow page passed numeric checks, but original-resolution review found a coupon popup covering product evidence."
+    },
+    "buy-medical": {
+      "status": "rejected",
+      "reason": "The desktop exam-gloves query returned a mixed medical catalog rather than eight coherent glove products."
+    },
+    "wall-and-tile": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "wall-and-tile--mosaic-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.064203125,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "wall-and-tile--porcelain-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.13507109004739337,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tile grids expose coherent mosaic and porcelain products with sale, list, and as-low-as prices per square foot."
+    },
+    "tile-market-of-delaware": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "tile-market-of-delaware--mosaic-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "tile-market-of-delaware--porcelain-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tile grids expose coherent mosaic and porcelain products with explicit per-square-foot prices."
+    },
+    "selected-tile": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "selected-tile--mosaic-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 10,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "selected-tile--porcelain-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 10,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tile grids expose coherent mosaic and porcelain products with per-square-foot and per-box prices."
+    },
+    "nfm": {
+      "status": "rejected",
+      "reason": "The desktop porcelain-tile query returned shelving and other furniture mixed with a few tile products."
+    },
+    "cle-tile": {
+      "status": "rejected",
+      "reason": "The desktop route retained only half of the requested-query evidence and produced no reviewable product roots."
+    },
+    "artistic-tile": {
+      "status": "rejected",
+      "reason": "The desktop grid was visually coherent but exposed no prices, leaving no unit-pricing comparison evidence."
+    },
+    "swimming-pool-supply-usa": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "swimming-pool-supply-usa--pool-algaecide",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.004466015625,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "swimming-pool-supply-usa--pool-clarifier",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.019537800765585124,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport pool-chemical grids expose algaecides and clarifiers with ounces or liters, current and regular prices, cases, and volume-normalization evidence."
+    },
+    "barista-underground": {
+      "status": "rejected",
+      "reason": "The narrow page was covered by an unresolved full-viewport obstruction."
+    },
+    "coffee-am": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "coffee-am--coffee-syrup",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "coffee-am--fruit-syrup",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport syrup grids expose coherent beverage products with 750 ml quantities, current prices, ratings, and volume-normalization evidence."
+    },
+    "bossen-store": {
+      "status": "rejected",
+      "reason": "The desktop page exposed one candidate root, below the frozen minimum of eight."
+    },
+    "tea-forte": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "tea-forte--green-tea",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "tea-forte--black-tea",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tea grids expose coherent products with packs, servings, one-pound pouches, regular, sale, and member prices, plus count-versus-mass abstention cases."
+    },
+    "rishi-tea": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "rishi-tea--green-tea",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0011111111111111111,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "rishi-tea--black-tea",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.004860857941426662,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tea grids expose coherent loose-leaf and sachet products with count quantities, price ranges, and selective mass-normalization abstentions."
+    },
+    "upton-tea": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "upton-tea--green-tea",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.05182508680555555,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "upton-tea--black-tea",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.012835703001579778,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport loose-leaf tea grids expose coherent products, fixed and starting prices, samplers, and strong abstention cases where package mass is not present in the card."
+    },
+    "counter-culture-coffee": {
+      "status": "rejected",
+      "reason": "The desktop page was covered by an unresolved full-viewport obstruction."
+    },
+    "stumptown-coffee": {
+      "status": "rejected",
+      "reason": "The desktop page passed numeric checks, but original-resolution review found newsletter and cookie dialogs obscuring the product grid."
+    },
+    "death-wish-coffee": {
+      "status": "rejected",
+      "reason": "The distinct narrow decaf query returned regular, flavored, and dark-roast products rather than eight coherent decaf products."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "cotton-fabric-store",
+      "fat-quarter-shop",
+      "gorgeous-fabrics",
+      "eos-fabrics",
+      "round-eye-supply",
+      "wall-and-tile",
+      "tile-market-of-delaware",
+      "selected-tile",
+      "swimming-pool-supply-usa",
+      "coffee-am",
+      "tea-forte",
+      "rishi-tea",
+      "upton-tea"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "fat-quarter-shop",
+        "cohort": "selection"
+      },
+      {
+        "siteId": "gorgeous-fabrics",
+        "cohort": "selection"
+      },
+      {
+        "siteId": "tea-forte",
+        "cohort": "selection"
+      }
+    ],
+    "status": "keep"
+  }
+}
