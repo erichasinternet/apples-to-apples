@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p18",
+  "candidateManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p18.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "0eb52f7c28d945c93486fed97c4e3a0b872341a0e6300823e2f27830b5056b1a",
+    "remediationBatchSha256": "275dc3b2a2c5b3e6434fab483fa83056aa0a6bb71664a0451197833cc05aa044",
+    "narrowBatchSha256": "b92ebf43f97d52c45a3fb7d958527b2384764f5fae69bcc54fa86f22cc4f21e6",
+    "processIsolationFinding": "All sixteen headed qualification children completed under isolated process-group bounds with zero parent hard timeouts.",
+    "samplingFinding": "Ten disjoint, never-retried domains balanced across ten strata and all five primary dimensions received a desktop screen. Five domains passed the frozen desktop gate. A generic retry-starvation defect left a real In The Swim subscription modal unresolved; a unit-tested collector correction advanced past ineffective controls, and a fresh headed desktop recapture passed the unchanged gate. The five desktop passers received independent-query narrow follow-up. Rubber-Cal returned HTTP 404 on the narrow route. Pinch A Penny, Recreation Supply, In The Swim, and Leslie's produced complete coherent opposite-viewport pairs. All ten domains remain in the yield denominator.",
+    "manifestIntegrityFinding": "All completed captures use frozen retry manifest hash 3ca4fa59616f2b4e2961b414569c6d92a1bad358023652967fb365889131cc1f. Original desktop captures use collector hash cdc056b57f525ae389e514a3beea6bcd02c5c1512ccb691d2f73e81bc748f8ab; the remediated desktop and narrow captures use collector hash 7b0d6e7e88ddb12234def7ab68515b0b1061271971a7b6b20950b7d18f226c44."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T07-09-33-126Z",
+      "runManifestSha256": "4ec5d399648c2b484c646b0dba7bf6a0bea110c5e8900a23861cdc978e22988f",
+      "purpose": "Pinch A Penny desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T07-09-55-676Z",
+      "runManifestSha256": "6cc2276a43547a86d8851343b68eb81c946664600eb55773d3aeab89ad1ebef1",
+      "purpose": "Pool Supply Unlimited desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-10-31-896Z",
+      "runManifestSha256": "e6a5267a66f0d220f5fd357ae427b2bc2187fd33e1daccc52551dd407d4887e4",
+      "purpose": "PowerWash desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-10-53-564Z",
+      "runManifestSha256": "e95098eda90078ab003e99914d1a8f38bf5e8876e24b42daf6b6eb364872c58b",
+      "purpose": "JaniLink desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-11-13-285Z",
+      "runManifestSha256": "c8dda84908ce1bd49d0d7780741275d9787c40d6934db0e4fb0b1b1cd53964dd",
+      "purpose": "Recreation Supply desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T07-11-46-173Z",
+      "runManifestSha256": "37ee3d95d3ab18062cd6bbf971726df7ca63e8313bb10921a6038dd2aff01d34",
+      "purpose": "Rubber-Cal desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-12-08-972Z",
+      "runManifestSha256": "dad2e838efbab630f732250f7fd6db1fec36b4bee0a8498b95833bc2c8452d21",
+      "purpose": "In The Swim obstructed desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-12-24-275Z",
+      "runManifestSha256": "ffbdc9b1aeeb19ca5dbdf4a7aca3fc887a13835c250cf785bf59383345a4bb33",
+      "purpose": "Leslie's Pool Supplies desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T07-12-44-098Z",
+      "runManifestSha256": "698fefd67f10591ef529bc0f5bc94fce7e601bb819d786af9f27310c21277ff0",
+      "purpose": "Carpet Tile Depot desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-12-57-477Z",
+      "runManifestSha256": "ed594e55a4f7313f64c5a85af694c60216689bba1d5b230a56a1f9818588a39b",
+      "purpose": "Interface desktop screen"
+    },
+    {
+      "runId": "2026-07-27T07-16-48-587Z",
+      "runManifestSha256": "ccc499c2777091661608be9cb5ed8f025b2c3c622501d1a92e655ad5297d9d3f",
+      "purpose": "In The Swim remediated desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T07-17-44-376Z",
+      "runManifestSha256": "f78de3503c81bf8cf5fa7fc2e070961993b00adbbd336726f5876af385e91662",
+      "purpose": "Pinch A Penny narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T07-18-03-738Z",
+      "runManifestSha256": "3704db1ea739e0a5d67a2959255c2985f6437c91d4d657c9aaa0086ab237fc01",
+      "purpose": "Recreation Supply narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T07-18-29-638Z",
+      "runManifestSha256": "8abd1702f542d116129ff3debd4deff81f84ccb39ce2173066646417fdd4621f",
+      "purpose": "Rubber-Cal narrow follow-up"
+    },
+    {
+      "runId": "2026-07-27T07-18-56-509Z",
+      "runManifestSha256": "476f3d3497e68f712c96d2d23453b7bdc0155827ff7c2852f9bd6fc17a9143e0",
+      "purpose": "In The Swim narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T07-19-09-546Z",
+      "runManifestSha256": "2dbba6afd53b693ed21535b0edcdf8bdd2508e911c95da203edbafc473d63ca4",
+      "purpose": "Leslie's Pool Supplies narrow qualification capture"
+    }
+  ],
+  "results": {
+    "pinch-a-penny": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "pinch-a-penny--pool-test-strips",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.00140625,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "pinch-a-penny--pool-algaecide",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.006152023332118119,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport search grids expose coherent pool test-strip and algaecide products. Frozen roots include count boxes, liquid containers, current or starting prices, and query-adjacent negatives for extraction and abstention."
+    },
+    "pool-supply-unlimited": {
+      "status": "rejected",
+      "reason": "The desktop pool-test-strips route returned HTTP 403, retained none of the requested-query evidence, and produced no reviewable product roots."
+    },
+    "powerwash": {
+      "status": "rejected",
+      "reason": "The desktop house-wash route exposed only four reviewable product roots, below the frozen minimum of eight."
+    },
+    "janilink": {
+      "status": "rejected",
+      "reason": "The desktop floor-cleaner route passed machine checks with twelve roots, but original-resolution and root-text review found fewer than eight coherent floor-cleaning chemical products; tools and machines reduced relevant evidence below the frozen minimum."
+    },
+    "recreation-supply": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "recreation-supply--pool-hose",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.00140625,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "recreation-supply--pool-algaecide",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0027342325920524974,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport commercial-supply grids expose pool hose lengths and algaecide volumes, cases, and each prices. At least eight roots on each page are coherent requested-query products, with adjacent accessories and chemicals retained as abstention evidence."
+    },
+    "rubber-cal": {
+      "status": "rejected",
+      "reason": "The desktop rubber-roll route passed machine and visual review with twelve coherent roots, but the independent narrow rubber-flooring route returned HTTP 404 and produced no reviewable product roots."
+    },
+    "in-the-swim": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "in-the-swim--pool-shock",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.00140625,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "in-the-swim--pool-clarifier",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0027342325920524974,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Fresh captures after generic obstruction remediation expose coherent pool-shock mass packs and pool-clarifier liquid containers in opposite viewports. Frozen roots include sale prices, multi-packs, mixed-unit strings, and one query-adjacent negative."
+    },
+    "leslies-pool": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "leslies-pool--pool-shock",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.00140625,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "leslies-pool--pool-algaecide",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0027342325920524974,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport specialty-pool grids expose pool-shock mass packs and algaecide liquid containers. Frozen roots include current and reduced prices, varied package sizes, inventory text, and query-adjacent chemicals."
+    },
+    "carpet-tile-depot": {
+      "status": "rejected",
+      "reason": "The desktop carpet-tile route retained complete query evidence but produced no reviewable product roots."
+    },
+    "interface-shop": {
+      "status": "rejected",
+      "reason": "The desktop carpet-tile route retained complete query evidence but produced no reviewable product roots."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "pinch-a-penny",
+      "recreation-supply",
+      "in-the-swim",
+      "leslies-pool"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "pinch-a-penny",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "recreation-supply",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "in-the-swim",
+        "cohort": "selection"
+      },
+      {
+        "siteId": "leslies-pool",
+        "cohort": "selection"
+      }
+    ],
+    "status": "keep"
+  }
+}

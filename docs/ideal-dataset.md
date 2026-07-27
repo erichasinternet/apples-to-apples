@@ -1555,6 +1555,32 @@ The independence audit locates all 530 eligible captures and verifies 5,981
 active roots with no overlap. Human semantic reviews and adjudication remain
 pending.
 
+A nineteenth bounded retry screened 10 more never-retried domains across 10
+strata with two desktop candidates per unit dimension. Five desktop pages
+advanced to distinct narrow queries. Rubber-Cal's narrow route returned HTTP
+404; Pinch A Penny, Recreation Supply, In The Swim, and Leslie's qualified with
+12 independent roots on each page, complete query evidence, no truncation, and
+obstruction below the frozen 20% limit. In The Swim initially exposed a real
+subscription modal that the collector repeatedly clicked without advancing. A
+generic, unit-tested attempted-control marker fixed that retry starvation, and a
+fresh headed recapture passed the unchanged gate. Pinch A Penny and Recreation
+Supply add four count, length, and volume pages to validation. In The Swim and
+Leslie's add four mass and volume pages to selection and remain together there
+because their closely related storefront templates must not leak across held-out
+cohorts. Qualified held-out structure is now 14 validation domains with 28 pages
+and 15 selection domains with 30 pages, both at 50% narrow-viewport coverage.
+The blinded
+[`g2-validation-p11.json`](../benchmarks/review-campaigns/g2-validation-p11.json)
+and
+[`g2-selection-p09.json`](../benchmarks/review-campaigns/g2-selection-p09.json)
+campaigns and their paired reviewer batches passed headed Playwright Chromium
+with all 96 frozen roots loaded, zero console errors, and zero review writes.
+The independence audit locates all 538 eligible captures and verifies 6,077
+active roots with no overlap. The campaign registry now validates 55 campaigns,
+6,623 pages, and 70,862 frozen roots. All 10 candidate domains remain in the
+qualification-yield denominator; human semantic reviews and adjudication remain
+pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

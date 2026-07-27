@@ -6360,6 +6360,102 @@
       "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p08.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "in-the-swim",
+      "cohort": "selection",
+      "pageId": "in-the-swim--pool-shock",
+      "captureTimestamp": "2026-07-27T07:17:00.266Z",
+      "observationSha256": "c82a84b2250afc7e52e2347d641c2b8c6524aeaf9aded1b811b7835d5b3ea9f9",
+      "annotationScreenshotSha256": "6e3fb1f65d7d51bf5aecb6bdab5ae0ac8ad3655a371168bba37079d7cd4f3866",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p18.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p09.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "in-the-swim",
+      "cohort": "selection",
+      "pageId": "in-the-swim--pool-clarifier",
+      "captureTimestamp": "2026-07-27T07:19:08.281Z",
+      "observationSha256": "59a7bc736a818f8f4a8537fc7a1cb735a40d9eb02e529c26a1006fe141e50348",
+      "annotationScreenshotSha256": "f404961888569dbd2b5708b467d18ca7d925c82e8bc1c4765b0972e3e30b9e6b",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p18.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p09.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "leslies-pool",
+      "cohort": "selection",
+      "pageId": "leslies-pool--pool-shock",
+      "captureTimestamp": "2026-07-27T07:12:42.530Z",
+      "observationSha256": "7a8ca6da44bcd11bd9bc043c4009054f4f7367e8a2079c15d79c1038762b5310",
+      "annotationScreenshotSha256": "63fec9a23be4e4b69a7938760df645b9255801feeb52fa9a5ffe5946ffed1785",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p18.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p09.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "leslies-pool",
+      "cohort": "selection",
+      "pageId": "leslies-pool--pool-algaecide",
+      "captureTimestamp": "2026-07-27T07:19:25.421Z",
+      "observationSha256": "8bffe4c7d96b55cc2c7a3e1efaa24e9e39bf8fda57954e052f37764929371d63",
+      "annotationScreenshotSha256": "15bb66af6ac93a1d07b1de2563c27e9d987658f18d8b5ea86bc85890ec1217ab",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p18.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p09.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "pinch-a-penny",
+      "cohort": "validation",
+      "pageId": "pinch-a-penny--pool-test-strips",
+      "captureTimestamp": "2026-07-27T07:09:54.478Z",
+      "observationSha256": "8af592afeff0433f86dc206b8967bcfb8948eac0b7c589f76f5ee45d0de5ef2f",
+      "annotationScreenshotSha256": "d621340e532b6c31d1f5fdf0f2a22d179293299690c5e9384a658f9fae1afea5",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p18.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p10.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "pinch-a-penny",
+      "cohort": "validation",
+      "pageId": "pinch-a-penny--pool-algaecide",
+      "captureTimestamp": "2026-07-27T07:18:02.644Z",
+      "observationSha256": "039a0bb753a3f46d301738dccba12e6a5adb51b99660e09e1ce4cd5477bab9e5",
+      "annotationScreenshotSha256": "14f69e417d28c584b653c9eb8c59ffb762384745b13b36c41b3fe4f53935e3fc",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p18.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p10.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "recreation-supply",
+      "cohort": "validation",
+      "pageId": "recreation-supply--pool-hose",
+      "captureTimestamp": "2026-07-27T07:11:45.000Z",
+      "observationSha256": "39f23d1a58f55c5e572df3cad20c0f8ab1211c55386a2e6897ffeda7e3d06bf5",
+      "annotationScreenshotSha256": "46e2f51f5a7cac29c3f3bf6674e6b017ef72e8cace17cab1033e333bffb5693d",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p18.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p10.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "recreation-supply",
+      "cohort": "validation",
+      "pageId": "recreation-supply--pool-algaecide",
+      "captureTimestamp": "2026-07-27T07:18:28.398Z",
+      "observationSha256": "97db93953077b5b122ca9841f8179e437df2b0beb087a9dd75a6f8a57fd44d1e",
+      "annotationScreenshotSha256": "19ee5e2342d924fdd80f2382af7c075a49f61f7a292cfcb3e152de34c3519622",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p18.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p10.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

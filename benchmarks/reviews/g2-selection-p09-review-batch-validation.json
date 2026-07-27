@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "auditId": "g2-selection-p09",
+  "createdAt": "2026-07-27T07:27:43.584Z",
+  "source": {
+    "batchManifest": "benchmarks/reviews/g2-selection-p09-review-batches.json",
+    "batchManifestSha256": "4b23d2ad28881184596849aeff8aa666d1e8cafa8ca1821a524d85ee01a105b6",
+    "validationReportSha256": [
+      "f983a977630ffac7694cc8470c162798dcfb13ac959e1c9b2cb5bf30048af216"
+    ]
+  },
+  "browser": "headed Playwright Chromium",
+  "batches": 1,
+  "pagesLoaded": 4,
+  "screenshotsLoaded": 4,
+  "candidateCards": 48,
+  "consoleErrors": 0,
+  "reviewFilesWritten": 0,
+  "onlyFrozenCardRootOffered": true,
+  "directFrozenCardNavigation": "passed",
+  "nonCandidateAncestor": "rejected-404",
+  "incompleteCoverage": "rejected-422",
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Workbench validation proves batch integrity and usability, not semantic label correctness."
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p11",
+  "createdAt": "2026-07-27T07:27:28.492Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--8010b760208aa2a0",
+      "path": "benchmark-data/review/g2-validation-p11/reviewer-a.json",
+      "sha256": "086fe5d49eb637db2e3d47088edad8778e9d9d37b325eb0e5575a77d1ff8a8fc",
+      "pages": 4
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--c02bc6958dfe789f",
+      "path": "benchmark-data/review/g2-validation-p11/reviewer-b.json",
+      "sha256": "26453ab947a96e8b655ef8cfc77739893789e1927d3971a60eaefe673554ef1b",
+      "pages": 4
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 4,
+    "candidateCards": 48
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p11--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "pinch-a-penny--pool-algaecide",
+        "pinch-a-penny--pool-test-strips",
+        "recreation-supply--pool-algaecide",
+        "recreation-supply--pool-hose"
+      ],
+      "pages": 4,
+      "candidateCards": 48,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--916b748b8ff3ab40",
+          "path": "benchmark-data/review/g2-validation-p11-review-batches/reviewer-a--batch-01.json",
+          "sha256": "ff3ba75a68f3cd85984d664b5f0c8b01c73f418479bb455023afd34a3e518653"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--9e6738c4f6c73be4",
+          "path": "benchmark-data/review/g2-validation-p11-review-batches/reviewer-b--batch-01.json",
+          "sha256": "2c01d80a7354308d1c80adff325d718fd013635629a4a700bf1fc1c4e3b2b2a6"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

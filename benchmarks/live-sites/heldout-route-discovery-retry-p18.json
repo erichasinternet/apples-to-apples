@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "description": "Nineteenth bounded held-out qualification retry across ten never-retried domains and ten strata. Desktop screening is balanced with two candidates per unit dimension; independent narrow queries may exercise a different dimension where the retailer catalog naturally spans unit families.",
+  "sites": [
+    {
+      "id": "pinch-a-penny",
+      "label": "Pinch A Penny",
+      "hostname": "pinchapenny.com",
+      "stratum": "pool-franchise",
+      "searchUrlTemplate": "https://pinchapenny.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-test-strips",
+          "query": "pool test strips",
+          "dimension": "count"
+        },
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "pool-supply-unlimited",
+      "label": "Pool Supply Unlimited",
+      "hostname": "www.poolsupplyunlimited.com",
+      "stratum": "pool-equipment",
+      "searchUrlTemplate": "https://www.poolsupplyunlimited.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-test-strips",
+          "query": "pool test strips",
+          "dimension": "count"
+        },
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "powerwash",
+      "label": "PowerWash.com",
+      "hostname": "www.powerwash.com",
+      "stratum": "pressure-washing",
+      "searchUrlTemplate": "https://www.powerwash.com/search?q={query}",
+      "queries": [
+        {
+          "id": "house-wash",
+          "query": "house wash",
+          "dimension": "volume"
+        },
+        {
+          "id": "degreaser",
+          "query": "degreaser",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "janilink",
+      "label": "JaniLink",
+      "hostname": "www.janilink.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.janilink.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "floor-cleaner",
+          "query": "floor cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "hand-soap",
+          "query": "hand soap",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "recreation-supply",
+      "label": "Recreation Supply Company",
+      "hostname": "www.recsupply.com",
+      "stratum": "recreation-supply",
+      "searchUrlTemplate": "https://www.recsupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-hose",
+          "query": "pool hose",
+          "dimension": "length"
+        },
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "rubber-cal",
+      "label": "Rubber-Cal",
+      "hostname": "rubbercal.com",
+      "stratum": "rubber-products",
+      "searchUrlTemplate": "https://rubbercal.com/search?q={query}",
+      "queries": [
+        {
+          "id": "rubber-roll",
+          "query": "rubber roll",
+          "dimension": "length"
+        },
+        {
+          "id": "rubber-flooring",
+          "query": "rubber flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "in-the-swim",
+      "label": "In The Swim",
+      "hostname": "www.intheswim.com",
+      "stratum": "aquatic-retail",
+      "searchUrlTemplate": "https://www.intheswim.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-shock",
+          "query": "pool shock",
+          "dimension": "mass"
+        },
+        {
+          "id": "pool-clarifier",
+          "query": "pool clarifier",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "leslies-pool",
+      "label": "Leslie's Pool Supplies",
+      "hostname": "lesliespool.com",
+      "stratum": "pool-retail-chain",
+      "searchUrlTemplate": "https://lesliespool.com/search/?q={query}",
+      "queries": [
+        {
+          "id": "pool-shock",
+          "query": "pool shock",
+          "dimension": "mass"
+        },
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "carpet-tile-depot",
+      "label": "Carpet Tile Depot",
+      "hostname": "www.carpettiledepot.com",
+      "stratum": "carpet-discount",
+      "searchUrlTemplate": "https://www.carpettiledepot.com/search?q={query}",
+      "queries": [
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "dimension": "area"
+        },
+        {
+          "id": "commercial-carpet",
+          "query": "commercial carpet",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "interface-shop",
+      "label": "Interface",
+      "hostname": "shop.interface.com",
+      "stratum": "commercial-flooring",
+      "searchUrlTemplate": "https://shop.interface.com/US/en-US/search?text={query}",
+      "queries": [
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "dimension": "area"
+        },
+        {
+          "id": "rubber-flooring",
+          "query": "rubber flooring",
+          "dimension": "area"
+        }
+      ]
+    }
+  ]
+}

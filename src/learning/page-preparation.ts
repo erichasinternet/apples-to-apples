@@ -120,6 +120,7 @@ export function dismissVisibleObstruction(): boolean {
   let bestCandidate: HTMLElement | undefined;
   let bestScore = -1;
   for (const candidate of candidates) {
+    if (candidate.dataset.ataDismissAttempted === "true") continue;
     if (!isVisible(candidate)) continue;
     const containerScore = obstructionScore(candidate);
     if (containerScore < 2) continue;
@@ -165,6 +166,7 @@ export function dismissVisibleObstruction(): boolean {
   }
 
   if (bestCandidate) {
+    bestCandidate.dataset.ataDismissAttempted = "true";
     bestCandidate.click();
     return true;
   }

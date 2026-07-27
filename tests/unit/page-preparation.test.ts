@@ -80,6 +80,29 @@ describe("page preparation", () => {
     expect(clicked).not.toHaveBeenCalled();
   });
 
+  it("advances past an ineffective obstruction control on the next pass", () => {
+    document.body.innerHTML = `
+      <div role="dialog" style="position: fixed">
+        <button id="first">No thanks</button>
+        <button id="second">Close</button>
+      </div>
+    `;
+    mockVisibleBounds();
+    const first = document.querySelector<HTMLButtonElement>("#first")!;
+    const second = document.querySelector<HTMLButtonElement>("#second")!;
+    const firstClicked = vi.fn();
+    const secondClicked = vi.fn();
+    first.addEventListener("click", firstClicked);
+    second.addEventListener("click", secondClicked);
+
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(dismissVisibleObstruction()).toBe(true);
+    expect(firstClicked).toHaveBeenCalledOnce();
+    expect(secondClicked).toHaveBeenCalledOnce();
+    expect(first.dataset.ataDismissAttempted).toBe("true");
+    expect(second.dataset.ataDismissAttempted).toBe("true");
+  });
+
   it("does not toggle a close-labelled control in a small fixed toolbar", () => {
     document.body.innerHTML = `
       <header id="toolbar" style="position: fixed">

@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p11",
+  "createdAt": "2026-07-27T07:26:54.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "pinch-a-penny",
+      "pageId": "pinch-a-penny--pool-algaecide",
+      "captureTimestamp": "2026-07-27T07:18:02.644Z",
+      "candidateCardCount": 12,
+      "observationSha256": "039a0bb753a3f46d301738dccba12e6a5adb51b99660e09e1ce4cd5477bab9e5",
+      "annotationScreenshotSha256": "14f69e417d28c584b653c9eb8c59ffb762384745b13b36c41b3fe4f53935e3fc"
+    },
+    {
+      "siteId": "pinch-a-penny",
+      "pageId": "pinch-a-penny--pool-test-strips",
+      "captureTimestamp": "2026-07-27T07:09:54.478Z",
+      "candidateCardCount": 12,
+      "observationSha256": "8af592afeff0433f86dc206b8967bcfb8948eac0b7c589f76f5ee45d0de5ef2f",
+      "annotationScreenshotSha256": "d621340e532b6c31d1f5fdf0f2a22d179293299690c5e9384a658f9fae1afea5"
+    },
+    {
+      "siteId": "recreation-supply",
+      "pageId": "recreation-supply--pool-algaecide",
+      "captureTimestamp": "2026-07-27T07:18:28.398Z",
+      "candidateCardCount": 12,
+      "observationSha256": "97db93953077b5b122ca9841f8179e437df2b0beb087a9dd75a6f8a57fd44d1e",
+      "annotationScreenshotSha256": "19ee5e2342d924fdd80f2382af7c075a49f61f7a292cfcb3e152de34c3519622"
+    },
+    {
+      "siteId": "recreation-supply",
+      "pageId": "recreation-supply--pool-hose",
+      "captureTimestamp": "2026-07-27T07:11:45.000Z",
+      "candidateCardCount": 12,
+      "observationSha256": "39f23d1a58f55c5e572df3cad20c0f8ab1211c55386a2e6897ffeda7e3d06bf5",
+      "annotationScreenshotSha256": "46e2f51f5a7cac29c3f3bf6674e6b017ef72e8cace17cab1033e333bffb5693d"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--8010b760208aa2a0",
+      "campaignQueueSha256": "086fe5d49eb637db2e3d47088edad8778e9d9d37b325eb0e5575a77d1ff8a8fc",
+      "sourceQueueSha256": [
+        "73735c0dc791a73554010dbe86237689ef21c0c1483425f250bcbfb9dd102783",
+        "85a362a3de19c28a6e7412caf3725c5528e338372db7f276fc6a0d6e8d80e73f",
+        "4fe6eda0527f75496baecc949f826c58303f98a4338365e2f5aa4734fa5b9cbd",
+        "f685fda154202f4efeb49c0d3d047904af67471a6e388bedb88b8aef62e9dc38"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--c02bc6958dfe789f",
+      "campaignQueueSha256": "26453ab947a96e8b655ef8cfc77739893789e1927d3971a60eaefe673554ef1b",
+      "sourceQueueSha256": [
+        "4c80c53be65450ccec1b07efbb7dccc267be5c4c40ef4c5071c9b06c4f6c7db0",
+        "908f73ac915cb893a00560fc5700bf51527f0c6e467f0e916891877decd09df4",
+        "c741d5840060ed6522c714fcfddb19fb06dce72555bdadb2c89ff50bd5659fc7",
+        "39a497bc211a517a87167075ddf86d945b5023ffba347cebabb16b76d1e5a144"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--8010b760208aa2a0",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 4,
+    "screenshotsLoaded": 4,
+    "candidateCards": 48,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

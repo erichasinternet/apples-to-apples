@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p10",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T07:23:01.000Z",
+  "source": {
+    "siteIds": [
+      "pinch-a-penny",
+      "recreation-supply"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "pool-franchise",
+      "recreation-supply"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "3ca4fa59616f2b4e2961b414569c6d92a1bad358023652967fb365889131cc1f"
+    ],
+    "collectorSha256": [
+      "cdc056b57f525ae389e514a3beea6bcd02c5c1512ccb691d2f73e81bc748f8ab",
+      "7b0d6e7e88ddb12234def7ab68515b0b1061271971a7b6b20950b7d18f226c44"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T07-09-33-126Z",
+      "runManifestSha256": "4ec5d399648c2b484c646b0dba7bf6a0bea110c5e8900a23861cdc978e22988f",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T07-17-44-376Z",
+      "runManifestSha256": "f78de3503c81bf8cf5fa7fc2e070961993b00adbbd336726f5876af385e91662",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T07-11-13-285Z",
+      "runManifestSha256": "c8dda84908ce1bd49d0d7780741275d9787c40d6934db0e4fb0b1b1cd53964dd",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T07-18-03-738Z",
+      "runManifestSha256": "3704db1ea739e0a5d67a2959255c2985f6437c91d4d657c9aaa0086ab237fc01",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 4,
+    "successfulCaptureAttempts": 4,
+    "acceptedPages": 4,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 48,
+    "samplingFinding": "Pinch A Penny and Recreation Supply passed fresh opposite-viewport p18 pairs and were assigned to validation under the frozen gate.",
+    "visualValidationFinding": "All four original-resolution annotation screenshots and representative candidate closeups were inspected. The forty-eight frozen roots show coherent pool test strips, algaecides, and hoses with readable product identity, current or starting price, count, volume, and length evidence plus query-adjacent abstention cases."
+  },
+  "captures": [
+    {
+      "siteId": "pinch-a-penny",
+      "pageId": "pinch-a-penny--pool-test-strips",
+      "capturedAt": "2026-07-27T07:09:54.478Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 246,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8af592afeff0433f86dc206b8967bcfb8948eac0b7c589f76f5ee45d0de5ef2f",
+      "canonicalObservationSha256": "4fd301ab9451854238ce596ac38c5415c716c2b060da50c6e0c3429151a004de",
+      "annotationScreenshotSha256": "d621340e532b6c31d1f5fdf0f2a22d179293299690c5e9384a658f9fae1afea5",
+      "provenanceAggregateSha256": "997466cbebb0f4cbf527d61d5781eee0e7fd8319ba051fc96eeee882ac6fe85b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "pinch-a-penny",
+      "pageId": "pinch-a-penny--pool-algaecide",
+      "capturedAt": "2026-07-27T07:18:02.644Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 224,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.006152023332118119,
+      "queryTokenCoverage": 1,
+      "observationSha256": "039a0bb753a3f46d301738dccba12e6a5adb51b99660e09e1ce4cd5477bab9e5",
+      "canonicalObservationSha256": "3d3e9ab667f7df04c1d3054ffdc46c096fd7ca0586a6ff891cb5c8b5321de293",
+      "annotationScreenshotSha256": "14f69e417d28c584b653c9eb8c59ffb762384745b13b36c41b3fe4f53935e3fc",
+      "provenanceAggregateSha256": "9f8c4e99004622d051b0de6fdcc2e0510c21a6ac146978006e0f8447bd24cf67",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "recreation-supply",
+      "pageId": "recreation-supply--pool-hose",
+      "capturedAt": "2026-07-27T07:11:45.000Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 766,
+      "observationTruncated": false,
+      "dismissedObstructions": 8,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "39f23d1a58f55c5e572df3cad20c0f8ab1211c55386a2e6897ffeda7e3d06bf5",
+      "canonicalObservationSha256": "e2ee065be4ce7a160499a8fbc72bca9461556359686a4b26e4b51b1a3735c880",
+      "annotationScreenshotSha256": "46e2f51f5a7cac29c3f3bf6674e6b017ef72e8cace17cab1033e333bffb5693d",
+      "provenanceAggregateSha256": "2fcba746837131329f9f72df439e03c3c959f38c3317ea62fea9a2373a9510aa",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "recreation-supply",
+      "pageId": "recreation-supply--pool-algaecide",
+      "capturedAt": "2026-07-27T07:18:28.398Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 511,
+      "observationTruncated": false,
+      "dismissedObstructions": 8,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "97db93953077b5b122ca9841f8179e437df2b0beb087a9dd75a6f8a57fd44d1e",
+      "canonicalObservationSha256": "8fec217c3e98ae033ff57281e2051d0c77c46d4d9a5afcc0cbef8f74e026a41d",
+      "annotationScreenshotSha256": "19ee5e2342d924fdd80f2382af7c075a49f61f7a292cfcb3e152de34c3519622",
+      "provenanceAggregateSha256": "01705bef92c77b2a1632f8b80fa296b3a2739cc9ebcf46c77f611cae307a2419",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

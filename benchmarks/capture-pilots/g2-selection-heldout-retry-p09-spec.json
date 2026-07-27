@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p09",
+  "capturedAt": "2026-07-27T07:23:01.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p18.json",
+  "requestedCaptureAttempts": 4,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T07-16-48-587Z",
+      "pageIds": [
+        "in-the-swim--pool-shock"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T07-18-56-509Z",
+      "pageIds": [
+        "in-the-swim--pool-clarifier"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T07-12-24-275Z",
+      "pageIds": [
+        "leslies-pool--pool-shock"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T07-19-09-546Z",
+      "pageIds": [
+        "leslies-pool--pool-algaecide"
+      ]
+    }
+  ],
+  "samplingFinding": "In The Swim and Leslie's passed fresh opposite-viewport p18 pairs and were grouped in selection to avoid cross-cohort leakage from their closely related storefront templates.",
+  "visualValidationFinding": "All four original-resolution annotation screenshots and representative candidate closeups were inspected. The forty-eight frozen roots show coherent pool shock, clarifier, and algaecide products with readable identity, current or reduced price, mass, volume, and pack evidence plus query-adjacent abstention cases."
+}

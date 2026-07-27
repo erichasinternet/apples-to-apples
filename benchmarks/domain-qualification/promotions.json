@@ -630,6 +630,30 @@
       "cohort": "selection",
       "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p17.json",
       "promotedAt": "2026-07-27T06:58:00.000Z"
+    },
+    {
+      "siteId": "pinch-a-penny",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p18.json",
+      "promotedAt": "2026-07-27T07:23:01.000Z"
+    },
+    {
+      "siteId": "recreation-supply",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p18.json",
+      "promotedAt": "2026-07-27T07:23:01.000Z"
+    },
+    {
+      "siteId": "in-the-swim",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p18.json",
+      "promotedAt": "2026-07-27T07:23:01.000Z"
+    },
+    {
+      "siteId": "leslies-pool",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p18.json",
+      "promotedAt": "2026-07-27T07:23:01.000Z"
     }
   ]
 }

@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p10",
+  "capturedAt": "2026-07-27T07:23:01.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p18.json",
+  "requestedCaptureAttempts": 4,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T07-09-33-126Z",
+      "pageIds": [
+        "pinch-a-penny--pool-test-strips"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T07-17-44-376Z",
+      "pageIds": [
+        "pinch-a-penny--pool-algaecide"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T07-11-13-285Z",
+      "pageIds": [
+        "recreation-supply--pool-hose"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T07-18-03-738Z",
+      "pageIds": [
+        "recreation-supply--pool-algaecide"
+      ]
+    }
+  ],
+  "samplingFinding": "Pinch A Penny and Recreation Supply passed fresh opposite-viewport p18 pairs and were assigned to validation under the frozen gate.",
+  "visualValidationFinding": "All four original-resolution annotation screenshots and representative candidate closeups were inspected. The forty-eight frozen roots show coherent pool test strips, algaecides, and hoses with readable product identity, current or starting price, count, volume, and length evidence plus query-adjacent abstention cases."
+}

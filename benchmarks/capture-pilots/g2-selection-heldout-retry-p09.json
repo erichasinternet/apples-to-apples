@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p09",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T07:23:01.000Z",
+  "source": {
+    "siteIds": [
+      "in-the-swim",
+      "leslies-pool"
+    ],
+    "cohort": "selection",
+    "strata": [
+      "aquatic-retail",
+      "pool-retail-chain"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "3ca4fa59616f2b4e2961b414569c6d92a1bad358023652967fb365889131cc1f"
+    ],
+    "collectorSha256": [
+      "7b0d6e7e88ddb12234def7ab68515b0b1061271971a7b6b20950b7d18f226c44",
+      "cdc056b57f525ae389e514a3beea6bcd02c5c1512ccb691d2f73e81bc748f8ab"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T07-16-48-587Z",
+      "runManifestSha256": "ccc499c2777091661608be9cb5ed8f025b2c3c622501d1a92e655ad5297d9d3f",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T07-18-56-509Z",
+      "runManifestSha256": "476f3d3497e68f712c96d2d23453b7bdc0155827ff7c2852f9bd6fc17a9143e0",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T07-12-24-275Z",
+      "runManifestSha256": "ffbdc9b1aeeb19ca5dbdf4a7aca3fc887a13835c250cf785bf59383345a4bb33",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T07-19-09-546Z",
+      "runManifestSha256": "2dbba6afd53b693ed21535b0edcdf8bdd2508e911c95da203edbafc473d63ca4",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 4,
+    "successfulCaptureAttempts": 4,
+    "acceptedPages": 4,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 48,
+    "samplingFinding": "In The Swim and Leslie's passed fresh opposite-viewport p18 pairs and were grouped in selection to avoid cross-cohort leakage from their closely related storefront templates.",
+    "visualValidationFinding": "All four original-resolution annotation screenshots and representative candidate closeups were inspected. The forty-eight frozen roots show coherent pool shock, clarifier, and algaecide products with readable identity, current or reduced price, mass, volume, and pack evidence plus query-adjacent abstention cases."
+  },
+  "captures": [
+    {
+      "siteId": "in-the-swim",
+      "pageId": "in-the-swim--pool-shock",
+      "capturedAt": "2026-07-27T07:17:00.266Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2002,
+      "observationTruncated": false,
+      "dismissedObstructions": 5,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c82a84b2250afc7e52e2347d641c2b8c6524aeaf9aded1b811b7835d5b3ea9f9",
+      "canonicalObservationSha256": "b589f10acbc6db79868519370a019504b9bdcd13d600d3c499656a9444108a64",
+      "annotationScreenshotSha256": "6e3fb1f65d7d51bf5aecb6bdab5ae0ac8ad3655a371168bba37079d7cd4f3866",
+      "provenanceAggregateSha256": "11638e919d63e82de5d69d093b4e6990b56e6b83888ba4817c85411627c9da00",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "in-the-swim",
+      "pageId": "in-the-swim--pool-clarifier",
+      "capturedAt": "2026-07-27T07:19:08.281Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1495,
+      "observationTruncated": false,
+      "dismissedObstructions": 5,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "59a7bc736a818f8f4a8537fc7a1cb735a40d9eb02e529c26a1006fe141e50348",
+      "canonicalObservationSha256": "4c462fa8045a20372c4a543386931bdd374fdee4f1a43beecb786358abc56d59",
+      "annotationScreenshotSha256": "f404961888569dbd2b5708b467d18ca7d925c82e8bc1c4765b0972e3e30b9e6b",
+      "provenanceAggregateSha256": "a8032993ec475f0a69a4fab897c8e7fca8f746c0d8c56e2874bfbacd8a16e3b3",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "leslies-pool",
+      "pageId": "leslies-pool--pool-shock",
+      "capturedAt": "2026-07-27T07:12:42.530Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1924,
+      "observationTruncated": false,
+      "dismissedObstructions": 5,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "7a8ca6da44bcd11bd9bc043c4009054f4f7367e8a2079c15d79c1038762b5310",
+      "canonicalObservationSha256": "494ef95eda60ea6d75eadfb1d4f7efe9fd7b460d291c4b21630ad796905ea11f",
+      "annotationScreenshotSha256": "63fec9a23be4e4b69a7938760df645b9255801feeb52fa9a5ffe5946ffed1785",
+      "provenanceAggregateSha256": "92463bc79f6eed89a009b27ae9e2992130062592db19b556152d109bad42fd7b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "leslies-pool",
+      "pageId": "leslies-pool--pool-algaecide",
+      "capturedAt": "2026-07-27T07:19:25.421Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1583,
+      "observationTruncated": false,
+      "dismissedObstructions": 4,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8bffe4c7d96b55cc2c7a3e1efaa24e9e39bf8fda57954e052f37764929371d63",
+      "canonicalObservationSha256": "f3c598ea1105f3f3e03144fe30902c1f26f62bdbc98a968310c98d2c7f2b7d20",
+      "annotationScreenshotSha256": "15bb66af6ac93a1d07b1de2563c27e9d987658f18d8b5ea86bc85890ec1217ab",
+      "provenanceAggregateSha256": "3634a6215aed52001b28763c8fb29cf5a8278e9ab34ef918dfd9544a65b21f31",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

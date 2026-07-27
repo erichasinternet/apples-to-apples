@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p09",
+  "createdAt": "2026-07-27T07:26:54.000Z",
+  "cohort": "selection",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "in-the-swim",
+      "pageId": "in-the-swim--pool-clarifier",
+      "captureTimestamp": "2026-07-27T07:19:08.281Z",
+      "candidateCardCount": 12,
+      "observationSha256": "59a7bc736a818f8f4a8537fc7a1cb735a40d9eb02e529c26a1006fe141e50348",
+      "annotationScreenshotSha256": "f404961888569dbd2b5708b467d18ca7d925c82e8bc1c4765b0972e3e30b9e6b"
+    },
+    {
+      "siteId": "in-the-swim",
+      "pageId": "in-the-swim--pool-shock",
+      "captureTimestamp": "2026-07-27T07:17:00.266Z",
+      "candidateCardCount": 12,
+      "observationSha256": "c82a84b2250afc7e52e2347d641c2b8c6524aeaf9aded1b811b7835d5b3ea9f9",
+      "annotationScreenshotSha256": "6e3fb1f65d7d51bf5aecb6bdab5ae0ac8ad3655a371168bba37079d7cd4f3866"
+    },
+    {
+      "siteId": "leslies-pool",
+      "pageId": "leslies-pool--pool-algaecide",
+      "captureTimestamp": "2026-07-27T07:19:25.421Z",
+      "candidateCardCount": 12,
+      "observationSha256": "8bffe4c7d96b55cc2c7a3e1efaa24e9e39bf8fda57954e052f37764929371d63",
+      "annotationScreenshotSha256": "15bb66af6ac93a1d07b1de2563c27e9d987658f18d8b5ea86bc85890ec1217ab"
+    },
+    {
+      "siteId": "leslies-pool",
+      "pageId": "leslies-pool--pool-shock",
+      "captureTimestamp": "2026-07-27T07:12:42.530Z",
+      "candidateCardCount": 12,
+      "observationSha256": "7a8ca6da44bcd11bd9bc043c4009054f4f7367e8a2079c15d79c1038762b5310",
+      "annotationScreenshotSha256": "63fec9a23be4e4b69a7938760df645b9255801feeb52fa9a5ffe5946ffed1785"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--6be083ea3dc94f00",
+      "campaignQueueSha256": "4e50e2ea3ce7a46dc7a2e1fd6b1b2d72124038b35dec8769ec19e75c5e7ad423",
+      "sourceQueueSha256": [
+        "b4070c7427fa83abca9d9f482f7546c6a0faf37af2455f2d7d339f81357b6444",
+        "d6a94be09d034b376c35c1a89b96e41e574ce12979220a6f83ffdc39f8cd7219",
+        "68869e2d1ece77e88c8d8d7bf07d0eef06eea2012d9c1dc2d4616390b1c5747c",
+        "6918a0ddd3a6db2fc913e56ae50f6d7736395af3cb516eca598093f4da7add09"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--1cc443b121710297",
+      "campaignQueueSha256": "51b103542d29adf7e23e620efdb67862e7760b64dc831c9f1fe5396d067df9e2",
+      "sourceQueueSha256": [
+        "3861b782d28508635202eddc87a06deb3f16ffbc54034a194feb8b23ec6f5f6f",
+        "33b94ef302e7e0c560cd21677d81a867ab69a123aae5c58706f726b01b31b04c",
+        "43fae2cbe54c1873c1697a26f2f4e687fd5a4c495348fc0999dee9e7a0e3adcb",
+        "6241b32118b5655b1f938a3519915039942d07bf00e65fcd09de1709619b9459"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--6be083ea3dc94f00",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 4,
+    "screenshotsLoaded": 4,
+    "candidateCards": 48,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}
