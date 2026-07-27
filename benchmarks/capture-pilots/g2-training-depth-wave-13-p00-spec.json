@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-depth-wave-13-p00",
+  "capturedAt": "2026-07-27T01:58:57.000Z",
+  "sourceManifest": "benchmarks/live-sites/training-depth-wave-13.json",
+  "requestedCaptureAttempts": 40,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T01-29-23-584Z",
+      "pageIds": [
+        "allegro-medical--ostomy-bags",
+        "mexgrocer--corn-flour",
+        "ps-detail-products--tire-cleaner",
+        "purebulk--l-glutamine",
+        "search-for-fabric--sheer-fabric",
+        "the-fabric-market--muslin-fabric",
+        "tile-and-mosaic-depot--shell-tile",
+        "tiles-direct--bathroom-tile",
+        "tilezz--herringbone-tile",
+        "turtle-wax--car-polish",
+        "vitality-medical--medical-tape"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T01-40-26-904Z",
+      "pageIds": [
+        "alan-janitorial--odor-control",
+        "allegro-medical--lancets",
+        "artwalk-tile--decorative-tile",
+        "betty-mills--food-storage-bags",
+        "discount-school-supply--notebooks",
+        "ps-detail-products--car-wax",
+        "search-for-fabric--blackout-fabric",
+        "yeagers-detailing-supplies--car-wax"
+      ]
+    }
+  ],
+  "samplingFinding": "Twenty-nine of forty unseen query pages on twenty previously qualified training domains produced capture bundles, one additional attempt produced a blocked shell without annotation evidence, and ten attempts ended in bounded navigation or capture timeouts. Frozen minimum-root, screenshot-evidence, obstruction, relevance, and original-resolution visual checks rejected ten completed captures. The accepted set is nineteen of forty pages and 222 frozen roots, a 47.5% strict yield.",
+  "visualValidationFinding": "All twenty-nine available full-page annotation views were inspected at original resolution. Nineteen pages and 222 frozen roots were accepted across mass, volume, count, length, and area. Accepted evidence includes per-pound, per-ounce, fluid-ounce, gallon, package-count, per-yard, per-square-foot, per-sheet, per-box, sale-price, price-range, query-adjacent product, and deliberate abstention expressions. The Fabric Market organza was rejected for producing fewer than eight roots. Whole Spice sumac and bay leaves, Core Fabrics chiffon and flannel, Turtle Wax headlight restorer, ArtWalk Tile encaustic tile, and Fabricworm batik and jersey were rejected because most selected results were unrelated to the requested product class. Tile and Mosaic Depot onyx tile was rejected because a fixed accessibility control covered selected price evidence. Other fixed controls on accepted pages do not cover selected textual title, price, quantity, or native unit-price evidence. Vitality Medical medical tape and Yeager's car wax have complete annotation evidence and valid closeups under the frozen policy despite capturing fewer closeups than roots."
+}
