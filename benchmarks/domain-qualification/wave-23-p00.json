@@ -1,0 +1,528 @@
+{
+  "version": 1,
+  "qualificationId": "wave-23-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-23.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": [
+      "312d595de9c99efdc2ece9f7a808f54043beda6e2806f9cfa4f2daaec27afe7f",
+      "de2229f2f4f7a3971da23a5eab875c8d632b74df60bebb284faaadad7e1d26ef",
+      "c219c5c5597b7e46f00151bd9fad67cd13a7f3f7d771b259c760a1c6b8abbd58",
+      "1a1f86159d71f0b4b4b4e180dc070079dd44a0fead109683f86518d4e13ef8f2"
+    ],
+    "narrowBatchSha256": [
+      "b2aea531f3023a4c3a7604b01680e14206d705de82b1ac6a072c21553c2990a8",
+      "46ff09c6a750bcee276c4bce52f18fa9b8f762a1a798f6dcfd2b832680a41499"
+    ],
+    "processIsolationFinding": "All fifty-four headed qualification children completed under isolated process-group bounds with zero parent hard timeouts.",
+    "samplingFinding": "All thirty-nine fresh domains received a desktop screen. Fifteen machine-and-visual desktop survivors received the predeclared second query at the opposite narrow viewport. Nine domains passed both pages under the unchanged machine gate and original-resolution visual review; all thirty rejected domains remain in the acquisition-yield denominator.",
+    "manifestIntegrityFinding": "Candidate IDs and registrable hostnames have zero overlap with prior qualification waves or frozen domain splits. All captures use frozen manifest hash d67dd0159a0a5be172fd572031d89cbb774980ed2a781040506f765d40c45942 and collector hash 305e2fb224dca98ba2fa627ea413a57bd99d1a803ce2fc493a25000ad4c29fcf."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T11-55-59-113Z--p35242--004",
+      "runManifestSha256": "c68dcac75c3eb28f12fb6fc075a2c3ae73f547886310e8b2e322607b6d23d693",
+      "purpose": "Hancock's of Paducah desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-14-12-605Z--p40127--003",
+      "runManifestSha256": "f13cf0ebe0061bf6f6f5371a5c6e04e72302e1812642b6c0488e185278c637c1",
+      "purpose": "Hancock's of Paducah narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T11-55-59-113Z--p35242--005",
+      "runManifestSha256": "6669a856a8226d76fb71493cab206318740bbe77bff92d677d7de13ecae15ccb",
+      "purpose": "Artaic desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-14-12-605Z--p40127--004",
+      "runManifestSha256": "5f64ffb70a61dee8f20fee7209f376bbb3760b1fe4f8231b6626d34c822d040f",
+      "purpose": "Artaic narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T11-55-59-113Z--p35242--006",
+      "runManifestSha256": "0ed1e0e84535c9b6c74778bddaff131b1adb1f517606549631ffd5d29b4ad178",
+      "purpose": "Tile Mart desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-14-12-605Z--p40127--005",
+      "runManifestSha256": "7982ec78f196bbffb9939643bc28268d4a22b9ce5bfecd20d9b8be9669f15cf8",
+      "purpose": "Tile Mart narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-00-20-475Z--p36423--002",
+      "runManifestSha256": "039a20fbb07c3eef459621502899b8be447b21bc343848798e396e5dbc4bfb77",
+      "purpose": "Garner Supply desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-14-12-605Z--p40127--006",
+      "runManifestSha256": "f0934bc31eb838da856482ebffd72a8b7450df7f6162bad82f85a42f7d589f78",
+      "purpose": "Garner Supply narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-00-20-475Z--p36423--003",
+      "runManifestSha256": "e10fd4e9d95aa872a9219af03b24b5cb87a163feb598c9cbb36003256dec73d7",
+      "purpose": "GotCups desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-14-12-605Z--p40127--007",
+      "runManifestSha256": "425b6c1a526ac84dd094e74757f8e1608d69c8b335acee8bbbee72c5ee316aa1",
+      "purpose": "GotCups narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-00-20-475Z--p36423--006",
+      "runManifestSha256": "a61dd6161b6301b4426804a13f7cb6d15108c75a87a66298a860c4f6703a14b0",
+      "purpose": "Dean Supply desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-14-12-605Z--p40127--008",
+      "runManifestSha256": "2f0b087262932a136682e0c72ddccc7967ab4d19fc6d82814659195d2d75ef13",
+      "purpose": "Dean Supply narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-00-20-475Z--p36423--008",
+      "runManifestSha256": "8de3365227d0c30d38192c5a7967c33facbb1ebe5fe58a13b1687c406981b21d",
+      "purpose": "Taste of Tea desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-16-42-615Z--p40881--001",
+      "runManifestSha256": "85e6ca6a97801ffe6002b8f02bd4d541ac874e7fa1a2215160af03417d48deff",
+      "purpose": "Taste of Tea narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-03-12-274Z--p37261--008",
+      "runManifestSha256": "6ed531808f02195cb304e41dd0835b7272def2ad372f980fb410ad85392695e5",
+      "purpose": "DAVIDsTEA desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-16-42-615Z--p40881--004",
+      "runManifestSha256": "2451c9b2fa58b4b6ce04a2764ac41c389a3535535167c60064c6c8c7636c6912",
+      "purpose": "DAVIDsTEA narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-03-12-274Z--p37261--009",
+      "runManifestSha256": "8276db91fbea808a1a3bbef8c1a2afbd4444b615c0a069dafa3d1c86c274764a",
+      "purpose": "VAHDAM Teas desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-16-42-615Z--p40881--005",
+      "runManifestSha256": "133559f761555799f7521e682b36a921321a9887d12bfb638f32596ccd6dbb11",
+      "purpose": "VAHDAM Teas narrow qualification capture"
+    }
+  ],
+  "results": {
+    "us-fabric-shop": {
+      "status": "rejected",
+      "reason": "The desktop cotton-fabric page passed, but the narrow linen page contained eight product cards followed by four repeated whole-page navigation roots, so the frozen roots were not atomically reliable."
+    },
+    "sew-much-online": {
+      "status": "rejected",
+      "reason": "The desktop cotton-fabric page passed, but the narrow linen query returned cotton and generic fabrics rather than eight coherent linen products and included repeated whole-page roots."
+    },
+    "missouri-star-quilt": {
+      "status": "rejected",
+      "reason": "The desktop page could not produce the required annotation screenshot."
+    },
+    "hancocks-paducah": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "hancocks-paducah--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.00140625,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "hancocks-paducah--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.006152023332118119,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport fabric grids expose coherent cotton and linen products, current and list prices, yardage and precut variants, and length-normalization abstention cases."
+    },
+    "artsaics": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "artsaics--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.00396953125,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "artsaics--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.017365794750273424,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tile grids expose coherent porcelain and mosaic products with explicit box and square-foot prices."
+    },
+    "tile-mart": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "tile-mart--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "tile-mart--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport porcelain and mosaic grids expose explicit per-square-foot prices, sale prices, dimensions, and material variants."
+    },
+    "smart-tiles": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no reviewable product roots."
+    },
+    "tile-shop-online": {
+      "status": "rejected",
+      "reason": "The desktop route retained none of the requested-query evidence and exposed no reviewable product roots."
+    },
+    "mosaic-bros": {
+      "status": "rejected",
+      "reason": "The desktop route exposed ten roots but retained none of the requested porcelain-tile query evidence."
+    },
+    "tilephile": {
+      "status": "rejected",
+      "reason": "The desktop page passed numeric checks, but original-resolution review found marble products rather than the requested porcelain products."
+    },
+    "mosaicenter": {
+      "status": "rejected",
+      "reason": "The desktop route exposed only one reviewable product root."
+    },
+    "garner-supply": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "garner-supply--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "garner-supply--face-masks",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport medical-supply grids expose glove and mask products with box, case, and package counts, prices, sales, and query-adjacent abstention cases."
+    },
+    "got-cups": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "got-cups--paper-cups",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "got-cups--plastic-cups",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport food-service grids expose coherent paper and plastic cups with capacities, carton counts, current prices, and personalization variants."
+    },
+    "cup-barn": {
+      "status": "rejected",
+      "reason": "The desktop route exposed only three reviewable product roots."
+    },
+    "fresh2": {
+      "status": "rejected",
+      "reason": "The desktop route exposed twelve roots but retained none of the requested paper-cups query evidence."
+    },
+    "dean-supply": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "dean-supply--paper-cups",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.004861111111111111,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "dean-supply--plastic-cups",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.017948717948717947,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport food-service grids expose coherent paper and plastic cups with capacities, prices, option states, and package-count abstention cases."
+    },
+    "entirely-pets": {
+      "status": "rejected",
+      "reason": "The desktop page passed numeric checks, but original-resolution review found image fragments without usable product, price, or quantity boundaries."
+    },
+    "taste-of-tea": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "taste-of-tea--black-tea",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "taste-of-tea--green-tea",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tea grids expose coherent black and green teas with prices, package imagery, bags, samplers, and missing-mass abstention cases."
+    },
+    "tea-cozy": {
+      "status": "rejected",
+      "reason": "The desktop black-tea page passed, but the narrow green-tea query returned mostly herbal and black teas rather than eight coherent green-tea products."
+    },
+    "english-tea-store": {
+      "status": "rejected",
+      "reason": "The desktop black-tea page passed, but the narrow green-tea page contained eight product cards followed by four repeated whole-page navigation roots."
+    },
+    "tea-source": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no reviewable product roots."
+    },
+    "republic-of-tea": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no reviewable product roots."
+    },
+    "plum-deluxe": {
+      "status": "rejected",
+      "reason": "An unresolved obstruction covered the full desktop viewport."
+    },
+    "arbor-teas": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no reviewable product roots."
+    },
+    "seven-cups": {
+      "status": "rejected",
+      "reason": "The desktop route exposed only five reviewable product roots."
+    },
+    "mem-tea-imports": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no reviewable product roots."
+    },
+    "adagio-teas": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no reviewable product roots."
+    },
+    "davids-tea": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "davids-tea--black-tea",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.048,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "davids-tea--green-tea",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.05687203791469194,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tea grids expose coherent black, green, and matcha products with prices, ounces, grams, servings, pack counts, and sale states."
+    },
+    "vahdam-teas": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "vahdam-teas--black-tea",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "vahdam-teas--green-tea",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tea grids expose coherent black and green products with ounces, grams, counts, current and list prices, discounts, and assortment variants."
+    },
+    "sweet-marias": {
+      "status": "rejected",
+      "reason": "The desktop Ethiopia page met the eight-product threshold, but the narrow Colombia query returned products from other origins and no coherent Colombia set."
+    },
+    "bodhi-leaf-coffee": {
+      "status": "rejected",
+      "reason": "The desktop Ethiopia query returned a mixed coffee catalog without eight coherent Ethiopia products."
+    },
+    "genuine-origin": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no reviewable product roots."
+    },
+    "happy-mug-coffee": {
+      "status": "rejected",
+      "reason": "The desktop Ethiopia query exposed only seven query-relevant products among twelve roots."
+    },
+    "captains-coffee": {
+      "status": "rejected",
+      "reason": "The desktop Ethiopia query exposed only three query-relevant products among twelve roots."
+    },
+    "copan-trade": {
+      "status": "rejected",
+      "reason": "The desktop Ethiopia query exposed only two query-relevant products among twelve roots."
+    },
+    "car-care-specialties": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no reviewable product roots."
+    },
+    "suds-lab": {
+      "status": "rejected",
+      "reason": "The desktop route redirected cross-site to a parked-domain page and retained no requested-query evidence."
+    },
+    "three-d-products": {
+      "status": "rejected",
+      "reason": "The desktop page passed numeric checks, but original-resolution review found only three product cards followed by repeated navigation and page-shell roots."
+    },
+    "mckees-37": {
+      "status": "rejected",
+      "reason": "The desktop car-wash page passed, but the narrow wheel-cleaner page contained eight product cards followed by four repeated whole-page navigation roots."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "hancocks-paducah",
+      "artsaics",
+      "tile-mart",
+      "garner-supply",
+      "got-cups",
+      "dean-supply",
+      "taste-of-tea",
+      "davids-tea",
+      "vahdam-teas"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "hancocks-paducah",
+        "cohort": "final"
+      },
+      {
+        "siteId": "artsaics",
+        "cohort": "final"
+      },
+      {
+        "siteId": "tile-mart",
+        "cohort": "final"
+      },
+      {
+        "siteId": "garner-supply",
+        "cohort": "final"
+      },
+      {
+        "siteId": "got-cups",
+        "cohort": "final"
+      },
+      {
+        "siteId": "dean-supply",
+        "cohort": "final"
+      },
+      {
+        "siteId": "taste-of-tea",
+        "cohort": "final"
+      },
+      {
+        "siteId": "davids-tea",
+        "cohort": "final"
+      },
+      {
+        "siteId": "vahdam-teas",
+        "cohort": "final"
+      }
+    ],
+    "status": "keep"
+  }
+}

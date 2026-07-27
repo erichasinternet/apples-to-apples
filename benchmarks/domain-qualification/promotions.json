@@ -720,6 +720,60 @@
       "cohort": "selection",
       "qualificationReport": "benchmarks/domain-qualification/wave-22-p00.json",
       "promotedAt": "2026-07-27T08:58:00.000Z"
+    },
+    {
+      "siteId": "hancocks-paducah",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-23-p00.json",
+      "promotedAt": "2026-07-27T12:24:06.000Z"
+    },
+    {
+      "siteId": "artsaics",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-23-p00.json",
+      "promotedAt": "2026-07-27T12:24:06.000Z"
+    },
+    {
+      "siteId": "tile-mart",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-23-p00.json",
+      "promotedAt": "2026-07-27T12:24:06.000Z"
+    },
+    {
+      "siteId": "garner-supply",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-23-p00.json",
+      "promotedAt": "2026-07-27T12:24:06.000Z"
+    },
+    {
+      "siteId": "got-cups",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-23-p00.json",
+      "promotedAt": "2026-07-27T12:24:06.000Z"
+    },
+    {
+      "siteId": "dean-supply",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-23-p00.json",
+      "promotedAt": "2026-07-27T12:24:06.000Z"
+    },
+    {
+      "siteId": "taste-of-tea",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-23-p00.json",
+      "promotedAt": "2026-07-27T12:24:06.000Z"
+    },
+    {
+      "siteId": "davids-tea",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-23-p00.json",
+      "promotedAt": "2026-07-27T12:24:06.000Z"
+    },
+    {
+      "siteId": "vahdam-teas",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-23-p00.json",
+      "promotedAt": "2026-07-27T12:24:06.000Z"
     }
   ]
 }

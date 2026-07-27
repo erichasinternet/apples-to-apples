@@ -12,7 +12,7 @@ interface BoundedReport {
 const options = parseOptions(process.argv.slice(2));
 await mkdir(options.outputDirectory, { recursive: true });
 
-const pages = (
+const reportPages = (
   await Promise.all(
     options.reportPaths.map(async (reportPath) => {
       const report = JSON.parse(
@@ -22,6 +22,18 @@ const pages = (
     }),
   )
 ).flat();
+const pages = options.pageIds
+  ? reportPages.filter((page) => options.pageIds?.has(page.pageId))
+  : reportPages;
+if (options.pageIds) {
+  const locatedPageIds = new Set(pages.map((page) => page.pageId));
+  const missingPageIds = [...options.pageIds].filter(
+    (pageId) => !locatedPageIds.has(pageId),
+  );
+  if (missingPageIds.length > 0) {
+    throw new Error(`Unknown page IDs: ${missingPageIds.join(", ")}`);
+  }
+}
 
 for (const page of pages) {
   const cardDirectory = path.resolve(
@@ -104,6 +116,7 @@ function parseOptions(args: string[]): {
   reportPaths: string[];
   captureRoot: string;
   outputDirectory: string;
+  pageIds?: Set<string>;
 } {
   const values = new Map<string, string>();
   for (let index = 0; index < args.length; index += 2) {
@@ -111,7 +124,7 @@ function parseOptions(args: string[]): {
     const value = args[index + 1];
     if (!name?.startsWith("--") || !value || value.startsWith("--")) {
       throw new Error(
-        "Usage: bun scripts/build-card-review-sheets.ts --reports report-a.json,report-b.json --output sheets [--capture-root benchmark-data/live]",
+        "Usage: bun scripts/build-card-review-sheets.ts --reports report-a.json,report-b.json --output sheets [--capture-root benchmark-data/live] [--pages page-a,page-b]",
       );
     }
     values.set(name, value);
@@ -127,5 +140,16 @@ function parseOptions(args: string[]): {
       values.get("--capture-root") ?? "benchmark-data/live",
     ),
     outputDirectory: path.resolve(output),
+    ...(values.get("--pages")
+      ? {
+          pageIds: new Set(
+            values
+              .get("--pages")!
+              .split(",")
+              .map((pageId) => pageId.trim())
+              .filter(Boolean),
+          ),
+        }
+      : {}),
   };
 }

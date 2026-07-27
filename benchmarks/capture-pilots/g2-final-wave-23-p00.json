@@ -1,0 +1,615 @@
+{
+  "version": 1,
+  "pilotId": "g2-final-wave-23-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T12:24:06.000Z",
+  "source": {
+    "siteIds": [
+      "hancocks-paducah",
+      "artsaics",
+      "tile-mart",
+      "garner-supply",
+      "got-cups",
+      "dean-supply",
+      "taste-of-tea",
+      "davids-tea",
+      "vahdam-teas"
+    ],
+    "cohort": "final",
+    "strata": [
+      "national-quilting-fabric-retail",
+      "designer-mosaic-tile-retail",
+      "national-tile-retail",
+      "clinical-medical-supply-retail",
+      "food-service-packaging-retail",
+      "restaurant-supply-retail",
+      "independent-loose-leaf-tea-retail",
+      "national-specialty-tea-retail",
+      "direct-to-consumer-tea-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "d67dd0159a0a5be172fd572031d89cbb774980ed2a781040506f765d40c45942"
+    ],
+    "collectorSha256": [
+      "e012d9f27e7ff817c914560bedfc5f3460d704a9448e6740f858bba9796196a2"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T11-55-59-113Z--p35242--004",
+      "runManifestSha256": "c68dcac75c3eb28f12fb6fc075a2c3ae73f547886310e8b2e322607b6d23d693",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-14-12-605Z--p40127--003",
+      "runManifestSha256": "f13cf0ebe0061bf6f6f5371a5c6e04e72302e1812642b6c0488e185278c637c1",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T11-55-59-113Z--p35242--005",
+      "runManifestSha256": "6669a856a8226d76fb71493cab206318740bbe77bff92d677d7de13ecae15ccb",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-14-12-605Z--p40127--004",
+      "runManifestSha256": "5f64ffb70a61dee8f20fee7209f376bbb3760b1fe4f8231b6626d34c822d040f",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T11-55-59-113Z--p35242--006",
+      "runManifestSha256": "0ed1e0e84535c9b6c74778bddaff131b1adb1f517606549631ffd5d29b4ad178",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-14-12-605Z--p40127--005",
+      "runManifestSha256": "7982ec78f196bbffb9939643bc28268d4a22b9ce5bfecd20d9b8be9669f15cf8",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-00-20-475Z--p36423--002",
+      "runManifestSha256": "039a20fbb07c3eef459621502899b8be447b21bc343848798e396e5dbc4bfb77",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-14-12-605Z--p40127--006",
+      "runManifestSha256": "f0934bc31eb838da856482ebffd72a8b7450df7f6162bad82f85a42f7d589f78",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-00-20-475Z--p36423--003",
+      "runManifestSha256": "e10fd4e9d95aa872a9219af03b24b5cb87a163feb598c9cbb36003256dec73d7",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-14-12-605Z--p40127--007",
+      "runManifestSha256": "425b6c1a526ac84dd094e74757f8e1608d69c8b335acee8bbbee72c5ee316aa1",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-00-20-475Z--p36423--006",
+      "runManifestSha256": "a61dd6161b6301b4426804a13f7cb6d15108c75a87a66298a860c4f6703a14b0",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-14-12-605Z--p40127--008",
+      "runManifestSha256": "2f0b087262932a136682e0c72ddccc7967ab4d19fc6d82814659195d2d75ef13",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-00-20-475Z--p36423--008",
+      "runManifestSha256": "8de3365227d0c30d38192c5a7967c33facbb1ebe5fe58a13b1687c406981b21d",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-16-42-615Z--p40881--001",
+      "runManifestSha256": "85e6ca6a97801ffe6002b8f02bd4d541ac874e7fa1a2215160af03417d48deff",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-03-12-274Z--p37261--008",
+      "runManifestSha256": "6ed531808f02195cb304e41dd0835b7272def2ad372f980fb410ad85392695e5",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-16-42-615Z--p40881--004",
+      "runManifestSha256": "2451c9b2fa58b4b6ce04a2764ac41c389a3535535167c60064c6c8c7636c6912",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-03-12-274Z--p37261--009",
+      "runManifestSha256": "8276db91fbea808a1a3bbef8c1a2afbd4444b615c0a069dafa3d1c86c274764a",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T12-16-42-615Z--p40881--005",
+      "runManifestSha256": "133559f761555799f7521e682b36a921321a9887d12bfb638f32596ccd6dbb11",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 18,
+    "successfulCaptureAttempts": 18,
+    "acceptedPages": 18,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 216,
+    "samplingFinding": "Nine of thirty-nine genuinely unseen domains passed the frozen two-query, opposite-viewport machine and original-resolution visual qualification gate and were append-only assigned to the sealed final cohort.",
+    "visualValidationFinding": "All eighteen accepted annotation views and 216 frozen candidate roots were inspected at original resolution. The accepted evidence spans length, area, count, mass, and count-adjacent capacity layouts, including native per-square-foot prices, box and package counts, ounces, grams, servings, current and list prices, sale states, variants, query-adjacent products, and abstention cases where sale quantity is not visible. No accepted root combined multiple products or repeated page chrome."
+  },
+  "captures": [
+    {
+      "siteId": "hancocks-paducah",
+      "pageId": "hancocks-paducah--cotton-fabric",
+      "capturedAt": "2026-07-27T11:57:26.564Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1300,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "94a6909e6cd6d1e35e4b0bb987e4823fdda7269f072754b26d1d98550f4c70d2",
+      "canonicalObservationSha256": "757233a30857b2ebc76686ba80f31dc66f3451c34a81c9374cb44f461a3180f6",
+      "annotationScreenshotSha256": "a66434e1fbe690f9e13276e21b08c1d76300c5162d7e4228b6c2e88cab2ea4e3",
+      "provenanceAggregateSha256": "fa593c3408ba570a3b75ef20f8f5b7d62472f4db94625792cbf2593777bff8ab",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "hancocks-paducah",
+      "pageId": "hancocks-paducah--linen-fabric",
+      "capturedAt": "2026-07-27T12:15:06.478Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 808,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.006152023332118119,
+      "queryTokenCoverage": 1,
+      "observationSha256": "3af825df72fbaf6454b1d2d54cf59a771dffd0022372ac13eddfecf7709b0100",
+      "canonicalObservationSha256": "578df50fa71a47a2a13550d519285cedc8bd5aa4b738e69ec26d4b7b0fb1f03f",
+      "annotationScreenshotSha256": "d4078e67301f73b12baeb8c7b2742fe5238d4a05985c6ddf75cde3def12bba29",
+      "provenanceAggregateSha256": "9c43141bb09b1c0ae32d7cef814efb9181d34e493035ca81bb4b1567e100bc8a",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "artsaics",
+      "pageId": "artsaics--porcelain-tile",
+      "capturedAt": "2026-07-27T11:57:45.396Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 580,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.00396953125,
+      "queryTokenCoverage": 1,
+      "observationSha256": "098ec6b4a0911ae29d7808197943a8d33fdda89b12fb951f1c28dab21e4aabf4",
+      "canonicalObservationSha256": "6ef8f388ee1a5aad60410ebdb2b7c7e708b3778ad50f6406918ef9dcf11fcabd",
+      "annotationScreenshotSha256": "97c1bb7d5a7135fddcdde9988bf8af67ad47e6c4ca1c47ef48e2ada2dba9648a",
+      "provenanceAggregateSha256": "aebc1ab2ce76460041e03f30f5589b239269939609c2f7dafeb42850469d3aa6",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "artsaics",
+      "pageId": "artsaics--mosaic-tile",
+      "capturedAt": "2026-07-27T12:15:24.581Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 495,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.017365794750273424,
+      "queryTokenCoverage": 1,
+      "observationSha256": "fb2c2beae0ef6c60a3754234618790b50b765ff8ed5cb9db1705d6b4a8900976",
+      "canonicalObservationSha256": "119ee3d4e8540a081de7f78f783317e74a6ab1e5d3ada65ef3b8c7b1ecb2d818",
+      "annotationScreenshotSha256": "e4f8d45a2164358d6a4dcded09dd311ce40229f07a9c3423d97afeaeb65a71fe",
+      "provenanceAggregateSha256": "ae6464d12d308613ba84b74712fa7c38f17f098a2e8c68f4a1d47dbc6cce8948",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tile-mart",
+      "pageId": "tile-mart--porcelain-tile",
+      "capturedAt": "2026-07-27T11:58:06.348Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 912,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "50291e7d815967665fbc32790cdf1956dbf35843cdb5fc7637a81ad393d9bb8e",
+      "canonicalObservationSha256": "30d81ff845fbc5ad676e2abc01f7b16fe4d4e368e3d9ca0a5b6468d6a86c7b25",
+      "annotationScreenshotSha256": "3b3c157e71294ca4aea160665c35a4f2703ad7d3ab98b21c8a3bec2044375c27",
+      "provenanceAggregateSha256": "ea0c322e3bf7631022657f63111b0503158544b93ccdba99682c2b51e8bbc0bd",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tile-mart",
+      "pageId": "tile-mart--mosaic-tile",
+      "capturedAt": "2026-07-27T12:15:45.135Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 827,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "cb328eb7ebfa569d6834ae0506a7dc8327932ba66f213fe0651d22d0923d00f6",
+      "canonicalObservationSha256": "0bd47199944fffb0976fa08e3d4ebec7d01ce7fb1ee093717f4fd4003736ed58",
+      "annotationScreenshotSha256": "f3171ff269ccbba278328c7f7227f9cfeb0bf453b896935f0646cf5d8b4dd06d",
+      "provenanceAggregateSha256": "cd31042a759a38aa1b31b3a36efc2b2a96065e4de12997b1ca548c33c1115c47",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "garner-supply",
+      "pageId": "garner-supply--exam-gloves",
+      "capturedAt": "2026-07-27T12:00:42.076Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 202,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 945,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "81a83e4fc9c311371624a4b875076ec06d7816ba3ee0b2aab2c4424f955aee7e",
+      "canonicalObservationSha256": "b3de0591117082ffa03fc107b8c900c283a46385b06cc0d44eeba2f8a04cd91d",
+      "annotationScreenshotSha256": "8b1f2891d44c2897fc06fdabd5f80d09928fc06a96ee735343f7a8ef41bd1471",
+      "provenanceAggregateSha256": "5d053096d277c0ef60b1306f351d07d3db29608d090ef68485f9616c2bb4f5c6",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "garner-supply",
+      "pageId": "garner-supply--face-masks",
+      "capturedAt": "2026-07-27T12:16:02.523Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 202,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 657,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "06bead430581a982bc7553d0eb62cc849d717d0fa1556301dc2728fbe2fb828d",
+      "canonicalObservationSha256": "acb31d9257bdee5c5ac96fdc755111d37b6d1ad9262eb38e6cd9da3a2656c246",
+      "annotationScreenshotSha256": "e6010f58e4be65cd812e378d2a396bb4c39a81144922dcb9991618712e755022",
+      "provenanceAggregateSha256": "1740f6f38e9e3e4af1a05b0100515be1ff7a507829b72cfc6577ede5fb838646",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "got-cups",
+      "pageId": "got-cups--paper-cups",
+      "capturedAt": "2026-07-27T12:00:51.928Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1223,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "4743304f4007ce90b0abdbe952288cb8309f1665eb13df806f27de16b05594d8",
+      "canonicalObservationSha256": "be0cb65589ae2e31dae7beef28fb87cd574f482bf5904f6b05b3857a0eb1b1c6",
+      "annotationScreenshotSha256": "40ce0e6660606c34f6bdce84036e890c2401488b4614bd5ed4473ee57d837a41",
+      "provenanceAggregateSha256": "1c19b401ebf96fabece9043da689ddf8f9503d35f73d18c7029bc65bfecd5493",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "got-cups",
+      "pageId": "got-cups--plastic-cups",
+      "capturedAt": "2026-07-27T12:16:13.042Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 651,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "7cef3d8c021eec658c26362c602bfdb101cb7172bc1d525f4da6a41b3a7a8b33",
+      "canonicalObservationSha256": "09b16fa395104fccf0be65c985152d8edb202ac1b9c249cc9cc03673c4797db7",
+      "annotationScreenshotSha256": "f1d5a643185329ba9c28dad803ec036e7ab5776883a428d8c5a9778fcf357d56",
+      "provenanceAggregateSha256": "2e80a600ebca507854c6c42320049bc209da93ce6096552fb0d009427c3234db",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "dean-supply",
+      "pageId": "dean-supply--paper-cups",
+      "capturedAt": "2026-07-27T12:01:56.991Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1042,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.004861111111111111,
+      "queryTokenCoverage": 1,
+      "observationSha256": "0180dd19747f32fe36840ab2d1542d2b303c38e87d3bafb4cc791b841eb2c57f",
+      "canonicalObservationSha256": "dcac50e1052a1463545e7d9dc8d0e29ba1402fa80d395234c2e6aee33e8e2c1c",
+      "annotationScreenshotSha256": "b4581dd3c2a9239cd1a505ffe2b51761dd61c2f3a510d9e9ac6a90960f9a6133",
+      "provenanceAggregateSha256": "db700d9593bea70aa8f86fe4c75a91492405e5a0c0739bab0067cb0199e2518e",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "dean-supply",
+      "pageId": "dean-supply--plastic-cups",
+      "capturedAt": "2026-07-27T12:16:32.176Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 627,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.017948717948717947,
+      "queryTokenCoverage": 1,
+      "observationSha256": "448b366c8f04c3b32c31e9fac80aa4f99d47a64115f49d30a9a991882d624a05",
+      "canonicalObservationSha256": "6c5e8687d5bed2cceaa6eaa5ae1bdc7db608b4ba853b458f8cd2d5654a8313e2",
+      "annotationScreenshotSha256": "015ca186c2ee8996d9247931df4b870d4e252169748312183a8dce284612f3a1",
+      "provenanceAggregateSha256": "46c8f396323c6fe603f9259f70662bc1429c446e5909040398d82c61e4cc4396",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "taste-of-tea",
+      "pageId": "taste-of-tea--black-tea",
+      "capturedAt": "2026-07-27T12:02:31.563Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1369,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "668b6a3fd7ed0fce892c1f3d9b66723784b9b1061caa8ed309025e3e7d1f43ef",
+      "canonicalObservationSha256": "8cac431163b808a7bb31e763c77111e47f9f8b22e07809b0205f99db34b274d4",
+      "annotationScreenshotSha256": "a9950651abd838a2556699b46f725491e580b507b200eb645c5ebbbf35a3262e",
+      "provenanceAggregateSha256": "e163e8ae167717493beef469f260cf144c9c9b563fae5e4f384058673c24f4b9",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "taste-of-tea",
+      "pageId": "taste-of-tea--green-tea",
+      "capturedAt": "2026-07-27T12:17:00.201Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 602,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "5647f7b29e028b0622b96fefa9c7749484a17e6657fc3773f8902e8208a0b356",
+      "canonicalObservationSha256": "ed839d56f0f279c40b5214899b64cd7b7650dff9f481da3ff49a8b64803c2131",
+      "annotationScreenshotSha256": "60835e9cb5af34bc7c44221fa28af0727eb6e7e7ce25929e4126ec445e8bfb2e",
+      "provenanceAggregateSha256": "f92a9a96c8cbd0944dae48014b0b3550440ee8d610d9fbd8a5cdf876049a5342",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "davids-tea",
+      "pageId": "davids-tea--black-tea",
+      "capturedAt": "2026-07-27T12:05:09.177Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1136,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.048,
+      "queryTokenCoverage": 1,
+      "observationSha256": "4a5f61361cbf903b2a4ded9182ed687550217290bdbd666aa2555184394edafe",
+      "canonicalObservationSha256": "6500e9111ad9f1fdc53eb2278903ef12a36fece3f03b937a64151d7902a887a3",
+      "annotationScreenshotSha256": "16c5e52158c2f78a7e225c4fba74b9df30878479878b603c321ab37909bfb72e",
+      "provenanceAggregateSha256": "1f86d0f712219f9256f63ca4891670c8b0ae2b244ea8a1a223d4c18bd60ebbe0",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "davids-tea",
+      "pageId": "davids-tea--green-tea",
+      "capturedAt": "2026-07-27T12:17:36.140Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1091,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.05687203791469194,
+      "queryTokenCoverage": 1,
+      "observationSha256": "58ff396952e00aaf33052339c77a6da7ff408c29c6e2bdccc33576db507c001e",
+      "canonicalObservationSha256": "a2fc1cb4fc3276b7bcc691a72fd902c9367ff5712ca7611dc3ab61b2d36762d8",
+      "annotationScreenshotSha256": "ff168fe23527492c0496b1e9bd287f2ef41f35e3b0e8fa175ed61b03dc15e77a",
+      "provenanceAggregateSha256": "ff1e087a5891186aadd64551377128f2d23ed6fa661036d396126a99b9e56c21",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "vahdam-teas",
+      "pageId": "vahdam-teas--black-tea",
+      "capturedAt": "2026-07-27T12:05:27.213Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 971,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "bb057a94a8f6ba7c3e2268549ae7b2f34f90f5c1e159d05754aac031ad8b0e93",
+      "canonicalObservationSha256": "696de864a8d5ea1efc960c8a74f22a9b42564f61178c20c94d9831eaf9dbce36",
+      "annotationScreenshotSha256": "66e55f6e2b8821ca01ae4302883314ece370c1d9949cd620ecb2771c1775f393",
+      "provenanceAggregateSha256": "1f3ec7217ec93f07890f3e921c37eb47ebab53410a695ab1c39dc4bb1154c046",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "vahdam-teas",
+      "pageId": "vahdam-teas--green-tea",
+      "capturedAt": "2026-07-27T12:17:53.868Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 840,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "273d159bde0710d9faec548d59e0bd22f31c69d36c7a0615b8e2aa850aacd132",
+      "canonicalObservationSha256": "8ccf27c3c5e7761d232dcf7de83ffeb0a8bd0f45f85f129ff38d417044154a97",
+      "annotationScreenshotSha256": "678093152e2f309d1e1ffb9178597e27bba73d72158d349f7e8f835435eac51d",
+      "provenanceAggregateSha256": "42f1a734187c0be8fe2c20a2e5d47b7ad3cfd16b97a46aa11cf60baffd8d0b0d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

@@ -1,0 +1,416 @@
+{
+  "version": 1,
+  "description": "Twenty-third unassigned domain-qualification wave and first acquisition frame reserved for the sealed final cohort. Thirty-nine domains absent from every prior live-site manifest contribute two predeclared public listing queries across all five supported dimensions and eight commerce strata. Generic route probes verified canonical hostnames before this manifest was frozen. No site-specific DOM selectors are supplied, every attempt remains in the yield denominator, and no domain is assigned to final until two distinct pages pass the frozen machine and original-resolution visual qualification gate.",
+  "querySets": {
+    "fabric-length": [
+      {
+        "id": "cotton-fabric",
+        "query": "cotton fabric",
+        "dimension": "length"
+      },
+      {
+        "id": "linen-fabric",
+        "query": "linen fabric",
+        "dimension": "length"
+      }
+    ],
+    "tile-area": [
+      {
+        "id": "porcelain-tile",
+        "query": "porcelain tile",
+        "dimension": "area"
+      },
+      {
+        "id": "mosaic-tile",
+        "query": "mosaic tile",
+        "dimension": "area"
+      }
+    ],
+    "medical-count": [
+      {
+        "id": "exam-gloves",
+        "query": "exam gloves",
+        "dimension": "count"
+      },
+      {
+        "id": "face-masks",
+        "query": "face masks",
+        "dimension": "count"
+      }
+    ],
+    "cup-count": [
+      {
+        "id": "paper-cups",
+        "query": "paper cups",
+        "dimension": "count"
+      },
+      {
+        "id": "plastic-cups",
+        "query": "plastic cups",
+        "dimension": "count"
+      }
+    ],
+    "pet-count": [
+      {
+        "id": "dog-treats",
+        "query": "dog treats",
+        "dimension": "count"
+      },
+      {
+        "id": "cat-treats",
+        "query": "cat treats",
+        "dimension": "count"
+      }
+    ],
+    "tea-mass": [
+      {
+        "id": "black-tea",
+        "query": "black tea",
+        "dimension": "mass"
+      },
+      {
+        "id": "green-tea",
+        "query": "green tea",
+        "dimension": "mass"
+      }
+    ],
+    "coffee-mass": [
+      {
+        "id": "ethiopia-coffee",
+        "query": "ethiopia coffee",
+        "dimension": "mass"
+      },
+      {
+        "id": "colombia-coffee",
+        "query": "colombia coffee",
+        "dimension": "mass"
+      }
+    ],
+    "car-care-volume": [
+      {
+        "id": "car-wash-soap",
+        "query": "car wash soap",
+        "dimension": "volume"
+      },
+      {
+        "id": "wheel-cleaner",
+        "query": "wheel cleaner",
+        "dimension": "volume"
+      }
+    ]
+  },
+  "sites": [
+    {
+      "id": "us-fabric-shop",
+      "label": "US Fabric Shop",
+      "hostname": "usfabricshop.com",
+      "stratum": "independent-quilting-fabric-retail",
+      "searchUrlTemplate": "https://usfabricshop.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "sew-much-online",
+      "label": "Sew Much Online",
+      "hostname": "sewmuchonline.com",
+      "stratum": "independent-quilting-fabric-retail",
+      "searchUrlTemplate": "https://sewmuchonline.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "missouri-star-quilt",
+      "label": "Missouri Star Quilt Company",
+      "hostname": "www.missouriquiltco.com",
+      "stratum": "national-quilting-fabric-retail",
+      "searchUrlTemplate": "https://www.missouriquiltco.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "hancocks-paducah",
+      "label": "Hancock's of Paducah",
+      "hostname": "www.hancocks-paducah.com",
+      "stratum": "national-quilting-fabric-retail",
+      "searchUrlTemplate": "https://www.hancocks-paducah.com/fabrics/?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "artsaics",
+      "label": "Artaic",
+      "hostname": "artsaics.com",
+      "stratum": "designer-mosaic-tile-retail",
+      "searchUrlTemplate": "https://artsaics.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "tile-mart",
+      "label": "Tile Mart",
+      "hostname": "tilemart.com",
+      "stratum": "national-tile-retail",
+      "searchUrlTemplate": "https://tilemart.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "smart-tiles",
+      "label": "Smart Tiles",
+      "hostname": "thesmarttiles.com",
+      "stratum": "direct-to-consumer-tile-retail",
+      "searchUrlTemplate": "https://thesmarttiles.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "tile-shop-online",
+      "label": "Tile Shop Online",
+      "hostname": "www.tileshoponline.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.tileshoponline.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "mosaic-bros",
+      "label": "Mosaic Bros",
+      "hostname": "mosaicbros.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://mosaicbros.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "tilephile",
+      "label": "Tilephile",
+      "hostname": "tilephile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://tilephile.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "mosaicenter",
+      "label": "Mosaicenter",
+      "hostname": "mosaicenter.com",
+      "stratum": "online-mosaic-tile-retail",
+      "searchUrlTemplate": "https://mosaicenter.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "garner-supply",
+      "label": "Garner Supply",
+      "hostname": "www.garnersupply.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://www.garnersupply.com/catalogsearch/result/?q={query}",
+      "querySet": "medical-count"
+    },
+    {
+      "id": "got-cups",
+      "label": "GotCups",
+      "hostname": "gotcups.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://gotcups.com/search?q={query}",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "cup-barn",
+      "label": "Cup Barn",
+      "hostname": "www.cupbarn.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.cupbarn.com/?s={query}&post_type=product",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "fresh2",
+      "label": "Fresh2",
+      "hostname": "shop.fresh2.co",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://shop.fresh2.co/search?q={query}",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "dean-supply",
+      "label": "Dean Supply",
+      "hostname": "www.shopatdean.com",
+      "stratum": "restaurant-supply-retail",
+      "searchUrlTemplate": "https://www.shopatdean.com/search?q={query}",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "entirely-pets",
+      "label": "EntirelyPets",
+      "hostname": "www.entirelypets.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://www.entirelypets.com/s.html?w={query}&view=grid",
+      "querySet": "pet-count"
+    },
+    {
+      "id": "taste-of-tea",
+      "label": "Taste of Tea",
+      "hostname": "tasteoftea.com",
+      "stratum": "independent-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://tasteoftea.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "tea-cozy",
+      "label": "Tea Cozy",
+      "hostname": "teacozy.com",
+      "stratum": "independent-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://teacozy.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "english-tea-store",
+      "label": "English Tea Store",
+      "hostname": "www.englishteastore.com",
+      "stratum": "specialty-tea-retail",
+      "searchUrlTemplate": "https://www.englishteastore.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "tea-source",
+      "label": "TeaSource",
+      "hostname": "www.teasource.com",
+      "stratum": "independent-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://www.teasource.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "republic-of-tea",
+      "label": "The Republic of Tea",
+      "hostname": "www.republicoftea.com",
+      "stratum": "national-specialty-tea-retail",
+      "searchUrlTemplate": "https://www.republicoftea.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "plum-deluxe",
+      "label": "Plum Deluxe",
+      "hostname": "www.plumdeluxe.com",
+      "stratum": "independent-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://www.plumdeluxe.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "arbor-teas",
+      "label": "Arbor Teas",
+      "hostname": "www.arborteas.com",
+      "stratum": "independent-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://www.arborteas.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "seven-cups",
+      "label": "Seven Cups",
+      "hostname": "sevencups.com",
+      "stratum": "independent-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://sevencups.com/?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "mem-tea-imports",
+      "label": "MEM Tea Imports",
+      "hostname": "memteaimports.com",
+      "stratum": "independent-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://memteaimports.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "adagio-teas",
+      "label": "Adagio Teas",
+      "hostname": "www.adagio.com",
+      "stratum": "national-specialty-tea-retail",
+      "searchUrlTemplate": "https://www.adagio.com/search/?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "davids-tea",
+      "label": "DAVIDsTEA",
+      "hostname": "davidstea.com",
+      "stratum": "national-specialty-tea-retail",
+      "searchUrlTemplate": "https://davidstea.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "vahdam-teas",
+      "label": "VAHDAM Teas",
+      "hostname": "www.vahdam.com",
+      "stratum": "direct-to-consumer-tea-retail",
+      "searchUrlTemplate": "https://www.vahdam.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "sweet-marias",
+      "label": "Sweet Maria's",
+      "hostname": "www.sweetmarias.com",
+      "stratum": "green-coffee-retail",
+      "searchUrlTemplate": "https://www.sweetmarias.com/search?q={query}",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "bodhi-leaf-coffee",
+      "label": "Bodhi Leaf Coffee Traders",
+      "hostname": "www.bodhileafcoffee.com",
+      "stratum": "green-coffee-retail",
+      "searchUrlTemplate": "https://www.bodhileafcoffee.com/search?q={query}",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "genuine-origin",
+      "label": "Genuine Origin",
+      "hostname": "www.genuineorigin.com",
+      "stratum": "green-coffee-wholesale-retail",
+      "searchUrlTemplate": "https://www.genuineorigin.com/search?q={query}",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "happy-mug-coffee",
+      "label": "Happy Mug Coffee",
+      "hostname": "happymugcoffee.com",
+      "stratum": "green-coffee-retail",
+      "searchUrlTemplate": "https://happymugcoffee.com/search?q={query}",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "captains-coffee",
+      "label": "The Captain's Coffee",
+      "hostname": "thecaptainscoffee.com",
+      "stratum": "green-coffee-retail",
+      "searchUrlTemplate": "https://thecaptainscoffee.com/search?q={query}",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "copan-trade",
+      "label": "Copan Trade",
+      "hostname": "copantrade.com",
+      "stratum": "green-coffee-retail",
+      "searchUrlTemplate": "https://copantrade.com/search?q={query}",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "car-care-specialties",
+      "label": "Car Care Specialties",
+      "hostname": "carcarespecialties.com",
+      "stratum": "independent-auto-detailing-retail",
+      "searchUrlTemplate": "https://carcarespecialties.com/search/?q={query}",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "suds-lab",
+      "label": "Suds Lab",
+      "hostname": "sudslab.com",
+      "stratum": "direct-to-consumer-auto-care-retail",
+      "searchUrlTemplate": "https://sudslab.com/search?q={query}",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "three-d-products",
+      "label": "3D Products",
+      "hostname": "3dproducts.com",
+      "stratum": "professional-auto-detailing-retail",
+      "searchUrlTemplate": "https://3dproducts.com/search?q={query}",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "mckees-37",
+      "label": "McKee's 37",
+      "hostname": "mckees37.com",
+      "stratum": "direct-to-consumer-auto-care-retail",
+      "searchUrlTemplate": "https://mckees37.com/search?q={query}",
+      "querySet": "car-care-volume"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "pilotId": "g2-final-wave-23-p00",
+  "capturedAt": "2026-07-27T12:24:06.000Z",
+  "sourceManifest": "benchmarks/live-sites/qualification-wave-23.json",
+  "requestedCaptureAttempts": 18,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-55-59-113Z--p35242--004",
+      "pageIds": ["hancocks-paducah--cotton-fabric"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-14-12-605Z--p40127--003",
+      "pageIds": ["hancocks-paducah--linen-fabric"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-55-59-113Z--p35242--005",
+      "pageIds": ["artsaics--porcelain-tile"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-14-12-605Z--p40127--004",
+      "pageIds": ["artsaics--mosaic-tile"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-55-59-113Z--p35242--006",
+      "pageIds": ["tile-mart--porcelain-tile"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-14-12-605Z--p40127--005",
+      "pageIds": ["tile-mart--mosaic-tile"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-00-20-475Z--p36423--002",
+      "pageIds": ["garner-supply--exam-gloves"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-14-12-605Z--p40127--006",
+      "pageIds": ["garner-supply--face-masks"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-00-20-475Z--p36423--003",
+      "pageIds": ["got-cups--paper-cups"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-14-12-605Z--p40127--007",
+      "pageIds": ["got-cups--plastic-cups"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-00-20-475Z--p36423--006",
+      "pageIds": ["dean-supply--paper-cups"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-14-12-605Z--p40127--008",
+      "pageIds": ["dean-supply--plastic-cups"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-00-20-475Z--p36423--008",
+      "pageIds": ["taste-of-tea--black-tea"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-16-42-615Z--p40881--001",
+      "pageIds": ["taste-of-tea--green-tea"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-03-12-274Z--p37261--008",
+      "pageIds": ["davids-tea--black-tea"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-16-42-615Z--p40881--004",
+      "pageIds": ["davids-tea--green-tea"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-03-12-274Z--p37261--009",
+      "pageIds": ["vahdam-teas--black-tea"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-16-42-615Z--p40881--005",
+      "pageIds": ["vahdam-teas--green-tea"]
+    }
+  ],
+  "samplingFinding": "Nine of thirty-nine genuinely unseen domains passed the frozen two-query, opposite-viewport machine and original-resolution visual qualification gate and were append-only assigned to the sealed final cohort.",
+  "visualValidationFinding": "All eighteen accepted annotation views and 216 frozen candidate roots were inspected at original resolution. The accepted evidence spans length, area, count, mass, and count-adjacent capacity layouts, including native per-square-foot prices, box and package counts, ounces, grams, servings, current and list prices, sale states, variants, query-adjacent products, and abstention cases where sale quantity is not visible. No accepted root combined multiple products or repeated page chrome."
+}
