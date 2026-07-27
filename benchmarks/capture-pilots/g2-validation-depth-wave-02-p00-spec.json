@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-depth-wave-02-p00",
+  "capturedAt": "2026-07-27T11:35:12.908Z",
+  "sourceManifest": "benchmarks/live-sites/validation-depth-wave-02.json",
+  "requestedCaptureAttempts": 12,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-31-18-295Z--p27681--001",
+      "pageIds": [
+        "fabric-direct--denim-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-33-28-554Z--p28343--001",
+      "pageIds": [
+        "fabric-direct--satin-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-33-28-554Z--p28343--002",
+      "pageIds": [
+        "farmhouse-fabrics--organza-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-31-18-295Z--p27681--002",
+      "pageIds": [
+        "farmhouse-fabrics--seersucker-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-31-18-295Z--p27681--003",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-33-28-554Z--p28343--003",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-33-28-554Z--p28343--004",
+      "pageIds": [
+        "medical-supply-pros--surgical-masks"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-31-18-295Z--p27681--004",
+      "pageIds": [
+        "medical-supply-pros--underpads"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-31-18-295Z--p27681--005",
+      "pageIds": [
+        "mosaic-tile-direct--ceramic-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-33-28-554Z--p28343--005",
+      "pageIds": [
+        "mosaic-tile-direct--travertine-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-31-18-295Z--p27681--006",
+      "pageIds": [
+        "petsmart--dog-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-33-28-554Z--p28343--006",
+      "pageIds": [
+        "petsmart--reptile-food"
+      ]
+    }
+  ],
+  "samplingFinding": "All 12 unseen supplemental validation routes completed in isolated bounded headed Chromium children with zero parent hard timeouts and passed strict machine checks. Original-resolution review accepted ten pages and rejected two weakly coherent searches, for an 83.3% end-to-end yield.",
+  "visualValidationFinding": "Every candidate-root screenshot was reviewed in a fixed 4-by-3 page sheet generated from explicit immutable card inputs. Ten pages contained at least eight query-relevant, independently reviewable product roots. Both Fusion Teas pages were rejected because subtype relevance was below the eight-root threshold.",
+  "decisionAudit": {
+    "policy": {
+      "minimumCandidateRoots": 8,
+      "minimumQueryRelevantRoots": 8,
+      "completeCandidateScreenshotCoverageRequired": true,
+      "candidateScreenshotEvidenceMismatchesAllowed": 0,
+      "observationTruncationAllowed": false,
+      "maximumUnresolvedObstructionCoverage": 0.2
+    },
+    "sourceReports": [
+      "benchmark-data/live/validation-depth-wave-02-q1-desktop.json",
+      "benchmark-data/live/validation-depth-wave-02-q2-narrow.json"
+    ],
+    "acceptedPageIds": [
+      "fabric-direct--denim-fabric",
+      "fabric-direct--satin-fabric",
+      "farmhouse-fabrics--organza-fabric",
+      "farmhouse-fabrics--seersucker-fabric",
+      "medical-supply-pros--surgical-masks",
+      "medical-supply-pros--underpads",
+      "mosaic-tile-direct--ceramic-tile",
+      "mosaic-tile-direct--travertine-tile",
+      "petsmart--dog-food",
+      "petsmart--reptile-food"
+    ],
+    "machineRejectedPageIds": [],
+    "visualRejections": [
+      {
+        "pageId": "fusion-teas--matcha-tea",
+        "reason": "only four of twelve roots were matcha products"
+      },
+      {
+        "pageId": "fusion-teas--pu-erh-tea",
+        "reason": "only one of twelve roots was pu-erh tea"
+      }
+    ]
+  }
+}

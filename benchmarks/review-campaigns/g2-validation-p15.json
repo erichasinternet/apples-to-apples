@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p15",
+  "createdAt": "2026-07-27T11:42:00.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--denim-fabric",
+      "captureTimestamp": "2026-07-27T11:31:52.389Z",
+      "candidateCardCount": 12,
+      "observationSha256": "5bb1d6b159156b2cd2e1747591a1d7753d2a52359226b98edbf467f6094f9b3e",
+      "annotationScreenshotSha256": "567492be3d40720b2da7bf839c51a04888bbd39b420586f944f9e76b210ac384"
+    },
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--satin-fabric",
+      "captureTimestamp": "2026-07-27T11:33:59.892Z",
+      "candidateCardCount": 12,
+      "observationSha256": "fbe07a03a04212a979bfd2cdd88931f9bdcdb3efcba34b569b40276de5a679a2",
+      "annotationScreenshotSha256": "78a5cc8b35a3db7054741910f058597aef366c2f1c42635738a5f3f407b5768c"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--organza-fabric",
+      "captureTimestamp": "2026-07-27T11:34:18.373Z",
+      "candidateCardCount": 12,
+      "observationSha256": "fe1e01edc94dcd2ffc8b502987d50cc4ff08076b0dbc005d0254eea22c16d8f3",
+      "annotationScreenshotSha256": "34ff8cbf55b19881ab9d51615f4294573cdfc25dc9f09879748a3797952ff56d"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--seersucker-fabric",
+      "captureTimestamp": "2026-07-27T11:32:10.421Z",
+      "candidateCardCount": 12,
+      "observationSha256": "acd03cc5ce09ee9cd9e5664ef501f1fb0bd7c9a7c1f93b3ae0cf6e1a0003b25b",
+      "annotationScreenshotSha256": "baad10c4fc4d116dd884db0d52897738e3cfa782612885b682fbb8d8b8d3a922"
+    },
+    {
+      "siteId": "medical-supply-pros",
+      "pageId": "medical-supply-pros--surgical-masks",
+      "captureTimestamp": "2026-07-27T11:34:40.515Z",
+      "candidateCardCount": 12,
+      "observationSha256": "c26e3e474eecc4b3253855d36ebd81b86cef46b221a20cc9371a707e918ba210",
+      "annotationScreenshotSha256": "6c6b2cdad422a68a427c95b9c7e3b04c88d527a1b502df9c53b431f8c6487808"
+    },
+    {
+      "siteId": "medical-supply-pros",
+      "pageId": "medical-supply-pros--underpads",
+      "captureTimestamp": "2026-07-27T11:32:32.197Z",
+      "candidateCardCount": 12,
+      "observationSha256": "81164140bf0ee3041d3cb612fbb8b46902c924afddcda2e7e00e8bbfe05cc3cc",
+      "annotationScreenshotSha256": "f5f5f8926fd3255d81211ddc5e7cc1697b4c2ca76ebe106667be14afd7081c24"
+    },
+    {
+      "siteId": "mosaic-tile-direct",
+      "pageId": "mosaic-tile-direct--ceramic-tile",
+      "captureTimestamp": "2026-07-27T11:32:45.404Z",
+      "candidateCardCount": 12,
+      "observationSha256": "5fcf32df5f6dc31e351e9a75a215c5197db1256c830287c0b994e6dc3bef9452",
+      "annotationScreenshotSha256": "a18617d718521b3d6792cfbc5e8652c576d1fd11a1e1ac96db48e8767b8b68fa"
+    },
+    {
+      "siteId": "mosaic-tile-direct",
+      "pageId": "mosaic-tile-direct--travertine-tile",
+      "captureTimestamp": "2026-07-27T11:34:54.731Z",
+      "candidateCardCount": 12,
+      "observationSha256": "3b852eec727e422547247ebb52d9f76ef5bdf369ee03b07c2d2d83a3109f52f0",
+      "annotationScreenshotSha256": "b843682986b0f5771d7cf79d865d04a49279c89cf11884726a727d68463de113"
+    },
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--dog-food",
+      "captureTimestamp": "2026-07-27T11:33:03.919Z",
+      "candidateCardCount": 12,
+      "observationSha256": "e603516467d0eec8325071f8d3c5a2d0f0207f914689f20ce7fa771f37f5633d",
+      "annotationScreenshotSha256": "6a55218bd05e47969f12530a35d87b459d830e0b2642b3e9af1de7302a806216"
+    },
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--reptile-food",
+      "captureTimestamp": "2026-07-27T11:35:12.908Z",
+      "candidateCardCount": 12,
+      "observationSha256": "4c00fdd1bb32976d3fb497e3af7e8f697ba550ad00100513507ad67e48e834e5",
+      "annotationScreenshotSha256": "0556c89ef950a9281bb4ea1b703202bc9a1ad008032efbaf4951d86c65abef29"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--ed5f5a0aaf2a23eb",
+      "campaignQueueSha256": "da4a8c58bd5d4d4195500afbfade2c554d7e3c8cc5e192883c5151e32aa29831",
+      "sourceQueueSha256": [
+        "aa1984d45f38aaa20fa0a1c92fc57e5f60d64327bc75088f9ac41d0395f99cb1",
+        "b61c8834887a871a429a85e6b1a4ad4758547022ed7cbb06489e3bbe1f91dae8",
+        "7f015ee6f47bae935577594054a523862d4525dbb065defcdf1276a5814b0db7",
+        "04d1db1b26347224ba64d3d00fa8259189b051266036a24dbc9da100f4002385",
+        "1e7a0f765dee7ee7cd0bb6d5682cde92deb12460c1cc9f5ca03968465a233dcd",
+        "b3428f33081df4e3d96f2e44a25c972402d5620ae4f14722790c784c0df57d47",
+        "324d71839d4402ff7c0347342095b685e8de1c935b15ff1c250c985a36ef5f89",
+        "fc0d848a73a83001891bfd5acb77014020704f058e827a95a5cdf07d85e160f6",
+        "5b205b5a8454c17a24ac8c39a435571f4f46be5d1bf91a070c6214326f9e7497",
+        "84a8ccc946845758d2568332169cfa2a817b0f90223436c998b0c06a5a93a6d9"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--36ca132479b5ee21",
+      "campaignQueueSha256": "ecd11c2721799295244c63bc749be6bb254f26477cde102a86240bddeb4d1164",
+      "sourceQueueSha256": [
+        "761647651980edd92ce100d1cb9767372be4f445a3bdcfaf1e5a1c4f904832d7",
+        "5d9410a85590f4155a423a7b320c6d7aaa2a7a61ddc66c59d8ecaa944811ef6e",
+        "c5f4b39e1b94583806ccd5086176ab1f5e4a754d1e250c428f0cfa38f7827e41",
+        "7979269e0d2d994a59c343c1ada08c9b92f186079a744aba4edf2477bdc3102a",
+        "8fa67224d343ae2fdbb034dcad2cf0df25838a1ff8b19735426816f9dd1179cb",
+        "b70170aaec20de7f840d9048ec0f349fb744b5a088d3a653498aed3181dd4771",
+        "1b2c93d8b4625dbbee962bd50c30f11547bf0daa5141343c802bf978e5ec6700",
+        "5059cc76a9979326fd1b425afdd5a48e79fc5b46a32b96caf7254d5792f6dbf7",
+        "976c4c72572ee9d61d466e18634a0f8c092e1dd214b8ea774c62102d44151c41",
+        "1f6aa5908b50b20d07e39200a08a1cdd49c2133c9e6904086939f6861f11c526"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--ed5f5a0aaf2a23eb",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 10,
+    "screenshotsLoaded": 10,
+    "candidateCards": 120,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

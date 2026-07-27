@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "auditId": "g2-validation-p14-review-batches",
+  "createdAt": "2026-07-27T11:28:06.300Z",
+  "source": {
+    "batchManifest": "benchmarks/reviews/g2-validation-p14-review-batches.json",
+    "batchManifestSha256": "69e46343a94d2dbd9bf326eb19fd15a21587d8d8d131069b9619540170c3f358",
+    "validationReportSha256": [
+      "0aa317adad20cf447affdf9876945da401122380cfa553e9cdf3f893adbfca88",
+      "8d68c3acac0d6e549c40de1459dea9d62ce39f3bf3540d8b90f56a196842d53c",
+      "a174eed5802f23694ad09fc659077b611c140b6cb4e92e4e6e3e67d1a841e4e5",
+      "4d3e00cc004e4e01e83e6ec1f149e5f5565941a3cd12bef0c404a1f16503e272",
+      "1c2c4d4bd8880180c23b390861cf166bab6ef2376e1a149fc0d162e4e19c1a82",
+      "6c18ea8bc24c62c03bba3d466da5e2bcaab82639080c4bfdc56fdfc5e9ea1cfb",
+      "7fba883f284686558ab7616f3bef2b78b78d5f260235ee806ce64e3bdd6d0b0d",
+      "f2a43a3cc72eff48c174e5e11e27f3fd61131a3c77cbb5dad67d80ce7a4ad242"
+    ]
+  },
+  "browser": "headed Playwright Chromium",
+  "batches": 8,
+  "pagesLoaded": 74,
+  "screenshotsLoaded": 74,
+  "candidateCards": 876,
+  "consoleErrors": 0,
+  "reviewFilesWritten": 0,
+  "onlyFrozenCardRootOffered": true,
+  "directFrozenCardNavigation": "passed",
+  "nonCandidateAncestor": "rejected-404",
+  "incompleteCoverage": "rejected-422",
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Workbench validation proves batch integrity and usability, not semantic label correctness."
+  }
+}

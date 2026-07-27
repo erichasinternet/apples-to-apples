@@ -73,6 +73,7 @@ interface CapturePage {
   redactionCount: number;
   candidateCount: number;
   candidateScreenshotsCaptured: number;
+  candidateScreenshotEvidenceMismatches: number;
   observationNodeCount: number;
   observationTruncated: boolean;
   dismissedObstructions: number;
@@ -260,8 +261,10 @@ for (const runSpec of spec.runs) {
       page.queryTokenCoverage < 1 && "query token coverage is incomplete",
       !page.mainScreenshotCaptured && "main screenshot is absent",
       !page.annotationScreenshotCaptured && "annotation screenshot is absent",
-      page.candidateScreenshotsCaptured < 1 &&
-        "all candidate screenshots are absent"
+      page.candidateScreenshotsCaptured !== page.candidateCount &&
+        "candidate screenshot coverage is incomplete",
+      page.candidateScreenshotEvidenceMismatches !== 0 &&
+        "candidate screenshot identity mismatch is present"
     ].filter((value): value is string => Boolean(value));
     if (machineErrors.length > 0) {
       throw new Error(`${pageId}: ${machineErrors.join("; ")}`);

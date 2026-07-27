@@ -1761,8 +1761,47 @@ an unmanaged fixed clone of each selected root. The Floor & Decor regression
 case now produces screenshots of the selected product evidence rather than
 filter controls. It still fails visual query coherence when laminate searches
 return mostly tile products, which is the correct disposition. All validation
-pages must be recaptured with this stricter collector before any pilot,
-review campaign, or readiness count can advance.
+pages were recaptured with this stricter collector before any pilot, review
+campaign, or readiness count advanced.
+
+The corrected 120-page validation-depth wave completed in isolated headed
+Chromium children with zero parent hard timeouts. Strict machine checks accepted
+104 pages. Original-resolution review then required at least eight
+query-relevant roots and accepted 74 pages and 876 roots; 16 pages failed
+machine gates and 30 structurally valid pages failed visual query coherence.
+The complete decision partition and immutable run bindings are recorded in
+[`g2-validation-depth-wave-01-p00.json`](../benchmarks/capture-pilots/g2-validation-depth-wave-01-p00.json).
+
+The paired blinded
+[`g2-validation-p14.json`](../benchmarks/review-campaigns/g2-validation-p14.json)
+campaign contains those 74 pages and 876 roots. Both the merged queue and all
+eight paired batches passed headed Playwright Chromium validation: every
+screenshot and frozen root loaded, direct root navigation passed, invalid roots
+and incomplete submissions were rejected, and there were zero console errors or
+review writes.
+
+A second frozen supplemental wave tested 12 additional unseen queries on six
+productive validation domains. All 12 passed the machine gates with complete
+candidate screenshot coverage and zero evidence-identity mismatches.
+Original-resolution review accepted ten pages and 120 roots; the two Fusion Teas
+pages were rejected because fewer than eight roots matched the requested tea
+subtype. The decisions and immutable run bindings are recorded in
+[`g2-validation-depth-wave-02-p00.json`](../benchmarks/capture-pilots/g2-validation-depth-wave-02-p00.json).
+
+The paired blinded
+[`g2-validation-p15.json`](../benchmarks/review-campaigns/g2-validation-p15.json)
+campaign contains those ten pages and 120 roots. Its merged queue and paired
+batch passed headed Playwright Chromium validation with the same navigation,
+rejection, console, and no-write guarantees as the first wave.
+
+The independence audit now locates all 729 eligible captures and verifies 8,348
+active roots with no duplicates, conflicts, or overlap. The campaign registry
+validates 64 campaigns, 6,814 pages, and 73,133 roots. Validation now contains
+124 structurally eligible pages across all 20 qualified domains, including 57
+narrow-viewport pages, so its page, domain, and viewport structure gates pass.
+The dataset is not training-ready: product, comparable, abstention, pointer,
+agreement, and challenge metrics remain zero until two independent reviewers
+complete the queues and a third party adjudicates disagreements.
 
 ## Dataset Growth
 

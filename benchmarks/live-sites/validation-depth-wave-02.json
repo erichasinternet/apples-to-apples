@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "description": "Supplemental validation-depth reserve for the remaining six-page structural gap. Twelve unseen queries target six high-yield qualified validation domains while preserving site isolation and mass, count, area, and length coverage.",
+  "sites": [
+    {
+      "id": "fabric-direct",
+      "label": "Fabric Direct",
+      "hostname": "www.fabricdirect.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://www.fabricdirect.com/search?q={query}",
+      "queries": [
+        {"id": "denim-fabric", "query": "denim fabric", "dimension": "length"},
+        {"id": "satin-fabric", "query": "satin fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "farmhouse-fabrics",
+      "label": "Farmhouse Fabrics",
+      "hostname": "farmhousefabrics.com",
+      "stratum": "specialty-sewing-fabric-retail",
+      "searchUrlTemplate": "https://farmhousefabrics.com/search?q={query}",
+      "queries": [
+        {"id": "seersucker-fabric", "query": "seersucker fabric", "dimension": "length"},
+        {"id": "organza-fabric", "query": "organza fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "fusion-teas",
+      "label": "Fusion Teas",
+      "hostname": "www.fusionteas.com",
+      "stratum": "independent-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://www.fusionteas.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "matcha-tea", "query": "matcha tea", "dimension": "mass"},
+        {"id": "pu-erh-tea", "query": "pu erh tea", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "medical-supply-pros",
+      "label": "Medical Supply Pros",
+      "hostname": "medicalsupplypros.com",
+      "stratum": "direct-to-consumer-medical-supply-retail",
+      "searchUrlTemplate": "https://medicalsupplypros.com/search?q={query}",
+      "queries": [
+        {"id": "underpads", "query": "underpads", "dimension": "count"},
+        {"id": "surgical-masks", "query": "surgical masks", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "mosaic-tile-direct",
+      "label": "Mosaic Tile Direct",
+      "hostname": "mosaictiledirect.net",
+      "stratum": "mosaic-and-tile-retail",
+      "searchUrlTemplate": "https://mosaictiledirect.net/search?q={query}",
+      "queries": [
+        {"id": "ceramic-tile", "query": "ceramic tile", "dimension": "area"},
+        {"id": "travertine-tile", "query": "travertine tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "petsmart",
+      "label": "PetSmart",
+      "hostname": "www.petsmart.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://www.petsmart.com/search/?q={query}",
+      "queries": [
+        {"id": "dog-food", "query": "dog food", "dimension": "mass"},
+        {"id": "reptile-food", "query": "reptile food", "dimension": "mass"}
+      ]
+    }
+  ]
+}

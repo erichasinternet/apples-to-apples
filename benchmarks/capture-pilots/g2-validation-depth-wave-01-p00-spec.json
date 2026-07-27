@@ -1,0 +1,874 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-depth-wave-01-p00",
+  "capturedAt": "2026-07-27T11:23:23.000Z",
+  "sourceManifest": "benchmarks/live-sites/validation-depth-wave-01.json",
+  "requestedCaptureAttempts": 120,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--001",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--002",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--003",
+      "pageIds": [
+        "express-med--syringes"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--004",
+      "pageIds": [
+        "fabric-direct--upholstery-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--005",
+      "pageIds": [
+        "farmhouse-fabrics--lace-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--006",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--007",
+      "pageIds": [
+        "fusion-teas--black-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--008",
+      "pageIds": [
+        "go-bulk-medical--face-masks"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--009",
+      "pageIds": [
+        "medical-supply-pros--needles"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--010",
+      "pageIds": [
+        "mosaic-tile-direct--glass-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--011",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--012",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--013",
+      "pageIds": [
+        "petsmart--dog-treats"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--014",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--015",
+      "pageIds": [
+        "portofino-flooring--laminate-flooring"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--016",
+      "pageIds": [
+        "recreation-supply--pool-shock"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--017",
+      "pageIds": [
+        "rubber-flooring-experts--gym-mats"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--018",
+      "pageIds": [
+        "sos-pool--pool-shock"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--019",
+      "pageIds": [
+        "style-maker-fabrics--silk-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-086Z--p15667--020",
+      "pageIds": [
+        "supply-clinic--syringes"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--001",
+      "pageIds": [
+        "classic-modern-fabrics--silk-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--002",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--003",
+      "pageIds": [
+        "express-med--wound-dressings"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--004",
+      "pageIds": [
+        "fabric-direct--velvet-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--005",
+      "pageIds": [
+        "farmhouse-fabrics--batiste-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--006",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--007",
+      "pageIds": [
+        "fusion-teas--herbal-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--008",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--009",
+      "pageIds": [
+        "medical-supply-pros--catheters"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--010",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--011",
+      "pageIds": [
+        "north-bay-trading--freeze-dried-fruit"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--012",
+      "pageIds": [
+        "parentgiving--wipes"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--013",
+      "pageIds": [
+        "petsmart--cat-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--014",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--015",
+      "pageIds": [
+        "portofino-flooring--hardwood-flooring"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--016",
+      "pageIds": [
+        "recreation-supply--pool-filter"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--017",
+      "pageIds": [
+        "rubber-flooring-experts--rubber-mats"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--018",
+      "pageIds": [
+        "sos-pool--phosphate-remover"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--019",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-103Z--p15670--020",
+      "pageIds": [
+        "supply-clinic--needles"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--001",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--002",
+      "pageIds": [
+        "detailers-warehouse--ceramic-coating"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--003",
+      "pageIds": [
+        "express-med--gauze-pads"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--004",
+      "pageIds": [
+        "fabric-direct--linen-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--005",
+      "pageIds": [
+        "farmhouse-fabrics--voile-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--006",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--007",
+      "pageIds": [
+        "fusion-teas--oolong-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--008",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--009",
+      "pageIds": [
+        "medical-supply-pros--bandages"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--010",
+      "pageIds": [
+        "mosaic-tile-direct--subway-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--011",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--012",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--013",
+      "pageIds": [
+        "petsmart--dog-waste-bags"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--014",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--015",
+      "pageIds": [
+        "portofino-flooring--waterproof-flooring"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--016",
+      "pageIds": [
+        "recreation-supply--pool-cleaner"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--017",
+      "pageIds": [
+        "rubber-flooring-experts--playground-flooring"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--018",
+      "pageIds": [
+        "sos-pool--pool-enzyme"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--019",
+      "pageIds": [
+        "style-maker-fabrics--rayon-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-125Z--p15672--020",
+      "pageIds": [
+        "supply-clinic--dental-bibs"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--001",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--002",
+      "pageIds": [
+        "detailers-warehouse--interior-cleaner"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--003",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--004",
+      "pageIds": [
+        "fabric-direct--polyester-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--005",
+      "pageIds": [
+        "farmhouse-fabrics--wool-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--006",
+      "pageIds": [
+        "floor-and-decor--porcelain-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--007",
+      "pageIds": [
+        "fusion-teas--chai-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--008",
+      "pageIds": [
+        "go-bulk-medical--underpads"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--009",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--010",
+      "pageIds": [
+        "mosaic-tile-direct--stone-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--011",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--012",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--013",
+      "pageIds": [
+        "petsmart--aquarium-filters"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--014",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--015",
+      "pageIds": [
+        "portofino-flooring--engineered-hardwood"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--016",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--017",
+      "pageIds": [
+        "rubber-flooring-experts--interlocking-tiles"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--018",
+      "pageIds": [
+        "sos-pool--pool-stain-remover"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--019",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-096Z--p15669--020",
+      "pageIds": [
+        "supply-clinic--gauze-sponges"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--001",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--002",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--003",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--004",
+      "pageIds": [
+        "fabric-direct--fleece-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--005",
+      "pageIds": [
+        "farmhouse-fabrics--silk-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--006",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--007",
+      "pageIds": [
+        "fusion-teas--white-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--008",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--009",
+      "pageIds": [
+        "medical-supply-pros--gauze-sponges"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--010",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--011",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--012",
+      "pageIds": [
+        "parentgiving--briefs"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--013",
+      "pageIds": [
+        "petsmart--bird-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--014",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--015",
+      "pageIds": [
+        "portofino-flooring--vinyl-plank"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--016",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--017",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--018",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--019",
+      "pageIds": [
+        "style-maker-fabrics--jersey-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-136Z--p15674--020",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-119Z--p15671--001",
+      "pageIds": [
+        "classic-modern-fabrics--velvet-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-119Z--p15671--002",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-119Z--p15671--003",
+      "pageIds": [
+        "express-med--bandages"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-119Z--p15671--004",
+      "pageIds": [
+        "fabric-direct--canvas-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-119Z--p15671--005",
+      "pageIds": [
+        "farmhouse-fabrics--flannel-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-119Z--p15671--006",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-119Z--p15671--007",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-119Z--p15671--008",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-119Z--p15671--009",
+      "pageIds": [
+        "medical-supply-pros--face-masks"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-119Z--p15671--010",
+      "pageIds": [
+        "mosaic-tile-direct--pebble-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-146Z--p15676--001",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-146Z--p15676--002",
+      "pageIds": [
+        "parentgiving--liners"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-146Z--p15676--003",
+      "pageIds": [
+        "petsmart--flea-treatment"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-146Z--p15676--004",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-146Z--p15676--005",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-146Z--p15676--006",
+      "pageIds": [
+        "recreation-supply--pool-cover"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-146Z--p15676--007",
+      "pageIds": [
+        "rubber-flooring-experts--garage-flooring"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-146Z--p15676--008",
+      "pageIds": [
+        "sos-pool--pool-test-strips"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-146Z--p15676--009",
+      "pageIds": [
+        "style-maker-fabrics--denim-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T11-03-08-146Z--p15676--010",
+      "pageIds": []
+    }
+  ],
+  "samplingFinding": "All 120 unseen validation routes completed in isolated bounded headed Chromium children with zero parent hard timeouts. Strict machine checks accepted 104 pages. Original-resolution review then required at least eight query-relevant product roots and accepted 74 pages, for a 61.7% end-to-end yield without weakening capture or relevance gates.",
+  "visualValidationFinding": "Every accepted candidate-root screenshot was reviewed in fixed 4-by-3 page sheets and six-query site composites generated from immutable post-fix card captures. Thirty structurally valid pages were rejected for weak query coherence. The accepted pages preserve complete candidate screenshot coverage with zero evidence-identity mismatches.",
+  "decisionAudit": {
+    "policy": {
+      "minimumCandidateRoots": 8,
+      "minimumQueryRelevantRoots": 8,
+      "completeCandidateScreenshotCoverageRequired": true,
+      "candidateScreenshotEvidenceMismatchesAllowed": 0,
+      "observationTruncationAllowed": false,
+      "maximumUnresolvedObstructionCoverage": 0.2
+    },
+    "sourceReports": [
+      "benchmark-data/live/validation-depth-wave-01-recapture-q1-desktop.json",
+      "benchmark-data/live/validation-depth-wave-01-recapture-q2-narrow.json",
+      "benchmark-data/live/validation-depth-wave-01-recapture-q3-desktop.json",
+      "benchmark-data/live/validation-depth-wave-01-recapture-q4-narrow.json",
+      "benchmark-data/live/validation-depth-wave-01-recapture-q5-desktop.json",
+      "benchmark-data/live/validation-depth-wave-01-recapture-q6-mixed-a.json",
+      "benchmark-data/live/validation-depth-wave-01-recapture-q6-mixed-b.json"
+    ],
+    "acceptedPageIds": [
+      "classic-modern-fabrics--silk-fabric",
+      "classic-modern-fabrics--velvet-fabric",
+      "detailers-warehouse--ceramic-coating",
+      "detailers-warehouse--interior-cleaner",
+      "express-med--bandages",
+      "express-med--gauze-pads",
+      "express-med--syringes",
+      "express-med--wound-dressings",
+      "fabric-direct--canvas-fabric",
+      "fabric-direct--fleece-fabric",
+      "fabric-direct--linen-fabric",
+      "fabric-direct--polyester-fabric",
+      "fabric-direct--upholstery-fabric",
+      "fabric-direct--velvet-fabric",
+      "farmhouse-fabrics--batiste-fabric",
+      "farmhouse-fabrics--flannel-fabric",
+      "farmhouse-fabrics--lace-fabric",
+      "farmhouse-fabrics--silk-fabric",
+      "farmhouse-fabrics--voile-fabric",
+      "farmhouse-fabrics--wool-fabric",
+      "floor-and-decor--porcelain-tile",
+      "fusion-teas--black-tea",
+      "fusion-teas--chai-tea",
+      "fusion-teas--herbal-tea",
+      "fusion-teas--oolong-tea",
+      "fusion-teas--white-tea",
+      "go-bulk-medical--face-masks",
+      "go-bulk-medical--underpads",
+      "medical-supply-pros--bandages",
+      "medical-supply-pros--catheters",
+      "medical-supply-pros--face-masks",
+      "medical-supply-pros--gauze-sponges",
+      "medical-supply-pros--needles",
+      "mosaic-tile-direct--glass-tile",
+      "mosaic-tile-direct--pebble-tile",
+      "mosaic-tile-direct--stone-tile",
+      "mosaic-tile-direct--subway-tile",
+      "north-bay-trading--freeze-dried-fruit",
+      "parentgiving--briefs",
+      "parentgiving--liners",
+      "parentgiving--wipes",
+      "petsmart--aquarium-filters",
+      "petsmart--bird-food",
+      "petsmart--cat-food",
+      "petsmart--dog-treats",
+      "petsmart--dog-waste-bags",
+      "petsmart--flea-treatment",
+      "portofino-flooring--engineered-hardwood",
+      "portofino-flooring--hardwood-flooring",
+      "portofino-flooring--laminate-flooring",
+      "portofino-flooring--vinyl-plank",
+      "portofino-flooring--waterproof-flooring",
+      "recreation-supply--pool-cleaner",
+      "recreation-supply--pool-cover",
+      "recreation-supply--pool-filter",
+      "recreation-supply--pool-shock",
+      "rubber-flooring-experts--garage-flooring",
+      "rubber-flooring-experts--gym-mats",
+      "rubber-flooring-experts--interlocking-tiles",
+      "rubber-flooring-experts--playground-flooring",
+      "rubber-flooring-experts--rubber-mats",
+      "sos-pool--phosphate-remover",
+      "sos-pool--pool-enzyme",
+      "sos-pool--pool-shock",
+      "sos-pool--pool-stain-remover",
+      "sos-pool--pool-test-strips",
+      "style-maker-fabrics--denim-fabric",
+      "style-maker-fabrics--jersey-fabric",
+      "style-maker-fabrics--rayon-fabric",
+      "style-maker-fabrics--silk-fabric",
+      "supply-clinic--dental-bibs",
+      "supply-clinic--gauze-sponges",
+      "supply-clinic--needles",
+      "supply-clinic--syringes"
+    ],
+    "machineRejectedPageIds": [
+      "go-bulk-medical--alcohol-prep-pads",
+      "go-bulk-medical--gauze-sponges",
+      "go-bulk-medical--needles",
+      "go-bulk-medical--syringes",
+      "north-bay-trading--dried-mushrooms",
+      "parentgiving--adult-diapers",
+      "parentgiving--bed-pads",
+      "parentgiving--incontinence-pads",
+      "pinch-a-penny--phosphate-remover",
+      "pinch-a-penny--pool-clarifier",
+      "pinch-a-penny--pool-defoamer",
+      "pinch-a-penny--pool-enzyme",
+      "pinch-a-penny--pool-shock",
+      "recreation-supply--pool-test-strips",
+      "style-maker-fabrics--knit-fabric",
+      "style-maker-fabrics--wool-fabric"
+    ],
+    "visualRejections": [
+      {
+        "pageId": "classic-modern-fabrics--denim-fabric",
+        "reason": "fewer than eight query-relevant denim roots"
+      },
+      {
+        "pageId": "classic-modern-fabrics--jersey-fabric",
+        "reason": "fewer than eight query-relevant jersey roots"
+      },
+      {
+        "pageId": "classic-modern-fabrics--rayon-fabric",
+        "reason": "fewer than eight query-relevant rayon roots"
+      },
+      {
+        "pageId": "classic-modern-fabrics--wool-fabric",
+        "reason": "fewer than eight query-relevant wool roots"
+      },
+      {
+        "pageId": "detailers-warehouse--degreaser",
+        "reason": "fewer than eight query-relevant degreaser roots"
+      },
+      {
+        "pageId": "detailers-warehouse--glass-cleaner",
+        "reason": "fewer than eight query-relevant glass-cleaner roots"
+      },
+      {
+        "pageId": "detailers-warehouse--spray-wax",
+        "reason": "fewer than eight query-relevant spray-wax roots"
+      },
+      {
+        "pageId": "detailers-warehouse--tire-dressing",
+        "reason": "fewer than eight query-relevant tire-dressing roots"
+      },
+      {
+        "pageId": "express-med--alcohol-prep-pads",
+        "reason": "fewer than eight query-relevant alcohol-prep-pad roots"
+      },
+      {
+        "pageId": "express-med--face-masks",
+        "reason": "fewer than eight query-relevant face-mask roots"
+      },
+      {
+        "pageId": "floor-and-decor--engineered-hardwood",
+        "reason": "results were dominated by tile rather than engineered hardwood"
+      },
+      {
+        "pageId": "floor-and-decor--hardwood-flooring",
+        "reason": "results were dominated by tile rather than hardwood"
+      },
+      {
+        "pageId": "floor-and-decor--laminate-flooring",
+        "reason": "results were dominated by tile rather than laminate"
+      },
+      {
+        "pageId": "floor-and-decor--marble-tile",
+        "reason": "fewer than eight query-relevant marble-tile roots"
+      },
+      {
+        "pageId": "floor-and-decor--waterproof-flooring",
+        "reason": "results were dominated by tile rather than waterproof flooring"
+      },
+      {
+        "pageId": "fusion-teas--rooibos-tea",
+        "reason": "only six of twelve roots were rooibos tea"
+      },
+      {
+        "pageId": "medical-supply-pros--alcohol-prep-pads",
+        "reason": "fewer than eight query-relevant alcohol-prep-pad roots"
+      },
+      {
+        "pageId": "mosaic-tile-direct--marble-tile",
+        "reason": "results were dominated by travertine rather than marble"
+      },
+      {
+        "pageId": "mosaic-tile-direct--metal-tile",
+        "reason": "fewer than eight roots contained metal tile evidence"
+      },
+      {
+        "pageId": "north-bay-trading--dried-beans",
+        "reason": "results were dominated by mixed vegetables and bundles"
+      },
+      {
+        "pageId": "north-bay-trading--dried-corn",
+        "reason": "fewer than eight query-relevant dried-corn roots"
+      },
+      {
+        "pageId": "north-bay-trading--rice",
+        "reason": "fewer than eight query-relevant rice roots"
+      },
+      {
+        "pageId": "north-bay-trading--soup-mix",
+        "reason": "fewer than eight query-relevant soup-mix roots"
+      },
+      {
+        "pageId": "pinch-a-penny--pool-conditioner",
+        "reason": "only four of twelve roots were pool conditioner products"
+      },
+      {
+        "pageId": "portofino-flooring--bamboo-flooring",
+        "reason": "no root exposed reliable bamboo-flooring evidence"
+      },
+      {
+        "pageId": "recreation-supply--pool-clarifier",
+        "reason": "fewer than eight query-relevant pool-clarifier roots"
+      },
+      {
+        "pageId": "rubber-flooring-experts--rubber-underlayment",
+        "reason": "no root exposed reliable underlayment evidence"
+      },
+      {
+        "pageId": "sos-pool--pool-conditioner",
+        "reason": "only four of nine roots were pool conditioner products"
+      },
+      {
+        "pageId": "supply-clinic--alcohol-prep-pads",
+        "reason": "results were dental anesthetics and general wipes rather than prep pads"
+      },
+      {
+        "pageId": "supply-clinic--bandages",
+        "reason": "results were dominated by bandage scissors"
+      }
+    ]
+  }
+}

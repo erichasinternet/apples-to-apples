@@ -1,0 +1,291 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p14",
+  "createdAt": "2026-07-27T11:27:46.504Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--aae5fc28f9dbb7fc",
+      "path": "benchmark-data/review/g2-validation-p14/reviewer-a.json",
+      "sha256": "2eaf59494abfe8b6b7a8c42391474d15e75d55dd6ae36bdd86b040d3c77d2a58",
+      "pages": 74
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--d31aef60add55e9c",
+      "path": "benchmark-data/review/g2-validation-p14/reviewer-b.json",
+      "sha256": "a57726002827c049f11e99f6383bd0bd06a3dccce3fd4521c6c9bd414e3b8719",
+      "pages": 74
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 8,
+    "pages": 74,
+    "candidateCards": 876
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p14--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "classic-modern-fabrics--silk-fabric",
+        "classic-modern-fabrics--velvet-fabric",
+        "detailers-warehouse--ceramic-coating",
+        "detailers-warehouse--interior-cleaner",
+        "express-med--bandages",
+        "express-med--gauze-pads",
+        "express-med--syringes",
+        "express-med--wound-dressings",
+        "fabric-direct--canvas-fabric",
+        "fabric-direct--fleece-fabric"
+      ],
+      "pages": 10,
+      "candidateCards": 110,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--9e7936ca0952b175",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-a--batch-01.json",
+          "sha256": "efef8a1d571c7969486b8a8dc5838108962791aa01c1861112a0bc1e3179eabb"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--f47a4e336868e21b",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-b--batch-01.json",
+          "sha256": "306d3971ef44b9944875bbe328f3fcee065b81ee4b51a7414dde93114038b29d"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-validation-p14--batch-02",
+      "batchNumber": 2,
+      "pageIds": [
+        "fabric-direct--linen-fabric",
+        "fabric-direct--polyester-fabric",
+        "fabric-direct--upholstery-fabric",
+        "fabric-direct--velvet-fabric",
+        "farmhouse-fabrics--batiste-fabric",
+        "farmhouse-fabrics--flannel-fabric",
+        "farmhouse-fabrics--lace-fabric",
+        "farmhouse-fabrics--silk-fabric",
+        "farmhouse-fabrics--voile-fabric",
+        "farmhouse-fabrics--wool-fabric"
+      ],
+      "pages": 10,
+      "candidateCards": 120,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-02--af4745d06822fc0d",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-a--batch-02.json",
+          "sha256": "a69ff1ed01d6ef578d04c8e078452ae91f04cccd2403e3038cea6a5d71baf50a"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-02--cd37b403debe1800",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-b--batch-02.json",
+          "sha256": "2d1660ba0a4d5682800e13783f9a40a7866379e52d1f100c2f0f526cf66e5529"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-validation-p14--batch-03",
+      "batchNumber": 3,
+      "pageIds": [
+        "floor-and-decor--porcelain-tile",
+        "fusion-teas--black-tea",
+        "fusion-teas--chai-tea",
+        "fusion-teas--herbal-tea",
+        "fusion-teas--oolong-tea",
+        "fusion-teas--white-tea",
+        "go-bulk-medical--face-masks",
+        "go-bulk-medical--underpads",
+        "medical-supply-pros--bandages",
+        "medical-supply-pros--catheters"
+      ],
+      "pages": 10,
+      "candidateCards": 120,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-03--ea03a29cf85cf26e",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-a--batch-03.json",
+          "sha256": "dd06d62148a308b969c44f00cd4de6f3c6b823cfef5f50b007faaa5b5c938870"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-03--3b49269227cf3efe",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-b--batch-03.json",
+          "sha256": "19911c4da3903ae56dfb0da767099f078c37877f2b538fbd6167665a722f3fff"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-validation-p14--batch-04",
+      "batchNumber": 4,
+      "pageIds": [
+        "medical-supply-pros--face-masks",
+        "medical-supply-pros--gauze-sponges",
+        "medical-supply-pros--needles",
+        "mosaic-tile-direct--glass-tile",
+        "mosaic-tile-direct--pebble-tile",
+        "mosaic-tile-direct--stone-tile",
+        "mosaic-tile-direct--subway-tile",
+        "north-bay-trading--freeze-dried-fruit",
+        "parentgiving--briefs",
+        "parentgiving--liners"
+      ],
+      "pages": 10,
+      "candidateCards": 120,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-04--d30a1e5d6324eccf",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-a--batch-04.json",
+          "sha256": "13461e717ad3843740ecabcdc08ff214b922c745cfc05ba0bcadcc40211bb3ad"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-04--b2426b66e2a340bd",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-b--batch-04.json",
+          "sha256": "36d2d8c02146bd8cbb9b99312669a547b967991ed77d379d0580d62b294c7168"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-validation-p14--batch-05",
+      "batchNumber": 5,
+      "pageIds": [
+        "parentgiving--wipes",
+        "petsmart--aquarium-filters",
+        "petsmart--bird-food",
+        "petsmart--cat-food",
+        "petsmart--dog-treats",
+        "petsmart--dog-waste-bags",
+        "petsmart--flea-treatment",
+        "portofino-flooring--engineered-hardwood",
+        "portofino-flooring--hardwood-flooring",
+        "portofino-flooring--laminate-flooring"
+      ],
+      "pages": 10,
+      "candidateCards": 120,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-05--1100a5f8949413cd",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-a--batch-05.json",
+          "sha256": "98b47bc3d5bfbb735f1dfe1b7d7ecdea9e94841474b8fe07160fc112c3e85ab6"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-05--6de688971eadf750",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-b--batch-05.json",
+          "sha256": "29f5afee9716af94697adad4e6329be409a4918dea4bc503fa2a022cf574822f"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-validation-p14--batch-06",
+      "batchNumber": 6,
+      "pageIds": [
+        "portofino-flooring--vinyl-plank",
+        "portofino-flooring--waterproof-flooring",
+        "recreation-supply--pool-cleaner",
+        "recreation-supply--pool-cover",
+        "recreation-supply--pool-filter",
+        "recreation-supply--pool-shock",
+        "rubber-flooring-experts--garage-flooring",
+        "rubber-flooring-experts--gym-mats",
+        "rubber-flooring-experts--interlocking-tiles",
+        "rubber-flooring-experts--playground-flooring"
+      ],
+      "pages": 10,
+      "candidateCards": 118,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-06--c386c618aff5166b",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-a--batch-06.json",
+          "sha256": "7b458f7ccb57619e8c932d33c8c60d3e6d35b0888992f93352951cb14afa97ad"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-06--77be37e3c49e4d16",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-b--batch-06.json",
+          "sha256": "6cc91dceb30a558f86ad6a89bbac70ba785668c48e993c16282e8c854be117a7"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-validation-p14--batch-07",
+      "batchNumber": 7,
+      "pageIds": [
+        "rubber-flooring-experts--rubber-mats",
+        "sos-pool--phosphate-remover",
+        "sos-pool--pool-enzyme",
+        "sos-pool--pool-shock",
+        "sos-pool--pool-stain-remover",
+        "sos-pool--pool-test-strips",
+        "style-maker-fabrics--denim-fabric",
+        "style-maker-fabrics--jersey-fabric",
+        "style-maker-fabrics--rayon-fabric",
+        "style-maker-fabrics--silk-fabric"
+      ],
+      "pages": 10,
+      "candidateCards": 120,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-07--f366686fb91c1a22",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-a--batch-07.json",
+          "sha256": "cd9ece434af86ccabe7a12350a6bdb91810731d060cf61dc45e9d0889daed7b5"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-07--ff78e3c57cb7157b",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-b--batch-07.json",
+          "sha256": "90819078469b3212eed8175674226e4d68e5a2670a44be38c273f5e9710acae2"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-validation-p14--batch-08",
+      "batchNumber": 8,
+      "pageIds": [
+        "supply-clinic--dental-bibs",
+        "supply-clinic--gauze-sponges",
+        "supply-clinic--needles",
+        "supply-clinic--syringes"
+      ],
+      "pages": 4,
+      "candidateCards": 48,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-08--94fae7ab9c4699ae",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-a--batch-08.json",
+          "sha256": "2e6a4ba482054c7a6e2d6d121b8955e77ce004ba39ebbbab4ed904a6c5da018a"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-08--d0c2cd40fb9eb897",
+          "path": "benchmark-data/review/g2-validation-p14-review-batches/reviewer-b--batch-08.json",
+          "sha256": "c9b80e02a3c040c39972626c61ea2a19f41c431ea26b059e0033f5ad6d4941ec"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

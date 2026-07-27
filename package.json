@@ -40,6 +40,7 @@
     "dataset:depth:promote": "bun scripts/promote-training-depth-captures.ts",
     "dataset:captures:promote": "bun scripts/promote-training-depth-captures.ts",
     "dataset:captures:audit-roots": "bun scripts/audit-candidate-root-independence.ts",
+    "dataset:captures:review-sheets": "bun scripts/build-card-review-sheets.ts",
     "dataset:heldout:rank": "bun scripts/rank-heldout-candidates.ts",
     "dataset:reviews:queue": "bun scripts/build-evidence-review-queue.ts",
     "dataset:reviews:candidates": "bun scripts/list-evidence-candidates.ts",

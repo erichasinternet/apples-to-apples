@@ -1,0 +1,2627 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-depth-wave-01-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T11:23:23.000Z",
+  "source": {
+    "siteIds": [
+      "express-med",
+      "fabric-direct",
+      "farmhouse-fabrics",
+      "fusion-teas",
+      "go-bulk-medical",
+      "medical-supply-pros",
+      "mosaic-tile-direct",
+      "petsmart",
+      "portofino-flooring",
+      "recreation-supply",
+      "rubber-flooring-experts",
+      "sos-pool",
+      "style-maker-fabrics",
+      "supply-clinic",
+      "classic-modern-fabrics",
+      "north-bay-trading",
+      "parentgiving",
+      "detailers-warehouse",
+      "floor-and-decor"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "consumer-medical-supply",
+      "fabric",
+      "specialty-sewing-fabric-retail",
+      "independent-loose-leaf-tea-retail",
+      "bulk-medical-supply",
+      "direct-to-consumer-medical-supply-retail",
+      "mosaic-and-tile-retail",
+      "specialty-pet",
+      "direct-to-consumer-flooring-retail",
+      "recreation-supply",
+      "rubber-flooring-specialty",
+      "independent-pool-supply-retail",
+      "designer-apparel-fabric-retail",
+      "dental-and-medical-supply-marketplace",
+      "independent-apparel-fabric-retail",
+      "dehydrated-food-specialty",
+      "caregiver-medical-supply-retail",
+      "multi-brand-detailing-retail",
+      "flooring"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "4b440d814ee58a07a840b241d3c741dd19a47c61f4a140de0617e0a61afe7431"
+    ],
+    "collectorSha256": [
+      "e012d9f27e7ff817c914560bedfc5f3460d704a9448e6740f858bba9796196a2"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--001",
+      "runManifestSha256": "3c3644f06134404f5ac653796cac5f528451ee982bae2146a601f979aeabdc68",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--002",
+      "runManifestSha256": "252ef900c2d21d0b6884574318ae2d8b40e03b4abb572f548f9e5355b68ce428",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--003",
+      "runManifestSha256": "a30c5c541b27b5a36d5828b1317a2f8e3e45db4db0ce0dad844c1af583275428",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--004",
+      "runManifestSha256": "506bf349e58e1f962569f1328d4f67a96e6da72a3021521427b584fc3cd798a4",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--005",
+      "runManifestSha256": "4e21b5c0253c1b6d8e3410a7116f0bf5a4a146b1e41e5f3dcab311bc026baea9",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--006",
+      "runManifestSha256": "b389af6376c13effbd3c538c10bd7b9d9ccd658326e56c15517ba45e1eca319c",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--007",
+      "runManifestSha256": "1e12638bde42df8d3eb12ec321dc44be23ac128896fd3f663ba9ff59a8e86a20",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--008",
+      "runManifestSha256": "aa2eac2d5657fbe6e2644c003094adf0bc0c568daa398bf50331ea08728759f1",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--009",
+      "runManifestSha256": "dddf7c357c7cc80c001d6d2cdba69dfbca896383ca441d8f138e9856dc82ddf3",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--010",
+      "runManifestSha256": "ad13cd3b69782532f88f532e91ae2421753812483bdaad4d5583a43d75601aa9",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--011",
+      "runManifestSha256": "c1fa23b4e445f73525a294c0b5b48f6bcc07eac29e346f0f035cf81014fcba49",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--012",
+      "runManifestSha256": "b35f7c56213bfdb716ba4f28c8478901b808818b907129355c7403c4cbb13c82",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--013",
+      "runManifestSha256": "93e23dd5353e0f291b8c15c975b973e4be03a589c012097db76829fe1eda8cc8",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--014",
+      "runManifestSha256": "0d4549f683dcdcac332f2a68c16a1b0710d59d2d4cd3f50974369c63946afd29",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--015",
+      "runManifestSha256": "5a82e7828e995aa7dc63477bc0659cc0cd4a097aebebf19ce370ccaf79b65c5a",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--016",
+      "runManifestSha256": "22442ab73a0206cc7b472208ca66479c0f269851035c7e758004b376889121eb",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--017",
+      "runManifestSha256": "fd7fb1139d68c6ed77c7f31da44a8b33ce67acf5783d4dcbfc8e5e30c7e6fba6",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--018",
+      "runManifestSha256": "c4134746672d1c916f116bdce105c466328dd5b0ef4275601b6b1e234e43f681",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--019",
+      "runManifestSha256": "5278cd5cd6cb61b074ee2dc7f7dcccb01f5f6a07ce4993be7eae80099f0d646d",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-086Z--p15667--020",
+      "runManifestSha256": "513b6ec6569594de4ffabc0746a2d07fc0b28632cf88def012a6abb353a35822",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--001",
+      "runManifestSha256": "c8f7d368ecb881413f8f4d10621ea5e59486f30fcd6a9d19b2a57859e4c514fa",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--002",
+      "runManifestSha256": "7cab3078f20f23d66c5c005714be3b841f81010f6f3395c28fc917cb58538fe3",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--003",
+      "runManifestSha256": "c758475ad66d37424e37abbe8becc35b9fc3513f653218dbeb8a978bdfda20b3",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--004",
+      "runManifestSha256": "d95fb232c69ed5c96064733a02063c036de0d06236a55b3229585085ad2711ae",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--005",
+      "runManifestSha256": "b3426692d87e8e73e457a33ea033f25680b60158bfac10a03c24f65a41272c6c",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--006",
+      "runManifestSha256": "81c64961a827d73d8d0d023d536c830da5ac2c06a46868bdb4746cf0b5307c79",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--007",
+      "runManifestSha256": "1448945d12b4ffd1b2fa60f66e6d49b2bc8909c7c684561df74bc24c514fbd57",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--008",
+      "runManifestSha256": "2193a61889299d4f741349f869ec5ece03ba2faf2ea4c7cddb37c26640c807db",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--009",
+      "runManifestSha256": "e21bff34bf5fa53aa50d69a8864a9b6705abda8667e7a62ecc76e3c98d28773a",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--010",
+      "runManifestSha256": "652efc876caf641aa30e6d7f3d877068374e5994a756be097b59c9f3675b1bfe",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--011",
+      "runManifestSha256": "320848bf3390e7b13c9cd7d4008ee9462df8e96c8dd51b5e034c4c28ae03451f",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--012",
+      "runManifestSha256": "65a6216e68c2410ab0f948358f6a55054b5c4c522fb8ae34f679ebe612e5af29",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--013",
+      "runManifestSha256": "b2d7f4daca76506680bd9cd9892efa2e344576c992ef375470a81ce16ecf99e1",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--014",
+      "runManifestSha256": "525bd1dc11562bdca1ed90c7739c966cc502e54de5a953b0c866d925605f2f84",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--015",
+      "runManifestSha256": "2e1618983b2ab4013c2c38bdae3bba07e10af4066dd9730cd6e84a34ce8501e9",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--016",
+      "runManifestSha256": "03b6c1601c378c34f307a106f2fb0378de78333bc0d956cc2788be4aee5aa227",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--017",
+      "runManifestSha256": "bc88970d498e4ff75a852657c49a182c78eebf22987ec46c1aba164b44b2be07",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--018",
+      "runManifestSha256": "2965a44642437dba2bf3549be85a532da663e8ba3c02b015d8a7af0cc928384d",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--019",
+      "runManifestSha256": "dfc8d97e7c5405c3102026186844f1669e33ad36a7c00a25a26539d8c6e63e63",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-103Z--p15670--020",
+      "runManifestSha256": "8e8c9c3ba5882052d3482e616245fcfe9685ef3bc8077cd243bd8b34cabb6936",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--001",
+      "runManifestSha256": "8a1920efcb98fdde1301aa0024983fbcf465e42bc443dbec97b297b0fd5997eb",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--002",
+      "runManifestSha256": "b4c9e0f84e896d6f5c7042b0a3f4c387b3506c2eb1c3fc0b49548c0004b52693",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--003",
+      "runManifestSha256": "7ba38328e536b0c7cf8e3ac8976d8bf95dae1364c873db699727f20a45194c0a",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--004",
+      "runManifestSha256": "8abbff5dfb0ca159ab1262908bbeabe42b6dfc967929b42a948e1e13ff19ea01",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--005",
+      "runManifestSha256": "63d0f82e40d13788e9b54880f073c04469fc77544cc25c4e899f3b27045ee856",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--006",
+      "runManifestSha256": "b84713e301a1e95f21eec93f97f62c4752d77e8458c73d01dc35328c9dd5ff38",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--007",
+      "runManifestSha256": "d69fb2d09bf97cfbf52a321305fbed8ac21358776b7c9597f5cf74b4ae9c795b",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--008",
+      "runManifestSha256": "69096399fb611712b27990ca66b567fb8ad0af023df76fb3910f7d7861d3c8ce",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--009",
+      "runManifestSha256": "2b9d9103a51e1ea0e85dbe5e68159f5bef4854a915e89a37c229b83f3cdec405",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--010",
+      "runManifestSha256": "1d89ae1c157b9d73d41804146b3ea4491a225c411d08a1ff86e3fd54552613db",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--011",
+      "runManifestSha256": "e5921b273f23833138f721251422db68521af6f95fb741d28f17e25cec6b084c",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--012",
+      "runManifestSha256": "26d979969117efb30826977fa8f5a35e1b53a33496bc8b074f6661c87a98c7e4",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--013",
+      "runManifestSha256": "dfdc1aad846e4198fd30cb6836f65cdbdf4e2fb6256e8df003184ddd8d8a7a76",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--014",
+      "runManifestSha256": "8c9639e667955655e77b1ef563840f2a09fc7903e48d6eb6beed94ba994ccd4e",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--015",
+      "runManifestSha256": "7e72d9c07b8a4414cab01f7c5aa5f34104c9ea3f04ff07be69ace9300016e120",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--016",
+      "runManifestSha256": "e1c91a55dad6388c956a791c8ea6f94cb417b406804bd234685e34731334ef68",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--017",
+      "runManifestSha256": "6678b1df2432be53723a3cb108183ae68201184c262bb66e7fe4f10ad99a60e0",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--018",
+      "runManifestSha256": "2007673a84edc2130028f3df187b024a941671419c634cbc133ab6515c3751e7",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--019",
+      "runManifestSha256": "107d8e32ae06bb4dedc99b2c5f3a81e7f0eaa8cbb175cbd661e783a38b433a29",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-125Z--p15672--020",
+      "runManifestSha256": "fea475b53ca2226d77aa3b9ccf2a6d1c7db68764cba4bb15578d7a58c1cb890e",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--001",
+      "runManifestSha256": "9d894795062e735602b3011e6643238f023d2ac0fda4549910fe6b2385b8c869",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--002",
+      "runManifestSha256": "e2b99d0837eb6df0c55bf00460364664aad2ea3e701194544bdf63f728063458",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--003",
+      "runManifestSha256": "bb8ff9e2d54ba8fb4f6603c23328df5be715f2404503f85a175226576247a0fb",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--004",
+      "runManifestSha256": "dbaf191783e8ff98bb14963e51c4aece850e91de829fca2606a15fd7cf8abfac",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--005",
+      "runManifestSha256": "3b9934585428346d57e6f1c6163878e30472ead9476ce7632432e898259dafcb",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--006",
+      "runManifestSha256": "7a1f3caf6c526fd6ee673e181750ac68cc6c7cbff9bf9c91a3c8bf025045f14a",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--007",
+      "runManifestSha256": "6bb370cc0b725e4c05b438a37edadeb1b3d8e61112d9f6f1bc389e52d41be906",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--008",
+      "runManifestSha256": "1c6706ff1295d82ab66af6eeac16424ede68822364cc1ec03b77d5541d5babe8",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--009",
+      "runManifestSha256": "3e70a434b85e761febc9ec6c92ff7134226b7900f5d313ecf6ca6eb736a7759e",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--010",
+      "runManifestSha256": "f474d45ebbe6ad5a0b636577078e848195af83182fddf97360f73402ef989b6c",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--011",
+      "runManifestSha256": "bafcecf4b94e0e5c53ef3070ac88f39a471c9d5e1c32ccaf758419aab132d089",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--012",
+      "runManifestSha256": "41587fc30baf6ed9dbb3ecae0c5c44f041ec1b0a3e551159f3ce829596beb588",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--013",
+      "runManifestSha256": "6f57af0b3d96402c16fd3daac4f2c12030b0722bfb2cefaeda7d90ff08ea8c48",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--014",
+      "runManifestSha256": "ccdca17529033ed78eb738e5987781e82dab8f33636d1622f9b24fe8ed906b94",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--015",
+      "runManifestSha256": "ffe91e9b66df8ca7c2165cb9957ecaa10ecca324dae9164ced5b19f5fe516bc4",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--016",
+      "runManifestSha256": "96ae41ba003f721da369b73399600eaaa248810a3a8962c2dc656b528acbb7d4",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--017",
+      "runManifestSha256": "bc1a1180e7f5e216e19a98587f33ba6b91d5b342e8e8c9fb9e56373c4119229b",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--018",
+      "runManifestSha256": "ee37bb2e2f21855ad51cbfe98adf3b937ce380b76ceceb912051da7d614f6d5a",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--019",
+      "runManifestSha256": "6b2aa4027fb3ca22aacedcc8ff847fb6715a8349b4fd7f1fd9585972143c3ea9",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-096Z--p15669--020",
+      "runManifestSha256": "dda4fc82f7d26f547f045f8b1cedf958d349513fe42fce2b3a2c6fd8c92e8175",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--001",
+      "runManifestSha256": "023021926df30e7cdf7b74ada62c1785796714ca6f59efc0529a8d2a3091066b",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--002",
+      "runManifestSha256": "74a7b2553e888b31410436c228a1231ec853b27614e2226c22d01a57d07f3861",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--003",
+      "runManifestSha256": "c64354bfbb2dc47b90455d6d8753a48666bdf1e113fe6b8a15b3855c3ccbc2ad",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--004",
+      "runManifestSha256": "d9babb496935ba44365c906c292099d18b2d8382af7e8f41be857ff8ee98c8e8",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--005",
+      "runManifestSha256": "9011a5bd9060bee9e7161b5a1915eef72789999e513d4206960fa29b88b6abba",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--006",
+      "runManifestSha256": "14908dbaf1c2f890df5075a4bbca0c7524b1a85cbd12bccb446bf1e764062329",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--007",
+      "runManifestSha256": "9ee51a1eaea72095ff2c0de3e519f3edbe5d2f61d71e45612e93ed0bd12dfee9",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--008",
+      "runManifestSha256": "25774baefe20aa730f7005dbc1c2b8fd04030200ea4626c2fc251966000b23d3",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--009",
+      "runManifestSha256": "8e4ced7b18eaa4e6cfaa69d89b921b14ef3b9b10da1992d9001ef8cdf01b13ff",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--010",
+      "runManifestSha256": "da9a50d8d14432edf0feb529c75c1a82ee22db65e6f16ec3b6288b6f1002d5c0",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--011",
+      "runManifestSha256": "32e4927554f03a162a8d477733f9de50daac8cdcedcfb45121d7b399fc4db5da",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--012",
+      "runManifestSha256": "813a4475bb4c06b4ea7c83d3a9ea2377fec6c3d6c3b39bef97b0e77c8eda2cf1",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--013",
+      "runManifestSha256": "363a87456ef4857b96cc624733cd1f94d33b23197f1a99c2a5a3a5be5345d21b",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--014",
+      "runManifestSha256": "1c14196d913ff825c6e4f39fce7b0ff90051bdff5f181b86c80be8ad776d6a51",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--015",
+      "runManifestSha256": "b673331693474ca7223bd6f6df20c87bdff0f70b674b4609e4d3dd5b424e0b5d",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--016",
+      "runManifestSha256": "c452a39c02fbd3bbc9ca1f96608c5c2af91be0f8c692468817160e181655b8a3",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--017",
+      "runManifestSha256": "590af03d930b28852cfb2e7a484dcb61743f7d83d3dd25fa4bc8975d0790150b",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--018",
+      "runManifestSha256": "2e1c774adf529b2ab51937bbe5f1f4b88b7d1d3b3fa334a87c8d466c03898703",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--019",
+      "runManifestSha256": "8ee587eed74e21d7e4b26722d539d77ed1a66c7c5a133a5fb8aea0355a1ea71f",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-136Z--p15674--020",
+      "runManifestSha256": "1d2d0ef600f5ff33ecac0e04741158a39fc710eaf965c50b3949fa034af037b9",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-119Z--p15671--001",
+      "runManifestSha256": "26276427a81e8dcc0ad78ee29f2fdbd7ad4818adc39229693efa1d79db398cb0",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-119Z--p15671--002",
+      "runManifestSha256": "d01ed3485c37d6c19b776913fd7193503f716bdc7ea987a339e87a036c46288d",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-119Z--p15671--003",
+      "runManifestSha256": "9f51b4072e5f14d0dcd90bbea0b0a0254ac936ac0d51501331d77b224525fdcf",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-119Z--p15671--004",
+      "runManifestSha256": "32b9d9de43b96a2d3ef498ce11ce4aa99fd046563fb63df5e889b08ce0f0cecc",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-119Z--p15671--005",
+      "runManifestSha256": "206f54a465af3b62269c87ca0b846fcc7c721f0984762378adc35fe105041791",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-119Z--p15671--006",
+      "runManifestSha256": "5c3c6b2b52e1262f082edd98e7b68fe85d6cdbe2dac9b28c5cefbaf02308711f",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-119Z--p15671--007",
+      "runManifestSha256": "75879f1927671cb0f37003ef4bfa5ce0048d4a56c09016cda5a65eaaa2936a79",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-119Z--p15671--008",
+      "runManifestSha256": "0f98d7adf3c3fd2ae6b9a012cd0c0058eee64c814d98b27535f83a9f9814e0e8",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-119Z--p15671--009",
+      "runManifestSha256": "ca3e4c75a47e078d50d598baac7941ba57fff1150102ad73f93de5cc7834b812",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-119Z--p15671--010",
+      "runManifestSha256": "8ff7c5d5ec650aba65dedcbe2460a8cc169d6c27fb0ae5534a814b71d4c327a5",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-146Z--p15676--001",
+      "runManifestSha256": "3af49af4e97c3bfcbf3548c07170387b904cca14aa75363fc2fbd81a0ce0d2a7",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-146Z--p15676--002",
+      "runManifestSha256": "66a4b80a7cc6fa95c3bd0f4f08c6c608fd0b9147bde2708f023e137dbfbd3287",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-146Z--p15676--003",
+      "runManifestSha256": "d05f9144e11aa1fb43be48fd545750a9b7ea47a442799a498b7a45602570a217",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-146Z--p15676--004",
+      "runManifestSha256": "efd45839e43366a4ac0bda7a50a9e6c6458edfad7ff6b060a41767c522b87fd9",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-146Z--p15676--005",
+      "runManifestSha256": "dd745e8cf13ef95b01d1eb35e2148aaf3b535e063b2dbaa159fd9e42f7d8e968",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-146Z--p15676--006",
+      "runManifestSha256": "bc83efb7fdcd9a8593984070e606cbbc6410c1b6ae06d90bf4614e04ae00df61",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-146Z--p15676--007",
+      "runManifestSha256": "c2380b31e3e468c212b34ec72f404b3c1f5e915dee577b2728b50a936399934b",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-146Z--p15676--008",
+      "runManifestSha256": "b867bfb9a97a5610bd78ac2cd8627c41575860c8058b0e4ee71d1145a01a3417",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-146Z--p15676--009",
+      "runManifestSha256": "1717d54f095c0047c93653aae73b130207efd23d8afc9db7c5a0feb21e354f71",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    },
+    {
+      "runId": "2026-07-27T11-03-08-146Z--p15676--010",
+      "runManifestSha256": "4fb91654ec51e30f2da334480ff3e75191a0e6ba428cb3f2b483bd19c1012f39",
+      "pageTimeoutMs": 75000,
+      "cardScreenshotBudgetMs": 20000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 120,
+    "successfulCaptureAttempts": 107,
+    "acceptedPages": 74,
+    "rejectedPages": 46,
+    "acceptanceRate": 0.6166666666666667,
+    "candidateCardRoots": 876,
+    "samplingFinding": "All 120 unseen validation routes completed in isolated bounded headed Chromium children with zero parent hard timeouts. Strict machine checks accepted 104 pages. Original-resolution review then required at least eight query-relevant product roots and accepted 74 pages, for a 61.7% end-to-end yield without weakening capture or relevance gates.",
+    "visualValidationFinding": "Every accepted candidate-root screenshot was reviewed in fixed 4-by-3 page sheets and six-query site composites generated from immutable post-fix card captures. Thirty structurally valid pages were rejected for weak query coherence. The accepted pages preserve complete candidate screenshot coverage with zero evidence-identity mismatches."
+  },
+  "captures": [
+    {
+      "siteId": "express-med",
+      "pageId": "express-med--syringes",
+      "capturedAt": "2026-07-27T11:03:58.979Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 11,
+      "candidateCount": 11,
+      "candidateScreenshotsCaptured": 11,
+      "observationNodeCount": 953,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.00525,
+      "queryTokenCoverage": 1,
+      "observationSha256": "1bd1b787289cc0ca8b0777ae9f54d36c329e8b6a8a7fbfba54c919f16e309cfc",
+      "canonicalObservationSha256": "5493a0b325fc391f12845d1cd7849835cc2758a1d8a374f806ccfd905f043265",
+      "annotationScreenshotSha256": "f41dac25c8b0ef08b5822a9ae43ea80077ac6f056bf14645c1608ca5bb19db0e",
+      "provenanceAggregateSha256": "20e000a18437a4ceff19ecd7d61d5c454b142c60d5bb75861a27ce7d58511335",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--upholstery-fabric",
+      "capturedAt": "2026-07-27T11:04:31.743Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 314,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8a321cd9a31556549055571478deafb21316cc615fe6f794c39b0ca20001ab71",
+      "canonicalObservationSha256": "441eb0deffb5f964a57daaf924087fd9d001d57def708593f1a227181ba53abe",
+      "annotationScreenshotSha256": "41ca5fe857fab44f4062521b1d1f4341cf81a386738f37657473b28c399d4c41",
+      "provenanceAggregateSha256": "6ca4123f99e8de90cbafd0b3ba6585bce58e49a70f47812667e1e29b72440235",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--lace-fabric",
+      "capturedAt": "2026-07-27T11:05:00.263Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1215,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "602e945bc490a982078b06309cace00b275d65b7144494c7795e82898170f515",
+      "canonicalObservationSha256": "b109abd5a44ac413b70ae1c203a845bcc19cdbae74bcf1b6b0428744854ae206",
+      "annotationScreenshotSha256": "dc14fe9d4bda222e0a0e7e01f65421313ceb4c4fd65728726e35955f2374f235",
+      "provenanceAggregateSha256": "5948c37040841397dc1cc4f69234b1508d14a88d7a462188e0340227d8af8e65",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fusion-teas",
+      "pageId": "fusion-teas--black-tea",
+      "capturedAt": "2026-07-27T11:05:36.536Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 586,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "2b3986581604be8e0a8968e7e84fdc7ffaf56a35c1cf011043de4db1d3fde088",
+      "canonicalObservationSha256": "567732c47875a36c4c5a6e799d01a0473699436d1a2a2d9f9d1685cc126b9369",
+      "annotationScreenshotSha256": "572e278a3af274ed23868118718c68d4d1105bad53f98302eb392c84e430691c",
+      "provenanceAggregateSha256": "84e56437c669867641145de453b0c5432aebf4e729e86c0bb3bbbcb2a533face",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "go-bulk-medical",
+      "pageId": "go-bulk-medical--face-masks",
+      "capturedAt": "2026-07-27T11:05:55.107Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 9,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 959,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "66237ad4b3e7a95a8121494c5dea4fa5ae30a62d888f4b55f576832a571c073a",
+      "canonicalObservationSha256": "54010bde51cede3e66a89ca55dd530d85e131865ee3958fb0d53bff59ad93225",
+      "annotationScreenshotSha256": "c75cfb9cc4907ba18e2eba8774519de2820f4d6e8649acce0a1089506bccc4e7",
+      "provenanceAggregateSha256": "e90f59544bffcf89b37d2ce30bbc6a71dd3bcc7b08dc3b3c786721ecb8b3d508",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-supply-pros",
+      "pageId": "medical-supply-pros--needles",
+      "capturedAt": "2026-07-27T11:06:09.623Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 878,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "3ae5f8bc11eadb4c388ce0add761c4b7f07a30c6ade85ad4efe25ca5b9392420",
+      "canonicalObservationSha256": "b10eda0a242491263cb605037268067dd7c48910dffecfcc76a39b0606aaf6a1",
+      "annotationScreenshotSha256": "7c465d20a415318269ac21df038a401a5ac2f6682c85ae14e73326a487e20c63",
+      "provenanceAggregateSha256": "222c6f398c9fd4822f6f9b03e063739a51a0d35f0d9556bf118848d8a52962e8",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mosaic-tile-direct",
+      "pageId": "mosaic-tile-direct--glass-tile",
+      "capturedAt": "2026-07-27T11:06:21.328Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 3869,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.0054444444444444445,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ec4a9f7848d229764b83b7643313570a40780e4058a01d763bfa7495b0a5ec43",
+      "canonicalObservationSha256": "948c9277d110b62b6d9d63c0e8e9cf119b8498f86ba95c241657c6524d279622",
+      "annotationScreenshotSha256": "70a41404714473a6a218f66640a760c795bdf09407ff1b2ec59c529ee08157d8",
+      "provenanceAggregateSha256": "4229174aa4b1b68785496eb959f8c54168a874fab93172b202f9f043b1df8968",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--dog-treats",
+      "capturedAt": "2026-07-27T11:07:14.273Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 11,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1563,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "b0853780d232c5b9b8e7265cc2ec78eca321e00b5a2c7d2f0a6e172808e4c554",
+      "canonicalObservationSha256": "b8c77a4f28d70b737bddb9f8d9e2cd1d4814bcda1a73d5d101e571f6e3e130ea",
+      "annotationScreenshotSha256": "626571a0aaf8b4f05d3fe2a466f291e078c657187447428bc78c5dab35214c47",
+      "provenanceAggregateSha256": "c637d2e02efc2f13c8a7ed659dc48279a2ef79e40cc06a358387c53b2b6ae774",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "portofino-flooring",
+      "pageId": "portofino-flooring--laminate-flooring",
+      "capturedAt": "2026-07-27T11:07:49.558Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 201,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.03071875,
+      "queryTokenCoverage": 1,
+      "observationSha256": "bb2415457274bd40e7b6de954b465f51b9c8a74bd74d35316e60e3edfcda1168",
+      "canonicalObservationSha256": "f4949365f676066c5d4df00ca16706ed373b8d39bd47b52c5cc908acdab4b7f3",
+      "annotationScreenshotSha256": "01af69b99be76768d201b0e60b0a02ae028450830fa61a11d73d21d5faa84ac1",
+      "provenanceAggregateSha256": "8e625b2ba9ccfa58a60dadfecf3594cc263fd1713fcd6a34b359d9adb34d0738",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "recreation-supply",
+      "pageId": "recreation-supply--pool-shock",
+      "capturedAt": "2026-07-27T11:08:18.078Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 858,
+      "observationTruncated": false,
+      "dismissedObstructions": 8,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "3245f1f295d6c604a21ef3bc92d07331e0aade4b2114fe242f646279146d3c45",
+      "canonicalObservationSha256": "0341da4c1f0462163e86793fbf14d541f42659032aa352464e44c84fdda75e98",
+      "annotationScreenshotSha256": "e9616689040774637c9375747f0133ec7fc0b9927b617526c8babbe35bf5a78c",
+      "provenanceAggregateSha256": "caa31f333efb58ef595bc07f5a31a207b0eac2fa2ad85b7ccfa01ed05837f01d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "rubber-flooring-experts",
+      "pageId": "rubber-flooring-experts--gym-mats",
+      "capturedAt": "2026-07-27T11:08:32.087Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 261,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8cb5e688145b458bd457a99b4c72c666eca675c8b6d83a13f28a5db2011d9a22",
+      "canonicalObservationSha256": "eda3ba383555ff6f611fe5be618dfa8719677793c673b59d2b72a02b2ca8d3a5",
+      "annotationScreenshotSha256": "4660e9e950631e2c781d37272f5d772664b16c32f6c065bc8a0afc8ac7e9ddc8",
+      "provenanceAggregateSha256": "e87366f78784a4e8dc1f619e695f43681aa276fc5e387b3170c6432d49ec0b44",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "sos-pool",
+      "pageId": "sos-pool--pool-shock",
+      "capturedAt": "2026-07-27T11:08:44.002Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1050,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "239e3fd5afca4ac14ab52b065267b401f33126966e4aae88651b2616015dc4fb",
+      "canonicalObservationSha256": "0de43baa06609b9e1370b7828f186a7f08815e316285521824319bdd3b073b23",
+      "annotationScreenshotSha256": "ec4aa2612b16d94b479e3f24e738607a54f734e58f6823e58c0cbc19299645c8",
+      "provenanceAggregateSha256": "922f2b41b274ad57e3a04e406e98609bdb718a365529d274158fa0cfbf11de2b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "style-maker-fabrics",
+      "pageId": "style-maker-fabrics--silk-fabric",
+      "capturedAt": "2026-07-27T11:08:53.994Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 432,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8a965e0644ffae9adc13da65e8320bf12651a93b83daa6e0e585c50387edef82",
+      "canonicalObservationSha256": "1fd5de53642d9c7e93b021aba3f829a5821b0c091d636162390fa8f487157c5a",
+      "annotationScreenshotSha256": "4d56775d20ca9de527b3ebee7ad25b5db47076d3103d82724887bbdd9bceeb9e",
+      "provenanceAggregateSha256": "2ae9914b89b2136fb4e123a2a5506c6ecb95cc4253511915c65b1501a4fd838d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "supply-clinic",
+      "pageId": "supply-clinic--syringes",
+      "capturedAt": "2026-07-27T11:09:29.519Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 965,
+      "observationTruncated": false,
+      "dismissedObstructions": 5,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "db02f90ad6bfbd74099dc867055bb4f69c9f680f7d977368da00be81a68fb6ba",
+      "canonicalObservationSha256": "a06c80048fd7a61f2ee7ed616c21eb61a7604f3518c371798ed2b78c55ad1050",
+      "annotationScreenshotSha256": "e60d4c5c1f1d5982bfb76eec781bcb6223dc0f0abcfc7593b2705d4738475ccd",
+      "provenanceAggregateSha256": "cf997bfa76a70c9859df883c4e993939069ab5e76e02738335bd64322cd76fc3",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "classic-modern-fabrics",
+      "pageId": "classic-modern-fabrics--silk-fabric",
+      "capturedAt": "2026-07-27T11:03:27.196Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 355,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.020427755498845547,
+      "queryTokenCoverage": 1,
+      "observationSha256": "f6b910ab8239fd71aa6d1d8d3138edf325b8751ebe0661ca2e590f2a87fba197",
+      "canonicalObservationSha256": "cfeb223d70a18868a3b9a2b8e3887bdcb268261e4dd2f89dd68fdfd3f8c4a03c",
+      "annotationScreenshotSha256": "5f77735dacf2d11dfcc34cf2f1b066dce1dfb83ccc2ef0410c7c7f7c883ce61f",
+      "provenanceAggregateSha256": "8065d2211b7b9216fd599c992d695e8c80e2f35b9bb4bb652470b5715ccb85db",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "express-med",
+      "pageId": "express-med--wound-dressings",
+      "capturedAt": "2026-07-27T11:03:57.881Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 11,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 485,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e56681a5070424f241c71736170f406704514f5752a34786b352b3f7047c0023",
+      "canonicalObservationSha256": "9cd42784de0eae8263fadad35512bb028d466890b7a0430a2d0b45833da37843",
+      "annotationScreenshotSha256": "20a3c8827088677ccea4d42d17b617f22f1b77010d68c02191a4e0bd5c71f0b3",
+      "provenanceAggregateSha256": "1b719588f2fc6ad6942c17e6ecacc310ad79eaa64ad5972e0076c8a271deda71",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--velvet-fabric",
+      "capturedAt": "2026-07-27T11:04:30.231Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 280,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "69b2f9f85668e96fd668c7b415f2eba0b74db25c63592188e6a807205f5fd71b",
+      "canonicalObservationSha256": "307a3226e66daf397441506622ed779a9557f68ea77f427c3eb5c45c39f6c9e7",
+      "annotationScreenshotSha256": "3b6ec79d55dd01101e543e46e3f6261d7eb957a9b077099af7a036d98245f5df",
+      "provenanceAggregateSha256": "5d3e0ee3e0c56c6cfcbd63c98f4886e0c7be79b4a86b493dbaa5877d86ed0b81",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--batiste-fabric",
+      "capturedAt": "2026-07-27T11:04:57.743Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1065,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ba0c459c65391a9616b04fac7bb7baa05b66f38a564a464692663ceb75e60ba5",
+      "canonicalObservationSha256": "e136501d21464797ab7fc2fbbc72f96621cd57e290963136af85b54b01b7921f",
+      "annotationScreenshotSha256": "6f164e43c6c32c7f4bea65e7722698e26c278adbdd54867f4738bb0999a4a755",
+      "provenanceAggregateSha256": "b9a63699890b80f16a454bbd502a783b6e9b99adadb9164a1efab6a7eb008b45",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fusion-teas",
+      "pageId": "fusion-teas--herbal-tea",
+      "capturedAt": "2026-07-27T11:05:32.306Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 532,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "dcf1ea0bd7616d2667e309dcab78876ee93f33c3e69ad461cdff6d6015bba2bb",
+      "canonicalObservationSha256": "d0a42ea5c1c26d96d7606be35d3dc09877007c83fde07dc50947e1cc3f6bdb78",
+      "annotationScreenshotSha256": "1967df36363b9e7bfa40f2d0b3d45539de21a2633790fb13584e336728b35bd6",
+      "provenanceAggregateSha256": "249a96dab370b01a587a348ddbf5ba4394f77d65f76fc22b46cee2ed72623ca4",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-supply-pros",
+      "pageId": "medical-supply-pros--catheters",
+      "capturedAt": "2026-07-27T11:06:04.302Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 846,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "3f98108cd3aca5072ff7d34088cc2f49358fcca3b93d89040d85287cda932885",
+      "canonicalObservationSha256": "81c99903eb29918d84970b4b2450fa167e06675bc912119779b94157f3092a29",
+      "annotationScreenshotSha256": "e1ef931ff814872d3b695645adcf767c0aafa5bd2f82acd11b22c05121858e6f",
+      "provenanceAggregateSha256": "d8ce0f95f72209df7c13b44b83a53e2276bbea8f35528e8dc5777212c7660d1c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "north-bay-trading",
+      "pageId": "north-bay-trading--freeze-dried-fruit",
+      "capturedAt": "2026-07-27T11:06:31.269Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 942,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.004860857941426662,
+      "queryTokenCoverage": 1,
+      "observationSha256": "73a1f61d2a37813d79eea34b48adade3c4325df74709d63a120528d37627e84c",
+      "canonicalObservationSha256": "2e3561fbae6a219a89f900928c7167989a5095fc91d630745c0c387949ce197f",
+      "annotationScreenshotSha256": "db3f53f6e93386fffbce606ef82dc2e857752b00070b45a4970088e90f1be27c",
+      "provenanceAggregateSha256": "9ac5716a17eb4e5680fcb6e8bb5ba5b914c62c24ebe89dc7245687a572abf389",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "parentgiving",
+      "pageId": "parentgiving--wipes",
+      "capturedAt": "2026-07-27T11:06:50.606Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 369,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0.014349252309322878,
+      "queryTokenCoverage": 1,
+      "observationSha256": "659eac03b7dba94382e83433066d88ad9eb528379b1961c11cef36748b332fe8",
+      "canonicalObservationSha256": "2bde3509eb7c5c19ee7989cd0d8e0b91cf3db0153dc4cf91d1b41af8273d7c5a",
+      "annotationScreenshotSha256": "8fd214eaf94162669acd40e2b55bd0c31fadde62a9918326afaba6c66e38ccb9",
+      "provenanceAggregateSha256": "9628ac8b2f7cfcaff629448bec249bd56348c78045564d6fd04c079d0a2917ad",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--cat-food",
+      "capturedAt": "2026-07-27T11:07:08.684Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 10,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1476,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.006999635435654393,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8e29537e9a4c9760b5e59a1c8f6b42072628baf40644e92f8bbf6da740443143",
+      "canonicalObservationSha256": "d7591bfdb3579d3e461b3f109528c55e3818d43768025632a26a1eb8ce16c085",
+      "annotationScreenshotSha256": "b9977da801be672fd6f07c5c5805201d55b8fb39385eed07b1de89c077c3e853",
+      "provenanceAggregateSha256": "17a04699e20721afdc7043e6f8c40d7cb552a58b315690e4c6da9cc70adb0152",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "portofino-flooring",
+      "pageId": "portofino-flooring--hardwood-flooring",
+      "capturedAt": "2026-07-27T11:07:49.279Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 201,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.031074126184834124,
+      "queryTokenCoverage": 1,
+      "observationSha256": "b72b3e2034e86697745099bb5f95b3a72babdda3d8ee2c2e51259bd4477a43e3",
+      "canonicalObservationSha256": "f7303d6671d32cefe4aa0c29205f41c1f9c6fbb7173c6f23e27419124943bfb6",
+      "annotationScreenshotSha256": "53274e6ad7474e5a3f4d789ceae87036205bbc289f488b9576472bfed26af167",
+      "provenanceAggregateSha256": "12616004532242dccbad75c3516d43ac1b2d191602863d44285639e8d75a322b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "recreation-supply",
+      "pageId": "recreation-supply--pool-filter",
+      "capturedAt": "2026-07-27T11:08:08.631Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 763,
+      "observationTruncated": false,
+      "dismissedObstructions": 8,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ab4381fa53ac13ba3facf36358ef5055d4960f019ec14b3ececbf22e59728024",
+      "canonicalObservationSha256": "1b46e3786d92283b9ceebea4432f052a5bfc6cb5691ad6dbd5a5d46ebd9eb858",
+      "annotationScreenshotSha256": "f92cbbc295cc6dc858820d51c31e97c974a93c7b11ba44e72f996fd21f8ac763",
+      "provenanceAggregateSha256": "d837c7a80d6f1c0e0d30cabdcdd009b5a5c2676b7e43adbaa8aef445abb6e51b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "rubber-flooring-experts",
+      "pageId": "rubber-flooring-experts--rubber-mats",
+      "capturedAt": "2026-07-27T11:08:22.609Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 225,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0663229413507109,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ce8946f4f329e605a8fa63b2367386f1208a1e81b8be04d8f3db27e36a175d86",
+      "canonicalObservationSha256": "7a37a889dcc28453ba2cced0cd4be67def2ffa3dac7874338863d9b2c3ed8a97",
+      "annotationScreenshotSha256": "3c635dd7f0341351fb3f32bf1995f091bfdcec1b0441b6ce72d2636f1ad1ca05",
+      "provenanceAggregateSha256": "5ba06c2ea8df6ecfe08f654ffe6e22cc39838cd663a2b31544495eb74c4a2f24",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "sos-pool",
+      "pageId": "sos-pool--phosphate-remover",
+      "capturedAt": "2026-07-27T11:08:35.050Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 500,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "468e88d59fdbe4bc55194f7df9dd6b000e26ebeb3c7e2061010e01f5600eee74",
+      "canonicalObservationSha256": "77e891e6eab109d48629ab16d1f5eea64ac8cb2c2dc3552034ea2079d51c5f26",
+      "annotationScreenshotSha256": "f6f61768fe29921b8013b58f981aa732940566a54b6012010916c1da649884e6",
+      "provenanceAggregateSha256": "728b790b8823ec1462c12ff01d91d64c13cf9f3253c6e09ea0c59628c2b65ecc",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "supply-clinic",
+      "pageId": "supply-clinic--needles",
+      "capturedAt": "2026-07-27T11:09:14.214Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 819,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "5374d731cb3c32a59df0365a0689f36485c90e3c8718972ceed3601da9e7c84a",
+      "canonicalObservationSha256": "61ca796643c24764815299474d633893cafb15aa1a806cf3df4b45f87b4697a0",
+      "annotationScreenshotSha256": "e585d3395877fded6a656256b36a17f9039e72f0d043bcf3e95238656d2dc1bd",
+      "provenanceAggregateSha256": "9967f14eca129d362f00b645ecbbb381d418af7ff4b9806f360be94a345cd76e",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "detailers-warehouse",
+      "pageId": "detailers-warehouse--ceramic-coating",
+      "capturedAt": "2026-07-27T11:03:38.744Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 708,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "4bc09351029b03c69f90c16fa12a39aa55c1fdb4e58fd94796bf0468cba7d016",
+      "canonicalObservationSha256": "5029ea1ad65b3fc4f85c0013ec6235e666868d0a9d6afeabdb705caa9f85d4ce",
+      "annotationScreenshotSha256": "c379c1d8d79b107838c0b5e4d7644b5aa06bbe036dfed8de5005a2f1c4387876",
+      "provenanceAggregateSha256": "158a4dff2e9e9de194a74a6fb9584c5f0d4c870d07280be457ba537de64f10e0",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "express-med",
+      "pageId": "express-med--gauze-pads",
+      "capturedAt": "2026-07-27T11:03:59.390Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 11,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 947,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.00525,
+      "queryTokenCoverage": 1,
+      "observationSha256": "6c4b33efe31202f8ad99ff79a5b68b73276e73e5ea4f7ebea4a5a597e774226c",
+      "canonicalObservationSha256": "a20fc1a2e45086a7652439c2e8f7f0819373fba527f6e5400cb0246322ee5509",
+      "annotationScreenshotSha256": "678a2c4dcd1fad0c87a916f1ec112eadd949cd89a3795abdd963dfcff7bdaaf4",
+      "provenanceAggregateSha256": "9483c3ad03e4ef76b765115dc707aff0b48be8c043be051f4c74b1832f8628ca",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--linen-fabric",
+      "capturedAt": "2026-07-27T11:04:31.484Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 338,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "194a0dd5108d5915e610b44fd13529e2e8da8180f076eed44f110fd720a9f9f9",
+      "canonicalObservationSha256": "1bd10010b4a6315866f9a62a8ecbfccac9d47c17559be7de3e749d4fefe16701",
+      "annotationScreenshotSha256": "4ecb4e9dfcf1d35612b9edb31bc675a73cbafbfabe40f7a49e118ff7a5b68c8d",
+      "provenanceAggregateSha256": "2f8b6a4d2556c85e97c9a91845e36e13a4a9722f79f2e3e1b772d212e218826d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--voile-fabric",
+      "capturedAt": "2026-07-27T11:04:50.163Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1124,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "f9ad91bcad302a3ff29da4b3c8d309aca68a8b374a9f390e05fdaacdff9a67f5",
+      "canonicalObservationSha256": "f1dfcf4288252822881e5b84f28b6fd48b5936dd1d4a20b11c13b3dc1a2b3c35",
+      "annotationScreenshotSha256": "9d5def38ee6839cf3d4b436aba0f5f1eaf6b3c4bd82af5bb5835d62187308f13",
+      "provenanceAggregateSha256": "cd01805c198746c984415155761b6c5ccf16a83fbedd72b187511c56435f3673",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fusion-teas",
+      "pageId": "fusion-teas--oolong-tea",
+      "capturedAt": "2026-07-27T11:05:25.426Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 590,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "20d2c72557a46b4094a250caa929cc50d6ae4f2dbc5bf6963aae7b4301ed3007",
+      "canonicalObservationSha256": "794c1914a5431e4ea6d55abce5d53d604592ebdf418510039e4f4a0099a11581",
+      "annotationScreenshotSha256": "fd7e7acd367f955d526cfb2a5e608f9dfb9b8378e50ce1cfcfd02391302a083c",
+      "provenanceAggregateSha256": "7fe9510e2ded3d7125905d1b2abc13ac1467bd544981645f9757600d802f99c3",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-supply-pros",
+      "pageId": "medical-supply-pros--bandages",
+      "capturedAt": "2026-07-27T11:06:45.799Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 942,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "7c6865a7484b122f400d15e03914058b703801031d80520f6f702fa7010f7452",
+      "canonicalObservationSha256": "d4ac6e70c15690a37b27ef47fce8bf8851960b47cf5dd9823e366bf056fab54e",
+      "annotationScreenshotSha256": "dfa660420458a8ad5cfb99c0710f622f90ed50aefd8c1617c94e20efbb91fdfe",
+      "provenanceAggregateSha256": "c9096e4a53529955ebb01b775d76f91744fce23e4b29b41b17efd2f36b94ba73",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mosaic-tile-direct",
+      "pageId": "mosaic-tile-direct--subway-tile",
+      "capturedAt": "2026-07-27T11:07:09.874Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 4,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 3920,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.0054444444444444445,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ebb13482a3383ad5335a21613042d1322bfd4edba4c6e04af6083af377fe45db",
+      "canonicalObservationSha256": "06d5483aa79299be2077533093141aa34bd51a4b0d524453e92827845352cecb",
+      "annotationScreenshotSha256": "19383c98f00beabae467a2e4034ba2a4b58d613922ea0bb4e8dded3cd86b553b",
+      "provenanceAggregateSha256": "29a74d52612cf3e9fa124026fa7c20a21e2a280575a1191fea8d1ca53a9bbecd",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--dog-waste-bags",
+      "capturedAt": "2026-07-27T11:07:59.588Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 10,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1299,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0016,
+      "queryTokenCoverage": 1,
+      "observationSha256": "3204892b430c194616f4af950632a779cb56f69ea4fef04002b3420b59bd64eb",
+      "canonicalObservationSha256": "75c6f81b2ae391ec7805081b8176ff0af9e63ee60d49cd57c805c865df6d00e4",
+      "annotationScreenshotSha256": "e970a10026fa9112d79d2ac22c8b0163fba9c4925ee95aade236dc23fc02f5c6",
+      "provenanceAggregateSha256": "ddca6876fa70d07e7674c3108f853ebbc758207bd66cf21a5af7007fa0a6c7ea",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "portofino-flooring",
+      "pageId": "portofino-flooring--waterproof-flooring",
+      "capturedAt": "2026-07-27T11:08:39.567Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 202,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.03071875,
+      "queryTokenCoverage": 1,
+      "observationSha256": "cd2fde9af29b6158f7287ab0ba430776e20d1b1a931b3e07e07e0f665b699670",
+      "canonicalObservationSha256": "38c3fc6a192dd508d055d4292f395bd44ec36d7472f9d943038f7a61b032c9e6",
+      "annotationScreenshotSha256": "f8eb3d2fc7c7896c4b3ebdd30e5a6aefb1534ec6a6b3e3e9b0be74f12723cdf2",
+      "provenanceAggregateSha256": "73a0988de0b7a47a274fcccd39e1e71352cdae764aff630f1d4699fe0c2540af",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "recreation-supply",
+      "pageId": "recreation-supply--pool-cleaner",
+      "capturedAt": "2026-07-27T11:09:22.962Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 797,
+      "observationTruncated": false,
+      "dismissedObstructions": 8,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "cbf2ac3fcbd987781bfad34f07bec15833e1a0f02e10583535eaeb79f3d6641f",
+      "canonicalObservationSha256": "a7bd1c15d13526cdc1da2d005be31d1d1adb08e8ffd7f6c6c5c4cc824e86ede1",
+      "annotationScreenshotSha256": "c17cfc198a3e33e2c9fc11e02676efd683c74d882d8934e8529a9d9358376f87",
+      "provenanceAggregateSha256": "b44956290c36bd5cd09dafaa6768534f819f61adb647571c4e0ecb3fd468e5a9",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "rubber-flooring-experts",
+      "pageId": "rubber-flooring-experts--playground-flooring",
+      "capturedAt": "2026-07-27T11:09:36.693Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 262,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "b68b9b71ebf737b77670b8fb63dab4522c65b0fdb9e39e5dec7048591cf0af67",
+      "canonicalObservationSha256": "48c074833d37ecd684a928c1852c0246e7119fae459452a65433ff0bffdd5a42",
+      "annotationScreenshotSha256": "f07a86c9be6ae796a5c528e7232a3ace11f9d0d978a3c9377897d19f65232bbe",
+      "provenanceAggregateSha256": "4fc8afbe13e5b56de5b4a0f169965673ef41b8a327fd669b31e912cd4cc03721",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "sos-pool",
+      "pageId": "sos-pool--pool-enzyme",
+      "capturedAt": "2026-07-27T11:09:47.217Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 528,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "605c18c2f7dbf73229c69c4dcdf54ee4c6a4b4bf7f6f64b2ef822cc1a783a4be",
+      "canonicalObservationSha256": "4a7232a429159076ce88ee3b2fd0e5cc52429f17594293dd926183858d8535ee",
+      "annotationScreenshotSha256": "37d1cce54f69631d8173692ae81fe5020f7da62be58a82b8ae0d64cc8b736598",
+      "provenanceAggregateSha256": "3262d63cb1dfbe4fa82be4592ddf3c8c8701f0b5ed3fdd4e4ae2a85e10ba175b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "style-maker-fabrics",
+      "pageId": "style-maker-fabrics--rayon-fabric",
+      "capturedAt": "2026-07-27T11:09:56.156Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 436,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "40957ee0ff1c7f96a39221864dfb58600f0d385e6f8daa6929395332fc101245",
+      "canonicalObservationSha256": "811c8ac60789e837a592be872daf8decb1c7c849f995cd3ca2502f0cab619fce",
+      "annotationScreenshotSha256": "082a670c37096cfaa3c776f30c5358a0223a8f1a49c4b3935cca99e06538ed64",
+      "provenanceAggregateSha256": "618c13f74b4f3ffbddc880aeb0814d75faff5b8c63bd092e6fe1da5d09aab3d0",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "supply-clinic",
+      "pageId": "supply-clinic--dental-bibs",
+      "capturedAt": "2026-07-27T11:10:34.930Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 834,
+      "observationTruncated": false,
+      "dismissedObstructions": 5,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "a299afb6cc5d2583a85bf4064bfaf2fd30e830b53c310ac7ad3ac7265cbc15d3",
+      "canonicalObservationSha256": "d56256eb6638a982aeb57d863af9ff5319714c3e017221d3907383f160d48526",
+      "annotationScreenshotSha256": "133dfc05eb9688b7030bd4d51e0abdcdfdb5461bdb60a95c0dc09e1fc3eeab64",
+      "provenanceAggregateSha256": "7fbc4e478cbdff61f42911fad60c1f3ce37f79d1e78d0b780eae40fccd767e39",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "detailers-warehouse",
+      "pageId": "detailers-warehouse--interior-cleaner",
+      "capturedAt": "2026-07-27T11:03:37.953Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 661,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "76af8d67fe19aea665e06ca477caedcfe4a35c84a2bc1d59f4da6293a1220f78",
+      "canonicalObservationSha256": "bb8cc2aa53aeefcef451bfc463e1817904f1b5883f9b5ef14999622d1e4cc6d4",
+      "annotationScreenshotSha256": "edb0524dc9bfa6d082980c40f2d2b63aae564197945f0b2acc205a400a8871c2",
+      "provenanceAggregateSha256": "eb034c007eba55e9e2c1163a4859647b2f13131d5f863df12a6bdcb807986fd8",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--polyester-fabric",
+      "capturedAt": "2026-07-27T11:04:31.119Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 323,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "739fb895b8278d7d81c682aa06f81ee6ac289b74af87953a46d8f9f1bc4e9643",
+      "canonicalObservationSha256": "cd7b35b11cccde7ad239d4e83b894e60b2d5a44cd8ec5f3328941f2321feb780",
+      "annotationScreenshotSha256": "a2a85b226dde665fcf1abdc64b9b65240ddd4b3efb6c1fde2e810abb716ddc53",
+      "provenanceAggregateSha256": "ecdfc2ef59152bdf0e705977a262f76059c789c5fd6b1adac1f50bb77c86fe90",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--wool-fabric",
+      "capturedAt": "2026-07-27T11:04:58.960Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1001,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "394095f8bbfae3725cb74c719cf0a16702159d1cf6eb78bc22584b7c1bc8d6a7",
+      "canonicalObservationSha256": "e62758850a9dcbaf1ba76b773811e8f56c1b878c8fb0035b25ec7f609c9622ce",
+      "annotationScreenshotSha256": "ee2be27bdad08a86b1f73c12836d654fcbe9dd5e825896432e0a9e1de7a1c1b2",
+      "provenanceAggregateSha256": "39d2a5099ed77dd5463b43608409f81aa8e1333df7868807891f8c4a18e7aea9",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "floor-and-decor",
+      "pageId": "floor-and-decor--porcelain-tile",
+      "capturedAt": "2026-07-27T11:05:19.497Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 411,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ef7f99e8813ef159c9be30759d662f170362de414cdf21ec6cb2c5bfb8999bd7",
+      "canonicalObservationSha256": "a9f1bc1cb921aa49fb6572b57815771d57d662f8301c6e63ec115d4a9c16e81f",
+      "annotationScreenshotSha256": "7190aafa13979090570f59e809efff7225f3fecca16f0f491ddb3f0fbb9735d9",
+      "provenanceAggregateSha256": "60d8f5e8abb8ebe9378b0bab646794d34a366bd7ba68ff2fbd2380fac86b6efe",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fusion-teas",
+      "pageId": "fusion-teas--chai-tea",
+      "capturedAt": "2026-07-27T11:05:32.702Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 536,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8c893db86920723de174efe6572058deacde8d9878bcf43797ca696ef2403272",
+      "canonicalObservationSha256": "6d4ce55e23de2a948b66ec30df7da56500842ccf4e8ade5f5ae13a95fb325e6c",
+      "annotationScreenshotSha256": "1f7eec856ca4b6b837fd328316838f9b2caa35441e3c902a0c320f1fd2222ca7",
+      "provenanceAggregateSha256": "411bdf0687d4a80207b460b16f562fb39aabd1852e4972936e327b622e57142d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "go-bulk-medical",
+      "pageId": "go-bulk-medical--underpads",
+      "capturedAt": "2026-07-27T11:05:51.186Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 9,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 939,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "6f081708be6ad0a370be4c44fd415627c7febbe2267a1abfbee999cc5fcaa869",
+      "canonicalObservationSha256": "d50f7f10dccc3862ae782dc22a89c13977d9b043a4d68676d2778a8c8a0fdcdb",
+      "annotationScreenshotSha256": "d887e627f68e38a7ad2204c63d19c545c55670a734817453b1b8d2363a76a1d8",
+      "provenanceAggregateSha256": "7007cb9123c3f5d8395e9c01a83c763f6ea8a4ba17a2c617c3cbcb48a16980a4",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mosaic-tile-direct",
+      "pageId": "mosaic-tile-direct--stone-tile",
+      "capturedAt": "2026-07-27T11:06:19.506Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2332,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.023818203912990644,
+      "queryTokenCoverage": 1,
+      "observationSha256": "45063bb6e15dbf8c718fe0db5a6ba9b792ab9340b7d037717486a83b26e3f0a1",
+      "canonicalObservationSha256": "97cefe6dfba420fd1ea018a2f4fce1215a0316c813d05b6f60a0644face8eb37",
+      "annotationScreenshotSha256": "b843682986b0f5771d7cf79d865d04a49279c89cf11884726a727d68463de113",
+      "provenanceAggregateSha256": "c69a542e153be56c80e0b6a4484dc85dd95d4849e6ffeb5cfcdb472dc8b90472",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--aquarium-filters",
+      "capturedAt": "2026-07-27T11:07:11.377Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 10,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1284,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ebc3c29e2cee1fe36aba34a66c7777be276c6685121f1931340826c26249ed43",
+      "canonicalObservationSha256": "c9b734f784bcb202c1d0df7a9cf7be5f6fe33ac27adebe8d8763fd11a223a5c0",
+      "annotationScreenshotSha256": "5b8b05f06d1f8138492bd40c09bd2dcd3bcd4616f5d3f817fa92fcfa6310450f",
+      "provenanceAggregateSha256": "2de9d068fb11e0a21d4b620094f87475c4ac31cb3b4d30ccbf64a417eb4fc5ae",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "portofino-flooring",
+      "pageId": "portofino-flooring--engineered-hardwood",
+      "capturedAt": "2026-07-27T11:07:38.799Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 200,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.031074126184834124,
+      "queryTokenCoverage": 1,
+      "observationSha256": "dbfed72a7a5f4e964f35898d4838ee7ba3e400ebc6bc3c58b63a1f0ed0ab1c4c",
+      "canonicalObservationSha256": "11a5285949905d9cb71cd3a49d82431cc8464a32c450fd21b8d982e1d3c3b00e",
+      "annotationScreenshotSha256": "8974c866580d6fef066eae9805dc9c22f40c81a01182dc9d144e6bada8fc9106",
+      "provenanceAggregateSha256": "28635821693931e632f2f817de709606c599c93e8aced2f6b5b0ec4d760171e5",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "rubber-flooring-experts",
+      "pageId": "rubber-flooring-experts--interlocking-tiles",
+      "capturedAt": "2026-07-27T11:08:14.239Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 219,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0663229413507109,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e2fd9cd06dc8d7ed32b7db652dbebf4eff575a922274e0880d8078651661f1cd",
+      "canonicalObservationSha256": "9de93f2a57606ae4ae4fe5d1f9f0f6a23ed9ba194bf4fbd20bb04040114d9160",
+      "annotationScreenshotSha256": "5e78e420b9dd2903d9540f786f58515ef8021c13f0040dd45aa75398ed34fb26",
+      "provenanceAggregateSha256": "58a0261fc152eda41903b08f32f2312336e914dc4711979ebd16abc90c259793",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "sos-pool",
+      "pageId": "sos-pool--pool-stain-remover",
+      "capturedAt": "2026-07-27T11:08:25.697Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 510,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "a5da1b43c29127ad72d9249a933aceb820a1fc68f75a84c0a65fdf841d17d04c",
+      "canonicalObservationSha256": "eac65e7b80763237029937de0fa009959f55b4770a820cb02bce13ddcae6ebc4",
+      "annotationScreenshotSha256": "d75ce023f7711c3697daa1e66b69e167738807892eb73ed5d7f7c8101ad919ec",
+      "provenanceAggregateSha256": "ebc2f807b6a6e5c6131e35c9e4c173be75c18a5f608e96d7572f732ed059d7ca",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "supply-clinic",
+      "pageId": "supply-clinic--gauze-sponges",
+      "capturedAt": "2026-07-27T11:09:13.223Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 683,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "34ccb828ad7e3fe65dfda2c880d350aacbc8756a22521c290887b6de2a4e7c8f",
+      "canonicalObservationSha256": "ad28c193ca36afdb8f1321f6d393d2ce05c6abb4db8333026a22fa6dd88f9477",
+      "annotationScreenshotSha256": "695250a6530deaecabb076721986f5b0ff92e5033e317dce783f4d36f9fa3759",
+      "provenanceAggregateSha256": "0b033060c16a0b85efb48cc28dcfab2714e04786861a80cd29b3fe460b9bb8c7",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--fleece-fabric",
+      "capturedAt": "2026-07-27T11:04:25.851Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 368,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "9581c0690d252e3aa60c7f7c6945bc23fc60b690cab04d3ab45b8d52d5c30e4e",
+      "canonicalObservationSha256": "3a2d50ce49990f896caeeaff412e125c4fe817b02e4149c5b0ee853ef486b883",
+      "annotationScreenshotSha256": "2563960e0167f9a5f88fb59d5d05fd915c730c52dffe5bc6758b3df9a4cb276f",
+      "provenanceAggregateSha256": "244ca16d73afb6b4ec143e2da050fb40cc93343ea021c8de1c39462c16e35d70",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--silk-fabric",
+      "capturedAt": "2026-07-27T11:04:54.132Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1215,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "cae084576cac221d0aad1af32883757b74b5938eaa8846f362358b71bfa097b8",
+      "canonicalObservationSha256": "86e194bda172be57ce47a62beae8191ad23da66c701294384b7f3c2b9be2c68e",
+      "annotationScreenshotSha256": "1109791448c5da072cf1d43dd52655708f8c59b6eb0d173de14ecdffc16adbb0",
+      "provenanceAggregateSha256": "4cb7913a1d86031f86426d401c2dd73ee7b801feb66374c0056a1b620cf8ac1d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fusion-teas",
+      "pageId": "fusion-teas--white-tea",
+      "capturedAt": "2026-07-27T11:05:40.446Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 589,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c282d91434729165c32986521821db48a8eb2c1bff14ed60b9749898de933069",
+      "canonicalObservationSha256": "4cfce6fbb84d5755b6a7ceecec271d0750e3bbcec17e3dd1762aa0cacd380e46",
+      "annotationScreenshotSha256": "aaa8493b3ffc7faa7491f5e005f28d6914c58735897da778cb6f64d7c66dda1b",
+      "provenanceAggregateSha256": "04d20295e08517ac7e39e1af71279bde5970ee2219616e8bf062b6b960ba68fe",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-supply-pros",
+      "pageId": "medical-supply-pros--gauze-sponges",
+      "capturedAt": "2026-07-27T11:06:48.368Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 988,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "50b435029955c2bd983230453792287ba6f8a100ea680eb13540473633c79667",
+      "canonicalObservationSha256": "5f87e330adaebb091eacd0af7a39a3f13b77afc3faec5919ecaf88526d2ab59d",
+      "annotationScreenshotSha256": "f2270cf1cb48960ef92b6d6e13dab80b33bfb5f0cd83211409efd6c86b4edbdc",
+      "provenanceAggregateSha256": "8948459d3afbc409e60041237a6bc5ec41a7132c2b3f18e1fe2a83484fc9833d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "parentgiving",
+      "pageId": "parentgiving--briefs",
+      "capturedAt": "2026-07-27T11:07:30.933Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 483,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.003279999923706055,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c65507f3892db65be51c66a093a7165875e9de4ae9b3663b41c9830b042dfae8",
+      "canonicalObservationSha256": "08ac44326a7ee87e9e8f4c0db8e1355f3386f1acb1e84d7de21ba8360422ba41",
+      "annotationScreenshotSha256": "2ed4aea6812fd87335397220c08edf192a7fa729788907bd52172d3ce1cd9c6a",
+      "provenanceAggregateSha256": "86908643d177ab57e1fbd0b38a4e1ec3008bae1a438d39866649d22930051072",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--bird-food",
+      "capturedAt": "2026-07-27T11:07:50.433Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 10,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1542,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "33888f87aa78087303f900eb228bbfd8fd8350aaf86e4eeabcf1f45349dce626",
+      "canonicalObservationSha256": "9dd5c12ff8656aa92ada767fd41df34b1c2ec6e5e20fc187ae8b64e028be65d2",
+      "annotationScreenshotSha256": "4f8539433cf0d7b98d527d431953d082e94111851ef3fc051dc26aba24bb0bd3",
+      "provenanceAggregateSha256": "55d63f707c730ecac27dab0d2c8167fea1210f66bc27c8bae08fe58bfe6f207b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "portofino-flooring",
+      "pageId": "portofino-flooring--vinyl-plank",
+      "capturedAt": "2026-07-27T11:08:30.280Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 10,
+      "candidateScreenshotsCaptured": 10,
+      "observationNodeCount": 202,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.03071875,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ba7dac32ebe498a1f18f5f67d3290fa95a7b2de9ba88965a05d2a85a664d80a8",
+      "canonicalObservationSha256": "8740939dd7a670e556a22c606d82a22f907098a84f6685a6fc23046739d1274e",
+      "annotationScreenshotSha256": "af489c820f2b336cf3e5e60511dc8030b03efd9a8fa025988eb13f51d1fb00b0",
+      "provenanceAggregateSha256": "9e3963d28e1646d73e87c0663a3f849f4794f584c5e92368981199dcdec904d6",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "style-maker-fabrics",
+      "pageId": "style-maker-fabrics--jersey-fabric",
+      "capturedAt": "2026-07-27T11:09:25.995Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 409,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "363373d16b22b981f579f97b541e15a0bedd6ce3ccdac640eb811234f70b3615",
+      "canonicalObservationSha256": "1044463d3457124b13214e1ce25dd257bfabaf7deb0ccc69b9b7471da865dd6e",
+      "annotationScreenshotSha256": "369457f0e1649e31ca350aecd3a0d218157dfba343e7d9ed06cb0a224baa1c6e",
+      "provenanceAggregateSha256": "f38e463c2014e27472ec3e18a3e594d46452a1bd10dd93c0611750407af4abcb",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "classic-modern-fabrics",
+      "pageId": "classic-modern-fabrics--velvet-fabric",
+      "capturedAt": "2026-07-27T11:03:27.252Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 366,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.020427755498845547,
+      "queryTokenCoverage": 1,
+      "observationSha256": "b0e47468eed9fbc82fb017685531fbec4fc84d5c779962a890ce68224c057022",
+      "canonicalObservationSha256": "2885115a2bff1464e4bcd49fb84da146839ab1dc1f012c7ddd1a844334686895",
+      "annotationScreenshotSha256": "8080fd900d0989e0aad6c625a4a7cfe374386335388c05d92698dfe91c9521bd",
+      "provenanceAggregateSha256": "4e0a6e8f5dae143c205f595d84b848f74643b0db128c6f747a5d94b962914e39",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "express-med",
+      "pageId": "express-med--bandages",
+      "capturedAt": "2026-07-27T11:03:56.813Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 11,
+      "candidateCount": 11,
+      "candidateScreenshotsCaptured": 11,
+      "observationNodeCount": 527,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "6aa0f6a8024821ad560bcb25a5ed0e6a4b09b69d49b273589916c728d80d3dcf",
+      "canonicalObservationSha256": "ce8c7157e4d30db57069aab99f6ad44ac48c043396ed18c11edfa5ca4134ecd5",
+      "annotationScreenshotSha256": "8c6c5f0e201f6f9e76bb6175eb97a802f5f88e057a1b8e00a0890f5f307409a3",
+      "provenanceAggregateSha256": "35d526c27b1ca030146a34f19de9334bd68b5bb0f128fbde3955d348976a1f49",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--canvas-fabric",
+      "capturedAt": "2026-07-27T11:04:28.843Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 304,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "242e7d2ae150453e50ac64c614c3d0bb0aaf556641a690db9afc99d0c951353f",
+      "canonicalObservationSha256": "b3de531d3dfe6b54f4b36db0ad95bf3a2b5958354cd77ffb07c71fcced8d0c02",
+      "annotationScreenshotSha256": "2dddcfcc5fe740ae8aa018a15bcd10bb5972208c06d8461bb8ff9985f2b81739",
+      "provenanceAggregateSha256": "2d6e9bc00e87535cb40524cbeae843790965c9a56b40dcf008455f7417a27beb",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--flannel-fabric",
+      "capturedAt": "2026-07-27T11:04:56.249Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 992,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "79157d32242b62259c67c3d124f0e133a3b04ec1242bffd9ebcfa18071de05c7",
+      "canonicalObservationSha256": "6299415fa2ac11e3bf017838a8a762de1f5ff91858b05ce7620bae8de32c94bb",
+      "annotationScreenshotSha256": "bb9ba2fd6e6c4b021cf0a01d9e400978ad1ff136cce417f3c623c7a5e446d245",
+      "provenanceAggregateSha256": "f622b54524e17c15b682710b41aa2962a29f7e6e647643ae2c658314cece08fb",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-supply-pros",
+      "pageId": "medical-supply-pros--face-masks",
+      "capturedAt": "2026-07-27T11:06:30.938Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 821,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "67586b3c521a229f0453f6ef0780ce8b6e89496ee63bb863bb8012e3c23f5739",
+      "canonicalObservationSha256": "35ae1b6d00d46f0e40a37fbf4bf1c42e46765a207fcbd72e06e4670d7515a839",
+      "annotationScreenshotSha256": "e27af4ba2955e6928a92ed6f99743f725d7a82febb1cfc930ac75eabd4e719a1",
+      "provenanceAggregateSha256": "f89e49fb226e3c9594bb165bc611785f92deb322008ae58a55af8a19354b96b6",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mosaic-tile-direct",
+      "pageId": "mosaic-tile-direct--pebble-tile",
+      "capturedAt": "2026-07-27T11:06:40.460Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1308,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.023818203912990644,
+      "queryTokenCoverage": 1,
+      "observationSha256": "abbd58d3909a5b16eaa681a3fbe8284b2b78b9e4344b11da6258670a93d43642",
+      "canonicalObservationSha256": "e79b0c7a86a53b5eda469d46237871b9b39c415b5a3153fc099b20d7d01a080c",
+      "annotationScreenshotSha256": "b843682986b0f5771d7cf79d865d04a49279c89cf11884726a727d68463de113",
+      "provenanceAggregateSha256": "58476c82975c76187312df52b7a7f536da59ea7f09344a68c803dcdeeb7ec584",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "parentgiving",
+      "pageId": "parentgiving--liners",
+      "capturedAt": "2026-07-27T11:03:44.213Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 492,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.003279999923706055,
+      "queryTokenCoverage": 1,
+      "observationSha256": "6bb98c71f996e180d3d79aa83e8c00f5571828bb00e9545c1ebbb5f21c7afc81",
+      "canonicalObservationSha256": "5a7e9cabec302ce14adb8c9b822761c2e62a1864c769ac9b41faa364d9fb2b0b",
+      "annotationScreenshotSha256": "907295a6367100b4b55ce176bee78787a3a58caecb9bf35eecb0be579a46f4c1",
+      "provenanceAggregateSha256": "4143a285b5123f1ba46359fd1e30a017b57f85b5f9d14853b99fa3532c7f1ddd",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--flea-treatment",
+      "capturedAt": "2026-07-27T11:04:03.103Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 10,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1540,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "534212c520d77a68cf8699ff681feeffcf0e44e4698fb0941833121ef90bf834",
+      "canonicalObservationSha256": "02b44a8dd3773dad7a782ce5226505fac0900f0c4f614487e2e2c676d6fdccb0",
+      "annotationScreenshotSha256": "02ecbf9d4bbfecda5f028a9d89cdfec7254ed2a8aceef2287267fca203707076",
+      "provenanceAggregateSha256": "1fdc1bcb2e3c70843211cd8725990d1decb5956a4f3c611d7b9aeaf6ee525a57",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "recreation-supply",
+      "pageId": "recreation-supply--pool-cover",
+      "capturedAt": "2026-07-27T11:05:17.302Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 935,
+      "observationTruncated": false,
+      "dismissedObstructions": 8,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "a9b30b7dad9e5dca4c248025c93c8ed5b8b381ddbb75a7868f4a8f366663f458",
+      "canonicalObservationSha256": "c4e477a38d3058d3280974934a1d8e8f9bc36d199e8bb878821a11639256b969",
+      "annotationScreenshotSha256": "d85f6e765d7ecf844fc561f7654e8d14258f0c05eaa13b94f927c251bb83c0ad",
+      "provenanceAggregateSha256": "fafa4142241d78722ca478e48a939675c2dc4c28d93710fa7d1eacf4aca872da",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "rubber-flooring-experts",
+      "pageId": "rubber-flooring-experts--garage-flooring",
+      "capturedAt": "2026-07-27T11:05:36.297Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 264,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "89663074b4273ebe95afd707cadfd5ce0ebba4306446c541b047ea0a86dd2e6a",
+      "canonicalObservationSha256": "67df90415524760a2aca79fe55da1a155be84ec8e49d4864bd09753c9c6b18b9",
+      "annotationScreenshotSha256": "8cb282f606e1c5bab8dd909cd10e4a762f3bb788a994e172039ec5773ddf1d99",
+      "provenanceAggregateSha256": "c37af3ac948259dbbc61a8f062b444b9b033af8e769f69661b4e5274bb2dbed5",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "sos-pool",
+      "pageId": "sos-pool--pool-test-strips",
+      "capturedAt": "2026-07-27T11:05:48.483Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 872,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "41a62ece308bfcadf716d83c30a7d31f5b6935139393ec2d0026bb92cb7cae06",
+      "canonicalObservationSha256": "ebed7f823e3e712f9cb0710a1fc42d40997d2d54cebf04c7422086a6c5fb3e8e",
+      "annotationScreenshotSha256": "74d0970b0e9d65d3bba2e7a34c10d4f773efdb52d0d12b1154facccb09ef7970",
+      "provenanceAggregateSha256": "4b85c46204eddb9173e32c718e222b687b75dfddab37017617e4d525cd0384d8",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "style-maker-fabrics",
+      "pageId": "style-maker-fabrics--denim-fabric",
+      "capturedAt": "2026-07-27T11:05:58.757Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 404,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "f02b5803ece461365427a3680fa1aa523bdb5a46e9ff4bb314a8de3a1ce0e1b5",
+      "canonicalObservationSha256": "80db758b68d3da1e0ad9e39f7ab803758e215eeef386649401db2339971c7b2b",
+      "annotationScreenshotSha256": "8fe1a9a7c54d2a173d406dc822986f96fc056b93174a4cebf62525d2f0a4ab92",
+      "provenanceAggregateSha256": "3d7ecadb8661082e26d3c313696e4ae214e082c16cebb79a02e60312fb553ec6",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p15",
+  "createdAt": "2026-07-27T11:41:34.349Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--ed5f5a0aaf2a23eb",
+      "path": "benchmark-data/review/g2-validation-p15/reviewer-a.json",
+      "sha256": "da4a8c58bd5d4d4195500afbfade2c554d7e3c8cc5e192883c5151e32aa29831",
+      "pages": 10
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--36ca132479b5ee21",
+      "path": "benchmark-data/review/g2-validation-p15/reviewer-b.json",
+      "sha256": "ecd11c2721799295244c63bc749be6bb254f26477cde102a86240bddeb4d1164",
+      "pages": 10
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 10,
+    "candidateCards": 120
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p15--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "fabric-direct--denim-fabric",
+        "fabric-direct--satin-fabric",
+        "farmhouse-fabrics--organza-fabric",
+        "farmhouse-fabrics--seersucker-fabric",
+        "medical-supply-pros--surgical-masks",
+        "medical-supply-pros--underpads",
+        "mosaic-tile-direct--ceramic-tile",
+        "mosaic-tile-direct--travertine-tile",
+        "petsmart--dog-food",
+        "petsmart--reptile-food"
+      ],
+      "pages": 10,
+      "candidateCards": 120,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--336ddf9506263cc0",
+          "path": "benchmark-data/review/g2-validation-p15-review-batches/reviewer-a--batch-01.json",
+          "sha256": "a2281b6d43c3c3b8a73468fca1f85c34898bbd9c55573ff218d60239e6a9cb22"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--dc3fa76ba2a2bc8a",
+          "path": "benchmark-data/review/g2-validation-p15-review-batches/reviewer-b--batch-01.json",
+          "sha256": "f12e9b9d15bcec80cbb9bd31ba760a10578b506c96f246b9e11615eb5d1f3ad4"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

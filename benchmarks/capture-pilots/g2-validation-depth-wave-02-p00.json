@@ -1,0 +1,371 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-depth-wave-02-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T11:35:12.908Z",
+  "source": {
+    "siteIds": [
+      "fabric-direct",
+      "farmhouse-fabrics",
+      "medical-supply-pros",
+      "mosaic-tile-direct",
+      "petsmart"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "fabric",
+      "specialty-sewing-fabric-retail",
+      "direct-to-consumer-medical-supply-retail",
+      "mosaic-and-tile-retail",
+      "specialty-pet"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "76587971b30f951b93032c1afdff0c6f70b1878c24e42ee8d8b7cc92b921ca52"
+    ],
+    "collectorSha256": [
+      "e012d9f27e7ff817c914560bedfc5f3460d704a9448e6740f858bba9796196a2"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T11-31-18-295Z--p27681--001",
+      "runManifestSha256": "379c7f0faff28cda10a2888b4fa4410ebc29c185e866164dd61f43225c1a2f22",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T11-33-28-554Z--p28343--001",
+      "runManifestSha256": "0f575f189a5bfdd3f4f8106359e35963cd72dad3dbe148390074cae3a92d394a",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T11-33-28-554Z--p28343--002",
+      "runManifestSha256": "e143ad3fdf59402ba3e6032a8aeab180c9493adf0b149d89e677288ba3f50a7a",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T11-31-18-295Z--p27681--002",
+      "runManifestSha256": "d823764e89430607e411010b7d758c9e5d2f1603a8789fa65b9e6d524df76a3f",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T11-31-18-295Z--p27681--003",
+      "runManifestSha256": "0f6ec5d3f763e1038edf527426acb16adaff5825272f85dd7db190944b90ee60",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T11-33-28-554Z--p28343--003",
+      "runManifestSha256": "c4a636597d9bb20541dbc4175933cf355aa2f3e30fb37b19744606d649161314",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T11-33-28-554Z--p28343--004",
+      "runManifestSha256": "5d577cbbfd24662e9577284643715de7332f85a0c429ac33b0a14c6ad4c92ef8",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T11-31-18-295Z--p27681--004",
+      "runManifestSha256": "b41c2efc536e398ec56b3b2a86a8b8db813560d131c236675dd7acfc58f7d0d3",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T11-31-18-295Z--p27681--005",
+      "runManifestSha256": "01b81278c4bce62978c2c3bb107dc584eeda1337b3f489f87b939210e52da728",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T11-33-28-554Z--p28343--005",
+      "runManifestSha256": "96130d9a87ac90228ff2d719b0ce54691befbf3c5c0e8e5da0f70b8fdecefaea",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T11-31-18-295Z--p27681--006",
+      "runManifestSha256": "6debe196fae4a2a50437d46f9c29cc5ff29f7ec7a21019fd7773fae865597e47",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T11-33-28-554Z--p28343--006",
+      "runManifestSha256": "713573791aa00ce853b5285162576943ccbeacddffa7306e0613036bd9425aaf",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 12,
+    "successfulCaptureAttempts": 12,
+    "acceptedPages": 10,
+    "rejectedPages": 2,
+    "acceptanceRate": 0.8333333333333334,
+    "candidateCardRoots": 120,
+    "samplingFinding": "All 12 unseen supplemental validation routes completed in isolated bounded headed Chromium children with zero parent hard timeouts and passed strict machine checks. Original-resolution review accepted ten pages and rejected two weakly coherent searches, for an 83.3% end-to-end yield.",
+    "visualValidationFinding": "Every candidate-root screenshot was reviewed in a fixed 4-by-3 page sheet generated from explicit immutable card inputs. Ten pages contained at least eight query-relevant, independently reviewable product roots. Both Fusion Teas pages were rejected because subtype relevance was below the eight-root threshold."
+  },
+  "captures": [
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--denim-fabric",
+      "capturedAt": "2026-07-27T11:31:52.389Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 312,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "5bb1d6b159156b2cd2e1747591a1d7753d2a52359226b98edbf467f6094f9b3e",
+      "canonicalObservationSha256": "3045b23dd93e7e2720a6e36317955709f26497043a45e3377572c8e65f67f4c0",
+      "annotationScreenshotSha256": "567492be3d40720b2da7bf839c51a04888bbd39b420586f944f9e76b210ac384",
+      "provenanceAggregateSha256": "6e6b95669ee6cc09ffc191808363bab3fb301733ac38b4a1f9c74b6e3f98559e",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--satin-fabric",
+      "capturedAt": "2026-07-27T11:33:59.892Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 290,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "fbe07a03a04212a979bfd2cdd88931f9bdcdb3efcba34b569b40276de5a679a2",
+      "canonicalObservationSha256": "d0a108df5fcfbc93f6c66d2d21618d88e726578875eaee310cb07d0db66636d0",
+      "annotationScreenshotSha256": "78a5cc8b35a3db7054741910f058597aef366c2f1c42635738a5f3f407b5768c",
+      "provenanceAggregateSha256": "21c2f543cf432ff92aee038f07a63e8e9cf9bd1c2d5aef3f8c43f5aaa5060ec7",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--organza-fabric",
+      "capturedAt": "2026-07-27T11:34:18.373Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1037,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "fe1e01edc94dcd2ffc8b502987d50cc4ff08076b0dbc005d0254eea22c16d8f3",
+      "canonicalObservationSha256": "eabd20f5081da5cabe0607fee00db0ab15dedba44db9c59ddcbafa6a30e5146c",
+      "annotationScreenshotSha256": "34ff8cbf55b19881ab9d51615f4294573cdfc25dc9f09879748a3797952ff56d",
+      "provenanceAggregateSha256": "9f11bee9e90eb52b0d2a158fe9359547405f9ccab844c1b5ef5cf7400ded3ff8",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "farmhouse-fabrics",
+      "pageId": "farmhouse-fabrics--seersucker-fabric",
+      "capturedAt": "2026-07-27T11:32:10.421Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1137,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "acd03cc5ce09ee9cd9e5664ef501f1fb0bd7c9a7c1f93b3ae0cf6e1a0003b25b",
+      "canonicalObservationSha256": "ab49ede0eb5cf0c9b3bb221e2925feb68eb72c8c56e0b72867d8f66e1d4fe695",
+      "annotationScreenshotSha256": "baad10c4fc4d116dd884db0d52897738e3cfa782612885b682fbb8d8b8d3a922",
+      "provenanceAggregateSha256": "de6ac4a46b4a27d92a478e49eaf4196c663219524460cec91ac7f75ea0cf1596",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-supply-pros",
+      "pageId": "medical-supply-pros--surgical-masks",
+      "capturedAt": "2026-07-27T11:34:40.515Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 833,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c26e3e474eecc4b3253855d36ebd81b86cef46b221a20cc9371a707e918ba210",
+      "canonicalObservationSha256": "0203e42a3e5acd7cf3681bc17c4bb37e1c7fc7574cc5980c6853d3a07e01be93",
+      "annotationScreenshotSha256": "6c6b2cdad422a68a427c95b9c7e3b04c88d527a1b502df9c53b431f8c6487808",
+      "provenanceAggregateSha256": "381eed7be0ad7946e12ad3e5b3d772da3a6e18263179ac97c6728383aa912a31",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-supply-pros",
+      "pageId": "medical-supply-pros--underpads",
+      "capturedAt": "2026-07-27T11:32:32.197Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1157,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "81164140bf0ee3041d3cb612fbb8b46902c924afddcda2e7e00e8bbfe05cc3cc",
+      "canonicalObservationSha256": "bb10099b9f1c6e954c68decf8704a4a555136122adedccb28ff5199008c5d036",
+      "annotationScreenshotSha256": "f5f5f8926fd3255d81211ddc5e7cc1697b4c2ca76ebe106667be14afd7081c24",
+      "provenanceAggregateSha256": "47a71cd5513365cd6f9468eb4d7b7a8e6b8b9f430013b4cb206b849c1053277a",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mosaic-tile-direct",
+      "pageId": "mosaic-tile-direct--ceramic-tile",
+      "capturedAt": "2026-07-27T11:32:45.404Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 3,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 3870,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.0054444444444444445,
+      "queryTokenCoverage": 1,
+      "observationSha256": "5fcf32df5f6dc31e351e9a75a215c5197db1256c830287c0b994e6dc3bef9452",
+      "canonicalObservationSha256": "590ce6950a34c93116e539f3d33cc467583e371dfe4b021ab3fe046d63cb23a6",
+      "annotationScreenshotSha256": "a18617d718521b3d6792cfbc5e8652c576d1fd11a1e1ac96db48e8767b8b68fa",
+      "provenanceAggregateSha256": "af356aa6582b5468a8b9852c6cb1645bb5b58aac8b25052e870111aa8fa77bfd",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mosaic-tile-direct",
+      "pageId": "mosaic-tile-direct--travertine-tile",
+      "capturedAt": "2026-07-27T11:34:54.731Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 4,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2040,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.023818203912990644,
+      "queryTokenCoverage": 1,
+      "observationSha256": "3b852eec727e422547247ebb52d9f76ef5bdf369ee03b07c2d2d83a3109f52f0",
+      "canonicalObservationSha256": "ec90276349b35d94907b90e4dd47cfb2b45d3fdd191f8aed803b7524b433e2c5",
+      "annotationScreenshotSha256": "b843682986b0f5771d7cf79d865d04a49279c89cf11884726a727d68463de113",
+      "provenanceAggregateSha256": "f403093fb42ce78a3f95a745433758ab6ccb60bc4614da0eb81c50d3a5e6fc30",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--dog-food",
+      "capturedAt": "2026-07-27T11:33:03.919Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 10,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1560,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0016,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e603516467d0eec8325071f8d3c5a2d0f0207f914689f20ce7fa771f37f5633d",
+      "canonicalObservationSha256": "178c10efe37a12e1f49e99664b46f68e14dbdecbdf1f385744def7d9aa60d4c9",
+      "annotationScreenshotSha256": "6a55218bd05e47969f12530a35d87b459d830e0b2642b3e9af1de7302a806216",
+      "provenanceAggregateSha256": "f4102f425c592ef84f79c8fac798f4dd690170bc2095685b166b7c948e6d37ae",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "petsmart",
+      "pageId": "petsmart--reptile-food",
+      "capturedAt": "2026-07-27T11:35:12.908Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 10,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1434,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.006999635435654393,
+      "queryTokenCoverage": 1,
+      "observationSha256": "4c00fdd1bb32976d3fb497e3af7e8f697ba550ad00100513507ad67e48e834e5",
+      "canonicalObservationSha256": "0474e5e439b6dc201140d26d7cf9b11a175e966b41173d91977b17bbcc6769f9",
+      "annotationScreenshotSha256": "0556c89ef950a9281bb4ea1b703202bc9a1ad008032efbaf4951d86c65abef29",
+      "provenanceAggregateSha256": "e12c8058bb1b189ad663830aadde2a915fc6187495fdbc764500f63958917a46",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}
