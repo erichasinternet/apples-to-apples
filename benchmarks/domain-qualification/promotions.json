@@ -774,6 +774,204 @@
       "cohort": "final",
       "qualificationReport": "benchmarks/domain-qualification/wave-23-p00.json",
       "promotedAt": "2026-07-27T12:24:06.000Z"
+    },
+    {
+      "siteId": "longancraft",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "sewfinity",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "sewingpartsonline",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "keepsakequilting",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "fringefabrics",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "britexfabrics",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "theconfidentstitch",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "girlcharlee",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "fabricbistro",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "zfabric",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "shopmosaictile",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "mosaictraderusa",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "witsendmosaic",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "kismetmosaic",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "apollotile",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "americantiledepot",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "livden",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "otile",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "dentistgloves",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "practicon",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "catering24",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "mcdonaldpaper",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "britishtea",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "hugotea",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "dobrateashop",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "yunnansourcing",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "what-cha",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "carzilla",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "carcareproducts",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "purebites",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "wellbredonline",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "petgoods",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
+    },
+    {
+      "siteId": "petsupplies4less",
+      "cohort": "final",
+      "qualificationReport": "benchmarks/domain-qualification/wave-24-p00.json",
+      "promotedAt": "2026-07-27T13:10:00.000Z"
     }
   ]
 }

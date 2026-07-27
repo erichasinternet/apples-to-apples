@@ -1,0 +1,407 @@
+{
+  "version": 1,
+  "pilotId": "g2-final-wave-24-p00",
+  "capturedAt": "2026-07-27T13:10:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/qualification-wave-24.json",
+  "requestedCaptureAttempts": 66,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--001",
+      "pageIds": [
+        "longancraft--cotton-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-17-517Z--p53477--001",
+      "pageIds": [
+        "longancraft--linen-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--003",
+      "pageIds": [
+        "sewfinity--cotton-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-17-517Z--p53477--002",
+      "pageIds": [
+        "sewfinity--linen-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--004",
+      "pageIds": [
+        "sewingpartsonline--cotton-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-17-517Z--p53477--003",
+      "pageIds": [
+        "sewingpartsonline--linen-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--008",
+      "pageIds": [
+        "keepsakequilting--cotton-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-17-517Z--p53477--004",
+      "pageIds": [
+        "keepsakequilting--linen-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--009",
+      "pageIds": [
+        "fringefabrics--cotton-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-17-517Z--p53477--005",
+      "pageIds": [
+        "fringefabrics--linen-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--011",
+      "pageIds": [
+        "britexfabrics--cotton-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-17-517Z--p53477--006",
+      "pageIds": [
+        "britexfabrics--linen-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--013",
+      "pageIds": [
+        "theconfidentstitch--cotton-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-17-517Z--p53477--007",
+      "pageIds": [
+        "theconfidentstitch--linen-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--015",
+      "pageIds": [
+        "girlcharlee--cotton-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-17-517Z--p53477--008",
+      "pageIds": [
+        "girlcharlee--linen-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--016",
+      "pageIds": [
+        "fabricbistro--cotton-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-17-517Z--p53477--009",
+      "pageIds": [
+        "fabricbistro--linen-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--018",
+      "pageIds": [
+        "zfabric--cotton-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-17-517Z--p53477--010",
+      "pageIds": [
+        "zfabric--linen-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--020",
+      "pageIds": [
+        "shopmosaictile--porcelain-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-17-517Z--p53477--012",
+      "pageIds": [
+        "shopmosaictile--mosaic-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--023",
+      "pageIds": [
+        "mosaictraderusa--porcelain-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-31-398Z--p53588--001",
+      "pageIds": [
+        "mosaictraderusa--mosaic-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--025",
+      "pageIds": [
+        "witsendmosaic--porcelain-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-31-398Z--p53588--002",
+      "pageIds": [
+        "witsendmosaic--mosaic-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47943--026",
+      "pageIds": [
+        "kismetmosaic--porcelain-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-31-398Z--p53588--003",
+      "pageIds": [
+        "kismetmosaic--mosaic-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-789Z--p47950--003",
+      "pageIds": [
+        "apollotile--porcelain-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-31-398Z--p53588--004",
+      "pageIds": [
+        "apollotile--mosaic-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-789Z--p47950--006",
+      "pageIds": [
+        "americantiledepot--porcelain-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-31-398Z--p53588--005",
+      "pageIds": [
+        "americantiledepot--mosaic-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-789Z--p47950--008",
+      "pageIds": [
+        "livden--porcelain-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-31-398Z--p53588--006",
+      "pageIds": [
+        "livden--mosaic-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-789Z--p47950--009",
+      "pageIds": [
+        "otile--porcelain-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-31-398Z--p53588--007",
+      "pageIds": [
+        "otile--mosaic-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-789Z--p47950--015",
+      "pageIds": [
+        "dentistgloves--exam-gloves"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-31-398Z--p53588--009",
+      "pageIds": [
+        "dentistgloves--face-masks"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-789Z--p47950--016",
+      "pageIds": [
+        "practicon--exam-gloves"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-31-398Z--p53588--010",
+      "pageIds": [
+        "practicon--face-masks"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-789Z--p47950--023",
+      "pageIds": [
+        "catering24--paper-cups"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-46-908Z--p53741--001",
+      "pageIds": [
+        "catering24--plastic-cups"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-789Z--p47950--026",
+      "pageIds": [
+        "mcdonaldpaper--paper-cups"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-46-908Z--p53741--003",
+      "pageIds": [
+        "mcdonaldpaper--plastic-cups"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47944--003",
+      "pageIds": [
+        "britishtea--black-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-46-908Z--p53741--004",
+      "pageIds": [
+        "britishtea--green-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47944--004",
+      "pageIds": [
+        "hugotea--black-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-46-908Z--p53741--005",
+      "pageIds": [
+        "hugotea--green-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47944--008",
+      "pageIds": [
+        "dobrateashop--black-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-46-908Z--p53741--007",
+      "pageIds": [
+        "dobrateashop--green-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47944--010",
+      "pageIds": [
+        "yunnansourcing--black-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-46-908Z--p53741--008",
+      "pageIds": [
+        "yunnansourcing--green-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47944--011",
+      "pageIds": [
+        "what-cha--black-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-58-46-908Z--p53741--009",
+      "pageIds": [
+        "what-cha--green-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47948--004",
+      "pageIds": [
+        "carzilla--car-wash-soap"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-59-00-360Z--p53849--002",
+      "pageIds": [
+        "carzilla--wheel-cleaner"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47948--012",
+      "pageIds": [
+        "carcareproducts--car-wash-soap"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-59-00-360Z--p53849--006",
+      "pageIds": [
+        "carcareproducts--wheel-cleaner"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47948--016",
+      "pageIds": [
+        "purebites--dog-treats"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-59-00-360Z--p53849--008",
+      "pageIds": [
+        "purebites--cat-treats"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47948--018",
+      "pageIds": [
+        "wellbredonline--dog-treats"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-59-00-360Z--p53849--009",
+      "pageIds": [
+        "wellbredonline--cat-treats"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47948--024",
+      "pageIds": [
+        "petgoods--dog-treats"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-59-00-360Z--p53849--011",
+      "pageIds": [
+        "petgoods--cat-treats"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-44-35-786Z--p47948--025",
+      "pageIds": [
+        "petsupplies4less--dog-treats"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T12-59-00-360Z--p53849--012",
+      "pageIds": [
+        "petsupplies4less--cat-treats"
+      ]
+    }
+  ],
+  "samplingFinding": "Thirty-three of 102 genuinely unseen domains passed the frozen two-query, opposite-viewport machine and original-resolution visual qualification gate and were append-only assigned to the sealed final cohort.",
+  "visualValidationFinding": "All sixty-six accepted annotation views and their frozen candidate roots were inspected at original resolution. The accepted evidence spans length, area, count, mass, and volume layouts, including explicit and implicit quantities, native unit prices, current and list prices, pack variants, and valid abstention cases. Every accepted page contains at least eight query-relevant atomic product roots without repeated page chrome."
+}

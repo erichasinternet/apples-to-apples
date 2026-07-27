@@ -1,0 +1,921 @@
+{
+  "version": 1,
+  "description": "Twenty-fourth unassigned domain-qualification wave and second acquisition frame reserved for the sealed final cohort. One hundred two registrable domains absent from every prior live-site manifest contribute two predeclared public listing queries across all five supported dimensions and eight commerce strata. Search-result discovery and generic route probes verified canonical hostnames without inspecting target DOM structure or supplying site-specific selectors. Every frozen domain remains in the headed qualification yield denominator, and no domain is assigned to final until both distinct pages pass the machine and original-resolution visual qualification gates at the required desktop and narrow viewport profiles.",
+  "querySets": {
+    "fabric-length": [
+      {
+        "id": "cotton-fabric",
+        "query": "cotton fabric",
+        "dimension": "length"
+      },
+      {
+        "id": "linen-fabric",
+        "query": "linen fabric",
+        "dimension": "length"
+      }
+    ],
+    "tile-area": [
+      {
+        "id": "porcelain-tile",
+        "query": "porcelain tile",
+        "dimension": "area"
+      },
+      {
+        "id": "mosaic-tile",
+        "query": "mosaic tile",
+        "dimension": "area"
+      }
+    ],
+    "medical-count": [
+      {
+        "id": "exam-gloves",
+        "query": "exam gloves",
+        "dimension": "count"
+      },
+      {
+        "id": "face-masks",
+        "query": "face masks",
+        "dimension": "count"
+      }
+    ],
+    "cup-count": [
+      {
+        "id": "paper-cups",
+        "query": "paper cups",
+        "dimension": "count"
+      },
+      {
+        "id": "plastic-cups",
+        "query": "plastic cups",
+        "dimension": "count"
+      }
+    ],
+    "tea-mass": [
+      {
+        "id": "black-tea",
+        "query": "black tea",
+        "dimension": "mass"
+      },
+      {
+        "id": "green-tea",
+        "query": "green tea",
+        "dimension": "mass"
+      }
+    ],
+    "coffee-mass": [
+      {
+        "id": "ethiopia-coffee",
+        "query": "ethiopia coffee",
+        "dimension": "mass"
+      },
+      {
+        "id": "colombia-coffee",
+        "query": "colombia coffee",
+        "dimension": "mass"
+      }
+    ],
+    "car-care-volume": [
+      {
+        "id": "car-wash-soap",
+        "query": "car wash soap",
+        "dimension": "volume"
+      },
+      {
+        "id": "wheel-cleaner",
+        "query": "wheel cleaner",
+        "dimension": "volume"
+      }
+    ],
+    "pet-count": [
+      {
+        "id": "dog-treats",
+        "query": "dog treats",
+        "dimension": "count"
+      },
+      {
+        "id": "cat-treats",
+        "query": "cat treats",
+        "dimension": "count"
+      }
+    ]
+  },
+  "sites": [
+    {
+      "id": "longancraft",
+      "label": "longancraft.com",
+      "hostname": "www.longancraft.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.longancraft.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "equilter",
+      "label": "equilter.com",
+      "hostname": "www.equilter.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.equilter.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "sewfinity",
+      "label": "sewfinity.com",
+      "hostname": "sewfinity.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://sewfinity.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "sewingpartsonline",
+      "label": "sewingpartsonline.com",
+      "hostname": "www.sewingpartsonline.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.sewingpartsonline.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "kokkafabrics",
+      "label": "kokkafabrics.com",
+      "hostname": "kokkafabrics.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://kokkafabrics.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "cottonpickins",
+      "label": "cottonpickins.com",
+      "hostname": "www.cottonpickins.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.cottonpickins.com/?s={query}&post_type=product",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "fenwickfabrics",
+      "label": "fenwickfabrics.com",
+      "hostname": "www.fenwickfabrics.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.fenwickfabrics.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "keepsakequilting",
+      "label": "keepsakequilting.com",
+      "hostname": "www.keepsakequilting.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.keepsakequilting.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "fringefabrics",
+      "label": "fringefabrics.com",
+      "hostname": "www.fringefabrics.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.fringefabrics.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "oakfabrics",
+      "label": "oakfabrics.com",
+      "hostname": "oakfabrics.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://oakfabrics.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "britexfabrics",
+      "label": "britexfabrics.com",
+      "hostname": "britexfabrics.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://britexfabrics.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "measurefabric",
+      "label": "measurefabric.com",
+      "hostname": "measurefabric.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://measurefabric.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "theconfidentstitch",
+      "label": "theconfidentstitch.com",
+      "hostname": "www.theconfidentstitch.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.theconfidentstitch.com/?s={query}&post_type=product",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "fabricplacebasement",
+      "label": "fabricplacebasement.com",
+      "hostname": "fabricplacebasement.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://fabricplacebasement.com/?s={query}&post_type=product",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "girlcharlee",
+      "label": "girlcharlee.com",
+      "hostname": "girlcharlee.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://girlcharlee.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "fabricbistro",
+      "label": "fabricbistro.com",
+      "hostname": "fabricbistro.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://fabricbistro.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "thefabricbin",
+      "label": "thefabricbin.com",
+      "hostname": "www.thefabricbin.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.thefabricbin.com/?s={query}&post_type=product",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "zfabric",
+      "label": "zfabric.com",
+      "hostname": "zfabric.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://zfabric.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "hawaiifabricmart",
+      "label": "hawaiifabricmart.com",
+      "hostname": "www.hawaiifabricmart.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.hawaiifabricmart.com/search?q={query}",
+      "querySet": "fabric-length"
+    },
+    {
+      "id": "shopmosaictile",
+      "label": "shopmosaictile.com",
+      "hostname": "shopmosaictile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://shopmosaictile.com/?s={query}&post_type=product",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "mosaicmosaic",
+      "label": "mosaicmosaic.com",
+      "hostname": "mosaicmosaic.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://mosaicmosaic.com/search.php?search_query={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "mosaictile",
+      "label": "mosaictile.com",
+      "hostname": "www.mosaictile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.mosaictile.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "mosaictraderusa",
+      "label": "mosaictraderusa.com",
+      "hostname": "www.mosaictraderusa.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.mosaictraderusa.com/catalogsearch/result/?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "tilesanddeco",
+      "label": "tilesanddeco.com",
+      "hostname": "www.tilesanddeco.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.tilesanddeco.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "witsendmosaic",
+      "label": "witsendmosaic.com",
+      "hostname": "witsendmosaic.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://witsendmosaic.com/catalogsearch/result/?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "kismetmosaic",
+      "label": "kismetmosaic.com",
+      "hostname": "www.kismetmosaic.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.kismetmosaic.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "mosaictileco",
+      "label": "mosaictileco.com",
+      "hostname": "mosaictileco.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://mosaictileco.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "mosaictilestore",
+      "label": "mosaictilestore.com",
+      "hostname": "mosaictilestore.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://mosaictilestore.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "apollotile",
+      "label": "apollotile.com",
+      "hostname": "apollotile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://apollotile.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "daltile",
+      "label": "daltile.com",
+      "hostname": "www.daltile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.daltile.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "vivatile",
+      "label": "vivatile.com",
+      "hostname": "www.vivatile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.vivatile.com/?s={query}&post_type=product",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "americantiledepot",
+      "label": "americantiledepot.com",
+      "hostname": "www.americantiledepot.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.americantiledepot.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "annsacks",
+      "label": "annsacks.com",
+      "hostname": "annsacks.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://annsacks.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "livden",
+      "label": "livden.com",
+      "hostname": "livden.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://livden.com/search?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "otile",
+      "label": "otile.com",
+      "hostname": "otile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://otile.com/catalogsearch/result/?q={query}",
+      "querySet": "tile-area"
+    },
+    {
+      "id": "centennialsafety",
+      "label": "centennialsafety.com",
+      "hostname": "centennialsafety.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://centennialsafety.com/search.php?search_query={query}",
+      "querySet": "medical-count"
+    },
+    {
+      "id": "vivitsupply",
+      "label": "vivitsupply.com",
+      "hostname": "www.vivitsupply.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://www.vivitsupply.com/?s={query}&post_type=product",
+      "querySet": "medical-count"
+    },
+    {
+      "id": "amzsupply",
+      "label": "amzsupply.com",
+      "hostname": "www.amzsupply.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://www.amzsupply.com/search?q={query}",
+      "querySet": "medical-count"
+    },
+    {
+      "id": "medical-and-lab-supplies",
+      "label": "medical-and-lab-supplies.com",
+      "hostname": "www.medical-and-lab-supplies.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://www.medical-and-lab-supplies.com/search?q={query}",
+      "querySet": "medical-count"
+    },
+    {
+      "id": "prohospitalsupply",
+      "label": "prohospitalsupply.com",
+      "hostname": "prohospitalsupply.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://prohospitalsupply.com/?s={query}&post_type=product",
+      "querySet": "medical-count"
+    },
+    {
+      "id": "dentistgloves",
+      "label": "dentistgloves.com",
+      "hostname": "dentistgloves.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://dentistgloves.com/search?q={query}",
+      "querySet": "medical-count"
+    },
+    {
+      "id": "practicon",
+      "label": "practicon.com",
+      "hostname": "www.practicon.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://www.practicon.com/search.php?search_query={query}",
+      "querySet": "medical-count"
+    },
+    {
+      "id": "medicalsupplycorner",
+      "label": "medicalsupplycorner.com",
+      "hostname": "www.medicalsupplycorner.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://www.medicalsupplycorner.com/search.php?search_query={query}",
+      "querySet": "medical-count"
+    },
+    {
+      "id": "ecoservepack",
+      "label": "ecoservepack.com",
+      "hostname": "ecoservepack.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://ecoservepack.com/?s={query}&post_type=product",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "uniqsupply",
+      "label": "uniqsupply.com",
+      "hostname": "uniqsupply.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://uniqsupply.com/search?q={query}",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "cupspak",
+      "label": "cupspak.com",
+      "hostname": "cupspak.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://cupspak.com/?s={query}&post_type=product",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "papercupsdirect",
+      "label": "papercupsdirect.com",
+      "hostname": "www.papercupsdirect.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.papercupsdirect.com/search?q={query}",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "therealpopina",
+      "label": "therealpopina.com",
+      "hostname": "therealpopina.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://therealpopina.com/?s={query}&post_type=product",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "catering24",
+      "label": "catering24.co.uk",
+      "hostname": "www.catering24.co.uk",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.catering24.co.uk/catalogsearch/result/?q={query}",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "ckitchen",
+      "label": "ckitchen.com",
+      "hostname": "www.ckitchen.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.ckitchen.com/?s={query}&post_type=product",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "eliterestaurantequipment",
+      "label": "eliterestaurantequipment.com",
+      "hostname": "www.eliterestaurantequipment.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.eliterestaurantequipment.com/?s={query}&post_type=product",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "mcdonaldpaper",
+      "label": "mcdonaldpaper.com",
+      "hostname": "www.mcdonaldpaper.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.mcdonaldpaper.com/?s={query}&post_type=product",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "restaurantequipment",
+      "label": "restaurantequipment.com",
+      "hostname": "restaurantequipment.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://restaurantequipment.com/search?q={query}",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "rapidswholesale",
+      "label": "rapidswholesale.com",
+      "hostname": "rapidswholesale.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://rapidswholesale.com/catalogsearch/result/?q={query}",
+      "querySet": "cup-count"
+    },
+    {
+      "id": "britishtea",
+      "label": "britishtea.com",
+      "hostname": "britishtea.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://britishtea.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "hugotea",
+      "label": "hugotea.com",
+      "hostname": "www.hugotea.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://www.hugotea.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "pekoetea",
+      "label": "pekoetea.co.uk",
+      "hostname": "www.pekoetea.co.uk",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://www.pekoetea.co.uk/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "tupelotea",
+      "label": "tupelotea.com",
+      "hostname": "tupelotea.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://tupelotea.com/search.php?search_query={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "shoploosetea",
+      "label": "shoploosetea.com",
+      "hostname": "shoploosetea.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://shoploosetea.com/?s={query}&post_type=product",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "dobrateashop",
+      "label": "dobrateashop.com",
+      "hostname": "dobrateashop.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://dobrateashop.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "brewingmarketcoffee",
+      "label": "brewingmarketcoffee.com",
+      "hostname": "www.brewingmarketcoffee.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://www.brewingmarketcoffee.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "yunnansourcing",
+      "label": "yunnansourcing.us",
+      "hostname": "yunnansourcing.us",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://yunnansourcing.us/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "what-cha",
+      "label": "what-cha.com",
+      "hostname": "what-cha.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://what-cha.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "camellia-sinensis",
+      "label": "camellia-sinensis.com",
+      "hostname": "camellia-sinensis.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://camellia-sinensis.com/?s={query}&post_type=product",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "tecompanytea",
+      "label": "tecompanytea.com",
+      "hostname": "tecompanytea.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://tecompanytea.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "rareteacompany",
+      "label": "rareteacompany.com",
+      "hostname": "rareteacompany.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://rareteacompany.com/search?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "verdanttea",
+      "label": "verdanttea.com",
+      "hostname": "verdanttea.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://verdanttea.com/catalogsearch/result/?q={query}",
+      "querySet": "tea-mass"
+    },
+    {
+      "id": "coffeegreenbeans",
+      "label": "coffeegreenbeans.com",
+      "hostname": "coffeegreenbeans.com",
+      "stratum": "specialty-coffee-retail",
+      "searchUrlTemplate": "https://coffeegreenbeans.com/search?q={query}",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "greencoffeeshop",
+      "label": "greencoffeeshop.com.co",
+      "hostname": "greencoffeeshop.com.co",
+      "stratum": "specialty-coffee-retail",
+      "searchUrlTemplate": "https://greencoffeeshop.com.co/search?q={query}",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "drcafestore",
+      "label": "drcafestore.com",
+      "hostname": "drcafestore.com",
+      "stratum": "specialty-coffee-retail",
+      "searchUrlTemplate": "https://drcafestore.com/?s={query}&post_type=product",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "haceacoffee",
+      "label": "haceacoffee.com",
+      "hostname": "haceacoffee.com",
+      "stratum": "specialty-coffee-retail",
+      "searchUrlTemplate": "https://haceacoffee.com/search?q={query}",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "royalcoffee",
+      "label": "royalcoffee.com",
+      "hostname": "royalcoffee.com",
+      "stratum": "specialty-coffee-retail",
+      "searchUrlTemplate": "https://royalcoffee.com/search?q={query}",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "showroomcoffee",
+      "label": "showroomcoffee.com",
+      "hostname": "showroomcoffee.com",
+      "stratum": "specialty-coffee-retail",
+      "searchUrlTemplate": "https://showroomcoffee.com/?s={query}&post_type=product",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "roastmasters",
+      "label": "roastmasters.com",
+      "hostname": "www.roastmasters.com",
+      "stratum": "specialty-coffee-retail",
+      "searchUrlTemplate": "https://www.roastmasters.com/?s={query}&post_type=product",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "greencoffeebeanguru",
+      "label": "greencoffeebeanguru.com",
+      "hostname": "greencoffeebeanguru.com",
+      "stratum": "specialty-coffee-retail",
+      "searchUrlTemplate": "https://greencoffeebeanguru.com/?s={query}&post_type=product",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "coffeecrafters",
+      "label": "coffeecrafters.com",
+      "hostname": "coffeecrafters.com",
+      "stratum": "specialty-coffee-retail",
+      "searchUrlTemplate": "https://coffeecrafters.com/?s={query}&post_type=product",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "greencoffeeco",
+      "label": "greencoffeeco.com",
+      "hostname": "greencoffeeco.com",
+      "stratum": "specialty-coffee-retail",
+      "searchUrlTemplate": "https://greencoffeeco.com/search?q={query}",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "roastrebels",
+      "label": "roastrebels.com",
+      "hostname": "roastrebels.com",
+      "stratum": "specialty-coffee-retail",
+      "searchUrlTemplate": "https://roastrebels.com/search?q={query}",
+      "querySet": "coffee-mass"
+    },
+    {
+      "id": "autofiber",
+      "label": "autofiber.com",
+      "hostname": "www.autofiber.com",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://www.autofiber.com/search?q={query}",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "gyeonusa",
+      "label": "gyeonusa.com",
+      "hostname": "gyeonusa.com",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://gyeonusa.com/search?q={query}",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "carzilla",
+      "label": "carzilla.ca",
+      "hostname": "carzilla.ca",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://carzilla.ca/search?q={query}",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "waxit",
+      "label": "waxit.com.au",
+      "hostname": "www.waxit.com.au",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://www.waxit.com.au/search?q={query}",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "slimsdetailing",
+      "label": "slimsdetailing.co.uk",
+      "hostname": "www.slimsdetailing.co.uk",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://www.slimsdetailing.co.uk/search?q={query}",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "in2detailing",
+      "label": "in2detailing.co.uk",
+      "hostname": "www.in2detailing.co.uk",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://www.in2detailing.co.uk/search?q={query}",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "detailgarage",
+      "label": "detailgarage.com",
+      "hostname": "detailgarage.com",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://detailgarage.com/search?q={query}",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "autofinesse",
+      "label": "autofinesse.com",
+      "hostname": "www.autofinesse.com",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://www.autofinesse.com/search?q={query}",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "cleanandshiny",
+      "label": "cleanandshiny.co.uk",
+      "hostname": "www.cleanandshiny.co.uk",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://www.cleanandshiny.co.uk/search?q={query}",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "theultimatefinish",
+      "label": "theultimatefinish.co.uk",
+      "hostname": "theultimatefinish.co.uk",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://theultimatefinish.co.uk/?s={query}&post_type=product",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "carcareproducts",
+      "label": "carcareproducts.com.au",
+      "hostname": "www.carcareproducts.com.au",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://www.carcareproducts.com.au/search?q={query}",
+      "querySet": "car-care-volume"
+    },
+    {
+      "id": "dogcatsupply",
+      "label": "dogcatsupply.com",
+      "hostname": "www.dogcatsupply.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://www.dogcatsupply.com/search.php?search_query={query}",
+      "querySet": "pet-count"
+    },
+    {
+      "id": "pettingpet",
+      "label": "pettingpet.com",
+      "hostname": "www.pettingpet.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://www.pettingpet.com/search?q={query}",
+      "querySet": "pet-count"
+    },
+    {
+      "id": "petfood",
+      "label": "petfood.express",
+      "hostname": "www.petfood.express",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://www.petfood.express/search.php?search_query={query}",
+      "querySet": "pet-count"
+    },
+    {
+      "id": "purebites",
+      "label": "purebites.com",
+      "hostname": "purebites.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://purebites.com/search?q={query}",
+      "querySet": "pet-count"
+    },
+    {
+      "id": "blanchardstreats",
+      "label": "blanchardstreats.com",
+      "hostname": "blanchardstreats.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://blanchardstreats.com/?s={query}&post_type=product",
+      "querySet": "pet-count"
+    },
+    {
+      "id": "wellbredonline",
+      "label": "wellbredonline.com",
+      "hostname": "wellbredonline.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://wellbredonline.com/search?q={query}",
+      "querySet": "pet-count"
+    },
+    {
+      "id": "petlife",
+      "label": "petlife.com",
+      "hostname": "shop.petlife.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://shop.petlife.com/search?q={query}",
+      "querySet": "pet-count"
+    },
+    {
+      "id": "urbantailspet",
+      "label": "urbantailspet.com",
+      "hostname": "urbantailspet.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://urbantailspet.com/?s={query}&post_type=product",
+      "querySet": "pet-count"
+    },
+    {
+      "id": "mudbay",
+      "label": "mudbay.com",
+      "hostname": "www.mudbay.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://www.mudbay.com/search?q={query}",
+      "querySet": "pet-count"
+    },
+    {
+      "id": "healthypets",
+      "label": "healthypets.com",
+      "hostname": "healthypets.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://healthypets.com/search.php?search_query={query}",
+      "querySet": "pet-count"
+    },
+    {
+      "id": "pet-supermarket-co-uk",
+      "label": "pet-supermarket.co.uk",
+      "hostname": "pet-supermarket.co.uk",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://pet-supermarket.co.uk/search?q={query}",
+      "querySet": "pet-count"
+    },
+    {
+      "id": "petgoods",
+      "label": "petgoods.com",
+      "hostname": "petgoods.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://petgoods.com/search?q={query}",
+      "querySet": "pet-count"
+    },
+    {
+      "id": "petsupplies4less",
+      "label": "petsupplies4less.com",
+      "hostname": "www.petsupplies4less.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://www.petsupplies4less.com/search?q={query}",
+      "querySet": "pet-count"
+    }
+  ]
+}
+

@@ -1,0 +1,1670 @@
+{
+  "version": 1,
+  "qualificationId": "wave-24-p00",
+  "candidateManifest": "benchmarks/live-sites/qualification-wave-24.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": [
+      "0042c7026aae1e26e3210e696c7669ef9d4537adb4beb12a5c4b56dc09385ced",
+      "c1d3728ddcea164daacaa1db2ea9a6ce3edf19e1fd584f038b5f0c8d245de853",
+      "2f2dcedfab33ff63a20bed2ca46ab2123152dd1c5854ec99533790f8f7d91391",
+      "499880fe0d738b891f19e1d310d4db2443233edd60a53df5f32903677cf647e3"
+    ],
+    "narrowBatchSha256": [
+      "ad0b96c6f3302bfaa7e22010ccb85a97dbb3e52a69038233296a53e96c6a52f0",
+      "8c8d03275b2ee41e518f76392f7595c19585e2d01078e9c839028a1ede117c7c",
+      "5842612ed54b97330141def310cf8f549b2e2ff96ef50c667bc8202eca00a5cd",
+      "c2bd86d77434dd9b39a562cbf66a68c17386a79be46478d0729ca99b550d1482"
+    ],
+    "processIsolationFinding": "All 151 headed qualification children completed under isolated process-group bounds with 0 parent hard timeouts.",
+    "samplingFinding": "All 102 fresh domains received a desktop screen. Forty-nine machine-and-visual desktop survivors received the predeclared second query at the opposite narrow viewport. Thirty-three domains passed both pages under the unchanged machine gate and original-resolution visual review; all sixty-nine rejected domains remain in the acquisition-yield denominator.",
+    "manifestIntegrityFinding": "Candidate IDs and registrable hostnames have zero overlap with prior qualification waves or frozen domain splits. All accepted captures use frozen manifest hash 41656447d477c470188f6eb697e84747970ba5aa5d159e8bf1cae0c7129a66bd and collector hash set e012d9f27e7ff817c914560bedfc5f3460d704a9448e6740f858bba9796196a2."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--001",
+      "runManifestSha256": "0e211d6e65f57e520272d3ea2964aa747e29023b9298c07e03d0905ceb8f766d",
+      "purpose": "longancraft.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-17-517Z--p53477--001",
+      "runManifestSha256": "8266bb05be59e8010178ebd9b3d5d2722c7fd43328d21d42ba4f3941a1236e25",
+      "purpose": "longancraft.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--003",
+      "runManifestSha256": "4500f066a4db8db8ad41312dcf609f4ba1dc39fb9f384b5d3307938f1cce3500",
+      "purpose": "sewfinity.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-17-517Z--p53477--002",
+      "runManifestSha256": "d9f210c5cf4f5a64b796f46215d9277aa64d27c9c6f18773f05c752580cc3c39",
+      "purpose": "sewfinity.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--004",
+      "runManifestSha256": "c5b1d6a9b323286914031677168db8989d40b45f6a6fa695a4a3378059872d55",
+      "purpose": "sewingpartsonline.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-17-517Z--p53477--003",
+      "runManifestSha256": "0d0ddfb99e903a6658fd62204138c2536193130dfe75005367783e7bdd435206",
+      "purpose": "sewingpartsonline.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--008",
+      "runManifestSha256": "29d978a1c156ef38735b04ef573595741cddb7da3e436217ee75e69aee3cb845",
+      "purpose": "keepsakequilting.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-17-517Z--p53477--004",
+      "runManifestSha256": "2db05e5b2358ee2a7fcba1dec3456b441a0c83e4ffab5b2dcc6fd73fc315e755",
+      "purpose": "keepsakequilting.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--009",
+      "runManifestSha256": "eb64e94306fb6bcd4056fd62321f8e8c99800b40ada5084aa803c1f92016f028",
+      "purpose": "fringefabrics.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-17-517Z--p53477--005",
+      "runManifestSha256": "1b5d9743476c5a44fcd8966d6a8de501fae633e1a883c040b9a0b2f04dcf6607",
+      "purpose": "fringefabrics.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--011",
+      "runManifestSha256": "7feb2b661756cb797e8fdec1cab55436245e28710e1a60e782af9668ab6c2915",
+      "purpose": "britexfabrics.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-17-517Z--p53477--006",
+      "runManifestSha256": "9fbf159d076c762ca2302f66137c8f849ff1843839f8e6020eeca79b42d2aa2f",
+      "purpose": "britexfabrics.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--013",
+      "runManifestSha256": "d941f28121b4780d126677f5874b493381a1fb6ff56672d5e1418fff14061a94",
+      "purpose": "theconfidentstitch.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-17-517Z--p53477--007",
+      "runManifestSha256": "4b438deef8d0300a832542bde14f8cf1bea11ccb9db84dd22913d514255f5d48",
+      "purpose": "theconfidentstitch.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--015",
+      "runManifestSha256": "8bce63c124032c087a35315686ef97e398b77754fdc8446c268cc1939bfdd293",
+      "purpose": "girlcharlee.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-17-517Z--p53477--008",
+      "runManifestSha256": "28df3b692553006cb6f157c4cc83fc393ba7737094917bd2ba6e9b6d2f1b03fc",
+      "purpose": "girlcharlee.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--016",
+      "runManifestSha256": "346a3fae25adb912b8e2d3ebf651ad8c2a50c62db9e47815bb8ebf14b738b464",
+      "purpose": "fabricbistro.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-17-517Z--p53477--009",
+      "runManifestSha256": "c44097bb123b2c314d06417ee63b8a2c01d2ca69fe0d5e404dadb594df19269b",
+      "purpose": "fabricbistro.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--018",
+      "runManifestSha256": "722318086c3d916dfbdfbc1124faaf7e66673b35b55b0220a4c086dad131c7de",
+      "purpose": "zfabric.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-17-517Z--p53477--010",
+      "runManifestSha256": "9adfcf7e14267ce05a40016c230803b8fdc25707e40e5d0ef9764cdba1ecfbc2",
+      "purpose": "zfabric.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--020",
+      "runManifestSha256": "f9647a32ae5a866a75826f4fef9ae91392f31e3368085983b10e3b2901a00be1",
+      "purpose": "shopmosaictile.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-17-517Z--p53477--012",
+      "runManifestSha256": "034db361266bdeaa68ed6e38b2f90a48f7695c90ea880b7893b841c94f49e2ec",
+      "purpose": "shopmosaictile.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--023",
+      "runManifestSha256": "303271ca6e748aaa27b2ff959bd2b853a273275aee6710469ef6126132864fad",
+      "purpose": "mosaictraderusa.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-31-398Z--p53588--001",
+      "runManifestSha256": "35b3f3e9b5f79482bec444f472cc277cba9368460a81904ffb18c305456b646c",
+      "purpose": "mosaictraderusa.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--025",
+      "runManifestSha256": "37ad8a9c1663c5eb31292ba03ca53618d3532e9bf7284bd3a8ca5a4b43ccd424",
+      "purpose": "witsendmosaic.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-31-398Z--p53588--002",
+      "runManifestSha256": "5a50a773516784db84dd3888908275e174d45a2391d4c8e98a357d2d5b2b546f",
+      "purpose": "witsendmosaic.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47943--026",
+      "runManifestSha256": "38472d66e07b1c1a525675331f0bc089cfa1de8b037c8f0cb069fb8b588fa92c",
+      "purpose": "kismetmosaic.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-31-398Z--p53588--003",
+      "runManifestSha256": "f0ee0f9801b4044692072f1561f944dc7e61131ca17615a7af0e12a0b62a518d",
+      "purpose": "kismetmosaic.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-789Z--p47950--003",
+      "runManifestSha256": "a7b81d72a3cd98f9b4dfd9544c16bea158ea55b2e970fd6b5ee336f7102b2bda",
+      "purpose": "apollotile.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-31-398Z--p53588--004",
+      "runManifestSha256": "372a1f2ca6af6653a92cc62bfd315f1c6bb779f8ff7d62a86ad640b447a63fc3",
+      "purpose": "apollotile.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-789Z--p47950--006",
+      "runManifestSha256": "1b605ca0f8abdba642737985ea628852fb811890cf14d9eb275accd5218eab7d",
+      "purpose": "americantiledepot.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-31-398Z--p53588--005",
+      "runManifestSha256": "d06a62ab6f329aacfd914d42a65f19acf8dac948ef958701cd66ebddf6b55f82",
+      "purpose": "americantiledepot.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-789Z--p47950--008",
+      "runManifestSha256": "fc0732f58b2351a4cc46da9b590ea1e8e7121e3635500b85522f2c7eaae62cba",
+      "purpose": "livden.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-31-398Z--p53588--006",
+      "runManifestSha256": "75e7ff9ced42fd41ed2af73cba832d64095fe182e3c47fc04b9ee30ecc08f461",
+      "purpose": "livden.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-789Z--p47950--009",
+      "runManifestSha256": "ca8252e101140f48deb6857e467a002379a9556164a191f112e703c3f27f6978",
+      "purpose": "otile.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-31-398Z--p53588--007",
+      "runManifestSha256": "77dfa217f6334afa18f3b41b89c857961b848762bca35187fb057682bcc6e08f",
+      "purpose": "otile.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-789Z--p47950--015",
+      "runManifestSha256": "243897fd9ac978b56c6d1370bc69186d6ef99f35dc92038df0d13919ed4b005e",
+      "purpose": "dentistgloves.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-31-398Z--p53588--009",
+      "runManifestSha256": "564217bb56726a4331143f4bf62220502278eb222ed03db6d3266b5c8f35acd1",
+      "purpose": "dentistgloves.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-789Z--p47950--016",
+      "runManifestSha256": "0375d1e83d4e2f336dcfd2e89765a2d5b349e60a5c3b2f1900f8a2af048ad990",
+      "purpose": "practicon.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-31-398Z--p53588--010",
+      "runManifestSha256": "169c2faf7aa00b9756ddbe273ec74c31773bc899e56bf3b365d2e54f23daa0b1",
+      "purpose": "practicon.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-789Z--p47950--023",
+      "runManifestSha256": "00869a4b3adc54d2fb5d9f4339c893d9bfb6f84246a76b8575c527fc865260bb",
+      "purpose": "catering24.co.uk desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-46-908Z--p53741--001",
+      "runManifestSha256": "c0dde83f0255795dce98cb540b081a35a884415434f6af1f955ac2b1e2c2f124",
+      "purpose": "catering24.co.uk narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-789Z--p47950--026",
+      "runManifestSha256": "f53c981134739c275efecb9049653d55b1a7392de7b481de5dfd222f8d526d80",
+      "purpose": "mcdonaldpaper.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-46-908Z--p53741--003",
+      "runManifestSha256": "170ad76c21cac96f9c5913fa4a44bf7a7682e00a032931642335fd0206da863c",
+      "purpose": "mcdonaldpaper.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47944--003",
+      "runManifestSha256": "ce486f9491795f796ce32d7e77988276d1c319db61891038ea8a7af4126b7fcf",
+      "purpose": "britishtea.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-46-908Z--p53741--004",
+      "runManifestSha256": "027cd5f2e994facc63f2c49425c6b437c70026d62c932ff90c4e97626d954797",
+      "purpose": "britishtea.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47944--004",
+      "runManifestSha256": "7abcfcb8830eddc59d381cc6ebbfb70bdfd91a0601c918232648fc5e7c540af6",
+      "purpose": "hugotea.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-46-908Z--p53741--005",
+      "runManifestSha256": "67b01ffa293cfa6147726a6b766e535c227468353d422ce690564fb8022f1f91",
+      "purpose": "hugotea.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47944--008",
+      "runManifestSha256": "61b58199a14d81228c9c7493849081a4ad32bee80c719953b5485d402583f679",
+      "purpose": "dobrateashop.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-46-908Z--p53741--007",
+      "runManifestSha256": "f644f43a185f7e7391541945eab2ee86d89b3de8853ca8f6d89431f8c13db74a",
+      "purpose": "dobrateashop.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47944--010",
+      "runManifestSha256": "46189843e6d5e9d7fd622a6a5d1648817bc6e11cc94733504e773664a529187b",
+      "purpose": "yunnansourcing.us desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-46-908Z--p53741--008",
+      "runManifestSha256": "1a2ee7cc13cf351c797afab365ac3e7141fd99051329ac7d2801458e0680e72b",
+      "purpose": "yunnansourcing.us narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47944--011",
+      "runManifestSha256": "a5a20966ad6b0bc85a61ba27796a831f5ff2aa48d0a0c4f2120880cd1db73e08",
+      "purpose": "what-cha.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-58-46-908Z--p53741--009",
+      "runManifestSha256": "e46a77addfe34999211971ab2514788b62e899195652615fc789e33fae8ae5c3",
+      "purpose": "what-cha.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47948--004",
+      "runManifestSha256": "65e5bc1eb295a7954c5b9c3efc75c8d3c1743bd6ad4a077d824517e9baa3f064",
+      "purpose": "carzilla.ca desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-59-00-360Z--p53849--002",
+      "runManifestSha256": "134256e06bb3860d416f577da2179805c949e8e0c11460eb1b6e01847cd94c0c",
+      "purpose": "carzilla.ca narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47948--012",
+      "runManifestSha256": "e4a6363e0a0f46ecf975152a8ce2170cd4ad1b26fc865f507b9e2c7b0baedf1c",
+      "purpose": "carcareproducts.com.au desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-59-00-360Z--p53849--006",
+      "runManifestSha256": "3ad8052538ff7882a26b14c529447e167e8e5ffe6c735010cbda894cf24e5f48",
+      "purpose": "carcareproducts.com.au narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47948--016",
+      "runManifestSha256": "591510982d84192454f4905faf3de2cf1ef69814a7b3b6684af3c98c7cd87212",
+      "purpose": "purebites.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-59-00-360Z--p53849--008",
+      "runManifestSha256": "c84067dbf7d8a928680dded838f1420e42e4e3772c404eea9e3f36d5441979a8",
+      "purpose": "purebites.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47948--018",
+      "runManifestSha256": "a3d86800588fc5333246bb5511171f4e833aa9ab1b5a80d573888ac594501260",
+      "purpose": "wellbredonline.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-59-00-360Z--p53849--009",
+      "runManifestSha256": "d31e6959a89780be0e03e3849f853f32e177c9168cccdf5368a88a41dc1b47fb",
+      "purpose": "wellbredonline.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47948--024",
+      "runManifestSha256": "224fa6df58289db305ff74b6a6d9079e63ba7c617b045cc002e1294402a35e24",
+      "purpose": "petgoods.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-59-00-360Z--p53849--011",
+      "runManifestSha256": "3d56b166703fec283c910a308f21ad41e8371ffe27c3610e9368c621670a03da",
+      "purpose": "petgoods.com narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-44-35-786Z--p47948--025",
+      "runManifestSha256": "2e9fbb76b67dbf664462a627ab3a1b42f9a13602dbed1d4bad0fc661d692bfbf",
+      "purpose": "petsupplies4less.com desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T12-59-00-360Z--p53849--012",
+      "runManifestSha256": "517211b083da37030c07f41933e5038ca11b54317c7bd124514258b1ce6916af",
+      "purpose": "petsupplies4less.com narrow qualification capture"
+    }
+  ],
+  "results": {
+    "longancraft": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "longancraft--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "longancraft--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport fabric grids expose coherent cotton and linen products with prices, yardage, precut variants, and valid quantity-abstention cases."
+    },
+    "equilter": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 0% of requested query tokens; no reviewable product candidates."
+    },
+    "sewfinity": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "sewfinity--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "sewfinity--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport fabric grids expose coherent cotton and linen products with prices, yardage, precut variants, and valid quantity-abstention cases."
+    },
+    "sewingpartsonline": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "sewingpartsonline--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.02893701171875,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "sewingpartsonline--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.04678575768623162,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport fabric grids expose coherent cotton and linen products with prices, yardage, precut variants, and valid quantity-abstention cases."
+    },
+    "kokkafabrics": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "cottonpickins": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: no reviewable product candidates."
+    },
+    "fenwickfabrics": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: no reviewable product candidates."
+    },
+    "keepsakequilting": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "keepsakequilting--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "keepsakequilting--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport fabric grids expose coherent cotton and linen products with prices, yardage, precut variants, and valid quantity-abstention cases."
+    },
+    "fringefabrics": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "fringefabrics--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "fringefabrics--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport fabric grids expose coherent cotton and linen products with prices, yardage, precut variants, and valid quantity-abstention cases."
+    },
+    "oakfabrics": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: no reviewable product candidates."
+    },
+    "britexfabrics": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "britexfabrics--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "britexfabrics--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport fabric grids expose coherent cotton and linen products with prices, yardage, precut variants, and valid quantity-abstention cases."
+    },
+    "measurefabric": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "theconfidentstitch": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "theconfidentstitch--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "theconfidentstitch--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport fabric grids expose coherent cotton and linen products with prices, yardage, precut variants, and valid quantity-abstention cases."
+    },
+    "fabricplacebasement": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: unresolved visible obstruction covers 100% of viewport; no reviewable product candidates."
+    },
+    "girlcharlee": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "girlcharlee--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.005916666666666666,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "girlcharlee--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.025884068538096973,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport fabric grids expose coherent cotton and linen products with prices, yardage, precut variants, and valid quantity-abstention cases."
+    },
+    "fabricbistro": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "fabricbistro--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 10,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.061883680555555556,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "fabricbistro--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 10,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport fabric grids expose coherent cotton and linen products with prices, yardage, precut variants, and valid quantity-abstention cases."
+    },
+    "thefabricbin": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: target capture exceeded 60000 ms."
+    },
+    "zfabric": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "zfabric--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0033021484375,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "zfabric--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.05924170616113744,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport fabric grids expose coherent cotton and linen products with prices, yardage, precut variants, and valid quantity-abstention cases."
+    },
+    "hawaiifabricmart": {
+      "status": "rejected",
+      "reason": "The narrow second-query capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "shopmosaictile": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "shopmosaictile--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "shopmosaictile--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0017768398845365262,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tile grids expose coherent porcelain and mosaic products with prices, dimensions, box quantities, and square-foot evidence."
+    },
+    "mosaicmosaic": {
+      "status": "rejected",
+      "reason": "The narrow second-query capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "mosaictile": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: no reviewable product candidates."
+    },
+    "mosaictraderusa": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "mosaictraderusa--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "mosaictraderusa--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tile grids expose coherent porcelain and mosaic products with prices, dimensions, box quantities, and square-foot evidence."
+    },
+    "tilesanddeco": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: cross-site redirect to www.google.com; search results evidence only 0% of requested query tokens; no reviewable product candidates."
+    },
+    "witsendmosaic": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "witsendmosaic--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "witsendmosaic--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tile grids expose coherent porcelain and mosaic products with prices, dimensions, box quantities, and square-foot evidence."
+    },
+    "kismetmosaic": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "kismetmosaic--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "kismetmosaic--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tile grids expose coherent porcelain and mosaic products with prices, dimensions, box quantities, and square-foot evidence."
+    },
+    "mosaictileco": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 0% of requested query tokens; no reviewable product candidates."
+    },
+    "mosaictilestore": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 50% of requested query tokens; no reviewable product candidates."
+    },
+    "apollotile": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "apollotile--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "apollotile--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tile grids expose coherent porcelain and mosaic products with prices, dimensions, box quantities, and square-foot evidence."
+    },
+    "daltile": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: no reviewable product candidates."
+    },
+    "vivatile": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 50% of requested query tokens; no reviewable product candidates."
+    },
+    "americantiledepot": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "americantiledepot--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.04039583333333333,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "americantiledepot--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.15400109369303683,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tile grids expose coherent porcelain and mosaic products with prices, dimensions, box quantities, and square-foot evidence."
+    },
+    "annsacks": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 50% of requested query tokens; no reviewable product candidates."
+    },
+    "livden": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "livden--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "livden--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tile grids expose coherent porcelain and mosaic products with prices, dimensions, box quantities, and square-foot evidence."
+    },
+    "otile": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "otile--porcelain-tile",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "otile--mosaic-tile",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tile grids expose coherent porcelain and mosaic products with prices, dimensions, box quantities, and square-foot evidence."
+    },
+    "centennialsafety": {
+      "status": "rejected",
+      "reason": "The narrow second-query capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "vivitsupply": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 0% of requested query tokens; no reviewable product candidates."
+    },
+    "amzsupply": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "medical-and-lab-supplies": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: unresolved visible obstruction covers 26% of viewport."
+    },
+    "prohospitalsupply": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "dentistgloves": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "dentistgloves--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "dentistgloves--face-masks",
+          "viewportProfile": "narrow",
+          "candidateCount": 9,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport medical grids expose coherent glove and face-mask products with box, case, and pack-count evidence."
+    },
+    "practicon": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "practicon--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "practicon--face-masks",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.06516587677725119,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport medical grids expose coherent glove and face-mask products with box, case, and pack-count evidence."
+    },
+    "medicalsupplycorner": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "ecoservepack": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: no reviewable product candidates."
+    },
+    "uniqsupply": {
+      "status": "rejected",
+      "reason": "The narrow second-query capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "cupspak": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: no reviewable product candidates."
+    },
+    "papercupsdirect": {
+      "status": "rejected",
+      "reason": "The narrow second-query capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "therealpopina": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 50% of requested query tokens; no reviewable product candidates."
+    },
+    "catering24": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "catering24--paper-cups",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "catering24--plastic-cups",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport food-service grids expose coherent paper and plastic cup products with sleeve, case, and count evidence."
+    },
+    "ckitchen": {
+      "status": "rejected",
+      "reason": "The narrow second-query acquisition failed the frozen machine gate: search results evidence only 0% of requested query tokens."
+    },
+    "eliterestaurantequipment": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "mcdonaldpaper": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "mcdonaldpaper--paper-cups",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "mcdonaldpaper--plastic-cups",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport food-service grids expose coherent paper and plastic cup products with sleeve, case, and count evidence."
+    },
+    "restaurantequipment": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "rapidswholesale": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "britishtea": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "britishtea--black-tea",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "britishtea--green-tea",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tea grids expose coherent black and green products with prices, mass variants, pack counts, and valid quantity abstentions."
+    },
+    "hugotea": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "hugotea--black-tea",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.004861111111111111,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "hugotea--green-tea",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.017948717948717947,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tea grids expose coherent black and green products with prices, mass variants, pack counts, and valid quantity abstentions."
+    },
+    "pekoetea": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: no reviewable product candidates."
+    },
+    "tupelotea": {
+      "status": "rejected",
+      "reason": "The narrow second-query capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "shoploosetea": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 50% of requested query tokens; no reviewable product candidates."
+    },
+    "dobrateashop": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "dobrateashop--black-tea",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "dobrateashop--green-tea",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tea grids expose coherent black and green products with prices, mass variants, pack counts, and valid quantity abstentions."
+    },
+    "brewingmarketcoffee": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "yunnansourcing": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "yunnansourcing--black-tea",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.004087765842013889,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "yunnansourcing--green-tea",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tea grids expose coherent black and green products with prices, mass variants, pack counts, and valid quantity abstentions."
+    },
+    "what-cha": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "what-cha--black-tea",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "what-cha--green-tea",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.04739336492890995,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport tea grids expose coherent black and green products with prices, mass variants, pack counts, and valid quantity abstentions."
+    },
+    "camellia-sinensis": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 0% of requested query tokens; unresolved visible obstruction covers 28% of viewport."
+    },
+    "tecompanytea": {
+      "status": "rejected",
+      "reason": "The narrow second-query capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "rareteacompany": {
+      "status": "rejected",
+      "reason": "The narrow second-query capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "verdanttea": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: no reviewable product candidates."
+    },
+    "coffeegreenbeans": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: no reviewable product candidates."
+    },
+    "greencoffeeshop": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "drcafestore": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 50% of requested query tokens; no reviewable product candidates."
+    },
+    "haceacoffee": {
+      "status": "rejected",
+      "reason": "The narrow second-query capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "royalcoffee": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 50% of requested query tokens; no reviewable product candidates."
+    },
+    "showroomcoffee": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: no reviewable product candidates."
+    },
+    "roastmasters": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 50% of requested query tokens."
+    },
+    "greencoffeebeanguru": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "coffeecrafters": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: no reviewable product candidates."
+    },
+    "greencoffeeco": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "roastrebels": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 0% of requested query tokens; unresolved visible obstruction covers 100% of viewport; no reviewable product candidates."
+    },
+    "autofiber": {
+      "status": "rejected",
+      "reason": "The narrow second-query capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "gyeonusa": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "carzilla": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "carzilla--car-wash-soap",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "carzilla--wheel-cleaner",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0533175355450237,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport car-care grids expose coherent wash-soap and wheel-cleaner products with volume variants, prices, and valid quantity abstentions."
+    },
+    "waxit": {
+      "status": "rejected",
+      "reason": "The narrow second-query acquisition failed the frozen machine gate: unresolved visible obstruction covers 28% of viewport."
+    },
+    "slimsdetailing": {
+      "status": "rejected",
+      "reason": "The narrow second-query acquisition failed the frozen machine gate: unresolved visible obstruction covers 28% of viewport."
+    },
+    "in2detailing": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "detailgarage": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: no reviewable product candidates."
+    },
+    "autofinesse": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "cleanandshiny": {
+      "status": "rejected",
+      "reason": "The narrow second-query acquisition failed the frozen machine gate: unresolved visible obstruction covers 100% of viewport."
+    },
+    "theultimatefinish": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 33% of requested query tokens."
+    },
+    "carcareproducts": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "carcareproducts--car-wash-soap",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "carcareproducts--wheel-cleaner",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport car-care grids expose coherent wash-soap and wheel-cleaner products with volume variants, prices, and valid quantity abstentions."
+    },
+    "dogcatsupply": {
+      "status": "rejected",
+      "reason": "The narrow second-query capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "pettingpet": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "petfood": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "purebites": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "purebites--dog-treats",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0016,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "purebites--cat-treats",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.006999635435654393,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport pet grids expose coherent dog- and cat-treat products with package weights, counts, multipacks, and prices."
+    },
+    "blanchardstreats": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "wellbredonline": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "wellbredonline--dog-treats",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "wellbredonline--cat-treats",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport pet grids expose coherent dog- and cat-treat products with package weights, counts, multipacks, and prices."
+    },
+    "petlife": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "urbantailspet": {
+      "status": "rejected",
+      "reason": "The desktop acquisition failed the frozen machine gate: search results evidence only 50% of requested query tokens."
+    },
+    "mudbay": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "healthypets": {
+      "status": "rejected",
+      "reason": "The narrow second-query capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "pet-supermarket-co-uk": {
+      "status": "rejected",
+      "reason": "The desktop capture failed original-resolution review for atomic roots, query relevance, or usable product evidence."
+    },
+    "petgoods": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "petgoods--dog-treats",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "petgoods--cat-treats",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport pet grids expose coherent dog- and cat-treat products with package weights, counts, multipacks, and prices."
+    },
+    "petsupplies4less": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "petsupplies4less--dog-treats",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0044444444444444444,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "petsupplies4less--cat-treats",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.019443431765706648,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Opposite-viewport pet grids expose coherent dog- and cat-treat products with package weights, counts, multipacks, and prices."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "longancraft",
+      "sewfinity",
+      "sewingpartsonline",
+      "keepsakequilting",
+      "fringefabrics",
+      "britexfabrics",
+      "theconfidentstitch",
+      "girlcharlee",
+      "fabricbistro",
+      "zfabric",
+      "shopmosaictile",
+      "mosaictraderusa",
+      "witsendmosaic",
+      "kismetmosaic",
+      "apollotile",
+      "americantiledepot",
+      "livden",
+      "otile",
+      "dentistgloves",
+      "practicon",
+      "catering24",
+      "mcdonaldpaper",
+      "britishtea",
+      "hugotea",
+      "dobrateashop",
+      "yunnansourcing",
+      "what-cha",
+      "carzilla",
+      "carcareproducts",
+      "purebites",
+      "wellbredonline",
+      "petgoods",
+      "petsupplies4less"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "longancraft",
+        "cohort": "final"
+      },
+      {
+        "siteId": "sewfinity",
+        "cohort": "final"
+      },
+      {
+        "siteId": "sewingpartsonline",
+        "cohort": "final"
+      },
+      {
+        "siteId": "keepsakequilting",
+        "cohort": "final"
+      },
+      {
+        "siteId": "fringefabrics",
+        "cohort": "final"
+      },
+      {
+        "siteId": "britexfabrics",
+        "cohort": "final"
+      },
+      {
+        "siteId": "theconfidentstitch",
+        "cohort": "final"
+      },
+      {
+        "siteId": "girlcharlee",
+        "cohort": "final"
+      },
+      {
+        "siteId": "fabricbistro",
+        "cohort": "final"
+      },
+      {
+        "siteId": "zfabric",
+        "cohort": "final"
+      },
+      {
+        "siteId": "shopmosaictile",
+        "cohort": "final"
+      },
+      {
+        "siteId": "mosaictraderusa",
+        "cohort": "final"
+      },
+      {
+        "siteId": "witsendmosaic",
+        "cohort": "final"
+      },
+      {
+        "siteId": "kismetmosaic",
+        "cohort": "final"
+      },
+      {
+        "siteId": "apollotile",
+        "cohort": "final"
+      },
+      {
+        "siteId": "americantiledepot",
+        "cohort": "final"
+      },
+      {
+        "siteId": "livden",
+        "cohort": "final"
+      },
+      {
+        "siteId": "otile",
+        "cohort": "final"
+      },
+      {
+        "siteId": "dentistgloves",
+        "cohort": "final"
+      },
+      {
+        "siteId": "practicon",
+        "cohort": "final"
+      },
+      {
+        "siteId": "catering24",
+        "cohort": "final"
+      },
+      {
+        "siteId": "mcdonaldpaper",
+        "cohort": "final"
+      },
+      {
+        "siteId": "britishtea",
+        "cohort": "final"
+      },
+      {
+        "siteId": "hugotea",
+        "cohort": "final"
+      },
+      {
+        "siteId": "dobrateashop",
+        "cohort": "final"
+      },
+      {
+        "siteId": "yunnansourcing",
+        "cohort": "final"
+      },
+      {
+        "siteId": "what-cha",
+        "cohort": "final"
+      },
+      {
+        "siteId": "carzilla",
+        "cohort": "final"
+      },
+      {
+        "siteId": "carcareproducts",
+        "cohort": "final"
+      },
+      {
+        "siteId": "purebites",
+        "cohort": "final"
+      },
+      {
+        "siteId": "wellbredonline",
+        "cohort": "final"
+      },
+      {
+        "siteId": "petgoods",
+        "cohort": "final"
+      },
+      {
+        "siteId": "petsupplies4less",
+        "cohort": "final"
+      }
+    ],
+    "status": "keep"
+  }
+}
