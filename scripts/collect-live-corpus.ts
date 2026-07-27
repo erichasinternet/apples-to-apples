@@ -9,7 +9,10 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import type { PageObservation } from "../src/learning/contracts";
-import { navigateForObservation } from "../src/learning/page-navigation";
+import {
+  navigateForObservation,
+  submitSemanticSearch
+} from "../src/learning/page-navigation";
 import { capturePageObservation } from "../src/learning/page-observation";
 import {
   dismissVisibleObstruction,
@@ -74,6 +77,7 @@ interface PageCapture {
   requestedUrl: string;
   finalUrl: string;
   navigationAttempts: number;
+  searchRouteDiscovery: "not-needed" | "used" | "failed";
   title: string;
   httpStatus?: number;
   blocked: boolean;
@@ -289,96 +293,35 @@ async function capturePage(
   cardScreenshotBudgetMs: number
 ): Promise<PageCapture> {
   const navigation = await navigateForObservation(page, target.url);
-  const response = navigation.response;
-  await page.waitForLoadState("networkidle", { timeout: 12_000 }).catch(() => undefined);
-  await page.waitForTimeout(1_500);
-  let dismissedObstructions = await preparePage(page);
-  await page.mouse.wheel(0, 900);
-  await page.waitForTimeout(750);
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(350);
-  dismissedObstructions += await preparePage(page);
+  let response = navigation.response;
+  let navigationAttempts = navigation.attempts;
+  let searchRouteDiscovery: PageCapture["searchRouteDiscovery"] = "not-needed";
+  let dismissedObstructions = await settlePageForCapture(page);
+  let searchState = await readSearchPageState(page, target.query);
+
+  if (response && response.status() >= 400) {
+    const discovery = await attemptSemanticSearchRoute(
+      page,
+      target,
+      searchState.queryTokenCoverage
+    );
+    navigationAttempts += discovery.navigationAttempts;
+    dismissedObstructions += discovery.dismissedObstructions;
+    response = discovery.response;
+    searchRouteDiscovery = discovery.used ? "used" : "failed";
+    searchState = await readSearchPageState(page, target.query);
+  }
+
+  const {
+    bodyText,
+    currentTitle,
+    renderedUrl,
+    queryTokenCoverage
+  } = searchState;
   let unresolvedObstructionCoverage = await page
     .evaluate(measureVisibleObstructionCoverage)
     .catch(() => 0);
 
-  const bodyText = await page
-    .locator("body")
-    .innerText({ timeout: 5_000 })
-    .catch(() => "");
-  const currentTitle = await page.title();
-  const renderedUrl = new URL(page.url());
-  const searchContext = await page.evaluate(() => {
-    const visibleText = (selector: string): string[] =>
-      [...document.querySelectorAll<HTMLElement>(selector)]
-        .filter((element) => {
-          const style = getComputedStyle(element);
-          const box = element.getBoundingClientRect();
-          return (
-            style.display !== "none" &&
-            style.visibility !== "hidden" &&
-            box.width > 0 &&
-            box.height > 0
-          );
-        })
-        .map((element) => element.innerText.trim())
-        .filter(Boolean);
-    const searchValues = [
-      ...document.querySelectorAll<HTMLInputElement>(
-        "input[type='search'], input[role='searchbox'], [role='search'] input"
-      )
-    ]
-      .filter((element) => {
-        const style = getComputedStyle(element);
-        const box = element.getBoundingClientRect();
-        return (
-          style.display !== "none" &&
-          style.visibility !== "hidden" &&
-          box.width > 0 &&
-          box.height > 0
-        );
-      })
-      .map((element) => element.value.trim())
-      .filter(Boolean);
-    const resultSummaryText = [
-      ...document.querySelectorAll<HTMLElement>("body *")
-    ]
-      .filter((element) => {
-        const style = getComputedStyle(element);
-        const box = element.getBoundingClientRect();
-        const text = (element.innerText || element.textContent || "")
-          .replace(/\s+/g, " ")
-          .trim();
-        return (
-          style.display !== "none" &&
-          style.visibility !== "hidden" &&
-          box.width > 0 &&
-          box.height > 0 &&
-          text.length <= 240 &&
-          /\b(?:search\s+)?results?\s+for\b/i.test(text)
-        );
-      })
-      .map((element) =>
-        (element.innerText || element.textContent || "")
-          .replace(/\s+/g, " ")
-          .trim()
-      )
-      .filter(Boolean);
-
-    return {
-      headings: visibleText("h1, h2, [role='heading']"),
-      statusText: [
-        ...visibleText("[role='status'], [aria-live]"),
-        ...resultSummaryText
-      ],
-      searchValues
-    };
-  });
-  const queryTokenCoverage = calculateSearchResultQueryCoverage(target.query, {
-    title: currentTitle,
-    pathname: decodeURIComponent(renderedUrl.pathname),
-    ...searchContext
-  });
   const blockReasons: string[] = [];
   if (response && response.status() >= 400) {
     blockReasons.push(`HTTP ${response.status()}`);
@@ -875,7 +818,8 @@ async function capturePage(
     capturedAt,
     requestedUrl: sanitizeCaptureUrl(target.url),
     finalUrl,
-    navigationAttempts: navigation.attempts,
+    navigationAttempts,
+    searchRouteDiscovery,
     title: currentTitle,
     ...(response ? { httpStatus: response.status() } : {}),
     blocked: blockReasons.length > 0,
@@ -916,6 +860,175 @@ async function capturePage(
     collectorSha256
   });
   return capture;
+}
+
+interface SearchPageState {
+  bodyText: string;
+  currentTitle: string;
+  renderedUrl: URL;
+  searchContext: {
+    headings: string[];
+    statusText: string[];
+    searchValues: string[];
+  };
+  queryTokenCoverage: number;
+}
+
+async function settlePageForCapture(page: Page): Promise<number> {
+  await page
+    .waitForLoadState("networkidle", { timeout: 12_000 })
+    .catch(() => undefined);
+  await page.waitForTimeout(1_500);
+  let dismissedObstructions = await preparePage(page);
+  await page.mouse.wheel(0, 900);
+  await page.waitForTimeout(750);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(350);
+  dismissedObstructions += await preparePage(page);
+  return dismissedObstructions;
+}
+
+async function readSearchPageState(
+  page: Page,
+  query: string
+): Promise<SearchPageState> {
+  const bodyText = await page
+    .locator("body")
+    .innerText({ timeout: 5_000 })
+    .catch(() => "");
+  const currentTitle = await page.title();
+  const renderedUrl = new URL(page.url());
+  const searchContext = await page.evaluate(() => {
+    const visibleText = (selector: string): string[] =>
+      [...document.querySelectorAll<HTMLElement>(selector)]
+        .filter((element) => {
+          const style = getComputedStyle(element);
+          const box = element.getBoundingClientRect();
+          return (
+            style.display !== "none" &&
+            style.visibility !== "hidden" &&
+            box.width > 0 &&
+            box.height > 0
+          );
+        })
+        .map((element) => element.innerText.trim())
+        .filter(Boolean);
+    const searchValues = [
+      ...document.querySelectorAll<HTMLInputElement>(
+        "input[type='search'], input[role='searchbox'], [role='search'] input"
+      )
+    ]
+      .filter((element) => {
+        const style = getComputedStyle(element);
+        const box = element.getBoundingClientRect();
+        return (
+          style.display !== "none" &&
+          style.visibility !== "hidden" &&
+          box.width > 0 &&
+          box.height > 0
+        );
+      })
+      .map((element) => element.value.trim())
+      .filter(Boolean);
+    const resultSummaryText = [
+      ...document.querySelectorAll<HTMLElement>("body *")
+    ]
+      .filter((element) => {
+        const style = getComputedStyle(element);
+        const box = element.getBoundingClientRect();
+        const text = (element.innerText || element.textContent || "")
+          .replace(/\s+/g, " ")
+          .trim();
+        return (
+          style.display !== "none" &&
+          style.visibility !== "hidden" &&
+          box.width > 0 &&
+          box.height > 0 &&
+          text.length <= 240 &&
+          /\b(?:search\s+)?results?\s+for\b/i.test(text)
+        );
+      })
+      .map((element) =>
+        (element.innerText || element.textContent || "")
+          .replace(/\s+/g, " ")
+          .trim()
+      )
+      .filter(Boolean);
+
+    return {
+      headings: visibleText("h1, h2, [role='heading']"),
+      statusText: [
+        ...visibleText("[role='status'], [aria-live]"),
+        ...resultSummaryText
+      ],
+      searchValues
+    };
+  });
+  return {
+    bodyText,
+    currentTitle,
+    renderedUrl,
+    searchContext,
+    queryTokenCoverage: calculateSearchResultQueryCoverage(query, {
+      title: currentTitle,
+      pathname: decodeURIComponent(renderedUrl.pathname),
+      ...searchContext
+    })
+  };
+}
+
+async function attemptSemanticSearchRoute(
+  page: Page,
+  target: CaptureTarget,
+  baselineQueryTokenCoverage: number
+): Promise<{
+  used: boolean;
+  response: Awaited<
+    ReturnType<typeof navigateForObservation>
+  >["response"];
+  navigationAttempts: number;
+  dismissedObstructions: number;
+}> {
+  let navigationAttempts = 0;
+  let dismissedObstructions = 0;
+
+  try {
+    const homepage = await navigateForObservation(
+      page,
+      new URL(target.url).origin
+    );
+    navigationAttempts += homepage.attempts;
+    dismissedObstructions += await settlePageForCapture(page);
+    const submission = await submitSemanticSearch(page, target.query);
+    if (submission.submitted) {
+      dismissedObstructions += await settlePageForCapture(page);
+      const discovered = await readSearchPageState(page, target.query);
+      if (
+        isSameSiteHostname(target.hostname, discovered.renderedUrl.hostname) &&
+        !isInterstitialOrBotChallenge(discovered.bodyText) &&
+        discovered.queryTokenCoverage > baselineQueryTokenCoverage
+      ) {
+        return {
+          used: true,
+          response: null,
+          navigationAttempts,
+          dismissedObstructions
+        };
+      }
+    }
+  } catch {
+    // Restore the frozen route below when semantic discovery is unavailable.
+  }
+
+  const restored = await navigateForObservation(page, target.url);
+  navigationAttempts += restored.attempts;
+  dismissedObstructions += await settlePageForCapture(page);
+  return {
+    used: false,
+    response: restored.response,
+    navigationAttempts,
+    dismissedObstructions
+  };
 }
 
 async function preparePage(page: Page): Promise<number> {

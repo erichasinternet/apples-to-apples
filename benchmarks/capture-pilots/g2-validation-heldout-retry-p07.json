@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p07",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T05:08:00.000Z",
+  "source": {
+    "siteIds": [
+      "fabric-direct"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "fabric"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "46ddeb5460cdaf7421813a19ca641a8e86550341d80bd0e2a5247eda0c81a83c"
+    ],
+    "collectorSha256": [
+      "26929748d60c596e0485b22c90db8763a0ad8340c3d1f980020fcf5d248d82d6"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T05-00-44-669Z",
+      "runManifestSha256": "d2c0a8938c0669b5c3701f319e4b884d1b7aa16d090fa5d629a2f860afb11c42",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T05-03-40-201Z",
+      "runManifestSha256": "60fe97908fff17e57980be29e4e147855c727f43cff59ad95d5923b12a1d5b5f",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "Fabric Direct passed two fresh opposite-viewport p11 captures after site-independent semantic search recovered its stale search routes and was assigned to validation under the frozen gate.",
+    "visualValidationFinding": "Both original-resolution annotation screenshots and all candidate closeups were inspected. The twenty-four frozen roots show coherent cotton and outdoor fabrics with readable by-the-yard prices, sale and list prices, and wholesale roll quantities."
+  },
+  "captures": [
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--cotton-fabric",
+      "capturedAt": "2026-07-27T05:01:17.275Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 366,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "fc9e5312fd2335bda5d14ccabc8bd38a7cac4a9c4fedf6adedfbb3ebe462e676",
+      "canonicalObservationSha256": "858313d8d167d59dbf44c785cf570222331dbeed041980948ffb63f6e01d3a8a",
+      "annotationScreenshotSha256": "267ec22027ad40816493271647f8bbdc04fb7a3d3ad07ee1c98585db6e71d927",
+      "provenanceAggregateSha256": "92eed5f9b9e5b5fbe424db4d296f488be1cbafdd9b514163fed93a759020713e",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--outdoor-fabric",
+      "capturedAt": "2026-07-27T05:04:10.914Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 240,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.06466602488151658,
+      "queryTokenCoverage": 1,
+      "observationSha256": "f2e94450badaa7a96b0f0e4e2acae8fb726480ee6170fbcf9272465d99d97967",
+      "canonicalObservationSha256": "6a80d43654e2e42584792bd6440f1a14e615915e5181449a533e948e61b3bf6a",
+      "annotationScreenshotSha256": "5f4db272ac5edc7d7adf110d42964dc23be3aeef834222ed5bd5a09a8cc3fb24",
+      "provenanceAggregateSha256": "fcd8e4a641053fad734f46027a77916b26bd6cf984e6a601fa5c33e302519c4f",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

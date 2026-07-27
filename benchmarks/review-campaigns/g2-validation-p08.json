@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p08",
+  "createdAt": "2026-07-27T05:09:00.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--cotton-fabric",
+      "captureTimestamp": "2026-07-27T05:01:17.275Z",
+      "candidateCardCount": 12,
+      "observationSha256": "fc9e5312fd2335bda5d14ccabc8bd38a7cac4a9c4fedf6adedfbb3ebe462e676",
+      "annotationScreenshotSha256": "267ec22027ad40816493271647f8bbdc04fb7a3d3ad07ee1c98585db6e71d927"
+    },
+    {
+      "siteId": "fabric-direct",
+      "pageId": "fabric-direct--outdoor-fabric",
+      "captureTimestamp": "2026-07-27T05:04:10.914Z",
+      "candidateCardCount": 12,
+      "observationSha256": "f2e94450badaa7a96b0f0e4e2acae8fb726480ee6170fbcf9272465d99d97967",
+      "annotationScreenshotSha256": "5f4db272ac5edc7d7adf110d42964dc23be3aeef834222ed5bd5a09a8cc3fb24"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--682ae532c3ea6867",
+      "campaignQueueSha256": "3085f81eef61cba0608122938ce8ef8b32f0fe08c26a728790c7d2b843d2d44a",
+      "sourceQueueSha256": [
+        "24416f9b85759a442506717eae2cbdbe557226c47890069a713a185bba26ef43",
+        "0cab5fdfe57862b6aac32d37af2029c8ab13b38bc539d5bc1f5441a8d1a8dcef"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--0a166dbebca2d407",
+      "campaignQueueSha256": "f12a38e21c6fd88e6bce4d85491f08df64c79c3aaad0397ad38634403061aa6b",
+      "sourceQueueSha256": [
+        "ed66edb848f7249d585f2d19f072e1e22fd9ee879238242ae115862d5038c4e1",
+        "3dd419c71cce2d0126992d58870ae69de930ca0259232925f5d8d866502a8473"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--682ae532c3ea6867",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

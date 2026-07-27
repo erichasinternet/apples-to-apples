@@ -1,7 +1,8 @@
 import type { Page } from "@playwright/test";
 import {
   isTransientNavigationError,
-  navigateForObservation
+  navigateForObservation,
+  submitSemanticSearch
 } from "../../src/learning/page-navigation";
 
 describe("observation navigation", () => {
@@ -56,4 +57,91 @@ describe("observation navigation", () => {
       })
     ).rejects.toThrow("Navigation failed after 2 attempts");
   });
+
+  it("submits through the first visible editable semantic search control", async () => {
+    const search = mockLocator();
+    const page = {
+      locator: vi.fn((selector: string) => ({
+        all: vi
+          .fn()
+          .mockResolvedValue(selector === "input[type='search']" ? [search] : [])
+      })),
+      waitForTimeout: vi.fn().mockResolvedValue(undefined)
+    } as unknown as Page;
+
+    await expect(submitSemanticSearch(page, "cat litter")).resolves.toEqual({
+      submitted: true,
+      openedSearch: false,
+      selector: "input[type='search']"
+    });
+    expect(search.fill).toHaveBeenCalledWith("cat litter");
+    expect(search.press).toHaveBeenCalledWith("Enter");
+  });
+
+  it("opens an accessible search toggle before retrying semantic inputs", async () => {
+    let opened = false;
+    const search = mockLocator();
+    const toggle = mockLocator({
+      editable: false,
+      click: () => {
+        opened = true;
+      }
+    });
+    const page = {
+      locator: vi.fn((selector: string) => ({
+        all: vi.fn().mockImplementation(async () => {
+          if (
+            selector === "input[type='search']" &&
+            opened
+          ) {
+            return [search];
+          }
+          if (
+            selector === "button[aria-label*='search' i]" &&
+            !opened
+          ) {
+            return [toggle];
+          }
+          return [];
+        })
+      })),
+      waitForTimeout: vi.fn().mockResolvedValue(undefined)
+    } as unknown as Page;
+
+    await expect(submitSemanticSearch(page, "printer paper")).resolves.toEqual({
+      submitted: true,
+      openedSearch: true,
+      selector: "input[type='search']"
+    });
+    expect(toggle.click).toHaveBeenCalledOnce();
+    expect(search.fill).toHaveBeenCalledWith("printer paper");
+  });
+
+  it("does not type into an ordinary text input without search semantics", async () => {
+    const page = {
+      locator: vi.fn(() => ({
+        all: vi.fn().mockResolvedValue([])
+      })),
+      waitForTimeout: vi.fn()
+    } as unknown as Page;
+
+    await expect(submitSemanticSearch(page, "rice")).resolves.toEqual({
+      submitted: false,
+      openedSearch: false
+    });
+  });
 });
+
+function mockLocator(options?: {
+  editable?: boolean;
+  click?: () => void;
+}) {
+  return {
+    isVisible: vi.fn().mockResolvedValue(true),
+    isEnabled: vi.fn().mockResolvedValue(true),
+    isEditable: vi.fn().mockResolvedValue(options?.editable ?? true),
+    fill: vi.fn().mockResolvedValue(undefined),
+    press: vi.fn().mockResolvedValue(undefined),
+    click: vi.fn().mockImplementation(async () => options?.click?.())
+  };
+}

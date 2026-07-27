@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p07",
+  "capturedAt": "2026-07-27T05:08:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p11.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T05-00-44-669Z",
+      "pageIds": [
+        "fabric-direct--cotton-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T05-03-40-201Z",
+      "pageIds": [
+        "fabric-direct--outdoor-fabric"
+      ]
+    }
+  ],
+  "samplingFinding": "Fabric Direct passed two fresh opposite-viewport p11 captures after site-independent semantic search recovered its stale search routes and was assigned to validation under the frozen gate.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots and all candidate closeups were inspected. The twenty-four frozen roots show coherent cotton and outdoor fabrics with readable by-the-yard prices, sale and list prices, and wholesale roll quantities."
+}

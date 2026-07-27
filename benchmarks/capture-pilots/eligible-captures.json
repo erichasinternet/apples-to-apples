@@ -6192,6 +6192,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p05.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-direct",
+      "cohort": "validation",
+      "pageId": "fabric-direct--cotton-fabric",
+      "captureTimestamp": "2026-07-27T05:01:17.275Z",
+      "observationSha256": "fc9e5312fd2335bda5d14ccabc8bd38a7cac4a9c4fedf6adedfbb3ebe462e676",
+      "annotationScreenshotSha256": "267ec22027ad40816493271647f8bbdc04fb7a3d3ad07ee1c98585db6e71d927",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p11.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p07.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fabric-direct",
+      "cohort": "validation",
+      "pageId": "fabric-direct--outdoor-fabric",
+      "captureTimestamp": "2026-07-27T05:04:10.914Z",
+      "observationSha256": "f2e94450badaa7a96b0f0e4e2acae8fb726480ee6170fbcf9272465d99d97967",
+      "annotationScreenshotSha256": "5f4db272ac5edc7d7adf110d42964dc23be3aeef834222ed5bd5a09a8cc3fb24",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p11.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p07.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

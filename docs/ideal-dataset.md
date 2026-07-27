@@ -1427,6 +1427,27 @@ with all 48 frozen roots loaded, zero console errors, and zero review writes.
 The eligible registry now contains 516 exact capture identities. Human semantic
 reviews and adjudication remain pending.
 
+A twelfth bounded retry tested site-independent route recovery on 10 disjoint,
+unassigned domains whose frozen search routes returned HTTP errors. All 13
+isolated headed Chromium children completed without a parent hard timeout. The
+collector attempted accessible semantic search only after an HTTP error, kept a
+discovered page only when non-input query evidence improved without a bot
+challenge, and restored the frozen route on failure. Eight desktop pages used
+the fallback, three passed the numeric gate, and original-resolution review
+advanced Spice Jungle, Specialty Bottle, and Fabric Direct to distinct narrow
+queries. Spice Jungle failed to reproduce search evidence and Specialty Bottle
+retained an obstruction over the frozen 20% limit. Fabric Direct qualified with
+coherent by-the-yard and wholesale-roll evidence in both viewports. It adds 2
+validation pages and 24 length roots. Qualified held-out structure is now 10
+validation domains with 20 pages and 9 selection domains with 18 pages, both at
+50% narrow-viewport coverage. The blinded
+[`g2-validation-p08.json`](../benchmarks/review-campaigns/g2-validation-p08.json)
+campaign and its paired reviewer batch passed headed Playwright Chromium with
+all 24 frozen roots loaded, zero console errors, and zero review writes. All 10
+candidate domains remain in the qualification-yield denominator. The eligible
+registry now contains 518 exact capture identities. Human semantic reviews and
+adjudication remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

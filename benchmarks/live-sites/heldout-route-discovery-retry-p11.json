@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "description": "Targeted held-out retry of ten unassigned domains whose prior fresh captures failed on stale HTTP 404 search routes. The frozen wave evaluates generic semantic search-route discovery with two domains per supported dimension.",
+  "sites": [
+    {
+      "id": "beanilla",
+      "label": "Beanilla",
+      "hostname": "www.beanilla.com",
+      "stratum": "specialty-baking-ingredient-retail",
+      "searchUrlTemplate": "https://www.beanilla.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "vanilla-beans",
+          "query": "vanilla beans",
+          "dimension": "mass"
+        },
+        {
+          "id": "cocoa-powder",
+          "query": "cocoa powder",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "spice-jungle",
+      "label": "Spice Jungle",
+      "hostname": "www.spicejungle.com",
+      "stratum": "culinary-ingredient-specialty",
+      "searchUrlTemplate": "https://www.spicejungle.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "ginger-powder",
+          "query": "ginger powder",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "my-perfect-color",
+      "label": "MyPerfectColor",
+      "hostname": "www.myperfectcolor.com",
+      "stratum": "paint",
+      "searchUrlTemplate": "https://www.myperfectcolor.com/search?q={query}",
+      "queries": [
+        {
+          "id": "interior-paint",
+          "query": "interior paint",
+          "dimension": "volume"
+        },
+        {
+          "id": "deck-stain",
+          "query": "deck stain",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "autoality",
+      "label": "Autoality",
+      "hostname": "www.autoality.com",
+      "stratum": "professional-detailing-retail",
+      "searchUrlTemplate": "https://www.autoality.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "car-shampoo",
+          "query": "car shampoo",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "specialty-bottle",
+      "label": "Specialty Bottle",
+      "hostname": "www.specialtybottle.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.specialtybottle.com/search?q={query}",
+      "queries": [
+        {
+          "id": "glass-bottles",
+          "query": "glass bottles",
+          "dimension": "count"
+        },
+        {
+          "id": "metal-tins",
+          "query": "metal tins",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "the-boxery",
+      "label": "The Boxery",
+      "hostname": "www.theboxery.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.theboxery.com/search?q={query}",
+      "queries": [
+        {
+          "id": "shipping-boxes",
+          "query": "shipping boxes",
+          "dimension": "count"
+        },
+        {
+          "id": "bubble-mailers",
+          "query": "bubble mailers",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "fabric-direct",
+      "label": "Fabric Direct",
+      "hostname": "www.fabricdirect.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://www.fabricdirect.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "outdoor-fabric",
+          "query": "outdoor fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "west-coast-paracord",
+      "label": "West Coast Paracord",
+      "hostname": "www.westcoastparacord.com",
+      "stratum": "paracord-manufacturer",
+      "searchUrlTemplate": "https://www.westcoastparacord.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paracord",
+          "query": "paracord",
+          "dimension": "length"
+        },
+        {
+          "id": "shock-cord",
+          "query": "shock cord",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "carpet-express",
+      "label": "Carpet Express",
+      "hostname": "www.carpetexpress.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.carpetexpress.com/search?q={query}",
+      "queries": [
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "dimension": "area"
+        },
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "floors-to-your-home",
+      "label": "Floors To Your Home",
+      "hostname": "floorstoyourhome.com",
+      "stratum": "flooring-outlet",
+      "searchUrlTemplate": "https://floorstoyourhome.com/search?q={query}",
+      "queries": [
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "laminate-flooring",
+          "query": "laminate flooring",
+          "dimension": "area"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p08",
+  "createdAt": "2026-07-27T05:07:58.918Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--682ae532c3ea6867",
+      "path": "benchmark-data/review/g2-validation-p08/reviewer-a.json",
+      "sha256": "3085f81eef61cba0608122938ce8ef8b32f0fe08c26a728790c7d2b843d2d44a",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--0a166dbebca2d407",
+      "path": "benchmark-data/review/g2-validation-p08/reviewer-b.json",
+      "sha256": "f12a38e21c6fd88e6bce4d85491f08df64c79c3aaad0397ad38634403061aa6b",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p08--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "fabric-direct--cotton-fabric",
+        "fabric-direct--outdoor-fabric"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--911b037ecd657d7d",
+          "path": "benchmark-data/review/g2-validation-p08-review-batches/reviewer-a--batch-01.json",
+          "sha256": "c2e651e910f2d6796599a5588c7e83bce009f707fc6a394551bea1296a19927f"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--0a3a2e74dbcc023d",
+          "path": "benchmark-data/review/g2-validation-p08-review-batches/reviewer-b--batch-01.json",
+          "sha256": "65b61ae43c464b3a1ae2613a75821f261c301c18231ee20b047434c03588f069"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

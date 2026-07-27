@@ -588,6 +588,12 @@
       "cohort": "selection",
       "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p10.json",
       "promotedAt": "2026-07-27T04:46:00.000Z"
+    },
+    {
+      "siteId": "fabric-direct",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p11.json",
+      "promotedAt": "2026-07-27T05:08:00.000Z"
     }
   ]
 }

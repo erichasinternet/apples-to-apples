@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p11",
+  "candidateManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p11.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "ebdeb4b610e041156aa02e7822bcd4a34152227b04c902c850ac8e2a6d59ba6a",
+    "narrowBatchSha256": "cd8feeebab61500124e527a5246485f603071ad3efb660c35dbad93e0afaf38c",
+    "processIsolationFinding": "All thirteen headed capture children completed under isolated process-group bounds with zero parent hard timeouts.",
+    "samplingFinding": "Ten disjoint, unassigned domains with stale or rejected routes received a fresh desktop capture. The generic semantic-search fallback was attempted only after an HTTP error and was used on eight desktop pages. Three desktop pages passed the numeric machine gate and original-resolution review advanced Spice Jungle, Specialty Bottle, and Fabric Direct to distinct narrow queries. Spice Jungle failed to reproduce search evidence, Specialty Bottle retained an obstruction over the frozen 20% limit, and only Fabric Direct passed the paired gate. All ten candidate domains remain in the yield denominator.",
+    "manifestIntegrityFinding": "Both accepted captures use frozen retry manifest hash 46ddeb5460cdaf7421813a19ca641a8e86550341d80bd0e2a5247eda0c81a83c and collector hash 26929748d60c596e0485b22c90db8763a0ad8340c3d1f980020fcf5d248d82d6."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T05-00-44-669Z",
+      "runManifestSha256": "d2c0a8938c0669b5c3701f319e4b884d1b7aa16d090fa5d629a2f860afb11c42",
+      "purpose": "Fabric Direct desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T05-03-40-201Z",
+      "runManifestSha256": "60fe97908fff17e57980be29e4e147855c727f43cff59ad95d5923b12a1d5b5f",
+      "purpose": "Fabric Direct narrow qualification capture"
+    }
+  ],
+  "results": {
+    "beanilla": {
+      "status": "rejected",
+      "reason": "Semantic search produced complete requested-query evidence but no reviewable product candidates."
+    },
+    "spice-jungle": {
+      "status": "rejected",
+      "reason": "The coherent paprika desktop page passed, but the distinct narrow ginger-powder query failed route discovery and returned HTTP 404 with no requested-query evidence or reviewable candidates."
+    },
+    "my-perfect-color": {
+      "status": "rejected",
+      "reason": "Semantic search produced complete requested-query evidence but no reviewable product candidates."
+    },
+    "autoality": {
+      "status": "rejected",
+      "reason": "Semantic search discovery failed and the frozen route returned HTTP 403 with no requested-query evidence or reviewable candidates."
+    },
+    "specialty-bottle": {
+      "status": "rejected",
+      "reason": "The coherent glass-bottle desktop page passed, but the distinct narrow metal-tins page retained a visible obstruction over 25% of the viewport, above the frozen 20% limit."
+    },
+    "the-boxery": {
+      "status": "rejected",
+      "reason": "Semantic search exposed only two reviewable shipping-box roots, below the frozen minimum of eight."
+    },
+    "fabric-direct": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "fabric-direct--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "fabric-direct--outdoor-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.06466602488151658,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent fabric grids pass in opposite viewports after site-independent semantic search discovery. Frozen card roots expose prices with by-the-yard quantities, sale and list prices, and wholesale roll lengths without covered textual evidence."
+    },
+    "west-coast-paracord": {
+      "status": "rejected",
+      "reason": "Semantic search discovery failed and the frozen route returned HTTP 404 with no reviewable product candidates."
+    },
+    "carpet-express": {
+      "status": "rejected",
+      "reason": "Semantic search produced complete requested-query evidence but no reviewable product candidates."
+    },
+    "floors-to-your-home": {
+      "status": "rejected",
+      "reason": "Semantic search produced complete requested-query evidence but no reviewable product candidates."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "fabric-direct"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "fabric-direct",
+        "cohort": "validation"
+      }
+    ],
+    "status": "keep"
+  }
+}
