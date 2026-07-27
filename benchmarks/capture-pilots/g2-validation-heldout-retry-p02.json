@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p02",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T03:24:00.000Z",
+  "source": {
+    "siteIds": [
+      "express-med",
+      "style-maker-fabrics"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "consumer-medical-supply",
+      "designer-apparel-fabric-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "49921e4e8f7ded478bf9c80777bdc4a609ceff252ffdcc57e02bd66560014798"
+    ],
+    "collectorSha256": [
+      "6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T03-19-31-978Z",
+      "runManifestSha256": "5bb80bb8da0f0b7903ab39a3b6eff85a2e84f62daff7799c249f223517a3f2d9",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T03-22-51-565Z",
+      "runManifestSha256": "f68ff93899bdcc700c4d3a1cbd10faf75a1d533bc4ada3bbbcd584679875da14",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T03-20-00-186Z",
+      "runManifestSha256": "96e23485b3b0a7b9fa79bda69a1a7ee15e37711d7d4dcbde4d2b3bb6d05496f3",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T03-23-12-127Z",
+      "runManifestSha256": "0bab4b4552f7646011300995a13740723406f94845db357828a6ed75d0f378de",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 4,
+    "successfulCaptureAttempts": 4,
+    "acceptedPages": 4,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 44,
+    "samplingFinding": "ExpressMed and Style Maker Fabrics were two of ten disjoint, unassigned domains in a bounded held-out retry. They were assigned to validation only after two fresh opposite-viewport pages passed per domain.",
+    "visualValidationFinding": "All four original-resolution annotation screenshots were inspected. The forty-four frozen roots retain candidate closeups, and the page evidence shows coherent requested-query products with readable price and package evidence."
+  },
+  "captures": [
+    {
+      "siteId": "express-med",
+      "pageId": "express-med--exam-gloves",
+      "capturedAt": "2026-07-27T03:19:50.285Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 10,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 891,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.00525,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c862e010ae5ef599f0e0f6feb92bd03eb0a67af11fc9ae2569ba8f3c8d352f55",
+      "canonicalObservationSha256": "e73d76744f7a47b4810df90a7c36fabe1f59abac194a50a35ec4bc4f2eaf07cd",
+      "annotationScreenshotSha256": "e3ce5e25439cf94f8e4084d666a79e966f10242901e2e5be7a2903ab7823422e",
+      "provenanceAggregateSha256": "8d7e930fe2e4b317dad7e75bd5844c94d1b25c9cd37db636182b40d0599f8686",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "express-med",
+      "pageId": "express-med--underpads",
+      "capturedAt": "2026-07-27T03:23:01.358Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 11,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 512,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "fb189fc8714239ac680247339e90225d14b661e859de532616e6bf988de2a9b2",
+      "canonicalObservationSha256": "b48a01bf2219e1ed25c8d886f9cae1cb3fd76c2a56ac1cf3edf5b307d747c463",
+      "annotationScreenshotSha256": "80e3dffe75474082bdd81f0fe0905e1f3a298e1c76e9e51e178fc4bdd7a4ca4f",
+      "provenanceAggregateSha256": "711f4daa060370bee18d03279632f0316acae653ea87afa331230d51ece59d3f",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "style-maker-fabrics",
+      "pageId": "style-maker-fabrics--cotton-fabric",
+      "capturedAt": "2026-07-27T03:20:09.620Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 414,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "fc6bf7c0e9d35865c13e7371ef86fc30c3e7a602d9059a1ae68ac38a2384b4b6",
+      "canonicalObservationSha256": "cd7f6a1f2a9134fc7e65f17d051877371a4f28ccb220ca4e8fe8833b54afb13b",
+      "annotationScreenshotSha256": "2652c5fd42155220fea7d65af0ac0d920517fa5d56cf47aa3a30949b4293f021",
+      "provenanceAggregateSha256": "c0fa37af423e9634046c94567f93b02d020c90d8cc8522082ecaf7312b2eae20",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "style-maker-fabrics",
+      "pageId": "style-maker-fabrics--linen-fabric",
+      "capturedAt": "2026-07-27T03:23:22.205Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 402,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.1990521327014218,
+      "queryTokenCoverage": 1,
+      "observationSha256": "97a1da8e680ae958de1eba8225718e2def22505f1b66cdf7a58eaf0af3eb8383",
+      "canonicalObservationSha256": "041343261cfe52f780d2c2770b4c03e1d7290f9c7ab7d40959551d3fffe3dcc3",
+      "annotationScreenshotSha256": "ece8f263faf79dfd886c5bb51f0b004c57ea3ff21dd168c4d61b298cb5cf2f93",
+      "provenanceAggregateSha256": "92b4d3f966d17962b5e450ba3f020e6484006e033a1e3d0ffd37b221c9aac73b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

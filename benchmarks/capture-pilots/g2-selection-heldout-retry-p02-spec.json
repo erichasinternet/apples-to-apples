@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p02",
+  "capturedAt": "2026-07-27T03:24:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-qualification-retry-p03.json",
+  "requestedCaptureAttempts": 4,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-19-51-316Z",
+      "pageIds": [
+        "save-rite-medical--exam-gloves"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-23-02-527Z",
+      "pageIds": [
+        "save-rite-medical--underpads"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-20-25-931Z",
+      "pageIds": [
+        "floorzz--vinyl-flooring"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-23-23-451Z",
+      "pageIds": [
+        "floorzz--laminate-flooring"
+      ]
+    }
+  ],
+  "samplingFinding": "Save Rite Medical and Floorzz were two of ten disjoint, unassigned domains in a bounded held-out retry. They were assigned to selection only after two fresh opposite-viewport pages passed per domain.",
+  "visualValidationFinding": "All four original-resolution annotation screenshots were inspected. The forty-four frozen roots retain candidate closeups, and the page evidence shows coherent requested-query products with readable price and package evidence."
+}

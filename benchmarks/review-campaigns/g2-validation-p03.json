@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p03",
+  "createdAt": "2026-07-27T03:25:00.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "express-med",
+      "pageId": "express-med--exam-gloves",
+      "captureTimestamp": "2026-07-27T03:19:50.285Z",
+      "candidateCardCount": 8,
+      "observationSha256": "c862e010ae5ef599f0e0f6feb92bd03eb0a67af11fc9ae2569ba8f3c8d352f55",
+      "annotationScreenshotSha256": "e3ce5e25439cf94f8e4084d666a79e966f10242901e2e5be7a2903ab7823422e"
+    },
+    {
+      "siteId": "express-med",
+      "pageId": "express-med--underpads",
+      "captureTimestamp": "2026-07-27T03:23:01.358Z",
+      "candidateCardCount": 12,
+      "observationSha256": "fb189fc8714239ac680247339e90225d14b661e859de532616e6bf988de2a9b2",
+      "annotationScreenshotSha256": "80e3dffe75474082bdd81f0fe0905e1f3a298e1c76e9e51e178fc4bdd7a4ca4f"
+    },
+    {
+      "siteId": "style-maker-fabrics",
+      "pageId": "style-maker-fabrics--cotton-fabric",
+      "captureTimestamp": "2026-07-27T03:20:09.620Z",
+      "candidateCardCount": 12,
+      "observationSha256": "fc6bf7c0e9d35865c13e7371ef86fc30c3e7a602d9059a1ae68ac38a2384b4b6",
+      "annotationScreenshotSha256": "2652c5fd42155220fea7d65af0ac0d920517fa5d56cf47aa3a30949b4293f021"
+    },
+    {
+      "siteId": "style-maker-fabrics",
+      "pageId": "style-maker-fabrics--linen-fabric",
+      "captureTimestamp": "2026-07-27T03:23:22.205Z",
+      "candidateCardCount": 12,
+      "observationSha256": "97a1da8e680ae958de1eba8225718e2def22505f1b66cdf7a58eaf0af3eb8383",
+      "annotationScreenshotSha256": "ece8f263faf79dfd886c5bb51f0b004c57ea3ff21dd168c4d61b298cb5cf2f93"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--1a517a191efe8761",
+      "campaignQueueSha256": "6d2aa009953d43d4c96b98374c3d4b197d7adce244049a61c5a622715829b10f",
+      "sourceQueueSha256": [
+        "4b585e2ad32802917d433840119c9b4c1043f647df6028132ae125e8f33329e6",
+        "462f495f799e876b166c1ae832c583b9f74129878bc9f51242834d58ede09b17",
+        "63d8a8d720bf08f4fff080235ea70c143221e001f736ce1f03224cb5b3813f9b",
+        "61ffda20ec54bdca4ffbb2d0c4e39ddadcc030ee9fd49a3ae507566aa696ae1b"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--6314cb470a3adce3",
+      "campaignQueueSha256": "a3168cafdb3d81fd969a26caed4f2b4a6059628347dd5d7ae6c4a0205281e5de",
+      "sourceQueueSha256": [
+        "bd70fa28d12b7763f45ee9a775cbbd90f5492754551c88b672c40761de6019e2",
+        "4c5a9122c7e87f69214b429eded55836b6350da1f8d9c730691806dd654756fb",
+        "dcb93dd5d5a43456ee4822c435ec5688da51ea3136666670494d9b3dd3cec178",
+        "4e091005a33f26d74192fdd6c2e5b047768270f40b1025bcdedf09dade8d0915"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--1a517a191efe8761",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 4,
+    "screenshotsLoaded": 4,
+    "candidateCards": 44,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

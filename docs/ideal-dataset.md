@@ -1297,6 +1297,26 @@ eligible registry now contains 494 exact capture identities. These roots remain
 ineligible for benchmark gold until two independent human reviews and
 third-party adjudication are complete.
 
+A fourth bounded retry tested 10 unassigned domains with two mass, two volume,
+three count, two area, and one length target. All 16 isolated headed Chromium
+children completed without a hard timeout. Six desktop pages advanced to
+distinct narrow queries; strict machine and original-resolution visual review
+qualified ExpressMed, Save Rite Medical, Style Maker Fabrics, and Floorzz. The
+six rejected domains retain explicit missing-evidence, obstruction, or
+query-coherence failures in
+[`heldout-retry-p03.json`](../benchmarks/domain-qualification/heldout-retry-p03.json).
+Two qualified domains add 4 validation pages and 44 roots, and two add 4
+selection pages and 44 roots. Qualified held-out structure is now 5 validation
+domains with 10 pages and 6 selection domains with 12 pages, both at 50%
+narrow-viewport coverage. The blinded
+[`g2-validation-p03.json`](../benchmarks/review-campaigns/g2-validation-p03.json)
+and
+[`g2-selection-p02.json`](../benchmarks/review-campaigns/g2-selection-p02.json)
+campaigns and both paired reviewer batches passed headed Playwright Chromium
+with all 88 frozen roots loaded, zero console errors, and zero review writes.
+The eligible registry now contains 502 exact capture identities. Human semantic
+reviews and adjudication remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

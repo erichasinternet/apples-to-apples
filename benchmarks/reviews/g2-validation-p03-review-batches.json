@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p03",
+  "createdAt": "2026-07-27T03:29:02.713Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--1a517a191efe8761",
+      "path": "benchmark-data/review/g2-validation-p03/reviewer-a.json",
+      "sha256": "6d2aa009953d43d4c96b98374c3d4b197d7adce244049a61c5a622715829b10f",
+      "pages": 4
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--6314cb470a3adce3",
+      "path": "benchmark-data/review/g2-validation-p03/reviewer-b.json",
+      "sha256": "a3168cafdb3d81fd969a26caed4f2b4a6059628347dd5d7ae6c4a0205281e5de",
+      "pages": 4
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 4,
+    "candidateCards": 44
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p03--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "express-med--exam-gloves",
+        "express-med--underpads",
+        "style-maker-fabrics--cotton-fabric",
+        "style-maker-fabrics--linen-fabric"
+      ],
+      "pages": 4,
+      "candidateCards": 44,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--dbaf11bf56e9f794",
+          "path": "benchmark-data/review/g2-validation-p03-review-batches/reviewer-a--batch-01.json",
+          "sha256": "374e16cfe9b1949a183390e3c25cf7c1df58f7d66480d6f91caa4a590c341eb2"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--d53c940c2e8a218c",
+          "path": "benchmark-data/review/g2-validation-p03-review-batches/reviewer-b--batch-01.json",
+          "sha256": "a4bcd2d4b717251c03b1c8b229cca5ea40c32a9c55ac0c0320e05c802eb3a46a"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

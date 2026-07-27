@@ -1,0 +1,219 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p03",
+  "candidateManifest": "benchmarks/live-sites/heldout-qualification-retry-p03.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "da501ac955cf884de019173bf919671fefd5dea22d094332bb7834d31b8eb986",
+    "narrowBatchSha256": "63090fac1909c826cfca5100041f716834cdad3a3e3324f1b8000e2c4c49cb83",
+    "processIsolationFinding": "All sixteen headed capture children completed under isolated process-group bounds with zero hard timeouts.",
+    "samplingFinding": "Ten unassigned candidates received a fresh desktop capture. Six visually accepted desktop pages received a distinct narrow capture. ExpressMed, Save Rite Medical, Style Maker Fabrics, and Floorzz passed both viewport gates; no old partial capture was reused.",
+    "manifestIntegrityFinding": "All eight accepted captures use the frozen retry manifest hash 49921e4e8f7ded478bf9c80777bdc4a609ceff252ffdcc57e02bd66560014798 and collector hash 6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T03-19-31-978Z",
+      "runManifestSha256": "5bb80bb8da0f0b7903ab39a3b6eff85a2e84f62daff7799c249f223517a3f2d9",
+      "purpose": "ExpressMed desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-22-51-565Z",
+      "runManifestSha256": "f68ff93899bdcc700c4d3a1cbd10faf75a1d533bc4ada3bbbcd584679875da14",
+      "purpose": "ExpressMed narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-19-51-316Z",
+      "runManifestSha256": "7f66adf734325b1a4badb0e2819322183e22bffe88fd46e5450799369235ef74",
+      "purpose": "Save Rite Medical desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-23-02-527Z",
+      "runManifestSha256": "51ce803e28904035881cdb7514312172c71f6970ee722fbc9a7e58ecd5ab52de",
+      "purpose": "Save Rite Medical narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-20-00-186Z",
+      "runManifestSha256": "96e23485b3b0a7b9fa79bda69a1a7ee15e37711d7d4dcbde4d2b3bb6d05496f3",
+      "purpose": "Style Maker Fabrics desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-23-12-127Z",
+      "runManifestSha256": "0bab4b4552f7646011300995a13740723406f94845db357828a6ed75d0f378de",
+      "purpose": "Style Maker Fabrics narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-20-25-931Z",
+      "runManifestSha256": "99ccf7996ff67b9e96f8acd4921039ee6d62938bdf627fc2839e471ade03da2a",
+      "purpose": "Floorzz desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-23-23-451Z",
+      "runManifestSha256": "4b01269a7d8ddc5b0d417b9d5fe6ef62bb45d6574f7818a3e6def23625800bcd",
+      "purpose": "Floorzz narrow qualification capture"
+    }
+  ],
+  "results": {
+    "car-supplies-warehouse": {
+      "status": "rejected",
+      "reason": "The desktop page passed numeric checks, but original-resolution visual review showed a fixed rewards panel covering selected product-card evidence."
+    },
+    "chemical-guys": {
+      "status": "rejected",
+      "reason": "The coherent desktop car-wash-soaps page passed, but fixed discount and chat controls covered selected product-card text in the distinct narrow wheel-cleaner capture."
+    },
+    "carewell": {
+      "status": "rejected",
+      "reason": "The fresh desktop page exposed zero requested-query evidence."
+    },
+    "express-med": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "express-med--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 8,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.00525,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "express-med--underpads",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent medical-supply grids pass in opposite viewports. Cards expose price ranges, option counts, case quantities, sale prices, out-of-stock states, and medical dimensions that must not be confused with sale quantity."
+    },
+    "save-rite-medical": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "save-rite-medical--exam-gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.005169575834274292,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "save-rite-medical--underpads",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.017694611734224996,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent medical-supply grids pass in opposite viewports. Cards expose starting prices, explicit counts, reusable versus disposable products, physical dimensions, and variant-dependent offers."
+    },
+    "style-maker-fabrics": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "style-maker-fabrics--cotton-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "style-maker-fabrics--linen-fabric",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.1990521327014218,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent fabric grids pass in opposite viewports. Cards expose native per-yard pricing, sale versus list prices, fiber blends, and visual variants. The narrow signup panel stays above the product grid and covers no selected product evidence."
+    },
+    "cali-floors": {
+      "status": "rejected",
+      "reason": "The fresh desktop page was fully obstructed and exposed no reviewable product roots."
+    },
+    "floorzz": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "floorzz--vinyl-flooring",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.006666666666666667,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "floorzz--laminate-flooring",
+          "viewportProfile": "narrow",
+          "candidateCount": 8,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.029165147648559972,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent flooring grids pass in opposite viewports. Cards expose native square-foot prices, call-for-pricing abstentions, flooring-type descriptors, and lazy images while retaining readable textual evidence."
+    },
+    "spice-jungle": {
+      "status": "rejected",
+      "reason": "The fresh desktop route returned HTTP 404 with no requested-query evidence or reviewable product roots."
+    },
+    "bulk-supplements": {
+      "status": "rejected",
+      "reason": "The coherent desktop protein-powder page passed, but original-resolution review found half of the narrow creatine candidate roots were unrelated supplements rather than a coherent creatine result set."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "express-med",
+      "save-rite-medical",
+      "style-maker-fabrics",
+      "floorzz"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "express-med",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "style-maker-fabrics",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "save-rite-medical",
+        "cohort": "selection"
+      },
+      {
+        "siteId": "floorzz",
+        "cohort": "selection"
+      }
+    ],
+    "status": "keep"
+  }
+}

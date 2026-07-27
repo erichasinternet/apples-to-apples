@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p02",
+  "createdAt": "2026-07-27T03:25:00.000Z",
+  "cohort": "selection",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "floorzz",
+      "pageId": "floorzz--laminate-flooring",
+      "captureTimestamp": "2026-07-27T03:23:39.443Z",
+      "candidateCardCount": 8,
+      "observationSha256": "6604e2a9c75fbbc7abde07e53eb10fe2f5df1cb2683d2756637e0babc11ebcd8",
+      "annotationScreenshotSha256": "e85e8e1d3609941a1e166a49e1fb79484ffaf155f22b3d531ad8e1cdad02a895"
+    },
+    {
+      "siteId": "floorzz",
+      "pageId": "floorzz--vinyl-flooring",
+      "captureTimestamp": "2026-07-27T03:20:41.893Z",
+      "candidateCardCount": 12,
+      "observationSha256": "32703a7a4c5232c4d66f58bf57a75c52bbf8320466c60312c3605acfcbef8c31",
+      "annotationScreenshotSha256": "a89d77d2deb5148cdbdcc7f1c0513a96d333c97e7a3e22377bf906e1ad196397"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "pageId": "save-rite-medical--exam-gloves",
+      "captureTimestamp": "2026-07-27T03:19:58.930Z",
+      "candidateCardCount": 12,
+      "observationSha256": "ec8ba21c94f85ca500617cc6b226957716cfcab7ad03b4eff440d39ecddb48bb",
+      "annotationScreenshotSha256": "8fc3c3e441a14900fbb59ffe0d970857c93ddbf0754c340d1ccfc16ba65d1fb2"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "pageId": "save-rite-medical--underpads",
+      "captureTimestamp": "2026-07-27T03:23:10.979Z",
+      "candidateCardCount": 12,
+      "observationSha256": "8a6b7274aefe9b3b720280a11ce6f7d595dfc25426153d6735ccfdbf39bdc268",
+      "annotationScreenshotSha256": "fcd9a528638b66fa3d51c4c47ff18466910ff8297e6930dec238166f8b586c2f"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--a6c69ed83340ff66",
+      "campaignQueueSha256": "b68c0dd99886a21700aa6b3a7382858565688d748f485729dbecee26304e7928",
+      "sourceQueueSha256": [
+        "61e9f0b917b31ab9efc21a75392c0014793d2982c548e8a42fcfd80a2dfe9537",
+        "42bc52e7c62c84081f4f049aa39a9f6bd6bbe74c9669025b48bacbf4b4a2764f",
+        "8c0a6f68c47373b292384bbb86b4a89cfd2a12727c4c1672e5a89d894589d94b",
+        "1377f2d3716d1fc2bb62c95fd212065d1ba337340aac2cc6b731c35e058598bb"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--659cc78fa1029ac9",
+      "campaignQueueSha256": "488ddd567f0879fa080b0f1056529c6b636ba836bdfefc821b7f4bbe7d98412b",
+      "sourceQueueSha256": [
+        "ded110d487b86eeb47f1c8f13ee1a54a1c7759afbc5a5834f58441a92ed57347",
+        "a9c4119f18523cca7b0d9b7f5a6c9a14512e6919224d23617cf5e58e24bc5d4d",
+        "363d8170d73c7228651a34dbc5a2bb9ba975123f4e0ea28ec540ce1e85f38593",
+        "1c18a52fc48d83560a5483d4754693743a7ffb96f18d1aac443ff5417edd0240"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--a6c69ed83340ff66",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 4,
+    "screenshotsLoaded": 4,
+    "candidateCards": 44,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

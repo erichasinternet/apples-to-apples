@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p02",
+  "createdAt": "2026-07-27T03:29:02.735Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--a6c69ed83340ff66",
+      "path": "benchmark-data/review/g2-selection-p02/reviewer-a.json",
+      "sha256": "b68c0dd99886a21700aa6b3a7382858565688d748f485729dbecee26304e7928",
+      "pages": 4
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--659cc78fa1029ac9",
+      "path": "benchmark-data/review/g2-selection-p02/reviewer-b.json",
+      "sha256": "488ddd567f0879fa080b0f1056529c6b636ba836bdfefc821b7f4bbe7d98412b",
+      "pages": 4
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 4,
+    "candidateCards": 44
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p02--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "floorzz--laminate-flooring",
+        "floorzz--vinyl-flooring",
+        "save-rite-medical--exam-gloves",
+        "save-rite-medical--underpads"
+      ],
+      "pages": 4,
+      "candidateCards": 44,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--b36b95c62813d74b",
+          "path": "benchmark-data/review/g2-selection-p02-review-batches/reviewer-a--batch-01.json",
+          "sha256": "fe5aa50353aecf41bad312a8356b06835975dac3f2855530371ac12599fe7b62"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--12e411aac80eb47f",
+          "path": "benchmark-data/review/g2-selection-p02-review-batches/reviewer-b--batch-01.json",
+          "sha256": "161b46f265d7252bb8794d3ce56bae5f4dade0a06b9e73191986ac57a758a49e"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

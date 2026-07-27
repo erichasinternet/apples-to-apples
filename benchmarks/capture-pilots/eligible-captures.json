@@ -5928,6 +5928,102 @@
       "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p01.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "express-med",
+      "cohort": "validation",
+      "pageId": "express-med--exam-gloves",
+      "captureTimestamp": "2026-07-27T03:19:50.285Z",
+      "observationSha256": "c862e010ae5ef599f0e0f6feb92bd03eb0a67af11fc9ae2569ba8f3c8d352f55",
+      "annotationScreenshotSha256": "e3ce5e25439cf94f8e4084d666a79e966f10242901e2e5be7a2903ab7823422e",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p03.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "express-med",
+      "cohort": "validation",
+      "pageId": "express-med--underpads",
+      "captureTimestamp": "2026-07-27T03:23:01.358Z",
+      "observationSha256": "fb189fc8714239ac680247339e90225d14b661e859de532616e6bf988de2a9b2",
+      "annotationScreenshotSha256": "80e3dffe75474082bdd81f0fe0905e1f3a298e1c76e9e51e178fc4bdd7a4ca4f",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p03.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "style-maker-fabrics",
+      "cohort": "validation",
+      "pageId": "style-maker-fabrics--cotton-fabric",
+      "captureTimestamp": "2026-07-27T03:20:09.620Z",
+      "observationSha256": "fc6bf7c0e9d35865c13e7371ef86fc30c3e7a602d9059a1ae68ac38a2384b4b6",
+      "annotationScreenshotSha256": "2652c5fd42155220fea7d65af0ac0d920517fa5d56cf47aa3a30949b4293f021",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p03.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "style-maker-fabrics",
+      "cohort": "validation",
+      "pageId": "style-maker-fabrics--linen-fabric",
+      "captureTimestamp": "2026-07-27T03:23:22.205Z",
+      "observationSha256": "97a1da8e680ae958de1eba8225718e2def22505f1b66cdf7a58eaf0af3eb8383",
+      "annotationScreenshotSha256": "ece8f263faf79dfd886c5bb51f0b004c57ea3ff21dd168c4d61b298cb5cf2f93",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p03.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "cohort": "selection",
+      "pageId": "save-rite-medical--exam-gloves",
+      "captureTimestamp": "2026-07-27T03:19:58.930Z",
+      "observationSha256": "ec8ba21c94f85ca500617cc6b226957716cfcab7ad03b4eff440d39ecddb48bb",
+      "annotationScreenshotSha256": "8fc3c3e441a14900fbb59ffe0d970857c93ddbf0754c340d1ccfc16ba65d1fb2",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p03.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "cohort": "selection",
+      "pageId": "save-rite-medical--underpads",
+      "captureTimestamp": "2026-07-27T03:23:10.979Z",
+      "observationSha256": "8a6b7274aefe9b3b720280a11ce6f7d595dfc25426153d6735ccfdbf39bdc268",
+      "annotationScreenshotSha256": "fcd9a528638b66fa3d51c4c47ff18466910ff8297e6930dec238166f8b586c2f",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p03.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "floorzz",
+      "cohort": "selection",
+      "pageId": "floorzz--vinyl-flooring",
+      "captureTimestamp": "2026-07-27T03:20:41.893Z",
+      "observationSha256": "32703a7a4c5232c4d66f58bf57a75c52bbf8320466c60312c3605acfcbef8c31",
+      "annotationScreenshotSha256": "a89d77d2deb5148cdbdcc7f1c0513a96d333c97e7a3e22377bf906e1ad196397",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p03.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "floorzz",
+      "cohort": "selection",
+      "pageId": "floorzz--laminate-flooring",
+      "captureTimestamp": "2026-07-27T03:23:39.443Z",
+      "observationSha256": "6604e2a9c75fbbc7abde07e53eb10fe2f5df1cb2683d2756637e0babc11ebcd8",
+      "annotationScreenshotSha256": "e85e8e1d3609941a1e166a49e1fb79484ffaf155f22b3d531ad8e1cdad02a895",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p03.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p02.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

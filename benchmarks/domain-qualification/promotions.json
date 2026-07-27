@@ -522,6 +522,30 @@
       "cohort": "selection",
       "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p02.json",
       "promotedAt": "2026-07-27T03:08:00.000Z"
+    },
+    {
+      "siteId": "express-med",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p03.json",
+      "promotedAt": "2026-07-27T03:24:00.000Z"
+    },
+    {
+      "siteId": "style-maker-fabrics",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p03.json",
+      "promotedAt": "2026-07-27T03:24:00.000Z"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p03.json",
+      "promotedAt": "2026-07-27T03:24:00.000Z"
+    },
+    {
+      "siteId": "floorzz",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p03.json",
+      "promotedAt": "2026-07-27T03:24:00.000Z"
     }
   ]
 }

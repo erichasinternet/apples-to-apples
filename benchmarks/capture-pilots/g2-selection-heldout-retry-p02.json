@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p02",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T03:24:00.000Z",
+  "source": {
+    "siteIds": [
+      "save-rite-medical",
+      "floorzz"
+    ],
+    "cohort": "selection",
+    "strata": [
+      "discount-home-medical-supply",
+      "flooring"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "49921e4e8f7ded478bf9c80777bdc4a609ceff252ffdcc57e02bd66560014798"
+    ],
+    "collectorSha256": [
+      "6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T03-19-51-316Z",
+      "runManifestSha256": "7f66adf734325b1a4badb0e2819322183e22bffe88fd46e5450799369235ef74",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T03-23-02-527Z",
+      "runManifestSha256": "51ce803e28904035881cdb7514312172c71f6970ee722fbc9a7e58ecd5ab52de",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T03-20-25-931Z",
+      "runManifestSha256": "99ccf7996ff67b9e96f8acd4921039ee6d62938bdf627fc2839e471ade03da2a",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T03-23-23-451Z",
+      "runManifestSha256": "4b01269a7d8ddc5b0d417b9d5fe6ef62bb45d6574f7818a3e6def23625800bcd",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 4,
+    "successfulCaptureAttempts": 4,
+    "acceptedPages": 4,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 44,
+    "samplingFinding": "Save Rite Medical and Floorzz were two of ten disjoint, unassigned domains in a bounded held-out retry. They were assigned to selection only after two fresh opposite-viewport pages passed per domain.",
+    "visualValidationFinding": "All four original-resolution annotation screenshots were inspected. The forty-four frozen roots retain candidate closeups, and the page evidence shows coherent requested-query products with readable price and package evidence."
+  },
+  "captures": [
+    {
+      "siteId": "save-rite-medical",
+      "pageId": "save-rite-medical--exam-gloves",
+      "capturedAt": "2026-07-27T03:19:58.930Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 620,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.005169575834274292,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ec8ba21c94f85ca500617cc6b226957716cfcab7ad03b4eff440d39ecddb48bb",
+      "canonicalObservationSha256": "81e39f96476f1750d457e42a91dd3caa82888ac8baf708df26eaf2c57c3f0695",
+      "annotationScreenshotSha256": "8fc3c3e441a14900fbb59ffe0d970857c93ddbf0754c340d1ccfc16ba65d1fb2",
+      "provenanceAggregateSha256": "43a120ce994accda71bfec730fa75d203fea19b4cc99676cc2ac8c0913161749",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "pageId": "save-rite-medical--underpads",
+      "capturedAt": "2026-07-27T03:23:10.979Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 499,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.017694611734224996,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8a6b7274aefe9b3b720280a11ce6f7d595dfc25426153d6735ccfdbf39bdc268",
+      "canonicalObservationSha256": "6a95d3fe9e560ccfe4aa291d21a276ba2d3189c5d3915743c4e9f60b21197ff5",
+      "annotationScreenshotSha256": "fcd9a528638b66fa3d51c4c47ff18466910ff8297e6930dec238166f8b586c2f",
+      "provenanceAggregateSha256": "00ed5c7ef37b18660bf8f93e4bcadd222fbb872e071bb40a1ceafa58dab93850",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "floorzz",
+      "pageId": "floorzz--vinyl-flooring",
+      "capturedAt": "2026-07-27T03:20:41.893Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1052,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.006666666666666667,
+      "queryTokenCoverage": 1,
+      "observationSha256": "32703a7a4c5232c4d66f58bf57a75c52bbf8320466c60312c3605acfcbef8c31",
+      "canonicalObservationSha256": "19b1907d8398e4d81688256c0fd0c210737bbed0c9e509578726ad3d59122164",
+      "annotationScreenshotSha256": "a89d77d2deb5148cdbdcc7f1c0513a96d333c97e7a3e22377bf906e1ad196397",
+      "provenanceAggregateSha256": "f2b8c21623b1dd6ebe0549ff14dac47f2837a744ae43e3474f3f2742723d7203",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "floorzz",
+      "pageId": "floorzz--laminate-flooring",
+      "capturedAt": "2026-07-27T03:23:39.443Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 8,
+      "candidateScreenshotsCaptured": 8,
+      "observationNodeCount": 605,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.029165147648559972,
+      "queryTokenCoverage": 1,
+      "observationSha256": "6604e2a9c75fbbc7abde07e53eb10fe2f5df1cb2683d2756637e0babc11ebcd8",
+      "canonicalObservationSha256": "fb8cb4c6272cb8ddca49a055c04c031604c2ab294d3ae10f07f41646d6dafbab",
+      "annotationScreenshotSha256": "e85e8e1d3609941a1e166a49e1fb79484ffaf155f22b3d531ad8e1cdad02a895",
+      "provenanceAggregateSha256": "ce9ba1332eda1f5b3c41ec4915e00933bd47ae326b5c047c2b67884f1e3e0870",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

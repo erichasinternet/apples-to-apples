@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "description": "Fourth capture-only held-out retry manifest balancing all five supported dimensions. Every site remains unassigned until two fresh opposite-viewport pages pass the frozen machine and visual gate.",
+  "sites": [
+    {
+      "id": "car-supplies-warehouse",
+      "label": "Car Supplies Warehouse",
+      "hostname": "www.carsupplieswarehouse.com",
+      "stratum": "detailing-warehouse",
+      "searchUrlTemplate": "https://www.carsupplieswarehouse.com/search?q={query}",
+      "queries": [
+        {
+          "id": "car-wash-soap",
+          "query": "car wash soap",
+          "dimension": "volume"
+        },
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "chemical-guys",
+      "label": "Chemical Guys",
+      "hostname": "www.chemicalguys.com",
+      "stratum": "automotive-cleaning-manufacturer",
+      "searchUrlTemplate": "https://www.chemicalguys.com/collections/{querySlug}",
+      "queries": [
+        {
+          "id": "car-wash-soaps",
+          "query": "car wash soaps",
+          "querySlug": "car-wash-soaps",
+          "dimension": "volume"
+        },
+        {
+          "id": "wheel-and-tire-cleaner",
+          "query": "wheel and tire cleaner",
+          "querySlug": "wheel-and-tire-cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "carewell",
+      "label": "Carewell",
+      "hostname": "www.carewell.com",
+      "stratum": "consumer-caregiver-supply",
+      "searchUrlTemplate": "https://www.carewell.com/search/?q={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "underpads",
+          "query": "underpads",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "express-med",
+      "label": "ExpressMed",
+      "hostname": "www.expressmed.com",
+      "stratum": "consumer-medical-supply",
+      "searchUrlTemplate": "https://www.expressmed.com/search?q={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "underpads",
+          "query": "underpads",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "save-rite-medical",
+      "label": "Save Rite Medical",
+      "hostname": "www.saveritemedical.com",
+      "stratum": "discount-home-medical-supply",
+      "searchUrlTemplate": "https://www.saveritemedical.com/search?q={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "underpads",
+          "query": "underpads",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "style-maker-fabrics",
+      "label": "Style Maker Fabrics",
+      "hostname": "stylemakerfabrics.com",
+      "stratum": "designer-apparel-fabric-retail",
+      "searchUrlTemplate": "https://stylemakerfabrics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "cali-floors",
+      "label": "CALI Floors",
+      "hostname": "www.califloors.com",
+      "stratum": "national-flooring-brand",
+      "searchUrlTemplate": "https://www.califloors.com/search?q={query}",
+      "queries": [
+        {
+          "id": "oak-flooring",
+          "query": "oak flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "floorzz",
+      "label": "Floorzz",
+      "hostname": "floorzz.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://floorzz.com/search?q={query}",
+      "queries": [
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "laminate-flooring",
+          "query": "laminate flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "spice-jungle",
+      "label": "Spice Jungle",
+      "hostname": "www.spicejungle.com",
+      "stratum": "culinary-ingredient-specialty",
+      "searchUrlTemplate": "https://www.spicejungle.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "ginger-powder",
+          "query": "ginger powder",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "bulk-supplements",
+      "label": "BulkSupplements.com",
+      "hostname": "www.bulksupplements.com",
+      "stratum": "bulk-supplement-manufacturer",
+      "searchUrlTemplate": "https://www.bulksupplements.com/search?q={query}",
+      "queries": [
+        {
+          "id": "protein-powder",
+          "query": "protein powder",
+          "dimension": "mass"
+        },
+        {
+          "id": "creatine-powder",
+          "query": "creatine powder",
+          "dimension": "mass"
+        }
+      ]
+    }
+  ]
+}
