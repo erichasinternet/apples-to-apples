@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "description": "Ninth capture-only held-out retry manifest with two unassigned package-oriented domains per supported dimension. Every site remains unassigned until two fresh opposite-viewport pages pass the frozen machine and visual gate.",
+  "sites": [
+    {
+      "id": "essential-wholesale",
+      "label": "Essential Wholesale & Labs",
+      "hostname": "essentialwholesale.com",
+      "stratum": "cosmetic-ingredients",
+      "searchUrlTemplate": "https://essentialwholesale.com/search?q={query}",
+      "queries": [
+        {
+          "id": "liquid-soap-base",
+          "query": "liquid soap base",
+          "dimension": "volume"
+        },
+        {
+          "id": "body-lotion-base",
+          "query": "body lotion base",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "my-perfect-color",
+      "label": "MyPerfectColor",
+      "hostname": "www.myperfectcolor.com",
+      "stratum": "paint",
+      "searchUrlTemplate": "https://www.myperfectcolor.com/search?q={query}",
+      "queries": [
+        {
+          "id": "interior-paint",
+          "query": "interior paint",
+          "dimension": "volume"
+        },
+        {
+          "id": "deck-stain",
+          "query": "deck stain",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "clearbags",
+      "label": "ClearBags",
+      "hostname": "www.clearbags.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.clearbags.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "poly-bags",
+          "query": "poly bags",
+          "dimension": "count"
+        },
+        {
+          "id": "stand-up-pouches",
+          "query": "stand up pouches",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "specialty-bottle",
+      "label": "Specialty Bottle",
+      "hostname": "www.specialtybottle.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.specialtybottle.com/search?q={query}",
+      "queries": [
+        {
+          "id": "glass-bottles",
+          "query": "glass bottles",
+          "dimension": "count"
+        },
+        {
+          "id": "metal-tins",
+          "query": "metal tins",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "big-duck-canvas",
+      "label": "Big Duck Canvas",
+      "hostname": "www.bigduckcanvas.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://www.bigduckcanvas.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "canvas-fabric",
+          "query": "canvas fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "cotton-duck",
+          "query": "cotton duck",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "stonemountain-and-daughter",
+      "label": "Stonemountain & Daughter Fabrics",
+      "hostname": "stonemountainfabric.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://stonemountainfabric.com/search-results/?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "really-cheap-floors",
+      "label": "Really Cheap Floors",
+      "hostname": "www.reallycheapfloors.com",
+      "stratum": "discount-flooring-retail",
+      "searchUrlTemplate": "https://www.reallycheapfloors.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "laminate-flooring",
+          "query": "laminate flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "hardwoods-4-less",
+      "label": "Hardwoods4Less",
+      "hostname": "hardwoods4less.com",
+      "stratum": "online-hardwood-flooring",
+      "searchUrlTemplate": "https://hardwoods4less.com/search?q={query}",
+      "queries": [
+        {
+          "id": "oak-flooring",
+          "query": "oak flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "the-spice-house",
+      "label": "The Spice House",
+      "hostname": "www.thespicehouse.com",
+      "stratum": "spice-retail",
+      "searchUrlTemplate": "https://www.thespicehouse.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "ginger-powder",
+          "query": "ginger powder",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "mountain-rose-herbs",
+      "label": "Mountain Rose Herbs",
+      "hostname": "mountainroseherbs.com",
+      "stratum": "organic-botanical",
+      "searchUrlTemplate": "https://mountainroseherbs.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "ginger-powder",
+          "query": "ginger powder",
+          "dimension": "mass"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p08",
+  "candidateManifest": "benchmarks/live-sites/heldout-qualification-retry-p08.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "477c213f390224c21c11632b6123a4c7fa052e7e2b11b6e37fa933c7c89e9429",
+    "narrowBatchSha256": "b0b9ec33cd7679ea2f0458cf8cda04216e8af80b46097468a2b608ce8644e4f0",
+    "processIsolationFinding": "All thirteen headed capture children completed under isolated process-group bounds with zero parent hard timeouts. Really Cheap Floors reached the separate 60000 ms page deadline and produced no page artifact.",
+    "samplingFinding": "Ten disjoint, unassigned domains received a fresh desktop capture. Three desktop pages passed the numeric machine gate and advanced to distinct narrow queries. Original-resolution review rejected all three domain pairs; no old partial capture was reused.",
+    "manifestIntegrityFinding": "The discard wave uses the frozen retry manifest hash 0e8bf0a6f45af108fff2849b248d411c653b081117c9385b9a693e9447a671d1 and collector hash 6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c."
+  },
+  "runs": [],
+  "results": {
+    "essential-wholesale": {
+      "status": "rejected",
+      "reason": "The requested storefront redirected to a different registrable domain, so the frozen domain identity could not be preserved."
+    },
+    "my-perfect-color": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 404 with no requested-query evidence or reviewable product candidates."
+    },
+    "clearbags": {
+      "status": "rejected",
+      "reason": "Both count-oriented pages exposed twelve coherent roots and complete query evidence, but a recurring fixed discount ribbon covered bulk-price evidence inside selected product cards in both captures."
+    },
+    "specialty-bottle": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 404, exposed only half of the requested-query evidence, and produced no reviewable product candidates."
+    },
+    "big-duck-canvas": {
+      "status": "rejected",
+      "reason": "Both pages exposed twelve visually coherent fabric roots, but ounce values in product titles describe fabric areal weight rather than the quantity purchased; the cards do not expose a reliable purchase-length basis for unit-price supervision."
+    },
+    "stonemountain-and-daughter": {
+      "status": "rejected",
+      "reason": "The desktop route exposed only half of the requested-query evidence and no reviewable product candidates."
+    },
+    "really-cheap-floors": {
+      "status": "rejected",
+      "reason": "The desktop capture reached the frozen 60000 ms page deadline and produced no reviewable page artifact."
+    },
+    "hardwoods-4-less": {
+      "status": "rejected",
+      "reason": "The requested storefront redirected to Google with no requested-query evidence or reviewable product candidates."
+    },
+    "the-spice-house": {
+      "status": "rejected",
+      "reason": "The desktop search broadened into unrelated blends after three paprika products, and the distinct ginger-powder query exposed only five roots, below the frozen minimum of eight."
+    },
+    "mountain-rose-herbs": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 404 with no requested-query evidence, no reviewable products, and a visible obstruction covering 99% of the viewport."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [],
+    "assignedDomains": [],
+    "status": "discard"
+  }
+}

@@ -1375,6 +1375,19 @@ all 24 frozen roots loaded, zero console errors, and zero review writes. The
 eligible registry now contains 510 exact capture identities. Human semantic
 reviews and adjudication remain pending.
 
+A ninth bounded retry tested 10 more disjoint domains across all five dimensions.
+All 13 isolated headed Chromium children completed without a parent hard timeout;
+one page reached its separate 60-second capture deadline. Three desktop pages
+advanced to distinct narrow queries, but strict original-resolution review
+qualified none. ClearBags retained a fixed discount ribbon over bulk-price card
+evidence, Big Duck Canvas exposed fabric areal weight rather than purchased
+quantity, and The Spice House fell below eight roots while mixing unrelated
+products. Redirects, stale routes, missing candidates, and obstruction account
+for the remaining failures in
+[`heldout-retry-p08.json`](../benchmarks/domain-qualification/heldout-retry-p08.json).
+The zero-yield wave remains in the denominator, and held-out assignments,
+campaigns, and the 510-entry eligible registry are unchanged.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,
