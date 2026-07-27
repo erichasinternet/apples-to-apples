@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "description": "Twelfth bounded depth-expansion wave on twenty qualified training domains. Forty unseen listing queries contribute exactly eight targets per supported dimension without changing domain assignments or supplying site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "whole-spice",
+      "label": "Whole Spice",
+      "hostname": "www.wholespice.com",
+      "stratum": "direct-to-consumer-bulk-spice-retail",
+      "searchUrlTemplate": "https://www.wholespice.com/search?q={query}",
+      "queries": [
+        {
+          "id": "celery-seed",
+          "query": "celery seed",
+          "dimension": "mass"
+        },
+        {
+          "id": "cayenne-pepper",
+          "query": "cayenne pepper",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "blue-sky-vitamin",
+      "label": "Blue Sky Vitamin",
+      "hostname": "blueskyvitamin.com",
+      "stratum": "health-supplements",
+      "searchUrlTemplate": "https://blueskyvitamin.com/search?q={query}",
+      "queries": [
+        {
+          "id": "fiber-powder",
+          "query": "fiber powder",
+          "dimension": "mass"
+        },
+        {
+          "id": "ashwagandha",
+          "query": "ashwagandha",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "mexgrocer",
+      "label": "MexGrocer",
+      "hostname": "www.mexgrocer.com",
+      "stratum": "specialty-grocery-retail",
+      "searchUrlTemplate": "https://www.mexgrocer.com/search?q={query}",
+      "queries": [
+        {
+          "id": "black-beans",
+          "query": "black beans",
+          "dimension": "mass"
+        },
+        {
+          "id": "lentils",
+          "query": "lentils",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "food-service-direct",
+      "label": "FoodServiceDirect",
+      "hostname": "www.foodservicedirect.com",
+      "stratum": "specialty-food",
+      "searchUrlTemplate": "https://www.foodservicedirect.com/search-result?q={query}",
+      "queries": [
+        {
+          "id": "pasta",
+          "query": "pasta",
+          "dimension": "mass"
+        },
+        {
+          "id": "oats",
+          "query": "oats",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "ps-detail-products",
+      "label": "P&S Detail Products",
+      "hostname": "psdetailproducts.com",
+      "stratum": "professional-detailing-manufacturer",
+      "searchUrlTemplate": "https://psdetailproducts.com/search?q={query}",
+      "queries": [
+        {
+          "id": "leather-conditioner",
+          "query": "leather conditioner",
+          "dimension": "volume"
+        },
+        {
+          "id": "degreaser",
+          "query": "degreaser",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "obsessed-garage",
+      "label": "Obsessed Garage",
+      "hostname": "www.obsessedgarage.com",
+      "stratum": "premium-detailing-retail",
+      "searchUrlTemplate": "https://www.obsessedgarage.com/search?q={query}",
+      "queries": [
+        {
+          "id": "tire-cleaner",
+          "query": "tire cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "leather-cleaner",
+          "query": "leather cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "yeagers-detailing-supplies",
+      "label": "Yeager's Auto Detailing Supplies",
+      "hostname": "yeagersdetailingsupplies.com",
+      "stratum": "independent-detailing-supply-retail",
+      "searchUrlTemplate": "https://yeagersdetailingsupplies.com/search?q={query}",
+      "queries": [
+        {
+          "id": "car-wash-soap",
+          "query": "car wash soap",
+          "dimension": "volume"
+        },
+        {
+          "id": "degreaser",
+          "query": "degreaser",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "turtle-wax",
+      "label": "Turtle Wax",
+      "hostname": "www.turtlewax.com",
+      "stratum": "automotive-care-brand-retail",
+      "searchUrlTemplate": "https://www.turtlewax.com/search?q={query}",
+      "queries": [
+        {
+          "id": "trim-restorer",
+          "query": "trim restorer",
+          "dimension": "volume"
+        },
+        {
+          "id": "scratch-remover",
+          "query": "scratch remover",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "allegro-medical",
+      "label": "Allegro Medical",
+      "hostname": "www.allegromedical.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.allegromedical.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "cotton-balls",
+          "query": "cotton balls",
+          "dimension": "count"
+        },
+        {
+          "id": "face-masks",
+          "query": "face masks",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "vitality-medical",
+      "label": "Vitality Medical",
+      "hostname": "www.vitalitymedical.com",
+      "stratum": "medical-supply",
+      "searchUrlTemplate": "https://www.vitalitymedical.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "catheters",
+          "query": "catheters",
+          "dimension": "count"
+        },
+        {
+          "id": "wound-dressings",
+          "query": "wound dressings",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "betty-mills",
+      "label": "Betty Mills",
+      "hostname": "www.bettymills.com",
+      "stratum": "janitorial-supply",
+      "searchUrlTemplate": "https://www.bettymills.com/search?q={query}",
+      "queries": [
+        {
+          "id": "food-containers",
+          "query": "food containers",
+          "dimension": "count"
+        },
+        {
+          "id": "face-masks",
+          "query": "face masks",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "discount-school-supply",
+      "label": "Discount School Supply",
+      "hostname": "www.discountschoolsupply.com",
+      "stratum": "early-education-supply",
+      "searchUrlTemplate": "https://www.discountschoolsupply.com/search/?text={query}",
+      "queries": [
+        {
+          "id": "scissors",
+          "query": "scissors",
+          "dimension": "count"
+        },
+        {
+          "id": "erasers",
+          "query": "erasers",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "core-fabrics",
+      "label": "Core Fabrics",
+      "hostname": "corefabricstore.com",
+      "stratum": "sustainable-apparel-fabric-retail",
+      "searchUrlTemplate": "https://corefabricstore.com/search?q={query}",
+      "queries": [
+        {
+          "id": "corduroy-fabric",
+          "query": "corduroy fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "gabardine-fabric",
+          "query": "gabardine fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "fabricworm",
+      "label": "Fabricworm",
+      "hostname": "fabricworm.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://fabricworm.com/search?q={query}",
+      "queries": [
+        {
+          "id": "poplin-fabric",
+          "query": "poplin fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "voile-fabric",
+          "query": "voile fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "search-for-fabric",
+      "label": "Search For Fabric",
+      "hostname": "bytheyard.searchforfabric.com",
+      "stratum": "cross-brand-fabric-search",
+      "searchUrlTemplate": "https://bytheyard.searchforfabric.com/search?q={query}",
+      "queries": [
+        {
+          "id": "outdoor-fabric",
+          "query": "outdoor fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "curtain-fabric",
+          "query": "curtain fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "the-fabric-market",
+      "label": "The Fabric Market",
+      "hostname": "thefabricmarket.com",
+      "stratum": "fabric-retail",
+      "searchUrlTemplate": "https://thefabricmarket.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "satin-fabric",
+          "query": "satin fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "lace-fabric",
+          "query": "lace fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "artwalk-tile",
+      "label": "ArtWalk Tile",
+      "hostname": "www.artwalktile.com",
+      "stratum": "specialty-tile-retail",
+      "searchUrlTemplate": "https://www.artwalktile.com/search?q={query}",
+      "queries": [
+        {
+          "id": "terrazzo-tile",
+          "query": "terrazzo tile",
+          "dimension": "area"
+        },
+        {
+          "id": "quarry-tile",
+          "query": "quarry tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "tiles-direct",
+      "label": "Tiles Direct",
+      "hostname": "www.tilesdirect.net",
+      "stratum": "discount-tile-retail",
+      "searchUrlTemplate": "https://www.tilesdirect.net/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "cement-tile",
+          "query": "cement tile",
+          "dimension": "area"
+        },
+        {
+          "id": "wood-look-tile",
+          "query": "wood look tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "tilezz",
+      "label": "Tilezz",
+      "hostname": "tilezz.com",
+      "stratum": "specialty-tile-retail",
+      "searchUrlTemplate": "https://tilezz.com/search?q={query}",
+      "queries": [
+        {
+          "id": "basketweave-tile",
+          "query": "basketweave tile",
+          "dimension": "area"
+        },
+        {
+          "id": "arabesque-tile",
+          "query": "arabesque tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "tile-and-mosaic-depot",
+      "label": "Tile & Mosaic Depot",
+      "hostname": "tileandmosaicdepot.com",
+      "stratum": "specialty-tile-retail",
+      "searchUrlTemplate": "https://tileandmosaicdepot.com/search?q={query}",
+      "queries": [
+        {
+          "id": "granite-tile",
+          "query": "granite tile",
+          "dimension": "area"
+        },
+        {
+          "id": "metal-tile",
+          "query": "metal tile",
+          "dimension": "area"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "pilotId": "g2-training-depth-wave-12-p00",
+  "capturedAt": "2026-07-27T01:15:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/training-depth-wave-12.json",
+  "requestedCaptureAttempts": 40,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T00-43-14-719Z",
+      "pageIds": [
+        "betty-mills--food-containers",
+        "blue-sky-vitamin--fiber-powder",
+        "fabricworm--poplin-fabric",
+        "ps-detail-products--leather-conditioner",
+        "search-for-fabric--outdoor-fabric",
+        "the-fabric-market--satin-fabric",
+        "tiles-direct--cement-tile",
+        "tilezz--basketweave-tile",
+        "yeagers-detailing-supplies--car-wash-soap"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T00-56-28-334Z",
+      "pageIds": [
+        "allegro-medical--face-masks",
+        "artwalk-tile--quarry-tile",
+        "betty-mills--face-masks",
+        "search-for-fabric--curtain-fabric",
+        "the-fabric-market--lace-fabric",
+        "tilezz--arabesque-tile",
+        "turtle-wax--scratch-remover",
+        "vitality-medical--wound-dressings",
+        "whole-spice--cayenne-pepper",
+        "yeagers-detailing-supplies--degreaser"
+      ]
+    }
+  ],
+  "samplingFinding": "Twenty-eight of forty unseen query pages on twenty previously qualified training domains produced capture bundles. Twelve attempts ended in bounded navigation or capture timeouts. Frozen minimum-root, screenshot-evidence, obstruction, relevance, and original-resolution visual checks rejected nine successful captures. The accepted set is nineteen of forty pages and 221 frozen roots, a 47.5% strict yield.",
+  "visualValidationFinding": "All twenty-seven available full-page annotation views were inspected at original resolution; one additional successful bundle was rejected because its annotation evidence was unavailable. Nineteen pages and 221 frozen roots were accepted across mass, volume, count, length, and area. Accepted evidence includes per-pound, per-ounce, fluid-ounce, gallon, package-count, per-yard, per-square-foot, per-sheet, per-box, sale-price, price-range, query-adjacent product, and deliberate abstention expressions. Allegro Medical cotton balls and MexGrocer lentils were rejected for producing fewer than eight roots. Core Fabrics corduroy was rejected because annotation evidence and candidate closeups were unavailable. Tile and Mosaic Depot granite tile and Tiles Direct wood-look tile were rejected because candidate closeups were unavailable. Turtle Wax trim restorer, Whole Spice celery seed, and Core Fabrics gabardine were rejected because most selected results were unrelated to the requested product class. Tile and Mosaic Depot metal tile was rejected because a fixed accessibility control covered selected price evidence. Other fixed controls on accepted pages do not cover selected textual title, price, quantity, or native unit-price evidence."
+}
