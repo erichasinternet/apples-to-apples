@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p08",
+  "capturedAt": "2026-07-27T06:58:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p17.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T06-54-55-139Z",
+      "pageIds": [
+        "cougar-chemical--wheel-cleaner"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T06-57-07-535Z",
+      "pageIds": [
+        "cougar-chemical--car-wash-soap"
+      ]
+    }
+  ],
+  "samplingFinding": "Cougar Chemical passed two fresh opposite-viewport p17 captures and was assigned to selection under the frozen gate.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots and representative candidate closeups were inspected. The twenty-four frozen roots show coherent wheel-cleaner and car-wash-soap cards with readable product identity, current or starting price, varied liquid packaging, and legitimate abstention cases."
+}

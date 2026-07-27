@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "description": "Sixteenth bounded held-out qualification retry across ten never-retried domains, balanced with two candidates per unit dimension. Routes and queries are inherited from prior acquisition manifests; generic semantic search recovery, obstruction handling, and atomic candidate extraction remain site-agnostic.",
+  "sites": [
+    {
+      "id": "ap-medical-supply",
+      "label": "AP Medical Supply",
+      "hostname": "apmedsupply.com",
+      "stratum": "home-medical-equipment",
+      "searchUrlTemplate": "https://apmedsupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "underpads",
+          "query": "underpads",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "nfc-bags",
+      "label": "NFC Bags",
+      "hostname": "nfcbags.com",
+      "stratum": "flexible-packaging-manufacturer",
+      "searchUrlTemplate": "https://nfcbags.com/search?q={query}",
+      "queries": [
+        {
+          "id": "poly-bags",
+          "query": "poly bags",
+          "dimension": "count"
+        },
+        {
+          "id": "stand-up-pouches",
+          "query": "stand up pouches",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "parish-supply",
+      "label": "Parish Supply",
+      "hostname": "parish-supply.com",
+      "stratum": "janitorial-specialty",
+      "searchUrlTemplate": "https://parish-supply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "floor-cleaner",
+          "query": "floor cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "degreaser",
+          "query": "degreaser",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "source-supply-company",
+      "label": "Source Supply Company",
+      "hostname": "sourcesupplycompany.com",
+      "stratum": "janitorial-wholesale",
+      "searchUrlTemplate": "https://sourcesupplycompany.com/search?q={query}",
+      "queries": [
+        {
+          "id": "floor-cleaner",
+          "query": "floor cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "hand-soap",
+          "query": "hand soap",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "sewing-supply-depot",
+      "label": "Sewing Supply Depot",
+      "hostname": "sewingsupplydepot.com",
+      "stratum": "sewing-fabric-and-notions-retail",
+      "searchUrlTemplate": "https://sewingsupplydepot.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "flannel-fabric",
+          "query": "flannel fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "bh-linen",
+      "label": "BH Linen",
+      "hostname": "www.bhlinen.com",
+      "stratum": "wholesale-linen-fabric-supplier",
+      "searchUrlTemplate": "https://www.bhlinen.com/search?q={query}",
+      "queries": [
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-blend",
+          "query": "linen blend",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "red-stick-spice",
+      "label": "Red Stick Spice Company",
+      "hostname": "www.redstickspice.com",
+      "stratum": "regional-specialty-spice-retail",
+      "searchUrlTemplate": "https://www.redstickspice.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "garlic-powder",
+          "query": "garlic powder",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "the-spice-way",
+      "label": "The Spice Way",
+      "hostname": "thespiceway.com",
+      "stratum": "direct-to-consumer-spices",
+      "searchUrlTemplate": "https://thespiceway.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "garlic-powder",
+          "query": "garlic powder",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "hardwood-bargains",
+      "label": "Hardwood Bargains",
+      "hostname": "www.hardwoodbargains.com",
+      "stratum": "discount-hardwood-flooring-retail",
+      "searchUrlTemplate": "https://www.hardwoodbargains.com/search?q={query}",
+      "queries": [
+        {
+          "id": "oak-flooring",
+          "query": "oak flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "get-floors-online",
+      "label": "Get Floors Online",
+      "hostname": "www.getfloorsonline.com",
+      "stratum": "online-flooring",
+      "searchUrlTemplate": "https://www.getfloorsonline.com/search?q={query}",
+      "queries": [
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "laminate-flooring",
+          "query": "laminate flooring",
+          "dimension": "area"
+        }
+      ]
+    }
+  ]
+}

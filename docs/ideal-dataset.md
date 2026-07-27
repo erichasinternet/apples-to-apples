@@ -1516,6 +1516,45 @@ All 10 candidate domains remain in the qualification-yield denominator. The
 eligible registry now contains 526 exact capture identities; human semantic
 reviews and adjudication remain pending.
 
+A sixteenth bounded retry screened 10 more never-retried domains with two
+candidates per unit dimension. Four desktop pages advanced to independent
+narrow queries, but none passed the complete opposite-viewport gate. AP Medical
+Supply exposed only one narrow underpad root, NFC Bags returned HTTP 404, Source
+Supply retained no narrow query evidence, and original-resolution review found
+only five relevant degreasers among Parish Supply's 12 narrow roots. The six
+desktop rejections and all four follow-up failures remain in
+[`heldout-retry-p15.json`](../benchmarks/domain-qualification/heldout-retry-p15.json).
+No domain, campaign, or eligible capture was added.
+
+A seventeenth bounded retry screened another balanced set of 10 disjoint
+domains. Wilburn Medical and G&B Janitorial passed desktop machine and visual
+review, while Full Source was rejected after its nine machine-selected roots
+proved to be unrelated homepage popular products. Wilburn's independent narrow
+query reached the fixed page deadline and G&B exposed only four narrow roots.
+All 10 outcomes remain in
+[`heldout-retry-p16.json`](../benchmarks/domain-qualification/heldout-retry-p16.json);
+no domain qualified and the held-out registries remained unchanged.
+
+An eighteenth bounded retry screened 10 additional never-retried domains across
+10 strata and all five dimensions. Four desktop pages passed the numeric gate.
+Original-resolution review rejected PoolSupplies because only six of nine roots
+were algaecides, and All Bird Toy Builders' independent narrow query exposed
+only three roots. Cougar Chemical and North Bay Trading qualified with distinct
+desktop and narrow queries, 12 independent roots per page, complete query
+evidence, no truncation, and obstruction below the frozen 20% limit. North Bay
+adds two mass pages to validation; Cougar adds two volume pages to selection.
+Qualified held-out structure is now 12 validation domains with 24 pages and 13
+selection domains with 26 pages, both at 50% narrow-viewport coverage. The
+blinded
+[`g2-validation-p10.json`](../benchmarks/review-campaigns/g2-validation-p10.json)
+and
+[`g2-selection-p08.json`](../benchmarks/review-campaigns/g2-selection-p08.json)
+campaigns and their paired reviewer batches passed headed Playwright Chromium
+with all 48 frozen roots loaded, zero console errors, and zero review writes.
+The independence audit locates all 530 eligible captures and verifies 5,981
+active roots with no overlap. Human semantic reviews and adjudication remain
+pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

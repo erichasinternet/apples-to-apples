@@ -618,6 +618,18 @@
       "cohort": "selection",
       "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p14.json",
       "promotedAt": "2026-07-27T06:24:00.000Z"
+    },
+    {
+      "siteId": "north-bay-trading",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p17.json",
+      "promotedAt": "2026-07-27T06:58:00.000Z"
+    },
+    {
+      "siteId": "cougar-chemical",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p17.json",
+      "promotedAt": "2026-07-27T06:58:00.000Z"
     }
   ]
 }

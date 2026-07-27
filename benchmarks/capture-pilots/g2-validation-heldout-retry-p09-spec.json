@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p09",
+  "capturedAt": "2026-07-27T06:58:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p17.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T06-55-32-041Z",
+      "pageIds": [
+        "north-bay-trading--dried-fruit"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T06-57-21-191Z",
+      "pageIds": [
+        "north-bay-trading--dried-vegetables"
+      ]
+    }
+  ],
+  "samplingFinding": "North Bay Trading passed two fresh opposite-viewport p17 captures and was assigned to validation under the frozen gate.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots and representative candidate closeups were inspected. The twenty-four frozen roots show coherent dried-fruit and dried-vegetable cards with readable product identity, current or starting price, and varied mass options for extraction and abstention."
+}

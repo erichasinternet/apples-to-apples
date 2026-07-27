@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "description": "Eighteenth bounded held-out qualification retry across ten never-retried domains, balanced with two candidates per unit dimension. The wave favors semantically explicit product classes and preserves disjoint strata plus independent opposite-viewport queries.",
+  "sites": [
+    {
+      "id": "online-packaging-store",
+      "label": "Online Packaging Store",
+      "hostname": "onlinepackagingstore.com",
+      "stratum": "custom-packaging",
+      "searchUrlTemplate": "https://onlinepackagingstore.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "mailer-boxes",
+          "query": "mailer boxes",
+          "dimension": "count"
+        },
+        {
+          "id": "paper-bags",
+          "query": "paper bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "the-packaging-supply",
+      "label": "The Packaging Supply",
+      "hostname": "www.thepackagingsupply.com",
+      "stratum": "shipping-supply",
+      "searchUrlTemplate": "https://www.thepackagingsupply.com/search?q={query}",
+      "queries": [
+        {
+          "id": "poly-bags",
+          "query": "poly bags",
+          "dimension": "count"
+        },
+        {
+          "id": "shipping-boxes",
+          "query": "shipping boxes",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "pool-supplies",
+      "label": "PoolSupplies.com",
+      "hostname": "www.poolsupplies.com",
+      "stratum": "pool-retail",
+      "searchUrlTemplate": "https://www.poolsupplies.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-clarifier",
+          "query": "pool clarifier",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "cougar-chemical",
+      "label": "Cougar Chemical",
+      "hostname": "cougarchemical.com",
+      "stratum": "industrial-detailing-chemical-supply",
+      "searchUrlTemplate": "https://cougarchemical.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "car-wash-soap",
+          "query": "car wash soap",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "fabric-guru",
+      "label": "The Fabric Guru",
+      "hostname": "www.fabricguru.com",
+      "stratum": "decorator-fabric-marketplace",
+      "searchUrlTemplate": "https://www.fabricguru.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "all-bird-toy-builders",
+      "label": "All Bird Toy Builders",
+      "hostname": "allbirdtoybuilders.com",
+      "stratum": "bird-craft-supply",
+      "searchUrlTemplate": "https://allbirdtoybuilders.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "rope",
+          "query": "rope",
+          "dimension": "length"
+        },
+        {
+          "id": "cordage",
+          "query": "cordage",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "north-bay-trading",
+      "label": "North Bay Trading Co.",
+      "hostname": "www.northbaytrading.com",
+      "stratum": "dehydrated-food-specialty",
+      "searchUrlTemplate": "https://www.northbaytrading.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "dried-fruit",
+          "query": "dried fruit",
+          "dimension": "mass"
+        },
+        {
+          "id": "dried-vegetables",
+          "query": "dried vegetables",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "the-spice-lab",
+      "label": "The Spice Lab",
+      "hostname": "spices.com",
+      "stratum": "direct-to-consumer-spice-brand",
+      "searchUrlTemplate": "https://spices.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "garlic-powder",
+          "query": "garlic powder",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "budget-friendly-floors",
+      "label": "Budget Friendly Floors",
+      "hostname": "budgetfriendlyfloors.com",
+      "stratum": "discount-flooring-ecommerce",
+      "searchUrlTemplate": "https://budgetfriendlyfloors.com/search?q={query}",
+      "queries": [
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "laminate-flooring",
+          "query": "laminate flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "woodwudy",
+      "label": "Woodwudy Wholesale Flooring",
+      "hostname": "woodwudy.com",
+      "stratum": "hardwood-flooring-outlet",
+      "searchUrlTemplate": "https://woodwudy.com/search?q={query}",
+      "queries": [
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "hardwood-flooring",
+          "query": "hardwood flooring",
+          "dimension": "area"
+        }
+      ]
+    }
+  ]
+}

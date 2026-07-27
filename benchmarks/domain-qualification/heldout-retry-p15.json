@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p15",
+  "candidateManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p15.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "6633e7a27956e3fac965446e3606536a12906c6a15672bb2ac4e19004020d619",
+    "narrowBatchSha256": "5d0390be5f1e2067a2d892e2388b48d16ec5a0f10c3e0115c2a8644ecc73c29f",
+    "processIsolationFinding": "All fourteen headed qualification children completed under isolated process-group bounds with zero parent hard timeouts.",
+    "samplingFinding": "Ten disjoint, never-retried domains balanced across all five dimensions received a desktop screen. Four domains passed desktop machine and visual review and received independent narrow-query follow-up. No domain passed the complete opposite-viewport gate: three narrow routes failed machine evidence requirements, while Parish Supply passed machine checks but original-resolution review found only five of twelve roots relevant to the requested query. All ten domains remain in the yield denominator.",
+    "manifestIntegrityFinding": "All fourteen captures use frozen retry manifest hash 74df55f92bbe061806b6b191ad25ec985c5274a1fc082813b70b1862cf300868 and collector hash cdc056b57f525ae389e514a3beea6bcd02c5c1512ccb691d2f73e81bc748f8ab."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T06-36-16-609Z",
+      "runManifestSha256": "d9a1330b7542b0ab45dede83a9ce46f6ad8c1084f785723f1a0e824b76643f22",
+      "purpose": "AP Medical Supply desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-36-25-301Z",
+      "runManifestSha256": "c63141f54062010d006dde9b3ed0955f504273c8032270540868a5c67bb99ec0",
+      "purpose": "NFC Bags desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-36-45-234Z",
+      "runManifestSha256": "585ae07319ad004cc39cc1d219a32314369c6cbe986fe1a8e6e0cda03e01e9a8",
+      "purpose": "Parish Supply desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-37-15-158Z",
+      "runManifestSha256": "79ddc4bd934259227c6db77d8c59c30a5921418f33fc074da923ed01d42073fc",
+      "purpose": "Source Supply Company desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-37-36-758Z",
+      "runManifestSha256": "3b7a6aeb96787db05fc58bc6fcc23a92b162808fb114c7776ae0a2a0f09a9315",
+      "purpose": "Sewing Supply Depot desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-37-44-939Z",
+      "runManifestSha256": "922a60c68dd40cf36711cf8cd379e0310d2b74543c50a9c319933d99ab13ad59",
+      "purpose": "BH Linen desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-37-53-723Z",
+      "runManifestSha256": "febfa815ca7761d4ddae1951cc81f4a2f48051d476c63a69a82e8f50dec51a0e",
+      "purpose": "Red Stick Spice Company desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-38-04-694Z",
+      "runManifestSha256": "d1d3cff2e9fbcc3533df504a90a8f2c3b1b283139cbe054caf460f0237c5939e",
+      "purpose": "The Spice Way desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-38-26-083Z",
+      "runManifestSha256": "d2cac833d11485ebb0bb4f1bb27d4f7f846f98c9807271877c3cd56808633f50",
+      "purpose": "Hardwood Bargains desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-38-47-030Z",
+      "runManifestSha256": "735724006cb402102f7f61e4af025457f6b2914cfaaf46f57837ec38b065c654",
+      "purpose": "Get Floors Online desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-40-30-518Z",
+      "runManifestSha256": "9b3383ef96d5f5e9034decb6642f616cf926acf56566e6b978875abadc9b85ee",
+      "purpose": "AP Medical Supply narrow follow-up"
+    },
+    {
+      "runId": "2026-07-27T06-40-38-177Z",
+      "runManifestSha256": "1ecbc36cd8aab9ea1afb0ebb9b4b2aa7aa9fe8df2b8910fc36eba846065709ff",
+      "purpose": "NFC Bags narrow follow-up"
+    },
+    {
+      "runId": "2026-07-27T06-40-54-625Z",
+      "runManifestSha256": "c016d2bb1b451d401c5dd96addeaa693713331aec3541815d355d2a0f664a3fd",
+      "purpose": "Parish Supply narrow follow-up"
+    },
+    {
+      "runId": "2026-07-27T06-41-22-774Z",
+      "runManifestSha256": "249b8078e864706d0e865906865b13416bb684e13a61e06a76917c3b67339a9d",
+      "purpose": "Source Supply Company narrow follow-up"
+    }
+  ],
+  "results": {
+    "ap-medical-supply": {
+      "status": "rejected",
+      "reason": "The desktop exam-glove route passed machine and visual review with twelve coherent roots, but the independent narrow underpads route exposed only one product root, below the frozen minimum of eight."
+    },
+    "nfc-bags": {
+      "status": "rejected",
+      "reason": "The desktop poly-bags route passed machine and visual review with twelve coherent roots, but the independent narrow stand-up-pouches route returned HTTP 404 with no requested-query evidence or reviewable product roots."
+    },
+    "parish-supply": {
+      "status": "rejected",
+      "reason": "The desktop floor-cleaner route passed machine and visual review with twelve coherent roots. The independent narrow degreaser route also passed machine checks with twelve roots, complete query evidence, no truncation, and 0.6% obstruction, but original-resolution review found only five query-relevant degreasers; the remaining roots were unrelated cleaners, sprayers, pumps, and mop pads."
+    },
+    "source-supply-company": {
+      "status": "rejected",
+      "reason": "The desktop floor-cleaner route passed machine and visual review with ten coherent roots, but the independent narrow hand-soap route retained none of the requested-query evidence and produced no reviewable product roots."
+    },
+    "sewing-supply-depot": {
+      "status": "rejected",
+      "reason": "The desktop cotton-fabric route retained complete query evidence but produced no reviewable product roots."
+    },
+    "bh-linen": {
+      "status": "rejected",
+      "reason": "The desktop linen-fabric route exposed only one product root, below the frozen minimum of eight."
+    },
+    "red-stick-spice": {
+      "status": "rejected",
+      "reason": "The desktop paprika route exposed twelve roots, but original-resolution review found only four query-relevant paprika products; unrelated pepper products reduced coherent query evidence below the frozen minimum of eight."
+    },
+    "the-spice-way": {
+      "status": "rejected",
+      "reason": "The desktop paprika route exposed only seven product roots, below the frozen minimum of eight."
+    },
+    "hardwood-bargains": {
+      "status": "rejected",
+      "reason": "The desktop oak-flooring route was blocked because an unresolved visible obstruction covered the full viewport."
+    },
+    "get-floors-online": {
+      "status": "rejected",
+      "reason": "The desktop vinyl-flooring route retained only half of the requested-query evidence, below the frozen complete-evidence requirement."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [],
+    "assignedDomains": [],
+    "status": "reject"
+  }
+}

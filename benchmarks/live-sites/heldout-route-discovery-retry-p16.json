@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "description": "Seventeenth bounded held-out qualification retry across ten never-retried domains, balanced with two candidates per unit dimension. Candidates favor recoverable route, shallow-root, and bounded-time failures while preserving disjoint strata and independent opposite-viewport queries.",
+  "sites": [
+    {
+      "id": "full-source",
+      "label": "Full Source",
+      "hostname": "www.fullsource.com",
+      "stratum": "workplace-safety-supply",
+      "searchUrlTemplate": "https://www.fullsource.com/search/?q={query}",
+      "queries": [
+        {
+          "id": "work-gloves",
+          "query": "work gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "safety-glasses",
+          "query": "safety glasses",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "wilburn-medical",
+      "label": "Wilburn Medical",
+      "hostname": "wilburnmedicalusa.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://wilburnmedicalusa.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "test-strips",
+          "query": "test strips",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "peoples-supplies",
+      "label": "People's Supplies",
+      "hostname": "peoplessupplies.com",
+      "stratum": "facility-supply",
+      "searchUrlTemplate": "https://peoplessupplies.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "floor-cleaner",
+          "query": "floor cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "floor-finish",
+          "query": "floor finish",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "gnb-janitorial",
+      "label": "G&B Janitorial Supply",
+      "hostname": "gnbinc.com",
+      "stratum": "local-janitorial",
+      "searchUrlTemplate": "https://gnbinc.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "floor-cleaner",
+          "query": "floor cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "hand-soap",
+          "query": "hand soap",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "big-z-fabric",
+      "label": "Big Z Fabric",
+      "hostname": "bigzfabric.com",
+      "stratum": "specialty-fabric-warehouse",
+      "searchUrlTemplate": "https://bigzfabric.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "spandex-world",
+      "label": "Spandex World",
+      "hostname": "spandexworld.com",
+      "stratum": "performance-fabric-specialist",
+      "searchUrlTemplate": "https://spandexworld.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "spandex-fabric",
+          "query": "spandex fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "raw-spice-bar",
+      "label": "RawSpiceBar",
+      "hostname": "rawspicebar.com",
+      "stratum": "direct-to-consumer-spice-retail",
+      "searchUrlTemplate": "https://rawspicebar.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "cinnamon",
+          "query": "cinnamon",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "spicely",
+      "label": "Spicely Organics",
+      "hostname": "www.spicely.com",
+      "stratum": "organic-spice-retail",
+      "searchUrlTemplate": "https://www.spicely.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "chili-powder",
+          "query": "chili powder",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "floor-bros",
+      "label": "Floor Bros",
+      "hostname": "www.floorbros.com",
+      "stratum": "commercial-flooring-catalog",
+      "searchUrlTemplate": "https://www.floorbros.com/{querySlug}",
+      "queries": [
+        {
+          "id": "rubber-flooring",
+          "query": "rubber flooring",
+          "querySlug": "rubber/flexco/",
+          "dimension": "area"
+        },
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "querySlug": "vinyl/artisan-mills-flooring/",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "hurst-hardwoods",
+      "label": "Hurst Hardwoods",
+      "hostname": "www.hursthardwoods.com",
+      "stratum": "hardwood-flooring-retail",
+      "searchUrlTemplate": "https://www.hursthardwoods.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "hardwood-flooring",
+          "query": "hardwood flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "unfinished-flooring",
+          "query": "unfinished flooring",
+          "dimension": "area"
+        }
+      ]
+    }
+  ]
+}

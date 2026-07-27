@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p09",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T06:58:00.000Z",
+  "source": {
+    "siteIds": [
+      "north-bay-trading"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "dehydrated-food-specialty"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "49d03cb47047961f81021d48b98a87f1ed4b3f2ef4ed8f4750f45dd33e6962e0"
+    ],
+    "collectorSha256": [
+      "cdc056b57f525ae389e514a3beea6bcd02c5c1512ccb691d2f73e81bc748f8ab"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T06-55-32-041Z",
+      "runManifestSha256": "8549954cf545e4825fa5000d71b36e40dce540fd1152e63b4a6b15a76780b578",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T06-57-21-191Z",
+      "runManifestSha256": "8aa01be9a19289076700ac9397918651146a66ea5cd96d5de3826207c12cff4e",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "North Bay Trading passed two fresh opposite-viewport p17 captures and was assigned to validation under the frozen gate.",
+    "visualValidationFinding": "Both original-resolution annotation screenshots and representative candidate closeups were inspected. The twenty-four frozen roots show coherent dried-fruit and dried-vegetable cards with readable product identity, current or starting price, and varied mass options for extraction and abstention."
+  },
+  "captures": [
+    {
+      "siteId": "north-bay-trading",
+      "pageId": "north-bay-trading--dried-fruit",
+      "capturedAt": "2026-07-27T06:55:44.945Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 942,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0011111111111111111,
+      "queryTokenCoverage": 1,
+      "observationSha256": "f5229d7338377043119e244b6490e9cb66acb6ee1f497fdbdff5f1ddc010ba09",
+      "canonicalObservationSha256": "21cfc54c58d4f9ed7a82252d507d6fc4b76576d96c4c3b751f1833e252aced7a",
+      "annotationScreenshotSha256": "1f4bca6c4669b07d51de57a2b258eeb149ae48efd6d9ab6d2750714b01072a59",
+      "provenanceAggregateSha256": "828bde74df2def8ce03afae80603a97a3b6bb41e84f9365eacd350e10bf0db5a",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "north-bay-trading",
+      "pageId": "north-bay-trading--dried-vegetables",
+      "capturedAt": "2026-07-27T06:57:34.175Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1739,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.004860857941426662,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ab5fa5ab17ae30eb5244a763b9a4ed58627ed4495cc9d5e10d726d171e7dba32",
+      "canonicalObservationSha256": "062d7cc1e95f0081a2446510a98977be9cfcfc3ab85b43960af18e6af3651413",
+      "annotationScreenshotSha256": "ce18edef6195ddefcfdda881fed4681949081973fd91f07b553def5ad77cf148",
+      "provenanceAggregateSha256": "759be13de2e24661af0b12e74230ae691e618afa88f1aa34ef6fa0022d1324b3",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

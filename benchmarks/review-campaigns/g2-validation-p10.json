@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p10",
+  "createdAt": "2026-07-27T06:59:00.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "north-bay-trading",
+      "pageId": "north-bay-trading--dried-fruit",
+      "captureTimestamp": "2026-07-27T06:55:44.945Z",
+      "candidateCardCount": 12,
+      "observationSha256": "f5229d7338377043119e244b6490e9cb66acb6ee1f497fdbdff5f1ddc010ba09",
+      "annotationScreenshotSha256": "1f4bca6c4669b07d51de57a2b258eeb149ae48efd6d9ab6d2750714b01072a59"
+    },
+    {
+      "siteId": "north-bay-trading",
+      "pageId": "north-bay-trading--dried-vegetables",
+      "captureTimestamp": "2026-07-27T06:57:34.175Z",
+      "candidateCardCount": 12,
+      "observationSha256": "ab5fa5ab17ae30eb5244a763b9a4ed58627ed4495cc9d5e10d726d171e7dba32",
+      "annotationScreenshotSha256": "ce18edef6195ddefcfdda881fed4681949081973fd91f07b553def5ad77cf148"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--8be56bb6b046c9bc",
+      "campaignQueueSha256": "d794cbf912d69601e5d290b4f58f537ccc717c97ec9ac647dd94745c9e2cfce3",
+      "sourceQueueSha256": [
+        "6935570ee340c91c42c726ce656bbbd43e2bc00cd639d9649398dbff2135e567",
+        "a7765fa05df6bdb88177277ce3acb4ce68b739ed0f964c81c0b414d9cede9837"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--b5c182f260f03dc3",
+      "campaignQueueSha256": "4b6c7b42b062dbdce5329b6178082801a56cb0bf8a842e04034ee2ea0b0bbdcc",
+      "sourceQueueSha256": [
+        "ea8c8ba0bc08075c7b8ee89fcf13eefe3ec8b76a61098063848138ae76cac36e",
+        "d208093fd3fe6b334f3b664f3c18c207918139d40da854f40ba265bfa6ca7a97"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--8be56bb6b046c9bc",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

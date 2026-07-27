@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p08",
+  "createdAt": "2026-07-27T07:03:07.013Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--038cf922e685c859",
+      "path": "benchmark-data/review/g2-selection-p08/reviewer-a.json",
+      "sha256": "c8438ce1168194f62d78f65b24ec71954f4357b772bb37f9176d3870cfc18907",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--3d35715d38c8051e",
+      "path": "benchmark-data/review/g2-selection-p08/reviewer-b.json",
+      "sha256": "fb17eebec9cd4d641f2789f5c1e65dbb47927e568fecc9df29566ba8f3fe8557",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p08--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "cougar-chemical--car-wash-soap",
+        "cougar-chemical--wheel-cleaner"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--2f19b7c4f4f0bcc0",
+          "path": "benchmark-data/review/g2-selection-p08-review-batches/reviewer-a--batch-01.json",
+          "sha256": "06ac7a2c553a62c4d1254c63c7bbf3c34fafbd1f5cfabbd8b5a45db8347a3d2f"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--969b6253da0887dc",
+          "path": "benchmark-data/review/g2-selection-p08-review-batches/reviewer-b--batch-01.json",
+          "sha256": "f7661e2ea2e689ffb89e877e12fd8487f148ba82944a6507dbd18b29de493575"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p16",
+  "candidateManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p16.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "232a742aedb4bd531b961bb3949f9c096f2f38cddc594b38c2565c1c98ac6311",
+    "narrowBatchSha256": "5cfa025cfac33902941e9ec853c261ce11181dc7ed5a65b63a02d5d00a874cfa",
+    "processIsolationFinding": "All twelve headed qualification children completed under isolated process-group bounds with zero parent hard timeouts.",
+    "samplingFinding": "Ten disjoint, never-retried domains balanced across all five dimensions received a desktop screen. Wilburn Medical and G&B Janitorial passed desktop machine and visual review and received independent narrow-query follow-up. Full Source passed desktop machine checks but original-resolution review showed that seven of nine roots came from unrelated homepage popular products. Neither follow-up met the frozen gate: Wilburn Medical exceeded the page bound and G&B Janitorial exposed four roots. All ten domains remain in the yield denominator.",
+    "manifestIntegrityFinding": "All completed captures use frozen retry manifest hash 9f471c7dad06c0911a13f29b2d57fee7579305b6dcf754992b7ec947d1c5dcc9 and collector hash cdc056b57f525ae389e514a3beea6bcd02c5c1512ccb691d2f73e81bc748f8ab."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T06-46-56-659Z",
+      "runManifestSha256": "1fabe6bc4c4d4cf1cf212af52c04ddd04f72dd70b6516f43b025d7da9a47204d",
+      "purpose": "Full Source desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-47-09-725Z",
+      "runManifestSha256": "98d0ca470db701af0d4200ca3e7764e38d9cd18e909d7e060178bf34d8a855e5",
+      "purpose": "Wilburn Medical desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-47-46-833Z",
+      "runManifestSha256": "e8fd23059a212fdae6981405de7e020de538ebebacc16ff1ebc94888019dc7d9",
+      "purpose": "People's Supplies desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-47-57-513Z",
+      "runManifestSha256": "3b2ee2aa56fa381ae28068505844a96eb839ae02eb76d56239c21340daa38b9b",
+      "purpose": "G&B Janitorial desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-48-06-053Z",
+      "runManifestSha256": "344be92c1bc3cbaa643f6116aaaa3b4d8f12f59a2d28697837dea76f6aefdfa8",
+      "purpose": "Big Z Fabric desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-48-38-236Z",
+      "runManifestSha256": "b3c51f3f6b8127c3b0a5da7dc0073241b93165d8c4a6df653afcc6330cdc8bd3",
+      "purpose": "Spandex World desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-48-53-743Z",
+      "runManifestSha256": "7c9c4328e2c26b28bd4b119daf7399317180548540c01ff630d756a650b5b746",
+      "purpose": "RawSpiceBar desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-49-03-218Z",
+      "runManifestSha256": "5f282ea28feed8a54e68f431b65b55756e11ababe06182eba943ced0e92e3b5e",
+      "purpose": "Spicely Organics desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-49-12-048Z",
+      "runManifestSha256": "4fde5489d9e0be652a975fbf8e347a7637a23a9bf69e7a6303c09b304216ea43",
+      "purpose": "Floor Bros desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-49-22-942Z",
+      "runManifestSha256": "1b9a408dbd318126869cf707832afe827d3cbfdded1c2de1adbfb76d9e5dde48",
+      "purpose": "Hurst Hardwoods desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-50-39-943Z",
+      "runManifestSha256": "9c9b4d99899a42e2291c870c9a194d5cc4e42ffc648cc81b03833f740f267a88",
+      "purpose": "Wilburn Medical narrow follow-up"
+    },
+    {
+      "runId": "2026-07-27T06-51-40-520Z",
+      "runManifestSha256": "8d27def43baa1dc2679985c960fe049e1ff768c60caf866dc4666f2ca75e4976",
+      "purpose": "G&B Janitorial narrow follow-up"
+    }
+  ],
+  "results": {
+    "full-source": {
+      "status": "rejected",
+      "reason": "The desktop work-gloves route passed machine checks with nine roots, but original-resolution review showed that the roots came from homepage popular products and only two were gloves."
+    },
+    "wilburn-medical": {
+      "status": "rejected",
+      "reason": "The desktop exam-gloves route passed machine and visual review with twelve coherent roots, but the independent narrow test-strips route exceeded the frozen 60-second page bound."
+    },
+    "peoples-supplies": {
+      "status": "rejected",
+      "reason": "The desktop floor-cleaner route returned HTTP 500 with no requested-query evidence or reviewable product roots."
+    },
+    "gnb-janitorial": {
+      "status": "rejected",
+      "reason": "The desktop floor-cleaner route passed machine and visual review with twelve real product roots spanning floor chemicals and equipment, but the independent narrow hand-soap route exposed only four roots, below the frozen minimum of eight."
+    },
+    "big-z-fabric": {
+      "status": "rejected",
+      "reason": "The desktop cotton-fabric route retained only half of the requested-query evidence and produced no reviewable product roots."
+    },
+    "spandex-world": {
+      "status": "rejected",
+      "reason": "The desktop cotton-fabric route retained complete query evidence but produced no reviewable product roots."
+    },
+    "raw-spice-bar": {
+      "status": "rejected",
+      "reason": "The desktop paprika route retained complete query evidence but produced no reviewable product roots."
+    },
+    "spicely": {
+      "status": "rejected",
+      "reason": "The desktop paprika route retained complete query evidence but produced no reviewable product roots."
+    },
+    "floor-bros": {
+      "status": "rejected",
+      "reason": "The desktop rubber-flooring route returned HTTP 404, retained only half of the requested-query evidence, and produced no reviewable product roots."
+    },
+    "hurst-hardwoods": {
+      "status": "rejected",
+      "reason": "The desktop hardwood-flooring route exposed only four product roots, below the frozen minimum of eight."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [],
+    "assignedDomains": [],
+    "status": "reject"
+  }
+}

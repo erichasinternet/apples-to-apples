@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p10",
+  "createdAt": "2026-07-27T07:03:07.009Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--8be56bb6b046c9bc",
+      "path": "benchmark-data/review/g2-validation-p10/reviewer-a.json",
+      "sha256": "d794cbf912d69601e5d290b4f58f537ccc717c97ec9ac647dd94745c9e2cfce3",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--b5c182f260f03dc3",
+      "path": "benchmark-data/review/g2-validation-p10/reviewer-b.json",
+      "sha256": "4b6c7b42b062dbdce5329b6178082801a56cb0bf8a842e04034ee2ea0b0bbdcc",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p10--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "north-bay-trading--dried-fruit",
+        "north-bay-trading--dried-vegetables"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--8604bd3573182c9b",
+          "path": "benchmark-data/review/g2-validation-p10-review-batches/reviewer-a--batch-01.json",
+          "sha256": "8281daa37c7db95f575b01cd49c343ca48ec1f988718de09287966e6881e7d23"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--0d8102f41c62baf6",
+          "path": "benchmark-data/review/g2-validation-p10-review-batches/reviewer-b--batch-01.json",
+          "sha256": "03f165df7c1b2f5318a4aec64507e30a0cb5ddcacb5a3cccf14f911904534f1a"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

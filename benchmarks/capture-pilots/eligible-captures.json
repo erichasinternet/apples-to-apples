@@ -6312,6 +6312,54 @@
       "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p07.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "north-bay-trading",
+      "cohort": "validation",
+      "pageId": "north-bay-trading--dried-fruit",
+      "captureTimestamp": "2026-07-27T06:55:44.945Z",
+      "observationSha256": "f5229d7338377043119e244b6490e9cb66acb6ee1f497fdbdff5f1ddc010ba09",
+      "annotationScreenshotSha256": "1f4bca6c4669b07d51de57a2b258eeb149ae48efd6d9ab6d2750714b01072a59",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p17.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p09.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "north-bay-trading",
+      "cohort": "validation",
+      "pageId": "north-bay-trading--dried-vegetables",
+      "captureTimestamp": "2026-07-27T06:57:34.175Z",
+      "observationSha256": "ab5fa5ab17ae30eb5244a763b9a4ed58627ed4495cc9d5e10d726d171e7dba32",
+      "annotationScreenshotSha256": "ce18edef6195ddefcfdda881fed4681949081973fd91f07b553def5ad77cf148",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p17.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p09.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "cougar-chemical",
+      "cohort": "selection",
+      "pageId": "cougar-chemical--wheel-cleaner",
+      "captureTimestamp": "2026-07-27T06:55:00.591Z",
+      "observationSha256": "40eb3de390a5e6fcfaa3bdfd609922d0d91e5475dacf877b8315f095d4b9672e",
+      "annotationScreenshotSha256": "1edf8f5d840dd6fac91f17bc3bd40e12fbdc4ab998dc51fee789ed65fdfcd357",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p17.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p08.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "cougar-chemical",
+      "cohort": "selection",
+      "pageId": "cougar-chemical--car-wash-soap",
+      "captureTimestamp": "2026-07-27T06:57:13.290Z",
+      "observationSha256": "1a5b598190a77052dd0705f5172c931de16b08e4cc9f8a70aaa1db6882c6334b",
+      "annotationScreenshotSha256": "a6a56cf2eb59f392f28a73ab7eb66555c2c907710b870e74ea8253e66622bad4",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p17.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p08.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

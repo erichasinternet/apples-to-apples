@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p17",
+  "candidateManifest": "benchmarks/live-sites/heldout-route-discovery-retry-p17.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 90000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "7410cbfe6c509fa08334523fb5e732ef4cb1f9b7e05fe65898337453d9452067",
+    "narrowBatchSha256": "94f9fa5e319b31b88315c67c145987e7fab6af4fb51c6b902ff18776fb828f08",
+    "processIsolationFinding": "All thirteen headed qualification children completed under isolated process-group bounds with zero parent hard timeouts.",
+    "samplingFinding": "Ten disjoint, never-retried domains balanced across all five dimensions received a desktop screen. Four domains passed the numeric desktop gate. Original-resolution review rejected PoolSupplies because only six of nine roots were algaecides. Cougar Chemical, All Bird Toy Builders, and North Bay Trading received independent narrow-query follow-up. All Bird Toy Builders exposed only three narrow roots; Cougar Chemical and North Bay Trading produced complete coherent opposite-viewport pairs. All ten domains remain in the yield denominator.",
+    "manifestIntegrityFinding": "All completed captures use frozen retry manifest hash 49d03cb47047961f81021d48b98a87f1ed4b3f2ef4ed8f4750f45dd33e6962e0 and collector hash cdc056b57f525ae389e514a3beea6bcd02c5c1512ccb691d2f73e81bc748f8ab."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T06-54-09-002Z",
+      "runManifestSha256": "73f4fa23509155853f7cd1efed97c89ca5e4daaff7c686f096e404805ed0a6ea",
+      "purpose": "Online Packaging Store desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-54-27-432Z",
+      "runManifestSha256": "b520646107d7c8732842b59a6be852762b9ce2507ca0e34927eba9dac7e8e564",
+      "purpose": "The Packaging Supply desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-54-28-286Z",
+      "runManifestSha256": "79f21f4bccb3ac1388c77bc849e00f0d2db4459fb77f89e2a8dcd0f5316892ec",
+      "purpose": "PoolSupplies.com desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-54-55-139Z",
+      "runManifestSha256": "243c4bcc552669bd62bd14a13794c97d296b05d2f680fdf6c7f9384c74e5976e",
+      "purpose": "Cougar Chemical desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T06-55-01-790Z",
+      "runManifestSha256": "aada8e0c01164f83f9c562bd0f98abd85643903f9026e12c34097eca1301cc44",
+      "purpose": "The Fabric Guru desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-55-23-473Z",
+      "runManifestSha256": "0f100c6a90ee1199e6126d6272fc8e960e648aa769fa2f8fdee9c96b7dc9898f",
+      "purpose": "All Bird Toy Builders desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-55-32-041Z",
+      "runManifestSha256": "8549954cf545e4825fa5000d71b36e40dce540fd1152e63b4a6b15a76780b578",
+      "purpose": "North Bay Trading desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T06-55-46-643Z",
+      "runManifestSha256": "67649db2e793c0b7e6a782ff142d1d1eabd7764855071376c53314bab086be6d",
+      "purpose": "The Spice Lab desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-55-57-607Z",
+      "runManifestSha256": "3d906dd9a6df113912cf2d4fff0c5da0dc18ffab2ffdb9f80317f8237ba3f099",
+      "purpose": "Budget Friendly Floors desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-56-07-045Z",
+      "runManifestSha256": "80cfaedb4859be1c2dee75bc1ed2f8cdec38eeec1604e2fe2df3f1037a98c510",
+      "purpose": "Woodwudy desktop screen"
+    },
+    {
+      "runId": "2026-07-27T06-57-07-535Z",
+      "runManifestSha256": "7d4714ed242e4aeb1815d80d77cbf3def328958b031841da165d1daf9bbbd71a",
+      "purpose": "Cougar Chemical narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T06-57-14-439Z",
+      "runManifestSha256": "2d93a30400c2541a840cc808da1aa075935e179b32a7b1894dc1897cb6fdbf33",
+      "purpose": "All Bird Toy Builders narrow follow-up"
+    },
+    {
+      "runId": "2026-07-27T06-57-21-191Z",
+      "runManifestSha256": "8aa01be9a19289076700ac9397918651146a66ea5cd96d5de3826207c12cff4e",
+      "purpose": "North Bay Trading narrow qualification capture"
+    }
+  ],
+  "results": {
+    "online-packaging-store": {
+      "status": "rejected",
+      "reason": "The desktop mailer-boxes route retained only half of the requested-query evidence and produced no reviewable product roots."
+    },
+    "the-packaging-supply": {
+      "status": "rejected",
+      "reason": "The desktop poly-bags route failed navigation because the hostname served a TLS certificate for a different name."
+    },
+    "pool-supplies": {
+      "status": "rejected",
+      "reason": "The desktop pool-algaecide route passed machine checks with nine roots, but original-resolution review found only six algaecide products; generic cleaners and pool-opening or closing kits reduced coherent query evidence below the frozen minimum of eight."
+    },
+    "cougar-chemical": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "cougar-chemical--wheel-cleaner",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "cougar-chemical--car-wash-soap",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent automotive-chemical grids pass in opposite viewports. Frozen roots expose one product identity, current or starting price, and liquid packaging evidence per card, including varied gallon and quart presentations plus legitimate abstentions."
+    },
+    "fabric-guru": {
+      "status": "rejected",
+      "reason": "The desktop cotton-fabric route retained complete query evidence but produced no reviewable product roots."
+    },
+    "all-bird-toy-builders": {
+      "status": "rejected",
+      "reason": "The desktop rope route passed machine and visual review with twelve coherent per-foot, per-yard, and fixed-length roots, but the independent narrow cordage route exposed only three roots, below the frozen minimum of eight."
+    },
+    "north-bay-trading": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "north-bay-trading--dried-fruit",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0011111111111111111,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "north-bay-trading--dried-vegetables",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.004860857941426662,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent dehydrated-food grids pass in opposite viewports. Frozen roots expose one fruit or vegetable identity and current or starting price per card, while product-page options provide varied mass presentations for extraction and abstention."
+    },
+    "the-spice-lab": {
+      "status": "rejected",
+      "reason": "The desktop paprika route retained complete query evidence but produced no reviewable product roots."
+    },
+    "budget-friendly-floors": {
+      "status": "rejected",
+      "reason": "The desktop vinyl-flooring route retained complete query evidence but produced no reviewable product roots."
+    },
+    "woodwudy": {
+      "status": "rejected",
+      "reason": "The desktop vinyl-flooring route retained complete query evidence but produced no reviewable product roots."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "cougar-chemical",
+      "north-bay-trading"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "cougar-chemical",
+        "cohort": "selection"
+      },
+      {
+        "siteId": "north-bay-trading",
+        "cohort": "validation"
+      }
+    ],
+    "status": "keep"
+  }
+}
