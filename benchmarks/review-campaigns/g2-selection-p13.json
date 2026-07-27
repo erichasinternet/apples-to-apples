@@ -1,0 +1,489 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p13",
+  "createdAt": "2026-07-27T09:26:40Z",
+  "cohort": "selection",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "best-laminate",
+      "pageId": "best-laminate--engineered-hardwood",
+      "captureTimestamp": "2026-07-27T09:15:12.944Z",
+      "candidateCardCount": 12,
+      "observationSha256": "a90bbe42133ffd2a9332b8a86bc125ea8a9915da8ed31ccfccebf87bd4ff5cc6",
+      "annotationScreenshotSha256": "f09a3c949219def0942d0835c694fec4c00b0880a847bfaf11e0eda46830d6b9"
+    },
+    {
+      "siteId": "best-laminate",
+      "pageId": "best-laminate--waterproof-flooring",
+      "captureTimestamp": "2026-07-27T09:10:24.279Z",
+      "candidateCardCount": 12,
+      "observationSha256": "57b5ba0e0e7b10765bdf517e20d7f2ef1a231b7f9e78653c34eb900ced73fba2",
+      "annotationScreenshotSha256": "7f3862b810480dcb108c3f5cd41095b9f8b637d273a2c7f219012e0a0f992f19"
+    },
+    {
+      "siteId": "burlap-and-barrel",
+      "pageId": "burlap-and-barrel--cinnamon",
+      "captureTimestamp": "2026-07-27T09:15:30.709Z",
+      "candidateCardCount": 12,
+      "observationSha256": "87f2df0663e83a195e47a3d4137243a70198e3cecdcc4c31b0bb4b7c3820300a",
+      "annotationScreenshotSha256": "cdaee7921bcee8c5b7dd4dadbe070861a9f6defd077ae812d67e0d2cc617f284"
+    },
+    {
+      "siteId": "correct-products",
+      "pageId": "correct-products--anti-static-bags",
+      "captureTimestamp": "2026-07-27T09:10:58.173Z",
+      "candidateCardCount": 12,
+      "observationSha256": "fa027d8208f0b897e0df4ab0a18e94004640cf96476b81bbd3fb86827789f93b",
+      "annotationScreenshotSha256": "32bdbfa64661bb6e5a1f35325769d05edf8cd3405b2e4a637555742f44bfd8ab"
+    },
+    {
+      "siteId": "correct-products",
+      "pageId": "correct-products--packing-tape",
+      "captureTimestamp": "2026-07-27T09:15:46.274Z",
+      "candidateCardCount": 12,
+      "observationSha256": "662ee9b1711e24ddd8ccf0ce4590b5c464328270e49e4486d987500c1afef104",
+      "annotationScreenshotSha256": "4327b78f541ff6411e5894137bb45f2c8a5e712ad45c36d1000963c01f34ee3c"
+    },
+    {
+      "siteId": "cougar-chemical",
+      "pageId": "cougar-chemical--interior-cleaner",
+      "captureTimestamp": "2026-07-27T09:15:52.672Z",
+      "candidateCardCount": 12,
+      "observationSha256": "45921ce4f81238faf51c593ebf57672a85e13810262b37435edd889084da15d6",
+      "annotationScreenshotSha256": "99a39acdbb8fc41766a772bde6b8622ab28bcf7138bb2fe383a7365a292dcc48"
+    },
+    {
+      "siteId": "cougar-chemical",
+      "pageId": "cougar-chemical--tire-cleaner",
+      "captureTimestamp": "2026-07-27T09:11:04.909Z",
+      "candidateCardCount": 12,
+      "observationSha256": "81b0d4e295a6424e9b70f26b407ed985af55847e9e2236c560da02ee6aa05dd6",
+      "annotationScreenshotSha256": "e4ee825f7398fd151ee37bcb1506b04ff112c30fd2ef9d50fa905e734776e284"
+    },
+    {
+      "siteId": "detailing-com",
+      "pageId": "detailing-com--glass-cleaner",
+      "captureTimestamp": "2026-07-27T09:11:14.703Z",
+      "candidateCardCount": 12,
+      "observationSha256": "1705d0b85437a427d1cf6f3c925175e1125bec22ebf17db0453ae47a22f20318",
+      "annotationScreenshotSha256": "98cc90c6c33dee04651bde369a04096826f121965918bbb883e25bb386101f02"
+    },
+    {
+      "siteId": "detailing-com",
+      "pageId": "detailing-com--spray-wax",
+      "captureTimestamp": "2026-07-27T09:16:01.923Z",
+      "candidateCardCount": 12,
+      "observationSha256": "e503e7a2a22d1ecc8b55f7c0ec1dc99416b7138297bc4a13217015fde357b347",
+      "annotationScreenshotSha256": "fc96aadc0774e4160a47b753d6b9e71bb7aa9bac89e8340c32ca79154ea308b9"
+    },
+    {
+      "siteId": "discount-medical-supplies",
+      "pageId": "discount-medical-supplies--face-masks",
+      "captureTimestamp": "2026-07-27T09:11:32.984Z",
+      "candidateCardCount": 11,
+      "observationSha256": "77cbd437febc76b1ae8057e116ecdf3c9f702c6d055553c4b4b66a64bd8f27b0",
+      "annotationScreenshotSha256": "c13cad5d6b6380490f1d94c3ac3b8ab2b990be6dce4b5499767fa7c0befef5d3"
+    },
+    {
+      "siteId": "discount-medical-supplies",
+      "pageId": "discount-medical-supplies--gauze-sponges",
+      "captureTimestamp": "2026-07-27T09:16:10.572Z",
+      "candidateCardCount": 12,
+      "observationSha256": "8800cd0d7f84f62b3ced7517a32a442149327dc74b432f19f1f1e9a24b3265a1",
+      "annotationScreenshotSha256": "43ceb3890a3e4c420c66ec7538ac72662eaa3b21a0ff82e782c2077443c3a2b3"
+    },
+    {
+      "siteId": "fat-quarter-shop",
+      "pageId": "fat-quarter-shop--batik-fabric",
+      "captureTimestamp": "2026-07-27T09:11:45.368Z",
+      "candidateCardCount": 12,
+      "observationSha256": "54c27e5a39335d45a33167b2bbcd344ef6677cf4d93aacc7c1238e8536b14ed3",
+      "annotationScreenshotSha256": "17c673eaf3d01be451dac83519a62e58c389dbd68c028a1f8545cae4db7757ed"
+    },
+    {
+      "siteId": "fat-quarter-shop",
+      "pageId": "fat-quarter-shop--quilting-fabric",
+      "captureTimestamp": "2026-07-27T09:16:23.678Z",
+      "candidateCardCount": 12,
+      "observationSha256": "6438c5b8b2fcb2842a594bb0eaf4023959eb6d01260a88cf88de8a7d648a6bf9",
+      "annotationScreenshotSha256": "51a411119a8453ad52bc3579c671498b403c30174907dfcdabac076a91776506"
+    },
+    {
+      "siteId": "floorzz",
+      "pageId": "floorzz--hardwood-flooring",
+      "captureTimestamp": "2026-07-27T09:12:03.746Z",
+      "candidateCardCount": 12,
+      "observationSha256": "3022b0387b47b6a8d10220b0de5dfad33be9a95ecfc1bb8b39f99cf9cb110360",
+      "annotationScreenshotSha256": "2101c0b549de08b5399e25d62cc7a6caf8fbbcb6189625d0d830b9335b28a2a1"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "pageId": "gorgeous-fabrics--silk-fabric",
+      "captureTimestamp": "2026-07-27T09:12:13.086Z",
+      "candidateCardCount": 12,
+      "observationSha256": "2f8e6774841a507e48c4d7c8093f6b288dcbace4c17e7ec855e4cc5042601a73",
+      "annotationScreenshotSha256": "af50751b6296de382e01ef35f5ac4d9fbb4c72a4e69cf4fd590c1b0ac3c3595d"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "pageId": "gorgeous-fabrics--wool-fabric",
+      "captureTimestamp": "2026-07-27T09:16:49.835Z",
+      "candidateCardCount": 12,
+      "observationSha256": "904b6d93d41f2de20be4aa7689c12315738232b1af07f309e066241369c42dbc",
+      "annotationScreenshotSha256": "272f876adbaa0e64594573ee9f4eb98cfbe0527e7f40aa7bb08f96a5b774acdf"
+    },
+    {
+      "siteId": "in-the-swim",
+      "pageId": "in-the-swim--pool-algaecide",
+      "captureTimestamp": "2026-07-27T09:12:25.920Z",
+      "candidateCardCount": 12,
+      "observationSha256": "eaa3e0a13d491557c9d27b96b093ee83e5b1535e110699d05b17d8a8c027742c",
+      "annotationScreenshotSha256": "cdbef74bae000b93848ab8255a86f4b3b2974518cd3a70c2763d147bf49e8380"
+    },
+    {
+      "siteId": "in-the-swim",
+      "pageId": "in-the-swim--pool-conditioner",
+      "captureTimestamp": "2026-07-27T09:17:01.242Z",
+      "candidateCardCount": 12,
+      "observationSha256": "bbcb4cf0fd5eb1ee87efafbd1ca63d2f3a70962102b295db3e77db30e1a30b27",
+      "annotationScreenshotSha256": "dd238c454872eaff9c9c4bc4a51bcf6881ea69359275be20c2e0772854607b6e"
+    },
+    {
+      "siteId": "leslies-pool",
+      "pageId": "leslies-pool--pool-clarifier",
+      "captureTimestamp": "2026-07-27T09:12:41.790Z",
+      "candidateCardCount": 12,
+      "observationSha256": "011f31b2a779c71ca80dd47f5afebc5063b5bbf9fc51c8f662b86fd9faa54ab6",
+      "annotationScreenshotSha256": "a34414412bf360ab30d62b9569e99c22e11667b3f55dcbcde3389798597d234d"
+    },
+    {
+      "siteId": "leslies-pool",
+      "pageId": "leslies-pool--pool-metal-remover",
+      "captureTimestamp": "2026-07-27T09:17:15.968Z",
+      "candidateCardCount": 12,
+      "observationSha256": "83151fb41adc7fac03a72b4886bf7fe22f5c9fea4604affd300c2fada499f3bc",
+      "annotationScreenshotSha256": "087ab60796156d3b7b9ca84015b658145e5b98ab741ff4191d70fabeb5bd08db"
+    },
+    {
+      "siteId": "medical-mega",
+      "pageId": "medical-mega--face-masks",
+      "captureTimestamp": "2026-07-27T09:12:59.795Z",
+      "candidateCardCount": 12,
+      "observationSha256": "2e8cc7f936cb3becee070b6b19c5d103e1cccec38418227adcc30950584974ef",
+      "annotationScreenshotSha256": "e933a33cdf7f3236288cc5d704057a1b4c3a9e89bf3d18f6cb1707c3abcdef92"
+    },
+    {
+      "siteId": "medical-mega",
+      "pageId": "medical-mega--gauze-sponges",
+      "captureTimestamp": "2026-07-27T09:17:33.634Z",
+      "candidateCardCount": 12,
+      "observationSha256": "d4dc3a4fa465e38f873d9e818c7911ba87ec1c451216b3e76cd9064ae7e92c72",
+      "annotationScreenshotSha256": "c8c559aabeab366c770bd9d4f270d3afcf60fab51fc9abec581d6115c8797c17"
+    },
+    {
+      "siteId": "mineral-tiles",
+      "pageId": "mineral-tiles--glass-tile",
+      "captureTimestamp": "2026-07-27T09:13:17.892Z",
+      "candidateCardCount": 12,
+      "observationSha256": "70f9fe4e2d467106aa3012c5d15f8900d0dcaafd72483fa1cd122a6ae0f90c59",
+      "annotationScreenshotSha256": "25bf364fb37db691d3a499d3e077ea3af172d5e7728fc4bc1de30ccf0d5647ab"
+    },
+    {
+      "siteId": "mineral-tiles",
+      "pageId": "mineral-tiles--subway-tile",
+      "captureTimestamp": "2026-07-27T09:17:51.297Z",
+      "candidateCardCount": 12,
+      "observationSha256": "dc4cbe77412f5f2308039110bdec2e04f192bd80a637574316a1e6152b64a88b",
+      "annotationScreenshotSha256": "6851912a516e3f1dfc0360dcc63b1e1781c31044785ac655eaf386a1e11f561b"
+    },
+    {
+      "siteId": "restaurantware",
+      "pageId": "restaurantware--plastic-cutlery",
+      "captureTimestamp": "2026-07-27T09:18:01.144Z",
+      "candidateCardCount": 12,
+      "observationSha256": "ff594b283c0f192c51e070523157df2b3c7d3bc5a266c0105702a5ae78ca1d32",
+      "annotationScreenshotSha256": "52b0eb01288a83da7df0137688991db578b06c98501587182dd9baac6278bf90"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "pageId": "save-rite-medical--face-masks",
+      "captureTimestamp": "2026-07-27T09:13:37.625Z",
+      "candidateCardCount": 12,
+      "observationSha256": "90f1ae50e76ff108ed2eb488fd0911b6bffcff9ccd7354581ec359f9f41c70eb",
+      "annotationScreenshotSha256": "47ad426fd4cff8afbe44caf3cfb4b053cafc72053b7084b6653f4bce63fe0dfa"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "pageId": "save-rite-medical--gauze-pads",
+      "captureTimestamp": "2026-07-27T09:18:10.520Z",
+      "candidateCardCount": 12,
+      "observationSha256": "45299d227908fa87aead5a9eac4047654e944c84daea40ae01ab92976fd811e0",
+      "annotationScreenshotSha256": "97d8b58bdc46caee7137b2894301e67c649b86ffe57d7e5467fe57fc3591e06d"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "pageId": "shop-med-vet--gauze-sponges",
+      "captureTimestamp": "2026-07-27T09:18:20.617Z",
+      "candidateCardCount": 10,
+      "observationSha256": "eff411f14fa54175b0017329ca6572497073a3162dddec41d07687b4e203cffc",
+      "annotationScreenshotSha256": "4772efb22fa4756a20704c9f60b5934fc52eb1381e990f10abcab7ad695e59bb"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "pageId": "shop-med-vet--needles",
+      "captureTimestamp": "2026-07-27T09:13:46.725Z",
+      "candidateCardCount": 12,
+      "observationSha256": "c595933e53ce1329c64e66448979650f1469350a29525025c50f95b5fa9a07dd",
+      "annotationScreenshotSha256": "3f9e821c39151fafac9605f4b2caff9327f242a50194bc0fcc3198ba6ac27bfb"
+    },
+    {
+      "siteId": "sunplay",
+      "pageId": "sunplay--pool-stain-remover",
+      "captureTimestamp": "2026-07-27T09:14:05.081Z",
+      "candidateCardCount": 12,
+      "observationSha256": "d9eb2650266bb7650a9ba3b32125b92866eb6ca78d45979fee039839fc580d9e",
+      "annotationScreenshotSha256": "4e733b9f308be1f004f0ae910a0ca70e09f727d2f62d2dd27b43cd0f18c2478a"
+    },
+    {
+      "siteId": "super-detail",
+      "pageId": "super-detail--glass-cleaner",
+      "captureTimestamp": "2026-07-27T09:14:15.255Z",
+      "candidateCardCount": 12,
+      "observationSha256": "933e77825fb5b7f4145e125b60a018c50599a863def6441705a4fdce9ba210bd",
+      "annotationScreenshotSha256": "87dc5d7871a939cca673479de204069d0f76049244f6dc100e99851388117045"
+    },
+    {
+      "siteId": "super-detail",
+      "pageId": "super-detail--spray-wax",
+      "captureTimestamp": "2026-07-27T09:18:46.936Z",
+      "candidateCardCount": 12,
+      "observationSha256": "b2b667e8310ae5b28ffaaefeb981be0048e4a8677c1d38ba87a9675f6e9de073",
+      "annotationScreenshotSha256": "653b4d071544e14d86fb6c26d779cc6a53ae79d1e599a50a33bb17b455d01380"
+    },
+    {
+      "siteId": "tea-forte",
+      "pageId": "tea-forte--herbal-tea",
+      "captureTimestamp": "2026-07-27T09:19:05.842Z",
+      "candidateCardCount": 12,
+      "observationSha256": "7d20aca3ec02757c17e63db0cafc891834777f50391d72c5ab5b2097ebd7d2f2",
+      "annotationScreenshotSha256": "e6b3aa1be6e868e852466aa60de8bc417d5f5e9a769ace97f3381f76facf3301"
+    },
+    {
+      "siteId": "tea-forte",
+      "pageId": "tea-forte--loose-leaf-tea",
+      "captureTimestamp": "2026-07-27T09:14:33.602Z",
+      "candidateCardCount": 12,
+      "observationSha256": "bea3b1f8ebc31f882a2629cf7c1e0320888f03c6ba322f027fb8d7539ae85d1f",
+      "annotationScreenshotSha256": "12eab514fcbda76c81973678480fb08db03bdeff61d8c76cac02e472ad5ab778"
+    },
+    {
+      "siteId": "the-linen-lab",
+      "pageId": "the-linen-lab--linen-gauze",
+      "captureTimestamp": "2026-07-27T09:19:15.390Z",
+      "candidateCardCount": 12,
+      "observationSha256": "6d352fff5cefb00796cb53272f0771a5f713a2e75a747f62810abec2c17b7357",
+      "annotationScreenshotSha256": "dfb45191ef8d4a7a3925758740d126871a11a40569d23716c52feac79efbfd7c"
+    },
+    {
+      "siteId": "the-linen-lab",
+      "pageId": "the-linen-lab--linen-twill",
+      "captureTimestamp": "2026-07-27T09:14:44.176Z",
+      "candidateCardCount": 12,
+      "observationSha256": "f68bf17c8af9a8049e4ded194ea3a9568077cfffedad25423c1934afacf959d3",
+      "annotationScreenshotSha256": "babd634780f17a4c29d587415d0cc2aca7bdab6ca2133dbd6cd621622f114b97"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--e6c1f296de22aa68",
+      "campaignQueueSha256": "ec086ed1056efd78fd2716c7fbbdcd732a1872c1fdeca47c427bb1e2d1746305",
+      "sourceQueueSha256": [
+        "e848014d469f43e7b86fde8b0b53a077dcdc526c6be5804920fab12fdc6770fe",
+        "11e0032eee026cf21ce91e4d948c24a021345af6131f4720454d3f4954a2acf5",
+        "677581544a790c19b0f9607a507a82a7db611cb48228cc8eacc1b1025550cbc9",
+        "0356ded37183d32fe04d47e9775829c1962998627cfb0cc838b79748c8cbbf05",
+        "3ea88d1094458a54fe7eb7e16b89fa2a57858e1281011c087a380effb6e229c9",
+        "efe47b9e10a7acabc33dcfba7317db92b8612711c3d0db2ba3a6894a30983e65",
+        "4e946da023ec5d4da2f920956095cca8e3e93489fabb857284d3743436ab44da",
+        "ef2296347734d6a92a256d527de6b38f010440015d2a36fe44389b2edc4971c8",
+        "3c035b87694f04232323e97550e0ea7269ca579c65e3ef4574a256847e81efdc",
+        "4d870322979479d4fb66c9f10b249eea945c7c33a7ec580923c2c8cfe91f8728",
+        "c9405231cfa6349e2b2169fd908d6f06a33a360c661b4f291a8d6eecd09c5b4c",
+        "3cfda3a87841e13a74e9b326598cff618edabeb6348d079eeb1c1893c9ab4b9f",
+        "35354fd7eec8bcbfdb5ad094bc91a2beaa0cf610fe9dcf334c995419ac4636b1",
+        "98fcfb1ce0cbe65c1b32ddd7413834f3d9c4628977a5ab60fdd327409119144f",
+        "ee030916aa78c3a781906e9f5b8dec4042843247cc217b72f481483fb2d3f895",
+        "045e78f9cd15aa4cc456593316691fd39d80c4c334c5424e42b51fd11703d727",
+        "273d15d3432a6b07400f42c118ef6b0c1a725213ebbbda12e1f3389e5bbe3f90",
+        "8290d0ce9e4d6e01d96fb7ec696cc27418630f59a804b3d2e4bd6416925a8c33",
+        "ea7818451a89ad067a073aaec925dc67aa34bc606179e715ebf06072a8b9ba78",
+        "9dff9c75a02b4bc412a25156d31431beb0b76f4f84206b6c0853de57f1040569",
+        "4d0018b3cf36c4194e00042e8f00561a0f42e67f14b041f4f8075ba452f2dc03",
+        "1554172c13e85e919b3c1d3d995949487abe17b9b0619913edd04957ddc7417d",
+        "dbfb07647041bc1391208484af8a6aeb040b6d15b689138f69d0b6a91c70c82c",
+        "89b32e1f3f5861e9e0bdc4e764f212a1758d62477ef315ffef8c45dbb7a4e50a",
+        "054c8183aa5340034bad9d042ac13aa00c53b50d9211d8c8e731d9625b6c10f2",
+        "1efdab9ff53282d92d6c66aead822416962252296ec3cfa3a3fccf4dc25964b9",
+        "1e1964913facb4f8b4b9abe552b24b1872e8fff8df5f852f4530d984ea548467",
+        "6d8b1c1b8a46eb117840be540f1bcc2d77bfcbf644459df1ba45e65293eff46b",
+        "a6612dded1b689e027b59d81abb713320b60d6fb3df56824f0a30189ec65e595",
+        "9935cab04fe4308db18cf1e514a859430a0b860ed76c2775a02e0f7cb5c3bee2",
+        "1d689df201f955e75c0045fd82c0e5185d5f8c6c9b6d0f912adb78e6c174ab8a",
+        "7e1f7c09d0df97f17e6e24c0b1100a58f68be07756df40a4cdf4a3680574546a",
+        "89ce54a7a349add088633bf8af83ae56c270ab606acaead8660e015359ae8769",
+        "e1e5b304d0b827d0f51ecdb55a2715607aac1b542cf8f793fb6d038a75a81753",
+        "4dd116d1ab854f286293112b1664b1dd910bac13189da6653606b98b7dcf512b",
+        "649d1389815974007d92196d29a788b7ee2dc7c04345fc7085913e588b4faff7"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--b853eb181d5a6d23",
+      "campaignQueueSha256": "4078250bf217e564b5699d880c32d58771a14c43117bfe9a4ebe1c700528b935",
+      "sourceQueueSha256": [
+        "7450b290cc6635fd389ad0e262a53cc581f282cb602b6d548aa694158450ddfd",
+        "4d9f27fbaff114fdd4cf7cb77ed71f09fdb2b5ef79ff9fa1b176a444221d7604",
+        "fd2d9f1fee318ca3ae272fd202ddc0e6b2248324257129824e37dcf70ff068c2",
+        "c4a4f4f2490aed2169d09a76c9400cf42032798da411db08a7f6ae0cfa76133b",
+        "619a5ab753ee8167a94e05edf102c7d1406d06b8cc29aeaf903f303909a19b1f",
+        "ccecf1856c8a19ce7ba367d33b8735ec5036f75145fa897ab34fd21b810708fb",
+        "16bc78a33769e7ff4b11c70401be4741688fcd2d5ecf499f5a27a085c196fb99",
+        "f9c70caa5b33fd4c1cd8cebdce5ebf2a39adef16f2a29575c09edc71fb6faf98",
+        "e7fd77cb0df6988c9c68ea761195bd6f0803f09fb7fc9b56b1b2d6006e0cb25d",
+        "9c5b50c6d39bf8f47243beb0ec6c7fed274a2fcd6edca837de1fa80528ad7003",
+        "5cbb7d0684cf0a2a10e23f489a75c749811fac750519504c2d04536636c2607e",
+        "ad4bc2e0666c91496ce4a04357ff5e1fe4419551da0a675cfbb5d6bf1ffa2611",
+        "6881aaf61bd03fa360c5be8c707b2f99a0d5db32e5cb74fe11c6dae8cc61e01f",
+        "c949583d5c2d29e12884fd2d9100eafeefd7e4bc7b16363e4e6447615930253d",
+        "8caf888e23d759bcb3f82f54f3a9ce4786e63ed316ef5dd0a7ae5e4b17287b20",
+        "ca5be61a85b804c260433f1e65f9ff8e9d228dbb5b66d4e9487df420a0f79c26",
+        "01422c850cb25b0d9aa7d11a8a21472757a1360498f8efbc41e2e8c5e87b2e84",
+        "d279cd73775a4eee80f341b4d57795e8745f4b2a229ccb49c9a0f91779904f15",
+        "ea16cce74ad9f159ecfb8c623aa704ec788a628de961b324d6a10a67aea96597",
+        "b8f25924783b58d4b436cf32bed6b93ff58052b305f8b016a84fe9da73ac81bd",
+        "a30341d6a95141857a8c35ccd8259c2f93e761361571c9cc38fea4ce78098887",
+        "588aa28d5ecacec3159685ebec01f2f013348a6d6544185f515363a7d6adb88b",
+        "ddd91410ee0b762e478031aa0d46aab9674a7cb91fa067b4e606aae781ee27b9",
+        "839be795a5403cde2432dcbb16da44fcc7541138be4e7ec89a18149132b37f2d",
+        "e330841ccaa6636a0ecf51bc1750574d63d1c701693620b90847ea596e9d79f1",
+        "327457990e12cee5940ff29ddfa031b2616a139196c986e2d6fcf1ddc5b51f66",
+        "9e765e8ef2afe53cecbf28735582ada045c2e6185faf3633593c5cbc854d376c",
+        "135a6be57cc5f526c9de3cdc054b3daa6edac0c63a61b25a8f79116a26f5c03e",
+        "2ecf0e5b2bbb5af8cbc87246f476f68c747517809b1994ef50a1a4bb214fbbe0",
+        "eaa865a39ae9f9b7553e8504c6a5f0b13cbdadd80cecb2c831d78d193e78091b",
+        "06b04b9475a3d739a78895d5f9fef6bfaf9cbf5663385773f836e4395e29505d",
+        "a2eeb52711f2546b138e18e83ea2a947836a2f41cb739a423e185439a32fbf9a",
+        "6eb0047ed9bb76ca6441b9221844d57d41a62e99967b45675fd5b33dfed4f69e",
+        "5f4480e094df21533b21f322b626375689241a4885354f313ef58f833e0c6747",
+        "c4bbb2d0e82af04b1443f0856d30d5cc54285386669f40135edcb694282463e7",
+        "4ab84033dd3788b914460cd135438105783116279a9752c0311ad11278ce134c"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--e6c1f296de22aa68",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 36,
+    "screenshotsLoaded": 36,
+    "candidateCards": 429,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

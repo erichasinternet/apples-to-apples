@@ -1,0 +1,1215 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-depth-wave-01-p00",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T09:23:00.000Z",
+  "source": {
+    "siteIds": [
+      "best-laminate",
+      "correct-products",
+      "cougar-chemical",
+      "detailing-com",
+      "discount-medical-supplies",
+      "fat-quarter-shop",
+      "floorzz",
+      "gorgeous-fabrics",
+      "in-the-swim",
+      "leslies-pool",
+      "medical-mega",
+      "mineral-tiles",
+      "save-rite-medical",
+      "shop-med-vet",
+      "sunplay",
+      "super-detail",
+      "tea-forte",
+      "the-linen-lab",
+      "burlap-and-barrel",
+      "restaurantware"
+    ],
+    "cohort": "selection",
+    "strata": [
+      "laminate-flooring-specialty",
+      "esd-packaging",
+      "industrial-detailing-chemical-supply",
+      "professional-detailing-supply-retail",
+      "discount-clinical-supply",
+      "national-quilting-fabric-retail",
+      "flooring",
+      "independent-designer-fabric-retail",
+      "aquatic-retail",
+      "pool-retail-chain",
+      "discount-home-medical-supply",
+      "medical-and-veterinary-supply-retail",
+      "water-care",
+      "professional-detailing-retail",
+      "specialty-tea-brand-retail",
+      "specialty-linen-fabric-retail",
+      "single-origin-spice-retail",
+      "food-service-packaging-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "115489aa92fe0179dd05c68793e8bdbd33deddfdee2986bd7f142a53b2db23be"
+    ],
+    "collectorSha256": [
+      "7b0d6e7e88ddb12234def7ab68515b0b1061271971a7b6b20950b7d18f226c44"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T09-10-05-893Z",
+      "runManifestSha256": "64819d75a264de7a25e85d46f6f6a7a230ce38bb5062cce287533848574fdd8e",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-10-26-052Z",
+      "runManifestSha256": "836d52460305ea4d1cfce2217fe2f9246e61778d420e6149b17ea2c6fd946950",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-10-43-553Z",
+      "runManifestSha256": "e4de481ebad7ffd5bab5e08f3fdff663a34e27d427a905089ddc57bfc6430a9b",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-10-59-653Z",
+      "runManifestSha256": "15d49c0c4aa1d6bd7cb447d4b8b5efc9459a1a4c27f0fc9510985bc643ac23d5",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-11-06-099Z",
+      "runManifestSha256": "9e8cbfe1121a8695ffff01453d96a099b872afaeca10c7bdf6184b5e0c72c792",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-11-16-067Z",
+      "runManifestSha256": "73ad7773cc7feb07e293cebfc19231631d1f2b8e72e6782cf9f4d078ca6e4378",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-11-34-192Z",
+      "runManifestSha256": "4bf42c5726f1de4bff8f9293bb003a9f8d98ee985fff993aaa1e63a783f2adb8",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-11-47-246Z",
+      "runManifestSha256": "70470ffa34a316aef2e95371e8b1ad467dfcf02ffd44bd1b18d0eb294c0b7f7f",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-12-05-220Z",
+      "runManifestSha256": "a376d08fd2d382b37727bd196268bd21a2fc0686ca531147da06d9b2b6aa0c33",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-12-14-517Z",
+      "runManifestSha256": "ae3a2b7ead83509323cad24bc32677b09c754ef602c21ed815ec39d1645cae31",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-12-27-329Z",
+      "runManifestSha256": "b8ca255736594a3d5feb85d315f70792ec04aa6b1fd940d883c2542a4051e06e",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-12-43-267Z",
+      "runManifestSha256": "87681a007c88fe85d26ffd05b9fc3d502bdcd5ece1e9b85a03d029808ddd3054",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-13-01-346Z",
+      "runManifestSha256": "7787f9133488ed0e4b2dca0b1e03c314e96e785e87c0b8447304493b43e713e2",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-13-19-350Z",
+      "runManifestSha256": "a47e910c371af29956813171572e236c8a154f9b9a6a3ddf81ae0b8e9422dcea",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-13-30-133Z",
+      "runManifestSha256": "b4ddcfa1628102d328d1e703154f52758bc67c7cea1153544e9550d9a5effbae",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-13-38-896Z",
+      "runManifestSha256": "e3ceb56ceec0644bdae26d952b642dc4138225844125f548c7a0682e27c06fdb",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-13-48-273Z",
+      "runManifestSha256": "9bb8e4646319c876140d6b3fe71e4fe04204c52f9e542a56539a12c4b6e50bdc",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-14-06-406Z",
+      "runManifestSha256": "1bf63dd41efb096692d37dc1978999576590631021c68df987a8e56663422c7d",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-14-16-485Z",
+      "runManifestSha256": "9d082bb1e92cfc7c8ba83a31b21d9ebb79e582766deeb6fd5d20ed4f65197333",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-14-35-707Z",
+      "runManifestSha256": "5a680dda9e0ea590e629dd8d0e439a1298f1377264084cff0a86023a73cb8a34",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-14-55-282Z",
+      "runManifestSha256": "2733764cdce2747b98907cbcb842502adffe12f5d4aaa16e05802457b1bc2289",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-15-14-177Z",
+      "runManifestSha256": "d77d8afd66b3c652f9510ba66e1cbac55f8715655b2aca884c6a187fb9efb8ce",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-15-32-569Z",
+      "runManifestSha256": "ab9f1918f7864f3306373a72c09344d8ed5786d32e8c0f7b5c25fe834366dd3e",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-15-47-426Z",
+      "runManifestSha256": "7e274e743876ed09df4d70efb22e8d2fc12c6bd3d5608d15466d3bd233814208",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-15-53-722Z",
+      "runManifestSha256": "e676e0fe4c4923ab389bd269a115bc5eedbd6b76f789ff26bf8c095bfeda030a",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-16-03-152Z",
+      "runManifestSha256": "54fa181032b33e1f0a92d73befa35252825eab8991934b796cc4a7ef70cec620",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-16-11-743Z",
+      "runManifestSha256": "b71737fb0473ab9547daecb714d48a9609edd4d096495451aec6606673af3213",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-16-25-382Z",
+      "runManifestSha256": "aff9616e564a980382a2b66ae0f5602ba698f9c640a853815fe4f3499d83c203",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-16-41-673Z",
+      "runManifestSha256": "4b630e1c9e8ca93deef0922776c1fa577eb68ae18d46c08cb2dd7c3cfd1a4d90",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-16-50-988Z",
+      "runManifestSha256": "983ffac4f9d8e40437068b91af0f8195f13ba8bf1d8e5d2bab3499eba03274a9",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-17-02-430Z",
+      "runManifestSha256": "db1fb51549de3c337aa2dc4e044bdaa1a4a0a2c31f3d212b55dcd66b78e11ef3",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-17-17-301Z",
+      "runManifestSha256": "6b0e00d6dbbd35d32859f420fb5daadf9477ce161d96b3c1188460d18fba5477",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-17-35-072Z",
+      "runManifestSha256": "95ba8ff6d5703259319c998cdd9417fe6d0095f1f5e40e3f3eda8320683233ed",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-17-52-508Z",
+      "runManifestSha256": "4a13b4269d58072e2ec8fe9c53610e3a664797a66c541c5540676212e6fa12ef",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-18-02-421Z",
+      "runManifestSha256": "17e300af99c9bed5f9d6b4aa3e114293d1894d9362d438fe7e05a1b72e0dd6db",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-18-11-704Z",
+      "runManifestSha256": "fb4143683891733a58e0d40e350893e90ee47bcc2e8115330f9072723230ce17",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-18-21-852Z",
+      "runManifestSha256": "bd0bbdb597519963e5644a477c41ab7f262194db3234fc0472c0b1cb31f61282",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-18-39-148Z",
+      "runManifestSha256": "5a2da32f1efe5fdce0463d15bd0f86cec7fb898cdaab4563aa0ad19b1add20cf",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-18-48-045Z",
+      "runManifestSha256": "c00aa76c74439f85fa0ecb5030c5e76fa1204dcfd2ab116481f74ca5ab28344b",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T09-19-07-635Z",
+      "runManifestSha256": "6aec8ef1d3d33ca69d39f5bbc39bf424c7b324dfb1fde470d8d3564e3605c882",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 40,
+    "successfulCaptureAttempts": 39,
+    "acceptedPages": 36,
+    "rejectedPages": 4,
+    "acceptanceRate": 0.9,
+    "candidateCardRoots": 429,
+    "samplingFinding": "All forty unseen query pages on twenty qualified selection domains completed under isolated headed Chromium process bounds with zero parent hard timeouts. Frozen minimum-root, relevance, screenshot-evidence, obstruction, and original-resolution visual checks accepted thirty-six pages and rejected four, a 90% strict yield.",
+    "visualValidationFinding": "All thirty-nine available full-page annotation screenshots and every accepted frozen root were inspected at original resolution. Burlap & Barrel turmeric and Sunplay pool conditioner were rejected with only two and six candidate roots; Floorzz carpet tile was collector-blocked with zero roots; Restaurantware paper plates was rejected because most selected results were unrelated serving products. The thirty-six accepted pages preserve coherent product evidence or legitimate abstention cases across area, mass, count, volume, and length, and fixed controls do not cover selected title, price, quantity, or native unit-price evidence."
+  },
+  "captures": [
+    {
+      "siteId": "best-laminate",
+      "pageId": "best-laminate--waterproof-flooring",
+      "capturedAt": "2026-07-27T09:10:24.279Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 827,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0.138328125,
+      "queryTokenCoverage": 1,
+      "observationSha256": "57b5ba0e0e7b10765bdf517e20d7f2ef1a231b7f9e78653c34eb900ced73fba2",
+      "canonicalObservationSha256": "646a0221a99746cd92b7908d0286190f55535ef8e18cddf37b4964063c003573",
+      "annotationScreenshotSha256": "7f3862b810480dcb108c3f5cd41095b9f8b637d273a2c7f219012e0a0f992f19",
+      "provenanceAggregateSha256": "c93eae4cce5fc90d6a2e2b272543601cdf305d18d78f9e0fa152fdda227bbc13",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "correct-products",
+      "pageId": "correct-products--anti-static-bags",
+      "capturedAt": "2026-07-27T09:10:58.173Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1864,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0009930555555555556,
+      "queryTokenCoverage": 1,
+      "observationSha256": "fa027d8208f0b897e0df4ab0a18e94004640cf96476b81bbd3fb86827789f93b",
+      "canonicalObservationSha256": "84aa1b48db2d81ea7a0ff107767905999da62a16b02a9897a968c5dae7f58c52",
+      "annotationScreenshotSha256": "32bdbfa64661bb6e5a1f35325769d05edf8cd3405b2e4a637555742f44bfd8ab",
+      "provenanceAggregateSha256": "f9e72c9ca2cc0f6cb7ae51d4a27b14fdfc5ca8c6a72df2c8433c2da57b21b082",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "cougar-chemical",
+      "pageId": "cougar-chemical--tire-cleaner",
+      "capturedAt": "2026-07-27T09:11:04.909Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 212,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "81b0d4e295a6424e9b70f26b407ed985af55847e9e2236c560da02ee6aa05dd6",
+      "canonicalObservationSha256": "aaad3d0bca0d278ad542abd9a9545539e3570db44c6049689d5b9f1e3f978443",
+      "annotationScreenshotSha256": "e4ee825f7398fd151ee37bcb1506b04ff112c30fd2ef9d50fa905e734776e284",
+      "provenanceAggregateSha256": "c42318ca8e85511892e58e0145b9d850d22a86393cc726d8a66d5be63ebe2f02",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "detailing-com",
+      "pageId": "detailing-com--glass-cleaner",
+      "capturedAt": "2026-07-27T09:11:14.703Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1124,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "1705d0b85437a427d1cf6f3c925175e1125bec22ebf17db0453ae47a22f20318",
+      "canonicalObservationSha256": "1328c1a51e7a4d5fef9a46b80fd992caf39625a1ac057bb9ab824c18641c36a5",
+      "annotationScreenshotSha256": "98cc90c6c33dee04651bde369a04096826f121965918bbb883e25bb386101f02",
+      "provenanceAggregateSha256": "cf30fb1b98199f248520381422611b8ca72ff84bb0f1be5dbe27d88b1dfafbd0",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "discount-medical-supplies",
+      "pageId": "discount-medical-supplies--face-masks",
+      "capturedAt": "2026-07-27T09:11:32.984Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 5,
+      "candidateCount": 11,
+      "candidateScreenshotsCaptured": 11,
+      "observationNodeCount": 828,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "77cbd437febc76b1ae8057e116ecdf3c9f702c6d055553c4b4b66a64bd8f27b0",
+      "canonicalObservationSha256": "bae3c9ef841a720afe499ece15ba5d3924917dc3c7e05ff475b40d7a596f4451",
+      "annotationScreenshotSha256": "c13cad5d6b6380490f1d94c3ac3b8ab2b990be6dce4b5499767fa7c0befef5d3",
+      "provenanceAggregateSha256": "25a0c16ef8114c1ebc0599a0d9becf2f8e86ef94443e17b11d0a468eb2ff9bd4",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fat-quarter-shop",
+      "pageId": "fat-quarter-shop--batik-fabric",
+      "capturedAt": "2026-07-27T09:11:45.368Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 4,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1246,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "54c27e5a39335d45a33167b2bbcd344ef6677cf4d93aacc7c1238e8536b14ed3",
+      "canonicalObservationSha256": "867d615aef2e4fb821c20cdd346a26ded9d0cb8587bd5fdba3f6f73cf11a297c",
+      "annotationScreenshotSha256": "17c673eaf3d01be451dac83519a62e58c389dbd68c028a1f8545cae4db7757ed",
+      "provenanceAggregateSha256": "3714676b9ff8c2a95c92fe82451a84d2d66a637bcf920e25b9dd79259d6fcd5f",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "floorzz",
+      "pageId": "floorzz--hardwood-flooring",
+      "capturedAt": "2026-07-27T09:12:03.746Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1050,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "3022b0387b47b6a8d10220b0de5dfad33be9a95ecfc1bb8b39f99cf9cb110360",
+      "canonicalObservationSha256": "a61b8f1f9422e73e91c25e314d59fcd88c7b167dd36f2f80cdad3256c8d1f358",
+      "annotationScreenshotSha256": "2101c0b549de08b5399e25d62cc7a6caf8fbbcb6189625d0d830b9335b28a2a1",
+      "provenanceAggregateSha256": "52cc8336a5243fdd529e2dfc90fd71fdf800ae4026250de611071cf7132f4fdc",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "pageId": "gorgeous-fabrics--silk-fabric",
+      "capturedAt": "2026-07-27T09:12:13.086Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 519,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.00384375,
+      "queryTokenCoverage": 1,
+      "observationSha256": "2f8e6774841a507e48c4d7c8093f6b288dcbace4c17e7ec855e4cc5042601a73",
+      "canonicalObservationSha256": "2f0f29ddcb583b7c4dc75e64815e936351c33e309e9fb3f6647215528881c5c2",
+      "annotationScreenshotSha256": "af50751b6296de382e01ef35f5ac4d9fbb4c72a4e69cf4fd590c1b0ac3c3595d",
+      "provenanceAggregateSha256": "e10209c5555a7edf5bb2b8582081fafbda9f08f5cea0540106d1f4c021c20628",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "in-the-swim",
+      "pageId": "in-the-swim--pool-algaecide",
+      "capturedAt": "2026-07-27T09:12:25.920Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1721,
+      "observationTruncated": false,
+      "dismissedObstructions": 5,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "eaa3e0a13d491557c9d27b96b093ee83e5b1535e110699d05b17d8a8c027742c",
+      "canonicalObservationSha256": "96e6730a4c65c9d89f606467641604ece456df559d021b25168dff2e8c71231c",
+      "annotationScreenshotSha256": "cdbef74bae000b93848ab8255a86f4b3b2974518cd3a70c2763d147bf49e8380",
+      "provenanceAggregateSha256": "76b75c294e72b4f1c684d5ff55588255150c11527042f82d09bb8d3a8192f14b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "leslies-pool",
+      "pageId": "leslies-pool--pool-clarifier",
+      "capturedAt": "2026-07-27T09:12:41.790Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1810,
+      "observationTruncated": false,
+      "dismissedObstructions": 4,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "011f31b2a779c71ca80dd47f5afebc5063b5bbf9fc51c8f662b86fd9faa54ab6",
+      "canonicalObservationSha256": "f57e8da575d82ca47634dcdd98acf313c91adec112d9a18989dc54f4b4b4a92a",
+      "annotationScreenshotSha256": "a34414412bf360ab30d62b9569e99c22e11667b3f55dcbcde3389798597d234d",
+      "provenanceAggregateSha256": "3b86ac7752f4d3a9fd1f59d49aee53a76cad5acb5073fedb7067fa65b7954be4",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-mega",
+      "pageId": "medical-mega--face-masks",
+      "capturedAt": "2026-07-27T09:12:59.795Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2254,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "2e8cc7f936cb3becee070b6b19c5d103e1cccec38418227adcc30950584974ef",
+      "canonicalObservationSha256": "8db4347f580d030ba821755e2aa8d970407f81b4e8e2afd69853ea634914b57c",
+      "annotationScreenshotSha256": "e933a33cdf7f3236288cc5d704057a1b4c3a9e89bf3d18f6cb1707c3abcdef92",
+      "provenanceAggregateSha256": "9727d0be4893c5a27c7edfe90fbd5840b4910e498743b529befa50414f17bd56",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mineral-tiles",
+      "pageId": "mineral-tiles--glass-tile",
+      "capturedAt": "2026-07-27T09:13:17.892Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 576,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.0016,
+      "queryTokenCoverage": 1,
+      "observationSha256": "70f9fe4e2d467106aa3012c5d15f8900d0dcaafd72483fa1cd122a6ae0f90c59",
+      "canonicalObservationSha256": "684cdfca965db74f2adc4a684a5631e48bdc6feecdaaa32e95023a9fbcf5da68",
+      "annotationScreenshotSha256": "25bf364fb37db691d3a499d3e077ea3af172d5e7728fc4bc1de30ccf0d5647ab",
+      "provenanceAggregateSha256": "cd25aeb81880864c5d1ea422805748d56a59a68c5fdbb4133dbc1a0a1b7d6401",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "pageId": "save-rite-medical--face-masks",
+      "capturedAt": "2026-07-27T09:13:37.625Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 635,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.005221210726764467,
+      "queryTokenCoverage": 1,
+      "observationSha256": "90f1ae50e76ff108ed2eb488fd0911b6bffcff9ccd7354581ec359f9f41c70eb",
+      "canonicalObservationSha256": "57e3bb57e83c2c1c459e01b517e782c5262d41e041e4f14e90e514259822d1a2",
+      "annotationScreenshotSha256": "47ad426fd4cff8afbe44caf3cfb4b053cafc72053b7084b6653f4bce63fe0dfa",
+      "provenanceAggregateSha256": "ee8680e119398b10c470a3dcd35db015922ad71d0a7d382d35f76c4608517921",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "pageId": "shop-med-vet--needles",
+      "capturedAt": "2026-07-27T09:13:46.725Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 2367,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.00140625,
+      "queryTokenCoverage": 1,
+      "observationSha256": "c595933e53ce1329c64e66448979650f1469350a29525025c50f95b5fa9a07dd",
+      "canonicalObservationSha256": "7bc7d2c54df2fe89e226472d2b34624745066345c77325165e9b89773b749c27",
+      "annotationScreenshotSha256": "3f9e821c39151fafac9605f4b2caff9327f242a50194bc0fcc3198ba6ac27bfb",
+      "provenanceAggregateSha256": "ed2fa447cac5de874a0ff2290a49430821117b192f16e1feb5a7663f6c657dac",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "sunplay",
+      "pageId": "sunplay--pool-stain-remover",
+      "capturedAt": "2026-07-27T09:14:05.081Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 743,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.186,
+      "queryTokenCoverage": 1,
+      "observationSha256": "d9eb2650266bb7650a9ba3b32125b92866eb6ca78d45979fee039839fc580d9e",
+      "canonicalObservationSha256": "819fa935095f587019faa526abd2bbd67164284ec8530bc1f725a0c37f14c94d",
+      "annotationScreenshotSha256": "4e733b9f308be1f004f0ae910a0ca70e09f727d2f62d2dd27b43cd0f18c2478a",
+      "provenanceAggregateSha256": "e36696b745dee1458a3769b2a64c7ce5d57a45f8ef1579f92a9a43bbf97ea95b",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "super-detail",
+      "pageId": "super-detail--glass-cleaner",
+      "capturedAt": "2026-07-27T09:14:15.255Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 352,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "933e77825fb5b7f4145e125b60a018c50599a863def6441705a4fdce9ba210bd",
+      "canonicalObservationSha256": "9242fa954a4570f199c43511f0f63bdba52376504d8a25cedaca1bd30f9483fb",
+      "annotationScreenshotSha256": "87dc5d7871a939cca673479de204069d0f76049244f6dc100e99851388117045",
+      "provenanceAggregateSha256": "11d737c0fd92011f4b008d75cb88546b73ada69f64faa159346ad430512ce255",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tea-forte",
+      "pageId": "tea-forte--loose-leaf-tea",
+      "capturedAt": "2026-07-27T09:14:33.602Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 3409,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "bea3b1f8ebc31f882a2629cf7c1e0320888f03c6ba322f027fb8d7539ae85d1f",
+      "canonicalObservationSha256": "d8d212a99bda2712e3494baa20e7b14bd848a5c86515cedef0f31da966c7b524",
+      "annotationScreenshotSha256": "12eab514fcbda76c81973678480fb08db03bdeff61d8c76cac02e472ad5ab778",
+      "provenanceAggregateSha256": "ebf82139ff21c9c2c99fb360d2d7ed0ce0d502564ec444d890571ec42a8092f6",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-linen-lab",
+      "pageId": "the-linen-lab--linen-twill",
+      "capturedAt": "2026-07-27T09:14:44.176Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 499,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "f68bf17c8af9a8049e4ded194ea3a9568077cfffedad25423c1934afacf959d3",
+      "canonicalObservationSha256": "85fa0983aee0dd6905f40b3abf5376729d08caa84a80755b9d52ad02072221ae",
+      "annotationScreenshotSha256": "babd634780f17a4c29d587415d0cc2aca7bdab6ca2133dbd6cd621622f114b97",
+      "provenanceAggregateSha256": "8f88ef90a46b5611e14dc588b06410987f1b8f224a929ffb20bc5ef2804d08e2",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "best-laminate",
+      "pageId": "best-laminate--engineered-hardwood",
+      "capturedAt": "2026-07-27T09:15:12.944Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 545,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0.05924170616113744,
+      "queryTokenCoverage": 1,
+      "observationSha256": "a90bbe42133ffd2a9332b8a86bc125ea8a9915da8ed31ccfccebf87bd4ff5cc6",
+      "canonicalObservationSha256": "44e3d0c8e3efa372d18a849f2cf76a23815f01021e64cd7fd99b59793b1c38d3",
+      "annotationScreenshotSha256": "f09a3c949219def0942d0835c694fec4c00b0880a847bfaf11e0eda46830d6b9",
+      "provenanceAggregateSha256": "38c361e0ef0a7356224c16cf3fe46f013d115d042d85345213b6a07b7c82a48e",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "burlap-and-barrel",
+      "pageId": "burlap-and-barrel--cinnamon",
+      "capturedAt": "2026-07-27T09:15:30.709Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 605,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "87f2df0663e83a195e47a3d4137243a70198e3cecdcc4c31b0bb4b7c3820300a",
+      "canonicalObservationSha256": "fda0e2f07db8a0039708038f49e81bddce28fc32aebec9497d1c643c4d5f37a1",
+      "annotationScreenshotSha256": "cdaee7921bcee8c5b7dd4dadbe070861a9f6defd077ae812d67e0d2cc617f284",
+      "provenanceAggregateSha256": "74901439c8219c58f8e065bc4a6e977e945157ce3ef0d5e14a104bdf10a48f83",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "correct-products",
+      "pageId": "correct-products--packing-tape",
+      "capturedAt": "2026-07-27T09:15:46.274Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 1,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1157,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.02564102564102564,
+      "queryTokenCoverage": 1,
+      "observationSha256": "662ee9b1711e24ddd8ccf0ce4590b5c464328270e49e4486d987500c1afef104",
+      "canonicalObservationSha256": "9d028201d71d4f0324bbc021bbfd05e74b9aaaa63e14446eac7ad8809f142b20",
+      "annotationScreenshotSha256": "4327b78f541ff6411e5894137bb45f2c8a5e712ad45c36d1000963c01f34ee3c",
+      "provenanceAggregateSha256": "ce355bd754691990059914322144423865dbff0078313ac57b0d2f740e394e40",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "cougar-chemical",
+      "pageId": "cougar-chemical--interior-cleaner",
+      "capturedAt": "2026-07-27T09:15:52.672Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 221,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "45921ce4f81238faf51c593ebf57672a85e13810262b37435edd889084da15d6",
+      "canonicalObservationSha256": "ea92b170e094f317469b26d8affb085a791643b5310687c12b0b655a7375a62b",
+      "annotationScreenshotSha256": "99a39acdbb8fc41766a772bde6b8622ab28bcf7138bb2fe383a7365a292dcc48",
+      "provenanceAggregateSha256": "11dc24892bf088e9a07ebd802290fc2aa1925fd0a6b85958a7bac8165da56b84",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "detailing-com",
+      "pageId": "detailing-com--spray-wax",
+      "capturedAt": "2026-07-27T09:16:01.923Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 914,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e503e7a2a22d1ecc8b55f7c0ec1dc99416b7138297bc4a13217015fde357b347",
+      "canonicalObservationSha256": "3101a74a4f14ac9c5bbdb3fb63de5ffa8e3cd7a1720c0f8567409a50c02fe06d",
+      "annotationScreenshotSha256": "fc96aadc0774e4160a47b753d6b9e71bb7aa9bac89e8340c32ca79154ea308b9",
+      "provenanceAggregateSha256": "303312400f49a4d90187d1ae20966e416f7b7bc1e130cb126c480a8a835b30a7",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "discount-medical-supplies",
+      "pageId": "discount-medical-supplies--gauze-sponges",
+      "capturedAt": "2026-07-27T09:16:10.572Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 5,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 708,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "8800cd0d7f84f62b3ced7517a32a442149327dc74b432f19f1f1e9a24b3265a1",
+      "canonicalObservationSha256": "22ed465eade45e70ca1bf9e731c2621a582eddc8622b761a909a1cb2e29395f1",
+      "annotationScreenshotSha256": "43ceb3890a3e4c420c66ec7538ac72662eaa3b21a0ff82e782c2077443c3a2b3",
+      "provenanceAggregateSha256": "4ee3d2cd28f30a221a9d98b83f53fabb335306b8aa72e170323b49d6ca818eb3",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "fat-quarter-shop",
+      "pageId": "fat-quarter-shop--quilting-fabric",
+      "capturedAt": "2026-07-27T09:16:23.678Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1093,
+      "observationTruncated": false,
+      "dismissedObstructions": 3,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "6438c5b8b2fcb2842a594bb0eaf4023959eb6d01260a88cf88de8a7d648a6bf9",
+      "canonicalObservationSha256": "99c659b857588566268274970844b63e7b6da91987937d18b14569a720539301",
+      "annotationScreenshotSha256": "51a411119a8453ad52bc3579c671498b403c30174907dfcdabac076a91776506",
+      "provenanceAggregateSha256": "f78a9f10d138435bd4a4a7053a9049bda9cd7d4992ba3e4a32ed3064d987e092",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "gorgeous-fabrics",
+      "pageId": "gorgeous-fabrics--wool-fabric",
+      "capturedAt": "2026-07-27T09:16:49.835Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 503,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.010367868209989063,
+      "queryTokenCoverage": 1,
+      "observationSha256": "904b6d93d41f2de20be4aa7689c12315738232b1af07f309e066241369c42dbc",
+      "canonicalObservationSha256": "1874fa3ce1e751fdbee58cd12cf1c3524ddc4e41178b5e6cab7acee1020dbbde",
+      "annotationScreenshotSha256": "272f876adbaa0e64594573ee9f4eb98cfbe0527e7f40aa7bb08f96a5b774acdf",
+      "provenanceAggregateSha256": "9f0adbc0c3dd0163699479742ea08103eef7f6415fbaa7ff79cb3b562bd8afc1",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "in-the-swim",
+      "pageId": "in-the-swim--pool-conditioner",
+      "capturedAt": "2026-07-27T09:17:01.242Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 877,
+      "observationTruncated": false,
+      "dismissedObstructions": 5,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "bbcb4cf0fd5eb1ee87efafbd1ca63d2f3a70962102b295db3e77db30e1a30b27",
+      "canonicalObservationSha256": "3478dfbfba8ab50c5b5e01ebac31ed94cfe12ab5ef43b5289be677c31c452c54",
+      "annotationScreenshotSha256": "dd238c454872eaff9c9c4bc4a51bcf6881ea69359275be20c2e0772854607b6e",
+      "provenanceAggregateSha256": "a6661291f7e7939626b711e639189211d7362fb2dd0f034293fbd7b27ae615d5",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "leslies-pool",
+      "pageId": "leslies-pool--pool-metal-remover",
+      "capturedAt": "2026-07-27T09:17:15.968Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1421,
+      "observationTruncated": false,
+      "dismissedObstructions": 4,
+      "unresolvedObstructionCoverage": 0.0027342325920524974,
+      "queryTokenCoverage": 1,
+      "observationSha256": "83151fb41adc7fac03a72b4886bf7fe22f5c9fea4604affd300c2fada499f3bc",
+      "canonicalObservationSha256": "42d815b31eab7b10c5c27e8a7c2fd1366e4069489e763c087b5a34b597efcd03",
+      "annotationScreenshotSha256": "087ab60796156d3b7b9ca84015b658145e5b98ab741ff4191d70fabeb5bd08db",
+      "provenanceAggregateSha256": "5710f455ee063b23e25f71125dc71451377003d2f00cd301843eb62b280556cc",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "medical-mega",
+      "pageId": "medical-mega--gauze-sponges",
+      "capturedAt": "2026-07-27T09:17:33.634Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1738,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "d4dc3a4fa465e38f873d9e818c7911ba87ec1c451216b3e76cd9064ae7e92c72",
+      "canonicalObservationSha256": "61eb25b223b13141411aefd700e72aef788938ba5d806f67bf84e778bbb5301b",
+      "annotationScreenshotSha256": "c8c559aabeab366c770bd9d4f270d3afcf60fab51fc9abec581d6115c8797c17",
+      "provenanceAggregateSha256": "461e0ab8bcf38b86f2c9345ca91f26685c9238ccd83a455d8686e68c6c31f96c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "mineral-tiles",
+      "pageId": "mineral-tiles--subway-tile",
+      "capturedAt": "2026-07-27T09:17:51.297Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 572,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.006999635435654393,
+      "queryTokenCoverage": 1,
+      "observationSha256": "dc4cbe77412f5f2308039110bdec2e04f192bd80a637574316a1e6152b64a88b",
+      "canonicalObservationSha256": "f7d3e35fe88846774e2dbdc6a199f37428add2f033c8bde0d4cf6da6d5f6f693",
+      "annotationScreenshotSha256": "6851912a516e3f1dfc0360dcc63b1e1781c31044785ac655eaf386a1e11f561b",
+      "provenanceAggregateSha256": "68ab87aefec38a6c54beb037a844bf181ffcc7ad3bc3dc59dd4986b552fbc16d",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "restaurantware",
+      "pageId": "restaurantware--plastic-cutlery",
+      "capturedAt": "2026-07-27T09:18:01.144Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 775,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.050795965487908615,
+      "queryTokenCoverage": 1,
+      "observationSha256": "ff594b283c0f192c51e070523157df2b3c7d3bc5a266c0105702a5ae78ca1d32",
+      "canonicalObservationSha256": "363c6fd2d375be9ab1f720dbff5892c63c7385f374fea7c0ec1b8102d19973a2",
+      "annotationScreenshotSha256": "52b0eb01288a83da7df0137688991db578b06c98501587182dd9baac6278bf90",
+      "provenanceAggregateSha256": "54fb0bd575d9b3e58c24aa8d2a737bd8d82faa639210aef31620314841ee947a",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "save-rite-medical",
+      "pageId": "save-rite-medical--gauze-pads",
+      "capturedAt": "2026-07-27T09:18:10.520Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 443,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.01769702172913866,
+      "queryTokenCoverage": 1,
+      "observationSha256": "45299d227908fa87aead5a9eac4047654e944c84daea40ae01ab92976fd811e0",
+      "canonicalObservationSha256": "aa6d1d65e96676bcbad2ccc689f31a969aaf569a11beee61b76ab2c9308a4525",
+      "annotationScreenshotSha256": "97d8b58bdc46caee7137b2894301e67c649b86ffe57d7e5467fe57fc3591e06d",
+      "provenanceAggregateSha256": "f2a2c4db6d91e7b78ad9d2eb3d65e4340b979bcd651843eea6bbb3b595231360",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "shop-med-vet",
+      "pageId": "shop-med-vet--gauze-sponges",
+      "capturedAt": "2026-07-27T09:18:20.617Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 2,
+      "candidateCount": 10,
+      "candidateScreenshotsCaptured": 10,
+      "observationNodeCount": 2229,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0.02564102564102564,
+      "queryTokenCoverage": 1,
+      "observationSha256": "eff411f14fa54175b0017329ca6572497073a3162dddec41d07687b4e203cffc",
+      "canonicalObservationSha256": "44b80542b2cda622d5f19207c8b1da514aa35f8320ceefa7c19c0c1d6d4be1db",
+      "annotationScreenshotSha256": "4772efb22fa4756a20704c9f60b5934fc52eb1381e990f10abcab7ad695e59bb",
+      "provenanceAggregateSha256": "42df6b3304ae7f5679f5f5fa4312fc7cc4b63f4d8a1500642c781aa1ff7d47ef",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "super-detail",
+      "pageId": "super-detail--spray-wax",
+      "capturedAt": "2026-07-27T09:18:46.936Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 388,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "b2b667e8310ae5b28ffaaefeb981be0048e4a8677c1d38ba87a9675f6e9de073",
+      "canonicalObservationSha256": "ac7af092ca87858543df8a1f8b099fc097d937599b2a4f5d14004570e668687f",
+      "annotationScreenshotSha256": "653b4d071544e14d86fb6c26d779cc6a53ae79d1e599a50a33bb17b455d01380",
+      "provenanceAggregateSha256": "f3eb299dd72b4cc846db922810178dff099638a493956de221b720e767b33a47",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "tea-forte",
+      "pageId": "tea-forte--herbal-tea",
+      "capturedAt": "2026-07-27T09:19:05.842Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 4690,
+      "observationTruncated": false,
+      "dismissedObstructions": 2,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "7d20aca3ec02757c17e63db0cafc891834777f50391d72c5ab5b2097ebd7d2f2",
+      "canonicalObservationSha256": "56f612c1f2f7b65df1c9ecdd48f06427d9fab39ea298149e11f2327d4fbf1f0a",
+      "annotationScreenshotSha256": "e6b3aa1be6e868e852466aa60de8bc417d5f5e9a769ace97f3381f76facf3301",
+      "provenanceAggregateSha256": "f805a4abaf7c0674f8e711fdd82e1e789e3b7aee09ed7739a77f7b75b988272a",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-linen-lab",
+      "pageId": "the-linen-lab--linen-gauze",
+      "capturedAt": "2026-07-27T09:19:15.390Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 424,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "6d352fff5cefb00796cb53272f0771a5f713a2e75a747f62810abec2c17b7357",
+      "canonicalObservationSha256": "a9a44fdb8bbfcee44a810090d3c63faff2656a5bc1e4324d8b953087b5760248",
+      "annotationScreenshotSha256": "dfb45191ef8d4a7a3925758740d126871a11a40569d23716c52feac79efbfd7c",
+      "provenanceAggregateSha256": "d695349873faf597d7072b0d9a734fbc54649929751db945f814662baece36d1",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "replacements": [],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

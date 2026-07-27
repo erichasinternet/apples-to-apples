@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "auditId": "g2-selection-p13-review-batches",
+  "createdAt": "2026-07-27T09:26:50.137Z",
+  "source": {
+    "batchManifest": "benchmarks/reviews/g2-selection-p13-review-batches.json",
+    "batchManifestSha256": "c949f060cd0c2caee70b9990d9c93f14dd02701165b20a16d91b3982ea2ba435",
+    "validationReportSha256": [
+      "3673539435e10657ae939206c543bbbae2a00baf6fb3d8859da1be368eaa39ab",
+      "d0a21e31a39f263005f7d32bae148e12ebc06df33ec8074c5fb2c0e956f687ea",
+      "ec01f0a3e3527fdb738c95b726fc2c4e05c90721e90075e5d319b1b0a390a7fa",
+      "d612b350b62c4a09adfa3c93bf1398f3529c50bfb30483252e48d289fde879a0"
+    ]
+  },
+  "browser": "headed Playwright Chromium",
+  "batches": 4,
+  "pagesLoaded": 36,
+  "screenshotsLoaded": 36,
+  "candidateCards": 429,
+  "consoleErrors": 0,
+  "reviewFilesWritten": 0,
+  "onlyFrozenCardRootOffered": true,
+  "directFrozenCardNavigation": "passed",
+  "nonCandidateAncestor": "rejected-404",
+  "incompleteCoverage": "rejected-422",
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Workbench validation proves batch integrity and usability, not semantic label correctness."
+  }
+}

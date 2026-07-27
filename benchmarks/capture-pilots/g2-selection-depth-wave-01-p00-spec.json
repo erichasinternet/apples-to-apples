@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-depth-wave-01-p00",
+  "capturedAt": "2026-07-27T09:23:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/selection-depth-wave-01.json",
+  "requestedCaptureAttempts": 40,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-10-05-893Z",
+      "pageIds": ["best-laminate--waterproof-flooring"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-10-26-052Z",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-10-43-553Z",
+      "pageIds": ["correct-products--anti-static-bags"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-10-59-653Z",
+      "pageIds": ["cougar-chemical--tire-cleaner"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-11-06-099Z",
+      "pageIds": ["detailing-com--glass-cleaner"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-11-16-067Z",
+      "pageIds": ["discount-medical-supplies--face-masks"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-11-34-192Z",
+      "pageIds": ["fat-quarter-shop--batik-fabric"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-11-47-246Z",
+      "pageIds": ["floorzz--hardwood-flooring"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-12-05-220Z",
+      "pageIds": ["gorgeous-fabrics--silk-fabric"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-12-14-517Z",
+      "pageIds": ["in-the-swim--pool-algaecide"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-12-27-329Z",
+      "pageIds": ["leslies-pool--pool-clarifier"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-12-43-267Z",
+      "pageIds": ["medical-mega--face-masks"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-13-01-346Z",
+      "pageIds": ["mineral-tiles--glass-tile"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-13-19-350Z",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-13-30-133Z",
+      "pageIds": ["save-rite-medical--face-masks"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-13-38-896Z",
+      "pageIds": ["shop-med-vet--needles"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-13-48-273Z",
+      "pageIds": ["sunplay--pool-stain-remover"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-14-06-406Z",
+      "pageIds": ["super-detail--glass-cleaner"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-14-16-485Z",
+      "pageIds": ["tea-forte--loose-leaf-tea"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-14-35-707Z",
+      "pageIds": ["the-linen-lab--linen-twill"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-14-55-282Z",
+      "pageIds": ["best-laminate--engineered-hardwood"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-15-14-177Z",
+      "pageIds": ["burlap-and-barrel--cinnamon"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-15-32-569Z",
+      "pageIds": ["correct-products--packing-tape"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-15-47-426Z",
+      "pageIds": ["cougar-chemical--interior-cleaner"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-15-53-722Z",
+      "pageIds": ["detailing-com--spray-wax"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-16-03-152Z",
+      "pageIds": ["discount-medical-supplies--gauze-sponges"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-16-11-743Z",
+      "pageIds": ["fat-quarter-shop--quilting-fabric"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-16-25-382Z",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-16-41-673Z",
+      "pageIds": ["gorgeous-fabrics--wool-fabric"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-16-50-988Z",
+      "pageIds": ["in-the-swim--pool-conditioner"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-17-02-430Z",
+      "pageIds": ["leslies-pool--pool-metal-remover"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-17-17-301Z",
+      "pageIds": ["medical-mega--gauze-sponges"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-17-35-072Z",
+      "pageIds": ["mineral-tiles--subway-tile"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-17-52-508Z",
+      "pageIds": ["restaurantware--plastic-cutlery"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-18-02-421Z",
+      "pageIds": ["save-rite-medical--gauze-pads"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-18-11-704Z",
+      "pageIds": ["shop-med-vet--gauze-sponges"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-18-21-852Z",
+      "pageIds": []
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-18-39-148Z",
+      "pageIds": ["super-detail--spray-wax"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-18-48-045Z",
+      "pageIds": ["tea-forte--herbal-tea"]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T09-19-07-635Z",
+      "pageIds": ["the-linen-lab--linen-gauze"]
+    }
+  ],
+  "samplingFinding": "All forty unseen query pages on twenty qualified selection domains completed under isolated headed Chromium process bounds with zero parent hard timeouts. Frozen minimum-root, relevance, screenshot-evidence, obstruction, and original-resolution visual checks accepted thirty-six pages and rejected four, a 90% strict yield.",
+  "visualValidationFinding": "All thirty-nine available full-page annotation screenshots and every accepted frozen root were inspected at original resolution. Burlap & Barrel turmeric and Sunplay pool conditioner were rejected with only two and six candidate roots; Floorzz carpet tile was collector-blocked with zero roots; Restaurantware paper plates was rejected because most selected results were unrelated serving products. The thirty-six accepted pages preserve coherent product evidence or legitimate abstention cases across area, mass, count, volume, and length, and fixed controls do not cover selected title, price, quantity, or native unit-price evidence."
+}

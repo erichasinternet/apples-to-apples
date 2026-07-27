@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p13",
+  "createdAt": "2026-07-27T09:26:40.345Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--e6c1f296de22aa68",
+      "path": "benchmark-data/review/g2-selection-p13/reviewer-a.json",
+      "sha256": "ec086ed1056efd78fd2716c7fbbdcd732a1872c1fdeca47c427bb1e2d1746305",
+      "pages": 36
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--b853eb181d5a6d23",
+      "path": "benchmark-data/review/g2-selection-p13/reviewer-b.json",
+      "sha256": "4078250bf217e564b5699d880c32d58771a14c43117bfe9a4ebe1c700528b935",
+      "pages": 36
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 4,
+    "pages": 36,
+    "candidateCards": 429
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p13--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "best-laminate--engineered-hardwood",
+        "best-laminate--waterproof-flooring",
+        "burlap-and-barrel--cinnamon",
+        "correct-products--anti-static-bags",
+        "correct-products--packing-tape",
+        "cougar-chemical--interior-cleaner",
+        "cougar-chemical--tire-cleaner",
+        "detailing-com--glass-cleaner",
+        "detailing-com--spray-wax",
+        "discount-medical-supplies--face-masks"
+      ],
+      "pages": 10,
+      "candidateCards": 119,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--373c38ae454b0ed3",
+          "path": "benchmark-data/review/g2-selection-p13-review-batches/reviewer-a--batch-01.json",
+          "sha256": "8a71b92d35c27c8b6b660910ba946c500f06c83359669ed92218b34688d648d8"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--236f147eed88dbf1",
+          "path": "benchmark-data/review/g2-selection-p13-review-batches/reviewer-b--batch-01.json",
+          "sha256": "21592f0ba5ea95dd970489848a52f2f6eae83fc138425cecc805e76d0fa4b313"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-selection-p13--batch-02",
+      "batchNumber": 2,
+      "pageIds": [
+        "discount-medical-supplies--gauze-sponges",
+        "fat-quarter-shop--batik-fabric",
+        "fat-quarter-shop--quilting-fabric",
+        "floorzz--hardwood-flooring",
+        "gorgeous-fabrics--silk-fabric",
+        "gorgeous-fabrics--wool-fabric",
+        "in-the-swim--pool-algaecide",
+        "in-the-swim--pool-conditioner",
+        "leslies-pool--pool-clarifier",
+        "leslies-pool--pool-metal-remover"
+      ],
+      "pages": 10,
+      "candidateCards": 120,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-02--d54d5f7d32d23080",
+          "path": "benchmark-data/review/g2-selection-p13-review-batches/reviewer-a--batch-02.json",
+          "sha256": "a1fab94fc7c0cb15e69046b5eae1d60653cc285965f4ddbe8be290408cb58c15"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-02--4895e43f39348b97",
+          "path": "benchmark-data/review/g2-selection-p13-review-batches/reviewer-b--batch-02.json",
+          "sha256": "2b388c2ee0f1602f49517814810a89b8881b8410aa3054661810ef1028eb5c2f"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-selection-p13--batch-03",
+      "batchNumber": 3,
+      "pageIds": [
+        "medical-mega--face-masks",
+        "medical-mega--gauze-sponges",
+        "mineral-tiles--glass-tile",
+        "mineral-tiles--subway-tile",
+        "restaurantware--plastic-cutlery",
+        "save-rite-medical--face-masks",
+        "save-rite-medical--gauze-pads",
+        "shop-med-vet--gauze-sponges",
+        "shop-med-vet--needles",
+        "sunplay--pool-stain-remover"
+      ],
+      "pages": 10,
+      "candidateCards": 118,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-03--8065f9e333d489ef",
+          "path": "benchmark-data/review/g2-selection-p13-review-batches/reviewer-a--batch-03.json",
+          "sha256": "4c0630375ae05983ba7de52be044936c50b2741d0c61cbc472a87f46069113e6"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-03--0e66981685f323b6",
+          "path": "benchmark-data/review/g2-selection-p13-review-batches/reviewer-b--batch-03.json",
+          "sha256": "9f81b125f3af9120042aaca843a03634ba99e326a5cfb85993e670661bf37a08"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-selection-p13--batch-04",
+      "batchNumber": 4,
+      "pageIds": [
+        "super-detail--glass-cleaner",
+        "super-detail--spray-wax",
+        "tea-forte--herbal-tea",
+        "tea-forte--loose-leaf-tea",
+        "the-linen-lab--linen-gauze",
+        "the-linen-lab--linen-twill"
+      ],
+      "pages": 6,
+      "candidateCards": 72,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-04--d0a589274d6cc7bf",
+          "path": "benchmark-data/review/g2-selection-p13-review-batches/reviewer-a--batch-04.json",
+          "sha256": "487aea00d70889b09f41640dfa1bc560769c08997dba002a28b5d0278a2a6f4e"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-04--58e1f5be17ac1a39",
+          "path": "benchmark-data/review/g2-selection-p13-review-batches/reviewer-b--batch-04.json",
+          "sha256": "2581ab77a90a510f15dfb6f2a2ed7f073c93b1a3af4b7473699f3d0688644a47"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

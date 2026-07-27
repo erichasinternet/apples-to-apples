@@ -1683,6 +1683,33 @@ validation, and selection now meet their 80, 20, and 20 qualified-domain gates.
 Independent semantic reviews, adjudication, held-out depth collection, and the
 sealed final cohort remain pending.
 
+A first selection-depth wave froze two unseen queries for each of the 20
+qualified selection domains, balanced across area, mass, count, volume, and
+length. Public route probes resolved all 40 intended hosts. Every route then ran
+in its own bounded headed Chromium process at either desktop or narrow viewport;
+39 captured and one was collector-blocked, with zero parent hard timeouts.
+
+Original-resolution review accepted 36 pages and 429 independent candidate
+roots. It rejected Burlap & Barrel turmeric and Sunplay pool conditioner for
+having only two and six roots, Floorzz carpet tile for having no reviewable
+roots, and Restaurantware paper plates because most selected roots were
+unrelated serving products. The accepted evidence is frozen in
+[`g2-selection-depth-wave-01-p00.json`](../benchmarks/capture-pilots/g2-selection-depth-wave-01-p00.json).
+Selection now has 76 of its required 120 structurally eligible pages across all
+20 qualified domains, including 38 narrow-viewport pages.
+
+The blinded
+[`g2-selection-p13.json`](../benchmarks/review-campaigns/g2-selection-p13.json)
+campaign contains the 36 accepted pages in two provenance-bound queues and four
+paired reviewer batches. The full queue and every batch passed headed Playwright
+Chromium: all 36 screenshots and 429 frozen roots loaded, direct root navigation
+passed, non-candidate roots and incomplete submissions were rejected, and there
+were zero console errors or review writes. The independence audit locates all
+596 eligible captures and verifies 6,770 active roots with no duplicates,
+conflicts, or overlap. The campaign registry now validates 61 campaigns, 6,681
+pages, and 71,555 frozen roots. These pages are reviewable evidence, not gold:
+two independent semantic reviews and third-party adjudication remain mandatory.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

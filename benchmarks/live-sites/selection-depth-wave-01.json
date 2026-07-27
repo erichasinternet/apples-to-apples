@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "description": "First bounded depth-expansion wave on all twenty qualified selection domains. Forty unseen listing queries add two independent pages per domain while preserving the frozen domain assignment and requiring no site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "best-laminate",
+      "label": "Bestlaminate",
+      "hostname": "www.bestlaminate.com",
+      "stratum": "laminate-flooring-specialty",
+      "searchUrlTemplate": "https://www.bestlaminate.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "waterproof-flooring",
+          "query": "waterproof flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "engineered-hardwood",
+          "query": "engineered hardwood",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "burlap-and-barrel",
+      "label": "Burlap & Barrel",
+      "hostname": "www.burlapandbarrel.com",
+      "stratum": "single-origin-spice-retail",
+      "searchUrlTemplate": "https://www.burlapandbarrel.com/search?q={query}",
+      "queries": [
+        {
+          "id": "turmeric",
+          "query": "turmeric",
+          "dimension": "mass"
+        },
+        {
+          "id": "cinnamon",
+          "query": "cinnamon",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "correct-products",
+      "label": "Correct Products",
+      "hostname": "www.correctproducts.com",
+      "stratum": "esd-packaging",
+      "searchUrlTemplate": "https://www.correctproducts.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "anti-static-bags",
+          "query": "anti static bags",
+          "dimension": "count"
+        },
+        {
+          "id": "packing-tape",
+          "query": "packing tape",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "cougar-chemical",
+      "label": "Cougar Chemical",
+      "hostname": "cougarchemical.com",
+      "stratum": "industrial-detailing-chemical-supply",
+      "searchUrlTemplate": "https://cougarchemical.com/search?q={query}",
+      "queries": [
+        {
+          "id": "tire-cleaner",
+          "query": "tire cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "interior-cleaner",
+          "query": "interior cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "detailing-com",
+      "label": "Detailing.com",
+      "hostname": "detailing.com",
+      "stratum": "professional-detailing-supply-retail",
+      "searchUrlTemplate": "https://detailing.com/search?q={query}",
+      "queries": [
+        {
+          "id": "glass-cleaner",
+          "query": "glass cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "spray-wax",
+          "query": "spray wax",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "discount-medical-supplies",
+      "label": "Discount Medical Supplies",
+      "hostname": "discountmedicalsupplies.com",
+      "stratum": "discount-clinical-supply",
+      "searchUrlTemplate": "https://discountmedicalsupplies.com/search?q={query}",
+      "queries": [
+        {
+          "id": "face-masks",
+          "query": "face masks",
+          "dimension": "count"
+        },
+        {
+          "id": "gauze-sponges",
+          "query": "gauze sponges",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "fat-quarter-shop",
+      "label": "Fat Quarter Shop",
+      "hostname": "www.fatquartershop.com",
+      "stratum": "national-quilting-fabric-retail",
+      "searchUrlTemplate": "https://www.fatquartershop.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "batik-fabric",
+          "query": "batik fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "quilting-fabric",
+          "query": "quilting fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "floorzz",
+      "label": "Floorzz",
+      "hostname": "floorzz.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://floorzz.com/search?q={query}",
+      "queries": [
+        {
+          "id": "hardwood-flooring",
+          "query": "hardwood flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "carpet-tile",
+          "query": "carpet tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "gorgeous-fabrics",
+      "label": "Gorgeous Fabrics",
+      "hostname": "gorgeousfabrics.com",
+      "stratum": "independent-designer-fabric-retail",
+      "searchUrlTemplate": "https://gorgeousfabrics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "silk-fabric",
+          "query": "silk fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "wool-fabric",
+          "query": "wool fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "in-the-swim",
+      "label": "In The Swim",
+      "hostname": "www.intheswim.com",
+      "stratum": "aquatic-retail",
+      "searchUrlTemplate": "https://www.intheswim.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-algaecide",
+          "query": "pool algaecide",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-conditioner",
+          "query": "pool conditioner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "leslies-pool",
+      "label": "Leslie's Pool Supplies",
+      "hostname": "lesliespool.com",
+      "stratum": "pool-retail-chain",
+      "searchUrlTemplate": "https://lesliespool.com/search/?q={query}",
+      "queries": [
+        {
+          "id": "pool-clarifier",
+          "query": "pool clarifier",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-metal-remover",
+          "query": "pool metal remover",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "medical-mega",
+      "label": "Medical Mega",
+      "hostname": "medicalmega.com",
+      "stratum": "discount-clinical-supply",
+      "searchUrlTemplate": "https://medicalmega.com/?search_query={query}",
+      "queries": [
+        {
+          "id": "face-masks",
+          "query": "face masks",
+          "dimension": "count"
+        },
+        {
+          "id": "gauze-sponges",
+          "query": "gauze sponges",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "mineral-tiles",
+      "label": "Mineral Tiles",
+      "hostname": "www.mineraltiles.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.mineraltiles.com/search?q={query}",
+      "queries": [
+        {
+          "id": "glass-tile",
+          "query": "glass tile",
+          "dimension": "area"
+        },
+        {
+          "id": "subway-tile",
+          "query": "subway tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "restaurantware",
+      "label": "Restaurantware",
+      "hostname": "www.restaurantware.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.restaurantware.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paper-plates",
+          "query": "paper plates",
+          "dimension": "count"
+        },
+        {
+          "id": "plastic-cutlery",
+          "query": "plastic cutlery",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "save-rite-medical",
+      "label": "Save Rite Medical",
+      "hostname": "www.saveritemedical.com",
+      "stratum": "discount-home-medical-supply",
+      "searchUrlTemplate": "https://www.saveritemedical.com/search?q={query}",
+      "queries": [
+        {
+          "id": "face-masks",
+          "query": "face masks",
+          "dimension": "count"
+        },
+        {
+          "id": "gauze-pads",
+          "query": "gauze pads",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "shop-med-vet",
+      "label": "ShopMedVet.com",
+      "hostname": "www.shopmedvet.com",
+      "stratum": "medical-and-veterinary-supply-retail",
+      "searchUrlTemplate": "https://www.shopmedvet.com/search?keywords={query}",
+      "queries": [
+        {
+          "id": "needles",
+          "query": "needles",
+          "dimension": "count"
+        },
+        {
+          "id": "gauze-sponges",
+          "query": "gauze sponges",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "sunplay",
+      "label": "Sunplay",
+      "hostname": "www.sunplay.com",
+      "stratum": "water-care",
+      "searchUrlTemplate": "https://www.sunplay.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pool-stain-remover",
+          "query": "pool stain remover",
+          "dimension": "volume"
+        },
+        {
+          "id": "pool-conditioner",
+          "query": "pool conditioner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "super-detail",
+      "label": "Super Detail",
+      "hostname": "www.superdetail.com",
+      "stratum": "professional-detailing-retail",
+      "searchUrlTemplate": "https://www.superdetail.com/search?q={query}",
+      "queries": [
+        {
+          "id": "glass-cleaner",
+          "query": "glass cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "spray-wax",
+          "query": "spray wax",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "tea-forte",
+      "label": "Tea Forte",
+      "hostname": "teaforte.com",
+      "stratum": "specialty-tea-brand-retail",
+      "searchUrlTemplate": "https://teaforte.com/search?q={query}&type=product",
+      "queries": [
+        {
+          "id": "loose-leaf-tea",
+          "query": "loose leaf tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "herbal-tea",
+          "query": "herbal tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "the-linen-lab",
+      "label": "The Linen Lab",
+      "hostname": "www.thelinenlab.com",
+      "stratum": "specialty-linen-fabric-retail",
+      "searchUrlTemplate": "https://www.thelinenlab.com/search?q={query}",
+      "queries": [
+        {
+          "id": "linen-twill",
+          "query": "linen twill",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-gauze",
+          "query": "linen gauze",
+          "dimension": "length"
+        }
+      ]
+    }
+  ]
+}
