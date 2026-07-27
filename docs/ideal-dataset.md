@@ -1744,6 +1744,26 @@ ready: the product, comparable, abstention, pointer, agreement, and challenge
 metrics remain zero until two independent reviewers complete the queues and a
 third party adjudicates disagreements.
 
+A 120-page validation-depth reserve now freezes six unseen queries for each of
+the 20 qualified validation domains. Its first bounded headed collection
+completed all parent processes with zero hard timeouts: 110 pages captured, eight
+were blocked, and two hit the per-page capture bound. Three captured pages also
+fell below the eight-root machine minimum. These attempts remain private raw
+evidence and have not been promoted.
+
+The validation audit exposed an evidence-integrity defect on virtualized result
+grids. A frozen product root could retain its text and HTML while a later
+`Locator.screenshot()` scrolled the page and captured a recycled filter or
+adjacent-grid region. The collector now performs its final obstruction pass
+before freezing nodes, assigns dedicated root markers, verifies canonical link
+or exact-text identity, captures cards before large root screenshots, and images
+an unmanaged fixed clone of each selected root. The Floor & Decor regression
+case now produces screenshots of the selected product evidence rather than
+filter controls. It still fails visual query coherence when laminate searches
+return mostly tile products, which is the correct disposition. All validation
+pages must be recaptured with this stricter collector before any pilot,
+review campaign, or readiness count can advance.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

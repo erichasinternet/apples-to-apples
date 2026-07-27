@@ -5,7 +5,7 @@ import {
   type Page
 } from "@playwright/test";
 import { createHash } from "node:crypto";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, unlink, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import type { PageObservation } from "../src/learning/contracts";
@@ -27,6 +27,7 @@ import {
   selectTargets,
   slugify,
   assignCaptureViewports,
+  candidateEvidenceIdentityMatches,
   calculateSearchResultQueryCoverage,
   isInterstitialOrBotChallenge,
   isSameSiteHostname,
@@ -92,6 +93,7 @@ interface PageCapture {
   queryTokenCoverage: number;
   candidateCount: number;
   candidateScreenshotsCaptured: number;
+  candidateScreenshotEvidenceMismatches: number;
   observationNodeCount: number;
   observationTruncated: boolean;
   observationSha256: string;
@@ -348,6 +350,22 @@ async function capturePage(
       `search results evidence only ${Math.round(
         queryTokenCoverage * 100
       )}% of requested query tokens`
+    );
+  }
+
+  // Freeze the DOM only after the final obstruction pass. Dismissing a late
+  // overlay can rerender a product grid and invalidate previously assigned
+  // node identities.
+  dismissedObstructions += await preparePage(page);
+  await page.waitForTimeout(250);
+  unresolvedObstructionCoverage = await page
+    .evaluate(measureVisibleObstructionCoverage)
+    .catch(() => 0);
+  if (unresolvedObstructionCoverage > 0.2) {
+    blockReasons.push(
+      `unresolved visible obstruction covers ${Math.round(
+        unresolvedObstructionCoverage * 100
+      )}% of viewport`
     );
   }
 
@@ -715,8 +733,10 @@ async function capturePage(
       candidates: selected.map(({ element, container, groupHint, groupScore }) => {
         const box = element.getBoundingClientRect();
         const link = element.querySelector<HTMLAnchorElement>("a[href]");
+        const nodeId = element.getAttribute("data-ata-benchmark-node") ?? "";
+        element.setAttribute("data-ata-capture-root", nodeId);
         return {
-          nodeId: element.getAttribute("data-ata-benchmark-node") ?? "",
+          nodeId,
           groupHint,
           containerNodeId: container.getAttribute("data-ata-benchmark-node") ?? "",
           groupScore,
@@ -778,27 +798,141 @@ async function capturePage(
   await writeFile(path.join(pageDirectory, "main.html"), extracted.mainHtml, "utf8");
   await writeJson(path.join(pageDirectory, "observation.json"), observation);
 
-  // Consent and promotion layers can mount after the initial page-ready pass.
-  // Recheck immediately before screenshots so visual evidence matches the gate.
-  dismissedObstructions += await preparePage(page);
-  await page.waitForTimeout(250);
-  const lateObstructionCoverage = await page
-    .evaluate(measureVisibleObstructionCoverage)
-    .catch(() => 0);
-  unresolvedObstructionCoverage = lateObstructionCoverage;
-  if (
-    lateObstructionCoverage > 0.2 &&
-    !blockReasons.some((reason) =>
-      reason.startsWith("unresolved visible obstruction covers")
-    )
-  ) {
+  const rootObservation = observation.nodes.find((node) => node.id === observation.rootNodeId);
+  const annotationRegion = {
+    x: Math.max(0, rootObservation?.bounds.x ?? 0),
+    y: Math.max(0, rootObservation?.bounds.y ?? 0),
+    width: Math.max(1, rootObservation?.bounds.width ?? observation.viewport.width),
+    height: Math.max(1, Math.min(2_400, rootObservation?.bounds.height ?? observation.viewport.height))
+  };
+  for (const [index, candidate] of candidates.entries()) {
+    const prefix = `${String(index + 1).padStart(2, "0")}--${slugify(candidate.nodeId)}`;
+    await writeFile(path.join(cardsDirectory, `${prefix}.html`), candidate.html, "utf8");
+    await writeJson(path.join(cardsDirectory, `${prefix}.json`), candidate);
+  }
+
+  let candidateScreenshotsCaptured = 0;
+  let candidateScreenshotEvidenceMismatches = 0;
+  const screenshotDeadline = Date.now() + cardScreenshotBudgetMs;
+  for (const [index, candidate] of candidates.entries()) {
+    const remainingMs = screenshotDeadline - Date.now();
+    if (remainingMs <= 0) break;
+    const prefix = `${String(index + 1).padStart(2, "0")}--${slugify(candidate.nodeId)}`;
+    const locator = page.locator(`[data-ata-capture-root="${candidate.nodeId}"]`).first();
+    const element = await locator.elementHandle().catch(() => null);
+    const currentIdentity = element
+      ? await element
+          .evaluate((element) => {
+            const currentText =
+              (element as HTMLElement).innerText || element.textContent || "";
+            const currentLink = element.querySelector<HTMLAnchorElement>("a[href]");
+            const currentHref = currentLink
+              ? `${new URL(currentLink.href, location.href).origin}${
+                  new URL(currentLink.href, location.href).pathname
+                }`
+              : undefined;
+            return {
+              text: currentText,
+              ...(currentHref ? { href: currentHref } : {})
+            };
+          })
+          .catch(() => null)
+      : null;
+    const identityMatches =
+      currentIdentity !== null &&
+      candidateEvidenceIdentityMatches(candidate, currentIdentity);
+    if (!identityMatches) {
+      candidateScreenshotEvidenceMismatches += 1;
+      await element?.dispose().catch(() => undefined);
+      continue;
+    }
+    const cloneMarker = `capture-${candidate.nodeId}`;
+    const cloned = await element!
+      .evaluate((element, options) => {
+        const clone = element.cloneNode(true) as HTMLElement;
+        clone.setAttribute("data-ata-evidence-clone", options.marker);
+        clone.style.setProperty("position", "fixed", "important");
+        clone.style.setProperty("inset", "auto", "important");
+        clone.style.setProperty("left", "0", "important");
+        clone.style.setProperty("top", "0", "important");
+        clone.style.setProperty("margin", "0", "important");
+        clone.style.setProperty("transform", "none", "important");
+        clone.style.setProperty("z-index", "2147483647", "important");
+        clone.style.setProperty("display", "block", "important");
+        clone.style.setProperty("box-sizing", "border-box", "important");
+        clone.style.setProperty("width", `${options.width}px`, "important");
+        clone.style.setProperty("height", `${options.height}px`, "important");
+        clone.style.setProperty("min-height", "0", "important");
+        clone.style.setProperty("max-height", `${options.height}px`, "important");
+        clone.style.setProperty("overflow", "hidden", "important");
+        clone.style.setProperty("background", "white", "important");
+        document.documentElement.appendChild(clone);
+      }, {
+        marker: cloneMarker,
+        width: Math.min(
+          candidate.box.width,
+          page.viewportSize()?.width ?? candidate.box.width
+        ),
+        height: Math.min(
+          candidate.box.height,
+          page.viewportSize()?.height ?? candidate.box.height
+        )
+      })
+      .then(() => true)
+      .catch(() => false);
+    await element!.dispose().catch(() => undefined);
+    const clone = page
+      .locator(`[data-ata-evidence-clone="${cloneMarker}"]`)
+      .first();
+    const captured = await clone
+      .screenshot({
+        path: path.join(cardsDirectory, `${prefix}.png`),
+        animations: "disabled",
+        caret: "hide",
+        timeout: Math.min(5_000, remainingMs)
+      })
+      .then(() => true)
+      .catch(() => false);
+    const clonedIdentity = captured && cloned
+      ? await clone
+          .evaluate((element) => {
+            const currentText =
+              (element as HTMLElement).innerText || element.textContent || "";
+            const currentLink = element.querySelector<HTMLAnchorElement>("a[href]");
+            const currentHref = currentLink
+              ? `${new URL(currentLink.href, location.href).origin}${
+                  new URL(currentLink.href, location.href).pathname
+                }`
+              : undefined;
+            return {
+              text: currentText,
+              ...(currentHref ? { href: currentHref } : {})
+            };
+          })
+          .catch(() => null)
+      : null;
+    const retainedIdentity =
+      clonedIdentity !== null &&
+      candidateEvidenceIdentityMatches(candidate, clonedIdentity);
+    await clone.evaluate((element) => element.remove()).catch(() => undefined);
+    if (captured && retainedIdentity) {
+      candidateScreenshotsCaptured += 1;
+    } else if (captured) {
+      candidateScreenshotEvidenceMismatches += 1;
+      await unlink(path.join(cardsDirectory, `${prefix}.png`)).catch(() => undefined);
+    }
+  }
+  if (candidateScreenshotEvidenceMismatches > 0) {
     blockReasons.push(
-      `unresolved visible obstruction covers ${Math.round(
-        lateObstructionCoverage * 100
-      )}% of viewport`
+      `${candidateScreenshotEvidenceMismatches} candidate screenshot evidence ${
+        candidateScreenshotEvidenceMismatches === 1 ? "identity" : "identities"
+      } drifted after extraction`
     );
   }
 
+  // Large root screenshots can scroll or virtualize dynamic result grids. Card
+  // evidence is captured first so each immutable card artifact retains the DOM
+  // state used to freeze its text and HTML.
   const mainScreenshotCaptured = await page
     .locator(`[data-ata-benchmark-node="${observation.rootNodeId}"]`)
     .first()
@@ -810,13 +944,6 @@ async function capturePage(
     })
     .then(() => true)
     .catch(() => false);
-  const rootObservation = observation.nodes.find((node) => node.id === observation.rootNodeId);
-  const annotationRegion = {
-    x: Math.max(0, rootObservation?.bounds.x ?? 0),
-    y: Math.max(0, rootObservation?.bounds.y ?? 0),
-    width: Math.max(1, rootObservation?.bounds.width ?? observation.viewport.width),
-    height: Math.max(1, Math.min(2_400, rootObservation?.bounds.height ?? observation.viewport.height))
-  };
   const annotationScreenshotCaptured = await captureAnnotationScreenshot(
     page,
     observation.rootNodeId,
@@ -834,30 +961,6 @@ async function capturePage(
     blockReasons.push("no reviewable product candidates");
   } else if (Buffer.byteLength(extracted.mainHtml) < 5_000) {
     blockReasons.push("empty or incomplete main content");
-  }
-  for (const [index, candidate] of candidates.entries()) {
-    const prefix = `${String(index + 1).padStart(2, "0")}--${slugify(candidate.nodeId)}`;
-    await writeFile(path.join(cardsDirectory, `${prefix}.html`), candidate.html, "utf8");
-    await writeJson(path.join(cardsDirectory, `${prefix}.json`), candidate);
-  }
-
-  let candidateScreenshotsCaptured = 0;
-  const screenshotDeadline = Date.now() + cardScreenshotBudgetMs;
-  for (const [index, candidate] of candidates.entries()) {
-    const remainingMs = screenshotDeadline - Date.now();
-    if (remainingMs <= 0) break;
-    const prefix = `${String(index + 1).padStart(2, "0")}--${slugify(candidate.nodeId)}`;
-    const locator = page.locator(`[data-ata-benchmark-node="${candidate.nodeId}"]`).first();
-    const captured = await locator
-      .screenshot({
-        path: path.join(cardsDirectory, `${prefix}.png`),
-        animations: "disabled",
-        caret: "hide",
-        timeout: Math.min(5_000, remainingMs)
-      })
-      .then(() => true)
-      .catch(() => false);
-    if (captured) candidateScreenshotsCaptured += 1;
   }
 
   const capture: PageCapture = {
@@ -879,6 +982,7 @@ async function capturePage(
     queryTokenCoverage,
     candidateCount: candidates.length,
     candidateScreenshotsCaptured,
+    candidateScreenshotEvidenceMismatches,
     observationNodeCount: observation.nodes.length,
     observationTruncated: observation.truncated,
     observationSha256: hashJson(observation),

@@ -53,6 +53,21 @@ export interface CaptureViewportAssignment {
   height: number;
 }
 
+export interface CandidateEvidenceIdentity {
+  text: string;
+  href?: string;
+}
+
+export function candidateEvidenceIdentityMatches(
+  expected: CandidateEvidenceIdentity,
+  current: CandidateEvidenceIdentity
+): boolean {
+  if (expected.href) {
+    return current.href === expected.href;
+  }
+  return normalizeEvidenceText(current.text) === normalizeEvidenceText(expected.text);
+}
+
 export const CAPTURE_VIEWPORTS: Record<
   CaptureViewportProfile,
   CaptureViewportAssignment
@@ -62,6 +77,10 @@ export const CAPTURE_VIEWPORTS: Record<
 };
 
 const QUERY_STOP_WORDS = new Set(["all", "and", "for", "of", "purpose", "the", "with"]);
+
+function normalizeEvidenceText(value: string): string {
+  return value.replace(/\s+/g, " ").trim();
+}
 
 export function calculateQueryTokenCoverage(
   query: string,

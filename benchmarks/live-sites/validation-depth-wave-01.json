@@ -1,0 +1,306 @@
+{
+  "version": 1,
+  "description": "First structural depth wave for the twenty frozen validation domains. Six unseen queries per domain provide a 120-page reserve for the remaining eighty-page gate while preserving strict rejection, domain isolation, and coverage across area, mass, count, volume, and length without site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "classic-modern-fabrics",
+      "label": "Classic Modern Fabrics",
+      "hostname": "classicmodernfabrics.com",
+      "stratum": "independent-apparel-fabric-retail",
+      "searchUrlTemplate": "https://classicmodernfabrics.com/search?q={query}",
+      "queries": [
+        {"id": "wool-fabric", "query": "wool fabric", "dimension": "length"},
+        {"id": "silk-fabric", "query": "silk fabric", "dimension": "length"},
+        {"id": "rayon-fabric", "query": "rayon fabric", "dimension": "length"},
+        {"id": "jersey-fabric", "query": "jersey fabric", "dimension": "length"},
+        {"id": "denim-fabric", "query": "denim fabric", "dimension": "length"},
+        {"id": "velvet-fabric", "query": "velvet fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "detailers-warehouse",
+      "label": "Detailers Warehouse",
+      "hostname": "www.detailerswarehouse.com",
+      "stratum": "multi-brand-detailing-retail",
+      "searchUrlTemplate": "https://www.detailerswarehouse.com/search?q={query}",
+      "queries": [
+        {"id": "glass-cleaner", "query": "glass cleaner", "dimension": "volume"},
+        {"id": "tire-dressing", "query": "tire dressing", "dimension": "volume"},
+        {"id": "ceramic-coating", "query": "ceramic coating", "dimension": "volume"},
+        {"id": "interior-cleaner", "query": "interior cleaner", "dimension": "volume"},
+        {"id": "spray-wax", "query": "spray wax", "dimension": "volume"},
+        {"id": "degreaser", "query": "degreaser", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "express-med",
+      "label": "ExpressMed",
+      "hostname": "www.expressmed.com",
+      "stratum": "consumer-medical-supply",
+      "searchUrlTemplate": "https://www.expressmed.com/search?q={query}",
+      "queries": [
+        {"id": "syringes", "query": "syringes", "dimension": "count"},
+        {"id": "wound-dressings", "query": "wound dressings", "dimension": "count"},
+        {"id": "gauze-pads", "query": "gauze pads", "dimension": "count"},
+        {"id": "face-masks", "query": "face masks", "dimension": "count"},
+        {"id": "alcohol-prep-pads", "query": "alcohol prep pads", "dimension": "count"},
+        {"id": "bandages", "query": "bandages", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "fabric-direct",
+      "label": "Fabric Direct",
+      "hostname": "www.fabricdirect.com",
+      "stratum": "fabric",
+      "searchUrlTemplate": "https://www.fabricdirect.com/search?q={query}",
+      "queries": [
+        {"id": "upholstery-fabric", "query": "upholstery fabric", "dimension": "length"},
+        {"id": "velvet-fabric", "query": "velvet fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"},
+        {"id": "polyester-fabric", "query": "polyester fabric", "dimension": "length"},
+        {"id": "fleece-fabric", "query": "fleece fabric", "dimension": "length"},
+        {"id": "canvas-fabric", "query": "canvas fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "farmhouse-fabrics",
+      "label": "Farmhouse Fabrics",
+      "hostname": "farmhousefabrics.com",
+      "stratum": "specialty-sewing-fabric-retail",
+      "searchUrlTemplate": "https://farmhousefabrics.com/search?q={query}",
+      "queries": [
+        {"id": "lace-fabric", "query": "lace fabric", "dimension": "length"},
+        {"id": "batiste-fabric", "query": "batiste fabric", "dimension": "length"},
+        {"id": "voile-fabric", "query": "voile fabric", "dimension": "length"},
+        {"id": "wool-fabric", "query": "wool fabric", "dimension": "length"},
+        {"id": "silk-fabric", "query": "silk fabric", "dimension": "length"},
+        {"id": "flannel-fabric", "query": "flannel fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "floor-and-decor",
+      "label": "Floor & Decor",
+      "hostname": "www.flooranddecor.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.flooranddecor.com/search?q={query}",
+      "queries": [
+        {"id": "laminate-flooring", "query": "laminate flooring", "dimension": "area"},
+        {"id": "hardwood-flooring", "query": "hardwood flooring", "dimension": "area"},
+        {"id": "marble-tile", "query": "marble tile", "dimension": "area"},
+        {"id": "porcelain-tile", "query": "porcelain tile", "dimension": "area"},
+        {"id": "waterproof-flooring", "query": "waterproof flooring", "dimension": "area"},
+        {"id": "engineered-hardwood", "query": "engineered hardwood", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "fusion-teas",
+      "label": "Fusion Teas",
+      "hostname": "www.fusionteas.com",
+      "stratum": "independent-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://www.fusionteas.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "black-tea", "query": "black tea", "dimension": "mass"},
+        {"id": "herbal-tea", "query": "herbal tea", "dimension": "mass"},
+        {"id": "oolong-tea", "query": "oolong tea", "dimension": "mass"},
+        {"id": "chai-tea", "query": "chai tea", "dimension": "mass"},
+        {"id": "white-tea", "query": "white tea", "dimension": "mass"},
+        {"id": "rooibos-tea", "query": "rooibos tea", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "go-bulk-medical",
+      "label": "Go Bulk Medical",
+      "hostname": "gobulkmedical.com",
+      "stratum": "bulk-medical-supply",
+      "searchUrlTemplate": "https://gobulkmedical.com/collections/{querySlug}",
+      "queries": [
+        {"id": "face-masks", "query": "face masks", "dimension": "count"},
+        {"id": "syringes", "query": "syringes", "dimension": "count"},
+        {"id": "needles", "query": "needles", "dimension": "count"},
+        {"id": "underpads", "query": "underpads", "dimension": "count"},
+        {"id": "gauze-sponges", "query": "gauze sponges", "dimension": "count"},
+        {"id": "alcohol-prep-pads", "query": "alcohol prep pads", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "medical-supply-pros",
+      "label": "Medical Supply Pros",
+      "hostname": "medicalsupplypros.com",
+      "stratum": "direct-to-consumer-medical-supply-retail",
+      "searchUrlTemplate": "https://medicalsupplypros.com/search?q={query}",
+      "queries": [
+        {"id": "needles", "query": "needles", "dimension": "count"},
+        {"id": "catheters", "query": "catheters", "dimension": "count"},
+        {"id": "bandages", "query": "bandages", "dimension": "count"},
+        {"id": "alcohol-prep-pads", "query": "alcohol prep pads", "dimension": "count"},
+        {"id": "gauze-sponges", "query": "gauze sponges", "dimension": "count"},
+        {"id": "face-masks", "query": "face masks", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "mosaic-tile-direct",
+      "label": "Mosaic Tile Direct",
+      "hostname": "mosaictiledirect.net",
+      "stratum": "mosaic-and-tile-retail",
+      "searchUrlTemplate": "https://mosaictiledirect.net/search?q={query}",
+      "queries": [
+        {"id": "glass-tile", "query": "glass tile", "dimension": "area"},
+        {"id": "marble-tile", "query": "marble tile", "dimension": "area"},
+        {"id": "subway-tile", "query": "subway tile", "dimension": "area"},
+        {"id": "stone-tile", "query": "stone tile", "dimension": "area"},
+        {"id": "metal-tile", "query": "metal tile", "dimension": "area"},
+        {"id": "pebble-tile", "query": "pebble tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "north-bay-trading",
+      "label": "North Bay Trading Co.",
+      "hostname": "www.northbaytrading.com",
+      "stratum": "dehydrated-food-specialty",
+      "searchUrlTemplate": "https://www.northbaytrading.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "dried-beans", "query": "dried beans", "dimension": "mass"},
+        {"id": "freeze-dried-fruit", "query": "freeze dried fruit", "dimension": "mass"},
+        {"id": "soup-mix", "query": "soup mix", "dimension": "mass"},
+        {"id": "dried-mushrooms", "query": "dried mushrooms", "dimension": "mass"},
+        {"id": "dried-corn", "query": "dried corn", "dimension": "mass"},
+        {"id": "rice", "query": "rice", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "parentgiving",
+      "label": "Parentgiving",
+      "hostname": "www.parentgiving.com",
+      "stratum": "caregiver-medical-supply-retail",
+      "searchUrlTemplate": "https://www.parentgiving.com/search?q={query}",
+      "queries": [
+        {"id": "adult-diapers", "query": "adult diapers", "dimension": "count"},
+        {"id": "wipes", "query": "wipes", "dimension": "count"},
+        {"id": "bed-pads", "query": "bed pads", "dimension": "count"},
+        {"id": "incontinence-pads", "query": "incontinence pads", "dimension": "count"},
+        {"id": "briefs", "query": "briefs", "dimension": "count"},
+        {"id": "liners", "query": "liners", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "petsmart",
+      "label": "PetSmart",
+      "hostname": "www.petsmart.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://www.petsmart.com/search/?q={query}",
+      "queries": [
+        {"id": "dog-treats", "query": "dog treats", "dimension": "mass"},
+        {"id": "cat-food", "query": "cat food", "dimension": "mass"},
+        {"id": "dog-waste-bags", "query": "dog waste bags", "dimension": "count"},
+        {"id": "aquarium-filters", "query": "aquarium filters", "dimension": "count"},
+        {"id": "bird-food", "query": "bird food", "dimension": "mass"},
+        {"id": "flea-treatment", "query": "flea treatment", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "pinch-a-penny",
+      "label": "Pinch A Penny",
+      "hostname": "pinchapenny.com",
+      "stratum": "pool-franchise",
+      "searchUrlTemplate": "https://pinchapenny.com/search?q={query}",
+      "queries": [
+        {"id": "pool-shock", "query": "pool shock", "dimension": "mass"},
+        {"id": "pool-clarifier", "query": "pool clarifier", "dimension": "volume"},
+        {"id": "pool-enzyme", "query": "pool enzyme", "dimension": "volume"},
+        {"id": "phosphate-remover", "query": "phosphate remover", "dimension": "volume"},
+        {"id": "pool-defoamer", "query": "pool defoamer", "dimension": "volume"},
+        {"id": "pool-conditioner", "query": "pool conditioner", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "portofino-flooring",
+      "label": "Portofino Flooring",
+      "hostname": "portofinoflooring.com",
+      "stratum": "direct-to-consumer-flooring-retail",
+      "searchUrlTemplate": "https://portofinoflooring.com/search?q={query}",
+      "queries": [
+        {"id": "laminate-flooring", "query": "laminate flooring", "dimension": "area"},
+        {"id": "hardwood-flooring", "query": "hardwood flooring", "dimension": "area"},
+        {"id": "waterproof-flooring", "query": "waterproof flooring", "dimension": "area"},
+        {"id": "engineered-hardwood", "query": "engineered hardwood", "dimension": "area"},
+        {"id": "vinyl-plank", "query": "vinyl plank", "dimension": "area"},
+        {"id": "bamboo-flooring", "query": "bamboo flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "recreation-supply",
+      "label": "Recreation Supply Company",
+      "hostname": "www.recsupply.com",
+      "stratum": "recreation-supply",
+      "searchUrlTemplate": "https://www.recsupply.com/search?q={query}",
+      "queries": [
+        {"id": "pool-shock", "query": "pool shock", "dimension": "mass"},
+        {"id": "pool-filter", "query": "pool filter", "dimension": "count"},
+        {"id": "pool-cleaner", "query": "pool cleaner", "dimension": "volume"},
+        {"id": "pool-test-strips", "query": "pool test strips", "dimension": "count"},
+        {"id": "pool-clarifier", "query": "pool clarifier", "dimension": "volume"},
+        {"id": "pool-cover", "query": "pool cover", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "rubber-flooring-experts",
+      "label": "Rubber Flooring Experts",
+      "hostname": "www.rubberflooringexperts.com",
+      "stratum": "rubber-flooring-specialty",
+      "searchUrlTemplate": "https://www.rubberflooringexperts.com/search?q={query}",
+      "queries": [
+        {"id": "gym-mats", "query": "gym mats", "dimension": "area"},
+        {"id": "rubber-mats", "query": "rubber mats", "dimension": "area"},
+        {"id": "playground-flooring", "query": "playground flooring", "dimension": "area"},
+        {"id": "interlocking-tiles", "query": "interlocking tiles", "dimension": "area"},
+        {"id": "rubber-underlayment", "query": "rubber underlayment", "dimension": "area"},
+        {"id": "garage-flooring", "query": "garage flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "sos-pool",
+      "label": "SOS Pool & Spa Supplies",
+      "hostname": "www.sospool.com",
+      "stratum": "independent-pool-supply-retail",
+      "searchUrlTemplate": "https://www.sospool.com/search?q={query}",
+      "queries": [
+        {"id": "pool-shock", "query": "pool shock", "dimension": "mass"},
+        {"id": "phosphate-remover", "query": "phosphate remover", "dimension": "volume"},
+        {"id": "pool-enzyme", "query": "pool enzyme", "dimension": "volume"},
+        {"id": "pool-stain-remover", "query": "pool stain remover", "dimension": "volume"},
+        {"id": "pool-conditioner", "query": "pool conditioner", "dimension": "volume"},
+        {"id": "pool-test-strips", "query": "pool test strips", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "style-maker-fabrics",
+      "label": "Style Maker Fabrics",
+      "hostname": "stylemakerfabrics.com",
+      "stratum": "designer-apparel-fabric-retail",
+      "searchUrlTemplate": "https://stylemakerfabrics.com/search?q={query}",
+      "queries": [
+        {"id": "silk-fabric", "query": "silk fabric", "dimension": "length"},
+        {"id": "wool-fabric", "query": "wool fabric", "dimension": "length"},
+        {"id": "rayon-fabric", "query": "rayon fabric", "dimension": "length"},
+        {"id": "knit-fabric", "query": "knit fabric", "dimension": "length"},
+        {"id": "jersey-fabric", "query": "jersey fabric", "dimension": "length"},
+        {"id": "denim-fabric", "query": "denim fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "supply-clinic",
+      "label": "Supply Clinic",
+      "hostname": "www.supplyclinic.com",
+      "stratum": "dental-and-medical-supply-marketplace",
+      "searchUrlTemplate": "https://www.supplyclinic.com/search?q={query}",
+      "queries": [
+        {"id": "syringes", "query": "syringes", "dimension": "count"},
+        {"id": "needles", "query": "needles", "dimension": "count"},
+        {"id": "dental-bibs", "query": "dental bibs", "dimension": "count"},
+        {"id": "gauze-sponges", "query": "gauze sponges", "dimension": "count"},
+        {"id": "alcohol-prep-pads", "query": "alcohol prep pads", "dimension": "count"},
+        {"id": "bandages", "query": "bandages", "dimension": "count"}
+      ]
+    }
+  ]
+}

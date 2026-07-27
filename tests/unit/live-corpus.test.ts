@@ -4,6 +4,7 @@ import {
   CAPTURE_VIEWPORTS,
   annotationScreenshotDimensionsMatch,
   assignCaptureViewports,
+  candidateEvidenceIdentityMatches,
   calculateQueryTokenCoverage,
   calculateSearchResultQueryCoverage,
   MINIMUM_QUERY_TOKEN_COVERAGE,
@@ -20,6 +21,39 @@ import {
 } from "../../scripts/live-corpus-lib";
 
 describe("live benchmark corpus", () => {
+  it("requires screenshot evidence to retain the frozen candidate identity", () => {
+    expect(
+      candidateEvidenceIdentityMatches(
+        {
+          text: "Original product $12.00",
+          href: "https://shop.example/products/original"
+        },
+        {
+          text: "Original product sale price $10.00",
+          href: "https://shop.example/products/original"
+        }
+      )
+    ).toBe(true);
+    expect(
+      candidateEvidenceIdentityMatches(
+        {
+          text: "Original product $12.00",
+          href: "https://shop.example/products/original"
+        },
+        {
+          text: "Price filter $0 - $100",
+          href: "https://shop.example/collections/all"
+        }
+      )
+    ).toBe(false);
+    expect(
+      candidateEvidenceIdentityMatches(
+        { text: "  Product name\n$12.00 " },
+        { text: "Product name $12.00" }
+      )
+    ).toBe(true);
+  });
+
   it("expands every site query into a unique reproducible target", () => {
     const manifest = targetManifest as CorpusTargetManifest;
     const targets = expandTargets(manifest);
