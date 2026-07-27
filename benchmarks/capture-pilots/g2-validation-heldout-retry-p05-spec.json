@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p05",
+  "capturedAt": "2026-07-27T04:27:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-qualification-retry-p09.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T04-22-01-895Z",
+      "pageIds": [
+        "go-bulk-medical--gloves"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T04-25-20-511Z",
+      "pageIds": [
+        "go-bulk-medical--disposable-medical-supplies"
+      ]
+    }
+  ],
+  "samplingFinding": "Go Bulk Medical was the only one of ten disjoint, unassigned p09 domains to pass two fresh opposite-viewport pages. It was assigned to validation after the frozen gate.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots and all candidate closeups were inspected. The twenty-four frozen roots show coherent requested-query medical supplies with readable regular, sale, range, sold-out, case, box, and nested count evidence."
+}

@@ -121,7 +121,8 @@
     "express-med",
     "style-maker-fabrics",
     "portofino-flooring",
-    "mosaic-tile-direct"
+    "mosaic-tile-direct",
+    "go-bulk-medical"
   ],
   "selection": [
     "petflow",

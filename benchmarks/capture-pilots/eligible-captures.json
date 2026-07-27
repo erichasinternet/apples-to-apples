@@ -6120,6 +6120,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p04.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "go-bulk-medical",
+      "cohort": "validation",
+      "pageId": "go-bulk-medical--gloves",
+      "captureTimestamp": "2026-07-27T04:22:21.879Z",
+      "observationSha256": "445bc5dc98c4193412997c131cfce1d7f7177ca1c9fc2597f02b16f1f1c66382",
+      "annotationScreenshotSha256": "b0006a6e5b2cb8e08f62f2f392f41a00aced533f406120775bd5ad3d39edd127",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p09.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p05.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "go-bulk-medical",
+      "cohort": "validation",
+      "pageId": "go-bulk-medical--disposable-medical-supplies",
+      "captureTimestamp": "2026-07-27T04:25:40.685Z",
+      "observationSha256": "36d6ccae1c231f8dcbfaa56d16954e91dc19b85fe14211e50d65fe0fdbdf0362",
+      "annotationScreenshotSha256": "73fde57871aa73e8b2ed8443869481e564175fac848d0d798bc664ffee0e4c1c",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p09.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p05.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

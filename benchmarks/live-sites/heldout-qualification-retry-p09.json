@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "description": "Tenth capture-only held-out retry manifest with two previously unassigned transient-failure domains per supported dimension. Every site remains unassigned until two fresh opposite-viewport pages pass the frozen machine and visual gate.",
+  "sites": [
+    {
+      "id": "the-rag-company",
+      "label": "The Rag Company",
+      "hostname": "theragcompany.com",
+      "stratum": "automotive-detailing-retail",
+      "searchUrlTemplate": "https://theragcompany.com/search?q={query}",
+      "queries": [
+        {
+          "id": "car-wash-soap",
+          "query": "car wash soap",
+          "dimension": "volume"
+        },
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "autoality",
+      "label": "Autoality",
+      "hostname": "www.autoality.com",
+      "stratum": "professional-detailing-retail",
+      "searchUrlTemplate": "https://www.autoality.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "car-shampoo",
+          "query": "car shampoo",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "osm-supplies",
+      "label": "OSM Supplies",
+      "hostname": "www.osmsupplies.com",
+      "stratum": "medical-ppe-wholesale",
+      "searchUrlTemplate": "https://www.osmsupplies.com/search?q={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "face-masks",
+          "query": "face masks",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "go-bulk-medical",
+      "label": "Go Bulk Medical",
+      "hostname": "gobulkmedical.com",
+      "stratum": "bulk-medical-supply",
+      "searchUrlTemplate": "https://gobulkmedical.com/collections/{querySlug}",
+      "queries": [
+        {
+          "id": "gloves",
+          "query": "gloves",
+          "querySlug": "gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "disposable-medical-supplies",
+          "query": "disposable medical supplies",
+          "querySlug": "disposable-medical-supplies",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "cali-fabrics",
+      "label": "Cali Fabrics",
+      "hostname": "califabrics.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://califabrics.com/{querySlug}",
+      "queries": [
+        {
+          "id": "newest-fabrics",
+          "query": "newest fabrics",
+          "querySlug": "our-newest-fabrics/",
+          "dimension": "length"
+        },
+        {
+          "id": "knit-fabrics",
+          "query": "knit fabrics",
+          "querySlug": "knits/",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "fashion-fabrics-club",
+      "label": "Fashion Fabrics Club",
+      "hostname": "fashionfabricsclub.com",
+      "stratum": "online-fabric-discount",
+      "searchUrlTemplate": "https://fashionfabricsclub.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "linen-fabric",
+          "query": "linen fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "tilebar",
+      "label": "TileBar",
+      "hostname": "www.tilebar.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.tilebar.com/search?q={query}",
+      "queries": [
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        },
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "tile-club",
+      "label": "Tile Club",
+      "hostname": "www.tileclub.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://www.tileclub.com/search?q={query}",
+      "queries": [
+        {
+          "id": "porcelain-tile",
+          "query": "porcelain tile",
+          "dimension": "area"
+        },
+        {
+          "id": "mosaic-tile",
+          "query": "mosaic tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "frontier-coop",
+      "label": "Frontier Co-op",
+      "hostname": "www.frontiercoop.com",
+      "stratum": "cooperative-spice-retail",
+      "searchUrlTemplate": "https://www.frontiercoop.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paprika",
+          "query": "paprika",
+          "dimension": "mass"
+        },
+        {
+          "id": "garlic-powder",
+          "query": "garlic powder",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "spiceology",
+      "label": "Spiceology",
+      "hostname": "spiceology.com",
+      "stratum": "spices-and-ingredients",
+      "searchUrlTemplate": "https://spiceology.com/search?q={query}",
+      "queries": [
+        {
+          "id": "black-pepper",
+          "query": "black pepper",
+          "dimension": "mass"
+        },
+        {
+          "id": "cinnamon",
+          "query": "cinnamon",
+          "dimension": "mass"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p06",
+  "createdAt": "2026-07-27T04:28:00.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "go-bulk-medical",
+      "pageId": "go-bulk-medical--disposable-medical-supplies",
+      "captureTimestamp": "2026-07-27T04:25:40.685Z",
+      "candidateCardCount": 12,
+      "observationSha256": "36d6ccae1c231f8dcbfaa56d16954e91dc19b85fe14211e50d65fe0fdbdf0362",
+      "annotationScreenshotSha256": "73fde57871aa73e8b2ed8443869481e564175fac848d0d798bc664ffee0e4c1c"
+    },
+    {
+      "siteId": "go-bulk-medical",
+      "pageId": "go-bulk-medical--gloves",
+      "captureTimestamp": "2026-07-27T04:22:21.879Z",
+      "candidateCardCount": 12,
+      "observationSha256": "445bc5dc98c4193412997c131cfce1d7f7177ca1c9fc2597f02b16f1f1c66382",
+      "annotationScreenshotSha256": "b0006a6e5b2cb8e08f62f2f392f41a00aced533f406120775bd5ad3d39edd127"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--bfc2bf926e5da0e6",
+      "campaignQueueSha256": "4aefd655abb9b2d28d0650cf56bd1739f6c800bacdc85e6ed66103260d4c8b7d",
+      "sourceQueueSha256": [
+        "f457fbdac6628675542246f3f7614ae196b604bfd833087fbd23ddc6a4cc94b4",
+        "a256e6c3e1cdf1cf94fe980d945cfa9917c7ec3d0670f3ca3cceb9f35f996cd6"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--82c91bca85570d50",
+      "campaignQueueSha256": "a1dd21529d359551417fff49ee50892b69a97549770fdee6700674fb3019f78a",
+      "sourceQueueSha256": [
+        "dfb9a23cee261cfa7801ffec69e761c50a8826c44b4ff4cdd952ec6483592226",
+        "a115ad66de82cdc1156ae26ff4f9d9a6e383667ce8cb3b4443c71e63861949d9"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--bfc2bf926e5da0e6",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p06",
+  "createdAt": "2026-07-27T04:28:55.716Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--bfc2bf926e5da0e6",
+      "path": "benchmark-data/review/g2-validation-p06/reviewer-a.json",
+      "sha256": "4aefd655abb9b2d28d0650cf56bd1739f6c800bacdc85e6ed66103260d4c8b7d",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--82c91bca85570d50",
+      "path": "benchmark-data/review/g2-validation-p06/reviewer-b.json",
+      "sha256": "a1dd21529d359551417fff49ee50892b69a97549770fdee6700674fb3019f78a",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p06--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "go-bulk-medical--disposable-medical-supplies",
+        "go-bulk-medical--gloves"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--ff6a2ca19ac9cfc1",
+          "path": "benchmark-data/review/g2-validation-p06-review-batches/reviewer-a--batch-01.json",
+          "sha256": "14e95f654ae60288858689fac16a34848a5c690012de6a416d79df939645edef"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--5e3a8f02f7cef284",
+          "path": "benchmark-data/review/g2-validation-p06-review-batches/reviewer-b--batch-01.json",
+          "sha256": "ee6fe2499b14fb3d7a9ea55aded52d6df8b4fd34e97e5ac953306cece26ad296"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

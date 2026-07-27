@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p05",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T04:27:00.000Z",
+  "source": {
+    "siteIds": [
+      "go-bulk-medical"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "bulk-medical-supply"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "9e99c9c8c23e12a09b6d5c3ee9166c86616c6a05c91d75f3455a639851340f0f"
+    ],
+    "collectorSha256": [
+      "6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T04-22-01-895Z",
+      "runManifestSha256": "24b987375a8e6e31e32602886709c804a2898bfedd879c3d8ef2b6def2eaea4e",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T04-25-20-511Z",
+      "runManifestSha256": "ae30db21258a4a10994a30912a7906a65bd32514af7b3955c5e410908c586e92",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "Go Bulk Medical was the only one of ten disjoint, unassigned p09 domains to pass two fresh opposite-viewport pages. It was assigned to validation after the frozen gate.",
+    "visualValidationFinding": "Both original-resolution annotation screenshots and all candidate closeups were inspected. The twenty-four frozen roots show coherent requested-query medical supplies with readable regular, sale, range, sold-out, case, box, and nested count evidence."
+  },
+  "captures": [
+    {
+      "siteId": "go-bulk-medical",
+      "pageId": "go-bulk-medical--gloves",
+      "capturedAt": "2026-07-27T04:22:21.879Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 9,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1279,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0.0038027777777777778,
+      "queryTokenCoverage": 1,
+      "observationSha256": "445bc5dc98c4193412997c131cfce1d7f7177ca1c9fc2597f02b16f1f1c66382",
+      "canonicalObservationSha256": "83f0dd6bf5bfc44bacd3766510d9da8467a1e55400474c293792df70356c894c",
+      "annotationScreenshotSha256": "b0006a6e5b2cb8e08f62f2f392f41a00aced533f406120775bd5ad3d39edd127",
+      "provenanceAggregateSha256": "9f9d3448ada4930af1bd049765413468018d59487e7411e877ae5edee0bf19c0",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "go-bulk-medical",
+      "pageId": "go-bulk-medical--disposable-medical-supplies",
+      "capturedAt": "2026-07-27T04:25:40.685Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 9,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1299,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0.01663628630453275,
+      "queryTokenCoverage": 1,
+      "observationSha256": "36d6ccae1c231f8dcbfaa56d16954e91dc19b85fe14211e50d65fe0fdbdf0362",
+      "canonicalObservationSha256": "23f504eec56241043ecfe0f933e952da22122c8e9ac56a1d23d40f761f424c9e",
+      "annotationScreenshotSha256": "73fde57871aa73e8b2ed8443869481e564175fac848d0d798bc664ffee0e4c1c",
+      "provenanceAggregateSha256": "f8e2319de517fa0cc026848497a7e7f04116e0f09454b821936a6b97e9b78ba7",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p09",
+  "candidateManifest": "benchmarks/live-sites/heldout-qualification-retry-p09.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "5489067e41e9730ba8ce6a8d97c8d2d1ab464f0fdb5bdd873bfdced34c03e73f",
+    "narrowBatchSha256": "0d0d676abd6b7f61891802e3b3a8f31c74b809e361d12e7208585589befb3ff6",
+    "processIsolationFinding": "All twelve headed capture children completed under isolated process-group bounds with zero parent hard timeouts. Frontier Co-op reached the separate 60000 ms page deadline after recording its blocked metadata.",
+    "samplingFinding": "Ten disjoint, unassigned domains received a fresh desktop capture. Five desktop pages passed the numeric machine gate; original-resolution review advanced Go Bulk Medical and Tile Club to distinct narrow captures. Go Bulk Medical passed both viewport gates; no old partial capture was reused.",
+    "manifestIntegrityFinding": "Both accepted captures use the frozen retry manifest hash 9e99c9c8c23e12a09b6d5c3ee9166c86616c6a05c91d75f3455a639851340f0f and collector hash 6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T04-22-01-895Z",
+      "runManifestSha256": "24b987375a8e6e31e32602886709c804a2898bfedd879c3d8ef2b6def2eaea4e",
+      "purpose": "Go Bulk Medical desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T04-25-20-511Z",
+      "runManifestSha256": "ae30db21258a4a10994a30912a7906a65bd32514af7b3955c5e410908c586e92",
+      "purpose": "Go Bulk Medical narrow qualification capture"
+    }
+  ],
+  "results": {
+    "the-rag-company": {
+      "status": "rejected",
+      "reason": "The desktop search exposed twelve roots and complete query evidence, but original-resolution review showed kits, towels, brushes, and wash pads mixed into the car-wash-soap result set."
+    },
+    "autoality": {
+      "status": "rejected",
+      "reason": "The desktop route returned HTTP 404 with no requested-query evidence or reviewable product candidates."
+    },
+    "osm-supplies": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no requested-query evidence or reviewable product candidates."
+    },
+    "go-bulk-medical": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "go-bulk-medical--gloves",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0038027777777777778,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "go-bulk-medical--disposable-medical-supplies",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.01663628630453275,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent medical-supply grids pass in opposite viewports. Cards expose current, list, range, and sold-out prices alongside cases, boxes, item counts, and nested multipack quantities without relying on site-specific selectors."
+    },
+    "cali-fabrics": {
+      "status": "rejected",
+      "reason": "The desktop page exposed twelve roots and complete query evidence, but a delayed first-order modal and chat prompt visibly covered selected product-card evidence."
+    },
+    "fashion-fabrics-club": {
+      "status": "rejected",
+      "reason": "The desktop route exposed twelve roots and complete query evidence, but an unresolved visible obstruction covered the full viewport."
+    },
+    "tilebar": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no requested-query evidence or reviewable product candidates."
+    },
+    "tile-club": {
+      "status": "rejected",
+      "reason": "The coherent desktop porcelain-tile page passed, but the distinct narrow mosaic-tile capture exposed only half of the requested-query evidence."
+    },
+    "frontier-coop": {
+      "status": "rejected",
+      "reason": "The desktop capture retained an unresolved obstruction over 44% of the viewport, captured no candidate screenshots, and reached the frozen 60000 ms page deadline."
+    },
+    "spiceology": {
+      "status": "rejected",
+      "reason": "The desktop route exposed twelve roots and complete query evidence, but a central privacy dialog and chatbot covered selected card prices and controls."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "go-bulk-medical"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "go-bulk-medical",
+        "cohort": "validation"
+      }
+    ],
+    "status": "keep"
+  }
+}

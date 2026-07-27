@@ -1388,6 +1388,23 @@ for the remaining failures in
 The zero-yield wave remains in the denominator, and held-out assignments,
 campaigns, and the 510-entry eligible registry are unchanged.
 
+A tenth bounded retry revisited 10 unassigned domains whose earlier failures
+were dominated by time bounds or transient visual obstruction. All 12 isolated
+headed Chromium children completed without a parent hard timeout; one page
+reached its separate 60-second capture deadline. Five desktop pages passed the
+numeric gate, and original-resolution review advanced Go Bulk Medical and Tile
+Club to distinct narrow queries. Tile Club then failed complete query evidence,
+while Go Bulk Medical qualified with coherent case, box, item-count, sale,
+range, and sold-out evidence. The accepted domain adds 2 validation pages and
+24 count roots. Qualified held-out structure is now 8 validation domains with
+16 pages and 8 selection domains with 16 pages, both at 50% narrow-viewport
+coverage. The blinded
+[`g2-validation-p06.json`](../benchmarks/review-campaigns/g2-validation-p06.json)
+campaign and its paired reviewer batch passed headed Playwright Chromium with
+all 24 frozen roots loaded, zero console errors, and zero review writes. The
+eligible registry now contains 512 exact capture identities. Human semantic
+reviews and adjudication remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,
