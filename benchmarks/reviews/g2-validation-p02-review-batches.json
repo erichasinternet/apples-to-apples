@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p02",
+  "createdAt": "2026-07-27T02:59:47.895Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--40e54a3d28617b8c",
+      "path": "benchmark-data/review/g2-validation-p02/reviewer-a.json",
+      "sha256": "3b494553d181ab92eafdb9870efb1cee9d1436b7b8dbf710435262875ea681a9",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--086087a7b87aac80",
+      "path": "benchmark-data/review/g2-validation-p02/reviewer-b.json",
+      "sha256": "875c3391120a84aff832f4785f8e4c39cbdcb0523fea68fcb7711e392d156c84",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p02--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "detailers-warehouse--car-shampoo",
+        "detailers-warehouse--wheel-cleaner"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--183eaea80a8f6035",
+          "path": "benchmark-data/review/g2-validation-p02-review-batches/reviewer-a--batch-01.json",
+          "sha256": "3b16e27dfd08c1bd8e468341107e03a682d4b74d0beaf30519a65ebd88756681"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--4ad0bc3bc6ac83bc",
+          "path": "benchmark-data/review/g2-validation-p02-review-batches/reviewer-b--batch-01.json",
+          "sha256": "f121f70b0613d7276b1521323b7129fb3a85f4164a6de2fc410bb05367f7e1e7"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

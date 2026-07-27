@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p01",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T02:56:00.000Z",
+  "source": {
+    "siteIds": [
+      "detailers-warehouse"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "multi-brand-detailing-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "f605384ac89b5abf2d30b0ef839a8afa8580ee02ef0ef85fb0d4292a7e2e4bce"
+    ],
+    "collectorSha256": [
+      "6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T02-51-49-846Z",
+      "runManifestSha256": "41f34582ed274c42c798f9c4d1e1edfa771f7940be7c1059b7446d4c4e0e1572",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T02-55-40-457Z",
+      "runManifestSha256": "b2239662e184e17485f45d04a30fde4b9647764917fa0742c151676fb4e47843",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "Detailers Warehouse was the only one of ten disjoint, unassigned domains in the second bounded held-out retry to pass two fresh opposite-viewport gates. It was assigned to validation to balance qualified held-out domain counts.",
+    "visualValidationFinding": "Original-resolution annotation screenshots and all twenty-four root closeups were inspected. Both pages show coherent requested-query detailing grids with readable price and package-volume evidence."
+  },
+  "captures": [
+    {
+      "siteId": "detailers-warehouse",
+      "pageId": "detailers-warehouse--wheel-cleaner",
+      "capturedAt": "2026-07-27T02:51:58.247Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 716,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "5b5ade823fc426cd357553141aca274a8d784dfb5894973475af613c0a541a19",
+      "canonicalObservationSha256": "6bca4e1cb102b3126398270045833c5e23e862121f4dc4eac3b368e467cdbf14",
+      "annotationScreenshotSha256": "393cf96dad12d2e43312b6227a75506ede63685d4dce48136b2a2ea98c72e84c",
+      "provenanceAggregateSha256": "a4f7eb89c3f427cc080cb7de16bd262accb6a92bfb7bcff3a24a82a3ef641103",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "detailers-warehouse",
+      "pageId": "detailers-warehouse--car-shampoo",
+      "capturedAt": "2026-07-27T02:55:49.369Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 699,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0,
+      "queryTokenCoverage": 1,
+      "observationSha256": "3382d04df0a170598203016b76a13778549ab48f8a666b26a91d6ae972c0f831",
+      "canonicalObservationSha256": "045e94b5b4ae4000cc0387eecd9929ae260fd494fa24bfe55bc4c9678b046eb0",
+      "annotationScreenshotSha256": "2027dab2962e0c2e9e039ffcf621f070923d4ee9d356c40e74555f4ca67e2767",
+      "provenanceAggregateSha256": "a763181318add7f63f2b8d0e86131cb98ec47c2859528cb6c26030d08ffe0af0",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

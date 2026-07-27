@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p01",
+  "candidateManifest": "benchmarks/live-sites/heldout-qualification-retry-p01.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "515aa8cf0f94c82421b1428fff5dd80f8c4ab4404c56f9f058abc40702b1a239",
+    "narrowBatchSha256": "99ba367605c60e3d2a65c1f0f3020a399fa2e0b839c6604fbe5f83ec1839dcad",
+    "processIsolationFinding": "All sixteen headed capture children completed under isolated process-group bounds with zero hard timeouts.",
+    "samplingFinding": "Ten unassigned candidates received a fresh desktop capture. Six visually accepted desktop pages received a distinct narrow capture. Detailers Warehouse alone passed both viewport gates; no old partial capture was reused.",
+    "manifestIntegrityFinding": "Both accepted captures use the frozen retry manifest hash f605384ac89b5abf2d30b0ef839a8afa8580ee02ef0ef85fb0d4292a7e2e4bce and collector hash 6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T02-51-49-846Z",
+      "runManifestSha256": "41f34582ed274c42c798f9c4d1e1edfa771f7940be7c1059b7446d4c4e0e1572",
+      "purpose": "Detailers Warehouse desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T02-55-40-457Z",
+      "runManifestSha256": "b2239662e184e17485f45d04a30fde4b9647764917fa0742c151676fb4e47843",
+      "purpose": "Detailers Warehouse narrow qualification capture"
+    }
+  ],
+  "results": {
+    "tandy-leather": {
+      "status": "rejected",
+      "reason": "The desktop page passed numeric checks, but original-resolution visual review showed mostly leather tools and accessories rather than coherent tooling-leather material results."
+    },
+    "packaging-price": {
+      "status": "rejected",
+      "reason": "The coherent desktop shipping-box page passed, but unresolved promotion UI covered 30 percent of the distinct narrow viewport."
+    },
+    "stone-and-tile-shoppe": {
+      "status": "rejected",
+      "reason": "The coherent desktop porcelain-tile page passed, but unresolved UI covered 23 percent of the distinct narrow viewport."
+    },
+    "we-ship-floors": {
+      "status": "rejected",
+      "reason": "The coherent desktop vinyl-flooring page passed, but unresolved UI covered 26 percent of the distinct narrow viewport."
+    },
+    "pet-edge": {
+      "status": "rejected",
+      "reason": "The coherent desktop pet-shampoo page passed, but unresolved header UI covered 38 percent of the distinct narrow viewport."
+    },
+    "nutstop": {
+      "status": "rejected",
+      "reason": "Both pages passed machine checks, but original-resolution visual review found the narrow rice query dominated by snack mixes and query-adjacent products rather than a coherent rice result set."
+    },
+    "griots-garage": {
+      "status": "rejected",
+      "reason": "The fresh desktop page was fully obstructed and exposed no reviewable product evidence."
+    },
+    "detailers-warehouse": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "detailers-warehouse--wheel-cleaner",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "detailers-warehouse--car-shampoo",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent multi-brand detailing grids pass in opposite viewports. Cards expose prices, starting-price variants, metric bottle sizes, concentrates, gallons, stock states, and a small number of query-adjacent accessories useful for extraction and abstention."
+    },
+    "fabrics-fabrics": {
+      "status": "rejected",
+      "reason": "The fresh desktop page exposed only five frozen roots, below the minimum of eight."
+    },
+    "beanilla": {
+      "status": "rejected",
+      "reason": "The fresh desktop page returned HTTP 404 with no query evidence or reviewable product roots."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "detailers-warehouse"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "detailers-warehouse",
+        "cohort": "validation"
+      }
+    ],
+    "status": "keep"
+  }
+}

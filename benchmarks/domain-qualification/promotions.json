@@ -504,6 +504,12 @@
       "cohort": "selection",
       "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p00.json",
       "promotedAt": "2026-07-27T02:45:00.000Z"
+    },
+    {
+      "siteId": "detailers-warehouse",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p01.json",
+      "promotedAt": "2026-07-27T02:56:00.000Z"
     }
   ]
 }

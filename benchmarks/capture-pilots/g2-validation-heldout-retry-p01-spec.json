@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p01",
+  "capturedAt": "2026-07-27T02:56:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-qualification-retry-p01.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T02-51-49-846Z",
+      "pageIds": [
+        "detailers-warehouse--wheel-cleaner"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T02-55-40-457Z",
+      "pageIds": [
+        "detailers-warehouse--car-shampoo"
+      ]
+    }
+  ],
+  "samplingFinding": "Detailers Warehouse was the only one of ten disjoint, unassigned domains in the second bounded held-out retry to pass two fresh opposite-viewport gates. It was assigned to validation to balance qualified held-out domain counts.",
+  "visualValidationFinding": "Original-resolution annotation screenshots and all twenty-four root closeups were inspected. Both pages show coherent requested-query detailing grids with readable price and package-volume evidence."
+}

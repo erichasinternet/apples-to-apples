@@ -5856,6 +5856,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p00.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "detailers-warehouse",
+      "cohort": "validation",
+      "pageId": "detailers-warehouse--wheel-cleaner",
+      "captureTimestamp": "2026-07-27T02:51:58.247Z",
+      "observationSha256": "5b5ade823fc426cd357553141aca274a8d784dfb5894973475af613c0a541a19",
+      "annotationScreenshotSha256": "393cf96dad12d2e43312b6227a75506ede63685d4dce48136b2a2ea98c72e84c",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p01.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p01.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "detailers-warehouse",
+      "cohort": "validation",
+      "pageId": "detailers-warehouse--car-shampoo",
+      "captureTimestamp": "2026-07-27T02:55:49.369Z",
+      "observationSha256": "3382d04df0a170598203016b76a13778549ab48f8a666b26a91d6ae972c0f831",
+      "annotationScreenshotSha256": "2027dab2962e0c2e9e039ffcf621f070923d4ee9d356c40e74555f4ca67e2767",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p01.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p01.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

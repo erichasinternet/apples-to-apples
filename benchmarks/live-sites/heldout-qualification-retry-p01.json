@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "description": "Second capture-only retry manifest for ten unassigned qualification candidates selected to increase held-out unit-dimension and retail-stratum coverage. Every site remains unassigned until two fresh opposite-viewport pages pass the frozen machine and visual gate.",
+  "sites": [
+    {
+      "id": "tandy-leather",
+      "label": "Tandy Leather",
+      "hostname": "tandyleather.com",
+      "stratum": "leather-and-craft",
+      "searchUrlTemplate": "https://tandyleather.com/search?q={query}",
+      "queries": [
+        {"id": "tooling-leather", "query": "tooling leather", "dimension": "area"},
+        {"id": "leather-hide", "query": "leather hide", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "packaging-price",
+      "label": "Packaging Price",
+      "hostname": "www.packagingprice.com",
+      "stratum": "packaging-supply",
+      "searchUrlTemplate": "https://www.packagingprice.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "shipping-boxes", "query": "shipping boxes", "dimension": "count"},
+        {"id": "poly-bags", "query": "poly bags", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "stone-and-tile-shoppe",
+      "label": "Stone & Tile Shoppe",
+      "hostname": "stoneandtileshoppe.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://stoneandtileshoppe.com/search?q={query}",
+      "queries": [
+        {"id": "porcelain-tile", "query": "porcelain tile", "dimension": "area"},
+        {"id": "mosaic-tile", "query": "mosaic tile", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "we-ship-floors",
+      "label": "WeShipFloors",
+      "hostname": "weshipfloors.com",
+      "stratum": "flooring",
+      "searchUrlTemplate": "https://weshipfloors.com/search?q={query}",
+      "queries": [
+        {"id": "vinyl-flooring", "query": "vinyl flooring", "dimension": "area"},
+        {"id": "laminate-flooring", "query": "laminate flooring", "dimension": "area"}
+      ]
+    },
+    {
+      "id": "pet-edge",
+      "label": "PetEdge",
+      "hostname": "www.petedge.com",
+      "stratum": "specialty-pet",
+      "searchUrlTemplate": "https://www.petedge.com/search?q={query}",
+      "queries": [
+        {"id": "pet-shampoo", "query": "pet shampoo", "dimension": "volume"},
+        {"id": "dog-waste-bags", "query": "dog waste bags", "dimension": "count"}
+      ]
+    },
+    {
+      "id": "nutstop",
+      "label": "Nutstop",
+      "hostname": "www.nutstop.com",
+      "stratum": "bulk-nut-and-pantry-retail",
+      "searchUrlTemplate": "https://www.nutstop.com/?s={query}&post_type=product",
+      "queries": [
+        {"id": "almonds", "query": "almonds", "dimension": "mass"},
+        {"id": "rice", "query": "rice", "dimension": "mass"}
+      ]
+    },
+    {
+      "id": "griots-garage",
+      "label": "Griot's Garage",
+      "hostname": "www.griotsgarage.com",
+      "stratum": "automotive-detailing-brand-retail",
+      "searchUrlTemplate": "https://www.griotsgarage.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-wash", "query": "car wash", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "detailers-warehouse",
+      "label": "Detailers Warehouse",
+      "hostname": "www.detailerswarehouse.com",
+      "stratum": "multi-brand-detailing-retail",
+      "searchUrlTemplate": "https://www.detailerswarehouse.com/search?q={query}",
+      "queries": [
+        {"id": "wheel-cleaner", "query": "wheel cleaner", "dimension": "volume"},
+        {"id": "car-shampoo", "query": "car shampoo", "dimension": "volume"}
+      ]
+    },
+    {
+      "id": "fabrics-fabrics",
+      "label": "Fabrics & Fabrics",
+      "hostname": "fabrics-fabrics.com",
+      "stratum": "designer-fabric-retail",
+      "searchUrlTemplate": "https://fabrics-fabrics.com/search?q={query}",
+      "queries": [
+        {"id": "cotton-fabric", "query": "cotton fabric", "dimension": "length"},
+        {"id": "linen-fabric", "query": "linen fabric", "dimension": "length"}
+      ]
+    },
+    {
+      "id": "beanilla",
+      "label": "Beanilla",
+      "hostname": "www.beanilla.com",
+      "stratum": "specialty-baking-ingredient-retail",
+      "searchUrlTemplate": "https://www.beanilla.com/search.php?search_query={query}",
+      "queries": [
+        {"id": "vanilla-beans", "query": "vanilla beans", "dimension": "mass"},
+        {"id": "cocoa-powder", "query": "cocoa powder", "dimension": "mass"}
+      ]
+    }
+  ]
+}

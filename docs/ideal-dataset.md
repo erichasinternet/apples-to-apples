@@ -1263,6 +1263,21 @@ campaigns cover all 6 new pages and 70 roots. Both complete campaigns and both
 paired assignments passed headed Playwright Chromium with zero console errors
 or review writes. Human semantic reviews and adjudication remain pending.
 
+A second bounded retry tested 10 additional unassigned domains. All 16 isolated
+headed Chromium children completed without a hard timeout. Six desktop pages
+advanced to distinct narrow queries, but only Detailers Warehouse passed both
+the frozen machine gate and original-resolution visual review. The complete
+decision record, including nine explicit rejection reasons, is in
+[`heldout-retry-p01.json`](../benchmarks/domain-qualification/heldout-retry-p01.json).
+Its two pages and 24 roots increase qualified validation coverage to 3 domains,
+6 pages, and 3 narrow-viewport pages. The blinded
+[`g2-validation-p02.json`](../benchmarks/review-campaigns/g2-validation-p02.json)
+campaign and paired reviewer batch both passed headed Playwright Chromium with
+all 24 frozen roots loaded, zero console errors, and zero review writes. The
+eligible registry now contains 490 exact capture identities; these new roots
+remain ineligible for benchmark gold until two independent human reviews and
+third-party adjudication are complete.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p02",
+  "createdAt": "2026-07-27T02:58:00.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "detailers-warehouse",
+      "pageId": "detailers-warehouse--car-shampoo",
+      "captureTimestamp": "2026-07-27T02:55:49.369Z",
+      "candidateCardCount": 12,
+      "observationSha256": "3382d04df0a170598203016b76a13778549ab48f8a666b26a91d6ae972c0f831",
+      "annotationScreenshotSha256": "2027dab2962e0c2e9e039ffcf621f070923d4ee9d356c40e74555f4ca67e2767"
+    },
+    {
+      "siteId": "detailers-warehouse",
+      "pageId": "detailers-warehouse--wheel-cleaner",
+      "captureTimestamp": "2026-07-27T02:51:58.247Z",
+      "candidateCardCount": 12,
+      "observationSha256": "5b5ade823fc426cd357553141aca274a8d784dfb5894973475af613c0a541a19",
+      "annotationScreenshotSha256": "393cf96dad12d2e43312b6227a75506ede63685d4dce48136b2a2ea98c72e84c"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--40e54a3d28617b8c",
+      "campaignQueueSha256": "3b494553d181ab92eafdb9870efb1cee9d1436b7b8dbf710435262875ea681a9",
+      "sourceQueueSha256": [
+        "b9894a9ab188af26161708cbe9319232ed2d970bb0a06702c40c2ee37e3f0ba0",
+        "35457df5483ae28fdb7286d81c9f77ce78c349c91724246339b4a8e0e5e97301"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--086087a7b87aac80",
+      "campaignQueueSha256": "875c3391120a84aff832f4785f8e4c39cbdcb0523fea68fcb7711e392d156c84",
+      "sourceQueueSha256": [
+        "4ccd5384d061dd82798738c361437e7563f106d7b53e2872432208b47f7e2736",
+        "1bb24f2162ca38271116a872d1b21ed1745f707116490cb320b52b518a8d290c"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--40e54a3d28617b8c",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}
