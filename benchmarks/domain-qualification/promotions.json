@@ -546,6 +546,18 @@
       "cohort": "selection",
       "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p03.json",
       "promotedAt": "2026-07-27T03:24:00.000Z"
+    },
+    {
+      "siteId": "portofino-flooring",
+      "cohort": "validation",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p04.json",
+      "promotedAt": "2026-07-27T03:41:00.000Z"
+    },
+    {
+      "siteId": "burlap-and-barrel",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p04.json",
+      "promotedAt": "2026-07-27T03:41:00.000Z"
     }
   ]
 }

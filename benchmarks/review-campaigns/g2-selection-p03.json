@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p03",
+  "createdAt": "2026-07-27T03:42:00.000Z",
+  "cohort": "selection",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "burlap-and-barrel",
+      "pageId": "burlap-and-barrel--chili",
+      "captureTimestamp": "2026-07-27T03:40:07.333Z",
+      "candidateCardCount": 12,
+      "observationSha256": "57d4eb2cbc94fac133c8007e70e7a0c9d57bb03ee1fb77bb1fa2d059d5f805c1",
+      "annotationScreenshotSha256": "b682fe6e1cc678c43249995c64f5307535519e0583f7bb94d32b81e97bd05bca"
+    },
+    {
+      "siteId": "burlap-and-barrel",
+      "pageId": "burlap-and-barrel--pepper",
+      "captureTimestamp": "2026-07-27T03:35:42.226Z",
+      "candidateCardCount": 12,
+      "observationSha256": "e55ee6344634cb6dfe4d1056c91b7c57b58ebeeced1dffd270144d35afad0a65",
+      "annotationScreenshotSha256": "d817f04d69958fdeb3fd39cb88f14deccf4ceaa2a0ff40a74bb1a203c89a34e7"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--7683f77da6295d95",
+      "campaignQueueSha256": "f3d85ee8ffdf90e651c3b0fb1f43de0a96239a41a24b32d3d1435e0491f18d14",
+      "sourceQueueSha256": [
+        "7a7a81d4d3fa39e9b14ab595a82dcfcea9d445349d266344e3918aaed5fc332e",
+        "b9f9ff48a8429a042b28aad82cebde4d884854c3bbd09d984ce02d45f8da608b"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--4aeae42b40f43941",
+      "campaignQueueSha256": "d73394c4279bdd23bc283597a58ab0578bff1166e3fcf14d4b52d1c4a9fd5a11",
+      "sourceQueueSha256": [
+        "09c552321efbdc014f1d14e0eb520638252bc8aeb2d2790810b833d79a3e646f",
+        "798372a146c8082ab80992d78784ec8e4a5ae7e4fd3325f902fe89be4c6b51f4"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--7683f77da6295d95",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

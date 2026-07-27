@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p04",
+  "createdAt": "2026-07-27T03:42:00.000Z",
+  "cohort": "validation",
+  "decision": "workbench-pass-independent-human-reviews-pending",
+  "pages": [
+    {
+      "siteId": "portofino-flooring",
+      "pageId": "portofino-flooring--oak-flooring",
+      "captureTimestamp": "2026-07-27T03:39:41.382Z",
+      "candidateCardCount": 12,
+      "observationSha256": "f84ad07d3a29fb7b1b0a197a84cb32c4b6fa8596ef2701b1702d959e39baede9",
+      "annotationScreenshotSha256": "b4680f70660e846e2ea4728cb794b230c49e6bf4928ec7ed7cf75642b5c051b3"
+    },
+    {
+      "siteId": "portofino-flooring",
+      "pageId": "portofino-flooring--vinyl-flooring",
+      "captureTimestamp": "2026-07-27T03:35:16.065Z",
+      "candidateCardCount": 12,
+      "observationSha256": "727d15cc906499058c7ced9e53aca6ff94d4c6c8d69cb96ccfe00f223f0c72d6",
+      "annotationScreenshotSha256": "b071df53c6c2e642c29079bf4eae6486e62e338e09b5e0e63731453076861e48"
+    }
+  ],
+  "queues": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--4191cc66055b1931",
+      "campaignQueueSha256": "27811edf0a6bc58835cf2390a055d82c8cbb23579c2fade1fe4a5f7f3ca4b4fd",
+      "sourceQueueSha256": [
+        "2e96be3f4fee35b9fad74acc7fd7dffde426a051a91071e2f9d805c6b15dd920",
+        "ec6628ae0cc4336da84e5235f1763f27a0d72f927ecca80e23d5120aac4bfca2"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--1e3ab08db8ea0f5e",
+      "campaignQueueSha256": "1818f15f8add119e853c5a77c0aa7e55f67d2e28c451799cd1301f98151bcb27",
+      "sourceQueueSha256": [
+        "e370c86dffd5030d710eb9586d6dc47465dc8478fae7ee62e9220d40a6a3d711",
+        "2b80a63140857c40edb58746de4a2585e90486ab110d27e582eb1baf79b6d159"
+      ],
+      "sourceQueuePageCounts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "blinding": {
+    "labelVisibility": "no model or peer labels",
+    "distinctReviewerIds": true,
+    "candidateCardRootsFrozenFromCapture": true,
+    "completeCandidateCoverageRequired": true
+  },
+  "workbenchValidation": {
+    "version": 1,
+    "queueId": "reviewer-a--campaign--4191cc66055b1931",
+    "browser": "headed Playwright Chromium",
+    "pagesLoaded": 2,
+    "screenshotsLoaded": 2,
+    "candidateCards": 24,
+    "onlyFrozenCardRootOffered": true,
+    "directFrozenCardNavigation": "passed",
+    "nonCandidateAncestor": "rejected-404",
+    "incompleteCoverage": "rejected-422",
+    "consoleErrors": 0,
+    "consoleErrorMessages": [],
+    "reviewFilesWritten": 0
+  },
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "goldProducts": 0,
+    "reason": "Two independent human reviews and third-party adjudication are pending."
+  }
+}

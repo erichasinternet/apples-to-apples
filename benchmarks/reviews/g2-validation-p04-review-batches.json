@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-validation-p04",
+  "createdAt": "2026-07-27T03:46:06.264Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--4191cc66055b1931",
+      "path": "benchmark-data/review/g2-validation-p04/reviewer-a.json",
+      "sha256": "27811edf0a6bc58835cf2390a055d82c8cbb23579c2fade1fe4a5f7f3ca4b4fd",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--1e3ab08db8ea0f5e",
+      "path": "benchmark-data/review/g2-validation-p04/reviewer-b.json",
+      "sha256": "1818f15f8add119e853c5a77c0aa7e55f67d2e28c451799cd1301f98151bcb27",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-validation-p04--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "portofino-flooring--oak-flooring",
+        "portofino-flooring--vinyl-flooring"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--ad48e0541b014e7a",
+          "path": "benchmark-data/review/g2-validation-p04-review-batches/reviewer-a--batch-01.json",
+          "sha256": "1b28ee074a61f57cd1dd75455fd6dbdb358feaa049449a4cb159b26a8b651297"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--03125fc6c719aed9",
+          "path": "benchmark-data/review/g2-validation-p04-review-batches/reviewer-b--batch-01.json",
+          "sha256": "af80529c15c7427facff485b6912d1c39771b7e20cee17aa6daf94b6d9b27941"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

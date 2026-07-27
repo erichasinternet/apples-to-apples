@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p03",
+  "capturedAt": "2026-07-27T03:41:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-qualification-retry-p04.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-35-24-758Z",
+      "pageIds": [
+        "burlap-and-barrel--pepper"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-39-48-078Z",
+      "pageIds": [
+        "burlap-and-barrel--chili"
+      ]
+    }
+  ],
+  "samplingFinding": "Burlap & Barrel was one of ten disjoint, unassigned domains in a bounded held-out retry. It was assigned to selection only after two fresh opposite-viewport pages passed.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots were inspected. All twenty-four frozen roots retain candidate closeups, and the page evidence shows coherent requested-query spices with readable price, package, sale, and collection evidence."
+}

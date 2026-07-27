@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "description": "Fifth capture-only held-out retry manifest with two domains per supported dimension. Every site remains unassigned until two fresh opposite-viewport pages pass the frozen machine and visual gate.",
+  "sites": [
+    {
+      "id": "adams-polishes",
+      "label": "Adam's Polishes",
+      "hostname": "adamspolishes.com",
+      "stratum": "automotive-care-manufacturer",
+      "searchUrlTemplate": "https://adamspolishes.com/search?q={query}",
+      "queries": [
+        {
+          "id": "soap",
+          "query": "soap",
+          "dimension": "volume"
+        },
+        {
+          "id": "wheel-cleaner",
+          "query": "wheel cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "diy-detail",
+      "label": "DIY Detail",
+      "hostname": "diydetail.com",
+      "stratum": "direct-to-consumer-detailing-brand",
+      "searchUrlTemplate": "https://diydetail.com/search?q={query}",
+      "queries": [
+        {
+          "id": "car-wash-soap",
+          "query": "car wash soap",
+          "dimension": "volume"
+        },
+        {
+          "id": "interior-cleaner",
+          "query": "interior cleaner",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "gdi-medical",
+      "label": "GDI Medical",
+      "hostname": "gdimed.com",
+      "stratum": "medical-consumables-retail",
+      "searchUrlTemplate": "https://gdimed.com/search?q={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "syringes",
+          "query": "syringes",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "school-health",
+      "label": "School Health",
+      "hostname": "www.schoolhealth.com",
+      "stratum": "school-health-supply",
+      "searchUrlTemplate": "https://www.schoolhealth.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "exam-gloves",
+          "query": "exam gloves",
+          "dimension": "count"
+        },
+        {
+          "id": "underpads",
+          "query": "underpads",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "fields-fabrics",
+      "label": "Field's Fabrics",
+      "hostname": "shop.fieldsfabrics.com",
+      "stratum": "regional-fabric-retail",
+      "searchUrlTemplate": "https://shop.fieldsfabrics.com/{querySlug}",
+      "queries": [
+        {
+          "id": "cotton-solid-fabrics",
+          "query": "cotton solid fabrics",
+          "querySlug": "Cotton-Solid-Fabrics_bymfg_12-0-1.html",
+          "dimension": "length"
+        },
+        {
+          "id": "cotton-print-fabrics",
+          "query": "cotton print fabrics",
+          "querySlug": "More-Cotton-Print-Fabrics_c_396.html",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "threadart",
+      "label": "ThreadArt",
+      "hostname": "www.threadart.com",
+      "stratum": "quilting-fabric-retail",
+      "searchUrlTemplate": "https://www.threadart.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cotton-fabric",
+          "query": "cotton fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "batik-fabric",
+          "query": "batik fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "riverwoods-flooring",
+      "label": "Riverwoods Flooring",
+      "hostname": "riverwoodsflooring.com",
+      "stratum": "online-premium-flooring",
+      "searchUrlTemplate": "https://riverwoodsflooring.com/search?q={query}",
+      "queries": [
+        {
+          "id": "oak-flooring",
+          "query": "oak flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "portofino-flooring",
+      "label": "Portofino Flooring",
+      "hostname": "portofinoflooring.com",
+      "stratum": "direct-to-consumer-flooring-retail",
+      "searchUrlTemplate": "https://portofinoflooring.com/search?q={query}",
+      "queries": [
+        {
+          "id": "vinyl-flooring",
+          "query": "vinyl flooring",
+          "dimension": "area"
+        },
+        {
+          "id": "oak-flooring",
+          "query": "oak flooring",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "ifs-bulk",
+      "label": "IFS Bulk",
+      "hostname": "www.ifsbulk.com",
+      "stratum": "wholesale-bulk-food-retail",
+      "searchUrlTemplate": "https://www.ifsbulk.com/search?q={query}",
+      "queries": [
+        {
+          "id": "almonds",
+          "query": "almonds",
+          "dimension": "mass"
+        },
+        {
+          "id": "rice",
+          "query": "rice",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "burlap-and-barrel",
+      "label": "Burlap & Barrel",
+      "hostname": "www.burlapandbarrel.com",
+      "stratum": "single-origin-spice-retail",
+      "searchUrlTemplate": "https://www.burlapandbarrel.com/search?q={query}",
+      "queries": [
+        {
+          "id": "pepper",
+          "query": "pepper",
+          "dimension": "mass"
+        },
+        {
+          "id": "chili",
+          "query": "chili",
+          "dimension": "mass"
+        }
+      ]
+    }
+  ]
+}

@@ -1317,6 +1317,25 @@ with all 88 frozen roots loaded, zero console errors, and zero review writes.
 The eligible registry now contains 502 exact capture identities. Human semantic
 reviews and adjudication remain pending.
 
+A fifth bounded retry tested 10 unassigned domains with two targets in each
+supported dimension. All 18 isolated headed Chromium children completed without
+a hard timeout. Eight desktop pages advanced to distinct narrow queries; the
+frozen machine gate and original-resolution visual review qualified Portofino
+Flooring and Burlap & Barrel. The eight rejected domains retain explicit
+insufficient-root, empty-result, obstruction, or query-coherence failures in
+[`heldout-retry-p04.json`](../benchmarks/domain-qualification/heldout-retry-p04.json).
+Portofino adds 2 validation pages and 24 area roots, while Burlap & Barrel adds
+2 selection pages and 24 mass roots. Qualified held-out structure is now 6
+validation domains with 12 pages and 7 selection domains with 14 pages, both at
+50% narrow-viewport coverage. The blinded
+[`g2-validation-p04.json`](../benchmarks/review-campaigns/g2-validation-p04.json)
+and
+[`g2-selection-p03.json`](../benchmarks/review-campaigns/g2-selection-p03.json)
+campaigns and both paired reviewer batches passed headed Playwright Chromium
+with all 48 frozen roots loaded, zero console errors, and zero review writes.
+The eligible registry now contains 506 exact capture identities. Human semantic
+reviews and adjudication remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

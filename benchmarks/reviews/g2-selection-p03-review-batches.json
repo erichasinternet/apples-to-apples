@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p03",
+  "createdAt": "2026-07-27T03:46:06.284Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--7683f77da6295d95",
+      "path": "benchmark-data/review/g2-selection-p03/reviewer-a.json",
+      "sha256": "f3d85ee8ffdf90e651c3b0fb1f43de0a96239a41a24b32d3d1435e0491f18d14",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--4aeae42b40f43941",
+      "path": "benchmark-data/review/g2-selection-p03/reviewer-b.json",
+      "sha256": "d73394c4279bdd23bc283597a58ab0578bff1166e3fcf14d4b52d1c4a9fd5a11",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p03--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "burlap-and-barrel--chili",
+        "burlap-and-barrel--pepper"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--4177ecfbcd79e8f3",
+          "path": "benchmark-data/review/g2-selection-p03-review-batches/reviewer-a--batch-01.json",
+          "sha256": "66fd5edca5b9e148cf737212de4ef0f92d87d079360b35810737ca69d31b9e79"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--1b31832e899fe9fd",
+          "path": "benchmark-data/review/g2-selection-p03-review-batches/reviewer-b--batch-01.json",
+          "sha256": "029ce592aeec576acb1cf98dc6c9c49172b1eb82c849c0b420042467d8dca466"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

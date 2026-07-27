@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "pilotId": "g2-selection-heldout-retry-p03",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T03:41:00.000Z",
+  "source": {
+    "siteIds": [
+      "burlap-and-barrel"
+    ],
+    "cohort": "selection",
+    "strata": [
+      "single-origin-spice-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "b14ed8100568643c87d47a91ba8aa0a8ddb3b762bb969b06eb7d74ababbe87a7"
+    ],
+    "collectorSha256": [
+      "6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T03-35-24-758Z",
+      "runManifestSha256": "9abd3f0af63e86ab3e0050e25597e646ad9b97ea8f03b7211ca0f92396482210",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T03-39-48-078Z",
+      "runManifestSha256": "e9a7571350aa7877f5acf615f46fa7ce1c39b03059003f5bbb02a5b222fbf879",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "Burlap & Barrel was one of ten disjoint, unassigned domains in a bounded held-out retry. It was assigned to selection only after two fresh opposite-viewport pages passed.",
+    "visualValidationFinding": "Both original-resolution annotation screenshots were inspected. All twenty-four frozen roots retain candidate closeups, and the page evidence shows coherent requested-query spices with readable price, package, sale, and collection evidence."
+  },
+  "captures": [
+    {
+      "siteId": "burlap-and-barrel",
+      "pageId": "burlap-and-barrel--pepper",
+      "capturedAt": "2026-07-27T03:35:42.226Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 1314,
+      "observationTruncated": false,
+      "dismissedObstructions": 1,
+      "unresolvedObstructionCoverage": 0.006388888888888889,
+      "queryTokenCoverage": 1,
+      "observationSha256": "e55ee6344634cb6dfe4d1056c91b7c57b58ebeeced1dffd270144d35afad0a65",
+      "canonicalObservationSha256": "237d1142fe1efaa172c9b0bd72b7b9f3587ae5afa16ecbdd6d144586c0c8b37a",
+      "annotationScreenshotSha256": "d817f04d69958fdeb3fd39cb88f14deccf4ceaa2a0ff40a74bb1a203c89a34e7",
+      "provenanceAggregateSha256": "28352d5a4673604ff0309eb27ace5f54c8aa062e8f24e89840f6bae1d83e7bf2",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "burlap-and-barrel",
+      "pageId": "burlap-and-barrel--chili",
+      "capturedAt": "2026-07-27T03:40:07.333Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 610,
+      "observationTruncated": false,
+      "dismissedObstructions": 12,
+      "unresolvedObstructionCoverage": 0.027949933163203305,
+      "queryTokenCoverage": 1,
+      "observationSha256": "57d4eb2cbc94fac133c8007e70e7a0c9d57bb03ee1fb77bb1fa2d059d5f805c1",
+      "canonicalObservationSha256": "43bad9a7e5804542d5537cc096e9c682beb100f1578ead4ce78b8b77a21a3f1c",
+      "annotationScreenshotSha256": "b682fe6e1cc678c43249995c64f5307535519e0583f7bb94d32b81e97bd05bca",
+      "provenanceAggregateSha256": "1183d9bf93fff630152069cfefdcf88d8f5aae6f92ffc83dedaeb636c53e6d00",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}

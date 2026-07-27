@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p04",
+  "candidateManifest": "benchmarks/live-sites/heldout-qualification-retry-p04.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "1326c0e9fcbd2093cf2ac39bab6222b8bce019023a72f8b69997b69faaca1809",
+    "narrowBatchSha256": "989077bf842be3fe2b4b1065e43f75326bf30c92b8158a67b54fef8956c6a3c3",
+    "processIsolationFinding": "All eighteen headed capture children completed under isolated process-group bounds with zero hard timeouts.",
+    "samplingFinding": "Ten unassigned candidates received a fresh desktop capture. Eight visually accepted desktop pages received a distinct narrow capture. Portofino Flooring and Burlap & Barrel passed both viewport gates; no old partial capture was reused.",
+    "manifestIntegrityFinding": "All four accepted captures use the frozen retry manifest hash b14ed8100568643c87d47a91ba8aa0a8ddb3b762bb969b06eb7d74ababbe87a7 and collector hash 6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T03-34-59-865Z",
+      "runManifestSha256": "15b69dd064262d3a4531fbda00b4c6d8d1fce0e6c59690168446e14bfa5234ef",
+      "purpose": "Portofino Flooring desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-39-25-363Z",
+      "runManifestSha256": "0b935dc7e727ee958d04535bbf7f39ca7805db30c54c971e4714e63362cacf90",
+      "purpose": "Portofino Flooring narrow qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-35-24-758Z",
+      "runManifestSha256": "9abd3f0af63e86ab3e0050e25597e646ad9b97ea8f03b7211ca0f92396482210",
+      "purpose": "Burlap & Barrel desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T03-39-48-078Z",
+      "runManifestSha256": "e9a7571350aa7877f5acf615f46fa7ce1c39b03059003f5bbb02a5b222fbf879",
+      "purpose": "Burlap & Barrel narrow qualification capture"
+    }
+  ],
+  "results": {
+    "adams-polishes": {
+      "status": "rejected",
+      "reason": "The coherent desktop soap page passed, but a cart drawer covered product evidence and injected unrelated recommendations into the distinct narrow wheel-cleaner capture."
+    },
+    "diy-detail": {
+      "status": "rejected",
+      "reason": "Original-resolution desktop review found that most frozen roots were cleaners, accessories, brushes, or towels rather than a coherent car-wash-soap result set."
+    },
+    "gdi-medical": {
+      "status": "rejected",
+      "reason": "The coherent desktop exam-gloves page passed, but the distinct narrow syringes route returned a real zero-results page with no reviewable product roots."
+    },
+    "school-health": {
+      "status": "rejected",
+      "reason": "Both pages were visually coherent, but the distinct narrow underpads capture exposed only six candidate roots, below the frozen minimum of eight."
+    },
+    "fields-fabrics": {
+      "status": "rejected",
+      "reason": "Original-resolution desktop review showed a fixed chat panel covering selected product-card title and price evidence."
+    },
+    "threadart": {
+      "status": "rejected",
+      "reason": "The coherent desktop cotton-fabric page passed, but the distinct narrow batik search returned six non-batik products and failed requested-query coherence."
+    },
+    "riverwoods-flooring": {
+      "status": "rejected",
+      "reason": "Both pages were visually coherent, but the distinct narrow vinyl-flooring capture exposed only three candidate roots, below the frozen minimum of eight."
+    },
+    "portofino-flooring": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "portofino-flooring--vinyl-flooring",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.08,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "portofino-flooring--oak-flooring",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.0947867298578199,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent flooring grids pass in opposite viewports. Cards expose native square-foot prices, sample and molding products that require abstention, and concise product names without relying on site-specific selectors."
+    },
+    "ifs-bulk": {
+      "status": "rejected",
+      "reason": "The coherent desktop almonds page passed, but the distinct narrow rice capture exposed only three roots, below the frozen minimum of eight, and one was a rice-cracker product."
+    },
+    "burlap-and-barrel": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "burlap-and-barrel--pepper",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.006388888888888889,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "burlap-and-barrel--chili",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.027949933163203305,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent spice grids pass in opposite viewports. Cards expose regular and sale prices, single jars and multi-jar collections, and mass visible primarily on packaging imagery, creating useful evidence and abstention cases."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "portofino-flooring",
+      "burlap-and-barrel"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "portofino-flooring",
+        "cohort": "validation"
+      },
+      {
+        "siteId": "burlap-and-barrel",
+        "cohort": "selection"
+      }
+    ],
+    "status": "keep"
+  }
+}

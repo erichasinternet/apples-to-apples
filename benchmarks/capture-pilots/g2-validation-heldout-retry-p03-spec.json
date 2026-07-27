@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p03",
+  "capturedAt": "2026-07-27T03:41:00.000Z",
+  "sourceManifest": "benchmarks/live-sites/heldout-qualification-retry-p04.json",
+  "requestedCaptureAttempts": 2,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-34-59-865Z",
+      "pageIds": [
+        "portofino-flooring--vinyl-flooring"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T03-39-25-363Z",
+      "pageIds": [
+        "portofino-flooring--oak-flooring"
+      ]
+    }
+  ],
+  "samplingFinding": "Portofino Flooring was one of ten disjoint, unassigned domains in a bounded held-out retry. It was assigned to validation only after two fresh opposite-viewport pages passed.",
+  "visualValidationFinding": "Both original-resolution annotation screenshots were inspected. All twenty-four frozen roots retain candidate closeups, and the page evidence shows coherent requested-query flooring with readable price and area evidence."
+}

@@ -6024,6 +6024,54 @@
       "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p02.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "portofino-flooring",
+      "cohort": "validation",
+      "pageId": "portofino-flooring--vinyl-flooring",
+      "captureTimestamp": "2026-07-27T03:35:16.065Z",
+      "observationSha256": "727d15cc906499058c7ced9e53aca6ff94d4c6c8d69cb96ccfe00f223f0c72d6",
+      "annotationScreenshotSha256": "b071df53c6c2e642c29079bf4eae6486e62e338e09b5e0e63731453076861e48",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p04.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p03.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "portofino-flooring",
+      "cohort": "validation",
+      "pageId": "portofino-flooring--oak-flooring",
+      "captureTimestamp": "2026-07-27T03:39:41.382Z",
+      "observationSha256": "f84ad07d3a29fb7b1b0a197a84cb32c4b6fa8596ef2701b1702d959e39baede9",
+      "annotationScreenshotSha256": "b4680f70660e846e2ea4728cb794b230c49e6bf4928ec7ed7cf75642b5c051b3",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p04.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p03.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "burlap-and-barrel",
+      "cohort": "selection",
+      "pageId": "burlap-and-barrel--pepper",
+      "captureTimestamp": "2026-07-27T03:35:42.226Z",
+      "observationSha256": "e55ee6344634cb6dfe4d1056c91b7c57b58ebeeced1dffd270144d35afad0a65",
+      "annotationScreenshotSha256": "d817f04d69958fdeb3fd39cb88f14deccf4ceaa2a0ff40a74bb1a203c89a34e7",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p04.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p03.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "burlap-and-barrel",
+      "cohort": "selection",
+      "pageId": "burlap-and-barrel--chili",
+      "captureTimestamp": "2026-07-27T03:40:07.333Z",
+      "observationSha256": "57d4eb2cbc94fac133c8007e70e7a0c9d57bb03ee1fb77bb1fa2d059d5f805c1",
+      "annotationScreenshotSha256": "b682fe6e1cc678c43249995c64f5307535519e0583f7bb94d32b81e97bd05bca",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p04.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p03.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

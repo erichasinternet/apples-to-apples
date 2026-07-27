@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "pilotId": "g2-validation-heldout-retry-p03",
+  "decision": "capture-pipeline-pass-labels-pending",
+  "capturedAt": "2026-07-27T03:41:00.000Z",
+  "source": {
+    "siteIds": [
+      "portofino-flooring"
+    ],
+    "cohort": "validation",
+    "strata": [
+      "direct-to-consumer-flooring-retail"
+    ],
+    "anonymousContext": true,
+    "sourceManifestSha256": [
+      "b14ed8100568643c87d47a91ba8aa0a8ddb3b762bb969b06eb7d74ababbe87a7"
+    ],
+    "collectorSha256": [
+      "6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c"
+    ]
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T03-34-59-865Z",
+      "runManifestSha256": "15b69dd064262d3a4531fbda00b4c6d8d1fce0e6c59690168446e14bfa5234ef",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    },
+    {
+      "runId": "2026-07-27T03-39-25-363Z",
+      "runManifestSha256": "0b935dc7e727ee958d04535bbf7f39ca7805db30c54c971e4714e63362cacf90",
+      "pageTimeoutMs": 60000,
+      "cardScreenshotBudgetMs": 15000
+    }
+  ],
+  "screening": {
+    "requestedCaptureAttempts": 2,
+    "successfulCaptureAttempts": 2,
+    "acceptedPages": 2,
+    "rejectedPages": 0,
+    "acceptanceRate": 1,
+    "candidateCardRoots": 24,
+    "samplingFinding": "Portofino Flooring was one of ten disjoint, unassigned domains in a bounded held-out retry. It was assigned to validation only after two fresh opposite-viewport pages passed.",
+    "visualValidationFinding": "Both original-resolution annotation screenshots were inspected. All twenty-four frozen roots retain candidate closeups, and the page evidence shows coherent requested-query flooring with readable price and area evidence."
+  },
+  "captures": [
+    {
+      "siteId": "portofino-flooring",
+      "pageId": "portofino-flooring--vinyl-flooring",
+      "capturedAt": "2026-07-27T03:35:16.065Z",
+      "viewportProfile": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 202,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.08,
+      "queryTokenCoverage": 1,
+      "observationSha256": "727d15cc906499058c7ced9e53aca6ff94d4c6c8d69cb96ccfe00f223f0c72d6",
+      "canonicalObservationSha256": "5e3c8f72a252734eec0632e18ec9d2bfa653d650ee785dec233567c46db1b8ab",
+      "annotationScreenshotSha256": "b071df53c6c2e642c29079bf4eae6486e62e338e09b5e0e63731453076861e48",
+      "provenanceAggregateSha256": "4a3d7ffb989138284487ffea8f93fa074b917e325b85c24699b3ce12ec17223f",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "portofino-flooring",
+      "pageId": "portofino-flooring--oak-flooring",
+      "capturedAt": "2026-07-27T03:39:41.382Z",
+      "viewportProfile": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "privacyRedactions": 0,
+      "candidateCount": 12,
+      "candidateScreenshotsCaptured": 12,
+      "observationNodeCount": 199,
+      "observationTruncated": false,
+      "dismissedObstructions": 0,
+      "unresolvedObstructionCoverage": 0.0947867298578199,
+      "queryTokenCoverage": 1,
+      "observationSha256": "f84ad07d3a29fb7b1b0a197a84cb32c4b6fa8596ef2701b1702d959e39baede9",
+      "canonicalObservationSha256": "daf6589880a87498ba881ef4d76108837f535a17ffeb2ba0ff398448834a869b",
+      "annotationScreenshotSha256": "b4680f70660e846e2ea4728cb794b230c49e6bf4928ec7ed7cf75642b5c051b3",
+      "provenanceAggregateSha256": "650a3486701f94387b09c60b67bfd61c2a4d53f36aa5aa7fa0fe346011381d5c",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    }
+  ],
+  "eligibility": {
+    "pointerReady": false,
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Independent human reviews and third-party adjudication are pending."
+  }
+}
