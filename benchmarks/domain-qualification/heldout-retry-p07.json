@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "qualificationId": "heldout-retry-p07",
+  "candidateManifest": "benchmarks/live-sites/heldout-qualification-retry-p07.json",
+  "qualificationGate": "benchmarks/domain-qualification/wave-01-p00.json#qualificationGate",
+  "collectorPolicy": {
+    "pageTimeoutMs": 60000,
+    "parentProcessHardTimeoutMs": 75000,
+    "cardScreenshotBudgetMs": 15000,
+    "minimumQueryTokenCoverage": 1,
+    "minimumCandidateRoots": 8,
+    "requiredMachineValidation": true,
+    "requiredVisualValidation": true,
+    "desktopBatchSha256": "597a82f2af890e2462ff1e4fa18add355edc571d6177c0e9ae144ab23ee87af4",
+    "narrowBatchSha256": "140f265ec2cbc52eaca0f699b6f5132f3952c75e8cc06991c8834277a4ce0f1d",
+    "processIsolationFinding": "All twelve headed capture children completed under isolated process-group bounds with zero hard timeouts.",
+    "samplingFinding": "Ten disjoint, unassigned domains received a fresh desktop capture. Three desktop pages passed the numeric machine gate; original-resolution visual review advanced two to a distinct narrow capture. The Linen Lab passed both viewport gates; no old partial capture was reused.",
+    "manifestIntegrityFinding": "Both accepted captures use the frozen retry manifest hash 749bd41ed8b6a07f6e31070ed1209314d9959c4017b7324dea30e844aa4fa979 and collector hash 6afb5ef4a9bfa42695c516a8391438688f4e2a0a1fd3f5098cc259efd64d897c."
+  },
+  "runs": [
+    {
+      "runId": "2026-07-27T04-02-21-100Z",
+      "runManifestSha256": "bfeea0e4ec221a91aa6a74cddbb1a7c7a9720ec26e44bc59db0858cc4de12b98",
+      "purpose": "The Linen Lab desktop qualification capture"
+    },
+    {
+      "runId": "2026-07-27T04-04-36-755Z",
+      "runManifestSha256": "3d735751ee91312c790bd65d85959fdea8011ee14d47230a5368e36238d148e3",
+      "purpose": "The Linen Lab narrow qualification capture"
+    }
+  ],
+  "results": {
+    "koch-chemie-usa": {
+      "status": "rejected",
+      "reason": "The requested storefront domain now renders a parked-domain page with no requested-query evidence or reviewable products."
+    },
+    "detailers-domain": {
+      "status": "rejected",
+      "reason": "The coherent desktop car-wash-soap page passed, but a discount ribbon and cart widget covered selected card evidence in the distinct narrow wheel-cleaner capture, whose frozen roots also included multiple brushes and kits."
+    },
+    "medical-mega": {
+      "status": "rejected",
+      "reason": "The desktop route exposed no requested-query evidence and no reviewable product candidates."
+    },
+    "honest-med": {
+      "status": "rejected",
+      "reason": "The desktop route exposed twelve roots but no requested-query evidence."
+    },
+    "bolt-fabric-boutique": {
+      "status": "rejected",
+      "reason": "The desktop route exposed complete requested-query evidence but no reviewable product candidates."
+    },
+    "the-linen-lab": {
+      "status": "qualified",
+      "pages": [
+        {
+          "pageId": "the-linen-lab--linen-fabric",
+          "viewportProfile": "desktop",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.002915798611111111,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        },
+        {
+          "pageId": "the-linen-lab--linen-canvas",
+          "viewportProfile": "narrow",
+          "candidateCount": 12,
+          "observationTruncated": false,
+          "unresolvedObstructionCoverage": 0.012740764369911289,
+          "queryTokenCoverage": 1,
+          "machineValidation": "passed",
+          "visualValidation": "passed"
+        }
+      ],
+      "evidenceSummary": "Two coherent linen-fabric grids pass in opposite viewports. Cards expose regular and sale prices, from-prices, fiber blends, fabric weights, color variants, and canvas or chambray descriptors without relying on site-specific selectors."
+    },
+    "south-cypress": {
+      "status": "rejected",
+      "reason": "The desktop route exposed twelve roots, but original-resolution review showed a mixed tile and flooring catalog with placeholder $0.00 prices rather than coherent carpet-tile comparison evidence."
+    },
+    "green-building-supply": {
+      "status": "rejected",
+      "reason": "The desktop page was visually reachable but exposed only three candidate roots, below the frozen minimum of eight."
+    },
+    "diaspora-co": {
+      "status": "rejected",
+      "reason": "The desktop route exposed complete requested-query evidence but no reviewable product candidates."
+    },
+    "curio-spice": {
+      "status": "rejected",
+      "reason": "The desktop route exposed twelve roots, but unresolved visible obstruction covered more than 36% of the viewport."
+    }
+  },
+  "decision": {
+    "qualifiedDomains": [
+      "the-linen-lab"
+    ],
+    "assignedDomains": [
+      {
+        "siteId": "the-linen-lab",
+        "cohort": "selection"
+      }
+    ],
+    "status": "keep"
+  }
+}

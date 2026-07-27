@@ -6096,6 +6096,30 @@
       "pilotReport": "benchmarks/capture-pilots/g2-validation-heldout-retry-p04.json",
       "machineValidation": "passed",
       "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-linen-lab",
+      "cohort": "selection",
+      "pageId": "the-linen-lab--linen-fabric",
+      "captureTimestamp": "2026-07-27T04:02:30.807Z",
+      "observationSha256": "d9fb3c4c9575edae8bc5c7fd126fb9817bae3593f24f070e42a8eff09a0af8fb",
+      "annotationScreenshotSha256": "18f5031da322bf10e90bc26cf5dad055bfe403d1f8a7d96f72c71135517925a2",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p07.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p04.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
+    },
+    {
+      "siteId": "the-linen-lab",
+      "cohort": "selection",
+      "pageId": "the-linen-lab--linen-canvas",
+      "captureTimestamp": "2026-07-27T04:04:45.141Z",
+      "observationSha256": "e87568653977424f6f28f96079ddca7fd4da6839a913525d48e9dbac01dc985d",
+      "annotationScreenshotSha256": "78b8d51e04e207a018d5a5002167c3e7995be593c12adb1f2c256409f6d735b6",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p07.json",
+      "pilotReport": "benchmarks/capture-pilots/g2-selection-heldout-retry-p04.json",
+      "machineValidation": "passed",
+      "visualValidation": "passed"
     }
   ]
 }

@@ -1359,6 +1359,22 @@ all 24 frozen roots loaded, zero console errors, and zero review writes. The
 eligible registry now contains 508 exact capture identities. Human semantic
 reviews and adjudication remain pending.
 
+An eighth bounded retry tested 10 additional disjoint specialty-retail domains
+across all five dimensions. All 12 isolated headed Chromium children completed
+without a hard timeout. Three desktop pages passed the numeric machine gate;
+original-resolution visual review rejected South Cypress for mixed products
+with placeholder `$0.00` prices and advanced two domains to distinct narrow
+queries. The narrow Detailer's Domain page then failed for covered card evidence
+and accessory contamination, while The Linen Lab qualified. The accepted domain
+adds 2 selection pages and 24 length roots. Qualified held-out structure is now
+7 validation domains with 14 pages and 8 selection domains with 16 pages, both
+at 50% narrow-viewport coverage. The blinded
+[`g2-selection-p04.json`](../benchmarks/review-campaigns/g2-selection-p04.json)
+campaign and its paired reviewer batch passed headed Playwright Chromium with
+all 24 frozen roots loaded, zero console errors, and zero review writes. The
+eligible registry now contains 510 exact capture identities. Human semantic
+reviews and adjudication remain pending.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

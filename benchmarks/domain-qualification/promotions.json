@@ -564,6 +564,12 @@
       "cohort": "validation",
       "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p06.json",
       "promotedAt": "2026-07-27T03:57:00.000Z"
+    },
+    {
+      "siteId": "the-linen-lab",
+      "cohort": "selection",
+      "qualificationReport": "benchmarks/domain-qualification/heldout-retry-p07.json",
+      "promotedAt": "2026-07-27T04:06:00.000Z"
     }
   ]
 }

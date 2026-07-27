@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "campaignId": "g2-selection-p04",
+  "createdAt": "2026-07-27T04:07:26.313Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--5e39060385223bb4",
+      "path": "benchmark-data/review/g2-selection-p04/reviewer-a.json",
+      "sha256": "6c2863637b604ca6bc71deaaf114f964120b9c9a4c0d90e2e963da88de4f0397",
+      "pages": 2
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--c99c284333b6900d",
+      "path": "benchmark-data/review/g2-selection-p04/reviewer-b.json",
+      "sha256": "6074db92618089bc00028bcd1089d3edb12704a7194b843fbfd0938b265aac18",
+      "pages": 2
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 10,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 1,
+    "pages": 2,
+    "candidateCards": 24
+  },
+  "batches": [
+    {
+      "batchId": "g2-selection-p04--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "the-linen-lab--linen-canvas",
+        "the-linen-lab--linen-fabric"
+      ],
+      "pages": 2,
+      "candidateCards": 24,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--faae7b67cc7c5e3f",
+          "path": "benchmark-data/review/g2-selection-p04-review-batches/reviewer-a--batch-01.json",
+          "sha256": "2624d33244f4ed3c8b5d5d562b16c24282f56474f287ebbb6a9dc923718bc6bc"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--796211f47495d609",
+          "path": "benchmark-data/review/g2-selection-p04-review-batches/reviewer-b--batch-01.json",
+          "sha256": "b90c7a462957d3a4faee633201576ea1e981ae1ab7087113d8b1a6dcd01f6d0b"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}
