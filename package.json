@@ -1,6 +1,6 @@
 {
   "name": "apples-to-apples",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Chrome extension for normalized unit-price comparison across shopping sites.",
   "license": "UNLICENSED",
@@ -26,7 +26,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "bun run build && playwright test",
-    "test:live": "LIVE_SHOPPING_TESTS=1 bun run build && playwright test tests/e2e/live-sites.spec.ts",
+    "test:live": "bun run build && LIVE_SHOPPING_TESTS=1 playwright test tests/e2e/live-sites.spec.ts",
     "benchmark:collect": "bun scripts/collect-live-corpus.ts",
     "benchmark:collect:bounded": "bun scripts/collect-live-corpus-bounded.ts",
     "benchmark:coverage": "bun scripts/report-corpus-coverage.ts",

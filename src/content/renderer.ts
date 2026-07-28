@@ -1,28 +1,20 @@
 import type { NormalizedPrice, UserPreferences } from "../core/types";
 import type { DomProduct } from "./extractor";
 import {
-  getUnitPriceSortContainer,
-  getUnitPriceSortMessage,
   isUnitPriceSortActive,
   restoreUnitPriceSort,
-  sortByUnitPrice,
-  toggleUnitPriceSort
+  sortByUnitPrice
 } from "./sorter";
 
 const STYLE_ID = "ata-content-style";
 const SORT_CONTROL_SELECTOR = "[data-ata-sort-control]";
 const CUSTOM_SORT_OPTION_SELECTOR = "[data-ata-custom-sort-option]";
 const SORT_OPTION_VALUE = "ata-unit-price-asc";
-const INLINE_FALLBACK_DELAY_MS = 1400;
-
-interface PendingInlineFallback {
-  products: DomProduct[];
-  preferences: UserPreferences;
-}
 
 type CustomSortTrigger = HTMLElement & {
   __ataSortProducts?: DomProduct[];
   __ataSortPreferences?: UserPreferences;
+  __ataSortMenuActivated?: boolean;
   __ataSortClickHandler?: EventListener;
   __ataSortKeyHandler?: EventListener;
   __ataSortObserver?: MutationObserver;
@@ -32,10 +24,6 @@ type CustomSortOption = HTMLElement & {
   __ataSelectHandler?: EventListener;
   __ataKeyHandler?: EventListener;
 };
-
-let inlineFallbackTimer: number | undefined;
-let pendingInlineFallback: PendingInlineFallback | undefined;
-let inlineFallbackVisible = false;
 
 export function renderProducts(products: DomProduct[], preferences: UserPreferences): void {
   injectStyles(document);
@@ -52,6 +40,9 @@ function renderBadges(products: DomProduct[]): void {
 
     const badge = product.element.querySelector<HTMLElement>("[data-ata-badge]") ?? document.createElement("div");
     badge.dataset.ataBadge = "true";
+    badge.dataset.ataCentsPerUnit = String(product.normalized.centsPerUnit);
+    badge.dataset.ataUnit = product.normalized.unit;
+    badge.dataset.ataDimension = product.normalized.dimension;
     badge.className = "ata-badge";
     badge.title = buildTitle(product.normalized);
     badge.innerHTML = badgeMarkup(product.normalized);
@@ -63,84 +54,13 @@ function renderBadges(products: DomProduct[]): void {
 }
 
 function renderSortControls(products: DomProduct[], preferences: UserPreferences): void {
+  removeInlineSortControls();
+
   if (enhanceNativeSortSelect(products, preferences)) {
-    cancelInlineSortFallback();
-    removeInlineSortControls();
     return;
   }
 
-  if (enhanceCustomSortDropdown(products, preferences)) {
-    cancelInlineSortFallback();
-    removeInlineSortControls();
-    return;
-  }
-
-  const existingControl = document.querySelector<HTMLElement>(SORT_CONTROL_SELECTOR);
-  if (!existingControl || !inlineFallbackVisible) {
-    removeInlineSortControls();
-    scheduleInlineSortFallback(products, preferences);
-    return;
-  }
-
-  renderInlineSortControls(products, preferences);
-}
-
-function renderInlineSortControls(products: DomProduct[], preferences: UserPreferences): void {
-  const anchor = getUnitPriceSortContainer(products) ?? getFallbackSortAnchor(products);
-  const liveControl = anchor ? getOrCreateSortControl(anchor) : undefined;
-
-  for (const control of document.querySelectorAll<HTMLElement>(SORT_CONTROL_SELECTOR)) {
-    if (control !== liveControl) {
-      control.remove();
-    }
-  }
-
-  if (liveControl) {
-    inlineFallbackVisible = true;
-    updateSortControl(liveControl, products, preferences);
-  } else {
-    inlineFallbackVisible = false;
-  }
-}
-
-function scheduleInlineSortFallback(products: DomProduct[], preferences: UserPreferences): void {
-  pendingInlineFallback = { products, preferences };
-
-  if (inlineFallbackTimer) {
-    return;
-  }
-
-  inlineFallbackTimer = window.setTimeout(() => {
-    inlineFallbackTimer = undefined;
-
-    const pending = pendingInlineFallback;
-    pendingInlineFallback = undefined;
-    if (!pending) {
-      return;
-    }
-
-    if (enhanceNativeSortSelect(pending.products, pending.preferences)) {
-      removeInlineSortControls();
-      return;
-    }
-
-    if (enhanceCustomSortDropdown(pending.products, pending.preferences)) {
-      removeInlineSortControls();
-      return;
-    }
-
-    inlineFallbackVisible = true;
-    renderInlineSortControls(pending.products, pending.preferences);
-  }, INLINE_FALLBACK_DELAY_MS);
-}
-
-function cancelInlineSortFallback(): void {
-  pendingInlineFallback = undefined;
-
-  if (inlineFallbackTimer) {
-    window.clearTimeout(inlineFallbackTimer);
-    inlineFallbackTimer = undefined;
-  }
+  enhanceCustomSortDropdown(products, preferences);
 }
 
 function enhanceNativeSortSelect(products: DomProduct[], preferences: UserPreferences): boolean {
@@ -202,6 +122,7 @@ function enhanceCustomSortDropdown(products: DomProduct[], preferences: UserPref
 
   if (!enhancedTrigger.__ataSortClickHandler) {
     enhancedTrigger.__ataSortClickHandler = () => {
+      enhancedTrigger.__ataSortMenuActivated = true;
       window.setTimeout(() => insertCustomSortMenuOption(enhancedTrigger), 0);
       window.setTimeout(() => insertCustomSortMenuOption(enhancedTrigger), 120);
     };
@@ -211,6 +132,7 @@ function enhanceCustomSortDropdown(products: DomProduct[], preferences: UserPref
   if (!enhancedTrigger.__ataSortKeyHandler) {
     enhancedTrigger.__ataSortKeyHandler = (event) => {
       if (event instanceof KeyboardEvent && ["Enter", " ", "ArrowDown"].includes(event.key)) {
+        enhancedTrigger.__ataSortMenuActivated = true;
         window.setTimeout(() => insertCustomSortMenuOption(enhancedTrigger), 0);
         window.setTimeout(() => insertCustomSortMenuOption(enhancedTrigger), 120);
       }
@@ -219,7 +141,11 @@ function enhanceCustomSortDropdown(products: DomProduct[], preferences: UserPref
   }
 
   if (!enhancedTrigger.__ataSortObserver) {
-    enhancedTrigger.__ataSortObserver = new MutationObserver(() => insertCustomSortMenuOption(enhancedTrigger));
+    enhancedTrigger.__ataSortObserver = new MutationObserver(() => {
+      if (enhancedTrigger.__ataSortMenuActivated) {
+        insertCustomSortMenuOption(enhancedTrigger);
+      }
+    });
     enhancedTrigger.__ataSortObserver.observe(document.body, {
       childList: true,
       subtree: true,
@@ -228,7 +154,6 @@ function enhanceCustomSortDropdown(products: DomProduct[], preferences: UserPref
     });
   }
 
-  insertCustomSortMenuOption(enhancedTrigger);
   return true;
 }
 
@@ -359,13 +284,7 @@ function findOpenCustomSortMenu(trigger: HTMLElement): HTMLElement | undefined {
     return labelMenu;
   }
 
-  const menus = [
-    ...document.querySelectorAll<HTMLElement>(
-      "[role='listbox'], [role='menu'], [data-testid*='sort' i], [data-test*='sort' i], [class*='dropdown' i], [class*='popover' i]"
-    )
-  ];
-
-  return menus.find((menu) => isVisible(menu) && menuLooksLikeSortMenu(menu));
+  return undefined;
 }
 
 function findControlledMenu(trigger: HTMLElement): HTMLElement | undefined {
@@ -498,7 +417,7 @@ function resetClonedMenuNode(element: HTMLElement): void {
 function setCustomSortOptionText(option: HTMLElement): void {
   const label = option.matches("label") ? option : option.querySelector<HTMLElement>("label");
   if (label) {
-    label.textContent = "Unit Price";
+    label.textContent = "Unit price: low to high";
     return;
   }
 
@@ -667,71 +586,10 @@ function isVisible(element: HTMLElement): boolean {
   );
 }
 
-function getFallbackSortAnchor(products: DomProduct[]): HTMLElement | undefined {
-  if (!hasComparableProducts(products)) {
-    return undefined;
-  }
-
-  const firstProduct = products.find((product) => product.normalized);
-  return firstProduct?.element;
-}
-
-function hasComparableProducts(products: DomProduct[]): boolean {
-  const counts = new Map<string, number>();
-
-  for (const product of products) {
-    if (!product.normalized) {
-      continue;
-    }
-
-    counts.set(product.normalized.compareKey, (counts.get(product.normalized.compareKey) ?? 0) + 1);
-  }
-
-  return [...counts.values()].some((count) => count >= 2);
-}
-
 function removeInlineSortControls(): void {
-  inlineFallbackVisible = false;
-
   for (const control of document.querySelectorAll<HTMLElement>(SORT_CONTROL_SELECTOR)) {
     control.remove();
   }
-}
-
-function getOrCreateSortControl(parent: HTMLElement): HTMLElement {
-  const previous = parent.previousElementSibling;
-  if (previous instanceof HTMLElement && previous.matches(SORT_CONTROL_SELECTOR)) {
-    return previous;
-  }
-
-  const control = document.createElement("div");
-  control.dataset.ataSortControl = "true";
-  control.className = "ata-sort-control";
-  parent.insertAdjacentElement("beforebegin", control);
-  return control;
-}
-
-function updateSortControl(control: HTMLElement, products: DomProduct[], preferences: UserPreferences): void {
-  control.innerHTML = `
-    <button type="button" class="ata-sort-button">
-      ${isUnitPriceSortActive() ? "Restore order" : "Sort by unit price"}
-    </button>
-    <span class="ata-sort-status">${escapeHtml(isUnitPriceSortActive() ? getUnitPriceSortMessage() : "Visible comparable items")}</span>
-  `;
-
-  control.querySelector<HTMLButtonElement>(".ata-sort-button")?.addEventListener("click", () => {
-    const result = toggleUnitPriceSort(products, preferences);
-    const button = control.querySelector<HTMLButtonElement>(".ata-sort-button");
-    const status = control.querySelector<HTMLElement>(".ata-sort-status");
-
-    if (button) {
-      button.textContent = result.state === "sorted" ? "Restore order" : "Sort by unit price";
-    }
-
-    if (status) {
-      status.textContent = result.message;
-    }
-  });
 }
 
 function badgeMarkup(normalized: NormalizedPrice): string {
@@ -746,7 +604,9 @@ function buildTitle(normalized: NormalizedPrice): string {
 }
 
 export function removeLegacyUi(): void {
-  for (const panel of document.querySelectorAll("#ata-panel-root, [data-ata-panel-root]")) {
+  for (const panel of document.querySelectorAll(
+    "#ata-panel-root, [data-ata-panel-root], [data-ata-sort-control]"
+  )) {
     panel.remove();
   }
 
@@ -766,7 +626,7 @@ function injectStyles(document: Document): void {
   style.id = STYLE_ID;
   style.textContent = `
     .ata-badge,
-    .ata-sort-control {
+    .ata-custom-sort-option {
       --receipt-paper: #fbfaf6;
       --shelf-ink: #1f241f;
       --muted-ink: #627064;
@@ -798,47 +658,6 @@ function injectStyles(document: Document): void {
 
     .ata-badge-main {
       font-weight: 760;
-      white-space: nowrap;
-    }
-
-    .ata-sort-control {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      max-width: 100%;
-      margin: 0 0 10px;
-      padding: 6px 7px;
-      border: 1px solid var(--tag-line);
-      border-radius: 7px;
-      background: var(--receipt-paper);
-      color: var(--shelf-ink);
-      font-size: 12px;
-      line-height: 1.2;
-    }
-
-    .ata-sort-button {
-      min-height: 28px;
-      border: 1px solid rgb(35 102 82 / 0.28);
-      border-radius: 6px;
-      background: #fffdfa;
-      color: var(--ledger-green);
-      font: inherit;
-      font-weight: 720;
-      padding: 0 10px;
-      white-space: nowrap;
-      cursor: pointer;
-    }
-
-    .ata-sort-button:focus-visible {
-      outline: 2px solid var(--ledger-green);
-      outline-offset: 2px;
-    }
-
-    .ata-sort-status {
-      min-width: 0;
-      overflow: hidden;
-      color: var(--muted-ink);
-      text-overflow: ellipsis;
       white-space: nowrap;
     }
 

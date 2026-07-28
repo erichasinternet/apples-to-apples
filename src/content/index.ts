@@ -48,7 +48,9 @@ function setupMutationObserver(): void {
   observer?.disconnect();
   observer = new MutationObserver((mutations) => {
     const hasMeaningfulChange = mutations.some((mutation) =>
-      [...mutation.addedNodes].some((node) => node instanceof HTMLElement && !node.closest("[data-ata-sort-control]"))
+      [...mutation.addedNodes].some(
+        (node) => node instanceof HTMLElement && !isExtensionNode(node)
+      )
     );
 
     if (hasMeaningfulChange) {
@@ -60,6 +62,17 @@ function setupMutationObserver(): void {
     childList: true,
     subtree: true
   });
+}
+
+function isExtensionNode(node: HTMLElement): boolean {
+  return Boolean(
+    node.matches(
+      "#ata-content-style, [data-ata-badge], [data-ata-sort-control], [data-ata-custom-sort-option]"
+    ) ||
+      node.closest(
+        "[data-ata-badge], [data-ata-sort-control], [data-ata-custom-sort-option]"
+      )
+  );
 }
 
 function debounceScan(): void {

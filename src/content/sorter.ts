@@ -36,6 +36,8 @@ export function toggleUnitPriceSort(products: DomProduct[], preferences: UserPre
 }
 
 export function sortByUnitPrice(products: DomProduct[], preferences: UserPreferences): UnitSortResult {
+  discardDetachedSortState();
+
   if (activeSortState) {
     return {
       state: "sorted",
@@ -95,6 +97,7 @@ export function restoreUnitPriceSort(): UnitSortResult {
 }
 
 export function isUnitPriceSortActive(): boolean {
+  discardDetachedSortState();
   return Boolean(activeSortState);
 }
 
@@ -114,6 +117,15 @@ export function getUnitPriceSortContainer(products: DomProduct[]): HTMLElement |
 
 export function resetUnitPriceSortState(): void {
   activeSortState = undefined;
+}
+
+function discardDetachedSortState(): void {
+  if (
+    activeSortState &&
+    activeSortState.snapshots.every((snapshot) => !snapshot.parent.isConnected)
+  ) {
+    activeSortState = undefined;
+  }
 }
 
 function applyUnitPriceSort(

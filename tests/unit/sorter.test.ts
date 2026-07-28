@@ -1,6 +1,10 @@
 import { DEFAULT_PREFERENCES, type NormalizedPrice } from "../../src/core/types";
 import type { DomProduct } from "../../src/content/extractor";
-import { resetUnitPriceSortState, toggleUnitPriceSort } from "../../src/content/sorter";
+import {
+  resetUnitPriceSortState,
+  sortByUnitPrice,
+  toggleUnitPriceSort
+} from "../../src/content/sorter";
 
 describe("unit price page sorting", () => {
   beforeEach(() => {
@@ -87,6 +91,43 @@ describe("unit price page sorting", () => {
 
     expect(result.state).toBe("unavailable");
     expect([...grid.children].map((element) => element.textContent)).toEqual(["Litter", "Detergent"]);
+  });
+
+  it("discards stale sort state after a retailer replaces the product grid", () => {
+    const firstGrid = document.createElement("div");
+    const firstExpensive = card("First expensive");
+    const firstCheap = card("First cheap");
+    firstGrid.append(firstExpensive, firstCheap);
+    document.body.append(firstGrid);
+
+    sortByUnitPrice(
+      [
+        product(firstExpensive, "First expensive", "mass:lb", 70),
+        product(firstCheap, "First cheap", "mass:lb", 20)
+      ],
+      DEFAULT_PREFERENCES
+    );
+    firstGrid.remove();
+
+    const replacementGrid = document.createElement("div");
+    const replacementExpensive = card("Replacement expensive");
+    const replacementCheap = card("Replacement cheap");
+    replacementGrid.append(replacementExpensive, replacementCheap);
+    document.body.append(replacementGrid);
+
+    const result = sortByUnitPrice(
+      [
+        product(replacementExpensive, "Replacement expensive", "mass:lb", 80),
+        product(replacementCheap, "Replacement cheap", "mass:lb", 25)
+      ],
+      DEFAULT_PREFERENCES
+    );
+
+    expect(result.state).toBe("sorted");
+    expect([...replacementGrid.children].map((element) => element.textContent)).toEqual([
+      "Replacement cheap",
+      "Replacement expensive"
+    ]);
   });
 });
 
