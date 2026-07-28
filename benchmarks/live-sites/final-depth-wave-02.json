@@ -1,0 +1,1461 @@
+{
+  "version": 1,
+  "description": "Second bounded final-depth wave on twenty-five proven high-yield final domains. The 246 unseen category queries preserve all five supported dimensions and selector-free acquisition while providing enough reserve to close the remaining 136-page structural target under strict rejection.",
+  "sites": [
+    {
+      "id": "fabricbistro",
+      "label": "fabricbistro.com",
+      "hostname": "fabricbistro.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://fabricbistro.com/search?q={query}",
+      "queries": [
+        {
+          "id": "denim-fabric",
+          "query": "denim fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "canvas-fabric",
+          "query": "canvas fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "flannel-fabric",
+          "query": "flannel fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "jersey-fabric",
+          "query": "jersey fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "lace-fabric",
+          "query": "lace fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "satin-fabric",
+          "query": "satin fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "muslin-fabric",
+          "query": "muslin fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "twill-fabric",
+          "query": "twill fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "chiffon-fabric",
+          "query": "chiffon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "corduroy-fabric",
+          "query": "corduroy fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "girlcharlee",
+      "label": "girlcharlee.com",
+      "hostname": "girlcharlee.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://girlcharlee.com/search?q={query}",
+      "queries": [
+        {
+          "id": "denim-fabric",
+          "query": "denim fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "canvas-fabric",
+          "query": "canvas fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "flannel-fabric",
+          "query": "flannel fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "jersey-fabric",
+          "query": "jersey fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "lace-fabric",
+          "query": "lace fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "satin-fabric",
+          "query": "satin fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "muslin-fabric",
+          "query": "muslin fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "twill-fabric",
+          "query": "twill fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "chiffon-fabric",
+          "query": "chiffon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "corduroy-fabric",
+          "query": "corduroy fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "longancraft",
+      "label": "longancraft.com",
+      "hostname": "www.longancraft.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.longancraft.com/search?q={query}",
+      "queries": [
+        {
+          "id": "denim-fabric",
+          "query": "denim fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "canvas-fabric",
+          "query": "canvas fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "flannel-fabric",
+          "query": "flannel fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "jersey-fabric",
+          "query": "jersey fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "lace-fabric",
+          "query": "lace fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "satin-fabric",
+          "query": "satin fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "muslin-fabric",
+          "query": "muslin fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "twill-fabric",
+          "query": "twill fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "chiffon-fabric",
+          "query": "chiffon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "corduroy-fabric",
+          "query": "corduroy fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "sewingpartsonline",
+      "label": "sewingpartsonline.com",
+      "hostname": "www.sewingpartsonline.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.sewingpartsonline.com/search?q={query}",
+      "queries": [
+        {
+          "id": "denim-fabric",
+          "query": "denim fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "canvas-fabric",
+          "query": "canvas fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "flannel-fabric",
+          "query": "flannel fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "jersey-fabric",
+          "query": "jersey fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "lace-fabric",
+          "query": "lace fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "satin-fabric",
+          "query": "satin fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "muslin-fabric",
+          "query": "muslin fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "twill-fabric",
+          "query": "twill fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "chiffon-fabric",
+          "query": "chiffon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "corduroy-fabric",
+          "query": "corduroy fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "otile",
+      "label": "otile.com",
+      "hostname": "otile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://otile.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "hexagon-tile",
+          "query": "hexagon tile",
+          "dimension": "area"
+        },
+        {
+          "id": "penny-tile",
+          "query": "penny tile",
+          "dimension": "area"
+        },
+        {
+          "id": "travertine-tile",
+          "query": "travertine tile",
+          "dimension": "area"
+        },
+        {
+          "id": "slate-tile",
+          "query": "slate tile",
+          "dimension": "area"
+        },
+        {
+          "id": "backsplash-tile",
+          "query": "backsplash tile",
+          "dimension": "area"
+        },
+        {
+          "id": "wall-tile",
+          "query": "wall tile",
+          "dimension": "area"
+        },
+        {
+          "id": "pebble-tile",
+          "query": "pebble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "limestone-tile",
+          "query": "limestone tile",
+          "dimension": "area"
+        },
+        {
+          "id": "terrazzo-tile",
+          "query": "terrazzo tile",
+          "dimension": "area"
+        },
+        {
+          "id": "cement-tile",
+          "query": "cement tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "shopmosaictile",
+      "label": "shopmosaictile.com",
+      "hostname": "shopmosaictile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://shopmosaictile.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "hexagon-tile",
+          "query": "hexagon tile",
+          "dimension": "area"
+        },
+        {
+          "id": "penny-tile",
+          "query": "penny tile",
+          "dimension": "area"
+        },
+        {
+          "id": "travertine-tile",
+          "query": "travertine tile",
+          "dimension": "area"
+        },
+        {
+          "id": "slate-tile",
+          "query": "slate tile",
+          "dimension": "area"
+        },
+        {
+          "id": "backsplash-tile",
+          "query": "backsplash tile",
+          "dimension": "area"
+        },
+        {
+          "id": "wall-tile",
+          "query": "wall tile",
+          "dimension": "area"
+        },
+        {
+          "id": "pebble-tile",
+          "query": "pebble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "limestone-tile",
+          "query": "limestone tile",
+          "dimension": "area"
+        },
+        {
+          "id": "terrazzo-tile",
+          "query": "terrazzo tile",
+          "dimension": "area"
+        },
+        {
+          "id": "cement-tile",
+          "query": "cement tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "americantiledepot",
+      "label": "americantiledepot.com",
+      "hostname": "www.americantiledepot.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.americantiledepot.com/search?q={query}",
+      "queries": [
+        {
+          "id": "hexagon-tile",
+          "query": "hexagon tile",
+          "dimension": "area"
+        },
+        {
+          "id": "penny-tile",
+          "query": "penny tile",
+          "dimension": "area"
+        },
+        {
+          "id": "travertine-tile",
+          "query": "travertine tile",
+          "dimension": "area"
+        },
+        {
+          "id": "slate-tile",
+          "query": "slate tile",
+          "dimension": "area"
+        },
+        {
+          "id": "backsplash-tile",
+          "query": "backsplash tile",
+          "dimension": "area"
+        },
+        {
+          "id": "wall-tile",
+          "query": "wall tile",
+          "dimension": "area"
+        },
+        {
+          "id": "pebble-tile",
+          "query": "pebble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "limestone-tile",
+          "query": "limestone tile",
+          "dimension": "area"
+        },
+        {
+          "id": "terrazzo-tile",
+          "query": "terrazzo tile",
+          "dimension": "area"
+        },
+        {
+          "id": "cement-tile",
+          "query": "cement tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "apollotile",
+      "label": "apollotile.com",
+      "hostname": "apollotile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://apollotile.com/search?q={query}",
+      "queries": [
+        {
+          "id": "hexagon-tile",
+          "query": "hexagon tile",
+          "dimension": "area"
+        },
+        {
+          "id": "penny-tile",
+          "query": "penny tile",
+          "dimension": "area"
+        },
+        {
+          "id": "travertine-tile",
+          "query": "travertine tile",
+          "dimension": "area"
+        },
+        {
+          "id": "slate-tile",
+          "query": "slate tile",
+          "dimension": "area"
+        },
+        {
+          "id": "backsplash-tile",
+          "query": "backsplash tile",
+          "dimension": "area"
+        },
+        {
+          "id": "wall-tile",
+          "query": "wall tile",
+          "dimension": "area"
+        },
+        {
+          "id": "pebble-tile",
+          "query": "pebble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "limestone-tile",
+          "query": "limestone tile",
+          "dimension": "area"
+        },
+        {
+          "id": "terrazzo-tile",
+          "query": "terrazzo tile",
+          "dimension": "area"
+        },
+        {
+          "id": "cement-tile",
+          "query": "cement tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "tile-mart",
+      "label": "Tile Mart",
+      "hostname": "tilemart.com",
+      "stratum": "national-tile-retail",
+      "searchUrlTemplate": "https://tilemart.com/search?q={query}",
+      "queries": [
+        {
+          "id": "hexagon-tile",
+          "query": "hexagon tile",
+          "dimension": "area"
+        },
+        {
+          "id": "penny-tile",
+          "query": "penny tile",
+          "dimension": "area"
+        },
+        {
+          "id": "travertine-tile",
+          "query": "travertine tile",
+          "dimension": "area"
+        },
+        {
+          "id": "slate-tile",
+          "query": "slate tile",
+          "dimension": "area"
+        },
+        {
+          "id": "backsplash-tile",
+          "query": "backsplash tile",
+          "dimension": "area"
+        },
+        {
+          "id": "wall-tile",
+          "query": "wall tile",
+          "dimension": "area"
+        },
+        {
+          "id": "pebble-tile",
+          "query": "pebble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "limestone-tile",
+          "query": "limestone tile",
+          "dimension": "area"
+        },
+        {
+          "id": "terrazzo-tile",
+          "query": "terrazzo tile",
+          "dimension": "area"
+        },
+        {
+          "id": "cement-tile",
+          "query": "cement tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "garner-supply",
+      "label": "Garner Supply",
+      "hostname": "www.garnersupply.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://www.garnersupply.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "cotton-rolls",
+          "query": "cotton rolls",
+          "dimension": "count"
+        },
+        {
+          "id": "dental-bibs",
+          "query": "dental bibs",
+          "dimension": "count"
+        },
+        {
+          "id": "saliva-ejectors",
+          "query": "saliva ejectors",
+          "dimension": "count"
+        },
+        {
+          "id": "suction-tips",
+          "query": "suction tips",
+          "dimension": "count"
+        },
+        {
+          "id": "sterilization-pouches",
+          "query": "sterilization pouches",
+          "dimension": "count"
+        },
+        {
+          "id": "disposable-gowns",
+          "query": "disposable gowns",
+          "dimension": "count"
+        },
+        {
+          "id": "surgical-caps",
+          "query": "surgical caps",
+          "dimension": "count"
+        },
+        {
+          "id": "shoe-covers",
+          "query": "shoe covers",
+          "dimension": "count"
+        },
+        {
+          "id": "tongue-depressors",
+          "query": "tongue depressors",
+          "dimension": "count"
+        },
+        {
+          "id": "lancets",
+          "query": "lancets",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "practicon",
+      "label": "practicon.com",
+      "hostname": "www.practicon.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://www.practicon.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "cotton-rolls",
+          "query": "cotton rolls",
+          "dimension": "count"
+        },
+        {
+          "id": "dental-bibs",
+          "query": "dental bibs",
+          "dimension": "count"
+        },
+        {
+          "id": "saliva-ejectors",
+          "query": "saliva ejectors",
+          "dimension": "count"
+        },
+        {
+          "id": "suction-tips",
+          "query": "suction tips",
+          "dimension": "count"
+        },
+        {
+          "id": "sterilization-pouches",
+          "query": "sterilization pouches",
+          "dimension": "count"
+        },
+        {
+          "id": "disposable-gowns",
+          "query": "disposable gowns",
+          "dimension": "count"
+        },
+        {
+          "id": "surgical-caps",
+          "query": "surgical caps",
+          "dimension": "count"
+        },
+        {
+          "id": "shoe-covers",
+          "query": "shoe covers",
+          "dimension": "count"
+        },
+        {
+          "id": "tongue-depressors",
+          "query": "tongue depressors",
+          "dimension": "count"
+        },
+        {
+          "id": "lancets",
+          "query": "lancets",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "got-cups",
+      "label": "GotCups",
+      "hostname": "gotcups.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://gotcups.com/search?q={query}",
+      "queries": [
+        {
+          "id": "bakery-boxes",
+          "query": "bakery boxes",
+          "dimension": "count"
+        },
+        {
+          "id": "foil-pans",
+          "query": "foil pans",
+          "dimension": "count"
+        },
+        {
+          "id": "paper-bowls",
+          "query": "paper bowls",
+          "dimension": "count"
+        },
+        {
+          "id": "plastic-cutlery",
+          "query": "plastic cutlery",
+          "dimension": "count"
+        },
+        {
+          "id": "soup-containers",
+          "query": "soup containers",
+          "dimension": "count"
+        },
+        {
+          "id": "deli-containers",
+          "query": "deli containers",
+          "dimension": "count"
+        },
+        {
+          "id": "portion-cups",
+          "query": "portion cups",
+          "dimension": "count"
+        },
+        {
+          "id": "coffee-cups",
+          "query": "coffee cups",
+          "dimension": "count"
+        },
+        {
+          "id": "food-wrap",
+          "query": "food wrap",
+          "dimension": "count"
+        },
+        {
+          "id": "parchment-paper",
+          "query": "parchment paper",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "mcdonaldpaper",
+      "label": "mcdonaldpaper.com",
+      "hostname": "www.mcdonaldpaper.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.mcdonaldpaper.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "bakery-boxes",
+          "query": "bakery boxes",
+          "dimension": "count"
+        },
+        {
+          "id": "foil-pans",
+          "query": "foil pans",
+          "dimension": "count"
+        },
+        {
+          "id": "paper-bowls",
+          "query": "paper bowls",
+          "dimension": "count"
+        },
+        {
+          "id": "plastic-cutlery",
+          "query": "plastic cutlery",
+          "dimension": "count"
+        },
+        {
+          "id": "soup-containers",
+          "query": "soup containers",
+          "dimension": "count"
+        },
+        {
+          "id": "deli-containers",
+          "query": "deli containers",
+          "dimension": "count"
+        },
+        {
+          "id": "portion-cups",
+          "query": "portion cups",
+          "dimension": "count"
+        },
+        {
+          "id": "coffee-cups",
+          "query": "coffee cups",
+          "dimension": "count"
+        },
+        {
+          "id": "food-wrap",
+          "query": "food wrap",
+          "dimension": "count"
+        },
+        {
+          "id": "parchment-paper",
+          "query": "parchment paper",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "catering24",
+      "label": "catering24.co.uk",
+      "hostname": "www.catering24.co.uk",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.catering24.co.uk/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "bakery-boxes",
+          "query": "bakery boxes",
+          "dimension": "count"
+        },
+        {
+          "id": "foil-pans",
+          "query": "foil pans",
+          "dimension": "count"
+        },
+        {
+          "id": "paper-bowls",
+          "query": "paper bowls",
+          "dimension": "count"
+        },
+        {
+          "id": "plastic-cutlery",
+          "query": "plastic cutlery",
+          "dimension": "count"
+        },
+        {
+          "id": "soup-containers",
+          "query": "soup containers",
+          "dimension": "count"
+        },
+        {
+          "id": "deli-containers",
+          "query": "deli containers",
+          "dimension": "count"
+        },
+        {
+          "id": "portion-cups",
+          "query": "portion cups",
+          "dimension": "count"
+        },
+        {
+          "id": "coffee-cups",
+          "query": "coffee cups",
+          "dimension": "count"
+        },
+        {
+          "id": "food-wrap",
+          "query": "food wrap",
+          "dimension": "count"
+        },
+        {
+          "id": "parchment-paper",
+          "query": "parchment paper",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "dean-supply",
+      "label": "Dean Supply",
+      "hostname": "www.shopatdean.com",
+      "stratum": "restaurant-supply-retail",
+      "searchUrlTemplate": "https://www.shopatdean.com/search?q={query}",
+      "queries": [
+        {
+          "id": "bakery-boxes",
+          "query": "bakery boxes",
+          "dimension": "count"
+        },
+        {
+          "id": "foil-pans",
+          "query": "foil pans",
+          "dimension": "count"
+        },
+        {
+          "id": "paper-bowls",
+          "query": "paper bowls",
+          "dimension": "count"
+        },
+        {
+          "id": "plastic-cutlery",
+          "query": "plastic cutlery",
+          "dimension": "count"
+        },
+        {
+          "id": "soup-containers",
+          "query": "soup containers",
+          "dimension": "count"
+        },
+        {
+          "id": "deli-containers",
+          "query": "deli containers",
+          "dimension": "count"
+        },
+        {
+          "id": "portion-cups",
+          "query": "portion cups",
+          "dimension": "count"
+        },
+        {
+          "id": "coffee-cups",
+          "query": "coffee cups",
+          "dimension": "count"
+        },
+        {
+          "id": "food-wrap",
+          "query": "food wrap",
+          "dimension": "count"
+        },
+        {
+          "id": "parchment-paper",
+          "query": "parchment paper",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "taste-of-tea",
+      "label": "Taste of Tea",
+      "hostname": "tasteoftea.com",
+      "stratum": "independent-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://tasteoftea.com/search?q={query}",
+      "queries": [
+        {
+          "id": "assam-tea",
+          "query": "assam tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "darjeeling-tea",
+          "query": "darjeeling tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "pu-erh-tea",
+          "query": "pu erh tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "rooibos-tea",
+          "query": "rooibos tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "jasmine-tea",
+          "query": "jasmine tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "earl-grey-tea",
+          "query": "earl grey tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "breakfast-tea",
+          "query": "breakfast tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "loose-leaf-tea",
+          "query": "loose leaf tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "chamomile-tea",
+          "query": "chamomile tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "mint-tea",
+          "query": "mint tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "vahdam-teas",
+      "label": "VAHDAM Teas",
+      "hostname": "www.vahdam.com",
+      "stratum": "direct-to-consumer-tea-retail",
+      "searchUrlTemplate": "https://www.vahdam.com/search?q={query}",
+      "queries": [
+        {
+          "id": "assam-tea",
+          "query": "assam tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "darjeeling-tea",
+          "query": "darjeeling tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "pu-erh-tea",
+          "query": "pu erh tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "rooibos-tea",
+          "query": "rooibos tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "jasmine-tea",
+          "query": "jasmine tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "earl-grey-tea",
+          "query": "earl grey tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "breakfast-tea",
+          "query": "breakfast tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "loose-leaf-tea",
+          "query": "loose leaf tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "chamomile-tea",
+          "query": "chamomile tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "mint-tea",
+          "query": "mint tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "yunnansourcing",
+      "label": "yunnansourcing.us",
+      "hostname": "yunnansourcing.us",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://yunnansourcing.us/search?q={query}",
+      "queries": [
+        {
+          "id": "assam-tea",
+          "query": "assam tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "darjeeling-tea",
+          "query": "darjeeling tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "pu-erh-tea",
+          "query": "pu erh tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "rooibos-tea",
+          "query": "rooibos tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "jasmine-tea",
+          "query": "jasmine tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "earl-grey-tea",
+          "query": "earl grey tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "breakfast-tea",
+          "query": "breakfast tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "loose-leaf-tea",
+          "query": "loose leaf tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "chamomile-tea",
+          "query": "chamomile tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "mint-tea",
+          "query": "mint tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "what-cha",
+      "label": "what-cha.com",
+      "hostname": "what-cha.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://what-cha.com/search?q={query}",
+      "queries": [
+        {
+          "id": "assam-tea",
+          "query": "assam tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "darjeeling-tea",
+          "query": "darjeeling tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "pu-erh-tea",
+          "query": "pu erh tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "rooibos-tea",
+          "query": "rooibos tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "jasmine-tea",
+          "query": "jasmine tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "earl-grey-tea",
+          "query": "earl grey tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "breakfast-tea",
+          "query": "breakfast tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "loose-leaf-tea",
+          "query": "loose leaf tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "chamomile-tea",
+          "query": "chamomile tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "mint-tea",
+          "query": "mint tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "davids-tea",
+      "label": "DAVIDsTEA",
+      "hostname": "davidstea.com",
+      "stratum": "national-specialty-tea-retail",
+      "searchUrlTemplate": "https://davidstea.com/search?q={query}",
+      "queries": [
+        {
+          "id": "assam-tea",
+          "query": "assam tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "darjeeling-tea",
+          "query": "darjeeling tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "pu-erh-tea",
+          "query": "pu erh tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "rooibos-tea",
+          "query": "rooibos tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "jasmine-tea",
+          "query": "jasmine tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "earl-grey-tea",
+          "query": "earl grey tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "breakfast-tea",
+          "query": "breakfast tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "loose-leaf-tea",
+          "query": "loose leaf tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "chamomile-tea",
+          "query": "chamomile tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "mint-tea",
+          "query": "mint tea",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "petgoods",
+      "label": "petgoods.com",
+      "hostname": "petgoods.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://petgoods.com/search?q={query}",
+      "queries": [
+        {
+          "id": "dry-dog-food",
+          "query": "dry dog food",
+          "dimension": "mass"
+        },
+        {
+          "id": "wet-dog-food",
+          "query": "wet dog food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dry-cat-food",
+          "query": "dry cat food",
+          "dimension": "mass"
+        },
+        {
+          "id": "wet-cat-food",
+          "query": "wet cat food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dog-biscuits",
+          "query": "dog biscuits",
+          "dimension": "count"
+        },
+        {
+          "id": "flea-treatment",
+          "query": "flea treatment",
+          "dimension": "count"
+        },
+        {
+          "id": "training-pads",
+          "query": "training pads",
+          "dimension": "count"
+        },
+        {
+          "id": "puppy-pads",
+          "query": "puppy pads",
+          "dimension": "count"
+        },
+        {
+          "id": "pet-shampoo",
+          "query": "pet shampoo",
+          "dimension": "volume"
+        },
+        {
+          "id": "calming-chews",
+          "query": "calming chews",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "petsupplies4less",
+      "label": "petsupplies4less.com",
+      "hostname": "www.petsupplies4less.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://www.petsupplies4less.com/search?q={query}",
+      "queries": [
+        {
+          "id": "dry-dog-food",
+          "query": "dry dog food",
+          "dimension": "mass"
+        },
+        {
+          "id": "wet-dog-food",
+          "query": "wet dog food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dry-cat-food",
+          "query": "dry cat food",
+          "dimension": "mass"
+        },
+        {
+          "id": "wet-cat-food",
+          "query": "wet cat food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dog-biscuits",
+          "query": "dog biscuits",
+          "dimension": "count"
+        },
+        {
+          "id": "flea-treatment",
+          "query": "flea treatment",
+          "dimension": "count"
+        },
+        {
+          "id": "training-pads",
+          "query": "training pads",
+          "dimension": "count"
+        },
+        {
+          "id": "puppy-pads",
+          "query": "puppy pads",
+          "dimension": "count"
+        },
+        {
+          "id": "pet-shampoo",
+          "query": "pet shampoo",
+          "dimension": "volume"
+        },
+        {
+          "id": "calming-chews",
+          "query": "calming chews",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "wellbredonline",
+      "label": "wellbredonline.com",
+      "hostname": "wellbredonline.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://wellbredonline.com/search?q={query}",
+      "queries": [
+        {
+          "id": "dry-dog-food",
+          "query": "dry dog food",
+          "dimension": "mass"
+        },
+        {
+          "id": "wet-dog-food",
+          "query": "wet dog food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dry-cat-food",
+          "query": "dry cat food",
+          "dimension": "mass"
+        },
+        {
+          "id": "wet-cat-food",
+          "query": "wet cat food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dog-biscuits",
+          "query": "dog biscuits",
+          "dimension": "count"
+        },
+        {
+          "id": "flea-treatment",
+          "query": "flea treatment",
+          "dimension": "count"
+        },
+        {
+          "id": "training-pads",
+          "query": "training pads",
+          "dimension": "count"
+        },
+        {
+          "id": "puppy-pads",
+          "query": "puppy pads",
+          "dimension": "count"
+        },
+        {
+          "id": "pet-shampoo",
+          "query": "pet shampoo",
+          "dimension": "volume"
+        },
+        {
+          "id": "calming-chews",
+          "query": "calming chews",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "carzilla",
+      "label": "carzilla.ca",
+      "hostname": "carzilla.ca",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://carzilla.ca/search?q={query}",
+      "queries": [
+        {
+          "id": "interior-cleaner",
+          "query": "interior cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "tire-dressing",
+          "query": "tire dressing",
+          "dimension": "volume"
+        },
+        {
+          "id": "glass-cleaner",
+          "query": "glass cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "leather-cleaner",
+          "query": "leather cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "detail-spray",
+          "query": "detail spray",
+          "dimension": "volume"
+        },
+        {
+          "id": "car-wax",
+          "query": "car wax",
+          "dimension": "volume"
+        },
+        {
+          "id": "microfiber-towels",
+          "query": "microfiber towels",
+          "dimension": "count"
+        },
+        {
+          "id": "wash-mitts",
+          "query": "wash mitts",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "carcareproducts",
+      "label": "carcareproducts.com.au",
+      "hostname": "www.carcareproducts.com.au",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://www.carcareproducts.com.au/search?q={query}",
+      "queries": [
+        {
+          "id": "interior-cleaner",
+          "query": "interior cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "tire-dressing",
+          "query": "tire dressing",
+          "dimension": "volume"
+        },
+        {
+          "id": "glass-cleaner",
+          "query": "glass cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "leather-cleaner",
+          "query": "leather cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "detail-spray",
+          "query": "detail spray",
+          "dimension": "volume"
+        },
+        {
+          "id": "car-wax",
+          "query": "car wax",
+          "dimension": "volume"
+        },
+        {
+          "id": "microfiber-towels",
+          "query": "microfiber towels",
+          "dimension": "count"
+        },
+        {
+          "id": "wash-mitts",
+          "query": "wash mitts",
+          "dimension": "count"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "auditId": "g2-final-depth-wave-02-reviewer-b-batches",
+  "createdAt": "2026-07-28T03:01:00.521Z",
+  "source": {
+    "batchManifest": "benchmarks/reviews/g2-final-depth-wave-02-review-batches.json",
+    "batchManifestSha256": "5d9594e6d1efd82570b298fdeb4a6ea9381f35778c1c9782a2a85b00271421e1",
+    "validationReportSha256": [
+      "fd73262286f172e4082e03bb7ef81f6c465198eec906993264d6556d27304394",
+      "c5a43cf3d4682830f509d6137d2f7eba3059bb2584d886b00b34aeb4c1b358be",
+      "ca169644ffa8b9596775557ca8f7e81ad2f5b5747f6806fb1be56ff78184f133",
+      "b214a1321ce1d191d083092c2b96675f99f48d0b4997a9b55872172876528c82",
+      "42a5f7c681321d0b7eec01b2d6e6cdcf83ee43a06a9fc87f081f71eae9423f45",
+      "8f39329b126c91fae11a16cf73b609b978012b452d99747c87c994b550d1019b",
+      "cfc9bbff974b4e2717fe13e7369ae26f4b12efdbbd1b8be54047f362a36b06d4",
+      "e24fc31043ac80da98311fcdb44324f58ba2725c80dc2d11fae94ba794b9afb2",
+      "649c5f093483f421acbc788f8c6c8d670f1d51920f685f8efdcde264e53967ee",
+      "713af8fcdff62d7365d173e632fc90fa65303f90041302e76f3a0e6ed1436043",
+      "151c3b174b30bfeed700270db3b076bf5a540c12a70c4d19b9e043ed1355c382",
+      "f2c492f4ddcf9c877e167ae8f5f594efb324d4504401d05d2242a55c2c4f1b35",
+      "6ecbce72fa6e23d9b0d267003e65ebd5e1e083c275ff550857af9910cc53b9c3",
+      "75510976e36fd0f302934352dba8a0d8f1eb05db3f9153d7e67e7568db1ddf8b",
+      "8c6426ada26fa9f8620b0e14377b9137a58639ae2c92e6220767652aca53e7fd",
+      "dbf48d7b63763d26ef68d42c29a43e5a631d8a45f38008b091e4adcdc2a1da98",
+      "828975677de72d3cc2ab156631800ef99dbeffd6fb4c5844cb39619f877d43ce",
+      "9ec4a9f2bae7fb6e32ceae893171a6453e730d6b8d41fd241bd61d5b25c162b5",
+      "9ced891fdec2d2f30387ca28cb423576af0c1933e30dbe3c4917aca797d4fe29"
+    ]
+  },
+  "browser": "headless Playwright Chromium",
+  "batches": 19,
+  "pagesLoaded": 95,
+  "screenshotsLoaded": 95,
+  "candidateCards": 1122,
+  "consoleErrors": 0,
+  "reviewFilesWritten": 0,
+  "onlyFrozenCardRootOffered": true,
+  "directFrozenCardNavigation": "passed",
+  "nonCandidateAncestor": "rejected-404",
+  "incompleteCoverage": "rejected-422",
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Workbench validation proves batch integrity and usability, not semantic label correctness."
+  }
+}

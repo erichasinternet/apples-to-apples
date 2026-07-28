@@ -1,0 +1,581 @@
+{
+  "version": 1,
+  "pilotId": "g2-final-depth-wave-02-p00",
+  "capturedAt": "2026-07-28T02:58:18.650Z",
+  "sourceManifest": "benchmarks/live-sites/final-depth-wave-02.json",
+  "requestedCaptureAttempts": 95,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--011",
+      "pageIds": [
+        "americantiledepot--hexagon-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--012",
+      "pageIds": [
+        "americantiledepot--limestone-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--012",
+      "pageIds": [
+        "americantiledepot--pebble-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--011",
+      "pageIds": [
+        "americantiledepot--penny-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--011",
+      "pageIds": [
+        "americantiledepot--slate-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--012",
+      "pageIds": [
+        "americantiledepot--terrazzo-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--011",
+      "pageIds": [
+        "americantiledepot--travertine-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-272Z--p3232--012",
+      "pageIds": [
+        "apollotile--hexagon-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--013",
+      "pageIds": [
+        "apollotile--limestone-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--012",
+      "pageIds": [
+        "apollotile--penny-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--039",
+      "pageIds": [
+        "carzilla--tire-dressing"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--040",
+      "pageIds": [
+        "carzilla--wash-mitts"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--023",
+      "pageIds": [
+        "catering24--soup-containers"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--033",
+      "pageIds": [
+        "davids-tea--rooibos-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--024",
+      "pageIds": [
+        "dean-supply--bakery-boxes"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--025",
+      "pageIds": [
+        "dean-supply--deli-containers"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--001",
+      "pageIds": [
+        "fabricbistro--canvas-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--002",
+      "pageIds": [
+        "fabricbistro--corduroy-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--001",
+      "pageIds": [
+        "fabricbistro--denim-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--001",
+      "pageIds": [
+        "fabricbistro--flannel-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--001",
+      "pageIds": [
+        "fabricbistro--satin-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--002",
+      "pageIds": [
+        "fabricbistro--twill-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--017",
+      "pageIds": [
+        "garner-supply--lancets"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--016",
+      "pageIds": [
+        "garner-supply--suction-tips"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--017",
+      "pageIds": [
+        "garner-supply--tongue-depressors"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--002",
+      "pageIds": [
+        "girlcharlee--canvas-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--004",
+      "pageIds": [
+        "girlcharlee--chiffon-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--004",
+      "pageIds": [
+        "girlcharlee--corduroy-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-272Z--p3232--002",
+      "pageIds": [
+        "girlcharlee--denim-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--003",
+      "pageIds": [
+        "girlcharlee--flannel-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--003",
+      "pageIds": [
+        "girlcharlee--jersey-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--003",
+      "pageIds": [
+        "girlcharlee--lace-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--003",
+      "pageIds": [
+        "girlcharlee--satin-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--003",
+      "pageIds": [
+        "girlcharlee--twill-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--020",
+      "pageIds": [
+        "got-cups--coffee-cups"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--020",
+      "pageIds": [
+        "got-cups--deli-containers"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--019",
+      "pageIds": [
+        "got-cups--plastic-cutlery"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--020",
+      "pageIds": [
+        "got-cups--portion-cups"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--004",
+      "pageIds": [
+        "longancraft--canvas-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-272Z--p3232--005",
+      "pageIds": [
+        "longancraft--chiffon-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--005",
+      "pageIds": [
+        "longancraft--corduroy-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--004",
+      "pageIds": [
+        "longancraft--denim-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-272Z--p3232--004",
+      "pageIds": [
+        "longancraft--flannel-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--004",
+      "pageIds": [
+        "longancraft--jersey-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--005",
+      "pageIds": [
+        "longancraft--lace-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--005",
+      "pageIds": [
+        "longancraft--satin-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--005",
+      "pageIds": [
+        "longancraft--twill-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--022",
+      "pageIds": [
+        "mcdonaldpaper--coffee-cups"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--021",
+      "pageIds": [
+        "mcdonaldpaper--deli-containers"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--021",
+      "pageIds": [
+        "mcdonaldpaper--foil-pans"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--022",
+      "pageIds": [
+        "mcdonaldpaper--portion-cups"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-272Z--p3232--021",
+      "pageIds": [
+        "mcdonaldpaper--soup-containers"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-272Z--p3232--007",
+      "pageIds": [
+        "otile--hexagon-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--008",
+      "pageIds": [
+        "otile--limestone-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-272Z--p3232--008",
+      "pageIds": [
+        "otile--pebble-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--007",
+      "pageIds": [
+        "otile--penny-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--008",
+      "pageIds": [
+        "otile--slate-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--009",
+      "pageIds": [
+        "otile--terrazzo-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--008",
+      "pageIds": [
+        "otile--travertine-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--008",
+      "pageIds": [
+        "otile--wall-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--035",
+      "pageIds": [
+        "petgoods--dog-biscuits"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-272Z--p3232--034",
+      "pageIds": [
+        "petgoods--dry-cat-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--034",
+      "pageIds": [
+        "petgoods--dry-dog-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--034",
+      "pageIds": [
+        "petgoods--wet-cat-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--034",
+      "pageIds": [
+        "petgoods--wet-dog-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--036",
+      "pageIds": [
+        "petsupplies4less--dry-dog-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--037",
+      "pageIds": [
+        "petsupplies4less--pet-shampoo"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--018",
+      "pageIds": [
+        "practicon--saliva-ejectors"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--018",
+      "pageIds": [
+        "practicon--sterilization-pouches"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--006",
+      "pageIds": [
+        "sewingpartsonline--canvas-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--006",
+      "pageIds": [
+        "sewingpartsonline--denim-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--006",
+      "pageIds": [
+        "sewingpartsonline--flannel-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-272Z--p3232--006",
+      "pageIds": [
+        "sewingpartsonline--lace-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--010",
+      "pageIds": [
+        "shopmosaictile--wall-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--026",
+      "pageIds": [
+        "taste-of-tea--assam-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--027",
+      "pageIds": [
+        "taste-of-tea--breakfast-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--027",
+      "pageIds": [
+        "taste-of-tea--chamomile-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--026",
+      "pageIds": [
+        "taste-of-tea--darjeeling-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--026",
+      "pageIds": [
+        "taste-of-tea--earl-grey-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-272Z--p3232--026",
+      "pageIds": [
+        "taste-of-tea--jasmine-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--027",
+      "pageIds": [
+        "taste-of-tea--loose-leaf-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--026",
+      "pageIds": [
+        "taste-of-tea--pu-erh-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--026",
+      "pageIds": [
+        "taste-of-tea--rooibos-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--014",
+      "pageIds": [
+        "tile-mart--hexagon-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-263Z--p3230--015",
+      "pageIds": [
+        "tile-mart--limestone-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--014",
+      "pageIds": [
+        "tile-mart--slate-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-272Z--p3232--014",
+      "pageIds": [
+        "tile-mart--travertine-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-292Z--p3236--027",
+      "pageIds": [
+        "vahdam-teas--darjeeling-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--029",
+      "pageIds": [
+        "vahdam-teas--mint-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-282Z--p3234--038",
+      "pageIds": [
+        "wellbredonline--dog-biscuits"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--038",
+      "pageIds": [
+        "wellbredonline--dry-cat-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-272Z--p3232--037",
+      "pageIds": [
+        "wellbredonline--dry-dog-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-248Z--p3228--038",
+      "pageIds": [
+        "wellbredonline--wet-cat-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-255Z--p3229--030",
+      "pageIds": [
+        "yunnansourcing--jasmine-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T02-43-17-272Z--p3232--029",
+      "pageIds": [
+        "yunnansourcing--pu-erh-tea"
+      ]
+    }
+  ],
+  "samplingFinding": "Two hundred forty-six predeclared final-cohort depth targets were acquired in isolated bounded headless runs; 239 captured successfully and 95 passed the unchanged structural evidence gates plus the eight-root query-relevance gate.",
+  "visualValidationFinding": "All ninety-five machine-pass site montages were inspected at original resolution, with individual original-resolution spot checks on dense desktop and narrow responsive captures. Every accepted page contains at least eight independent query-relevant product roots with visible title and price evidence. Ambiguous or absent package quantities are retained as valid abstention cases; pages with category drift, sparse results, or repeated shell content were rejected by the machine gate."
+}

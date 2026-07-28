@@ -1,0 +1,554 @@
+{
+  "version": 1,
+  "campaignId": "g2-final-depth-wave-02",
+  "createdAt": "2026-07-28T03:00:17.839Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--0ce89018eece2dda",
+      "path": "benchmark-data/review/g2-final-depth-wave-02-reviewer-a-campaign.json",
+      "sha256": "aac252c0eefc5f235937c96f58b2de2f62f0110ca3e9884f9e1692cd99fdb949",
+      "pages": 95
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--bef0c65a7465c018",
+      "path": "benchmark-data/review/g2-final-depth-wave-02-reviewer-b-campaign.json",
+      "sha256": "59498c799f9b342ed40a3cb23de36f99e6de8adfc0eba84f3b95a94ccb843d86",
+      "pages": 95
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 5,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 19,
+    "pages": 95,
+    "candidateCards": 1122
+  },
+  "batches": [
+    {
+      "batchId": "g2-final-depth-wave-02--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "americantiledepot--hexagon-tile",
+        "americantiledepot--limestone-tile",
+        "americantiledepot--pebble-tile",
+        "americantiledepot--penny-tile",
+        "americantiledepot--slate-tile"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--81be2448dba85aa4",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-01.json",
+          "sha256": "460fbec8ad7879629c5bebdf38b3803acd10bf471eedd04689f555a305f0df44"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--441ac78826adebae",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-01.json",
+          "sha256": "25323e89fff1bfd690b953017d2f353c227448246e5b9431ecd3380b90709711"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-02",
+      "batchNumber": 2,
+      "pageIds": [
+        "americantiledepot--terrazzo-tile",
+        "americantiledepot--travertine-tile",
+        "apollotile--hexagon-tile",
+        "apollotile--limestone-tile",
+        "apollotile--penny-tile"
+      ],
+      "pages": 5,
+      "candidateCards": 58,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-02--365a839a12164454",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-02.json",
+          "sha256": "37da8ee4ca12b54fba5e6a755343f945641f5dc444975a1a873f5ca096b2ffb6"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-02--ab0033acb8265680",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-02.json",
+          "sha256": "dbef45bef5bec581cf5ac5ef292ee460551fc692cc07837be1f263ff26d53100"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-03",
+      "batchNumber": 3,
+      "pageIds": [
+        "carzilla--tire-dressing",
+        "carzilla--wash-mitts",
+        "catering24--soup-containers",
+        "davids-tea--rooibos-tea",
+        "dean-supply--bakery-boxes"
+      ],
+      "pages": 5,
+      "candidateCards": 56,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-03--7aad69b7832527d9",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-03.json",
+          "sha256": "e98b26484fe64229985dd98a4f91c9501921c4ff3f4d41772398866fd23c72b4"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-03--cc14720c07df69cf",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-03.json",
+          "sha256": "beddfe392e4b8cbc557f4a40a5d4fd6c0295a1d33e88fa419ccb01a694552841"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-04",
+      "batchNumber": 4,
+      "pageIds": [
+        "dean-supply--deli-containers",
+        "fabricbistro--canvas-fabric",
+        "fabricbistro--corduroy-fabric",
+        "fabricbistro--denim-fabric",
+        "fabricbistro--flannel-fabric"
+      ],
+      "pages": 5,
+      "candidateCards": 52,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-04--50e9375994698437",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-04.json",
+          "sha256": "011f2052c57ba081db1f4af14143b6dd7b50759d3f06b77897b091001efdcc0d"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-04--1f037ac3dea145ba",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-04.json",
+          "sha256": "2abaa5934867388ba19d87e68ad96ace8f231db9fa19a4dcab05f4573d5ff118"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-05",
+      "batchNumber": 5,
+      "pageIds": [
+        "fabricbistro--satin-fabric",
+        "fabricbistro--twill-fabric",
+        "garner-supply--lancets",
+        "garner-supply--suction-tips",
+        "garner-supply--tongue-depressors"
+      ],
+      "pages": 5,
+      "candidateCards": 56,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-05--25c87c476f083890",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-05.json",
+          "sha256": "c56d391118dc8f65f4cfe12a158396664e468c23b1999a2304270e69831645d2"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-05--1510340a2f656b36",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-05.json",
+          "sha256": "95967f0d7c7db3b621f71ab67a69811681fcb5b5c461c41d27512dcd920aec20"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-06",
+      "batchNumber": 6,
+      "pageIds": [
+        "girlcharlee--canvas-fabric",
+        "girlcharlee--chiffon-fabric",
+        "girlcharlee--corduroy-fabric",
+        "girlcharlee--denim-fabric",
+        "girlcharlee--flannel-fabric"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-06--642c415a3b199b63",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-06.json",
+          "sha256": "258a96579bb895906ce9b6c0dc4143f2c1adef80482f42e729e01578ec6c6e43"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-06--2898c42538fe03dc",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-06.json",
+          "sha256": "af533ce064ce1ec3f356efb5bd48f145788f1edfe1fa08e3c4529b2959403df5"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-07",
+      "batchNumber": 7,
+      "pageIds": [
+        "girlcharlee--jersey-fabric",
+        "girlcharlee--lace-fabric",
+        "girlcharlee--satin-fabric",
+        "girlcharlee--twill-fabric",
+        "got-cups--coffee-cups"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-07--62c0f350e27f4904",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-07.json",
+          "sha256": "541e06932491db9883e6f8cfa2ddb590c8cb8375ccf48b3bfe98e925e0383093"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-07--61af07a542425c23",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-07.json",
+          "sha256": "9c8d18290ff198f8f5527e279b22a108a0e7ffeff7c539555cf07fe548578771"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-08",
+      "batchNumber": 8,
+      "pageIds": [
+        "got-cups--deli-containers",
+        "got-cups--plastic-cutlery",
+        "got-cups--portion-cups",
+        "longancraft--canvas-fabric",
+        "longancraft--chiffon-fabric"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-08--0073073b2b59f085",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-08.json",
+          "sha256": "7ee3d488853e4854146e1a6beaf106991044ae147543ca7613545a1d8f622e63"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-08--040e854780df2a99",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-08.json",
+          "sha256": "54218d00d2774421396a4fbbb5172255c4e5bb64afa133d25cd055f1c090d091"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-09",
+      "batchNumber": 9,
+      "pageIds": [
+        "longancraft--corduroy-fabric",
+        "longancraft--denim-fabric",
+        "longancraft--flannel-fabric",
+        "longancraft--jersey-fabric",
+        "longancraft--lace-fabric"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-09--30257421eccaddcd",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-09.json",
+          "sha256": "469137b8674cfffd00424d4babe3be9150df077f07eed8a9f9e6066793adfa77"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-09--3ff04dc2de0c208f",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-09.json",
+          "sha256": "8e998221992b4de33497454bd0642721e2c3ae31b3184663f76874fce8906c4a"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-10",
+      "batchNumber": 10,
+      "pageIds": [
+        "longancraft--satin-fabric",
+        "longancraft--twill-fabric",
+        "mcdonaldpaper--coffee-cups",
+        "mcdonaldpaper--deli-containers",
+        "mcdonaldpaper--foil-pans"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-10--b1681907c7f49199",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-10.json",
+          "sha256": "a02b23162f561cc2a1486928db832c85fd3a1dcbf02d52cd8411809ff7f83615"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-10--5710d851e42b3e56",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-10.json",
+          "sha256": "748228c2882084bb882b096c5f91b5f5ff3afce553491aba32e67e00a482627f"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-11",
+      "batchNumber": 11,
+      "pageIds": [
+        "mcdonaldpaper--portion-cups",
+        "mcdonaldpaper--soup-containers",
+        "otile--hexagon-tile",
+        "otile--limestone-tile",
+        "otile--pebble-tile"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-11--d7f73717b08c3a5a",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-11.json",
+          "sha256": "34fb721191876c21afda18b621314a15bfeb1fb840f141516972d91fbe463e08"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-11--a259c22e570b5e0a",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-11.json",
+          "sha256": "ff11c6cb21a1f14e34e9f41cd8afde56b533db2697885b24493b749abd91069e"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-12",
+      "batchNumber": 12,
+      "pageIds": [
+        "otile--penny-tile",
+        "otile--slate-tile",
+        "otile--terrazzo-tile",
+        "otile--travertine-tile",
+        "otile--wall-tile"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-12--58cb7ccb77863abc",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-12.json",
+          "sha256": "ffd221d587eb2f82e71d55b912143dcb81277d54a4cdd0ef0dd811dd5c45e69a"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-12--6d3ea5cb760b564a",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-12.json",
+          "sha256": "2ce02ac27d41b84c4c40d9d7422c2671bde1487ec42fdd530bd96f2c0f499664"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-13",
+      "batchNumber": 13,
+      "pageIds": [
+        "petgoods--dog-biscuits",
+        "petgoods--dry-cat-food",
+        "petgoods--dry-dog-food",
+        "petgoods--wet-cat-food",
+        "petgoods--wet-dog-food"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-13--05edfda98c830a2d",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-13.json",
+          "sha256": "28fe35b468226a4906c7af482e192d333e8d855bc2fc9ccf1a60f92eff9703ed"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-13--b57f0e2c00e162e6",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-13.json",
+          "sha256": "d410a4b07d242e917b342918296544324908b3bef717b7bf32bbfabfd02a30b5"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-14",
+      "batchNumber": 14,
+      "pageIds": [
+        "petsupplies4less--dry-dog-food",
+        "petsupplies4less--pet-shampoo",
+        "practicon--saliva-ejectors",
+        "practicon--sterilization-pouches",
+        "sewingpartsonline--canvas-fabric"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-14--59b65879a5bad325",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-14.json",
+          "sha256": "28cee4b081f8d3674c962b7370cf06aea197171ebd7d60ce92b5ebed3073db0d"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-14--61385779809d2b0e",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-14.json",
+          "sha256": "3d152dec4e9635f636c9cee8cd4d384ac94e8a19e6902120b9c5305832010022"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-15",
+      "batchNumber": 15,
+      "pageIds": [
+        "sewingpartsonline--denim-fabric",
+        "sewingpartsonline--flannel-fabric",
+        "sewingpartsonline--lace-fabric",
+        "shopmosaictile--wall-tile",
+        "taste-of-tea--assam-tea"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-15--c24f7d9e4e459fe9",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-15.json",
+          "sha256": "3186fe89e411c8f170dc019cbf49a12ad15e44e86337ca170363fca601c0314c"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-15--9afea31fd7bbe18d",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-15.json",
+          "sha256": "54da6a427be1867ba470a1385cfbee1154c1c021488bd3ddc4286446477f60dc"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-16",
+      "batchNumber": 16,
+      "pageIds": [
+        "taste-of-tea--breakfast-tea",
+        "taste-of-tea--chamomile-tea",
+        "taste-of-tea--darjeeling-tea",
+        "taste-of-tea--earl-grey-tea",
+        "taste-of-tea--jasmine-tea"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-16--4c86f55cc1f35ad9",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-16.json",
+          "sha256": "19722b8a1ba4c33cef2fc165006909550e74a9d61334e6858567f023a8ac81ca"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-16--8b8f17ee3000f9f9",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-16.json",
+          "sha256": "a0965f918330594f8cd77af89c89a0fd81fb425f7311ca1478298a26b34ca90d"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-17",
+      "batchNumber": 17,
+      "pageIds": [
+        "taste-of-tea--loose-leaf-tea",
+        "taste-of-tea--pu-erh-tea",
+        "taste-of-tea--rooibos-tea",
+        "tile-mart--hexagon-tile",
+        "tile-mart--limestone-tile"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-17--8f543778259b29a9",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-17.json",
+          "sha256": "9d99d383a6931b1d2cfdb199b8915aa4d3a9f512974e7a27b46a0134dadd7d96"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-17--ea1cd9f1f72ed709",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-17.json",
+          "sha256": "c594438d279571e6e3e7481f1a0800fff89bf3b7d851aec915c1b4de6b718061"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-18",
+      "batchNumber": 18,
+      "pageIds": [
+        "tile-mart--slate-tile",
+        "tile-mart--travertine-tile",
+        "vahdam-teas--darjeeling-tea",
+        "vahdam-teas--mint-tea",
+        "wellbredonline--dog-biscuits"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-18--8534043f4cc40fb8",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-18.json",
+          "sha256": "e9f18b2c365396d703298419e3624e9c786942fef15e256e62d11744867be4d4"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-18--75304c65d9eb9eea",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-18.json",
+          "sha256": "7f1e1dad0ab5f00a88aecb9b0493eac7a68d45b997c5f05046a14fd5ea7d852f"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-02--batch-19",
+      "batchNumber": 19,
+      "pageIds": [
+        "wellbredonline--dry-cat-food",
+        "wellbredonline--dry-dog-food",
+        "wellbredonline--wet-cat-food",
+        "yunnansourcing--jasmine-tea",
+        "yunnansourcing--pu-erh-tea"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-19--e600a298801d51dd",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-a--batch-19.json",
+          "sha256": "01310ca6870f04d17f5145f4e7d08b8e6fa786150988df6158b263914fe715cf"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-19--2be0c94c8c1d9dc9",
+          "path": "benchmark-data/review/g2-final-depth-wave-02-batches/reviewer-b--batch-19.json",
+          "sha256": "b92b5684f64e11242cbba8bbde522fd21d5a320929684928d7c66eee8a48a8f5"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

@@ -1803,6 +1803,24 @@ The dataset is not training-ready: product, comparable, abstention, pointer,
 agreement, and challenge metrics remain zero until two independent reviewers
 complete the queues and a third party adjudicates disagreements.
 
+The first two sealed final-depth waves acquired 498 predeclared query pages in
+isolated bounded runs without retailer selectors. The first wave promoted 80
+pages and 948 frozen card roots after machine and original-resolution visual
+review. The second wave completed all 246 child processes with zero hard
+timeouts: 239 pages captured, seven were blocked, 95 passed the unchanged
+structural and eight-root query-relevance gates, and 151 were rejected. The
+second-wave decisions and immutable run bindings are recorded in
+[`g2-final-depth-wave-02-p00.json`](../benchmarks/capture-pilots/g2-final-depth-wave-02-p00.json).
+
+The paired blinded second-wave review campaign contains 95 pages and 1,122
+frozen roots. Both reviewer batch sets and the merged campaign passed headless
+Playwright Chromium validation: every screenshot and root loaded, direct frozen
+root navigation passed, invalid roots and incomplete submissions were rejected,
+and there were zero console errors or review writes. These checks validate
+capture and review-workbench integrity only. They do not replace independent
+human labels or third-party adjudication. The final cohort now has 259
+structurally eligible pages, leaving a 41-page structural gap.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,
