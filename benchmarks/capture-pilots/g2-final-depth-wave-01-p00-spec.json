@@ -1,0 +1,491 @@
+{
+  "version": 1,
+  "pilotId": "g2-final-depth-wave-01-p00",
+  "capturedAt": "2026-07-28T02:33:25.447Z",
+  "sourceManifest": "benchmarks/live-sites/final-depth-wave-01.json",
+  "requestedCaptureAttempts": 80,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75020--015",
+      "pageIds": [
+        "americantiledepot--ceramic-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-022Z--p75022--016",
+      "pageIds": [
+        "americantiledepot--glass-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75019--017",
+      "pageIds": [
+        "americantiledepot--marble-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-918Z--p83467--015",
+      "pageIds": [
+        "americantiledepot--subway-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75020--014",
+      "pageIds": [
+        "apollotile--ceramic-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-022Z--p75022--015",
+      "pageIds": [
+        "apollotile--glass-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-918Z--p83467--014",
+      "pageIds": [
+        "apollotile--subway-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-525Z--p61060--002",
+      "pageIds": [
+        "artsaics--marble-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-918Z--p83467--027",
+      "pageIds": [
+        "carzilla--ceramic-coating"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-931Z--p83469--020",
+      "pageIds": [
+        "catering24--food-trays"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-918Z--p83467--020",
+      "pageIds": [
+        "catering24--napkins"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-527Z--p61061--008",
+      "pageIds": [
+        "davids-tea--chai-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-525Z--p61060--008",
+      "pageIds": [
+        "davids-tea--herbal-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-541Z--p61063--006",
+      "pageIds": [
+        "dean-supply--napkins"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-525Z--p61060--006",
+      "pageIds": [
+        "dean-supply--paper-plates"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-924Z--p83468--009",
+      "pageIds": [
+        "fabricbistro--rayon-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75020--008",
+      "pageIds": [
+        "fabricbistro--silk-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-022Z--p75022--009",
+      "pageIds": [
+        "fabricbistro--upholstery-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-931Z--p83469--008",
+      "pageIds": [
+        "fabricbistro--velvet-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75019--010",
+      "pageIds": [
+        "fabricbistro--wool-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-541Z--p61063--004",
+      "pageIds": [
+        "garner-supply--alcohol-prep-pads"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-527Z--p61061--004",
+      "pageIds": [
+        "garner-supply--bandages"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-535Z--p61062--004",
+      "pageIds": [
+        "garner-supply--gauze-pads"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-552Z--p61064--004",
+      "pageIds": [
+        "garner-supply--needles"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-525Z--p61060--004",
+      "pageIds": [
+        "garner-supply--syringes"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-615Z--p61065--004",
+      "pageIds": [
+        "garner-supply--underpads"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-918Z--p83467--007",
+      "pageIds": [
+        "girlcharlee--fleece-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-924Z--p83468--008",
+      "pageIds": [
+        "girlcharlee--rayon-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75020--007",
+      "pageIds": [
+        "girlcharlee--silk-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-931Z--p83469--007",
+      "pageIds": [
+        "girlcharlee--velvet-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75019--009",
+      "pageIds": [
+        "girlcharlee--wool-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-552Z--p61064--005",
+      "pageIds": [
+        "got-cups--food-trays"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-541Z--p61063--005",
+      "pageIds": [
+        "got-cups--napkins"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-527Z--p61061--005",
+      "pageIds": [
+        "got-cups--plastic-lids"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-541Z--p61063--010",
+      "pageIds": [
+        "longancraft--fleece-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-924Z--p83468--001",
+      "pageIds": [
+        "longancraft--rayon-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-535Z--p61062--010",
+      "pageIds": [
+        "longancraft--silk-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-022Z--p75022--001",
+      "pageIds": [
+        "longancraft--upholstery-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-552Z--p61064--010",
+      "pageIds": [
+        "longancraft--velvet-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-931Z--p83469--021",
+      "pageIds": [
+        "mcdonaldpaper--food-trays"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-918Z--p83467--021",
+      "pageIds": [
+        "mcdonaldpaper--napkins"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-022Z--p75022--022",
+      "pageIds": [
+        "mcdonaldpaper--plastic-lids"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-931Z--p83469--011",
+      "pageIds": [
+        "mosaictraderusa--stone-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-32-57-481Z--p86705--001",
+      "pageIds": [
+        "otile--ceramic-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-924Z--p83468--018",
+      "pageIds": [
+        "otile--floor-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-022Z--p75022--018",
+      "pageIds": [
+        "otile--glass-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75019--019",
+      "pageIds": [
+        "otile--marble-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-931Z--p83469--017",
+      "pageIds": [
+        "otile--stone-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-918Z--p83467--017",
+      "pageIds": [
+        "otile--subway-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-931Z--p83469--031",
+      "pageIds": [
+        "petgoods--cat-litter"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-022Z--p75022--032",
+      "pageIds": [
+        "petgoods--dental-chews"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75020--031",
+      "pageIds": [
+        "petgoods--dog-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75019--034",
+      "pageIds": [
+        "petsupplies4less--cat-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-022Z--p75022--033",
+      "pageIds": [
+        "petsupplies4less--dental-chews"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75020--032",
+      "pageIds": [
+        "petsupplies4less--dog-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-931Z--p83469--019",
+      "pageIds": [
+        "practicon--needles"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75019--021",
+      "pageIds": [
+        "practicon--syringes"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-924Z--p83468--003",
+      "pageIds": [
+        "sewingpartsonline--rayon-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-924Z--p83468--011",
+      "pageIds": [
+        "shopmosaictile--floor-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-022Z--p75022--011",
+      "pageIds": [
+        "shopmosaictile--glass-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75019--012",
+      "pageIds": [
+        "shopmosaictile--marble-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-931Z--p83469--010",
+      "pageIds": [
+        "shopmosaictile--stone-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-918Z--p83467--010",
+      "pageIds": [
+        "shopmosaictile--subway-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-527Z--p61061--007",
+      "pageIds": [
+        "taste-of-tea--chai-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-525Z--p61060--007",
+      "pageIds": [
+        "taste-of-tea--herbal-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-615Z--p61065--007",
+      "pageIds": [
+        "taste-of-tea--matcha-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-535Z--p61062--007",
+      "pageIds": [
+        "taste-of-tea--oolong-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-552Z--p61064--007",
+      "pageIds": [
+        "taste-of-tea--tea-bags"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-541Z--p61063--007",
+      "pageIds": [
+        "taste-of-tea--white-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-535Z--p61062--003",
+      "pageIds": [
+        "tile-mart--ceramic-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-525Z--p61060--003",
+      "pageIds": [
+        "tile-mart--marble-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-541Z--p61063--003",
+      "pageIds": [
+        "tile-mart--subway-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-527Z--p61061--009",
+      "pageIds": [
+        "vahdam-teas--chai-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75019--001",
+      "pageIds": [
+        "vahdam-teas--herbal-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-27T13-17-16-535Z--p61062--009",
+      "pageIds": [
+        "vahdam-teas--oolong-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75019--032",
+      "pageIds": [
+        "wellbredonline--cat-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75020--030",
+      "pageIds": [
+        "wellbredonline--dog-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75020--026",
+      "pageIds": [
+        "what-cha--oolong-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-12-29-013Z--p75020--025",
+      "pageIds": [
+        "yunnansourcing--oolong-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T01-26-16-918Z--p83467--025",
+      "pageIds": [
+        "yunnansourcing--white-tea"
+      ]
+    }
+  ],
+  "samplingFinding": "Two hundred fifty-two predeclared final-cohort depth targets were acquired in isolated bounded runs; 228 captured successfully and 80 passed the unchanged structural gates plus the stricter eight-root query-relevance gate.",
+  "visualValidationFinding": "All eighty machine-pass card sheets or site montages were inspected at original resolution. Every accepted page contains at least eight independent query-relevant product roots with visible title and price evidence. Ambiguous or absent package quantities are retained as valid abstention cases; pages with category drift or repeated shell content were rejected by the machine gate."
+}

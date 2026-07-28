@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { countQueryRelevantCandidates } from "./candidate-query-relevance-lib";
 import {
   validateCaptureProvenance,
   type CaptureProvenance
@@ -63,6 +64,7 @@ interface CapturePage {
   capturedAt: string;
   target: {
     hostname: string;
+    query: string;
   };
   viewport: {
     width: number;
@@ -251,6 +253,22 @@ for (const runSpec of spec.runs) {
     collectorHashes.add(provenance.collectorSha256);
     const observation = requiredAsset(provenance, "observation.json");
     const annotation = requiredAsset(provenance, "annotation.png");
+    const cardDirectory = path.join(pageDirectory, "cards");
+    const candidateTexts = await Promise.all(
+      (await readdir(cardDirectory))
+        .filter((filename) => filename.endsWith(".json"))
+        .sort()
+        .map(async (filename) => {
+          const card = await readJson<{ text?: string }>(
+            path.join(cardDirectory, filename),
+          );
+          return card.text ?? "";
+        }),
+    );
+    const queryRelevantCandidateCount = countQueryRelevantCandidates(
+      page.target.query,
+      candidateTexts,
+    );
     const machineErrors = [
       page.pageId !== pageId && "page identity differs",
       page.blocked && "page is blocked",
@@ -264,7 +282,9 @@ for (const runSpec of spec.runs) {
       page.candidateScreenshotsCaptured !== page.candidateCount &&
         "candidate screenshot coverage is incomplete",
       page.candidateScreenshotEvidenceMismatches !== 0 &&
-        "candidate screenshot identity mismatch is present"
+        "candidate screenshot identity mismatch is present",
+      queryRelevantCandidateCount < 8 &&
+        `fewer than eight query-relevant candidate roots (${queryRelevantCandidateCount})`
     ].filter((value): value is string => Boolean(value));
     if (machineErrors.length > 0) {
       throw new Error(`${pageId}: ${machineErrors.join("; ")}`);
@@ -292,6 +312,7 @@ for (const runSpec of spec.runs) {
       dismissedObstructions: page.dismissedObstructions,
       unresolvedObstructionCoverage: page.unresolvedObstructionCoverage,
       queryTokenCoverage: page.queryTokenCoverage,
+      queryRelevantCandidateCount,
       observationSha256: observation.sha256,
       canonicalObservationSha256: page.observationSha256,
       annotationScreenshotSha256: annotation.sha256,

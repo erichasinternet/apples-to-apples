@@ -1,0 +1,1644 @@
+{
+  "version": 1,
+  "description": "First bounded depth-expansion wave on all forty-two sealed final domains. Six unseen listing queries per domain provide a 252-page reserve for the remaining 216-page structural gate while preserving strict rejection, domain isolation, all five supported dimensions, alternating viewports, and zero site-specific DOM selectors.",
+  "sites": [
+    {
+      "id": "hancocks-paducah",
+      "label": "Hancock's of Paducah",
+      "hostname": "www.hancocks-paducah.com",
+      "stratum": "national-quilting-fabric-retail",
+      "searchUrlTemplate": "https://www.hancocks-paducah.com/fabrics/?q={query}",
+      "queries": [
+        {
+          "id": "wool-fabric",
+          "query": "wool fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "silk-fabric",
+          "query": "silk fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "fleece-fabric",
+          "query": "fleece fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "rayon-fabric",
+          "query": "rayon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "velvet-fabric",
+          "query": "velvet fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "artsaics",
+      "label": "Artaic",
+      "hostname": "artsaics.com",
+      "stratum": "designer-mosaic-tile-retail",
+      "searchUrlTemplate": "https://artsaics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "marble-tile",
+          "query": "marble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "ceramic-tile",
+          "query": "ceramic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "glass-tile",
+          "query": "glass tile",
+          "dimension": "area"
+        },
+        {
+          "id": "subway-tile",
+          "query": "subway tile",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        },
+        {
+          "id": "stone-tile",
+          "query": "stone tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "tile-mart",
+      "label": "Tile Mart",
+      "hostname": "tilemart.com",
+      "stratum": "national-tile-retail",
+      "searchUrlTemplate": "https://tilemart.com/search?q={query}",
+      "queries": [
+        {
+          "id": "marble-tile",
+          "query": "marble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "ceramic-tile",
+          "query": "ceramic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "glass-tile",
+          "query": "glass tile",
+          "dimension": "area"
+        },
+        {
+          "id": "subway-tile",
+          "query": "subway tile",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        },
+        {
+          "id": "stone-tile",
+          "query": "stone tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "garner-supply",
+      "label": "Garner Supply",
+      "hostname": "www.garnersupply.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://www.garnersupply.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "syringes",
+          "query": "syringes",
+          "dimension": "count"
+        },
+        {
+          "id": "gauze-pads",
+          "query": "gauze pads",
+          "dimension": "count"
+        },
+        {
+          "id": "bandages",
+          "query": "bandages",
+          "dimension": "count"
+        },
+        {
+          "id": "alcohol-prep-pads",
+          "query": "alcohol prep pads",
+          "dimension": "count"
+        },
+        {
+          "id": "underpads",
+          "query": "underpads",
+          "dimension": "count"
+        },
+        {
+          "id": "needles",
+          "query": "needles",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "got-cups",
+      "label": "GotCups",
+      "hostname": "gotcups.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://gotcups.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paper-plates",
+          "query": "paper plates",
+          "dimension": "count"
+        },
+        {
+          "id": "takeout-containers",
+          "query": "takeout containers",
+          "dimension": "count"
+        },
+        {
+          "id": "plastic-lids",
+          "query": "plastic lids",
+          "dimension": "count"
+        },
+        {
+          "id": "napkins",
+          "query": "napkins",
+          "dimension": "count"
+        },
+        {
+          "id": "drinking-straws",
+          "query": "drinking straws",
+          "dimension": "count"
+        },
+        {
+          "id": "food-trays",
+          "query": "food trays",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "dean-supply",
+      "label": "Dean Supply",
+      "hostname": "www.shopatdean.com",
+      "stratum": "restaurant-supply-retail",
+      "searchUrlTemplate": "https://www.shopatdean.com/search?q={query}",
+      "queries": [
+        {
+          "id": "paper-plates",
+          "query": "paper plates",
+          "dimension": "count"
+        },
+        {
+          "id": "takeout-containers",
+          "query": "takeout containers",
+          "dimension": "count"
+        },
+        {
+          "id": "plastic-lids",
+          "query": "plastic lids",
+          "dimension": "count"
+        },
+        {
+          "id": "napkins",
+          "query": "napkins",
+          "dimension": "count"
+        },
+        {
+          "id": "drinking-straws",
+          "query": "drinking straws",
+          "dimension": "count"
+        },
+        {
+          "id": "food-trays",
+          "query": "food trays",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "taste-of-tea",
+      "label": "Taste of Tea",
+      "hostname": "tasteoftea.com",
+      "stratum": "independent-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://tasteoftea.com/search?q={query}",
+      "queries": [
+        {
+          "id": "herbal-tea",
+          "query": "herbal tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "oolong-tea",
+          "query": "oolong tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "chai-tea",
+          "query": "chai tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "white-tea",
+          "query": "white tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "matcha-tea",
+          "query": "matcha tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "tea-bags",
+          "query": "tea bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "davids-tea",
+      "label": "DAVIDsTEA",
+      "hostname": "davidstea.com",
+      "stratum": "national-specialty-tea-retail",
+      "searchUrlTemplate": "https://davidstea.com/search?q={query}",
+      "queries": [
+        {
+          "id": "herbal-tea",
+          "query": "herbal tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "oolong-tea",
+          "query": "oolong tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "chai-tea",
+          "query": "chai tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "white-tea",
+          "query": "white tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "matcha-tea",
+          "query": "matcha tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "tea-bags",
+          "query": "tea bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "vahdam-teas",
+      "label": "VAHDAM Teas",
+      "hostname": "www.vahdam.com",
+      "stratum": "direct-to-consumer-tea-retail",
+      "searchUrlTemplate": "https://www.vahdam.com/search?q={query}",
+      "queries": [
+        {
+          "id": "herbal-tea",
+          "query": "herbal tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "oolong-tea",
+          "query": "oolong tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "chai-tea",
+          "query": "chai tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "white-tea",
+          "query": "white tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "matcha-tea",
+          "query": "matcha tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "tea-bags",
+          "query": "tea bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "longancraft",
+      "label": "longancraft.com",
+      "hostname": "www.longancraft.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.longancraft.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wool-fabric",
+          "query": "wool fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "silk-fabric",
+          "query": "silk fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "fleece-fabric",
+          "query": "fleece fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "rayon-fabric",
+          "query": "rayon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "velvet-fabric",
+          "query": "velvet fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "sewfinity",
+      "label": "sewfinity.com",
+      "hostname": "sewfinity.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://sewfinity.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wool-fabric",
+          "query": "wool fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "silk-fabric",
+          "query": "silk fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "fleece-fabric",
+          "query": "fleece fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "rayon-fabric",
+          "query": "rayon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "velvet-fabric",
+          "query": "velvet fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "sewingpartsonline",
+      "label": "sewingpartsonline.com",
+      "hostname": "www.sewingpartsonline.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.sewingpartsonline.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wool-fabric",
+          "query": "wool fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "silk-fabric",
+          "query": "silk fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "fleece-fabric",
+          "query": "fleece fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "rayon-fabric",
+          "query": "rayon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "velvet-fabric",
+          "query": "velvet fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "keepsakequilting",
+      "label": "keepsakequilting.com",
+      "hostname": "www.keepsakequilting.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.keepsakequilting.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wool-fabric",
+          "query": "wool fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "silk-fabric",
+          "query": "silk fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "fleece-fabric",
+          "query": "fleece fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "rayon-fabric",
+          "query": "rayon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "velvet-fabric",
+          "query": "velvet fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "fringefabrics",
+      "label": "fringefabrics.com",
+      "hostname": "www.fringefabrics.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.fringefabrics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wool-fabric",
+          "query": "wool fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "silk-fabric",
+          "query": "silk fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "fleece-fabric",
+          "query": "fleece fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "rayon-fabric",
+          "query": "rayon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "velvet-fabric",
+          "query": "velvet fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "britexfabrics",
+      "label": "britexfabrics.com",
+      "hostname": "britexfabrics.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://britexfabrics.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wool-fabric",
+          "query": "wool fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "silk-fabric",
+          "query": "silk fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "fleece-fabric",
+          "query": "fleece fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "rayon-fabric",
+          "query": "rayon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "velvet-fabric",
+          "query": "velvet fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "theconfidentstitch",
+      "label": "theconfidentstitch.com",
+      "hostname": "www.theconfidentstitch.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.theconfidentstitch.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "wool-fabric",
+          "query": "wool fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "silk-fabric",
+          "query": "silk fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "fleece-fabric",
+          "query": "fleece fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "rayon-fabric",
+          "query": "rayon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "velvet-fabric",
+          "query": "velvet fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "girlcharlee",
+      "label": "girlcharlee.com",
+      "hostname": "girlcharlee.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://girlcharlee.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wool-fabric",
+          "query": "wool fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "silk-fabric",
+          "query": "silk fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "fleece-fabric",
+          "query": "fleece fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "rayon-fabric",
+          "query": "rayon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "velvet-fabric",
+          "query": "velvet fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "fabricbistro",
+      "label": "fabricbistro.com",
+      "hostname": "fabricbistro.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://fabricbistro.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wool-fabric",
+          "query": "wool fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "silk-fabric",
+          "query": "silk fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "fleece-fabric",
+          "query": "fleece fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "rayon-fabric",
+          "query": "rayon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "velvet-fabric",
+          "query": "velvet fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "zfabric",
+      "label": "zfabric.com",
+      "hostname": "zfabric.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://zfabric.com/search?q={query}",
+      "queries": [
+        {
+          "id": "wool-fabric",
+          "query": "wool fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "silk-fabric",
+          "query": "silk fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "upholstery-fabric",
+          "query": "upholstery fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "fleece-fabric",
+          "query": "fleece fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "rayon-fabric",
+          "query": "rayon fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "velvet-fabric",
+          "query": "velvet fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "shopmosaictile",
+      "label": "shopmosaictile.com",
+      "hostname": "shopmosaictile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://shopmosaictile.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "marble-tile",
+          "query": "marble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "ceramic-tile",
+          "query": "ceramic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "glass-tile",
+          "query": "glass tile",
+          "dimension": "area"
+        },
+        {
+          "id": "subway-tile",
+          "query": "subway tile",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        },
+        {
+          "id": "stone-tile",
+          "query": "stone tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "mosaictraderusa",
+      "label": "mosaictraderusa.com",
+      "hostname": "www.mosaictraderusa.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.mosaictraderusa.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "marble-tile",
+          "query": "marble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "ceramic-tile",
+          "query": "ceramic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "glass-tile",
+          "query": "glass tile",
+          "dimension": "area"
+        },
+        {
+          "id": "subway-tile",
+          "query": "subway tile",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        },
+        {
+          "id": "stone-tile",
+          "query": "stone tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "witsendmosaic",
+      "label": "witsendmosaic.com",
+      "hostname": "witsendmosaic.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://witsendmosaic.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "marble-tile",
+          "query": "marble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "ceramic-tile",
+          "query": "ceramic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "glass-tile",
+          "query": "glass tile",
+          "dimension": "area"
+        },
+        {
+          "id": "subway-tile",
+          "query": "subway tile",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        },
+        {
+          "id": "stone-tile",
+          "query": "stone tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "kismetmosaic",
+      "label": "kismetmosaic.com",
+      "hostname": "www.kismetmosaic.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.kismetmosaic.com/search?q={query}",
+      "queries": [
+        {
+          "id": "marble-tile",
+          "query": "marble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "ceramic-tile",
+          "query": "ceramic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "glass-tile",
+          "query": "glass tile",
+          "dimension": "area"
+        },
+        {
+          "id": "subway-tile",
+          "query": "subway tile",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        },
+        {
+          "id": "stone-tile",
+          "query": "stone tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "apollotile",
+      "label": "apollotile.com",
+      "hostname": "apollotile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://apollotile.com/search?q={query}",
+      "queries": [
+        {
+          "id": "marble-tile",
+          "query": "marble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "ceramic-tile",
+          "query": "ceramic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "glass-tile",
+          "query": "glass tile",
+          "dimension": "area"
+        },
+        {
+          "id": "subway-tile",
+          "query": "subway tile",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        },
+        {
+          "id": "stone-tile",
+          "query": "stone tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "americantiledepot",
+      "label": "americantiledepot.com",
+      "hostname": "www.americantiledepot.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.americantiledepot.com/search?q={query}",
+      "queries": [
+        {
+          "id": "marble-tile",
+          "query": "marble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "ceramic-tile",
+          "query": "ceramic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "glass-tile",
+          "query": "glass tile",
+          "dimension": "area"
+        },
+        {
+          "id": "subway-tile",
+          "query": "subway tile",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        },
+        {
+          "id": "stone-tile",
+          "query": "stone tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "livden",
+      "label": "livden.com",
+      "hostname": "livden.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://livden.com/search?q={query}",
+      "queries": [
+        {
+          "id": "marble-tile",
+          "query": "marble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "ceramic-tile",
+          "query": "ceramic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "glass-tile",
+          "query": "glass tile",
+          "dimension": "area"
+        },
+        {
+          "id": "subway-tile",
+          "query": "subway tile",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        },
+        {
+          "id": "stone-tile",
+          "query": "stone tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "otile",
+      "label": "otile.com",
+      "hostname": "otile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://otile.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "marble-tile",
+          "query": "marble tile",
+          "dimension": "area"
+        },
+        {
+          "id": "ceramic-tile",
+          "query": "ceramic tile",
+          "dimension": "area"
+        },
+        {
+          "id": "glass-tile",
+          "query": "glass tile",
+          "dimension": "area"
+        },
+        {
+          "id": "subway-tile",
+          "query": "subway tile",
+          "dimension": "area"
+        },
+        {
+          "id": "floor-tile",
+          "query": "floor tile",
+          "dimension": "area"
+        },
+        {
+          "id": "stone-tile",
+          "query": "stone tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "dentistgloves",
+      "label": "dentistgloves.com",
+      "hostname": "dentistgloves.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://dentistgloves.com/search?q={query}",
+      "queries": [
+        {
+          "id": "syringes",
+          "query": "syringes",
+          "dimension": "count"
+        },
+        {
+          "id": "gauze-pads",
+          "query": "gauze pads",
+          "dimension": "count"
+        },
+        {
+          "id": "bandages",
+          "query": "bandages",
+          "dimension": "count"
+        },
+        {
+          "id": "alcohol-prep-pads",
+          "query": "alcohol prep pads",
+          "dimension": "count"
+        },
+        {
+          "id": "underpads",
+          "query": "underpads",
+          "dimension": "count"
+        },
+        {
+          "id": "needles",
+          "query": "needles",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "practicon",
+      "label": "practicon.com",
+      "hostname": "www.practicon.com",
+      "stratum": "clinical-medical-supply-retail",
+      "searchUrlTemplate": "https://www.practicon.com/search.php?search_query={query}",
+      "queries": [
+        {
+          "id": "syringes",
+          "query": "syringes",
+          "dimension": "count"
+        },
+        {
+          "id": "gauze-pads",
+          "query": "gauze pads",
+          "dimension": "count"
+        },
+        {
+          "id": "bandages",
+          "query": "bandages",
+          "dimension": "count"
+        },
+        {
+          "id": "alcohol-prep-pads",
+          "query": "alcohol prep pads",
+          "dimension": "count"
+        },
+        {
+          "id": "underpads",
+          "query": "underpads",
+          "dimension": "count"
+        },
+        {
+          "id": "needles",
+          "query": "needles",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "catering24",
+      "label": "catering24.co.uk",
+      "hostname": "www.catering24.co.uk",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.catering24.co.uk/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "paper-plates",
+          "query": "paper plates",
+          "dimension": "count"
+        },
+        {
+          "id": "takeout-containers",
+          "query": "takeout containers",
+          "dimension": "count"
+        },
+        {
+          "id": "plastic-lids",
+          "query": "plastic lids",
+          "dimension": "count"
+        },
+        {
+          "id": "napkins",
+          "query": "napkins",
+          "dimension": "count"
+        },
+        {
+          "id": "drinking-straws",
+          "query": "drinking straws",
+          "dimension": "count"
+        },
+        {
+          "id": "food-trays",
+          "query": "food trays",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "mcdonaldpaper",
+      "label": "mcdonaldpaper.com",
+      "hostname": "www.mcdonaldpaper.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.mcdonaldpaper.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "paper-plates",
+          "query": "paper plates",
+          "dimension": "count"
+        },
+        {
+          "id": "takeout-containers",
+          "query": "takeout containers",
+          "dimension": "count"
+        },
+        {
+          "id": "plastic-lids",
+          "query": "plastic lids",
+          "dimension": "count"
+        },
+        {
+          "id": "napkins",
+          "query": "napkins",
+          "dimension": "count"
+        },
+        {
+          "id": "drinking-straws",
+          "query": "drinking straws",
+          "dimension": "count"
+        },
+        {
+          "id": "food-trays",
+          "query": "food trays",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "britishtea",
+      "label": "britishtea.com",
+      "hostname": "britishtea.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://britishtea.com/search?q={query}",
+      "queries": [
+        {
+          "id": "herbal-tea",
+          "query": "herbal tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "oolong-tea",
+          "query": "oolong tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "chai-tea",
+          "query": "chai tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "white-tea",
+          "query": "white tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "matcha-tea",
+          "query": "matcha tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "tea-bags",
+          "query": "tea bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "hugotea",
+      "label": "hugotea.com",
+      "hostname": "www.hugotea.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://www.hugotea.com/search?q={query}",
+      "queries": [
+        {
+          "id": "herbal-tea",
+          "query": "herbal tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "oolong-tea",
+          "query": "oolong tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "chai-tea",
+          "query": "chai tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "white-tea",
+          "query": "white tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "matcha-tea",
+          "query": "matcha tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "tea-bags",
+          "query": "tea bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "dobrateashop",
+      "label": "dobrateashop.com",
+      "hostname": "dobrateashop.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://dobrateashop.com/search?q={query}",
+      "queries": [
+        {
+          "id": "herbal-tea",
+          "query": "herbal tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "oolong-tea",
+          "query": "oolong tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "chai-tea",
+          "query": "chai tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "white-tea",
+          "query": "white tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "matcha-tea",
+          "query": "matcha tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "tea-bags",
+          "query": "tea bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "yunnansourcing",
+      "label": "yunnansourcing.us",
+      "hostname": "yunnansourcing.us",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://yunnansourcing.us/search?q={query}",
+      "queries": [
+        {
+          "id": "herbal-tea",
+          "query": "herbal tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "oolong-tea",
+          "query": "oolong tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "chai-tea",
+          "query": "chai tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "white-tea",
+          "query": "white tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "matcha-tea",
+          "query": "matcha tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "tea-bags",
+          "query": "tea bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "what-cha",
+      "label": "what-cha.com",
+      "hostname": "what-cha.com",
+      "stratum": "loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://what-cha.com/search?q={query}",
+      "queries": [
+        {
+          "id": "herbal-tea",
+          "query": "herbal tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "oolong-tea",
+          "query": "oolong tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "chai-tea",
+          "query": "chai tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "white-tea",
+          "query": "white tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "matcha-tea",
+          "query": "matcha tea",
+          "dimension": "mass"
+        },
+        {
+          "id": "tea-bags",
+          "query": "tea bags",
+          "dimension": "count"
+        }
+      ]
+    },
+    {
+      "id": "carzilla",
+      "label": "carzilla.ca",
+      "hostname": "carzilla.ca",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://carzilla.ca/search?q={query}",
+      "queries": [
+        {
+          "id": "glass-cleaner",
+          "query": "glass cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "tire-dressing",
+          "query": "tire dressing",
+          "dimension": "volume"
+        },
+        {
+          "id": "interior-cleaner",
+          "query": "interior cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "ceramic-coating",
+          "query": "ceramic coating",
+          "dimension": "volume"
+        },
+        {
+          "id": "degreaser",
+          "query": "degreaser",
+          "dimension": "volume"
+        },
+        {
+          "id": "spray-wax",
+          "query": "spray wax",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "carcareproducts",
+      "label": "carcareproducts.com.au",
+      "hostname": "www.carcareproducts.com.au",
+      "stratum": "auto-detailing-retail",
+      "searchUrlTemplate": "https://www.carcareproducts.com.au/search?q={query}",
+      "queries": [
+        {
+          "id": "glass-cleaner",
+          "query": "glass cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "tire-dressing",
+          "query": "tire dressing",
+          "dimension": "volume"
+        },
+        {
+          "id": "interior-cleaner",
+          "query": "interior cleaner",
+          "dimension": "volume"
+        },
+        {
+          "id": "ceramic-coating",
+          "query": "ceramic coating",
+          "dimension": "volume"
+        },
+        {
+          "id": "degreaser",
+          "query": "degreaser",
+          "dimension": "volume"
+        },
+        {
+          "id": "spray-wax",
+          "query": "spray wax",
+          "dimension": "volume"
+        }
+      ]
+    },
+    {
+      "id": "purebites",
+      "label": "purebites.com",
+      "hostname": "purebites.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://purebites.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cat-food",
+          "query": "cat food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dog-food",
+          "query": "dog food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dental-chews",
+          "query": "dental chews",
+          "dimension": "count"
+        },
+        {
+          "id": "pet-wipes",
+          "query": "pet wipes",
+          "dimension": "count"
+        },
+        {
+          "id": "waste-bags",
+          "query": "waste bags",
+          "dimension": "count"
+        },
+        {
+          "id": "cat-litter",
+          "query": "cat litter",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "wellbredonline",
+      "label": "wellbredonline.com",
+      "hostname": "wellbredonline.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://wellbredonline.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cat-food",
+          "query": "cat food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dog-food",
+          "query": "dog food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dental-chews",
+          "query": "dental chews",
+          "dimension": "count"
+        },
+        {
+          "id": "pet-wipes",
+          "query": "pet wipes",
+          "dimension": "count"
+        },
+        {
+          "id": "waste-bags",
+          "query": "waste bags",
+          "dimension": "count"
+        },
+        {
+          "id": "cat-litter",
+          "query": "cat litter",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "petgoods",
+      "label": "petgoods.com",
+      "hostname": "petgoods.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://petgoods.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cat-food",
+          "query": "cat food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dog-food",
+          "query": "dog food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dental-chews",
+          "query": "dental chews",
+          "dimension": "count"
+        },
+        {
+          "id": "pet-wipes",
+          "query": "pet wipes",
+          "dimension": "count"
+        },
+        {
+          "id": "waste-bags",
+          "query": "waste bags",
+          "dimension": "count"
+        },
+        {
+          "id": "cat-litter",
+          "query": "cat litter",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "petsupplies4less",
+      "label": "petsupplies4less.com",
+      "hostname": "www.petsupplies4less.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://www.petsupplies4less.com/search?q={query}",
+      "queries": [
+        {
+          "id": "cat-food",
+          "query": "cat food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dog-food",
+          "query": "dog food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dental-chews",
+          "query": "dental chews",
+          "dimension": "count"
+        },
+        {
+          "id": "pet-wipes",
+          "query": "pet wipes",
+          "dimension": "count"
+        },
+        {
+          "id": "waste-bags",
+          "query": "waste bags",
+          "dimension": "count"
+        },
+        {
+          "id": "cat-litter",
+          "query": "cat litter",
+          "dimension": "mass"
+        }
+      ]
+    }
+  ]
+}
