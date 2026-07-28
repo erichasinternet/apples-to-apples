@@ -1,0 +1,257 @@
+{
+  "version": 1,
+  "pilotId": "g2-final-depth-wave-03-p00",
+  "capturedAt": "2026-07-28T23:22:50.289Z",
+  "sourceManifest": "benchmarks/live-sites/final-depth-wave-03.json",
+  "requestedCaptureAttempts": 41,
+  "runs": [
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-485Z--p13853--015",
+      "pageIds": [
+        "americantiledepot--beige-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-509Z--p13857--014",
+      "pageIds": [
+        "americantiledepot--black-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-490Z--p13854--014",
+      "pageIds": [
+        "americantiledepot--blue-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-501Z--p13855--013",
+      "pageIds": [
+        "americantiledepot--granite-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-485Z--p13853--014",
+      "pageIds": [
+        "americantiledepot--metal-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-501Z--p13855--014",
+      "pageIds": [
+        "americantiledepot--white-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-485Z--p13853--006",
+      "pageIds": [
+        "fabricbistro--bamboo-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-490Z--p13854--007",
+      "pageIds": [
+        "fabricbistro--floral-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-485Z--p13853--007",
+      "pageIds": [
+        "fabricbistro--outdoor-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-501Z--p13855--007",
+      "pageIds": [
+        "fabricbistro--plaid-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-485Z--p13853--001",
+      "pageIds": [
+        "girlcharlee--bamboo-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-490Z--p13854--002",
+      "pageIds": [
+        "girlcharlee--floral-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-501Z--p13855--001",
+      "pageIds": [
+        "girlcharlee--organic-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-509Z--p13857--001",
+      "pageIds": [
+        "girlcharlee--quilting-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-490Z--p13854--001",
+      "pageIds": [
+        "girlcharlee--stretch-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-509Z--p13857--004",
+      "pageIds": [
+        "longancraft--floral-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-501Z--p13855--005",
+      "pageIds": [
+        "longancraft--knit-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-485Z--p13853--005",
+      "pageIds": [
+        "longancraft--plaid-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-509Z--p13857--005",
+      "pageIds": [
+        "longancraft--polyester-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-509Z--p13857--003",
+      "pageIds": [
+        "longancraft--stretch-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-490Z--p13854--005",
+      "pageIds": [
+        "longancraft--striped-fabric"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-490Z--p13854--020",
+      "pageIds": [
+        "mcdonaldpaper--sandwich-containers"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-501Z--p13855--012",
+      "pageIds": [
+        "otile--beige-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-490Z--p13854--012",
+      "pageIds": [
+        "otile--black-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-509Z--p13857--011",
+      "pageIds": [
+        "otile--blue-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-485Z--p13853--011",
+      "pageIds": [
+        "otile--granite-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-501Z--p13855--011",
+      "pageIds": [
+        "otile--metal-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-485Z--p13853--012",
+      "pageIds": [
+        "otile--white-tile"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-490Z--p13854--017",
+      "pageIds": [
+        "petgoods--canned-cat-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-485Z--p13853--017",
+      "pageIds": [
+        "petgoods--canned-dog-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-509Z--p13857--017",
+      "pageIds": [
+        "petgoods--freeze-dried-cat-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-501Z--p13855--017",
+      "pageIds": [
+        "petgoods--freeze-dried-dog-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-490Z--p13854--018",
+      "pageIds": [
+        "petgoods--grain-free-cat-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-485Z--p13853--018",
+      "pageIds": [
+        "petgoods--grain-free-dog-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-490Z--p13854--016",
+      "pageIds": [
+        "petgoods--kitten-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-485Z--p13853--016",
+      "pageIds": [
+        "petgoods--puppy-food"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-509Z--p13857--009",
+      "pageIds": [
+        "taste-of-tea--hibiscus-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-501Z--p13855--009",
+      "pageIds": [
+        "taste-of-tea--lemon-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-509Z--p13857--010",
+      "pageIds": [
+        "taste-of-tea--peppermint-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-485Z--p13853--010",
+      "pageIds": [
+        "taste-of-tea--rose-tea"
+      ]
+    },
+    {
+      "runDirectory": "benchmark-data/live/2026-07-28T03-04-52-490Z--p13854--009",
+      "pageIds": [
+        "taste-of-tea--turmeric-tea"
+      ]
+    }
+  ],
+  "samplingFinding": "Eighty unseen final-cohort query pages were collected headlessly across eight previously qualified domains and all target dimensions. Forty-eight passed strict machine gates, forty-seven passed visual capture-structure review, and a balanced forty-one-page subset was selected to reach the 300-page final-cohort target without avoidable retailer concentration.",
+  "visualValidationFinding": "All forty-eight machine-pass pages were inspected in original-resolution site montages, with an individual original-resolution check for the sparse Fabric Bistro layout. Forty-seven contain at least eight independent query-relevant product roots with visible title and price evidence. The bakery-packaging page was rejected for category drift; ambiguous or absent package quantities remain valid abstention cases."
+}

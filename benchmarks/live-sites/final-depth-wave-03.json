@@ -1,0 +1,478 @@
+{
+  "version": 1,
+  "description": "Targeted final-depth supplement on eight empirically high-yield domains. Eighty unseen query IDs are sized to close the remaining 41-page structural gap without relaxing selector-free acquisition, provenance, query relevance, or visual review gates.",
+  "sites": [
+    {
+      "id": "girlcharlee",
+      "label": "girlcharlee.com",
+      "hostname": "girlcharlee.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://girlcharlee.com/search?q={query}",
+      "queries": [
+        {
+          "id": "bamboo-fabric",
+          "query": "bamboo fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "stretch-fabric",
+          "query": "stretch fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "organic-fabric",
+          "query": "organic fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "quilting-fabric",
+          "query": "quilting fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "outdoor-fabric",
+          "query": "outdoor fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "floral-fabric",
+          "query": "floral fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "plaid-fabric",
+          "query": "plaid fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "striped-fabric",
+          "query": "striped fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "knit-fabric",
+          "query": "knit fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "polyester-fabric",
+          "query": "polyester fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "longancraft",
+      "label": "longancraft.com",
+      "hostname": "www.longancraft.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://www.longancraft.com/search?q={query}",
+      "queries": [
+        {
+          "id": "bamboo-fabric",
+          "query": "bamboo fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "stretch-fabric",
+          "query": "stretch fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "organic-fabric",
+          "query": "organic fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "quilting-fabric",
+          "query": "quilting fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "outdoor-fabric",
+          "query": "outdoor fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "floral-fabric",
+          "query": "floral fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "plaid-fabric",
+          "query": "plaid fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "striped-fabric",
+          "query": "striped fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "knit-fabric",
+          "query": "knit fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "polyester-fabric",
+          "query": "polyester fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "fabricbistro",
+      "label": "fabricbistro.com",
+      "hostname": "fabricbistro.com",
+      "stratum": "independent-fabric-retail",
+      "searchUrlTemplate": "https://fabricbistro.com/search?q={query}",
+      "queries": [
+        {
+          "id": "bamboo-fabric",
+          "query": "bamboo fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "stretch-fabric",
+          "query": "stretch fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "organic-fabric",
+          "query": "organic fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "quilting-fabric",
+          "query": "quilting fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "outdoor-fabric",
+          "query": "outdoor fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "floral-fabric",
+          "query": "floral fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "plaid-fabric",
+          "query": "plaid fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "striped-fabric",
+          "query": "striped fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "knit-fabric",
+          "query": "knit fabric",
+          "dimension": "length"
+        },
+        {
+          "id": "polyester-fabric",
+          "query": "polyester fabric",
+          "dimension": "length"
+        }
+      ]
+    },
+    {
+      "id": "taste-of-tea",
+      "label": "Taste of Tea",
+      "hostname": "tasteoftea.com",
+      "stratum": "independent-loose-leaf-tea-retail",
+      "searchUrlTemplate": "https://tasteoftea.com/search?q={query}",
+      "queries": [
+        {
+          "id": "sencha-tea",
+          "query": "sencha",
+          "dimension": "mass"
+        },
+        {
+          "id": "ceylon-tea",
+          "query": "ceylon",
+          "dimension": "mass"
+        },
+        {
+          "id": "ginger-tea",
+          "query": "ginger",
+          "dimension": "mass"
+        },
+        {
+          "id": "turmeric-tea",
+          "query": "turmeric",
+          "dimension": "mass"
+        },
+        {
+          "id": "lemon-tea",
+          "query": "lemon",
+          "dimension": "mass"
+        },
+        {
+          "id": "hibiscus-tea",
+          "query": "hibiscus",
+          "dimension": "mass"
+        },
+        {
+          "id": "rose-tea",
+          "query": "rose",
+          "dimension": "mass"
+        },
+        {
+          "id": "masala-tea",
+          "query": "masala",
+          "dimension": "mass"
+        },
+        {
+          "id": "tulsi-tea",
+          "query": "tulsi",
+          "dimension": "mass"
+        },
+        {
+          "id": "peppermint-tea",
+          "query": "peppermint",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "otile",
+      "label": "otile.com",
+      "hostname": "otile.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://otile.com/catalogsearch/result/?q={query}",
+      "queries": [
+        {
+          "id": "granite-tile",
+          "query": "granite tile",
+          "dimension": "area"
+        },
+        {
+          "id": "quartz-tile",
+          "query": "quartz tile",
+          "dimension": "area"
+        },
+        {
+          "id": "metal-tile",
+          "query": "metal tile",
+          "dimension": "area"
+        },
+        {
+          "id": "blue-tile",
+          "query": "blue tile",
+          "dimension": "area"
+        },
+        {
+          "id": "white-tile",
+          "query": "white tile",
+          "dimension": "area"
+        },
+        {
+          "id": "black-tile",
+          "query": "black tile",
+          "dimension": "area"
+        },
+        {
+          "id": "beige-tile",
+          "query": "beige tile",
+          "dimension": "area"
+        },
+        {
+          "id": "decorative-tile",
+          "query": "decorative tile",
+          "dimension": "area"
+        },
+        {
+          "id": "bathroom-tile",
+          "query": "bathroom tile",
+          "dimension": "area"
+        },
+        {
+          "id": "kitchen-tile",
+          "query": "kitchen tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "americantiledepot",
+      "label": "americantiledepot.com",
+      "hostname": "www.americantiledepot.com",
+      "stratum": "online-tile-retail",
+      "searchUrlTemplate": "https://www.americantiledepot.com/search?q={query}",
+      "queries": [
+        {
+          "id": "granite-tile",
+          "query": "granite tile",
+          "dimension": "area"
+        },
+        {
+          "id": "quartz-tile",
+          "query": "quartz tile",
+          "dimension": "area"
+        },
+        {
+          "id": "metal-tile",
+          "query": "metal tile",
+          "dimension": "area"
+        },
+        {
+          "id": "blue-tile",
+          "query": "blue tile",
+          "dimension": "area"
+        },
+        {
+          "id": "white-tile",
+          "query": "white tile",
+          "dimension": "area"
+        },
+        {
+          "id": "black-tile",
+          "query": "black tile",
+          "dimension": "area"
+        },
+        {
+          "id": "beige-tile",
+          "query": "beige tile",
+          "dimension": "area"
+        },
+        {
+          "id": "decorative-tile",
+          "query": "decorative tile",
+          "dimension": "area"
+        },
+        {
+          "id": "bathroom-tile",
+          "query": "bathroom tile",
+          "dimension": "area"
+        },
+        {
+          "id": "kitchen-tile",
+          "query": "kitchen tile",
+          "dimension": "area"
+        }
+      ]
+    },
+    {
+      "id": "petgoods",
+      "label": "petgoods.com",
+      "hostname": "petgoods.com",
+      "stratum": "online-pet-supply-retail",
+      "searchUrlTemplate": "https://petgoods.com/search?q={query}",
+      "queries": [
+        {
+          "id": "puppy-food",
+          "query": "puppy food",
+          "dimension": "mass"
+        },
+        {
+          "id": "kitten-food",
+          "query": "kitten food",
+          "dimension": "mass"
+        },
+        {
+          "id": "dog-kibble",
+          "query": "dog kibble",
+          "dimension": "mass"
+        },
+        {
+          "id": "cat-kibble",
+          "query": "cat kibble",
+          "dimension": "mass"
+        },
+        {
+          "id": "canned-dog-food",
+          "query": "canned dog food",
+          "dimension": "mass"
+        },
+        {
+          "id": "canned-cat-food",
+          "query": "canned cat food",
+          "dimension": "mass"
+        },
+        {
+          "id": "freeze-dried-dog-food",
+          "query": "freeze dried dog food",
+          "dimension": "mass"
+        },
+        {
+          "id": "freeze-dried-cat-food",
+          "query": "freeze dried cat food",
+          "dimension": "mass"
+        },
+        {
+          "id": "grain-free-dog-food",
+          "query": "grain free dog food",
+          "dimension": "mass"
+        },
+        {
+          "id": "grain-free-cat-food",
+          "query": "grain free cat food",
+          "dimension": "mass"
+        }
+      ]
+    },
+    {
+      "id": "mcdonaldpaper",
+      "label": "mcdonaldpaper.com",
+      "hostname": "www.mcdonaldpaper.com",
+      "stratum": "food-service-packaging-retail",
+      "searchUrlTemplate": "https://www.mcdonaldpaper.com/?s={query}&post_type=product",
+      "queries": [
+        {
+          "id": "takeout-packaging",
+          "query": "takeout",
+          "dimension": "count"
+        },
+        {
+          "id": "disposable-cup",
+          "query": "disposable cup",
+          "dimension": "count"
+        },
+        {
+          "id": "bakery-packaging",
+          "query": "bakery",
+          "dimension": "count"
+        },
+        {
+          "id": "catering-trays",
+          "query": "catering tray",
+          "dimension": "count"
+        },
+        {
+          "id": "condiment-cups",
+          "query": "condiment cup",
+          "dimension": "count"
+        },
+        {
+          "id": "ice-cream-cups",
+          "query": "ice cream cup",
+          "dimension": "count"
+        },
+        {
+          "id": "drink-straws",
+          "query": "drinking straw",
+          "dimension": "count"
+        },
+        {
+          "id": "sandwich-containers",
+          "query": "sandwich container",
+          "dimension": "count"
+        },
+        {
+          "id": "salad-containers",
+          "query": "salad container",
+          "dimension": "count"
+        },
+        {
+          "id": "meal-prep-containers",
+          "query": "meal prep container",
+          "dimension": "count"
+        }
+      ]
+    }
+  ]
+}

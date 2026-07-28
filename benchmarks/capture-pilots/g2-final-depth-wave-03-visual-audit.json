@@ -1,0 +1,453 @@
+{
+  "version": 1,
+  "auditId": "g2-final-depth-wave-03-visual-audit",
+  "auditedAt": "2026-07-28T23:22:50.289Z",
+  "sourceMachineGateReport": "benchmark-data/live/final-depth-wave-03-machine-gates.json",
+  "sourceMachineGateReportSha256": "fd152924f7914cdc69c28d7c8fa056fde0d0dd475c0196b423917335c0593f06",
+  "scope": "Capture-structure validation only; this is not independent product labeling or adjudication.",
+  "criteria": {
+    "minimumIndependentQueryRelevantRoots": 8,
+    "requireVisibleTitleAndPriceEvidence": true,
+    "allowAbstentionWhenQuantityEvidenceIsAbsentOrAmbiguous": true,
+    "rejectRepeatedPageChromeOrCategoryDrift": true
+  },
+  "summary": {
+    "reviewedPages": 48,
+    "acceptedPages": 47,
+    "rejectedPages": 1
+  },
+  "decisions": [
+    {
+      "pageId": "americantiledepot--beige-tile",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/americantiledepot.png",
+      "inspectedAssetSha256": "9234476ef255c314954fad737069dc07774ae9a4a646f8fe5c9907a697309d71",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 10,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "americantiledepot--black-tile",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/americantiledepot.png",
+      "inspectedAssetSha256": "9234476ef255c314954fad737069dc07774ae9a4a646f8fe5c9907a697309d71",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 9,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "americantiledepot--blue-tile",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/americantiledepot.png",
+      "inspectedAssetSha256": "9234476ef255c314954fad737069dc07774ae9a4a646f8fe5c9907a697309d71",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 8,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "americantiledepot--granite-tile",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/americantiledepot.png",
+      "inspectedAssetSha256": "9234476ef255c314954fad737069dc07774ae9a4a646f8fe5c9907a697309d71",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 11,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "americantiledepot--metal-tile",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/americantiledepot.png",
+      "inspectedAssetSha256": "9234476ef255c314954fad737069dc07774ae9a4a646f8fe5c9907a697309d71",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 9,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "americantiledepot--white-tile",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/americantiledepot.png",
+      "inspectedAssetSha256": "9234476ef255c314954fad737069dc07774ae9a4a646f8fe5c9907a697309d71",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 10,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "fabricbistro--bamboo-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/fabricbistro.png",
+      "inspectedAssetSha256": "81440d5235a5e37a0e982638adf2607fc14ac9b82344aa82f9cb2c3088cae710",
+      "candidateCount": 10,
+      "queryRelevantCandidateCount": 10,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "fabricbistro--floral-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/fabricbistro.png",
+      "inspectedAssetSha256": "81440d5235a5e37a0e982638adf2607fc14ac9b82344aa82f9cb2c3088cae710",
+      "candidateCount": 10,
+      "queryRelevantCandidateCount": 10,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "fabricbistro--outdoor-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/fabricbistro.png",
+      "inspectedAssetSha256": "81440d5235a5e37a0e982638adf2607fc14ac9b82344aa82f9cb2c3088cae710",
+      "candidateCount": 9,
+      "queryRelevantCandidateCount": 9,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "fabricbistro--plaid-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/fabricbistro.png",
+      "inspectedAssetSha256": "81440d5235a5e37a0e982638adf2607fc14ac9b82344aa82f9cb2c3088cae710",
+      "candidateCount": 10,
+      "queryRelevantCandidateCount": 10,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "girlcharlee--bamboo-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/girlcharlee.png",
+      "inspectedAssetSha256": "1cdd22cab56387648b5866c140116cc5f207c17622109b6ce47865894e2f331c",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "girlcharlee--floral-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/girlcharlee.png",
+      "inspectedAssetSha256": "1cdd22cab56387648b5866c140116cc5f207c17622109b6ce47865894e2f331c",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "girlcharlee--knit-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/girlcharlee.png",
+      "inspectedAssetSha256": "1cdd22cab56387648b5866c140116cc5f207c17622109b6ce47865894e2f331c",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "girlcharlee--organic-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/girlcharlee.png",
+      "inspectedAssetSha256": "1cdd22cab56387648b5866c140116cc5f207c17622109b6ce47865894e2f331c",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "girlcharlee--plaid-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/girlcharlee.png",
+      "inspectedAssetSha256": "1cdd22cab56387648b5866c140116cc5f207c17622109b6ce47865894e2f331c",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "girlcharlee--quilting-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/girlcharlee.png",
+      "inspectedAssetSha256": "1cdd22cab56387648b5866c140116cc5f207c17622109b6ce47865894e2f331c",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "girlcharlee--stretch-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/girlcharlee.png",
+      "inspectedAssetSha256": "1cdd22cab56387648b5866c140116cc5f207c17622109b6ce47865894e2f331c",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "longancraft--floral-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/longancraft.png",
+      "inspectedAssetSha256": "29e448e24cea8cd867e4dd33767b1a837306f288a32a39c5f555b09229a6fb53",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 9,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "longancraft--knit-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/longancraft.png",
+      "inspectedAssetSha256": "29e448e24cea8cd867e4dd33767b1a837306f288a32a39c5f555b09229a6fb53",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 11,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "longancraft--plaid-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/longancraft.png",
+      "inspectedAssetSha256": "29e448e24cea8cd867e4dd33767b1a837306f288a32a39c5f555b09229a6fb53",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "longancraft--polyester-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/longancraft.png",
+      "inspectedAssetSha256": "29e448e24cea8cd867e4dd33767b1a837306f288a32a39c5f555b09229a6fb53",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 9,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "longancraft--stretch-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/longancraft.png",
+      "inspectedAssetSha256": "29e448e24cea8cd867e4dd33767b1a837306f288a32a39c5f555b09229a6fb53",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "longancraft--striped-fabric",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/longancraft.png",
+      "inspectedAssetSha256": "29e448e24cea8cd867e4dd33767b1a837306f288a32a39c5f555b09229a6fb53",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "mcdonaldpaper--bakery-packaging",
+      "decision": "rejected",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/mcdonaldpaper.png",
+      "inspectedAssetSha256": "64a37db582737a66ba4d3e11733838c65c250ef3f0480025a1262b332e9ac49b",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "The captured result set is dominated by refrigerated bakery display equipment rather than bakery packaging, so it fails visual query-relevance validation."
+    },
+    {
+      "pageId": "mcdonaldpaper--sandwich-containers",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/mcdonaldpaper.png",
+      "inspectedAssetSha256": "64a37db582737a66ba4d3e11733838c65c250ef3f0480025a1262b332e9ac49b",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "otile--beige-tile",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/otile.png",
+      "inspectedAssetSha256": "fda0e382bc04c49fd5b81e3524bb541f3471af91e5117682af9adbc9d4008819",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "otile--black-tile",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/otile.png",
+      "inspectedAssetSha256": "fda0e382bc04c49fd5b81e3524bb541f3471af91e5117682af9adbc9d4008819",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "otile--blue-tile",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/otile.png",
+      "inspectedAssetSha256": "fda0e382bc04c49fd5b81e3524bb541f3471af91e5117682af9adbc9d4008819",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "otile--granite-tile",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/otile.png",
+      "inspectedAssetSha256": "fda0e382bc04c49fd5b81e3524bb541f3471af91e5117682af9adbc9d4008819",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 11,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "otile--metal-tile",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/otile.png",
+      "inspectedAssetSha256": "fda0e382bc04c49fd5b81e3524bb541f3471af91e5117682af9adbc9d4008819",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "otile--white-tile",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/otile.png",
+      "inspectedAssetSha256": "fda0e382bc04c49fd5b81e3524bb541f3471af91e5117682af9adbc9d4008819",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "petgoods--canned-cat-food",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/petgoods.png",
+      "inspectedAssetSha256": "2c611d735de1f5002ae202626e36effdb86afcac5135d4f6904bbb5f86b61ccb",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "petgoods--canned-dog-food",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/petgoods.png",
+      "inspectedAssetSha256": "2c611d735de1f5002ae202626e36effdb86afcac5135d4f6904bbb5f86b61ccb",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 11,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "petgoods--freeze-dried-cat-food",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/petgoods.png",
+      "inspectedAssetSha256": "2c611d735de1f5002ae202626e36effdb86afcac5135d4f6904bbb5f86b61ccb",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 9,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "petgoods--freeze-dried-dog-food",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/petgoods.png",
+      "inspectedAssetSha256": "2c611d735de1f5002ae202626e36effdb86afcac5135d4f6904bbb5f86b61ccb",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 10,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "petgoods--grain-free-cat-food",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/petgoods.png",
+      "inspectedAssetSha256": "2c611d735de1f5002ae202626e36effdb86afcac5135d4f6904bbb5f86b61ccb",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 8,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "petgoods--grain-free-dog-food",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/petgoods.png",
+      "inspectedAssetSha256": "2c611d735de1f5002ae202626e36effdb86afcac5135d4f6904bbb5f86b61ccb",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 10,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "petgoods--kitten-food",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/petgoods.png",
+      "inspectedAssetSha256": "2c611d735de1f5002ae202626e36effdb86afcac5135d4f6904bbb5f86b61ccb",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 8,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "petgoods--puppy-food",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/petgoods.png",
+      "inspectedAssetSha256": "2c611d735de1f5002ae202626e36effdb86afcac5135d4f6904bbb5f86b61ccb",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 10,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "taste-of-tea--ceylon-tea",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/taste-of-tea.png",
+      "inspectedAssetSha256": "5ec3cb999b366de520cb84d6b043d7355b1c42f46fab748f9c7012ebc85f38e7",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 8,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "taste-of-tea--ginger-tea",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/taste-of-tea.png",
+      "inspectedAssetSha256": "5ec3cb999b366de520cb84d6b043d7355b1c42f46fab748f9c7012ebc85f38e7",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 10,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "taste-of-tea--hibiscus-tea",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/taste-of-tea.png",
+      "inspectedAssetSha256": "5ec3cb999b366de520cb84d6b043d7355b1c42f46fab748f9c7012ebc85f38e7",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 12,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "taste-of-tea--lemon-tea",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/taste-of-tea.png",
+      "inspectedAssetSha256": "5ec3cb999b366de520cb84d6b043d7355b1c42f46fab748f9c7012ebc85f38e7",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 9,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "taste-of-tea--masala-tea",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/taste-of-tea.png",
+      "inspectedAssetSha256": "5ec3cb999b366de520cb84d6b043d7355b1c42f46fab748f9c7012ebc85f38e7",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 8,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "taste-of-tea--peppermint-tea",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/taste-of-tea.png",
+      "inspectedAssetSha256": "5ec3cb999b366de520cb84d6b043d7355b1c42f46fab748f9c7012ebc85f38e7",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 11,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "taste-of-tea--rose-tea",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/taste-of-tea.png",
+      "inspectedAssetSha256": "5ec3cb999b366de520cb84d6b043d7355b1c42f46fab748f9c7012ebc85f38e7",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 10,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "taste-of-tea--sencha-tea",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/taste-of-tea.png",
+      "inspectedAssetSha256": "5ec3cb999b366de520cb84d6b043d7355b1c42f46fab748f9c7012ebc85f38e7",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 11,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    },
+    {
+      "pageId": "taste-of-tea--turmeric-tea",
+      "decision": "accepted",
+      "inspectedAsset": "benchmark-data/live/final-depth-wave-03-site-montages/taste-of-tea.png",
+      "inspectedAssetSha256": "5ec3cb999b366de520cb84d6b043d7355b1c42f46fab748f9c7012ebc85f38e7",
+      "candidateCount": 12,
+      "queryRelevantCandidateCount": 11,
+      "finding": "At least eight independent query-relevant product roots with visible title and price evidence; ambiguous or absent package quantities are retained as abstention cases."
+    }
+  ]
+}

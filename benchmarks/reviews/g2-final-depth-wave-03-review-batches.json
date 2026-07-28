@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "campaignId": "g2-final-depth-wave-03",
+  "createdAt": "2026-07-28T23:24:15.654Z",
+  "sourceCampaigns": [
+    {
+      "reviewerId": "reviewer-a",
+      "queueId": "reviewer-a--campaign--a719e150d26c3f76",
+      "path": "benchmark-data/review/g2-final-depth-wave-03-reviewer-a-campaign.json",
+      "sha256": "702878113a5a363e8788ab77fdc80a47cc544c30df2b6c7177285bb64138aa02",
+      "pages": 41
+    },
+    {
+      "reviewerId": "reviewer-b",
+      "queueId": "reviewer-b--campaign--78ffae0c2de7aa00",
+      "path": "benchmark-data/review/g2-final-depth-wave-03-reviewer-b-campaign.json",
+      "sha256": "85555d16b8ee697f7cb9b266774a76939618f83030dbea01f06f6fc65bffad60",
+      "pages": 41
+    }
+  ],
+  "policy": {
+    "pagesPerBatch": 5,
+    "ordering": "page-id-ascending",
+    "pairedPageAssignments": true,
+    "reviewerIdentityPreserved": true,
+    "reviewIdsPreserved": true,
+    "labelVisibility": "no model or peer labels"
+  },
+  "totals": {
+    "batches": 9,
+    "pages": 41,
+    "candidateCards": 483
+  },
+  "batches": [
+    {
+      "batchId": "g2-final-depth-wave-03--batch-01",
+      "batchNumber": 1,
+      "pageIds": [
+        "americantiledepot--beige-tile",
+        "americantiledepot--black-tile",
+        "americantiledepot--blue-tile",
+        "americantiledepot--granite-tile",
+        "americantiledepot--metal-tile"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-01--300942a7a2d634f6",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-a--batch-01.json",
+          "sha256": "d8ed33d5927a7804c643ab3102d3d4912742876aa6c4abaf3586959115a46b2f"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-01--023557a627633e04",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-b--batch-01.json",
+          "sha256": "649cbb3d20e3471ea2cabe2538403360055076524a9e5d3891a75c124b16150c"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-03--batch-02",
+      "batchNumber": 2,
+      "pageIds": [
+        "americantiledepot--white-tile",
+        "fabricbistro--bamboo-fabric",
+        "fabricbistro--floral-fabric",
+        "fabricbistro--outdoor-fabric",
+        "fabricbistro--plaid-fabric"
+      ],
+      "pages": 5,
+      "candidateCards": 51,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-02--7ed5d186b4491cb7",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-a--batch-02.json",
+          "sha256": "dc6c1e21e7b193f82d5345bc03e2cd134eaec8ef1a1f42edacf0069df489cdc7"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-02--92adbee54bef05cb",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-b--batch-02.json",
+          "sha256": "5fe32e0226f1e5ddfc89da57bccc3c8c942b89a59088e0b0f5bba34a5c10e362"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-03--batch-03",
+      "batchNumber": 3,
+      "pageIds": [
+        "girlcharlee--bamboo-fabric",
+        "girlcharlee--floral-fabric",
+        "girlcharlee--organic-fabric",
+        "girlcharlee--quilting-fabric",
+        "girlcharlee--stretch-fabric"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-03--2c1a05db40f06477",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-a--batch-03.json",
+          "sha256": "cf239c0bb2ad03e43699a5127fecd79be7b419dbec14b5b07168c4c68b625f2d"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-03--1ed8c1a564fef5df",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-b--batch-03.json",
+          "sha256": "ef5cae7049c0d080e6b41ea69c5a3a4fc73226c0ef4352e3f3c5baf231a0f714"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-03--batch-04",
+      "batchNumber": 4,
+      "pageIds": [
+        "longancraft--floral-fabric",
+        "longancraft--knit-fabric",
+        "longancraft--plaid-fabric",
+        "longancraft--polyester-fabric",
+        "longancraft--stretch-fabric"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-04--f1b6a5c1efd649ca",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-a--batch-04.json",
+          "sha256": "76b221fec9fa6719f03665d53821c3046ccf74d4524ccd8b2ca9a6b3789c6087"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-04--02f9d4e29e9f9e83",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-b--batch-04.json",
+          "sha256": "0e0e01a773c712aaaf5826230240e32bd1e98ca3af778660b75c5a1fae541bf2"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-03--batch-05",
+      "batchNumber": 5,
+      "pageIds": [
+        "longancraft--striped-fabric",
+        "mcdonaldpaper--sandwich-containers",
+        "otile--beige-tile",
+        "otile--black-tile",
+        "otile--blue-tile"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-05--020e360fe6641b62",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-a--batch-05.json",
+          "sha256": "daec7ec3e6633595a313192a89efb18daffd6febef15f810c710cece7873f0b7"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-05--b563184080bdeb2b",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-b--batch-05.json",
+          "sha256": "bbfcfd0cc2c68541eb81630058be36602097a4b86ccb43594a21dc64a4970377"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-03--batch-06",
+      "batchNumber": 6,
+      "pageIds": [
+        "otile--granite-tile",
+        "otile--metal-tile",
+        "otile--white-tile",
+        "petgoods--canned-cat-food",
+        "petgoods--canned-dog-food"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-06--9c7065fcf7c1719a",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-a--batch-06.json",
+          "sha256": "e0f29fbb4b3235fd4e81590d973bf2c3161117605cd50cf463fd6158b96a9869"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-06--640b68635b2b64b6",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-b--batch-06.json",
+          "sha256": "8d6179b3ed45534479d7bc725d16d855489fd0e36d6398f404aceb060130d3a6"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-03--batch-07",
+      "batchNumber": 7,
+      "pageIds": [
+        "petgoods--freeze-dried-cat-food",
+        "petgoods--freeze-dried-dog-food",
+        "petgoods--grain-free-cat-food",
+        "petgoods--grain-free-dog-food",
+        "petgoods--kitten-food"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-07--ee3c238e958a3297",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-a--batch-07.json",
+          "sha256": "abb2bbc338908952bbff13e5149826c8922b1a056625e4ae51f6c86856fd518e"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-07--b1411db4677a62c1",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-b--batch-07.json",
+          "sha256": "0f0394dc6ca34bb4ae65c3376885c204e4f628adf4666b03154b033e40ca3aa6"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-03--batch-08",
+      "batchNumber": 8,
+      "pageIds": [
+        "petgoods--puppy-food",
+        "taste-of-tea--hibiscus-tea",
+        "taste-of-tea--lemon-tea",
+        "taste-of-tea--peppermint-tea",
+        "taste-of-tea--rose-tea"
+      ],
+      "pages": 5,
+      "candidateCards": 60,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-08--bd43baf6884de708",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-a--batch-08.json",
+          "sha256": "674aaa9fe0077d8d33b902571354f369484dcfc202ae8490d001b738076cc4f3"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-08--a9e19d56b180fee2",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-b--batch-08.json",
+          "sha256": "1c297638ab01bb62aeabd4ee117a15896415eddf8bb35454be7e3fc30d19b4b8"
+        }
+      ]
+    },
+    {
+      "batchId": "g2-final-depth-wave-03--batch-09",
+      "batchNumber": 9,
+      "pageIds": [
+        "taste-of-tea--turmeric-tea"
+      ],
+      "pages": 1,
+      "candidateCards": 12,
+      "reviewerQueues": [
+        {
+          "reviewerId": "reviewer-a",
+          "queueId": "reviewer-a--campaign-batch-09--5806c1891ff40814",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-a--batch-09.json",
+          "sha256": "ede221a9860ea793f8d57b6534faf1b8a379d3c9e081bcb7bbd02c3ff9b72e3b"
+        },
+        {
+          "reviewerId": "reviewer-b",
+          "queueId": "reviewer-b--campaign-batch-09--30118237d1597f9e",
+          "path": "benchmark-data/review/g2-final-depth-wave-03-batches/reviewer-b--batch-09.json",
+          "sha256": "9c61d587f37ef8aa074b60ae84ba56f7e4acd97f3f20ba767e727a2b54809524"
+        }
+      ]
+    }
+  ],
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Batch generation preserves campaign integrity but does not replace independent review or adjudication."
+  }
+}

@@ -1821,6 +1821,33 @@ capture and review-workbench integrity only. They do not replace independent
 human labels or third-party adjudication. The final cohort now has 259
 structurally eligible pages, leaving a 41-page structural gap.
 
+The third final-depth wave predeclared 80 additional unseen query pages across
+eight productive final domains and all five dimensions. All 80 bounded headless
+Chromium jobs completed without a hard timeout. Forty-eight pages passed the
+unchanged machine gate; original-resolution review accepted 47 and rejected the
+McDonald Paper bakery-packaging page because its results were dominated by
+refrigerated display equipment. A balanced 41-page subset and 483 frozen roots
+is recorded in
+[`g2-final-depth-wave-03-p00.json`](../benchmarks/capture-pilots/g2-final-depth-wave-03-p00.json).
+This brings the final cohort to exactly 300 structurally eligible pages across
+42 domains, 14 strata, and 124 query categories, including 153 narrow-viewport
+pages.
+
+The paired blinded
+[`g2-final-depth-wave-03-p00.json`](../benchmarks/review-campaigns/g2-final-depth-wave-03-p00.json)
+campaign and nine paired batches passed headless Playwright Chromium for both
+reviewer identities: all 41 screenshots and 483 roots loaded, direct frozen-root
+navigation passed, non-candidate roots and incomplete submissions were rejected,
+and there were zero console errors or review writes. The independence audit now
+locates all 1,029 eligible captures and verifies 11,902 active roots without
+duplicates, conflicts, or overlap. The campaign registry validates 68 campaigns,
+7,096 pages, and 76,471 roots.
+
+The structural page gate is complete. Semantic readiness is not: product,
+comparable, abstention, agreement, and pointer-ready counts remain zero until
+two independent humans finish the blinded queues and a third party adjudicates
+every disagreement.
+
 ## Dataset Growth
 
 Train learning-curve checkpoints at approximately 500, 1,500, 3,000, 5,000,

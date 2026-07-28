@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "auditId": "g2-final-depth-wave-03-reviewer-b-batches",
+  "createdAt": "2026-07-28T23:25:02.466Z",
+  "source": {
+    "batchManifest": "benchmarks/reviews/g2-final-depth-wave-03-review-batches.json",
+    "batchManifestSha256": "f59643b89125ccdc5264aa73b4c96f73f7da20ab1fd4204feaf29861b412fa37",
+    "validationReportSha256": [
+      "639869836fb92012bbf6ce068f366f263a56d2f37c2caf6f575d8c87990ae0b8",
+      "e5dd1e824d4dc99d6a31dd6138485d78bf575994d2aa690d43bec41fe3dcf941",
+      "952ecc98f77e97f053da24b5d15928a842f65bb3a55fe8a1f66015d095b89067",
+      "649e3a2626493c5a9672523534776b73cb166b7806d8dc047b55355864b06926",
+      "756791b489ec4d604ad559357e860e64d2c996a1b85797f045a188ad6f18ff0d",
+      "a2c6448b5aacbea5eee14dfe069e4dbc79ebbe33cf55cdf4b792de0f3fa7f04d",
+      "0c6f6418c77996e588b930a97324c1208986edf71bf8827ee2a6f1ea8f1ba38e",
+      "935cee692fab0412cf0f58f05523b9ffaad1299d838a50b1f290ba06daaaf9f1",
+      "986885bdcd8171a339d36b06a0c65c768b666dbcae0f4b0753192c520e572c55"
+    ]
+  },
+  "browser": "headless Playwright Chromium",
+  "batches": 9,
+  "pagesLoaded": 41,
+  "screenshotsLoaded": 41,
+  "candidateCards": 483,
+  "consoleErrors": 0,
+  "reviewFilesWritten": 0,
+  "onlyFrozenCardRootOffered": true,
+  "directFrozenCardNavigation": "passed",
+  "nonCandidateAncestor": "rejected-404",
+  "incompleteCoverage": "rejected-422",
+  "validation": {
+    "passed": true
+  },
+  "eligibility": {
+    "dualReviewed": false,
+    "adjudicated": false,
+    "reason": "Workbench validation proves batch integrity and usability, not semantic label correctness."
+  }
+}
