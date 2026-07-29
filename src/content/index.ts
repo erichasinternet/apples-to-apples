@@ -47,11 +47,7 @@ async function scanNow(): Promise<void> {
 function setupMutationObserver(): void {
   observer?.disconnect();
   observer = new MutationObserver((mutations) => {
-    const hasMeaningfulChange = mutations.some((mutation) =>
-      [...mutation.addedNodes].some(
-        (node) => node instanceof HTMLElement && !isExtensionNode(node)
-      )
-    );
+    const hasMeaningfulChange = mutations.some(isMeaningfulMutation);
 
     if (hasMeaningfulChange) {
       debounceScan();
@@ -60,8 +56,45 @@ function setupMutationObserver(): void {
 
   observer.observe(document.documentElement, {
     childList: true,
-    subtree: true
+    subtree: true,
+    characterData: true,
+    characterDataOldValue: true
   });
+}
+
+function isMeaningfulMutation(mutation: MutationRecord): boolean {
+  if (mutation.type === "characterData") {
+    const parent = mutation.target.parentElement;
+    return Boolean(
+      parent &&
+        !isExtensionNode(parent) &&
+        (looksLikeProductEvidence(mutation.target.textContent) ||
+          looksLikeProductEvidence(mutation.oldValue))
+    );
+  }
+
+  return [...mutation.addedNodes].some((node) => {
+    if (node instanceof HTMLElement) {
+      return !isExtensionNode(node);
+    }
+
+    const parent = node.parentElement;
+    return Boolean(
+      node.nodeType === Node.TEXT_NODE &&
+        parent &&
+        !isExtensionNode(parent) &&
+        looksLikeProductEvidence(node.textContent)
+    );
+  });
+}
+
+function looksLikeProductEvidence(value: string | null): boolean {
+  return Boolean(
+    value &&
+      /(?:\$\s*\d|\d(?:[\d,.]*\d)?\s*¢|\b\d+(?:\.\d+)?\s*(?:fl\s*oz|oz|lb|lbs|count|ct|pack|roll|sheet|tablet|capsule|sq\s*ft)\b)/i.test(
+        value
+      )
+  );
 }
 
 function isExtensionNode(node: HTMLElement): boolean {

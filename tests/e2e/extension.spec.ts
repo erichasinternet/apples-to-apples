@@ -117,6 +117,19 @@ test("auto-runs the conservative generic extractor on an unfamiliar host", async
   await expect(page.locator("[data-ata-sort-control]")).toHaveCount(0);
 });
 
+test("rescans a product card when its price evidence hydrates as text", async ({ page }) => {
+  await page.goto("http://127.0.0.1:4173/dynamic-price-card.html");
+
+  const firstCard = page.locator("[data-item-id='dynamic-first']");
+  const secondCard = page.locator("[data-item-id='static-second']");
+
+  await expect(firstCard.locator("[data-ata-badge]")).toHaveText("67.4¢/lb");
+  await expect(secondCard.locator("[data-ata-badge]")).toHaveText("39.3¢/lb");
+  await page.waitForTimeout(1_800);
+  await expect(firstCard.locator("[data-ata-badge]")).toHaveCount(1);
+  await expect(secondCard.locator("[data-ata-badge]")).toHaveCount(1);
+});
+
 test("adds unit-price sort inside custom retailer sort menus without showing inline fallback", async ({ page }) => {
   await page.addInitScript(() => {
     window.addEventListener(

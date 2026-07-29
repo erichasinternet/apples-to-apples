@@ -4,7 +4,7 @@ Validation date: 2026-07-28
 
 ## Accepted Scope
 
-Version 0.2.0 is an unpacked Manifest V3 extension MVP for public,
+Version 0.2.1 is an unpacked Manifest V3 extension MVP for public,
 English-language HTTP(S) shopping pages that show USD prices.
 
 The MVP:
@@ -38,6 +38,7 @@ product-card boundary is unsupported or ambiguous.
 | Native select sorting | Sort and restore passed |
 | Generic custom menu | Delayed insertion, sorting, and unrelated-dropdown isolation passed |
 | Walmart-style menu | Full-row geometry, order, label, and functional sorting passed |
+| Dynamic first card | Price/unit text hydration triggers one badge without duplicates |
 | Page safety | No panel or standalone sort UI; add-to-cart remained clickable |
 
 The Walmart-style visual check used the built extension in headless Chromium at
@@ -107,5 +108,5 @@ accuracy claim or the larger universal-extraction goal.
 
 ## Release Decision
 
-Version 0.2.0 passes the deterministic unpacked-extension MVP gate. It does not
+Version 0.2.1 passes the deterministic unpacked-extension MVP gate. It does not
 complete the independently labeled dataset or learned unknown-site model gates.

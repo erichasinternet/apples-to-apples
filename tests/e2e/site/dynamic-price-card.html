@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dynamic shopping cards</title>
+    <style>
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      article {
+        min-height: 180px;
+        border: 1px solid #ddd;
+        padding: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="grid">
+        <article class="product-card" data-item-id="dynamic-first">
+          <a href="/ip/dynamic-first">
+            <img alt="Fresh Step cat litter" />
+            <h2 data-automation-id="product-title">
+              Fresh Step Odor Shield Multi Cat Clumping Litter, 22 lb
+            </h2>
+          </a>
+          <p data-automation-id="product-price"><span id="dynamic-price">Loading price</span></p>
+          <p id="dynamic-unit-price">Loading unit price</p>
+          <button>Add</button>
+        </article>
+
+        <article class="product-card" data-item-id="static-second">
+          <a href="/ip/static-second">
+            <img alt="Special Kitty cat litter" />
+            <h2 data-automation-id="product-title">
+              Special Kitty Clumping Clay Cat Litter, 20 lb
+            </h2>
+          </a>
+          <p data-automation-id="product-price">current price $7.86</p>
+          <p>39.3 ¢/lb</p>
+          <button>Add</button>
+        </article>
+      </div>
+    </main>
+
+    <script>
+      window.setTimeout(() => {
+        document.querySelector("#dynamic-price").firstChild.data = "current price $14.83";
+        document.querySelector("#dynamic-unit-price").firstChild.data = "67.4 ¢/lb";
+      }, 300);
+    </script>
+  </body>
+</html>
