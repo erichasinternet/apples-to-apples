@@ -19,22 +19,45 @@ const test = base.extend<{ context: BrowserContext }>({
   }
 });
 
-test("annotates a local shopping grid with unit-price badges and no floating panel", async ({ page }) => {
+test("adds quiet normalized prices, suppresses native duplicates, and marks a factual lowest item", async ({ page }) => {
   await page.goto("http://127.0.0.1:4173/");
 
+  await expect(page.locator("[data-ata-product]")).toHaveCount(6);
   await expect(page.locator("[data-ata-badge]")).toHaveCount(4);
-  await expect(page.locator("[data-ata-badge]").filter({ hasText: "22.9¢/lb" })).toBeVisible();
-  await expect(page.locator("[data-ata-badge]").filter({ hasText: "12¢/fl oz" })).toBeVisible();
-  await expect(page.locator("[data-ata-badge]").filter({ hasText: "22.9¢/lb" })).toHaveAttribute(
-    "data-ata-dimension",
-    "mass"
+
+  const premium = page.locator(".product-card", { hasText: "Premium Clay Cat Litter" });
+  const lowest = page.locator(".product-card", { hasText: "Special Kitty Non-Clumping" });
+  const budget = page.locator(".product-card", { hasText: "Everyday Clumping" });
+
+  await expect(premium).toHaveAttribute("data-ata-unit-price-source", "retailer");
+  await expect(premium.locator("[data-ata-badge]")).toHaveCount(0);
+  await expect(lowest.locator("[data-ata-badge]")).toHaveText("Lowest of 3");
+  await expect(lowest.locator("[data-ata-badge]")).not.toContainText("22.9¢/lb");
+  await expect(lowest.locator("[data-ata-badge]")).toHaveAttribute(
+    "aria-label",
+    "lowest of 3 comparable loaded items"
   );
-  await expect(page.locator("[data-ata-badge]").filter({ hasText: "22.9¢/lb" })).toHaveAttribute(
-    "data-ata-unit",
-    "lb"
-  );
+  await expect(budget.locator("[data-ata-badge]")).toHaveText("60¢/lb");
+
+  const inlineStyle = await budget.locator("[data-ata-badge]").evaluate((element) => {
+    const style = getComputedStyle(element);
+    return {
+      background: style.backgroundColor,
+      borderWidth: style.borderTopWidth,
+      borderRadius: style.borderRadius,
+      padding: style.padding
+    };
+  });
+  expect(inlineStyle).toEqual({
+    background: "rgba(0, 0, 0, 0)",
+    borderWidth: "0px",
+    borderRadius: "0px",
+    padding: "0px"
+  });
+
   await expect(page.locator("#ata-panel-root")).toHaveCount(0);
-  await expect(page.getByLabel("Sort by")).toContainText("Unit price: low to high");
+  await expect(page.getByLabel("Sort by")).toContainText("Unit price per lb: low to high");
+  await expect(page.getByLabel("Sort by")).toContainText("Unit price per fl oz: low to high");
   await expect(page.locator("[data-ata-sort-control]")).toHaveCount(0);
 });
 
@@ -77,14 +100,127 @@ test("sorts visible comparable cards by unit price and restores retailer order",
   const productTitles = page.locator(".product-card h2");
   await expect(productTitles.first()).toContainText("Premium Clay Cat Litter");
 
-  await page.getByLabel("Sort by").selectOption("ata-unit-price-asc");
+  await page.getByLabel("Sort by").selectOption("ata-unit-price-asc:mass:lb");
   await expect(productTitles.first()).toContainText("Special Kitty Non-Clumping");
 
   await page.getByLabel("Sort by").selectOption("relevance");
   await expect(productTitles.first()).toContainText("Premium Clay Cat Litter");
 });
 
-test("does not add a separate sort component when the retailer has no visible sort control", async ({ page }) => {
+test("keeps mixed comparison bases explicit and sorts only the selected basis", async ({ page }) => {
+  await page.goto("http://127.0.0.1:4173/");
+
+  const productTitles = page.locator(".product-card h2");
+  await page.getByLabel("Sort by").selectOption("ata-unit-price-asc:volume:fl_oz");
+
+  await expect(productTitles.nth(2)).toContainText("Fresh Linen Laundry Spray");
+  await expect(productTitles.first()).toContainText("Premium Clay Cat Litter");
+  await expect(productTitles.nth(1)).toContainText("Special Kitty Non-Clumping");
+});
+
+test("reports page status and performs the safe popup sort contract", async ({ context, page }) => {
+  await page.goto("http://127.0.0.1:4173/");
+  await expect(page.locator("[data-ata-product]")).toHaveCount(6);
+
+  const worker =
+    context.serviceWorkers()[0] ?? (await context.waitForEvent("serviceworker"));
+  const status = await worker.evaluate(async () => {
+    const tab = (await chrome.tabs.query({})).find((candidate) =>
+      candidate.url?.startsWith("http://127.0.0.1:4173/")
+    );
+    if (!tab?.id) {
+      throw new Error("Fixture tab not found");
+    }
+    return await chrome.tabs.sendMessage(tab.id, { type: "ATA_GET_PAGE_STATUS" });
+  });
+
+  expect(status).toMatchObject({
+    count: 6,
+    sortActive: false,
+    groups: expect.arrayContaining([
+      expect.objectContaining({
+        compareKey: "mass:lb",
+        count: 3,
+        canSort: true,
+        sortLabel: "Unit price per lb: low to high"
+      })
+    ])
+  });
+  await expect
+    .poll(async () =>
+      worker.evaluate(async () => {
+        const tab = (await chrome.tabs.query({})).find((candidate) =>
+          candidate.url?.startsWith("http://127.0.0.1:4173/")
+        );
+        return await chrome.action.getBadgeText({ tabId: tab!.id! });
+      })
+    )
+    .toBe("6");
+
+  const sortedStatus = await worker.evaluate(async () => {
+    const tab = (await chrome.tabs.query({})).find((candidate) =>
+      candidate.url?.startsWith("http://127.0.0.1:4173/")
+    );
+    return await chrome.tabs.sendMessage(tab!.id!, {
+      type: "ATA_SORT_PAGE",
+      compareKey: "mass:lb"
+    });
+  });
+
+  expect(sortedStatus).toMatchObject({
+    sortActive: true,
+    activeSortCompareKey: "mass:lb"
+  });
+  await expect(page.locator(".product-card h2").first()).toContainText(
+    "Special Kitty Non-Clumping"
+  );
+
+  await worker.evaluate(async () => {
+    const tab = (await chrome.tabs.query({})).find((candidate) =>
+      candidate.url?.startsWith("http://127.0.0.1:4173/")
+    );
+    return await chrome.tabs.sendMessage(tab!.id!, {
+      type: "ATA_RESTORE_PAGE_ORDER"
+    });
+  });
+  await expect(page.locator(".product-card h2").first()).toContainText(
+    "Premium Clay Cat Litter"
+  );
+});
+
+test("restores and detaches page UI when the extension is disabled", async ({ context, page }) => {
+  await page.goto("http://127.0.0.1:4173/");
+  await expect(page.locator("[data-ata-product]")).toHaveCount(6);
+  await page.getByLabel("Sort by").selectOption("ata-unit-price-asc:mass:lb");
+  await expect(page.locator(".product-card h2").first()).toContainText(
+    "Special Kitty Non-Clumping"
+  );
+
+  const worker =
+    context.serviceWorkers()[0] ?? (await context.waitForEvent("serviceworker"));
+  await worker.evaluate(async () => {
+    const key = "ata.preferences";
+    const stored = await chrome.storage.sync.get(key);
+    await chrome.storage.sync.set({
+      [key]: {
+        ...stored[key],
+        enabled: false
+      }
+    });
+    const tab = (await chrome.tabs.query({})).find((candidate) =>
+      candidate.url?.startsWith("http://127.0.0.1:4173/")
+    );
+    await chrome.tabs.sendMessage(tab!.id!, { type: "ATA_SCAN_NOW" });
+  });
+
+  await expect(page.locator(".product-card h2").first()).toContainText(
+    "Premium Clay Cat Litter"
+  );
+  await expect(page.locator("[data-ata-product], [data-ata-badge]")).toHaveCount(0);
+  await expect(page.getByLabel("Sort by").locator("option[data-ata-sort-option]")).toHaveCount(0);
+});
+
+test("uses popup sorting when the retailer has no visible sort control", async ({ context, page }) => {
   await page.goto("http://127.0.0.1:4173/no-sort.html");
 
   const hiddenSort = page.locator("select[aria-label='Sort by']");
@@ -95,6 +231,20 @@ test("does not add a separate sort component when the retailer has no visible so
   await page.waitForTimeout(1800);
   await expect(page.locator("[data-ata-sort-control]")).toHaveCount(0);
   await expect(productTitles.first()).toContainText("Premium Clay Cat Litter");
+
+  const worker =
+    context.serviceWorkers()[0] ?? (await context.waitForEvent("serviceworker"));
+  const status = await worker.evaluate(async () => {
+    const tab = (await chrome.tabs.query({})).find((candidate) =>
+      candidate.url?.includes("/no-sort.html")
+    );
+    return await chrome.tabs.sendMessage(tab!.id!, { type: "ATA_GET_PAGE_STATUS" });
+  });
+  expect(status.groups).toEqual(
+    expect.arrayContaining([
+      expect.objectContaining({ compareKey: "mass:lb", count: 2, canSort: true })
+    ])
+  );
 });
 
 test("auto-runs the conservative generic extractor on an unfamiliar host", async ({ page }) => {
@@ -108,9 +258,15 @@ test("auto-runs the conservative generic extractor on an unfamiliar host", async
 
   await page.goto("https://unknown-shop.example/search?q=household");
 
-  await expect(page.locator("[data-ata-badge]")).toHaveCount(3);
-  await expect(page.locator("[data-ata-badge][data-ata-dimension='volume']")).toBeVisible();
+  await expect(page.locator("[data-ata-product]")).toHaveCount(3);
+  await expect(page.locator("[data-ata-badge]")).toHaveCount(1);
   await expect(page.locator("[data-ata-badge][data-ata-dimension='area']")).toBeVisible();
+  await expect(
+    page.locator("article", { hasText: "FreshWash" }).locator("[data-ata-badge]")
+  ).toHaveCount(0);
+  await expect(
+    page.locator("article", { hasText: "FreshWash" })
+  ).toHaveAttribute("data-ata-unit-price-source", "retailer");
   await expect(
     page.locator("article", { hasText: "Snack variety box" }).locator("[data-ata-badge]"),
   ).toHaveCount(0);
@@ -123,11 +279,14 @@ test("rescans a product card when its price evidence hydrates as text", async ({
   const firstCard = page.locator("[data-item-id='dynamic-first']");
   const secondCard = page.locator("[data-item-id='static-second']");
 
-  await expect(firstCard.locator("[data-ata-badge]")).toHaveText("67.4¢/lb");
-  await expect(secondCard.locator("[data-ata-badge]")).toHaveText("39.3¢/lb");
+  await expect(firstCard).toHaveAttribute("data-ata-cents-per-unit", "67.4");
+  await expect(secondCard).toHaveAttribute("data-ata-cents-per-unit", "39.3");
+  await expect(firstCard.locator("[data-ata-badge]")).toHaveCount(0);
+  await expect(secondCard.locator("[data-ata-badge]")).toHaveCount(0);
+  await expect(firstCard.locator("#dynamic-unit-price")).toHaveText("67.4 ¢/lb");
   await page.waitForTimeout(1_800);
-  await expect(firstCard.locator("[data-ata-badge]")).toHaveCount(1);
-  await expect(secondCard.locator("[data-ata-badge]")).toHaveCount(1);
+  await expect(firstCard.locator("[data-ata-badge]")).toHaveCount(0);
+  await expect(secondCard.locator("[data-ata-badge]")).toHaveCount(0);
 });
 
 test("adds unit-price sort inside custom retailer sort menus without showing inline fallback", async ({ page }) => {
@@ -163,11 +322,12 @@ test("adds unit-price sort inside custom retailer sort menus without showing inl
   await page.getByRole("button", { name: "Sort by: Relevance" }).click();
   const unitSortOption = page.locator("[data-ata-custom-sort-option]");
   await expect(unitSortOption).toBeVisible();
-  await expect(unitSortOption).toHaveText("Unit price: low to high");
+  await expect(unitSortOption).toHaveText("Unit price per lb: low to high");
   await expect(page.locator(".filter-dropdown [data-ata-custom-sort-option]")).toHaveCount(0);
 
   await expect(productTitles.first()).toContainText("Premium Clay Cat Litter");
-  await unitSortOption.click();
+  await unitSortOption.focus();
+  await page.keyboard.press("Enter");
   await expect(productTitles.first()).toContainText("Special Kitty Non-Clumping");
 });
 
@@ -183,8 +343,8 @@ test("adds unit-price sort to Walmart-style label-only sort popovers", async ({ 
   const lastRetailerSortOption = page.locator(".sort-row").filter({ hasText: "Icon Sort by New Arrivals" });
   await expect(unitSortOption).toBeVisible();
   await expect(unitSortOption).toHaveClass(/ata-custom-sort-option/);
-  await expect(unitSortOption.locator("label")).toHaveText("Unit price: low to high");
-  await expect(unitSortOption).toHaveAttribute("title", "Unit price: low to high");
+  await expect(unitSortOption.locator("label")).toHaveText("Unit price per lb: low to high");
+  await expect(unitSortOption).toHaveAttribute("title", "Unit price per lb: low to high");
   await expect(unitSortOption).toHaveJSProperty("tagName", "DIV");
   await expect(lastRetailerSortOption).toHaveText("Icon Sort by New Arrivals");
   await expect(lastRetailerSortOption).not.toContainText("Unit price");

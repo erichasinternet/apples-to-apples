@@ -271,7 +271,32 @@ function extractScopedText(element: HTMLElement, selectors: readonly string[]): 
 }
 
 function getVisibleText(element: Element): string {
-  return (element as HTMLElement).innerText?.replace(/\s+/g, " ").trim() || element.textContent?.replace(/\s+/g, " ").trim() || "";
+  if (
+    element.matches("[data-ata-badge], [data-ata-custom-sort-option], [data-ata-sort-control]")
+  ) {
+    return "";
+  }
+
+  if (
+    !element.querySelector(
+      "[data-ata-badge], [data-ata-custom-sort-option], [data-ata-sort-control]"
+    )
+  ) {
+    return (
+      (element as HTMLElement).innerText?.replace(/\s+/g, " ").trim() ||
+      element.textContent?.replace(/\s+/g, " ").trim() ||
+      ""
+    );
+  }
+
+  const clone = element.cloneNode(true) as Element;
+  for (const extensionNode of clone.querySelectorAll(
+    "[data-ata-badge], [data-ata-custom-sort-option], [data-ata-sort-control]"
+  )) {
+    extensionNode.remove();
+  }
+
+  return clone.textContent?.replace(/\s+/g, " ").trim() || "";
 }
 
 function raiseTitleQuantityIfFromTitle(quantity: Quantity | undefined, title: string): Quantity | undefined {

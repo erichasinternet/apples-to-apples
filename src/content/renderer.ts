@@ -1,6 +1,15 @@
 import type { NormalizedPrice, UserPreferences } from "../core/types";
+import {
+  buildComparisonGroups,
+  buildLowestSignals,
+  formatAccessibleUnitPrice,
+  isMatchingNativeUnitPrice,
+  type ComparisonGroup
+} from "./comparison";
 import type { DomProduct } from "./extractor";
 import {
+  canSortByUnitPrice,
+  getActiveSortCompareKey,
   isUnitPriceSortActive,
   restoreUnitPriceSort,
   sortByUnitPrice
@@ -9,11 +18,10 @@ import {
 const STYLE_ID = "ata-content-style";
 const SORT_CONTROL_SELECTOR = "[data-ata-sort-control]";
 const CUSTOM_SORT_OPTION_SELECTOR = "[data-ata-custom-sort-option]";
-const SORT_OPTION_VALUE = "ata-unit-price-asc";
+const SORT_OPTION_PREFIX = "ata-unit-price-asc:";
 
 type CustomSortTrigger = HTMLElement & {
   __ataSortProducts?: DomProduct[];
-  __ataSortPreferences?: UserPreferences;
   __ataSortMenuActivated?: boolean;
   __ataSortClickHandler?: EventListener;
   __ataSortKeyHandler?: EventListener;
@@ -28,13 +36,42 @@ type CustomSortOption = HTMLElement & {
 export function renderProducts(products: DomProduct[], preferences: UserPreferences): void {
   injectStyles(document);
   removeLegacyUi();
-  renderBadges(products);
-  renderSortControls(products, preferences);
+  renderBadges(products, preferences);
+  renderSortControls(products);
 }
 
-function renderBadges(products: DomProduct[]): void {
+function renderBadges(products: DomProduct[], preferences: UserPreferences): void {
+  for (const staleProduct of document.querySelectorAll<HTMLElement>("[data-ata-product]")) {
+    delete staleProduct.dataset.ataProduct;
+    delete staleProduct.dataset.ataCentsPerUnit;
+    delete staleProduct.dataset.ataUnit;
+    delete staleProduct.dataset.ataDimension;
+    delete staleProduct.dataset.ataCompareKey;
+    delete staleProduct.dataset.ataUnitPriceSource;
+  }
+
+  const lowestSignals = preferences.showLowestSignal
+    ? buildLowestSignals(products)
+    : new Map<string, number>();
+  const rendered = new Set<HTMLElement>();
+
   for (const product of products) {
     if (!product.normalized) {
+      continue;
+    }
+
+    const lowestCount = lowestSignals.get(product.id);
+    const isLowest = lowestCount !== undefined;
+    const duplicate = isMatchingNativeUnitPrice(product);
+    product.element.dataset.ataProduct = "true";
+    product.element.dataset.ataCentsPerUnit = String(product.normalized.centsPerUnit);
+    product.element.dataset.ataUnit = product.normalized.unit;
+    product.element.dataset.ataDimension = product.normalized.dimension;
+    product.element.dataset.ataCompareKey = product.normalized.compareKey;
+    product.element.dataset.ataUnitPriceSource = duplicate ? "retailer" : "normalized";
+
+    if (duplicate && !isLowest) {
+      product.element.querySelector<HTMLElement>("[data-ata-badge]")?.remove();
       continue;
     }
 
@@ -43,38 +80,75 @@ function renderBadges(products: DomProduct[]): void {
     badge.dataset.ataCentsPerUnit = String(product.normalized.centsPerUnit);
     badge.dataset.ataUnit = product.normalized.unit;
     badge.dataset.ataDimension = product.normalized.dimension;
-    badge.className = "ata-badge";
-    badge.title = buildTitle(product.normalized);
-    badge.innerHTML = badgeMarkup(product.normalized);
+    badge.dataset.ataCompareKey = product.normalized.compareKey;
+    badge.dataset.ataSource = duplicate ? "retailer" : "normalized";
+    badge.toggleAttribute("data-ata-lowest", isLowest);
+    badge.className = duplicate
+      ? "ata-unit-price ata-unit-price--context-only"
+      : "ata-unit-price";
+    badge.title = buildTitle(product.normalized, duplicate, isLowest, lowestCount);
+    badge.setAttribute(
+      "aria-label",
+      buildAccessibleLabel(product.normalized, duplicate, isLowest, lowestCount)
+    );
+    badge.innerHTML = badgeMarkup(
+      product.normalized,
+      duplicate,
+      isLowest,
+      lowestCount
+    );
+    rendered.add(badge);
 
     if (!badge.isConnected) {
-      product.insertionTarget.insertAdjacentElement("afterend", badge);
+      const nativeTarget = duplicate ? findNativeUnitPriceElement(product) : undefined;
+      if (nativeTarget) {
+        nativeTarget.append(badge);
+      } else {
+        product.insertionTarget.insertAdjacentElement("afterend", badge);
+      }
+    }
+  }
+
+  for (const staleBadge of document.querySelectorAll<HTMLElement>("[data-ata-badge]")) {
+    if (!rendered.has(staleBadge)) {
+      staleBadge.remove();
     }
   }
 }
 
-function renderSortControls(products: DomProduct[], preferences: UserPreferences): void {
+function renderSortControls(products: DomProduct[]): void {
   removeInlineSortControls();
+  const groups = buildComparisonGroups(products, 2).filter((group) =>
+    canSortByUnitPrice(products, group.compareKey)
+  );
 
-  if (enhanceNativeSortSelect(products, preferences)) {
+  if (groups.length === 0) {
     return;
   }
 
-  enhanceCustomSortDropdown(products, preferences);
+  if (enhanceNativeSortSelect(products, groups)) {
+    return;
+  }
+
+  enhanceCustomSortDropdown(products);
 }
 
-function enhanceNativeSortSelect(products: DomProduct[], preferences: UserPreferences): boolean {
+function enhanceNativeSortSelect(products: DomProduct[], groups: ComparisonGroup[]): boolean {
   const select = findSortSelect();
   if (!select) {
     return false;
   }
 
-  let option = select.querySelector<HTMLOptionElement>(`option[value="${SORT_OPTION_VALUE}"]`);
-  if (!option) {
-    option = document.createElement("option");
-    option.value = SORT_OPTION_VALUE;
-    option.textContent = "Unit price: low to high";
+  for (const staleOption of select.querySelectorAll("option[data-ata-sort-option]")) {
+    staleOption.remove();
+  }
+
+  for (const group of groups) {
+    const option = document.createElement("option");
+    option.value = sortOptionValue(group.compareKey);
+    option.textContent = group.sortLabel;
     option.dataset.ataSortOption = "true";
+    option.dataset.ataCompareKey = group.compareKey;
     select.append(option);
   }
 
@@ -87,8 +161,8 @@ function enhanceNativeSortSelect(products: DomProduct[], preferences: UserPrefer
   }
 
   const handler: EventListener = () => {
-    if (select.value === SORT_OPTION_VALUE) {
-      sortByUnitPrice(products, preferences);
+    if (select.value.startsWith(SORT_OPTION_PREFIX)) {
+      sortByUnitPrice(products, parseSortOptionValue(select.value));
       return;
     }
 
@@ -102,14 +176,15 @@ function enhanceNativeSortSelect(products: DomProduct[], preferences: UserPrefer
   (select as HTMLSelectElement & { __ataSortHandler?: EventListener }).__ataSortHandler = handler;
   select.addEventListener("change", handler);
 
-  if (isUnitPriceSortActive()) {
-    select.value = SORT_OPTION_VALUE;
+  const activeCompareKey = getActiveSortCompareKey();
+  if (activeCompareKey) {
+    select.value = sortOptionValue(activeCompareKey);
   }
 
   return true;
 }
 
-function enhanceCustomSortDropdown(products: DomProduct[], preferences: UserPreferences): boolean {
+function enhanceCustomSortDropdown(products: DomProduct[]): boolean {
   const trigger = findCustomSortTrigger();
   if (!trigger) {
     return false;
@@ -118,7 +193,6 @@ function enhanceCustomSortDropdown(products: DomProduct[], preferences: UserPref
   const enhancedTrigger = trigger as CustomSortTrigger;
   enhancedTrigger.dataset.ataCustomSortEnhanced = "true";
   enhancedTrigger.__ataSortProducts = products;
-  enhancedTrigger.__ataSortPreferences = preferences;
 
   if (!enhancedTrigger.__ataSortClickHandler) {
     enhancedTrigger.__ataSortClickHandler = () => {
@@ -225,29 +299,65 @@ function scoreCustomSortTrigger(element: HTMLElement): number {
 function insertCustomSortMenuOption(trigger: CustomSortTrigger): boolean {
   const menu = findOpenCustomSortMenu(trigger);
   const products = trigger.__ataSortProducts;
-  const preferences = trigger.__ataSortPreferences;
 
-  if (!menu || !products || !preferences) {
+  if (!menu || !products) {
     return false;
   }
 
-  const option =
-    (menu.querySelector<CustomSortOption>(CUSTOM_SORT_OPTION_SELECTOR) as CustomSortOption | null) ??
-    createCustomSortMenuOption(menu, trigger);
+  const groups = buildComparisonGroups(products, 2).filter((group) =>
+    canSortByUnitPrice(products, group.compareKey)
+  );
+  if (groups.length === 0) {
+    return false;
+  }
 
+  const activeCompareKey = getActiveSortCompareKey();
+  const activeKeys = new Set(groups.map((group) => group.compareKey));
+  for (const stale of menu.querySelectorAll<HTMLElement>(CUSTOM_SORT_OPTION_SELECTOR)) {
+    if (!stale.dataset.ataCompareKey || !activeKeys.has(stale.dataset.ataCompareKey)) {
+      stale.remove();
+    }
+  }
+
+  for (const group of [...groups].reverse()) {
+    const option =
+      (menu.querySelector<CustomSortOption>(
+        `${CUSTOM_SORT_OPTION_SELECTOR}[data-ata-compare-key="${escapeSelectorValue(group.compareKey)}"]`
+      ) as CustomSortOption | null) ??
+      createCustomSortMenuOption(menu, trigger, group);
+
+    configureCustomSortOption(option, trigger, products, group, activeCompareKey);
+  }
+
+  return true;
+}
+
+function configureCustomSortOption(
+  option: CustomSortOption,
+  trigger: CustomSortTrigger,
+  products: DomProduct[],
+  group: ComparisonGroup,
+  activeCompareKey: string | undefined
+): void {
   if (option.__ataSelectHandler) {
     option.removeEventListener("pointerdown", option.__ataSelectHandler, { capture: true });
     option.removeEventListener("mousedown", option.__ataSelectHandler, { capture: true });
     option.removeEventListener("click", option.__ataSelectHandler, { capture: true });
   }
 
+  option.setAttribute("aria-selected", String(activeCompareKey === group.compareKey));
   option.__ataSelectHandler = (event) => {
     event.preventDefault();
     event.stopPropagation();
     event.stopImmediatePropagation();
-    sortByUnitPrice(products, preferences);
-    option.setAttribute("aria-selected", "true");
-    trigger.setAttribute("data-ata-unit-sort-active", "true");
+    sortByUnitPrice(products, group.compareKey);
+    for (const sibling of option.parentElement?.querySelectorAll(CUSTOM_SORT_OPTION_SELECTOR) ?? []) {
+      sibling.setAttribute(
+        "aria-selected",
+        String((sibling as HTMLElement).dataset.ataCompareKey === group.compareKey)
+      );
+    }
+    trigger.dataset.ataUnitSortActive = group.compareKey;
   };
   option.addEventListener("pointerdown", option.__ataSelectHandler, { capture: true });
   option.addEventListener("mousedown", option.__ataSelectHandler, { capture: true });
@@ -264,8 +374,6 @@ function insertCustomSortMenuOption(trigger: CustomSortTrigger): boolean {
     };
     option.addEventListener("keydown", option.__ataKeyHandler);
   }
-
-  return true;
 }
 
 function findOpenCustomSortMenu(trigger: HTMLElement): HTMLElement | undefined {
@@ -349,7 +457,11 @@ function isNearTrigger(element: HTMLElement, trigger: HTMLElement): boolean {
   return verticalDistance >= -12 && verticalDistance <= 520 && horizontalDistance <= 520;
 }
 
-function createCustomSortMenuOption(menu: HTMLElement, trigger: HTMLElement): CustomSortOption {
+function createCustomSortMenuOption(
+  menu: HTMLElement,
+  trigger: HTMLElement,
+  group: ComparisonGroup
+): CustomSortOption {
   const referenceOption = findLastMenuOption(menu);
   const referenceRow = referenceOption?.tagName === "LABEL" ? findMenuOptionRow(referenceOption, menu) : undefined;
   const option = referenceOption
@@ -357,10 +469,11 @@ function createCustomSortMenuOption(menu: HTMLElement, trigger: HTMLElement): Cu
     : createFallbackSortMenuOption(menu);
 
   option.dataset.ataCustomSortOption = "true";
+  option.dataset.ataCompareKey = group.compareKey;
   option.classList.add("ata-custom-sort-option");
-  setCustomSortOptionText(option);
-  option.title = "Unit price: low to high";
-  option.setAttribute("aria-label", "Unit price: low to high");
+  setCustomSortOptionText(option, group.sortLabel);
+  option.title = group.sortLabel;
+  option.setAttribute("aria-label", group.sortLabel);
   option.setAttribute("role", menu.getAttribute("role") === "listbox" ? "option" : "menuitem");
   option.setAttribute("aria-selected", "false");
   option.tabIndex = 0;
@@ -414,14 +527,14 @@ function resetClonedMenuNode(element: HTMLElement): void {
   element.removeAttribute("data-automation-id");
 }
 
-function setCustomSortOptionText(option: HTMLElement): void {
+function setCustomSortOptionText(option: HTMLElement, text: string): void {
   const label = option.matches("label") ? option : option.querySelector<HTMLElement>("label");
   if (label) {
-    label.textContent = "Unit price: low to high";
+    label.textContent = text;
     return;
   }
 
-  option.textContent = "Unit price: low to high";
+  option.textContent = text;
 }
 
 function createFallbackSortMenuOption(menu: HTMLElement): HTMLElement {
@@ -429,7 +542,7 @@ function createFallbackSortMenuOption(menu: HTMLElement): HTMLElement {
   option.type = "button";
   option.dataset.ataCustomSortOption = "true";
   option.className = "ata-custom-sort-option ata-custom-sort-option--fallback";
-  option.textContent = "Unit price: low to high";
+  option.textContent = "Unit price";
   option.setAttribute("role", menu.getAttribute("role") === "listbox" ? "option" : "menuitem");
   return option;
 }
@@ -592,15 +705,52 @@ function removeInlineSortControls(): void {
   }
 }
 
-function badgeMarkup(normalized: NormalizedPrice): string {
-  return `
-    <span class="ata-badge-main">${escapeHtml(normalized.display)}</span>
-  `;
+function badgeMarkup(
+  normalized: NormalizedPrice,
+  duplicate: boolean,
+  isLowest: boolean,
+  groupCount: number | undefined
+): string {
+  const value = duplicate
+    ? ""
+    : `<span class="ata-unit-price-value">${escapeHtml(normalized.display)}</span>`;
+  const lowest =
+    isLowest && groupCount
+      ? `<span class="ata-unit-price-context">Lowest of ${groupCount}</span>`
+      : "";
+
+  return `${value}${lowest}`;
 }
 
-function buildTitle(normalized: NormalizedPrice): string {
-  const warnings = normalized.warnings.length > 0 ? ` Warnings: ${normalized.warnings.join(" ")}` : "";
-  return `${normalized.explanation}.${warnings}`;
+function buildTitle(
+  normalized: NormalizedPrice,
+  duplicate: boolean,
+  isLowest: boolean,
+  groupCount: number | undefined
+): string {
+  const parts = [duplicate ? "Retailer unit price already uses the selected basis" : normalized.explanation];
+  if (isLowest && groupCount) {
+    parts.push(`Lowest unit price among ${groupCount} comparable loaded items`);
+  }
+
+  return `${parts.join(". ")}.`;
+}
+
+function buildAccessibleLabel(
+  normalized: NormalizedPrice,
+  duplicate: boolean,
+  isLowest: boolean,
+  groupCount: number | undefined
+): string {
+  const parts = duplicate
+    ? []
+    : [formatAccessibleUnitPrice(normalized.centsPerUnit, normalized.unit)];
+
+  if (isLowest && groupCount) {
+    parts.push(`lowest of ${groupCount} comparable loaded items`);
+  }
+
+  return parts.join(", ");
 }
 
 export function removeLegacyUi(): void {
@@ -617,6 +767,52 @@ export function removeLegacyUi(): void {
   }
 }
 
+export function clearRenderedProducts(): void {
+  for (const element of document.querySelectorAll(
+    "[data-ata-badge], option[data-ata-sort-option], [data-ata-custom-sort-option], [data-ata-sort-control]"
+  )) {
+    element.remove();
+  }
+
+  for (const product of document.querySelectorAll<HTMLElement>("[data-ata-product]")) {
+    delete product.dataset.ataProduct;
+    delete product.dataset.ataCentsPerUnit;
+    delete product.dataset.ataUnit;
+    delete product.dataset.ataDimension;
+    delete product.dataset.ataCompareKey;
+    delete product.dataset.ataUnitPriceSource;
+  }
+
+  for (const select of document.querySelectorAll<HTMLSelectElement>("[data-ata-sort-enhanced]")) {
+    const enhancedSelect = select as HTMLSelectElement & { __ataSortHandler?: EventListener };
+    if (enhancedSelect.__ataSortHandler) {
+      select.removeEventListener("change", enhancedSelect.__ataSortHandler);
+      delete enhancedSelect.__ataSortHandler;
+    }
+    delete select.dataset.ataSortEnhanced;
+    delete select.dataset.ataPreviousSortValue;
+  }
+
+  for (const element of document.querySelectorAll<HTMLElement>("[data-ata-custom-sort-enhanced]")) {
+    const trigger = element as CustomSortTrigger;
+    if (trigger.__ataSortClickHandler) {
+      trigger.removeEventListener("click", trigger.__ataSortClickHandler);
+    }
+    if (trigger.__ataSortKeyHandler) {
+      trigger.removeEventListener("keydown", trigger.__ataSortKeyHandler);
+    }
+    trigger.__ataSortObserver?.disconnect();
+    delete trigger.__ataSortProducts;
+    delete trigger.__ataSortMenuActivated;
+    delete trigger.__ataSortClickHandler;
+    delete trigger.__ataSortKeyHandler;
+    delete trigger.__ataSortObserver;
+    delete trigger.dataset.ataCustomSortEnhanced;
+    delete trigger.dataset.ataCustomSortMenuReady;
+    delete trigger.dataset.ataUnitSortActive;
+  }
+}
+
 function injectStyles(document: Document): void {
   if (document.getElementById(STYLE_ID)) {
     return;
@@ -625,40 +821,47 @@ function injectStyles(document: Document): void {
   const style = document.createElement("style");
   style.id = STYLE_ID;
   style.textContent = `
-    .ata-badge,
+    .ata-unit-price,
     .ata-custom-sort-option {
-      --receipt-paper: #fbfaf6;
-      --shelf-ink: #1f241f;
-      --muted-ink: #627064;
-      --tag-line: #d9d4ca;
-      --ledger-green: #236652;
-      --coupon-amber: #8a5a08;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --ata-ledger-green: #236652;
       box-sizing: border-box;
     }
 
-    .ata-badge {
-      position: relative;
-      display: inline-grid;
-      grid-template-columns: auto auto;
+    .ata-unit-price {
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 5px;
-      width: fit-content;
+      gap: 0 6px;
+      width: 100%;
       max-width: 100%;
-      margin: 5px 0;
-      padding: 5px 7px;
-      border: 1px solid var(--tag-line);
-      border-radius: 6px;
-      background: var(--receipt-paper);
-      color: var(--shelf-ink);
-      font-size: 12px;
-      line-height: 1.15;
-      z-index: 1;
+      margin: 3px 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: inherit;
+      font-family: inherit;
+      font-size: max(12px, 0.78em);
+      line-height: 1.3;
+      font-variant-numeric: tabular-nums;
     }
 
-    .ata-badge-main {
-      font-weight: 760;
+    .ata-unit-price-value {
+      font-weight: 700;
       white-space: nowrap;
+    }
+
+    .ata-unit-price-context {
+      color: inherit;
+      font-weight: 650;
+      opacity: 0.72;
+      white-space: nowrap;
+    }
+
+    .ata-unit-price--context-only {
+      display: inline-flex;
+      width: auto;
+      margin-left: 6px;
     }
 
     .ata-custom-sort-option {
@@ -690,7 +893,7 @@ function injectStyles(document: Document): void {
       border: 0;
       border-radius: 0;
       background: #fffdfa;
-      color: var(--ledger-green);
+      color: var(--ata-ledger-green);
       font-size: 14px;
       font-weight: 720;
       line-height: 1.2;
@@ -699,11 +902,43 @@ function injectStyles(document: Document): void {
 
     .ata-custom-sort-option--fallback:hover,
     .ata-custom-sort-option--fallback:focus-visible {
-      background: var(--receipt-paper);
+      background: #fbfaf6;
       outline: none;
     }
   `;
   document.head.append(style);
+}
+
+function sortOptionValue(compareKey: string): string {
+  return `${SORT_OPTION_PREFIX}${compareKey}`;
+}
+
+function parseSortOptionValue(value: string): string {
+  return value.slice(SORT_OPTION_PREFIX.length);
+}
+
+function escapeSelectorValue(value: string): string {
+  return value.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+}
+
+function findNativeUnitPriceElement(product: DomProduct): HTMLElement | undefined {
+  const sourceText = normalizeVisibleText(product.nativeUnitPrice?.sourceText ?? "");
+  if (!sourceText) {
+    return undefined;
+  }
+
+  return [...product.element.querySelectorAll<HTMLElement>("span, p, div")]
+    .filter((element) => !element.closest("[data-ata-badge]"))
+    .map((element) => ({
+      element,
+      text: normalizeVisibleText(element.innerText || element.textContent || "")
+    }))
+    .filter((candidate) => candidate.text === sourceText)
+    .sort((left, right) => left.element.children.length - right.element.children.length)[0]?.element;
+}
+
+function normalizeVisibleText(value: string): string {
+  return value.replace(/\s+/g, " ").trim().toLowerCase();
 }
 
 function escapeHtml(value: string): string {

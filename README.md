@@ -7,8 +7,10 @@ Chrome extension and extraction research project for comparing shopping-unit pri
 - Detects product cards on supported shopping sites and generic shopping grids.
 - Extracts visible price, native unit price, package size, and multipack evidence.
 - Normalizes within compatible dimensions only: weight, volume, count, area, and length.
-- Renders compact unit-price badges on the page.
-- Adds `Unit price: low to high` to native and custom sort dropdowns when available.
+- Leaves a matching retailer unit price untouched and adds a plain inline value only when normalization adds information.
+- Marks `Lowest of N` only when at least three items in the same loaded product collection establish that fact.
+- Adds basis-specific options such as `Unit price per lb: low to high` to verified retailer sort menus.
+- Provides loaded-page status, safe sort/restore controls, rescan, and preferences in the extension popup.
 - Auto-runs the conservative generic extractor on HTTP(S) pages without requiring a retailer-specific hostname.
 
 The extension fails conservatively. If it cannot prove the unit relationship, it skips the comparison instead of guessing.
@@ -29,7 +31,7 @@ with a fixed hostname allowlist.
 - `src/content`: DOM extraction, site adapters, structured data fallback, and page renderer.
 - `src/learning`: site-independent page observations, model contracts, and deterministic evidence validation.
 - `src/extension`: MV3 service worker and shared preference storage.
-- `src/popup`: popup UI for scanning the active tab.
+- `src/popup`: active-page status and safe loaded-item sort controls.
 - `src/options`: preferences UI.
 - `tests/unit`: parser and fixture tests.
 - `tests/e2e`: Playwright extension tests and optional live-site smoke tests.
@@ -85,6 +87,9 @@ checkpoint results, cost controls, and promotion gates.
 The [MVP validation record](docs/mvp-validation.md) defines the accepted
 deterministic scope, exact test results, live-site availability, and remaining
 learned-model gates.
+The [UX research and product design](docs/ux-research-and-product-design.md)
+defines the evidence-backed interaction model, information hierarchy,
+accessibility requirements, and usability gates for the next UI iteration.
 
 ## Repository Gates
 
@@ -117,8 +122,8 @@ The quality bar is layered:
 
 - Unit tests cover parsing examples such as `$1.76/lb`, `9.2 ¢/oz`, `12 x 16.9 fl oz`, `4 Pack of 25 count`, and `612 sq ft`.
 - Fixture tests cover stable Walmart-style and generic product grids.
-- Playwright tests load the built MV3 extension into Chromium and verify badge rendering, native/custom sort integration, absence of a separate fallback sort component, and that add-to-cart controls remain clickable.
-- Sort tests verify that comparable cards can be reordered by unit price and restored to the retailer's original order.
+- Playwright tests load the built MV3 extension into Chromium and verify duplicate suppression, inline geometry, native/custom sort integration, popup messaging, action-badge status, keyboard use, and unobstructed add-to-cart controls.
+- Sort tests verify basis-specific ordering, mixed-unit isolation, structural safety, and restoration of the retailer's original order.
 - Live smoke tests check a small rotating retailer matrix when explicitly enabled.
 - Unknown-site experiments measure card discovery and evidence-grounded fact extraction separately on domains held out from training.
 - Training export accepts only development domains with complete bounded-region coverage, field-level evidence, adjudication, and two reviewers.
@@ -126,12 +131,13 @@ The quality bar is layered:
 
 ## Design Principles
 
-The UI is intentionally compact:
+The UI is intentionally quiet:
 
-- Badges behave like shelf tags.
-- The extension uses the retailer's sort dropdown when it can identify a visible native or custom sort control.
-- If a retailer has no usable sort control, the extension does not add a separate sort component.
-- No quality labels are shown in the shopping UI.
+- Normalized values inherit the retailer's typography and have no box, pill, warning icon, or confidence label.
+- Matching native values are not duplicated.
+- `Lowest of N` states its loaded-page scope.
+- The extension uses a verified retailer sort menu when available and the user-invoked popup otherwise.
+- The popup reports status and controls only; it does not repeat the product list.
 
 ## License
 

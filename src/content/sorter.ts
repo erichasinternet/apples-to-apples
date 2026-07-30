@@ -5,6 +5,7 @@ export interface UnitSortResult {
   state: "sorted" | "restored" | "unavailable";
   changedCount: number;
   groupCount: number;
+  compareKey?: string;
   message: string;
 }
 
@@ -15,10 +16,12 @@ interface SortSnapshot {
 
 interface ActiveSortState {
   snapshots: SortSnapshot[];
+  compareKey: string;
   message: string;
 }
 
 type SortableProduct = DomProduct & { normalized: NormalizedPrice };
+
 interface SortItem {
   product: SortableProduct;
   element: HTMLElement;
@@ -27,30 +30,48 @@ interface SortItem {
 
 let activeSortState: ActiveSortState | undefined;
 
-export function toggleUnitPriceSort(products: DomProduct[], preferences: UserPreferences): UnitSortResult {
-  if (activeSortState) {
+export function toggleUnitPriceSort(
+  products: DomProduct[],
+  basis: UserPreferences | string
+): UnitSortResult {
+  const compareKey = resolveCompareKey(products, basis);
+  if (compareKey && activeSortState?.compareKey === compareKey) {
     return restoreUnitPriceSort();
   }
 
-  return sortByUnitPrice(products, preferences);
+  return sortByUnitPrice(products, basis);
 }
 
-export function sortByUnitPrice(products: DomProduct[], preferences: UserPreferences): UnitSortResult {
+export function sortByUnitPrice(
+  products: DomProduct[],
+  basis: UserPreferences | string
+): UnitSortResult {
   discardDetachedSortState();
+  const compareKey = resolveCompareKey(products, basis);
 
-  if (activeSortState) {
+  if (!compareKey) {
+    return unavailableResult();
+  }
+
+  if (activeSortState?.compareKey === compareKey) {
     return {
       state: "sorted",
       changedCount: 0,
-      groupCount: 0,
+      groupCount: activeSortState.snapshots.length,
+      compareKey,
       message: activeSortState.message
     };
   }
 
-  const result = applyUnitPriceSort(products, preferences);
+  if (activeSortState) {
+    restoreUnitPriceSort();
+  }
+
+  const result = applyUnitPriceSort(products, compareKey);
   if (result.state === "sorted") {
     activeSortState = {
       snapshots: result.snapshots,
+      compareKey,
       message: result.message
     };
   }
@@ -59,6 +80,7 @@ export function sortByUnitPrice(products: DomProduct[], preferences: UserPrefere
     state: result.state,
     changedCount: result.changedCount,
     groupCount: result.groupCount,
+    compareKey,
     message: result.message
   };
 }
@@ -91,7 +113,8 @@ export function restoreUnitPriceSort(): UnitSortResult {
   return {
     state: "restored",
     changedCount: 0,
-    groupCount: 0,
+    groupCount: state.snapshots.length,
+    compareKey: state.compareKey,
     message: "Retailer order restored."
   };
 }
@@ -101,13 +124,30 @@ export function isUnitPriceSortActive(): boolean {
   return Boolean(activeSortState);
 }
 
-export function getUnitPriceSortMessage(): string {
-  return activeSortState?.message ?? "Comparable cards only.";
+export function getActiveSortCompareKey(): string | undefined {
+  discardDetachedSortState();
+  return activeSortState?.compareKey;
 }
 
-export function getUnitPriceSortContainer(products: DomProduct[]): HTMLElement | undefined {
-  for (const [parent, parentProducts] of groupBySortableParent(products)) {
-    if (groupSortableProducts(parentProducts).size > 0) {
+export function getUnitPriceSortMessage(): string {
+  return activeSortState?.message ?? "Comparable loaded items only.";
+}
+
+export function canSortByUnitPrice(products: DomProduct[], compareKey: string): boolean {
+  return [...groupBySortableParent(products, compareKey).values()].some((group) => group.length >= 2);
+}
+
+export function getUnitPriceSortContainer(
+  products: DomProduct[],
+  compareKey?: string
+): HTMLElement | undefined {
+  const resolvedKey = compareKey ?? resolveCompareKey(products, "");
+  if (!resolvedKey) {
+    return undefined;
+  }
+
+  for (const [parent, parentProducts] of groupBySortableParent(products, resolvedKey)) {
+    if (parentProducts.length >= 2) {
       return parent;
     }
   }
@@ -130,17 +170,14 @@ function discardDetachedSortState(): void {
 
 function applyUnitPriceSort(
   products: DomProduct[],
-  preferences: UserPreferences
+  compareKey: string
 ): UnitSortResult & { snapshots: SortSnapshot[] } {
-  const byParent = groupBySortableParent(products);
+  const byParent = groupBySortableParent(products, compareKey);
   const snapshots: SortSnapshot[] = [];
   let changedCount = 0;
-  let groupCount = 0;
 
-  for (const [parent, parentProducts] of byParent) {
-    const sortableGroups = groupSortableProducts(parentProducts);
-
-    if (sortableGroups.size === 0) {
+  for (const [parent, sortableProducts] of byParent) {
+    if (sortableProducts.length < 2) {
       continue;
     }
 
@@ -149,32 +186,42 @@ function applyUnitPriceSort(
       childNodes: Array.from(parent.childNodes)
     });
 
-    groupCount += sortableGroups.size;
-    changedCount += sortParentChildren(parent, sortableGroups);
+    const sorted = [...sortableProducts].sort(
+      (left, right) => left.normalized.centsPerUnit - right.normalized.centsPerUnit
+    );
+    changedCount += sortParentChildren(parent, sortableProducts, sorted);
   }
 
   if (snapshots.length === 0) {
     return {
-      state: "unavailable",
-      changedCount: 0,
-      groupCount: 0,
-      snapshots: [],
-      message: "No comparable group to sort."
+      ...unavailableResult(),
+      compareKey,
+      snapshots: []
     };
   }
 
   return {
     state: "sorted",
     changedCount,
-    groupCount,
+    groupCount: snapshots.length,
+    compareKey,
     snapshots,
-    message: `Sorted ${changedCount} cards by unit price.`
+    message: `Sorted ${changedCount} loaded items by unit price.`
   };
 }
 
-function groupBySortableParent(products: DomProduct[]): Map<HTMLElement, SortItem[]> {
-  const sortable = products.filter((product): product is SortableProduct =>
-    Boolean(product.normalized && product.element.parentElement)
+function groupBySortableParent(
+  products: DomProduct[],
+  compareKey: string
+): Map<HTMLElement, SortItem[]> {
+  const sortable = products.filter(
+    (product): product is SortableProduct =>
+      Boolean(
+        product.normalized &&
+          product.normalized.compareKey === compareKey &&
+          product.element.isConnected &&
+          product.element.parentElement
+      )
   );
   const groups = new Map<HTMLElement, SortItem[]>();
   const seenElements = new Set<HTMLElement>();
@@ -183,7 +230,13 @@ function groupBySortableParent(products: DomProduct[]): Map<HTMLElement, SortIte
     const sortElement = findSortableElement(product, sortable);
     const parent = sortElement?.parentElement;
 
-    if (!sortElement || !parent || seenElements.has(sortElement)) {
+    if (
+      !sortElement ||
+      !parent ||
+      parent === document.body ||
+      parent === document.documentElement ||
+      seenElements.has(sortElement)
+    ) {
       continue;
     }
 
@@ -200,15 +253,22 @@ function groupBySortableParent(products: DomProduct[]): Map<HTMLElement, SortIte
   return groups;
 }
 
-function findSortableElement(product: SortableProduct, products: SortableProduct[]): HTMLElement | undefined {
+function findSortableElement(
+  product: SortableProduct,
+  products: SortableProduct[]
+): HTMLElement | undefined {
   let current: HTMLElement | null = product.element;
 
-  while (current?.parentElement && current.parentElement !== current.ownerDocument.body) {
-    const siblingProductCount = Array.from(current.parentElement.children).filter((sibling) =>
-      products.some((candidate) => sibling.contains(candidate.element))
-    ).length;
+  while (
+    current?.parentElement &&
+    current.parentElement !== current.ownerDocument.body &&
+    current.parentElement !== current.ownerDocument.documentElement
+  ) {
+    const siblingsContainingProducts = Array.from(current.parentElement.children).filter(
+      (sibling) => products.some((candidate) => sibling.contains(candidate.element))
+    );
 
-    if (siblingProductCount >= 2) {
+    if (siblingsContainingProducts.length >= 2) {
       return current;
     }
 
@@ -218,41 +278,15 @@ function findSortableElement(product: SortableProduct, products: SortableProduct
   return product.element.parentElement ? product.element : undefined;
 }
 
-function groupSortableProducts(products: SortItem[]): Map<string, SortItem[]> {
-  const groups = new Map<string, SortItem[]>();
-
-  for (const product of products) {
-    const group = groups.get(product.normalized.compareKey) ?? [];
-    group.push(product);
-    groups.set(product.normalized.compareKey, group);
-  }
-
-  for (const [key, group] of groups) {
-    if (group.length < 2) {
-      groups.delete(key);
-      continue;
-    }
-
-    group.sort((left, right) => left.normalized.centsPerUnit - right.normalized.centsPerUnit);
-  }
-
-  return groups;
-}
-
-function sortParentChildren(parent: HTMLElement, sortableGroups: Map<string, SortItem[]>): number {
+function sortParentChildren(
+  parent: HTMLElement,
+  originalItems: SortItem[],
+  sortedItems: SortItem[]
+): number {
   const originalChildren = Array.from(parent.childNodes);
-  const productByElement = new Map<HTMLElement, SortItem>();
-  const queues = new Map<string, SortItem[]>();
+  const productByElement = new Map(originalItems.map((item) => [item.element, item]));
+  const queue = [...sortedItems];
   let changedCount = 0;
-
-  for (const group of sortableGroups.values()) {
-    queues.set(group[0]!.normalized.compareKey, [...group]);
-
-    for (const product of group) {
-      productByElement.set(product.element, product);
-    }
-  }
-
   const fragment = parent.ownerDocument.createDocumentFragment();
 
   for (const child of originalChildren) {
@@ -263,17 +297,50 @@ function sortParentChildren(parent: HTMLElement, sortableGroups: Map<string, Sor
       continue;
     }
 
-    const queue = queues.get(product.normalized.compareKey);
-    const replacement = queue?.shift();
-
-    if (replacement) {
-      fragment.append(replacement.element);
-      changedCount += 1;
-    } else {
+    const replacement = queue.shift();
+    if (!replacement) {
       fragment.append(child);
+      continue;
+    }
+
+    fragment.append(replacement.element);
+    if (replacement.element !== child) {
+      changedCount += 1;
     }
   }
 
   parent.append(fragment);
   return changedCount;
+}
+
+function resolveCompareKey(
+  products: DomProduct[],
+  basis: UserPreferences | string
+): string | undefined {
+  if (typeof basis === "string" && basis.includes(":")) {
+    return basis;
+  }
+
+  const counts = new Map<string, number>();
+  for (const product of products) {
+    if (product.normalized) {
+      counts.set(
+        product.normalized.compareKey,
+        (counts.get(product.normalized.compareKey) ?? 0) + 1
+      );
+    }
+  }
+
+  return [...counts.entries()]
+    .filter(([, count]) => count >= 2)
+    .sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0]))[0]?.[0];
+}
+
+function unavailableResult(): UnitSortResult {
+  return {
+    state: "unavailable",
+    changedCount: 0,
+    groupCount: 0,
+    message: "No safely reorderable comparison group is loaded."
+  };
 }

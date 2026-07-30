@@ -1,6 +1,25 @@
 import { getPreferences } from "../extension/preferences";
+import {
+  MESSAGE_GET_PAGE_STATUS,
+  MESSAGE_PAGE_STATUS_UPDATED,
+  MESSAGE_RESTORE_PAGE_ORDER,
+  MESSAGE_SCAN_NOW,
+  MESSAGE_SORT_PAGE,
+  type PageStatus
+} from "../extension/messages";
+import type { UserPreferences } from "../core/types";
+import { buildComparisonGroups } from "./comparison";
 import { extractProductsFromDocument } from "./extractor";
-import { removeLegacyUi, renderProducts } from "./renderer";
+import type { DomProduct } from "./extractor";
+import { clearRenderedProducts, removeLegacyUi, renderProducts } from "./renderer";
+import {
+  canSortByUnitPrice,
+  getActiveSortCompareKey,
+  getUnitPriceSortMessage,
+  isUnitPriceSortActive,
+  restoreUnitPriceSort,
+  sortByUnitPrice
+} from "./sorter";
 
 declare global {
   interface Window {
@@ -8,10 +27,11 @@ declare global {
   }
 }
 
-const MESSAGE_SCAN_NOW = "ATA_SCAN_NOW";
 const MESSAGE_GET_STATS = "ATA_GET_STATS";
 
 let lastScanCount = 0;
+let lastProducts: DomProduct[] = [];
+let lastPreferences: UserPreferences | undefined;
 let observer: MutationObserver | undefined;
 let scanTimer: number | undefined;
 
@@ -35,13 +55,23 @@ async function scanNow(): Promise<void> {
   removeLegacyUi();
 
   const preferences = await getPreferences();
+  lastPreferences = preferences;
   if (!preferences.enabled) {
+    if (isUnitPriceSortActive()) {
+      restoreUnitPriceSort();
+    }
+    lastProducts = [];
+    lastScanCount = 0;
+    clearRenderedProducts();
+    reportPageStatus();
     return;
   }
 
   const products = extractProductsFromDocument(document, preferences);
+  lastProducts = products;
   lastScanCount = products.length;
   renderProducts(products, preferences);
+  reportPageStatus();
 }
 
 function setupMutationObserver(): void {
@@ -125,15 +155,64 @@ function setupMessages(): void {
 
   chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
     if (message?.type === MESSAGE_SCAN_NOW) {
-      void scanNow().then(() => sendResponse({ ok: true, count: lastScanCount }));
+      void scanNow().then(() => sendResponse(buildPageStatus()));
       return true;
     }
 
-    if (message?.type === MESSAGE_GET_STATS) {
-      sendResponse({ ok: true, count: lastScanCount });
+    if (message?.type === MESSAGE_GET_STATS || message?.type === MESSAGE_GET_PAGE_STATUS) {
+      sendResponse(buildPageStatus());
+      return false;
+    }
+
+    if (message?.type === MESSAGE_SORT_PAGE && typeof message.compareKey === "string") {
+      const result = sortByUnitPrice(lastProducts, message.compareKey);
+      if (lastPreferences) {
+        renderProducts(lastProducts, lastPreferences);
+      }
+      reportPageStatus();
+      sendResponse({ ...buildPageStatus(), result });
+      return false;
+    }
+
+    if (message?.type === MESSAGE_RESTORE_PAGE_ORDER) {
+      const result = restoreUnitPriceSort();
+      if (lastPreferences) {
+        renderProducts(lastProducts, lastPreferences);
+      }
+      reportPageStatus();
+      sendResponse({ ...buildPageStatus(), result });
       return false;
     }
 
     return false;
   });
+}
+
+function buildPageStatus(): PageStatus {
+  const activeSortCompareKey = getActiveSortCompareKey();
+
+  return {
+    ok: true,
+    count: lastScanCount,
+    groups: buildComparisonGroups(lastProducts).map((group) => ({
+      ...group,
+      canSort: group.count >= 2 && canSortByUnitPrice(lastProducts, group.compareKey)
+    })),
+    ...(activeSortCompareKey ? { activeSortCompareKey } : {}),
+    sortActive: isUnitPriceSortActive(),
+    sortMessage: getUnitPriceSortMessage()
+  };
+}
+
+function reportPageStatus(): void {
+  if (!globalThis.chrome?.runtime?.sendMessage) {
+    return;
+  }
+
+  void chrome.runtime
+    .sendMessage({
+      type: MESSAGE_PAGE_STATUS_UPDATED,
+      status: buildPageStatus()
+    })
+    .catch(() => undefined);
 }

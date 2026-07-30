@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Apples to Apples Unit Price Compare",
   "short_name": "Apples Unit",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Normalize unit prices on shopping pages so weight, volume, count, and area comparisons are easier to trust.",
   "permissions": ["activeTab", "scripting", "storage"],
   "host_permissions": ["http://*/*", "https://*/*"],

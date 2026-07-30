@@ -1,6 +1,7 @@
 import { DEFAULT_PREFERENCES, type NormalizedPrice } from "../../src/core/types";
 import type { DomProduct } from "../../src/content/extractor";
 import {
+  canSortByUnitPrice,
   resetUnitPriceSortState,
   sortByUnitPrice,
   toggleUnitPriceSort
@@ -91,6 +92,23 @@ describe("unit price page sorting", () => {
 
     expect(result.state).toBe("unavailable");
     expect([...grid.children].map((element) => element.textContent)).toEqual(["Litter", "Detergent"]);
+  });
+
+  it("rejects document-level reordering even when values are comparable", () => {
+    const expensive = card("Expensive litter");
+    const cheap = card("Cheap litter");
+    document.body.append(expensive, cheap);
+    const products = [
+      product(expensive, "Expensive litter", "mass:lb", 70),
+      product(cheap, "Cheap litter", "mass:lb", 22.9)
+    ];
+
+    expect(canSortByUnitPrice(products, "mass:lb")).toBe(false);
+    expect(sortByUnitPrice(products, "mass:lb").state).toBe("unavailable");
+    expect([...document.body.children].map((element) => element.textContent)).toEqual([
+      "Expensive litter",
+      "Cheap litter"
+    ]);
   });
 
   it("discards stale sort state after a retailer replaces the product grid", () => {

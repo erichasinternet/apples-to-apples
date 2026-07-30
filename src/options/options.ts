@@ -16,7 +16,8 @@ async function initialize(): Promise<void> {
   setSelect("volume", preferences.preferredUnits.volume);
   setSelect("area", preferences.preferredUnits.area);
   setSelect("length", preferences.preferredUnits.length);
-  setCheckbox("includeRewards", preferences.includeRewards);
+  setCheckbox("enabled", preferences.enabled);
+  setCheckbox("showLowestSignal", preferences.showLowestSignal);
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -34,7 +35,8 @@ async function save(): Promise<void> {
 
   await setPreferences({
     ...preferences,
-    includeRewards: data.get("includeRewards") === "on",
+    enabled: data.get("enabled") === "on",
+    showLowestSignal: data.get("showLowestSignal") === "on",
     preferredUnits: {
       ...preferences.preferredUnits,
       mass: readSelect("mass") as CanonicalUnit,

@@ -51,10 +51,15 @@ for (const [name, url, expectedTerms] of targets) {
       live.skip(true, availability.unavailableReason);
     }
 
-    await expect.poll(async () => page.locator("[data-ata-badge]").count(), { timeout: 20_000 }).toBeGreaterThan(0);
+    const comparisonState = await waitForComparableItems(page);
+    if (comparisonState.unavailableReason) {
+      console.info(`[live unavailable] ${name}: ${comparisonState.unavailableReason}`);
+      live.skip(true, comparisonState.unavailableReason);
+    }
+    expect(comparisonState.count).toBeGreaterThan(1);
     await expect(page.locator("#ata-panel-root, [data-ata-sort-control]")).toHaveCount(0);
     console.info(
-      `[live validated] ${name}: ${await page.locator("[data-ata-badge]").count()} badges`
+      `[live validated] ${name}: ${await page.locator("[data-ata-product]").count()} comparable items, ${await page.locator("[data-ata-badge]").count()} added lines`
     );
   });
 }
@@ -73,7 +78,12 @@ live("Walmart unit-price sort is a full native-menu row and reorders comparable 
     live.skip(true, availability.unavailableReason);
   }
 
-  await expect.poll(async () => page.locator("[data-ata-badge]").count(), { timeout: 20_000 }).toBeGreaterThan(1);
+  const comparisonState = await waitForComparableItems(page);
+  if (comparisonState.unavailableReason) {
+    console.info(`[live unavailable] Walmart sort: ${comparisonState.unavailableReason}`);
+    live.skip(true, comparisonState.unavailableReason);
+  }
+  expect(comparisonState.count).toBeGreaterThan(1);
   await expect(page.locator("#ata-panel-root, [data-ata-sort-control]")).toHaveCount(0);
 
   const trigger = page
@@ -83,9 +93,11 @@ live("Walmart unit-price sort is a full native-menu row and reorders comparable 
   await expect(trigger).toBeVisible();
   await trigger.click();
 
-  const option = page.locator("[data-ata-custom-sort-option]");
+  const option = page
+    .locator("[data-ata-custom-sort-option][data-ata-compare-key='mass:lb']")
+    .first();
   await expect(option).toBeVisible();
-  await expect(option).toHaveAttribute("aria-label", "Unit price: low to high");
+  await expect(option).toHaveAttribute("aria-label", "Unit price per lb: low to high");
 
   const geometry = await option.evaluate((element) => {
     const parent = element.parentElement;
@@ -123,6 +135,47 @@ interface LiveAvailability {
   unavailableReason?: string;
 }
 
+async function waitForComparableItems(
+  page: Page,
+  timeoutMs = 20_000
+): Promise<{ count: number; unavailableReason?: string }> {
+  const deadline = Date.now() + timeoutMs;
+  let count = 0;
+
+  while (Date.now() < deadline) {
+    const state = await page
+      .evaluate(() => ({
+        url: location.href,
+        title: document.title,
+        bodyText: (document.body?.innerText || "").slice(0, 5_000),
+        count: document.querySelectorAll("[data-ata-product]").length
+      }))
+      .catch(() => undefined);
+
+    if (state) {
+      count = state.count;
+      const blockText = `${state.title} ${state.bodyText}`;
+      if (
+        state.url.includes("/blocked") ||
+        /\b(robot or human|activate and hold|access denied|captcha)\b/i.test(blockText)
+      ) {
+        return {
+          count,
+          unavailableReason: state.title || "retailer blocked page"
+        };
+      }
+
+      if (count > 1) {
+        return { count };
+      }
+    }
+
+    await page.waitForTimeout(500);
+  }
+
+  return { count };
+}
+
 async function openLiveListing(
   page: Page,
   url: string,
@@ -148,6 +201,7 @@ async function openLiveListing(
     .evaluate(() => {
       const bodyText = document.body?.innerText || "";
       return {
+        url: location.href,
         title: document.title,
         bodyText: bodyText.slice(0, 15_000),
         bodyTextLength: bodyText.length,
@@ -170,6 +224,7 @@ function classifyUnavailablePage(
   navigationError: string | undefined,
   pageState:
     | {
+        url: string;
         title: string;
         bodyText: string;
         bodyTextLength: number;
@@ -187,6 +242,9 @@ function classifyUnavailablePage(
   }
 
   const unavailableText = `${pageState?.title || ""} ${pageState?.bodyText || ""}`;
+  if (pageState?.url.includes("/blocked")) {
+    return pageState.title || "retailer blocked page";
+  }
   if (
     /\b(access denied|restricted access|robot or human|page not found|error page|something went wrong|captcha)\b/i.test(
       unavailableText
@@ -216,7 +274,7 @@ function classifyUnavailablePage(
 async function readComparableUnitGroups(
   page: Page
 ): Promise<Array<{ key: string; values: number[] }>> {
-  return await page.locator("[data-ata-badge]").evaluateAll((badges) => {
+  return await page.locator("[data-ata-product]").evaluateAll((badges) => {
     const groups = new Map<string, number[]>();
     for (const badge of badges) {
       if (!(badge instanceof HTMLElement)) {

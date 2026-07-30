@@ -137,6 +137,20 @@
 
       <form id="preferences-form">
         <section>
+          <h2>On shopping pages</h2>
+          <div class="grid">
+            <label class="check">
+              <input type="checkbox" name="enabled" />
+              Show normalized unit prices
+            </label>
+            <label class="check">
+              <input type="checkbox" name="showLowestSignal" />
+              Mark the lowest of at least 3 comparable loaded items
+            </label>
+          </div>
+        </section>
+
+        <section>
           <h2>Display units</h2>
           <div class="grid">
             <label>
@@ -170,16 +184,6 @@
                 <option value="ft">$/ft</option>
                 <option value="in">¢/in</option>
               </select>
-            </label>
-          </div>
-        </section>
-
-        <section>
-          <h2>Evidence</h2>
-          <div class="grid">
-            <label class="check">
-              <input type="checkbox" name="includeRewards" />
-              Include visible coupons and rewards when reliable
             </label>
           </div>
         </section>

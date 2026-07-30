@@ -1,10 +1,10 @@
 # MVP Validation
 
-Validation date: 2026-07-28
+Validation date: 2026-07-29
 
 ## Accepted Scope
 
-Version 0.2.1 is an unpacked Manifest V3 extension MVP for public,
+Version 0.3.0 is an unpacked Manifest V3 extension MVP for public,
 English-language HTTP(S) shopping pages that show USD prices.
 
 The MVP:
@@ -15,11 +15,18 @@ The MVP:
 - Otherwise computes a unit price only when visible price and package quantity
   evidence form an unambiguous relationship.
 - Normalizes compatible mass, volume, count, area, and length units.
-- Adds a compact badge to the corresponding product card.
-- Adds `Unit price: low to high` only inside an identifiable retailer sort
+- Suppresses an added line when the retailer already shows the same normalized
+  basis and value.
+- Adds a plain, unboxed inline value when normalization changes the basis or
+  computes a missing unit price.
+- Marks `Lowest of N` only for an exact minimum among at least three compatible
+  items in the same loaded product collection.
+- Adds basis-specific sort options only inside an identifiable retailer sort
   control.
-- Sorts comparable, currently loaded cards locally and preserves the positions
-  of incompatible unit groups.
+- Offers the same safe loaded-item sort and restore operation from the popup
+  when no retailer control can be enhanced.
+- Preserves the positions of incompatible unit groups.
+- Reports page count and state through the popup and action badge.
 - Removes UI from older builds, including the floating panel, confidence labels,
   warning icon, and standalone sort control.
 - Keeps page data local. No page content is sent to a model or remote service.
@@ -32,20 +39,22 @@ product-card boundary is unsupported or ambiguous.
 | Gate | Result |
 | --- | --- |
 | TypeScript | Pass |
-| Unit tests | 235 passed |
-| Default Playwright | 11 passed, 13 live-only skipped |
-| Unknown-host fixture | 3 valid badges; quantity-free product abstained |
-| Native select sorting | Sort and restore passed |
+| Unit tests | 242 passed |
+| Default Playwright | 15 passed, 13 live-only skipped |
+| Unknown-host fixture | 3 comparable items; matching native values suppressed; quantity-free product abstained |
+| Native select sorting | Basis labels, mixed groups, sort, and restore passed |
 | Generic custom menu | Delayed insertion, sorting, and unrelated-dropdown isolation passed |
 | Walmart-style menu | Full-row geometry, order, label, and functional sorting passed |
-| Dynamic first card | Price/unit text hydration triggers one badge without duplicates |
-| Page safety | No panel or standalone sort UI; add-to-cart remained clickable |
+| Dynamic first card | Price/unit hydration detected; matching native values stayed single |
+| Popup contract | Auto status, basis selection, sort, restore, rescan, and action count passed |
+| Accessibility | Expanded price labels and keyboard menu activation passed |
+| Page safety | No panel, confidence UI, or standalone sort UI; add-to-cart remained clickable |
 
 The Walmart-style visual check used the built extension in headless Chromium at
 1440 x 900. The inserted row:
 
 - Followed `New Arrivals`.
-- Displayed the full `Unit price: low to high` label.
+- Displayed the full `Unit price per lb: low to high` label.
 - Used block layout.
 - Aligned within 1 px of the menu's left edge.
 - Matched the menu width within 2 px.
@@ -54,13 +63,14 @@ The Walmart-style visual check used the built extension in headless Chromium at
 
 ## Live Retailer Check
 
-The opt-in headless live suite tested 13 cases. Four available listings passed:
+The opt-in headless live suite tests 13 cases. On the final 2026-07-29
+validation run, four listings rendered completely enough to validate:
 
-| Listing | Badges |
+| Listing | Comparable items |
 | --- | ---: |
 | Walmart cat litter | 4 |
-| Amazon laundry detergent | 70 |
-| Target coffee pods | 29 |
+| Amazon laundry detergent | 71 |
+| Target coffee pods | 18 |
 | Walgreens vitamins | 41 |
 
 Nine checks were unavailable and were skipped rather than counted as product
@@ -71,13 +81,14 @@ failures:
 - Costco returned an access-denied page.
 - Staples rendered a different category from the requested printer-paper page.
 - Sam's Club rendered a retailer error page.
-- Walmart's dedicated sort run returned `Robot or human?`, including an isolated
-  one-worker retry.
+- Walmart's dedicated sort URL returned `Robot or human?`.
 
-The live run therefore proves rendering on four currently accessible retailers.
-It does not prove live sort behavior on Walmart in this environment. That behavior
-is covered by the built-extension Walmart fixture and the visual geometry check
-above.
+The live run therefore proves current rendering on four accessible retailers.
+It does not establish live sort behavior on Walmart in this automated
+environment. Walmart sort behavior remains covered by the built-extension
+fixture and the isolated visual geometry check above. The harness also detects
+late-arriving block overlays so a briefly rendered sponsored card is not
+misreported as a valid listing.
 
 ## Dataset Evidence
 
@@ -97,7 +108,8 @@ accuracy claim or the larger universal-extraction goal.
 - Sorting is local to product cards already loaded in the DOM. It does not
   reorder unseen pages or ask the retailer backend for a server-side sort.
 - Custom sort integration requires an identifiable visible sort trigger and menu.
-  The extension deliberately adds no fallback panel or standalone sort widget.
+  Other pages use the extension popup for an explicit loaded-item sort; no panel
+  or standalone page widget is added.
 - Retailer DOM changes can break extraction or sort integration.
 - Bot defenses prevented complete live coverage in the automated environment.
 - The current parser scope is English, USD, and the declared units. Other
@@ -108,5 +120,5 @@ accuracy claim or the larger universal-extraction goal.
 
 ## Release Decision
 
-Version 0.2.1 passes the deterministic unpacked-extension MVP gate. It does not
+Version 0.3.0 passes the deterministic unpacked-extension UX gate. It does not
 complete the independently labeled dataset or learned unknown-site model gates.

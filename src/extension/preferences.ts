@@ -20,6 +20,10 @@ export function mergePreferences(value: unknown): UserPreferences {
     enabled: typeof input.enabled === "boolean" ? input.enabled : DEFAULT_PREFERENCES.enabled,
     includeRewards:
       typeof input.includeRewards === "boolean" ? input.includeRewards : DEFAULT_PREFERENCES.includeRewards,
+    showLowestSignal:
+      typeof input.showLowestSignal === "boolean"
+        ? input.showLowestSignal
+        : DEFAULT_PREFERENCES.showLowestSignal,
     preferredUnits: {
       mass: preferredUnits.mass === "oz" || preferredUnits.mass === "kg" || preferredUnits.mass === "g" ? preferredUnits.mass : "lb",
       volume:

@@ -112,12 +112,14 @@ export interface PreferredUnits {
 export interface UserPreferences {
   enabled: boolean;
   includeRewards: boolean;
+  showLowestSignal: boolean;
   preferredUnits: PreferredUnits;
 }
 
 export const DEFAULT_PREFERENCES: UserPreferences = {
   enabled: true,
   includeRewards: false,
+  showLowestSignal: true,
   preferredUnits: {
     mass: "lb",
     volume: "fl_oz",
