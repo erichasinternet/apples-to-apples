@@ -71,7 +71,10 @@ bun run training:readiness -- benchmark-data/live/<run-id>
 bun run training:prepare -- benchmark-data/live/<run-id> --output benchmark-data/training/t5gemma2
 bun run training:validate
 bun run training:synthetic:generate
+bun run training:synthetic:audit
 bun run training:synthetic:validate
+bun run dataset:huggingface:prepare
+bun run dataset:huggingface:validate
 bun run training:inference:prepare
 bun run training:inference:discover
 bun run training:inference:analyze-discovery
@@ -82,6 +85,9 @@ bun run training:silver:validate
 See [docs/benchmark-protocol.md](docs/benchmark-protocol.md) for sampling, domain-held-out splits, annotation, privacy, and statistical analysis. The [learned extraction experiment](docs/learned-extraction.md) defines the evidence contract and model promotion gates.
 The [training runbook](docs/training.md) covers dataset readiness, strict export, the
 T5Gemma 2 LoRA configuration, and GPU execution.
+The [Hugging Face dataset release runbook](docs/huggingface-dataset-release.md)
+defines the synthetic-only public boundary, release quality gates, licensing,
+validation, and private-first upload process.
 The [autoresearch protocol](docs/autoresearch.md) records the experiment loop,
 checkpoint results, cost controls, and promotion gates.
 The [MVP validation record](docs/mvp-validation.md) defines the accepted

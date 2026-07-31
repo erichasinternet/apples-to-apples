@@ -36,6 +36,8 @@
     "benchmark:training:export": "bun scripts/export-training-corpus.ts",
     "benchmark:validate": "bun scripts/validate-live-corpus.ts",
     "dataset:readiness": "bun scripts/report-ideal-dataset-readiness.ts",
+    "dataset:huggingface:prepare": "bun scripts/prepare-huggingface-dataset.ts",
+    "dataset:huggingface:validate": "bun scripts/validate-huggingface-dataset.ts",
     "dataset:domains:validate": "bun scripts/validate-domain-qualification.ts",
     "dataset:depth:promote": "bun scripts/promote-training-depth-captures.ts",
     "dataset:captures:promote": "bun scripts/promote-training-depth-captures.ts",
