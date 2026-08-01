@@ -1,5 +1,6 @@
 import {
   HUGGINGFACE_DATASET_LICENSE,
+  HUGGINGFACE_SOURCE_REPOSITORY,
   buildReleaseStatistics,
   findSensitiveText,
   renderHuggingFaceDatasetCard,
@@ -73,6 +74,9 @@ describe("Hugging Face synthetic dataset release", () => {
 
     expect(card).toContain(`license: ${HUGGINGFACE_DATASET_LICENSE}`);
     expect(card).toContain('pretty_name: "Unit Price Evidence: Synthetic"');
+    expect(card).toContain(
+      `[\`erichasinternet/apples-to-apples\`](${HUGGINGFACE_SOURCE_REPOSITORY})`
+    );
     expect(card).toContain("dtype: image");
     expect(card).toContain("num_examples: 2");
     expect(card).toContain("This is synthetic pretraining data");

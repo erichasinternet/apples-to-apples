@@ -18,6 +18,8 @@ export const HUGGINGFACE_DATASET_LICENSE = "cdla-permissive-2.0";
 export const HUGGINGFACE_DATASET_SLUG = "unit-price-evidence-synthetic";
 export const HUGGINGFACE_DATASET_REPO =
   "hotdogsalesman/unit-price-evidence-synthetic";
+export const HUGGINGFACE_SOURCE_REPOSITORY =
+  "https://github.com/erichasinternet/apples-to-apples";
 export const HUGGINGFACE_RELEASE_VERSION = "0.1.0";
 
 export interface SyntheticPointerManifest {
@@ -528,6 +530,7 @@ screenshots, product data, account data, or browsing history.
 ## Release
 
 - Version: \`${input.releaseVersion}\`
+- Source code: [\`erichasinternet/apples-to-apples\`](${HUGGINGFACE_SOURCE_REPOSITORY})
 - Source manifest SHA-256: \`${input.sourceManifestSha256}\`
 - Records: ${(
     statistics.records.train + statistics.records.validation
