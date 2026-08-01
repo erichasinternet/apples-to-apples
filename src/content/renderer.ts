@@ -91,12 +91,7 @@ function renderBadges(products: DomProduct[], preferences: UserPreferences): voi
       "aria-label",
       buildAccessibleLabel(product.normalized, duplicate, isLowest, lowestCount)
     );
-    badge.innerHTML = badgeMarkup(
-      product.normalized,
-      duplicate,
-      isLowest,
-      lowestCount
-    );
+    renderBadgeContent(badge, product.normalized, duplicate, isLowest, lowestCount);
     rendered.add(badge);
 
     if (!badge.isConnected) {
@@ -705,21 +700,28 @@ function removeInlineSortControls(): void {
   }
 }
 
-function badgeMarkup(
+function renderBadgeContent(
+  badge: HTMLElement,
   normalized: NormalizedPrice,
   duplicate: boolean,
   isLowest: boolean,
   groupCount: number | undefined
-): string {
-  const value = duplicate
-    ? ""
-    : `<span class="ata-unit-price-value">${escapeHtml(normalized.display)}</span>`;
-  const lowest =
-    isLowest && groupCount
-      ? `<span class="ata-unit-price-context">Lowest of ${groupCount}</span>`
-      : "";
+): void {
+  badge.replaceChildren();
 
-  return `${value}${lowest}`;
+  if (!duplicate) {
+    const value = badge.ownerDocument.createElement("span");
+    value.className = "ata-unit-price-value";
+    value.textContent = normalized.display;
+    badge.append(value);
+  }
+
+  if (isLowest && groupCount) {
+    const context = badge.ownerDocument.createElement("span");
+    context.className = "ata-unit-price-context";
+    context.textContent = `Lowest of ${groupCount}`;
+    badge.append(context);
+  }
 }
 
 function buildTitle(
@@ -939,13 +941,4 @@ function findNativeUnitPriceElement(product: DomProduct): HTMLElement | undefine
 
 function normalizeVisibleText(value: string): string {
   return value.replace(/\s+/g, " ").trim().toLowerCase();
-}
-
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
 }

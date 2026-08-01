@@ -17,8 +17,8 @@ The release excludes:
 - account, address, cookie, query-string, or browsing-history data; and
 - application secrets and model credentials.
 
-The dataset artifacts are licensed under CDLA-Permissive-2.0. This does not
-relicense the private application source repository.
+The dataset artifacts are licensed under CDLA-Permissive-2.0. This dataset-only
+license does not change the application source repository's MIT License.
 
 ## Build
 

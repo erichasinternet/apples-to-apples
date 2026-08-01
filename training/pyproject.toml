@@ -2,6 +2,7 @@
 name = "apples-to-apples-training"
 version = "0.1.0"
 description = "Reproducible T5Gemma 2 fine-tuning environment for Apples to Apples."
+license = "MIT"
 requires-python = ">=3.11,<3.13"
 dependencies = [
   "accelerate>=1.14,<2",

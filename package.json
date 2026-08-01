@@ -3,7 +3,7 @@
   "version": "0.4.0",
   "private": true,
   "description": "Chrome extension for normalized unit-price comparison across shopping sites.",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
   "packageManager": "bun@1.3.14",
   "repository": {
@@ -25,6 +25,7 @@
     "build": "bun scripts/build.mjs",
     "release:assets": "bun run build && bun scripts/render-store-assets.ts",
     "release:validate": "bun scripts/validate-extension-release.ts",
+    "release:tag:validate": "bun scripts/validate-release-tag.ts",
     "release:package": "bun scripts/package-extension.ts",
     "release": "bun run ci && bun run release:assets && bun run release:package",
     "ci": "bun run verify && bun run test:e2e",

@@ -1,6 +1,26 @@
 # Apples to Apples Unit Price Compare
 
+[![CI](https://github.com/erichasinternet/apples-to-apples/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/erichasinternet/apples-to-apples/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/erichasinternet/apples-to-apples/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/erichasinternet/apples-to-apples/actions/workflows/codeql.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-236652.svg)](LICENSE)
+
+![Apples to Apples logo](public/icons/icon-128.png)
+
 Chrome extension and extraction research project for comparing shopping-unit prices across major retailers and unfamiliar shopping pages.
+
+The extension is preparing for a private trusted-tester Chrome Web Store
+release. It is not yet presented as a universally accurate public release.
+
+## Quick Start
+
+```bash
+bun install --frozen-lockfile
+bunx playwright install chromium
+bun run build
+```
+
+Load the generated `dist` directory from `chrome://extensions` or
+`brave://extensions` with developer mode enabled.
 
 ## What It Does
 
@@ -107,6 +127,16 @@ accessibility requirements, and usability gates for the next UI iteration.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for pull request expectations.
 
+## Contributing And Support
+
+- Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+- Use [GitHub Discussions](https://github.com/erichasinternet/apples-to-apples/discussions)
+  for usage questions and early ideas.
+- Use the issue forms for reproducible bugs and feature proposals.
+- Report vulnerabilities privately according to [SECURITY.md](SECURITY.md).
+- Project decisions and maintainer roles are documented in
+  [GOVERNANCE.md](GOVERNANCE.md).
+
 ## Loading In Brave
 
 1. Run `bun run build`.
@@ -165,4 +195,11 @@ The UI is intentionally quiet:
 
 ## License
 
-Private and unlicensed. All rights reserved.
+Application source and documentation are available under the [MIT License](LICENSE).
+Third-party components retain their original terms in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+The separately generated **Unit Price Evidence: Synthetic** dataset is released
+under CDLA-Permissive-2.0 as documented in
+[docs/huggingface-dataset-release.md](docs/huggingface-dataset-release.md). Raw
+live retailer captures are not licensed for redistribution and are not committed.
