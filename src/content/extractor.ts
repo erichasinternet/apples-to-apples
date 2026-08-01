@@ -1,5 +1,12 @@
 import type { NormalizedProduct, ProductInput, Quantity, UserPreferences } from "../core/types";
-import { findBestPrice, parseNativeUnitPrices, parseQuantities, extractPackCount, selectPackageQuantity } from "../core/pricing";
+import {
+  extractPackCount,
+  findBestPrice,
+  isLikelyPackageQuantity,
+  parseNativeUnitPrices,
+  parseQuantities,
+  selectPackageQuantity
+} from "../core/pricing";
 import { normalizeProduct } from "../core/normalizer";
 import { getSiteAdapter, type SiteAdapter } from "./site-adapters";
 import { extractStructuredProducts } from "./structured-data";
@@ -145,7 +152,9 @@ function extractProductFromCard(
   const nativeUnitPrices = parseNativeUnitPrices(text);
   const preferredNativeUnitPrice = nativeUnitPrices[0];
   const titleQuantities = parseQuantities(title);
-  const allQuantities = [...titleQuantities, ...parseQuantities(text)];
+  const allQuantities = [...titleQuantities, ...parseQuantities(text)].filter(
+    (quantity) => isLikelyPackageQuantity(title, quantity)
+  );
   const packageQuantity = selectPackageQuantity(allQuantities, preferredNativeUnitPrice?.dimension);
   const rankedPackageQuantity = raiseTitleQuantityIfFromTitle(packageQuantity, title);
   const price = findBestPrice(scopedPriceText) ?? findBestPrice(text);
@@ -239,7 +248,10 @@ function cleanCandidateTitle(value: string): string | undefined {
     cleaned.length < 8 ||
     cleaned.length > 220 ||
     /^\$/.test(cleaned) ||
-    /^(add|subscribe|sponsored|shipping|pickup|delivery|options|single|\d+\s+pack)$/i.test(cleaned)
+    /^(?:add|remove|compare|subscribe|sponsored|shipping|pickup|delivery|options|quick view|buy|sign in|create account)\b/i.test(
+      cleaned
+    ) ||
+    /^\d+\s+pack$/i.test(cleaned)
   ) {
     return undefined;
   }

@@ -64,6 +64,29 @@ for (const [name, url, expectedTerms] of targets) {
   });
 }
 
+live("Micro Center laptop specifications do not become unit prices", async ({
+  page
+}) => {
+  live.setTimeout(60_000);
+  const availability = await openLiveListing(
+    page,
+    "https://www.microcenter.com/search/search_results.aspx?fq=category:Laptops%2FNotebooks|618,GPU+Type:NVIDIA+GeForce+RTX+5070+OR+NVIDIA+GeForce+RTX+5080+OR+NVIDIA+GeForce+RTX+5070+Ti+OR+NVIDIA+GeForce+RTX+5090&sortby=pricelow",
+    ["laptops", "notebooks"]
+  );
+  if (availability.unavailableReason) {
+    console.info(
+      `[live unavailable] Micro Center laptops: ${availability.unavailableReason}`
+    );
+    live.skip(true, availability.unavailableReason);
+  }
+
+  await page.waitForTimeout(1_500);
+  await expect(page.locator("[data-ata-product], [data-ata-badge]")).toHaveCount(
+    0
+  );
+  await expect(page.locator("option[data-ata-sort-option]")).toHaveCount(0);
+});
+
 live("Walmart unit-price sort is a full native-menu row and reorders comparable cards", async ({
   page
 }) => {

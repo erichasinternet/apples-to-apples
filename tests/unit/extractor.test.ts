@@ -57,6 +57,34 @@ describe("DOM extraction", () => {
     expect(products).toHaveLength(1);
     expect(products[0]?.normalized?.display).toBe("89.9¢/lb");
   });
+
+  it("does not treat laptop specifications as package quantities", () => {
+    document.documentElement.innerHTML = `
+      <main>
+        <ul>
+          <li class="product-card">
+            <a href="/wishlist" aria-label="Add SKU:825372 to wishlist">Add</a>
+            <a href="/product/692187">
+              <img alt="Lenovo Legion 5" src="laptop.png">
+            </a>
+            <a href="/product/692187">
+              Lenovo Legion 5 15.1 in Gaming Laptop Computer; 4.19 lb
+            </a>
+            <span class="price">Our price $2,499.99</span>
+            <button>Add to cart</button>
+          </li>
+        </ul>
+      </main>
+    `;
+
+    const products = extractProductsFromDocument(
+      document,
+      DEFAULT_PREFERENCES,
+      "shop.example"
+    );
+
+    expect(products).toEqual([]);
+  });
 });
 
 function loadFixture(filename: string, _url: string): void {

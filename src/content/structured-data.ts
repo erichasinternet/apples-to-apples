@@ -1,5 +1,10 @@
 import type { Evidence, Money, ProductInput, Quantity } from "../core/types";
-import { findBestPrice, parseQuantities, selectPackageQuantity } from "../core/pricing";
+import {
+  findBestPrice,
+  isLikelyPackageQuantity,
+  parseQuantities,
+  selectPackageQuantity
+} from "../core/pricing";
 
 interface JsonObject {
   [key: string]: unknown;
@@ -23,7 +28,9 @@ export function extractStructuredProducts(document: Document, site: string): Pro
       const title = textValue(node.name) || textValue(node.headline) || document.title || "Product";
       const offer = firstObject(node.offers);
       const price = moneyFromOffer(offer) ?? findBestPrice(JSON.stringify(node));
-      const quantities = parseQuantities(JSON.stringify(node));
+      const quantities = parseQuantities(JSON.stringify(node)).filter(
+        (quantity) => isLikelyPackageQuantity(title, quantity)
+      );
       const packageQuantity = selectPackageQuantity(quantities);
       const evidence: Evidence[] = [
         {

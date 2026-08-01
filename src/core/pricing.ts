@@ -300,6 +300,24 @@ export function selectPackageQuantity(
   })[0];
 }
 
+export function isLikelyPackageQuantity(
+  title: string,
+  quantity: Pick<Quantity, "dimension">
+): boolean {
+  if (quantity.dimension === "length") {
+    return looksLikeProductSoldByLength(title);
+  }
+
+  if (
+    (quantity.dimension === "mass" || quantity.dimension === "volume") &&
+    (looksLikeDurableEquipment(title) || looksLikeEquipmentCapacity(title))
+  ) {
+    return false;
+  }
+
+  return true;
+}
+
 function dimensionPreferenceScore(quantity: Quantity): number {
   if (quantity.dimension === "mass" || quantity.dimension === "volume" || quantity.dimension === "area") {
     return 3;
@@ -310,6 +328,30 @@ function dimensionPreferenceScore(quantity: Quantity): number {
   }
 
   return 1;
+}
+
+function looksLikeProductSoldByLength(title: string): boolean {
+  return /\b(?:foil|wrap|rope|cord|cable|wire|tape|ribbon|thread|yarn|fabric|chain|hose|tubing|film|liner|paper|sheeting)\b/i.test(
+    title
+  );
+}
+
+function looksLikeDurableEquipment(title: string): boolean {
+  return /\b(?:laptop|notebook|chromebook|desktop\s+computer|computer\s+monitor|monitor|television|smartphone|printer|camera|refrigerator|freezer|washer|dryer|vacuum)\b/i.test(
+    title
+  );
+}
+
+function looksLikeEquipmentCapacity(title: string): boolean {
+  const equipment =
+    /\b(?:capacity|dredge|shaker|sifter|mixer|flour bin|syringe|measuring cup|dispenser|tank)\b/i.test(
+      title
+    );
+  const consumable =
+    /\b(?:food|flour(?!\s+(?:bin|sifter|shield|dredge))|rice|oil|detergent|cleaner|soap|litter|powder|supplement|protein|coffee|tea|herb|chemical|solution|juice|milk|drink|deodorizer)\b/i.test(
+      title
+    );
+  return equipment && !consumable;
 }
 
 function looksLikeUnitPriceContext(text: string, index: number): boolean {

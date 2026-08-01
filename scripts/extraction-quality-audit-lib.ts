@@ -1,3 +1,4 @@
+import { isLikelyPackageQuantity } from "../src/core/pricing";
 import { convertQuantityToBase, getUnitDefinition } from "../src/core/units";
 import type { ExtractionPreannotation } from "./extraction-preannotation-lib";
 
@@ -54,18 +55,14 @@ export function auditExtractionPreannotation(
   }
   if (
     preannotation.method === "price-and-package" &&
-    quantity?.dimension === "length" &&
-    !looksLikeConsumableLength(title)
-  ) {
-    reasons.push("physical-dimension-as-quantity");
-  }
-  if (
-    preannotation.method === "price-and-package" &&
     quantity &&
-    (quantity.dimension === "mass" || quantity.dimension === "volume") &&
-    looksLikeEquipmentCapacity(title)
+    !isLikelyPackageQuantity(title, quantity)
   ) {
-    reasons.push("equipment-capacity-as-quantity");
+    reasons.push(
+      quantity.dimension === "length"
+        ? "physical-dimension-as-quantity"
+        : "equipment-capacity-as-quantity"
+    );
   }
   if (
     quantity &&
@@ -112,22 +109,4 @@ function looksLikeImageDescription(title: string): boolean {
   return /^(?:image|photo|picture)\s+(?:of|shows)\b|^(?:white|black|blue|red|green|clear)\s+(?:plastic\s+)?(?:container|bottle|bag|box)\s+of\b/i.test(
     title
   );
-}
-
-function looksLikeConsumableLength(title: string): boolean {
-  return /\b(?:foil|wrap|rope|cord|cable|wire|tape|ribbon|thread|yarn|fabric|chain|hose|tubing|film|liner|paper|sheeting)\b/i.test(
-    title
-  );
-}
-
-function looksLikeEquipmentCapacity(title: string): boolean {
-  const equipment =
-    /\b(?:capacity|dredge|shaker|sifter|mixer|flour bin|syringe|measuring cup|dispenser|tank)\b/i.test(
-      title
-    );
-  const consumable =
-    /\b(?:food|flour(?!\s+(?:bin|sifter|shield|dredge))|rice|oil|detergent|cleaner|soap|litter|powder|supplement|protein|coffee|tea|herb|chemical|solution|juice|milk|drink|deodorizer)\b/i.test(
-      title
-    );
-  return equipment && !consumable;
 }

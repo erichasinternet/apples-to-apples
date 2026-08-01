@@ -1,6 +1,7 @@
 import {
   extractPackCount,
   findBestPrice,
+  isLikelyPackageQuantity,
   parseFactoredPackageQuantities,
   parseMoneyValues,
   parseNativeUnitPrices,
@@ -111,6 +112,18 @@ describe("quantity parsing", () => {
       packCount: packs,
       unit
     });
+  });
+
+  it.each([
+    ["Lenovo 15.1 in Gaming Laptop", "15.1 in", false],
+    ["Lenovo Gaming Laptop, 4.19 lb", "4.19 lb", false],
+    ["USB-C Laptop Cable, 10 ft", "10 ft", true],
+    ["Aluminum Foil, 75 ft", "75 ft", true],
+    ["Cat Litter, 20 lb", "20 lb", true]
+  ])("classifies sale quantity semantics for %s", (title, quantityText, expected) => {
+    const quantity = parseQuantities(quantityText)[0];
+    expect(quantity).toBeDefined();
+    expect(isLikelyPackageQuantity(title, quantity!)).toBe(expected);
   });
 });
 

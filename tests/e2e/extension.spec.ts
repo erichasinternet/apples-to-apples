@@ -273,6 +273,50 @@ test("auto-runs the conservative generic extractor on an unfamiliar host", async
   await expect(page.locator("[data-ata-sort-control]")).toHaveCount(0);
 });
 
+test("does not unit-price laptop dimensions on an unfamiliar retailer", async ({ page }) => {
+  await page.route("https://www.microcenter.com/**", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "text/html",
+      body: `
+        <!doctype html>
+        <html>
+          <body>
+            <main>
+              <label for="sort">Sort by</label>
+              <select id="sort" aria-label="Sort by">
+                <option value="pricelow">Lowest Price</option>
+              </select>
+              <ul id="productGrid">
+                <li class="product_wrapper">
+                  <a href="/wishlist" aria-label="Add SKU:825372 to wishlist">Add</a>
+                  <a href="/product/692187">
+                    <img alt="Lenovo Legion 5" src="laptop.png">
+                  </a>
+                  <a href="/product/692187">
+                    Lenovo Legion 5 15.1 in Gaming Laptop Computer; 4.19 lb
+                  </a>
+                  <span class="price">Our price $2,499.99</span>
+                  <button>Add to cart</button>
+                </li>
+              </ul>
+            </main>
+          </body>
+        </html>
+      `
+    })
+  );
+
+  await page.goto(
+    "https://www.microcenter.com/search/search_results.aspx?fq=category:Laptops%2FNotebooks"
+  );
+
+  const laptop = page.locator(".product_wrapper");
+  await expect(laptop.locator("[data-ata-badge]")).toHaveCount(0);
+  await expect(laptop).not.toHaveAttribute("data-ata-product", "true");
+  await expect(page.getByLabel("Sort by")).not.toContainText("Unit price");
+});
+
 test("rescans a product card when its price evidence hydrates as text", async ({ page }) => {
   await page.goto("http://127.0.0.1:4173/dynamic-price-card.html");
 
