@@ -19,7 +19,7 @@ Store trusted-tester, accessibility, or live-site accuracy gates.
 
 | Area | Method | Result |
 | --- | --- | --- |
-| Git history | Gitleaks 8.30.1 over all 153 commits | 0 leaks |
+| Git history | Gitleaks 8.30.1 over complete history at audit time | 0 leaks |
 | Bun and Python locks | OSV-Scanner 2.4.0 | 0 known vulnerabilities across 331 packages |
 | Bun dependency audit | `bun audit` | 0 vulnerabilities |
 | Workflow syntax | Actionlint 1.7.12 and ShellCheck 0.11.0 | 0 findings |
