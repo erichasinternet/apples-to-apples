@@ -6,7 +6,8 @@ import {
   parseMoneyValues,
   parseNativeUnitPrices,
   parseQuantities,
-  selectPackageQuantity
+  selectPackageQuantity,
+  specializePackageQuantity
 } from "../../src/core/pricing";
 import { normalizeProduct } from "../../src/core/normalizer";
 import { DEFAULT_PREFERENCES, type ProductInput } from "../../src/core/types";
@@ -143,7 +144,27 @@ describe("quantity parsing", () => {
     ["Pool Shock, 25 lb Bucket", "25 lb", true],
     ["Commercial Vacuum Cleaner, 1 Each", "1 Each", false],
     ["ActiveLife 1-Piece Drainable Ostomy Bag", "1-Piece", false],
-    ["Cat Litter, 20 lb", "20 lb", true]
+    ["Cat Litter, 20 lb", "20 lb", true],
+    ["SafePro 9-Inch Paper Plates, 400/CS", "9-Inch", false],
+    ["Reusable Underpad 34 X 36 Inch", "36 Inch", false],
+    ["2 inch Webbing (Sold per Yard)", "2 inch", false],
+    ["Webbing, 4 yard roll", "4 yard", true],
+    ["Clear 1.5 Oz Ramekin", "1.5 Oz", false],
+    ["IV Catheter 20G x 1 inch", "20G", false],
+    ["Paper Straws 7.75-inch, 3000/CS", "7.75-inch", false],
+    ["Nano Mosaic Tile 3mm, 135 tiles", "5 g", false],
+    ["Disposable Underpad 90 gram, 100/CS", "90 gram", false],
+    ["Carter Tea Infuser Set 16oz", "16oz", false],
+    ["Quilt Yardage SKU# 10596-L", "96-L", false],
+    ["Foil Pan 9.75L x 7.75W, 250/CS", "9.75L", false],
+    ["Dental Needle 27ga Long 30mm 100/Box", "27L", false],
+    ["Water Filtration Unit 15 gal/min", "15 gal", false],
+    ["Sterilite 15 Qt Storage Tote", "15 Qt", false],
+    ["Only 2 left!", "2 L", false],
+    ["Paper Hot Cups, 16 Oz, 1000/carton", "16 Oz", false],
+    ["Square Dance Yardage SKU# 10080-G", "10080-G", false],
+    ["Paper Cups, 50/Pack, 20/Carton", "50/Pack", false],
+    ["Paper Hot Cups, 15 Bags/40 Cups = 600/CTN", "15 Bags", false]
   ])("classifies sale quantity semantics for %s", (title, quantityText, expected) => {
     const quantity = parseQuantities(quantityText)[0];
     expect(quantity).toBeDefined();
@@ -190,6 +211,45 @@ describe("normalization", () => {
     const normalized = normalizeProduct(product).normalized;
     expect(normalized?.compareKey).toBe("volume:fl_oz");
     expect(normalized?.display).toBe("12¢/fl oz");
+  });
+
+  it("uses fluid-ounce package math when a liquid native rate omits fluid", () => {
+    const product = makeProduct(
+      "Dove Shampoo, 12 fl oz",
+      "$6.29 $0.52 / oz"
+    );
+
+    expect(normalizeProduct(product).normalized).toMatchObject({
+      dimension: "volume",
+      unit: "fl_oz",
+      display: "52.4¢/fl oz"
+    });
+  });
+
+  it("abstains when an omitted-fluid native rate is actually the item price", () => {
+    const product = makeProduct(
+      "Head & Shoulders Shampoo, 12.5 fl oz",
+      "$8.99 $8.99 / oz"
+    );
+
+    expect(normalizeProduct(product).normalized).toBeUndefined();
+  });
+
+  it("does not treat solid food containing olive oil as fluid volume", () => {
+    const quantity = parseQuantities("0.7 Ounce")[0]!;
+    expect(
+      specializePackageQuantity(
+        "Organic Olive Oil Roasted Seaweed Snacks, 0.7 Ounce",
+        quantity
+      )
+    ).toMatchObject({ unit: "oz", dimension: "mass" });
+  });
+
+  it("treats ambiguous cleaner ounces as liquid volume", () => {
+    const quantity = parseQuantities("32 oz")[0]!;
+    expect(
+      specializePackageQuantity("Wheel Cleaner 32 oz", quantity)
+    ).toMatchObject({ unit: "fl_oz", dimension: "volume" });
   });
 
   it("normalizes paper towels by area when square footage is visible", () => {
@@ -304,7 +364,10 @@ function makeProduct(title: string, text: string): ProductInput {
   const nativeUnitPrice = parseNativeUnitPrices(text)[0];
   const quantities = parseQuantities(`${title} ${text}`);
   const price = findBestPrice(text);
-  const packageQuantity = selectPackageQuantity(quantities, nativeUnitPrice?.dimension);
+  const selectedQuantity = selectPackageQuantity(quantities, nativeUnitPrice?.dimension);
+  const packageQuantity = selectedQuantity
+    ? specializePackageQuantity(title, selectedQuantity)
+    : undefined;
   const packCount = extractPackCount(title);
 
   return {

@@ -162,7 +162,7 @@ function extractProductFromCard(
   const text = getVisibleText(element);
   const title = extractTitle(element, adapter) || extractLineTitle(text);
 
-  if (!title || title.length < 4) {
+  if (!title || title.length < 4 || looksLikeMerchandisingLabel(title)) {
     return undefined;
   }
 
@@ -217,6 +217,10 @@ function extractProductFromCard(
     element,
     insertionTarget: findInsertionTarget(element, adapter)
   };
+}
+
+function looksLikeMerchandisingLabel(title: string): boolean {
+  return /^(?:cost-effective|highly reviewed|best in class)$/i.test(title.trim());
 }
 
 function structuredFallback(document: Document, hostname: string, preferences: UserPreferences): DomProduct[] {

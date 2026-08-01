@@ -98,6 +98,8 @@
     "training:extraction:preannotate": "bun scripts/build-extraction-preannotations.ts",
     "training:extraction:audit": "bun scripts/audit-extraction-preannotations.ts",
     "audit:false-positives": "bun scripts/audit-unit-price-false-positives.ts",
+    "audit:false-positives:review": "uvx modal run training/modal_unit_price_review.py",
+    "audit:false-positives:review:summary": "bun scripts/summarize-unit-price-reviews.ts",
     "training:extraction:prepare": "bun scripts/prepare-silver-extraction.ts",
     "training:extraction:validate": "python3 training/train_t5gemma2.py --config training/t5gemma2-270m/audited-silver-extraction.json --validate-only",
     "training:adjudicated:validate": "python3 training/train_t5gemma2.py --config training/t5gemma2-270m/adjudicated-discovery-adaptation.json --validate-only",

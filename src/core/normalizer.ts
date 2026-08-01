@@ -58,6 +58,33 @@ export function normalizeProduct(
     }
 
     if (nativeResult.dimension !== packageResult.dimension) {
+      if (
+        product.nativeUnitPrice?.unit === "oz" &&
+        product.packageQuantity?.unit === "fl_oz"
+      ) {
+        if (
+          !ratesAgree(
+            product.nativeUnitPrice.centsPerUnit,
+            packageResult.centsPerUnit
+          )
+        ) {
+          return product;
+        }
+        return {
+          ...product,
+          normalized: {
+            ...packageResult,
+            explanation: `${packageResult.explanation}; retailer unit price omits the fluid marker.`,
+            evidence: [
+              ...packageResult.evidence,
+              {
+                kind: "native-unit-price",
+                text: product.nativeUnitPrice.sourceText
+              }
+            ]
+          }
+        };
+      }
       return { ...product, normalized: nativeResult };
     }
 
@@ -93,6 +120,11 @@ export function normalizeProduct(
     ...product,
     normalized
   };
+}
+
+function ratesAgree(left: number, right: number): boolean {
+  const divergence = Math.abs(left - right) / left;
+  return Number.isFinite(divergence) && divergence <= 0.08;
 }
 
 function hasCorroboratingMultiCountPackage(product: ProductInput): boolean {

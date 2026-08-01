@@ -126,9 +126,7 @@ export function specializePackageQuantity(
 ): Quantity {
   if (
     quantity.unit === "oz" &&
-    /\b(?:liquid|soap|shampoo|conditioner|body\s+wash|oil|juice|beverage|drink)\b/i.test(
-      title
-    )
+    looksLikeLiquidContents(title)
   ) {
     return { ...quantity, unit: "fl_oz", dimension: "volume" };
   }
@@ -410,6 +408,17 @@ export function packageQuantityRejectionReason(
     ) {
       return "physical-dimension-as-quantity";
     }
+    if (
+      quantity.unit === "in" &&
+      /(?:\b(?:sold\s+)?per\s+(?:foot|feet|yard)|\/\s*(?:ft|feet|yard|yd)\b)/i.test(
+        title
+      )
+    ) {
+      return "physical-dimension-as-quantity";
+    }
+    if (looksLikeCountedItemDimensions(title)) {
+      return "physical-dimension-as-quantity";
+    }
     return looksLikeProductSoldByLength(title)
       ? undefined
       : "physical-dimension-as-quantity";
@@ -422,6 +431,9 @@ export function packageQuantityRejectionReason(
     return "material-weight-as-quantity";
   }
 
+  if (quantity.dimension === "mass" && /\b(?:tiles?|mosaics?)\b/i.test(title)) {
+    return "material-weight-as-quantity";
+  }
 
   if (
     quantity.dimension === "mass" &&
@@ -438,10 +450,31 @@ export function packageQuantityRejectionReason(
   }
 
   if (
+    quantity.dimension === "volume" &&
+    looksLikeVolumeSpecificationOrParserArtifact(title, quantity)
+  ) {
+    return "equipment-capacity-as-quantity";
+  }
+
+  if (
+    quantity.dimension === "volume" &&
+    /\b(?:fabric|textile|yardage|buttons?)\b/i.test(title)
+  ) {
+    return "equipment-capacity-as-quantity";
+  }
+
+  if (
     (quantity.dimension === "mass" || quantity.dimension === "volume") &&
     looksLikeEmptyContainerOrDispenser(title)
   ) {
     return "container-size-as-quantity";
+  }
+
+  if (
+    quantity.dimension === "count" &&
+    looksLikeNestedCupPackaging(title)
+  ) {
+    return "style-descriptor-as-quantity";
   }
 
   if (
@@ -490,7 +523,7 @@ export function packageQuantityRejectionReason(
 }
 
 function looksLikeDiscreteLengthSpecification(title: string): boolean {
-  if (/\b(?:notebooks?|journals?|planners?|couplers?|cuffs?|vacuum\s+heads?)\b/i.test(title)) {
+  if (/\b(?:notebooks?|journals?|planners?|couplers?|cuffs?|vacuum\s+heads?|underpads?|dressings?|sponges?|applicators?|catheters?|ramekins?|plates?|bowls?|cups?|straws?|pans?|liners?|wrappers?|cones?|boxes?|trays?|sleeves?|adhesive\s+strips?|bandages?|cutters?)\b/i.test(title)) {
     return true;
   }
   return (
@@ -527,6 +560,18 @@ function looksLikeProductSoldByLength(title: string): boolean {
   );
 }
 
+function looksLikeCountedItemDimensions(title: string): boolean {
+  const counted =
+    /\b(?:\d+\s*(?:ct|count)|\d+\s*\/\s*(?:cs|case|pk|pack)|\d+\s+per\s+(?:case|box|carton)|(?:box|case|carton|pack)\s+of\s+\d+)\b/i.test(
+      title
+    );
+  if (!counted) return false;
+  if (/\b(?:cable|wire|hose|tubing|rope|cord|roll)\b/i.test(title)) return false;
+  return /\b(?:plates?|napkins?|towels?|underpads?|dressings?|sponges?|applicators?|catheters?|needles?|syringes?|cups?|bowls?|containers?|lids?|sleeves?|wipes?)\b/i.test(
+    title
+  );
+}
+
 function looksLikeStylePieceDescriptor(
   title: string,
   quantity: Pick<Quantity, "dimension"> &
@@ -536,6 +581,19 @@ function looksLikeStylePieceDescriptor(
     (quantity.value ?? 0) <= 2 &&
     /\b[12]\s*-\s*pieces?\b/i.test(quantity.sourceText ?? "") &&
     /\b(?:ostomy|urostomy|colostomy|pouches?)\b/i.test(title)
+  );
+}
+
+function looksLikeNestedCupPackaging(title: string): boolean {
+  if (!/\b(?:paper|plastic|foam)\b[^,;]{0,30}\bcups?\b/i.test(title)) {
+    return false;
+  }
+  return (
+    /\b\d+\s*\/\s*(?:pack|bag)\b[^;]{0,80}\b\d+\s*\/\s*(?:carton|case|ctn)\b/i.test(
+      title
+    ) ||
+    /\b\d+\s*(?:bags?|packs?)\s*\/\s*\d+\s*cups?\b/i.test(title) ||
+    /\b\d+\s*\/\s*pack\b[^;]{0,30}\bcase\b/i.test(title)
   );
 }
 
@@ -554,7 +612,10 @@ function looksLikeMaterialWeightSpecification(title: string): boolean {
     /\b(?:gsm|grams?\s+per\s+square|oz\s*\/\s*yd|ounces?\s+per\s+yard|\d+(?:\.\d+)?\s*(?:inches?|in\.)\s+wide)\b/i.test(
       title
     ) || /\b\d+(?:\.\d+)?\s*oz\b.*\b(?:inches?|gsm|yards?|yd\b|per\s+yard|roll)\b/i.test(title);
-  return material && specification;
+  const medicalPadSpecification =
+    /\b(?:underpads?|bed\s+pads?)\b/i.test(title) &&
+    /\b\d+(?:\.\d+)?\s*(?:g|grams?)\b/i.test(title);
+  return (material && specification) || medicalPadSpecification;
 }
 
 function looksLikeContainerCapacitySpecification(title: string): boolean {
@@ -571,7 +632,7 @@ function looksLikeSizedBagOrLiner(title: string): boolean {
 
 function looksLikeEmptyContainerOrDispenser(title: string): boolean {
   const strongContainer =
-    /\b(?:soap|sanitizer|towel|napkin|glove|cup|bag|foam|lotion|pump)\s+dispensers?\b|\bdispensers?\s+(?:for|with)\b|\b(?:sharps|storage|deli|food|soup|salad|portion|takeout|take\s+out|to-go|hinged|plastic|paper|foam|round|rectangular|tamper-resistant|blender)\s+containers?\b|\blids?\s+for\b[^,;]{0,40}\bcontainers?\b|\b(?:trash|garbage|waste)\s+(?:cans?|bins?)\b|\b(?:empty|replacement)\b[^,;]{0,40}\b(?:bottles?|jars?|buckets?|pails?|containers?)\b/i.test(
+    /\b(?:soap|sanitizer|towel|napkin|glove|cup|bag|foam|lotion|pump)\s+dispensers?\b|\bdispensers?\s+(?:for|with)\b|\b(?:sharps|storage|deli|food|soup|salad|portion|takeout|take\s+out|to-go|hinged|plastic|paper|foam|round|rectangular|tamper-resistant|blender)\s+containers?\b|\b(?:ramekins?|portion\s+cups?|souffle\s+cups?|(?:paper|plastic|foam)\s+(?:hot\s+|water\s+|beverage\s+)?cups?|infusers?|storage\s+totes?|foil\s+pans?|serving\s+trays?|take\s*out\s+boxes?)\b|\blids?\s+for\b[^,;]{0,40}\bcontainers?\b|\b(?:trash|garbage|waste)\s+(?:cans?|bins?)\b|\b(?:empty|replacement)\b[^,;]{0,40}\b(?:bottles?|jars?|buckets?|pails?|containers?)\b/i.test(
       title
     );
   if (strongContainer) return true;
@@ -614,7 +675,13 @@ function looksLikeGaugeOrItemWeightSpecification(
     Partial<Pick<Quantity, "sourceText" | "unit" | "value">>
 ): boolean {
   if (quantity.unit !== "g") return false;
-  if (/\b(?:needles?|lancets?|syringes?)\b/i.test(title)) return true;
+  if (
+    /\b(?:fabric|textile|yardage)\b/i.test(title) &&
+    /\bsku\s*#?\s*[a-z0-9-]*\d+\s*-\s*g\b/i.test(title)
+  ) {
+    return true;
+  }
+  if (/\b(?:needles?|lancets?|syringes?|catheters?|cannulas?)\b/i.test(title)) return true;
   return /\bgloves?\b/i.test(title) && /\b(?:count|case|\d+\s*\/\s*(?:cs|case))\b/i.test(title);
 }
 
@@ -646,6 +713,36 @@ function looksLikeEquipmentCapacity(title: string): boolean {
       title
     );
   return equipment && !consumable;
+}
+
+function looksLikeVolumeSpecificationOrParserArtifact(
+  title: string,
+  quantity: Pick<Quantity, "dimension"> &
+    Partial<Pick<Quantity, "sourceText" | "unit" | "value">>
+): boolean {
+  if (/\b(?:gal|gallon|l|liter|litre)s?\s*\/\s*min\b/i.test(title)) {
+    return true;
+  }
+  if (quantity.unit !== "l") return false;
+  return (
+    /\b\d+(?:\.\d+)?\s*L\s*x\s*\d/i.test(title) ||
+    /\b\d+(?:\.\d+)?\s*ga\s+long\b/i.test(title) ||
+    /^only\s+\d+\s+left!?$/i.test(title.trim())
+  );
+}
+
+function looksLikeLiquidContents(title: string): boolean {
+  if (
+    /\b(?:liquid|soap|shampoo|conditioner|body\s+wash|juice|beverage|drink|algaecide|clarifier|degreaser|mouthwash|cleaner|remover|spray|wash|rinse|treatment|concentrate)\b/i.test(
+      title
+    )
+  ) {
+    return true;
+  }
+  if (!/\boil\b/i.test(title)) return false;
+  return !/\b(?:snacks?|chips?|crackers?|seaweed|fillets?|fish|tuna|sardines?|olives?)\b/i.test(
+    title
+  );
 }
 
 function looksLikeUnitPriceContext(text: string, index: number): boolean {

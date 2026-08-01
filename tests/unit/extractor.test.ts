@@ -138,6 +138,21 @@ describe("DOM extraction", () => {
     );
   });
 
+  it("does not treat merchandising labels as product titles", () => {
+    document.documentElement.innerHTML = `
+      <main><ul>
+        <li class="product-card">
+          <a href="/syringe">Cost-Effective</a>
+          <span>$0.21</span><span>3 mL</span><button>Add to cart</button>
+        </li>
+      </ul></main>
+    `;
+
+    expect(
+      extractProductsFromDocument(document, DEFAULT_PREFERENCES, "shop.example")
+    ).toEqual([]);
+  });
+
   it("rejects editorial roundups that contain several product examples", () => {
     document.documentElement.innerHTML = `
       <main>

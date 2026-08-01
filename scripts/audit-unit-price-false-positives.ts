@@ -3,7 +3,11 @@ import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { extractProductsFromDocument, type DomProduct } from "../src/content/extractor";
 import { auditNormalizedProduct, type UnitPriceAuditFinding } from "../src/core/unit-price-audit";
-import { DEFAULT_PREFERENCES, type Dimension } from "../src/core/types";
+import {
+  DEFAULT_PREFERENCES,
+  type CanonicalUnit,
+  type Dimension
+} from "../src/core/types";
 import type { AnnotatedProduct, CorpusAnnotation } from "./live-corpus-lib";
 
 interface PageMetadata {
@@ -27,7 +31,29 @@ interface EmittedOutput {
   title: string;
   display: string;
   dimension: Dimension;
+  centsPerUnit: number;
+  unit: CanonicalUnit;
   source: "native-unit-price" | "price-and-package" | "unknown";
+  price?: {
+    cents: number;
+    sourceText: string;
+  };
+  packageQuantity?: {
+    value: number;
+    unit: string;
+    dimension: Dimension;
+    sourceText: string;
+  };
+  nativeUnitPrice?: {
+    centsPerUnit: number;
+    unit: string;
+    dimension: Dimension;
+    sourceText: string;
+  };
+  packCount?: number;
+  explanation: string;
+  warnings: string[];
+  evidence: Array<{ kind: string; text: string }>;
   auditReasons: UnitPriceAuditFinding[];
 }
 
@@ -163,6 +189,8 @@ for (const [index, relativeHtml] of captures.entries()) {
         title: product.title,
         display: product.normalized.display,
         dimension: product.normalized.dimension,
+        centsPerUnit: product.normalized.centsPerUnit,
+        unit: product.normalized.unit,
         source: product.normalized.evidence.some(
           (evidence) => evidence.kind === "native-unit-price"
         )
@@ -172,6 +200,38 @@ for (const [index, relativeHtml] of captures.entries()) {
               )
             ? "price-and-package"
             : "unknown",
+        ...(product.price
+          ? {
+              price: {
+                cents: product.price.cents,
+                sourceText: product.price.sourceText
+              }
+            }
+          : {}),
+        ...(product.packageQuantity
+          ? {
+              packageQuantity: {
+                value: product.packageQuantity.value,
+                unit: product.packageQuantity.unit,
+                dimension: product.packageQuantity.dimension,
+                sourceText: product.packageQuantity.sourceText
+              }
+            }
+          : {}),
+        ...(product.nativeUnitPrice
+          ? {
+              nativeUnitPrice: {
+                centsPerUnit: product.nativeUnitPrice.centsPerUnit,
+                unit: product.nativeUnitPrice.unit,
+                dimension: product.nativeUnitPrice.dimension,
+                sourceText: product.nativeUnitPrice.sourceText
+              }
+            }
+          : {}),
+        ...(product.packCount ? { packCount: product.packCount } : {}),
+        explanation: product.normalized.explanation,
+        warnings: product.normalized.warnings,
+        evidence: product.normalized.evidence,
         auditReasons: reasons.filter(
           (reason): reason is UnitPriceAuditFinding =>
             reason.reason !== "reviewed-non-comparable-output" &&
@@ -210,7 +270,7 @@ for (const [index, relativeHtml] of captures.entries()) {
 }
 
 const report = {
-  version: 1,
+  version: 2,
   createdAt: new Date().toISOString(),
   root: path.relative(process.cwd(), root),
   policy: {
