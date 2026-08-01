@@ -24,6 +24,7 @@ Store trusted-tester, accessibility, or live-site accuracy gates.
 | Bun dependency audit | `bun audit` | 0 vulnerabilities |
 | Workflow syntax | Actionlint 1.7.12 and ShellCheck 0.11.0 | 0 findings |
 | Workflow security | Zizmor 1.29.0, pedantic online audit | 0 findings |
+| GitHub CodeQL | TypeScript and Python default security suites | 1 test-harness finding remediated; 1 reviewed false positive dismissed |
 | Runtime dependencies | Manifest and bundle review | No runtime packages or remote code |
 | Network behavior | Source search and bundle review | No extension telemetry or page-data transmission |
 | DOM injection | Manual sink review | One bounded `innerHTML` sink removed; runtime uses DOM APIs and `textContent` |
@@ -58,6 +59,23 @@ The repository now defines read-only pull-request CI, dependency review,
 JavaScript/TypeScript and Python CodeQL analysis, weekly Dependabot updates, and
 a tag-only release workflow. The release job receives `contents: write` only for
 publishing its already validated ZIP and checksum.
+
+### Dynamic test-harness code construction
+
+CodeQL identified a unit test that interpolated a temporary marker path into a
+Node `-e` program. The value was locally generated and shell-escaped, but the
+test now passes it as a normal process argument to a fixed fixture script. No
+dynamic code construction remains in that process-tree test.
+
+### Pseudonymous prediction identifier finding
+
+CodeQL classified the MarkupLM prediction record's `id` field as private data
+written in clear text. The field is a required pseudonymous join key from the
+privacy-validated research bundle, not a user identifier or credential. The
+output is a caller-requested local JSONL artifact under ignored research paths.
+The alert was reviewed and dismissed as a false positive; changing or
+encrypting the field would break deterministic prediction scoring without
+improving confidentiality.
 
 ## Residual Risks
 
