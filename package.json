@@ -170,7 +170,7 @@
     "esbuild": "^0.25.12",
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",
-    "typescript": "^5.9.3",
+    "typescript": "^7.0.2",
     "vitest": "^3.2.7"
   }
 }
