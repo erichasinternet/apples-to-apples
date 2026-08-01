@@ -120,5 +120,5 @@ accuracy claim or the larger universal-extraction goal.
 
 ## Release Decision
 
-Version 0.3.0 passes the deterministic unpacked-extension UX gate. It does not
+Version 0.4.0 passes the deterministic unpacked-extension UX gate. It does not
 complete the independently labeled dataset or learned unknown-site model gates.

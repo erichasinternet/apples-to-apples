@@ -1,6 +1,6 @@
 {
   "name": "apples-to-apples",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "private": true,
   "description": "Chrome extension for normalized unit-price comparison across shopping sites.",
   "license": "UNLICENSED",
@@ -17,8 +17,16 @@
   "engines": {
     "bun": ">=1.3.14"
   },
+  "overrides": {
+    "fast-uri": "3.1.4",
+    "postcss": "8.5.25"
+  },
   "scripts": {
     "build": "bun scripts/build.mjs",
+    "release:assets": "bun run build && bun scripts/render-store-assets.ts",
+    "release:validate": "bun scripts/validate-extension-release.ts",
+    "release:package": "bun scripts/package-extension.ts",
+    "release": "bun run ci && bun run release:assets && bun run release:package",
     "ci": "bun run verify && bun run test:e2e",
     "prepare": "husky",
     "precommit": "bun run verify",
@@ -152,16 +160,16 @@
     "training:baseline:markuplm:test": "python3 training/test_infer_markuplm.py && python3 training/test_train_t5gemma2.py"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.2.0",
+    "@commitlint/cli": "^21.2.1",
     "@commitlint/config-conventional": "^21.2.0",
-    "@playwright/test": "^1.54.1",
+    "@playwright/test": "^1.62.1",
     "@types/chrome": "^0.0.326",
     "@types/jsdom": "^28.0.3",
-    "@types/node": "^24.0.10",
-    "esbuild": "^0.25.5",
+    "@types/node": "^24.13.3",
+    "esbuild": "^0.25.12",
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",
-    "typescript": "^5.8.3",
-    "vitest": "^3.2.4"
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
   }
 }

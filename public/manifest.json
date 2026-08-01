@@ -2,16 +2,27 @@
   "manifest_version": 3,
   "name": "Apples to Apples Unit Price Compare",
   "short_name": "Apples Unit",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Normalize unit prices on shopping pages so weight, volume, count, and area comparisons are easier to trust.",
-  "permissions": ["activeTab", "scripting", "storage"],
+  "minimum_chrome_version": "120",
+  "permissions": ["scripting", "storage"],
   "host_permissions": ["http://*/*", "https://*/*"],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
   "background": {
     "service_worker": "service-worker.js"
   },
   "action": {
     "default_title": "Compare unit prices",
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
   },
   "options_page": "options.html",
   "content_scripts": [

@@ -41,8 +41,8 @@ export function mergePreferences(value: unknown): UserPreferences {
 }
 
 async function readStoredPreferences(): Promise<unknown> {
-  if (globalThis.chrome?.storage?.sync) {
-    const result = await chrome.storage.sync.get(STORAGE_KEY);
+  if (globalThis.chrome?.storage?.local) {
+    const result = await chrome.storage.local.get(STORAGE_KEY);
     return result[STORAGE_KEY];
   }
 
@@ -54,8 +54,8 @@ async function readStoredPreferences(): Promise<unknown> {
 }
 
 async function writeStoredPreferences(preferences: UserPreferences): Promise<void> {
-  if (globalThis.chrome?.storage?.sync) {
-    await chrome.storage.sync.set({ [STORAGE_KEY]: preferences });
+  if (globalThis.chrome?.storage?.local) {
+    await chrome.storage.local.set({ [STORAGE_KEY]: preferences });
     return;
   }
 

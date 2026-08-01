@@ -122,6 +122,24 @@ content to a model or remote service.
 
 The same unpacked build can be loaded from `chrome://extensions` in Chrome.
 
+## Chrome Web Store Release
+
+Version `0.4.0` includes store icons, local privacy disclosures, sanitized
+listing artwork, permission justifications, and reproducible packaging. Build
+and validate the submission artifact with Bun:
+
+```bash
+bun run release
+```
+
+The ZIP and SHA-256 file are written under `artifacts/releases/`. Store copy and
+image paths are recorded in
+[store-assets/STORE_LISTING.md](store-assets/STORE_LISTING.md). The complete
+submission and trusted-tester checklist is in
+[docs/chrome-web-store-release.md](docs/chrome-web-store-release.md). The
+[public privacy policy](https://gist.github.com/erichasinternet/a4a9b597e89fee8b7b814b3b9baff72b)
+matches the policy bundled with the extension.
+
 ## Validation Strategy
 
 The quality bar is layered:

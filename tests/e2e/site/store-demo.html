@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cat litter - Harbor Market</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f7f8f6;
+        color: #1e2622;
+      }
+
+      header {
+        border-bottom: 1px solid #dce1dc;
+        background: #ffffff;
+      }
+
+      .header-inner,
+      .page {
+        width: min(1180px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .header-inner {
+        min-height: 76px;
+        display: grid;
+        grid-template-columns: 190px minmax(280px, 1fr) auto;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .brand {
+        color: #174c3c;
+        font-size: 19px;
+        font-weight: 760;
+      }
+
+      .search {
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #aeb8b1;
+        border-radius: 6px;
+        background: #ffffff;
+        padding: 0 13px;
+        color: #445048;
+      }
+
+      .account {
+        font-size: 13px;
+        font-weight: 650;
+      }
+
+      .page {
+        display: grid;
+        grid-template-columns: 190px minmax(0, 1fr);
+        gap: 30px;
+        padding-top: 30px;
+      }
+
+      aside {
+        border-right: 1px solid #dce1dc;
+        padding-right: 24px;
+      }
+
+      aside h2 {
+        margin: 0 0 16px;
+        font-size: 14px;
+      }
+
+      .filter {
+        display: flex;
+        justify-content: space-between;
+        padding: 13px 0;
+        border-top: 1px solid #e2e6e2;
+        font-size: 13px;
+        font-weight: 620;
+      }
+
+      .results-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        margin: 0 0 4px;
+        font-size: 23px;
+        letter-spacing: 0;
+      }
+
+      .result-count {
+        margin: 0;
+        color: #67726b;
+        font-size: 13px;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        color: #566159;
+        font-size: 12px;
+      }
+
+      select {
+        min-width: 194px;
+        min-height: 38px;
+        border: 1px solid #aeb8b1;
+        border-radius: 6px;
+        background: #ffffff;
+        color: #1e2622;
+        padding: 0 10px;
+        font: inherit;
+        font-size: 13px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .product-card {
+        min-width: 0;
+        border: 1px solid #e0e4e0;
+        border-radius: 8px;
+        background: #ffffff;
+        padding: 14px;
+      }
+
+      .product-card > a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .product-card img {
+        width: 100%;
+        aspect-ratio: 1;
+        display: block;
+        object-fit: contain;
+        background: #f4f5f2;
+      }
+
+      .price {
+        margin: 13px 0 2px;
+        font-size: 19px;
+        font-weight: 780;
+      }
+
+      .native-unit {
+        min-height: 20px;
+        margin: 0 0 7px;
+        color: #5d6961;
+        font-size: 12px;
+      }
+
+      .product-card h2 {
+        min-height: 54px;
+        margin: 0 0 12px;
+        font-size: 14px;
+        line-height: 1.35;
+        letter-spacing: 0;
+      }
+
+      .rating {
+        margin: 0 0 13px;
+        color: #5d6961;
+        font-size: 12px;
+      }
+
+      .product-card button {
+        min-height: 36px;
+        border: 0;
+        border-radius: 6px;
+        background: #174c3c;
+        color: #ffffff;
+        padding: 0 17px;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <div class="brand">Harbor Market</div>
+        <div class="search">cat litter</div>
+        <div class="account">Orders &amp; account</div>
+      </div>
+    </header>
+
+    <div class="page">
+      <aside>
+        <h2>Filter results</h2>
+        <div class="filter"><span>Brand</span><span>+</span></div>
+        <div class="filter"><span>Type</span><span>+</span></div>
+        <div class="filter"><span>Weight</span><span>+</span></div>
+        <div class="filter"><span>Scent</span><span>+</span></div>
+        <div class="filter"><span>Availability</span><span>+</span></div>
+        <div class="filter"><span>Customer rating</span><span>+</span></div>
+      </aside>
+
+      <main>
+        <div class="results-header">
+          <div>
+            <h1>Cat litter</h1>
+            <p class="result-count">24 results · Price when purchased online</p>
+          </div>
+          <label>
+            Sort by
+            <select aria-label="Sort by">
+              <option value="relevance">Best match</option>
+              <option value="price-low">Price: low to high</option>
+              <option value="price-high">Price: high to low</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="grid">
+          <article class="product-card">
+            <a href="/products/meadow-pail">
+              <img src="assets/litter-pail.png" alt="Meadow pail cat litter" />
+              <p class="price">$14.72</p>
+              <p class="native-unit">46.0 ¢/lb</p>
+              <h2>Meadow Clumping Cat Litter, Fresh Scent, 32 lb Pail</h2>
+            </a>
+            <p class="rating">4.7 ★ · 3,204 reviews</p>
+            <button type="button">Add to cart</button>
+          </article>
+
+          <article class="product-card">
+            <a href="/products/harvest-bag">
+              <img src="assets/litter-bag.png" alt="Harvest bag cat litter" />
+              <p class="price">$10.98</p>
+              <p class="native-unit">22.9 ¢/lb</p>
+              <h2>Harvest Unscented Clay Cat Litter, 48 lb Bag</h2>
+            </a>
+            <p class="rating">4.8 ★ · 861 reviews</p>
+            <button type="button">Add to cart</button>
+          </article>
+
+          <article class="product-card">
+            <a href="/products/bright-jug">
+              <img src="assets/litter-jug.png" alt="Bright jug cat litter" />
+              <p class="price">$12.00</p>
+              <p class="native-unit"></p>
+              <h2>Bright Multi-Cat Clumping Litter, 20 lb Jug</h2>
+            </a>
+            <p class="rating">4.5 ★ · 1,488 reviews</p>
+            <button type="button">Add to cart</button>
+          </article>
+
+          <article class="product-card">
+            <a href="/products/coast-pouch">
+              <img src="assets/litter-pouch.png" alt="Coast pouch cat litter" />
+              <p class="price">$11.85</p>
+              <p class="native-unit"></p>
+              <h2>Coast Lightweight Clumping Cat Litter, 15 lb Pouch</h2>
+            </a>
+            <p class="rating">4.6 ★ · 742 reviews</p>
+            <button type="button">Add to cart</button>
+          </article>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

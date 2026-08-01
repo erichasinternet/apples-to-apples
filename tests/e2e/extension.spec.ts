@@ -61,6 +61,22 @@ test("adds quiet normalized prices, suppresses native duplicates, and marks a fa
   await expect(page.locator("[data-ata-sort-control]")).toHaveCount(0);
 });
 
+test("renders and sorts the sanitized store-listing fixture", async ({ page }) => {
+  await page.goto("http://127.0.0.1:4173/store-demo.html");
+
+  await expect(page.locator("[data-ata-product]")).toHaveCount(4);
+  await expect(page.locator("[data-ata-badge]")).toHaveCount(3);
+  await expect(page.locator(".product-card", { hasText: "Harvest Unscented" })).toContainText(
+    "Lowest of 4"
+  );
+  await expect(page.locator(".product-card", { hasText: "Bright Multi-Cat" })).toContainText(
+    "60¢/lb"
+  );
+
+  await page.getByLabel("Sort by").selectOption("ata-unit-price-asc:mass:lb");
+  await expect(page.locator(".product-card h2").first()).toContainText("Harvest Unscented");
+});
+
 test("removes stale panel and medium labels left by an older build", async ({ page }) => {
   await page.addInitScript(() => {
     window.addEventListener(
@@ -200,8 +216,8 @@ test("restores and detaches page UI when the extension is disabled", async ({ co
     context.serviceWorkers()[0] ?? (await context.waitForEvent("serviceworker"));
   await worker.evaluate(async () => {
     const key = "ata.preferences";
-    const stored = await chrome.storage.sync.get(key);
-    await chrome.storage.sync.set({
+    const stored = await chrome.storage.local.get(key);
+    await chrome.storage.local.set({
       [key]: {
         ...stored[key],
         enabled: false
