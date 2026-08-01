@@ -1,6 +1,6 @@
 {
   "name": "apples-to-apples",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "private": true,
   "description": "Chrome extension for normalized unit-price comparison across shopping sites.",
   "license": "UNLICENSED",
