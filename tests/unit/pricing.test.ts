@@ -21,6 +21,12 @@ describe("price parsing", () => {
   it("prefers current sale price over was price", () => {
     expect(findBestPrice("current price Now $17.83, Was $19.97")?.cents).toBe(1783);
   });
+
+  it("prefers a single-item price over a multi-buy offer total", () => {
+    expect(
+      findBestPrice("Current sale price is 2/$15.00 or 1/$8.99")?.cents
+    ).toBe(899);
+  });
 });
 
 describe("unit price parsing", () => {
@@ -71,7 +77,8 @@ describe("quantity parsing", () => {
     ["4 Pack of 25 count wipes", 100, "each"],
     ["Paper Towels 612 sq ft", 612, "sq_ft"],
     ["Coffee Pods 72 ct", 72, "each"],
-    ["Trash Bags 120 count 13 gal", 13, "gal"]
+    ["Trash Bags 120 count 13 gal", 13, "gal"],
+    ["Aluminum Foil, 12\"x1000 ft Roll", 1000, "ft"]
   ])("extracts package size from %s", (text, value, unit) => {
     const selected = selectPackageQuantity(parseQuantities(text));
     expect(selected?.value).toBeCloseTo(value);
@@ -89,6 +96,11 @@ describe("quantity parsing", () => {
         (quantity) => quantity.value === 78526
       )
     ).toBe(false);
+    expect(parseQuantities("Softsoap Pumps CPCUS04964CT")).toEqual([]);
+    expect(parseQuantities("$137.12 CT Add to Cart")).toEqual([]);
+    expect(parseQuantities("Napkins, 8000/Cs")).toContainEqual(
+      expect.objectContaining({ value: 8000, unit: "each" })
+    );
   });
 
   it("captures multipack count separately", () => {
@@ -117,8 +129,20 @@ describe("quantity parsing", () => {
   it.each([
     ["Lenovo 15.1 in Gaming Laptop", "15.1 in", false],
     ["Lenovo Gaming Laptop, 4.19 lb", "4.19 lb", false],
+    ["Casebound Notebooks, 24 lb Basis Weight Paper", "24 lb", false],
     ["USB-C Laptop Cable, 10 ft", "10 ft", true],
     ["Aluminum Foil, 75 ft", "75 ft", true],
+    ["50-Pack Aluminum Foil Pans, 8x8x2 Inch", "2 Inch", false],
+    ["Pre-Cut Aluminum Foil Sheets, 14 x 10.25 Inches, 50 Sheets", "10.25 Inches", false],
+    ["Trash Liner, 38 x 58 in, 200 per case", "38 x 58 in", false],
+    ["Automatic Soap Dispenser, 1200 mL", "1200 mL", false],
+    ["3 mL Luer-Lok Syringes, 100 Count", "3 mL", false],
+    ["Clear Deli Container, 32 oz, 240 per case", "32 oz", false],
+    ["32 oz Amber Glass Bottle with Cap", "32 oz", false],
+    ["Olive Oil, 1 Gallon PET Plastic Bottle", "1 Gallon", true],
+    ["Pool Shock, 25 lb Bucket", "25 lb", true],
+    ["Commercial Vacuum Cleaner, 1 Each", "1 Each", false],
+    ["ActiveLife 1-Piece Drainable Ostomy Bag", "1-Piece", false],
     ["Cat Litter, 20 lb", "20 lb", true]
   ])("classifies sale quantity semantics for %s", (title, quantityText, expected) => {
     const quantity = parseQuantities(quantityText)[0];
@@ -149,7 +173,7 @@ describe("normalization", () => {
   });
 
   it("does not compare unlike count units", () => {
-    const product = makeProduct("Paper Towels 12 rolls", "$18.00");
+    const product = makeProduct("Gift Wrap 12 rolls", "$18.00");
     const normalized = normalizeProduct(product, {
       ...DEFAULT_PREFERENCES,
       preferredUnits: {
@@ -173,6 +197,101 @@ describe("normalization", () => {
     const normalized = normalizeProduct(product).normalized;
     expect(normalized?.compareKey).toBe("area:sq_ft");
     expect(normalized?.display).toBe("3.76¢/sq ft");
+  });
+
+  it("includes a separately stated pack count in package math", () => {
+    const product = makeProduct(
+      "Bounty Paper Towels, 108 sheets per roll, 4 pack",
+      "$5.49"
+    );
+
+    expect(product.packCount).toBe(4);
+    expect(normalizeProduct(product).normalized?.display).toBe("1.27¢/sheet");
+  });
+
+  it("does not multiply a factored package quantity twice", () => {
+    const product = makeProduct("Cat Food, 4 pack of 12 oz cans", "$12.00");
+
+    expect(normalizeProduct(product).normalized?.display).toBe("$4.00/lb");
+  });
+
+  it("does not multiply a slash-case total twice", () => {
+    const product = makeProduct(
+      "Clear Deli Container, 500/Case",
+      "$100.00"
+    );
+
+    expect(product.packCount).toBe(500);
+    expect(normalizeProduct(product).normalized?.display).toBe("20¢/count");
+  });
+
+  it("does not multiply duplicate each and per-box counts", () => {
+    const product = makeProduct(
+      "Toilet Seat Covers, 250 EA/BX, Quantity: 250 per Box",
+      "$4.56"
+    );
+
+    expect(product.packCount).toBe(250);
+    expect(normalizeProduct(product).normalized?.display).toBe("1.82¢/count");
+  });
+
+  it("prefers a specific package count over a native per-each rate", () => {
+    const product = makeProduct(
+      "Bounty Paper Towels, 108 sheets per roll, 4 pack",
+      "$5.49 $1.37 / ea"
+    );
+
+    expect(normalizeProduct(product).normalized?.display).toBe("1.27¢/sheet");
+  });
+
+  it("treats a native per-item price as the case price when a piece count is explicit", () => {
+    const product = makeProduct(
+      "Flat Dry Wax Deli Paper, 3x1000-Piece Pack",
+      "$55.99 / item"
+    );
+
+    expect(product.packageQuantity?.value).toBe(3000);
+    expect(normalizeProduct(product).normalized?.display).toBe("1.87¢/count");
+  });
+
+  it("abstains when a retailer per-item price conflicts with an ambiguous each count", () => {
+    const product = makeProduct(
+      "Scott Paper Towels, Choose a Sheet - 6 ea",
+      "$5.00 $5.00 / item"
+    );
+
+    expect(product.packageQuantity?.sourceText).toBe("6 ea");
+    expect(normalizeProduct(product).normalized).toBeUndefined();
+  });
+
+  it("prefers meaningful package length over a native per-each rate", () => {
+    const product = makeProduct(
+      "Commercial Vacuum Hose, 50 ft",
+      "$100.00 $100.00 / ea"
+    );
+
+    expect(normalizeProduct(product).normalized?.display).toBe("$2.00/ft");
+  });
+
+  it("rejects container capacity as package contents", () => {
+    const title = "55 Gallon Trash Bags, Heavy Duty, 60 Count";
+    const quantity = selectPackageQuantity(
+      parseQuantities(title).filter((candidate) =>
+        isLikelyPackageQuantity(title, candidate)
+      )
+    );
+    const product: ProductInput = {
+      id: title,
+      site: "test",
+      pageType: "search",
+      title,
+      price: { cents: 1800, currency: "USD", sourceText: "$18.00", index: 0 },
+      evidence: [],
+      ...(quantity ? { packageQuantity: quantity } : {})
+    };
+
+    expect(quantity?.unit).toBe("each");
+    expect(normalizeProduct(product).normalized?.display).toBe("30¢/count");
   });
 
   it("does not produce a normalized result without a usable quantity or native unit price", () => {

@@ -116,6 +116,26 @@ describe("extraction quality audit", () => {
     expect(audit.eligibleForSilverTraining).toBe(false);
   });
 
+  it("quarantines empty container capacity used as package quantity", () => {
+    const audit = auditExtractionPreannotation(
+      record({
+        title: {
+          value: "Clear Deli Container, 32 oz, 240 per case",
+          evidenceNodeIds: ["title"]
+        },
+        packageQuantity: {
+          valuePerPackage: 32,
+          packCount: 1,
+          unit: "oz",
+          dimension: "mass",
+          evidenceNodeIds: ["title"]
+        }
+      })
+    );
+
+    expect(audit.reasons).toContain("container-size-as-quantity");
+  });
+
   it("quarantines quantities with a lost decimal separator", () => {
     const audit = auditExtractionPreannotation(
       record({

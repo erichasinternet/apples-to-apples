@@ -85,6 +85,95 @@ describe("DOM extraction", () => {
 
     expect(products).toEqual([]);
   });
+
+  it("rejects specifications while retaining real fabric and paper units", () => {
+    document.documentElement.innerHTML = `
+      <main><ul>
+        <li class="product-card">
+          <a href="/fabric">Mid Weight Stretch Denim, 10 oz, 60 inches wide</a>
+          <span>$18.99</span><span> per yard</span><button>Add to cart</button>
+        </li>
+        <li class="product-card">
+          <a href="/bags">55 Gallon Trash Bags, Heavy Duty, 60 Count</a>
+          <span>$18.00</span><button>Add to cart</button>
+        </li>
+        <li class="product-card">
+          <a href="/towels">Bounty Paper Towels, 108 sheets per roll, 4 pack</a>
+          <span>$5.49</span><span>$1.37</span><span> / ea</span><button>Add to cart</button>
+        </li>
+        <li class="product-card">
+          <a href="/container">Clear Deli Container, 32 oz, 240 Count</a>
+          <span>$48.00</span><button>Add to cart</button>
+        </li>
+        <li class="product-card">
+          <a href="/promotion">65% Off! 65% Off!</a>
+          <span>$5.00</span><span>5 oz</span><button>Add to cart</button>
+        </li>
+      </ul></main>
+    `;
+
+    const products = extractProductsFromDocument(
+      document,
+      DEFAULT_PREFERENCES,
+      "shop.example"
+    );
+
+    expect(products.map((product) => product.normalized?.display)).toEqual(
+      expect.arrayContaining([
+        "$6.33/ft",
+        "30¢/bag",
+        "1.27¢/sheet",
+        "20¢/count"
+      ])
+    );
+    expect(
+      products.some(
+        (product) =>
+          product.title.includes("Trash Bags") &&
+          product.normalized?.dimension === "volume"
+      )
+    ).toBe(false);
+    expect(products.some((product) => product.title.includes("65% Off"))).toBe(
+      false
+    );
+  });
+
+  it("rejects editorial roundups that contain several product examples", () => {
+    document.documentElement.innerHTML = `
+      <main>
+        <article class="content-block">
+          <h3>Top-Rated Construction Paper for Classroom Learning</h3>
+          <p>Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. Our store offers a wide selection of classroom paper. </p>
+          <p>Prices range from $1.49 to $82.99.</p>
+          <p>Paper Pack - 2200 Sheets - $82.99</p>
+          <a href="/construction-paper">Learn more</a>
+        </article>
+      </main>
+    `;
+
+    expect(
+      extractProductsFromDocument(document, DEFAULT_PREFERENCES, "shop.example")
+    ).toEqual([]);
+  });
+
+  it("prefers a dimensional package over a retailer per-item field", () => {
+    document.documentElement.innerHTML = `
+      <main>
+        <article class="product-card" data-asin="foil">
+          <a href="/foil"><img src="foil.jpg">Aluminum Foil, 12 inches x 1000 ft Roll</a>
+          <span>$55.90</span><span>$55.90 / item</span><button>Add to cart</button>
+        </article>
+      </main>
+    `;
+
+    const [product] = extractProductsFromDocument(
+      document,
+      DEFAULT_PREFERENCES,
+      "shop.example"
+    );
+
+    expect(product?.normalized?.display).toBe("5.59¢/ft");
+  });
 });
 
 function loadFixture(filename: string, _url: string): void {

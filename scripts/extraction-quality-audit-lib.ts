@@ -1,4 +1,7 @@
-import { isLikelyPackageQuantity } from "../src/core/pricing";
+import {
+  isLikelyPackageQuantity,
+  packageQuantityRejectionReason
+} from "../src/core/pricing";
 import { convertQuantityToBase, getUnitDefinition } from "../src/core/units";
 import type { ExtractionPreannotation } from "./extraction-preannotation-lib";
 
@@ -10,6 +13,13 @@ export type ExtractionAuditReason =
   | "native-price-math-disagreement"
   | "physical-dimension-as-quantity"
   | "equipment-capacity-as-quantity"
+  | "material-weight-as-quantity"
+  | "container-capacity-as-quantity"
+  | "container-size-as-quantity"
+  | "style-descriptor-as-quantity"
+  | "ambiguous-paper-roll-as-unit"
+  | "single-each-as-unit"
+  | "durable-each-as-unit"
   | "ambiguous-decimal-quantity";
 
 export interface ExtractionQualityAudit {
@@ -58,11 +68,8 @@ export function auditExtractionPreannotation(
     quantity &&
     !isLikelyPackageQuantity(title, quantity)
   ) {
-    reasons.push(
-      quantity.dimension === "length"
-        ? "physical-dimension-as-quantity"
-        : "equipment-capacity-as-quantity"
-    );
+    const rejection = packageQuantityRejectionReason(title, quantity);
+    if (rejection) reasons.push(rejection);
   }
   if (
     quantity &&

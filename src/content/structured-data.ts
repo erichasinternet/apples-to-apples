@@ -3,7 +3,8 @@ import {
   findBestPrice,
   isLikelyPackageQuantity,
   parseQuantities,
-  selectPackageQuantity
+  selectPackageQuantity,
+  specializePackageQuantity
 } from "../core/pricing";
 
 interface JsonObject {
@@ -31,7 +32,10 @@ export function extractStructuredProducts(document: Document, site: string): Pro
       const quantities = parseQuantities(JSON.stringify(node)).filter(
         (quantity) => isLikelyPackageQuantity(title, quantity)
       );
-      const packageQuantity = selectPackageQuantity(quantities);
+      const selectedQuantity = selectPackageQuantity(quantities);
+      const packageQuantity = selectedQuantity
+        ? specializePackageQuantity(title, selectedQuantity)
+        : undefined;
       const evidence: Evidence[] = [
         {
           kind: "structured-data",

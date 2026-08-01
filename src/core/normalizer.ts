@@ -9,6 +9,7 @@ import type {
   UserPreferences
 } from "./types";
 import { DEFAULT_PREFERENCES } from "./types";
+import { isLikelyPackageQuantity } from "./pricing";
 import {
   convertPricePerUnit,
   convertQuantityToBase,
@@ -22,11 +23,16 @@ export function normalizeProduct(
   product: ProductInput,
   preferences: UserPreferences = DEFAULT_PREFERENCES
 ): NormalizedProduct {
-  const nativeResult = product.nativeUnitPrice
+  const nativeResult =
+    product.nativeUnitPrice &&
+    (isLikelyPackageQuantity(product.title, product.nativeUnitPrice) ||
+      hasCorroboratingMultiCountPackage(product))
     ? fromNativeUnitPrice(product.nativeUnitPrice, product, preferences)
     : undefined;
   const packageResult =
-    product.price && product.packageQuantity
+    product.price &&
+    product.packageQuantity &&
+    isLikelyPackageQuantity(product.title, product.packageQuantity)
       ? fromPackageMath(product.price.cents, product.packageQuantity, product, preferences)
       : undefined;
 
@@ -35,6 +41,26 @@ export function normalizeProduct(
   }
 
   if (nativeResult && packageResult) {
+    if (
+      nativeResult.unit === "each" &&
+      ((product.packageQuantity?.dimension === "count" &&
+        product.packageQuantity.value > 1 &&
+        /\b(?:ct\.?|counts?|pieces?|items?)\b/i.test(
+          product.packageQuantity.sourceText
+        )) ||
+        packageResult.dimension !== "count" ||
+        packageResult.unit !== "each" ||
+        /\/\s*(?:cs|case|pk|pack)\b/i.test(
+          product.packageQuantity?.sourceText ?? ""
+        ))
+    ) {
+      return { ...product, normalized: packageResult };
+    }
+
+    if (nativeResult.dimension !== packageResult.dimension) {
+      return { ...product, normalized: nativeResult };
+    }
+
     const divergence = Math.abs(nativeResult.centsPerUnit - packageResult.centsPerUnit) / nativeResult.centsPerUnit;
 
     if (Number.isFinite(divergence) && divergence <= 0.08) {
@@ -54,20 +80,7 @@ export function normalizeProduct(
       };
     }
 
-    return {
-      ...product,
-      normalized: {
-        ...nativeResult,
-        warnings: [...nativeResult.warnings, "Visible unit price differs from package math."],
-        evidence: [
-          ...nativeResult.evidence,
-          {
-            kind: "warning",
-            text: "Visible unit price differs from package math."
-          }
-        ]
-      }
-    };
+    return product;
   }
 
   const normalized = nativeResult ?? packageResult;
@@ -80,6 +93,15 @@ export function normalizeProduct(
     ...product,
     normalized
   };
+}
+
+function hasCorroboratingMultiCountPackage(product: ProductInput): boolean {
+  return Boolean(
+    product.nativeUnitPrice?.unit === "each" &&
+      product.packageQuantity?.dimension === "count" &&
+      product.packageQuantity.value > 1 &&
+      isLikelyPackageQuantity(product.title, product.packageQuantity)
+  );
 }
 
 export function formatUnitPrice(centsPerUnit: number, unit: CanonicalUnit): string {
@@ -141,7 +163,9 @@ function fromPackageMath(
     return undefined;
   }
 
-  const totalBaseUnits = convertQuantityToBase(quantity.value, quantity.unit);
+  const packCount = packageMultiplier(product, quantity);
+  const effectiveQuantity = quantity.value * packCount;
+  const totalBaseUnits = convertQuantityToBase(effectiveQuantity, quantity.unit);
   if (!Number.isFinite(totalBaseUnits) || totalBaseUnits <= 0) {
     return undefined;
   }
@@ -149,7 +173,7 @@ function fromPackageMath(
   const target = getUnitDefinition(targetUnit);
   const centsPerUnit = (priceCents / totalBaseUnits) * target.toBase;
   const display = formatUnitPrice(centsPerUnit, targetUnit);
-  const explanation = `$${(priceCents / 100).toFixed(2)} / ${trimZeros(String(quantity.value))} ${getUnitLabel(
+  const explanation = `$${(priceCents / 100).toFixed(2)} / ${trimZeros(String(effectiveQuantity))} ${getUnitLabel(
     quantity.unit
   )}`;
 
@@ -173,6 +197,18 @@ function fromPackageMath(
       }
     ]
   };
+}
+
+function packageMultiplier(product: ProductInput, quantity: Quantity): number {
+  const packCount = product.packCount ?? 1;
+  if (packCount <= 1) return 1;
+  if (quantity.dimension === "count" && quantity.value === packCount) return 1;
+
+  const sourceIncludesPack =
+    new RegExp(`\\b${packCount}\\s*(?:pack|pk)\\b`, "i").test(quantity.sourceText) ||
+    new RegExp(`\\b(?:pack|pk)\\s+of\\s+${packCount}\\b`, "i").test(quantity.sourceText) ||
+    /\b\d{2,6}\s*\/\s*(?:cs|case|pk|pack)\b/i.test(quantity.sourceText);
+  return sourceIncludesPack ? 1 : packCount;
 }
 
 function selectTargetUnit(sourceUnit: CanonicalUnit, preferences: UserPreferences): CanonicalUnit {

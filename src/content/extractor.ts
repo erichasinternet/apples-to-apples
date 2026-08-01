@@ -5,7 +5,8 @@ import {
   isLikelyPackageQuantity,
   parseNativeUnitPrices,
   parseQuantities,
-  selectPackageQuantity
+  selectPackageQuantity,
+  specializePackageQuantity
 } from "../core/pricing";
 import { normalizeProduct } from "../core/normalizer";
 import { getSiteAdapter, type SiteAdapter } from "./site-adapters";
@@ -100,6 +101,23 @@ function scoreElement(element: HTMLElement): number {
   if (text.length < 24 || text.length > 2600) {
     return 0;
   }
+  if (
+    /\brange\s+in\s+price\s+from\b|\baverage\s+cost\b|\bfeatures?\s+these\s+top(?:-|\s)?quality\s+products?\b/i.test(
+      text
+    )
+  ) {
+    return 0;
+  }
+
+  const hasMedia = Boolean(element.querySelector("img, picture, source"));
+  const hasCommerceAction =
+    /\b(add|cart|subscribe|options|pickup|delivery)\b/i.test(text);
+  const hasProductSchema = element.matches(
+    "[data-asin], [data-item-id], [itemtype*='Product']"
+  );
+  if (text.length > 900 && !hasMedia && !hasCommerceAction && !hasProductSchema) {
+    return 0;
+  }
 
   let score = 0;
 
@@ -119,15 +137,15 @@ function scoreElement(element: HTMLElement): number {
     score += 2;
   }
 
-  if (element.querySelector("img, picture, source")) {
+  if (hasMedia) {
     score += 1;
   }
 
-  if (/\b(add|cart|subscribe|options|pickup|delivery)\b/i.test(text)) {
+  if (hasCommerceAction) {
     score += 1;
   }
 
-  if (element.matches("[data-asin], [data-item-id], [itemtype*='Product']")) {
+  if (hasProductSchema) {
     score += 3;
   }
 
@@ -155,8 +173,16 @@ function extractProductFromCard(
   const allQuantities = [...titleQuantities, ...parseQuantities(text)].filter(
     (quantity) => isLikelyPackageQuantity(title, quantity)
   );
-  const packageQuantity = selectPackageQuantity(allQuantities, preferredNativeUnitPrice?.dimension);
-  const rankedPackageQuantity = raiseTitleQuantityIfFromTitle(packageQuantity, title);
+  const packageQuantity = selectPackageQuantity(
+    allQuantities,
+    preferredNativeUnitPrice?.unit === "each"
+      ? undefined
+      : preferredNativeUnitPrice?.dimension
+  );
+  const rankedPackageQuantity = raiseTitleQuantityIfFromTitle(
+    packageQuantity ? specializePackageQuantity(title, packageQuantity) : undefined,
+    title
+  );
   const price = findBestPrice(scopedPriceText) ?? findBestPrice(text);
   const packCount = extractPackCount(title) ?? extractPackCount(text);
 
@@ -248,6 +274,7 @@ function cleanCandidateTitle(value: string): string | undefined {
     cleaned.length < 8 ||
     cleaned.length > 220 ||
     /^\$/.test(cleaned) ||
+    /^\d+(?:\.\d+)?%\s+off\b/i.test(cleaned) ||
     /^(?:add|remove|compare|subscribe|sponsored|shipping|pickup|delivery|options|quick view|buy|sign in|create account)\b/i.test(
       cleaned
     ) ||
@@ -296,7 +323,7 @@ function getVisibleText(element: Element): string {
   ) {
     return (
       (element as HTMLElement).innerText?.replace(/\s+/g, " ").trim() ||
-      element.textContent?.replace(/\s+/g, " ").trim() ||
+      textWithNodeBoundaries(element) ||
       ""
     );
   }
@@ -309,6 +336,21 @@ function getVisibleText(element: Element): string {
   }
 
   return clone.textContent?.replace(/\s+/g, " ").trim() || "";
+}
+
+function textWithNodeBoundaries(element: Element): string {
+  const walker = element.ownerDocument.createTreeWalker(
+    element,
+    4
+  );
+  const parts: string[] = [];
+  let node = walker.nextNode();
+  while (node) {
+    const value = node.textContent?.replace(/\s+/g, " ").trim();
+    if (value) parts.push(value);
+    node = walker.nextNode();
+  }
+  return parts.join(" ");
 }
 
 function raiseTitleQuantityIfFromTitle(quantity: Quantity | undefined, title: string): Quantity | undefined {
