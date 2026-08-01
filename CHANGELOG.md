@@ -6,11 +6,6 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
-### Security
-
-- Removed dynamic code construction from the bounded-process test harness after
-  GitHub CodeQL review.
-
 ## [0.4.0] - 2026-08-01
 
 ### Added
@@ -30,6 +25,8 @@ All notable changes to this project are documented here. The format is based on
 
 - Release packages exclude source maps and include third-party notices.
 - Development dependencies were updated and audited.
+- Removed dynamic code construction from the bounded-process test harness after
+  GitHub CodeQL review.
 
 ## [0.3.1] - 2026-08-01
 
