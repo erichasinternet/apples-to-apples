@@ -105,9 +105,10 @@ bun run training:silver:validate
 See [docs/benchmark-protocol.md](docs/benchmark-protocol.md) for sampling, domain-held-out splits, annotation, privacy, and statistical analysis. The [learned extraction experiment](docs/learned-extraction.md) defines the evidence contract and model promotion gates.
 The [training runbook](docs/training.md) covers dataset readiness, strict export, the
 T5Gemma 2 LoRA configuration, and GPU execution.
-The [Hugging Face dataset release runbook](docs/huggingface-dataset-release.md)
-defines the synthetic-only public boundary, release quality gates, licensing,
-validation, and private-first upload process.
+The public [Unit Price Evidence: Synthetic dataset](https://huggingface.co/datasets/hotdogsalesman/unit-price-evidence-synthetic)
+and its [release runbook](docs/huggingface-dataset-release.md) define the
+synthetic-only public boundary, release quality gates, licensing, validation,
+and private-first upload process.
 The [autoresearch protocol](docs/autoresearch.md) records the experiment loop,
 checkpoint results, cost controls, and promotion gates.
 The [MVP validation record](docs/mvp-validation.md) defines the accepted
@@ -199,7 +200,7 @@ Application source and documentation are available under the [MIT License](LICEN
 Third-party components retain their original terms in
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-The separately generated **Unit Price Evidence: Synthetic** dataset is released
-under CDLA-Permissive-2.0 as documented in
+The separately generated [**Unit Price Evidence: Synthetic** dataset](https://huggingface.co/datasets/hotdogsalesman/unit-price-evidence-synthetic)
+is released under CDLA-Permissive-2.0 as documented in
 [docs/huggingface-dataset-release.md](docs/huggingface-dataset-release.md). Raw
 live retailer captures are not licensed for redistribution and are not committed.

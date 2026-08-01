@@ -8,6 +8,8 @@ images, site-independent observations, candidate catalogs, and evidence-pointer
 targets. The public name is model-neutral because the records can train or
 evaluate any compatible grounded extraction system.
 
+Public dataset: [hotdogsalesman/unit-price-evidence-synthetic](https://huggingface.co/datasets/hotdogsalesman/unit-price-evidence-synthetic)
+
 The release excludes:
 
 - raw or derived live-retailer HTML and screenshots;
@@ -78,7 +80,7 @@ Create a private Hugging Face dataset repository first, then upload the generate
 folder with the official Hugging Face CLI:
 
 ```bash
-hf upload <account>/unit-price-evidence-synthetic \
+hf upload hotdogsalesman/unit-price-evidence-synthetic \
   --repo-type dataset \
   artifacts/huggingface/unit-price-evidence-synthetic-v0.1.0
 ```
