@@ -7,10 +7,10 @@ repository controls.
 
 ## Decision
 
-The source tree is suitable for public release after the audited changes in
-this report are merged and GitHub's public-repository security controls are
-enabled. No known credential leak, vulnerable locked dependency, critical code
-finding, or personal live-capture artifact remains in the repository.
+The source tree is suitable for public release. The audited changes are merged
+and GitHub's public-repository security controls are enabled. No known
+credential leak, vulnerable locked dependency, critical code finding, or
+personal live-capture artifact remains in the repository.
 
 This decision covers source publication. It does not replace the Chrome Web
 Store trusted-tester, accessibility, or live-site accuracy gates.
@@ -19,7 +19,7 @@ Store trusted-tester, accessibility, or live-site accuracy gates.
 
 | Area | Method | Result |
 | --- | --- | --- |
-| Git history | Gitleaks 8.30.1 over all 142 commits | 0 leaks |
+| Git history | Gitleaks 8.30.1 over all 153 commits | 0 leaks |
 | Bun and Python locks | OSV-Scanner 2.4.0 | 0 known vulnerabilities across 331 packages |
 | Bun dependency audit | `bun audit` | 0 vulnerabilities |
 | Workflow syntax | Actionlint 1.7.12 and ShellCheck 0.11.0 | 0 findings |
@@ -108,15 +108,17 @@ added to repository or Actions secrets unless a workflow requires them.
 
 ## GitHub Controls
 
-After the repository becomes public:
+The public repository has:
 
-- Enable Dependabot alerts and security updates.
-- Enable secret scanning and push protection.
-- Enable private vulnerability reporting.
-- Run CodeQL on `main`, pull requests, and the weekly schedule.
-- Protect `main` with pull-request review, required CI, and blocked force pushes.
-- Keep Actions permissions read-only by default and require immutable action
-  SHAs.
+- Dependabot alerts, security updates, and weekly dependency update pull
+  requests.
+- Secret scanning and push protection. Generic non-provider patterns and
+  validity checks are not available for this personal public repository.
+- Private vulnerability reporting.
+- CodeQL on `main`, pull requests, and the weekly schedule.
+- `main` protection with pull-request review, required CI, linear history,
+  conversation resolution, and blocked force pushes and deletions.
+- Read-only Actions permissions by default and immutable action SHAs.
 
 ## Reproduction
 

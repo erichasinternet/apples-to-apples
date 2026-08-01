@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
+### Changed
+
+- Updated artifact and dependency-review Actions to their Node.js 24 releases.
+
 ## [0.4.0] - 2026-08-01
 
 ### Added
