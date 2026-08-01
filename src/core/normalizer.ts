@@ -23,11 +23,20 @@ export function normalizeProduct(
   product: ProductInput,
   preferences: UserPreferences = DEFAULT_PREFERENCES
 ): NormalizedProduct {
+  const effectiveNativeUnitPrice =
+    product.nativeUnitPrice?.unit === "oz" &&
+    product.packageQuantity?.unit === "fl_oz"
+      ? {
+          ...product.nativeUnitPrice,
+          unit: "fl_oz" as const,
+          dimension: "volume" as const
+        }
+      : product.nativeUnitPrice;
   const nativeResult =
-    product.nativeUnitPrice &&
-    (isLikelyPackageQuantity(product.title, product.nativeUnitPrice) ||
+    effectiveNativeUnitPrice &&
+    (isLikelyPackageQuantity(product.title, effectiveNativeUnitPrice) ||
       hasCorroboratingMultiCountPackage(product))
-    ? fromNativeUnitPrice(product.nativeUnitPrice, product, preferences)
+    ? fromNativeUnitPrice(effectiveNativeUnitPrice, product, preferences)
     : undefined;
   const packageResult =
     product.price &&
@@ -57,34 +66,35 @@ export function normalizeProduct(
       return { ...product, normalized: packageResult };
     }
 
-    if (nativeResult.dimension !== packageResult.dimension) {
+    if (
+      product.nativeUnitPrice?.unit === "oz" &&
+      product.packageQuantity?.unit === "fl_oz"
+    ) {
       if (
-        product.nativeUnitPrice?.unit === "oz" &&
-        product.packageQuantity?.unit === "fl_oz"
+        !ratesAgree(
+          product.nativeUnitPrice.centsPerUnit,
+          packageResult.centsPerUnit
+        )
       ) {
-        if (
-          !ratesAgree(
-            product.nativeUnitPrice.centsPerUnit,
-            packageResult.centsPerUnit
-          )
-        ) {
-          return product;
-        }
-        return {
-          ...product,
-          normalized: {
-            ...packageResult,
-            explanation: `${packageResult.explanation}; retailer unit price omits the fluid marker.`,
-            evidence: [
-              ...packageResult.evidence,
-              {
-                kind: "native-unit-price",
-                text: product.nativeUnitPrice.sourceText
-              }
-            ]
-          }
-        };
+        return product;
       }
+      return {
+        ...product,
+        normalized: {
+          ...packageResult,
+          explanation: `${packageResult.explanation}; retailer unit price omits the fluid marker.`,
+          evidence: [
+            ...packageResult.evidence,
+            {
+              kind: "native-unit-price",
+              text: product.nativeUnitPrice.sourceText
+            }
+          ]
+        }
+      };
+    }
+
+    if (nativeResult.dimension !== packageResult.dimension) {
       return { ...product, normalized: nativeResult };
     }
 
@@ -234,7 +244,16 @@ function fromPackageMath(
 function packageMultiplier(product: ProductInput, quantity: Quantity): number {
   const packCount = product.packCount ?? 1;
   if (packCount <= 1) return 1;
+  if (quantity.dimension === "area") return 1;
   if (quantity.dimension === "count" && quantity.value === packCount) return 1;
+  if (
+    quantity.dimension === "count" &&
+    [...product.title.matchAll(/\(\s*(\d+(?:\.\d+)?)\s*(?:ct\.?|count)\s*\)/gi)].some(
+      (match) => Number.parseFloat(match[1] ?? "") === quantity.value
+    )
+  ) {
+    return 1;
+  }
 
   const sourceIncludesPack =
     new RegExp(`\\b${packCount}\\s*(?:pack|pk)\\b`, "i").test(quantity.sourceText) ||

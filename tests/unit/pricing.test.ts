@@ -68,6 +68,10 @@ describe("unit price parsing", () => {
       dimension: "length"
     });
     expect(parseNativeUnitPrices("$9.80 per yard")[0]?.centsPerUnit).toBe(980);
+    expect(parseNativeUnitPrices("$13.00/ linear yard")[0]).toMatchObject({
+      centsPerUnit: 1300,
+      unit: "yd"
+    });
   });
 });
 
@@ -98,6 +102,9 @@ describe("quantity parsing", () => {
       )
     ).toBe(false);
     expect(parseQuantities("Softsoap Pumps CPCUS04964CT")).toEqual([]);
+    expect(parseQuantities("Cast Padding 4 in x 10 yds")).toContainEqual(
+      expect.objectContaining({ value: 10, unit: "yd" })
+    );
     expect(parseQuantities("$137.12 CT Add to Cart")).toEqual([]);
     expect(parseQuantities("Napkins, 8000/Cs")).toContainEqual(
       expect.objectContaining({ value: 8000, unit: "each" })
@@ -113,6 +120,15 @@ describe("quantity parsing", () => {
     expect(extractPackCount("25 Bags/Roll, 8 Rolls/Box")).toBe(8);
     expect(extractPackCount("1600 mL Refills, Case of 4")).toBe(4);
     expect(extractPackCount("150 oz Bottle 4 Carton")).toBe(4);
+    expect(extractPackCount("4 in x 4 yds, 12/Bag")).toBe(12);
+    expect(extractPackCount("500 Sheets per Ream, 40 / Pallet")).toBe(40);
+    expect(extractPackCount("1.8mL, 50/bx")).toBe(50);
+  });
+
+  it("parses one-digit slash pack counts", () => {
+    expect(parseQuantities("Alkaline Batteries, 8 / Pack")).toContainEqual(
+      expect.objectContaining({ value: 8, unit: "each", dimension: "count" })
+    );
   });
 
   it.each([
@@ -164,7 +180,33 @@ describe("quantity parsing", () => {
     ["Paper Hot Cups, 16 Oz, 1000/carton", "16 Oz", false],
     ["Square Dance Yardage SKU# 10080-G", "10080-G", false],
     ["Paper Cups, 50/Pack, 20/Carton", "50/Pack", false],
-    ["Paper Hot Cups, 15 Bags/40 Cups = 600/CTN", "15 Bags", false]
+    ["Paper Hot Cups, 15 Bags/40 Cups = 600/CTN", "15 Bags", false],
+    ["Fusible Fleece 45in by the yard", "45in", false],
+    ["Square Dance Yardage SKU# 10080-G", "10080-G", false],
+    ["Quilt Panel SKU# 10596-L", "10596-L", false],
+    ["Kleenex Paper Towels", "20-L", false],
+    ["Heather Gray 17 oz Cotton Fleece Fabric", "17 oz", false],
+    ["Wire Wheel Brush, 16 Inch", "16 Inch", false],
+    ["Ziploc Storage Bags, 1 gal", "1 gal", false],
+    ["Glass Bottles, 6 Cap", "6 Cap", false],
+    ["Bouffant Caps, model 9100-310L", "310L", false],
+    ["Toner Mate 2 in 1 Cotton Pads", "2 in", false],
+    [
+      '65" 10.5 Ounce SeaFab Poly/Cotton Boat Duck @ $13.00/ linear yard',
+      "10.5 Ounce",
+      false
+    ],
+    [
+      "Bagcraft 15x16-Inch Insulated Kraft Paper Wrap, 1000/CS",
+      "15x16-Inch",
+      false
+    ],
+    ["2-Ounce Ice Cream Disher with Blue Handle", "2-Ounce", false],
+    ["C.A.C. China KC-1-G Coffee Cup", "1-G", false],
+    ["PacknWood 15-inch Greaseproof Kraft Paper, 500/CS", "15-inch", false],
+    ["Paper Single Wall Coffee Cup, 16 oz, 400 count box", "16 oz", false],
+    ["Paper Medical Funnel Cups, 6 Oz, 250/bag", "6 Oz", false],
+    ["Super Value Pack, 30 Gal, 0.65 Mil, 60/box Handi-Bag", "30 Gal", false]
   ])("classifies sale quantity semantics for %s", (title, quantityText, expected) => {
     const quantity = parseQuantities(quantityText)[0];
     expect(quantity).toBeDefined();
@@ -226,6 +268,19 @@ describe("normalization", () => {
     });
   });
 
+  it("uses a liquid package to disambiguate a native per-ounce rate", () => {
+    const product = makeProduct(
+      "Purified Water, 24 Pack, 16.9 Oz Bottles",
+      "1¢/oz"
+    );
+
+    expect(normalizeProduct(product).normalized).toMatchObject({
+      dimension: "volume",
+      unit: "fl_oz",
+      display: "1¢/fl oz"
+    });
+  });
+
   it("abstains when an omitted-fluid native rate is actually the item price", () => {
     const product = makeProduct(
       "Head & Shoulders Shampoo, 12.5 fl oz",
@@ -250,6 +305,37 @@ describe("normalization", () => {
     expect(
       specializePackageQuantity("Wheel Cleaner 32 oz", quantity)
     ).toMatchObject({ unit: "fl_oz", dimension: "volume" });
+  });
+
+  it("treats common liquid-product ounces as fluid volume", () => {
+    for (const title of [
+      "Purified Water, 16.9 oz Bottles",
+      "Interior Cleaning Gel, 16 oz",
+      "Spa Defoamer, 16 oz",
+      "Pet Urine Destroyer, 35 oz"
+    ]) {
+      expect(
+        specializePackageQuantity(title, parseQuantities(title)[0]!)
+      ).toMatchObject({ unit: "fl_oz", dimension: "volume" });
+    }
+  });
+
+  it("does not multiply an explicit parenthetical total count twice", () => {
+    const product = makeProduct(
+      "Underpads, 50/Pack, Case of 3 (150 Count)",
+      "$67.95"
+    );
+
+    expect(normalizeProduct(product).normalized?.display).toBe("45.3¢/count");
+  });
+
+  it("does not multiply total tile coverage by the tile count", () => {
+    const product = makeProduct(
+      "Porcelain Tile, 15.5 sq ft, 18 per carton",
+      "$3.82"
+    );
+
+    expect(normalizeProduct(product).normalized?.display).toBe("24.6¢/sq ft");
   });
 
   it("normalizes paper towels by area when square footage is visible", () => {

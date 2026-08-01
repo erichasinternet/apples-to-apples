@@ -168,7 +168,7 @@ export const UNIT_DEFINITIONS: readonly UnitDefinition[] = [
     unit: "yd",
     dimension: "length",
     label: "yd",
-    aliases: ["yd", "yd.", "yard", "yards"],
+    aliases: ["yd", "yd.", "yds", "yds.", "yard", "yards"],
     toBase: 3
   },
   {

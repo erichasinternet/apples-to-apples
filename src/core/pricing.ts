@@ -6,7 +6,7 @@ const PRICE_WITH_DECIMAL =
 
 const UNIT_SOURCE = getUnitRegexSource();
 const NATIVE_UNIT_PRICE_REGEX = new RegExp(
-  `(?:\\$\\s*([0-9]+(?:[.,][0-9]+)?)|([0-9]+(?:[.,][0-9]+)?)\\s*(?:¢|cents?))\\s*(?:[([]\\s*)?(?:/|per\\s+)\\s*(${UNIT_SOURCE})(?=\\b|\\W)`,
+  `(?:\\$\\s*([0-9]+(?:[.,][0-9]+)?)|([0-9]+(?:[.,][0-9]+)?)\\s*(?:¢|cents?))\\s*(?:[([]\\s*)?(?:/|per\\s+)\\s*(?:linear\\s+)?(${UNIT_SOURCE})(?=\\b|\\W)`,
   "gi"
 );
 
@@ -16,7 +16,7 @@ const QUANTITY_X_REGEX = new RegExp(
 );
 
 const WIDTH_BY_LENGTH_REGEX = new RegExp(
-  `\\d+(?:\\.\\d+)?\\s*(?:"|inches?|in\\.?)\\s*(?:x|×|by)\\s*(\\d+(?:\\.\\d+)?)\\s*(ft|feet|foot|yd\\.?|yards?)(?=\\b|\\W)`,
+  `\\d+(?:\\.\\d+)?\\s*(?:"|inch(?:es)?|in\\.?)\\s*(?:x|×|by)\\s*(\\d+(?:\\.\\d+)?)\\s*(ft|feet|foot|yds?\\.?|yards?)(?=\\b|\\W)`,
   "gi"
 );
 
@@ -29,7 +29,7 @@ const QUANTITY_REGEX = new RegExp(
   `(\\d+(?:\\.\\d+)?)\\s*(?:-\\s*)?(${UNIT_SOURCE})(?=\\b|\\W)`,
   "gi"
 );
-const CASE_COUNT_REGEX = /\b(\d{2,6})\s*\/\s*(?:cs|case|pk|pack)\b/gi;
+const CASE_COUNT_REGEX = /\b(\d{1,6})\s*\/\s*(?:cs|case|pk|pack)\b/gi;
 const FACTORED_QUANTITY_PATTERNS = [
   new RegExp(
     `(\\d{1,3})\\s*(?:x|×)\\s*(\\d+(?:\\.\\d+)?)\\s*(?:-\\s*)?(${UNIT_SOURCE})(?=\\b|\\W)`,
@@ -287,6 +287,9 @@ export function extractPackCount(text: string): number | undefined {
     /\b(?:case|carton|box)\s+of\s+(\d{1,3})\b/i,
     /\b(\d{1,3})\s+per\s+(?:case|carton|box)\b/i,
     /\b(\d{1,3})\s+(?:rolls?|reams?|packs?|bags?|bottles?)\s*\/\s*(?:case|carton|box)\b/i,
+    /\b(\d{1,3})\s*\/\s*(?:bag|box|bx|pallet)\b/i,
+    /\b(\d{1,3})\s*(?:per|\/)\s*pallet\b/i,
+    /\b(?:box|bx)\s+of\s+(\d{1,3})\b/i,
     /\b(\d{1,3})\s+(?:cartons?|cases?)\b/i,
     /\b(\d{1,3})\s*\/\s*(?:carton|case)\b/i,
     /\btotal\s+qty\s+(\d{1,3})\b/i
@@ -410,7 +413,15 @@ export function packageQuantityRejectionReason(
     }
     if (
       quantity.unit === "in" &&
-      /(?:\b(?:sold\s+)?per\s+(?:foot|feet|yard)|\/\s*(?:ft|feet|yard|yd)\b)/i.test(
+      /(?:\b(?:sold\s+)?(?:per|by\s+the)\s+(?:foot|feet|yard)|\/\s*(?:ft|feet|yard|yd)\b)/i.test(
+        title
+      )
+    ) {
+      return "physical-dimension-as-quantity";
+    }
+    if (
+      quantity.unit === "in" &&
+      /\b(?:fabrics?|textiles?|yardage|fleece|denim|flannel|canvas|corduroy|chiffon|twill|jersey|batiste)\b/i.test(
         title
       )
     ) {
@@ -478,6 +489,13 @@ export function packageQuantityRejectionReason(
   }
 
   if (
+    quantity.unit === "capsule" &&
+    /\b(?:bottles?|jars?|containers?)\b/i.test(title)
+  ) {
+    return "style-descriptor-as-quantity";
+  }
+
+  if (
     quantity.dimension === "count" &&
     (quantity.unit === "each" || quantity.unit === "roll") &&
     /\b(?:paper\s+towels?|toilet\s+paper|bath(?:room)?\s+tissue)\b/i.test(title)
@@ -523,7 +541,7 @@ export function packageQuantityRejectionReason(
 }
 
 function looksLikeDiscreteLengthSpecification(title: string): boolean {
-  if (/\b(?:notebooks?|journals?|planners?|couplers?|cuffs?|vacuum\s+heads?|underpads?|dressings?|sponges?|applicators?|catheters?|ramekins?|plates?|bowls?|cups?|straws?|pans?|liners?|wrappers?|cones?|boxes?|trays?|sleeves?|adhesive\s+strips?|bandages?|cutters?)\b/i.test(title)) {
+  if (/\b(?:notebooks?|journals?|planners?|couplers?|cuffs?|vacuum\s+heads?|underpads?|bed\s+pads?|dressings?|sponges?|applicators?|catheters?|ramekins?|plates?|bowls?|cups?|straws?|pans?|liners?|wrappers?|cones?|box(?:es)?|trays?|sleeves?|sheets?|cotton\s+pads?|adhesive\s+strips?|bandages?|cutters?|brush(?:es)?|hose\s+bibs?|paper\s+towels?|hand\s+towels?|toilet\s+paper)\b/i.test(title)) {
     return true;
   }
   return (
@@ -567,7 +585,7 @@ function looksLikeCountedItemDimensions(title: string): boolean {
     );
   if (!counted) return false;
   if (/\b(?:cable|wire|hose|tubing|rope|cord|roll)\b/i.test(title)) return false;
-  return /\b(?:plates?|napkins?|towels?|underpads?|dressings?|sponges?|applicators?|catheters?|needles?|syringes?|cups?|bowls?|containers?|lids?|sleeves?|wipes?)\b/i.test(
+  return /\b(?:plates?|napkins?|towels?|underpads?|dressings?|sponges?|applicators?|catheters?|needles?|syringes?|cups?|bowls?|containers?|lids?|sleeves?|wipes?|sheets?|paper|cellophane)\b/i.test(
     title
   );
 }
@@ -605,7 +623,7 @@ function looksLikeMaterialWeightSpecification(title: string): boolean {
     return true;
   }
   const material =
-    /\b(?:fabric|textile|cotton|linen|flannel|terry\s+cloth|canvas|denim|fleece|polyester|spandex|silk)\b/i.test(
+    /\b(?:fabric|textile|cotton|linen|flannel|terry\s+cloth|canvas|boat\s+duck|denim|fleece|polyester|spandex|silk)\b/i.test(
       title
     );
   const specification =
@@ -615,12 +633,20 @@ function looksLikeMaterialWeightSpecification(title: string): boolean {
   const medicalPadSpecification =
     /\b(?:underpads?|bed\s+pads?)\b/i.test(title) &&
     /\b\d+(?:\.\d+)?\s*(?:g|grams?)\b/i.test(title);
-  return (material && specification) || medicalPadSpecification;
+  const fabricWeight =
+    /\b(?:fabrics?|textiles?|yardage|fleece|denim|flannel|canvas|boat\s+duck|corduroy|chiffon|twill|jersey|batiste)\b/i.test(
+      title
+    );
+  return (material && specification) || medicalPadSpecification || fabricWeight;
 }
 
 function looksLikeContainerCapacitySpecification(title: string): boolean {
-  return /\b(?:trash|garbage|waste|lawn\s+and\s+leaf)\s+(?:bags?\b|ba\s*(?:\.{3}|…))|\b(?:trash|garbage|can)\s+liners?\b/i.test(
-    title
+  return (
+    /\b(?:trash|garbage|waste|lawn\s+and\s+leaf|storage|freezer|sandwich)\s+(?:bags?\b|ba\s*(?:\.{3}|…))|\b(?:trash|garbage|can)\s+liners?\b/i.test(
+      title
+    ) ||
+    (/\b\d+(?:\.\d+)?\s*mil\b/i.test(title) &&
+      /\b(?:box|bags?|liners?)\b/i.test(title))
   );
 }
 
@@ -632,7 +658,7 @@ function looksLikeSizedBagOrLiner(title: string): boolean {
 
 function looksLikeEmptyContainerOrDispenser(title: string): boolean {
   const strongContainer =
-    /\b(?:soap|sanitizer|towel|napkin|glove|cup|bag|foam|lotion|pump)\s+dispensers?\b|\bdispensers?\s+(?:for|with)\b|\b(?:sharps|storage|deli|food|soup|salad|portion|takeout|take\s+out|to-go|hinged|plastic|paper|foam|round|rectangular|tamper-resistant|blender)\s+containers?\b|\b(?:ramekins?|portion\s+cups?|souffle\s+cups?|(?:paper|plastic|foam)\s+(?:hot\s+|water\s+|beverage\s+)?cups?|infusers?|storage\s+totes?|foil\s+pans?|serving\s+trays?|take\s*out\s+boxes?)\b|\blids?\s+for\b[^,;]{0,40}\bcontainers?\b|\b(?:trash|garbage|waste)\s+(?:cans?|bins?)\b|\b(?:empty|replacement)\b[^,;]{0,40}\b(?:bottles?|jars?|buckets?|pails?|containers?)\b/i.test(
+    /\b(?:soap|sanitizer|towel|napkin|glove|cup|bag|foam|lotion|pump)\s+dispensers?\b|\bdispensers?\s+(?:for|with)\b|\b(?:sharps|storage|deli|food|soup|salad|portion|takeout|take\s+out|to-go|hinged|plastic|paper|foam|round|rectangular|tamper-resistant|blender)\s+containers?\b|\b(?:paper|plastic|foam)\b[^,;]{0,40}\bcups?\b|\b(?:ramekins?|portion\s+cups?|souffle\s+cups?|plastic\s+pint\s+glass(?:es)?|infusers?|storage\s+totes?|foil\s+pans?|serving\s+trays?|take\s*out\s+box(?:es)?|trigger\s+sprayers?)\b|\blids?\s+for\b[^,;]{0,40}\bcontainers?\b|\b(?:trash|garbage|waste)\s+(?:cans?|bins?)\b|\b(?:empty|replacement)\b[^,;]{0,40}\b(?:bottles?|jars?|buckets?|pails?|containers?)\b/i.test(
       title
     );
   if (strongContainer) return true;
@@ -656,7 +682,8 @@ function looksLikeEmptyContainerOrDispenser(title: string): boolean {
 
   const casePackedContainer =
     /\b(?:bottles?|jars?|containers?|cups?|bowls?|lids?)\b/i.test(title) &&
-    /\b(?:\d+\s*(?:ct|count|pcs?)|\d+\s*\/\s*(?:cs|case)|per\s+case)\b/i.test(title);
+    /\b(?:\d+\s*(?:ct|count|pcs?)|\d+\s*\/\s*(?:cs|case)|per\s+case)\b/i.test(title) &&
+    !hasConsumableContents(title);
   if (casePackedContainer) return true;
 
   const bucketOrPail = /\b(?:buckets?|pails?)\b/i.test(title);
@@ -675,10 +702,15 @@ function looksLikeGaugeOrItemWeightSpecification(
     Partial<Pick<Quantity, "sourceText" | "unit" | "value">>
 ): boolean {
   if (quantity.unit !== "g") return false;
+  if (/^\d+(?:\.\d+)?G$/.test(quantity.sourceText ?? "")) return true;
+  if (/^\d+(?:\.\d+)?-G$/.test(quantity.sourceText ?? "")) return true;
   if (
     /\b(?:fabric|textile|yardage)\b/i.test(title) &&
     /\bsku\s*#?\s*[a-z0-9-]*\d+\s*-\s*g\b/i.test(title)
   ) {
+    return true;
+  }
+  if (/\b\d{1,3}-\d+(?:\.\d+)?g\b/i.test(title)) {
     return true;
   }
   if (/\b(?:needles?|lancets?|syringes?|catheters?|cannulas?)\b/i.test(title)) return true;
@@ -698,14 +730,14 @@ function looksLikeDiscreteDurableProduct(title: string): boolean {
 }
 
 function looksLikeDurableEquipment(title: string): boolean {
-  return /\b(?:laptop|notebook|chromebook|desktop\s+computer|computer\s+monitor|monitor|television|smartphone|printer|camera|refrigerator|freezer|washer|dryer|vacuum)\b/i.test(
+  return /\b(?:laptop|notebook|chromebook|desktop\s+computer|computer\s+monitor|monitor|television|smartphone|printer|camera|refrigerator|freezer|washer|dryer|vacuum|floor\s+scrubber)\b/i.test(
     title
   );
 }
 
 function looksLikeEquipmentCapacity(title: string): boolean {
   const equipment =
-    /\b(?:capacity|dredges?|shakers?|sifters?|mixers?|flour bins?|syringes?|measuring cups?|dispensers?|tanks?)\b/i.test(
+    /\b(?:capacity|dishers?|scoops?|dredges?|shakers?|sifters?|mixers?|flour bins?|syringes?|measuring cups?|dispensers?|tanks?)\b/i.test(
       title
     );
   const consumable =
@@ -727,15 +759,24 @@ function looksLikeVolumeSpecificationOrParserArtifact(
   return (
     /\b\d+(?:\.\d+)?\s*L\s*x\s*\d/i.test(title) ||
     /\b\d+(?:\.\d+)?\s*ga\s+long\b/i.test(title) ||
-    /^only\s+\d+\s+left!?$/i.test(title.trim())
+    /^only\s+\d+\s+left!?$/i.test(title.trim()) ||
+    /\bsku\s*#?\s*[a-z0-9-]*\d+\s*-\s*l\b/i.test(title) ||
+    /\b(?:paper\s+towels?|hand\s+towels?|toilet\s+paper|bath(?:room)?\s+tissue|bouffant\s+caps?)\b/i.test(title) ||
+    /\b\d{3,}-\d+l\b/i.test(title)
   );
 }
 
 function looksLikeLiquidContents(title: string): boolean {
   if (
-    /\b(?:liquid|soap|shampoo|conditioner|body\s+wash|juice|beverage|drink|algaecide|clarifier|degreaser|mouthwash|cleaner|remover|spray|wash|rinse|treatment|concentrate)\b/i.test(
+    /\b(?:liquid|soap|shampoo|conditioner|body\s+wash|juice|beverage|drink|water|iced\s+coffee|algaecide|clarifier|degreaser|mouthwash|clean|cleaner|cleanser|cleanse|remover|spray|wash|rinse|treatment|concentrate|clearcoat|defoamer|enzyme|gel|destroyer|ready\s+to\s+use\s+formula|stain\s+out)\b/i.test(
       title
     )
+  ) {
+    return true;
+  }
+  if (
+    /\bfoam\b/i.test(title) &&
+    !/\b(?:cups?|sheets?|padding|mattress|board|insulation)\b/i.test(title)
   ) {
     return true;
   }

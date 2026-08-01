@@ -167,18 +167,24 @@ function extractProductFromCard(
   }
 
   const scopedPriceText = extractScopedText(element, adapter.priceSelectors) || text;
-  const nativeUnitPrices = parseNativeUnitPrices(text);
-  const preferredNativeUnitPrice = nativeUnitPrices[0];
-  const titleQuantities = parseQuantities(title);
-  const allQuantities = [...titleQuantities, ...parseQuantities(text)].filter(
-    (quantity) => isLikelyPackageQuantity(title, quantity)
-  );
-  const packageQuantity = selectPackageQuantity(
-    allQuantities,
+  const titleNativeUnitPrices = parseNativeUnitPrices(title);
+  const preferredNativeUnitPrice =
+    titleNativeUnitPrices[0] ?? parseNativeUnitPrices(text)[0];
+  const preferredDimension =
     preferredNativeUnitPrice?.unit === "each"
       ? undefined
-      : preferredNativeUnitPrice?.dimension
+      : preferredNativeUnitPrice?.dimension;
+  const titleQuantities = parseQuantities(title).filter(
+    (quantity) => isLikelyPackageQuantity(title, quantity)
   );
+  const cardQuantities = parseQuantities(text).filter((quantity) =>
+    isLikelyPackageQuantity(title, quantity)
+  );
+  const packageQuantity =
+    selectPackageQuantity(titleQuantities, preferredDimension) ??
+    (titleNativeUnitPrices.length === 0
+      ? selectPackageQuantity(cardQuantities, preferredDimension)
+      : undefined);
   const rankedPackageQuantity = raiseTitleQuantityIfFromTitle(
     packageQuantity ? specializePackageQuantity(title, packageQuantity) : undefined,
     title
@@ -220,7 +226,9 @@ function extractProductFromCard(
 }
 
 function looksLikeMerchandisingLabel(title: string): boolean {
-  return /^(?:cost-effective|highly reviewed|best in class)$/i.test(title.trim());
+  return /^(?:cost-effective|highly reviewed|best in class|read more|sign up or log in|save \d+% now!?|out of stock|in stock|sold out)$/i.test(
+    title.trim()
+  );
 }
 
 function structuredFallback(document: Document, hostname: string, preferences: UserPreferences): DomProduct[] {
@@ -243,6 +251,7 @@ function structuredFallback(document: Document, hostname: string, preferences: U
 
 function extractTitle(element: HTMLElement, adapter: SiteAdapter): string | undefined {
   for (const selector of adapter.titleSelectors) {
+    if (selector === "a[href]") continue;
     const titleElement = element.querySelector<HTMLElement>(selector);
     const title = titleElement ? cleanCandidateTitle(titleElement.getAttribute("aria-label") || getVisibleText(titleElement)) : undefined;
 
@@ -252,14 +261,36 @@ function extractTitle(element: HTMLElement, adapter: SiteAdapter): string | unde
   }
 
   const links = [...element.querySelectorAll<HTMLAnchorElement>("a[href]")];
-  for (const link of links) {
-    const title = cleanCandidateTitle(link.getAttribute("aria-label") || getVisibleText(link));
-    if (title) {
-      return title;
-    }
-  }
+  const linkTitles = links
+    .map((link) => ({
+      link,
+      title: cleanCandidateTitle(
+        link.getAttribute("aria-label") || getVisibleText(link)
+      )
+    }))
+    .filter(
+      (candidate): candidate is { link: HTMLAnchorElement; title: string } =>
+        Boolean(candidate.title)
+    )
+    .sort(
+      (left, right) =>
+        scoreTitleLink(right.link) - scoreTitleLink(left.link) ||
+        right.title.length - left.title.length
+    );
+  if (linkTitles[0]) return linkTitles[0].title;
 
   return undefined;
+}
+
+function scoreTitleLink(link: HTMLAnchorElement): number {
+  const href = link.getAttribute("href") ?? "";
+  const identity = `${link.className} ${link.id}`;
+  let score = 0;
+  if (/\b(?:product|item)[-_ ]?(?:title|name)\b/i.test(identity)) score += 8;
+  if (/\/(?:products?|item|ip|dp)\//i.test(href)) score += 5;
+  if (/\b(?:vendor|brand)\b/i.test(identity)) score -= 6;
+  if (/\/(?:collections?|vendors?|brands?)(?:\/|$)/i.test(href)) score -= 6;
+  return score;
 }
 
 function extractLineTitle(text: string): string | undefined {
@@ -278,7 +309,12 @@ function cleanCandidateTitle(value: string): string | undefined {
     cleaned.length < 8 ||
     cleaned.length > 220 ||
     /^\$/.test(cleaned) ||
+    /^\d(?:\.\d)?\s+out of 5 stars?\b/i.test(cleaned) ||
     /^\d+(?:\.\d+)?%\s+off\b/i.test(cleaned) ||
+    /^(?:extra\s+\d+%\s+off|spend\s+\$\d+|household\s*&\s*pet\s+essentials\b)/i.test(
+      cleaned
+    ) ||
+    /^\(\d+\)\s+(?:previous|current)\s+price\b/i.test(cleaned) ||
     /^(?:add|remove|compare|subscribe|sponsored|shipping|pickup|delivery|options|quick view|buy|sign in|create account)\b/i.test(
       cleaned
     ) ||

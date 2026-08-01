@@ -153,6 +153,62 @@ describe("DOM extraction", () => {
     ).toEqual([]);
   });
 
+  it("prefers package quantities in the title over unrelated card text", () => {
+    document.documentElement.innerHTML = `
+      <main><ul>
+        <li class="product-card">
+          <a href="/oil">Olive Oil, 1 Gallon Jar -- 4 Per Case</a>
+          <span>$274.95</span><span>95 / case</span><button>Add to cart</button>
+        </li>
+      </ul></main>
+    `;
+
+    const [product] = extractProductsFromDocument(
+      document,
+      DEFAULT_PREFERENCES,
+      "shop.example"
+    );
+    expect(product?.normalized?.display).toBe("53.7¢/fl oz");
+  });
+
+  it("prefers a product-title link over a preceding vendor link", () => {
+    document.documentElement.innerHTML = `
+      <main><ul>
+        <li class="product-card">
+          <a class="product-item__vendor" href="/collections/vendor">Bilt Hamber</a>
+          <a class="product-item__title" href="/products/auto-wash">Bilt Hamber Auto-Wash Car Shampoo 1 Litre</a>
+          <span>$33.00</span><button>Add to cart</button>
+        </li>
+      </ul></main>
+    `;
+
+    const [product] = extractProductsFromDocument(
+      document,
+      DEFAULT_PREFERENCES,
+      "shop.example"
+    );
+    expect(product?.title).toBe("Bilt Hamber Auto-Wash Car Shampoo 1 Litre");
+  });
+
+  it("does not treat rating or promotion links as product titles", () => {
+    for (const label of [
+      "4.8 out of 5 stars. 687 reviews",
+      "Extra 15% off $35+ with code JULY15",
+      "Spend $50 on eligible brands, get $15 rebate",
+      "Out of Stock"
+    ]) {
+      document.documentElement.innerHTML = `
+        <main><ul><li class="product-card">
+          <a href="/reviews">${label}</a><span>$12.00</span><span>12 oz</span>
+          <button>Add to cart</button>
+        </li></ul></main>
+      `;
+      expect(
+        extractProductsFromDocument(document, DEFAULT_PREFERENCES, "shop.example")
+      ).toEqual([]);
+    }
+  });
+
   it("rejects editorial roundups that contain several product examples", () => {
     document.documentElement.innerHTML = `
       <main>

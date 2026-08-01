@@ -73,10 +73,12 @@ const output = path.resolve(
   optionValue("--output") ?? "artifacts/audits/unit-price-false-positives.json"
 );
 const markdownOutput = output.replace(/\.json$/i, ".md");
+const startPage = parseNonNegativeInteger(optionValue("--start-page")) ?? 0;
 const maxPages = parsePositiveInteger(optionValue("--max-pages"));
 const captures = (await readdir(root, { recursive: true }))
   .filter((filename) => filename.endsWith(`${path.sep}main.html`) || filename === "main.html");
 captures.sort();
+if (startPage > 0) captures.splice(0, startPage);
 if (maxPages) captures.splice(maxPages);
 
 const findings: OutputFinding[] = [];
@@ -259,7 +261,12 @@ for (const [index, relativeHtml] of captures.entries()) {
         });
       }
     }
+    products.length = 0;
     dom.window.close();
+    if ((index + 1) % 10 === 0) {
+      const gc = (globalThis as { Bun?: { gc?: (force?: boolean) => void } }).Bun?.gc;
+      gc?.(true);
+    }
   } catch (error) {
     errors.push({ capture: relativeHtml, error: error instanceof Error ? error.message : String(error) });
   }
@@ -388,6 +395,15 @@ function parsePositiveInteger(value: string | undefined): number | undefined {
   if (!value) return undefined;
   const parsed = Number.parseInt(value, 10);
   if (!Number.isInteger(parsed) || parsed <= 0) throw new Error(`Expected a positive integer, received ${value}`);
+  return parsed;
+}
+
+function parseNonNegativeInteger(value: string | undefined): number | undefined {
+  if (!value) return undefined;
+  const parsed = Number.parseInt(value, 10);
+  if (!Number.isInteger(parsed) || parsed < 0) {
+    throw new Error(`Expected a non-negative integer, received ${value}`);
+  }
   return parsed;
 }
 
