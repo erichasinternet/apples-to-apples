@@ -167,7 +167,7 @@
     "@types/chrome": "^0.0.326",
     "@types/jsdom": "^28.0.3",
     "@types/node": "^24.13.3",
-    "esbuild": "^0.25.12",
+    "esbuild": "^0.28.1",
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",
     "typescript": "^5.9.3",
