@@ -126,17 +126,15 @@ accessibility requirements, and usability gates for the next UI iteration.
 - Husky runs `bun run verify` before commits.
 - Commitlint enforces Conventional Commits for commit messages.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for pull request expectations.
-
 ## Contributing And Support
 
-- Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+- Read the [contribution guidelines](.github/CONTRIBUTING.md) before opening a pull request.
 - Use [GitHub Discussions](https://github.com/erichasinternet/apples-to-apples/discussions)
   for usage questions and early ideas.
 - Use the issue forms for reproducible bugs and feature proposals.
-- Report vulnerabilities privately according to [SECURITY.md](SECURITY.md).
+- Report vulnerabilities privately according to the [security policy](.github/SECURITY.md).
 - Project decisions and maintainer roles are documented in
-  [GOVERNANCE.md](GOVERNANCE.md).
+  [governance policy](.github/GOVERNANCE.md).
 
 ## Loading In Brave
 
