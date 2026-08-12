@@ -13,7 +13,8 @@ in `docs/huggingface-dataset-release.md`.
 - Search existing issues and discussions before opening a duplicate.
 - Use an issue for substantial behavior, permission, privacy, or data-contract
   changes before investing in an implementation.
-- Report security vulnerabilities privately as described in `SECURITY.md`.
+- Report security vulnerabilities through
+  [GitHub's private vulnerability reporting](https://github.com/erichasinternet/apples-to-apples/security/advisories/new).
 - Never post account details, addresses, cookies, tokens, private browsing data,
   or unredacted live-site captures.
 
