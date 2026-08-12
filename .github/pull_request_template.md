@@ -26,5 +26,5 @@ needed to review the change. Remove addresses, cookies, tokens, and account data
 
 - [ ] The change is focused and follows the existing architecture.
 - [ ] User-facing claims are limited to behavior demonstrated by tests.
-- [ ] Documentation and `CHANGELOG.md` are updated when appropriate.
+- [ ] Documentation is updated when appropriate.
 - [ ] The commit history follows Conventional Commits.

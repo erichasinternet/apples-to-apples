@@ -128,13 +128,12 @@ accessibility requirements, and usability gates for the next UI iteration.
 
 ## Contributing And Support
 
-- Read the [contribution guidelines](.github/CONTRIBUTING.md) before opening a pull request.
+- Read the [contribution guidelines](CONTRIBUTING.md) before opening a pull request.
 - Use [GitHub Discussions](https://github.com/erichasinternet/apples-to-apples/discussions)
   for usage questions and early ideas.
 - Use the issue forms for reproducible bugs and feature proposals.
-- Report vulnerabilities privately according to the [security policy](.github/SECURITY.md).
-- Project decisions and maintainer roles are documented in
-  [governance policy](.github/GOVERNANCE.md).
+- Report vulnerabilities through
+  [GitHub's private vulnerability reporting](https://github.com/erichasinternet/apples-to-apples/security/advisories/new).
 
 ## Loading In Brave
 
@@ -195,8 +194,6 @@ The UI is intentionally quiet:
 ## License
 
 Application source and documentation are available under the [MIT License](LICENSE).
-Third-party components retain their original terms in
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 The separately generated [**Unit Price Evidence: Synthetic** dataset](https://huggingface.co/datasets/hotdogsalesman/unit-price-evidence-synthetic)
 is released under CDLA-Permissive-2.0 as documented in
