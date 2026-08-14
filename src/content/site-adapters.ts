@@ -19,7 +19,12 @@ export const SITE_ADAPTERS: readonly SiteAdapter[] = [
       "div[role='group']"
     ],
     titleSelectors: ["[data-automation-id='product-title']", "h1", "h2", "h3", "a[href*='/ip/']"],
-    priceSelectors: ["[data-automation-id='product-price']", "[itemprop='price']", "[aria-label*='current price' i]"]
+    priceSelectors: [
+      "[data-automation-id='product-price']",
+      "[data-testid='unified-global-product-price']",
+      "[itemprop='price']",
+      "[aria-label*='current price' i]"
+    ]
   },
   {
     id: "amazon",

@@ -28,7 +28,7 @@ Load the generated `dist` directory from `chrome://extensions` or
 - Extracts visible price, native unit price, package size, and multipack evidence.
 - Normalizes within compatible dimensions only: weight, volume, count, area, and length.
 - Leaves a matching retailer unit price untouched and adds a plain inline value only when normalization adds information.
-- Marks `Lowest of N` only when at least three items in the same loaded product collection establish that fact.
+- Marks `Lowest of N` only when at least three items in the same loaded product collection, unit basis, and recognized product family establish that fact.
 - Adds basis-specific options such as `Unit price per lb: low to high` to verified retailer sort menus.
 - Provides loaded-page status, safe sort/restore controls, rescan, and preferences in the extension popup.
 - Auto-runs the conservative generic extractor on HTTP(S) pages without requiring a retailer-specific hostname.

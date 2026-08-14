@@ -57,7 +57,7 @@ test("adds quiet normalized prices, suppresses native duplicates, and marks a fa
 
   await expect(page.locator("#ata-panel-root")).toHaveCount(0);
   await expect(page.getByLabel("Sort by")).toContainText("Unit price per lb: low to high");
-  await expect(page.getByLabel("Sort by")).toContainText("Unit price per fl oz: low to high");
+  await expect(page.getByLabel("Sort by")).not.toContainText("Unit price per fl oz: low to high");
   await expect(page.locator("[data-ata-sort-control]")).toHaveCount(0);
 });
 
@@ -123,15 +123,17 @@ test("sorts visible comparable cards by unit price and restores retailer order",
   await expect(productTitles.first()).toContainText("Premium Clay Cat Litter");
 });
 
-test("keeps mixed comparison bases explicit and sorts only the selected basis", async ({ page }) => {
+test("does not offer sorting for same-basis products with different purposes", async ({ page }) => {
   await page.goto("http://127.0.0.1:4173/");
 
   const productTitles = page.locator(".product-card h2");
-  await page.getByLabel("Sort by").selectOption("ata-unit-price-asc:volume:fl_oz");
-
-  await expect(productTitles.nth(2)).toContainText("Fresh Linen Laundry Spray");
+  await expect(page.getByLabel("Sort by")).not.toContainText(
+    "Unit price per fl oz: low to high"
+  );
   await expect(productTitles.first()).toContainText("Premium Clay Cat Litter");
   await expect(productTitles.nth(1)).toContainText("Special Kitty Non-Clumping");
+  await expect(productTitles.nth(2)).toContainText("FreshWash Concentrated Laundry Detergent");
+  await expect(productTitles.nth(5)).toContainText("Fresh Linen Laundry Spray");
 });
 
 test("reports page status and performs the safe popup sort contract", async ({ context, page }) => {
@@ -275,8 +277,11 @@ test("auto-runs the conservative generic extractor on an unfamiliar host", async
   await page.goto("https://unknown-shop.example/search?q=household");
 
   await expect(page.locator("[data-ata-product]")).toHaveCount(3);
-  await expect(page.locator("[data-ata-badge]")).toHaveCount(1);
+  await expect(page.locator("[data-ata-badge]")).toHaveCount(2);
   await expect(page.locator("[data-ata-badge][data-ata-dimension='area']")).toBeVisible();
+  await expect(
+    page.locator("article", { hasText: "Morning Ridge Coffee Pods" }).locator("[data-ata-badge]")
+  ).toHaveText("44¢/pod");
   await expect(
     page.locator("article", { hasText: "FreshWash" }).locator("[data-ata-badge]")
   ).toHaveCount(0);
@@ -333,6 +338,164 @@ test("does not unit-price laptop dimensions on an unfamiliar retailer", async ({
   await expect(page.getByLabel("Sort by")).not.toContainText("Unit price");
 });
 
+test("uses selected Walmart pack variants while keeping native Dawn rates quiet", async ({ page }) => {
+  await page.route("https://www.walmart.com/**", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "text/html",
+      body: `
+        <!doctype html>
+        <html>
+          <head><meta charset="utf-8"></head>
+          <body>
+            <main>
+              <div data-testid="item-stack">
+                ${dawnCard(
+                  "dawn-38",
+                  "Dawn Ultra Dish Soap Liquid, Original, 38oz",
+                  "$ 5 94",
+                  "15.6 ¢/fl oz",
+                  `<button aria-pressed="true">Single</button>
+                   <button aria-pressed="false">8 Pack</button>`
+                )}
+                ${dawnCard(
+                  "dawn-30",
+                  "Dawn Platinum Dish Soap, Fresh Rain, 30 fl oz",
+                  "$ 6 47",
+                  "21.6 ¢/fl oz"
+                )}
+                ${dawnCard(
+                  "dawn-67",
+                  "Dawn Ultra Dishwashing Soap Refill, Original, 67 fl oz",
+                  "$ 9 94",
+                  "14.8 ¢/fl oz"
+                )}
+              </div>
+            </main>
+          </body>
+        </html>
+      `
+    })
+  );
+
+  await page.goto("https://www.walmart.com/search?q=dawn+soap");
+
+  const single = page.locator("[data-item-id='dawn-38']");
+  const lowest = page.locator("[data-item-id='dawn-67']");
+  await expect(page.locator("[data-ata-product]")).toHaveCount(3);
+  await expect(single).toHaveAttribute("data-ata-unit-price-source", "retailer");
+  await expect(single.locator("[data-ata-badge]")).toHaveCount(0);
+  await expect(lowest.locator("[data-ata-badge]")).toHaveText("Lowest of 3");
+  await expect(lowest.locator("[data-ata-badge]")).not.toContainText("14.8¢/fl oz");
+});
+
+test("compares Method liquid detergent by explicit fluid volume", async ({ page }) => {
+  await page.route("https://www.walmart.com/**", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "text/html",
+      body: `
+        <!doctype html>
+        <html>
+          <head><meta charset="utf-8"></head>
+          <body>
+            <main>
+              <div data-testid="item-stack">
+                ${laundryCard("method-dewy-daze", "Method Super Shine Liquid Dish Soap, Powered by Enzymes, Dewy Daze Scented, 16 fl oz", "$6.12", "38.3 ¢/fl oz")}
+                ${laundryCard("method-fresh-air", "Method Laundry Detergent, Fresh Air, 53.5 fl oz, 66 Loads", "$14.29", "26.7 ¢/oz")}
+                ${laundryCard("method-beach-sage", "Method Laundry Detergent, Beach Sage, 53.5 fl oz, 66 Loads", "$16.68", "$4.42/lb")}
+                ${laundryCard("method-coastal-citron", "Method Super Shine Liquid Dish Soap, Powered by Enzymes, Coastal Citron Scented, 16 fl oz", "$5.97", "37.3 ¢/fl oz")}
+                ${laundryCard("method-ginger-mango", "Method Laundry Detergent, Ginger Mango, 53.5 fl oz, 66 Loads", "$16.68", "$4.42/lb")}
+                ${laundryCard("method-lime-sea-salt", "(2 pack) Method Dish Soap, Lime + Sea Salt, 18 ounce", "$6.98", "19.4 ¢/fl oz")}
+                ${laundryCard("method-clementine", "(2 pack) Method Dish Soap, Clementine, 18 Oz Pump Bottle", "$6.98", "19.4 ¢/fl oz")}
+              </div>
+              <section aria-label="Products you may also like">
+                <ul data-testid="carousel-container">
+                  <li>${laundryCard("method-dewy-daze-carousel", "Method Super Shine Liquid Dish Soap, Powered by Enzymes, Dewy Daze Scented, 16 fl oz", "$6.12", "38.3 ¢/fl oz")}</li>
+                  <li>${laundryCard("method-coastal-citron-carousel", "Method Super Shine Liquid Dish Soap, Powered by Enzymes, Coastal Citron Scented, 16 fl oz", "$5.97", "37.3 ¢/fl oz")}</li>
+                </ul>
+              </section>
+            </main>
+          </body>
+        </html>
+      `
+    })
+  );
+
+  await page.goto("https://www.walmart.com/search?q=method+detergent");
+
+  const freshAir = page.locator("[data-item-id='method-fresh-air']");
+  const beachSage = page.locator("[data-item-id='method-beach-sage']");
+  const gingerMango = page.locator("[data-item-id='method-ginger-mango']");
+  const limeSeaSalt = page.locator("[data-item-id='method-lime-sea-salt']");
+  const clementine = page.locator("[data-item-id='method-clementine']");
+
+  await expect(page.locator("[data-ata-product][data-ata-unit='fl_oz']")).toHaveCount(9);
+  await expect(page.locator("[data-testid='item-stack'] > [data-ata-product]")).toHaveCount(7);
+  await expect(page.locator("[data-ata-badge]")).toHaveCount(5);
+  await expect(freshAir.locator("[data-ata-badge]")).toHaveText("Lowest of 3");
+  await expect(freshAir.locator("[data-ata-badge]")).not.toContainText("26.7¢/fl oz");
+  await expect(beachSage.locator(".ata-unit-price-value")).toHaveText("31.2¢/fl oz");
+  await expect(gingerMango.locator(".ata-unit-price-value")).toHaveText("31.2¢/fl oz");
+  await expect(limeSeaSalt.locator(".ata-unit-price-context")).toHaveText("Lowest of 4");
+  await expect(clementine.locator(".ata-unit-price-context")).toHaveText("Lowest of 4");
+  await expect(
+    page.locator("[data-testid='carousel-container'] [data-ata-badge]")
+  ).toHaveCount(0);
+});
+
+test("compares Walmart laundry pacs per pod without mixing adjacent laundry products", async ({ page }) => {
+  await page.route("https://www.walmart.com/**", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "text/html",
+      body: `
+        <!doctype html>
+        <html>
+          <head><meta charset="utf-8"></head>
+          <body>
+            <main>
+              <div data-testid="item-stack">
+                ${laundryCard("gain-pacs", "Gain Flings Laundry Detergent Soap Pacs, 12 Count", "$3.97", "49.6 ¢/oz")}
+                ${laundryCard("tide-pods", "Tide PODS Laundry Detergent Soap Pacs, 14 Count", "$4.97", "49.7 ¢/oz")}
+                ${laundryCard("purex-pacs", "Purex Laundry Detergent Pacs, 66 Count", "$9.97", "32.9 ¢/oz")}
+                ${laundryCard("gain-liquid", "Gain Liquid Laundry Detergent, 39 fl oz", "$4.97", "12.7 ¢/fl oz")}
+                ${laundryCard("tide-liquid", "Tide Liquid Laundry Detergent, 34 fl oz", "$4.97", "14.6 ¢/fl oz")}
+                ${laundryCard("purex-liquid", "Purex Liquid Laundry Detergent, 150 fl oz", "$8.97", "6.0 ¢/fl oz")}
+                ${laundryCard("shout", "Shout Laundry Stain Remover Refill, 60 fl oz", "$5.98", "10.0 ¢/fl oz")}
+                ${laundryCard("softener", "all Liquid Laundry Fabric Softener, 34 fl oz, 50 Loads", "$3.74", "11.0 ¢/fl oz")}
+              </div>
+            </main>
+          </body>
+        </html>
+      `
+    })
+  );
+
+  await page.goto("https://www.walmart.com/search?q=laundry+detergent");
+
+  await expect(page.locator("[data-ata-product]")).toHaveCount(8);
+  await expect(page.locator("[data-ata-product][data-ata-unit='pod']")).toHaveCount(3);
+  await expect(
+    page.locator("[data-item-id='gain-pacs'] .ata-unit-price-value")
+  ).toHaveText("33.1¢/pod");
+  await expect(
+    page.locator("[data-item-id='purex-pacs'] .ata-unit-price-context")
+  ).toHaveText("Lowest of 3");
+  await expect(
+    page.locator("[data-item-id='purex-liquid'] .ata-unit-price-context")
+  ).toHaveText("Lowest of 3");
+  await expect(
+    page.locator("[data-item-id='shout'] [data-ata-badge]")
+  ).toHaveCount(0);
+  await expect(
+    page.locator("[data-item-id='softener']")
+  ).toHaveAttribute("data-ata-unit-price-source", "retailer");
+  await expect(
+    page.locator("[data-item-id='softener'] [data-ata-badge]")
+  ).toHaveCount(0);
+});
+
 test("rescans a product card when its price evidence hydrates as text", async ({ page }) => {
   await page.goto("http://127.0.0.1:4173/dynamic-price-card.html");
 
@@ -348,6 +511,49 @@ test("rescans a product card when its price evidence hydrates as text", async ({
   await expect(firstCard.locator("[data-ata-badge]")).toHaveCount(0);
   await expect(secondCard.locator("[data-ata-badge]")).toHaveCount(0);
 });
+
+function dawnCard(
+  id: string,
+  title: string,
+  price: string,
+  unitPrice: string,
+  variants = ""
+): string {
+  return `
+    <div role="group" data-item-id="${id}">
+      <a href="/ip/${id}">
+        <img alt="${title}" src="dawn.png">
+        <h3 data-automation-id="product-title">${title}</h3>
+      </a>
+      ${variants}
+      <button>Add</button>
+      <div data-automation-id="product-price">
+        <span>${price}</span>
+        <span>${unitPrice}</span>
+      </div>
+    </div>
+  `;
+}
+
+function laundryCard(
+  id: string,
+  title: string,
+  price: string,
+  unitPrice: string
+): string {
+  return `
+    <div role="group" data-item-id="${id}">
+      <a href="/ip/${id}">
+        <h3 data-automation-id="product-title">${title}</h3>
+      </a>
+      <div data-testid="unified-global-product-price" aria-label="Price ${price} ${unitPrice}">
+        <span>${price}</span>
+        <span>${unitPrice}</span>
+      </div>
+      <button>Add</button>
+    </div>
+  `;
+}
 
 test("adds unit-price sort inside custom retailer sort menus without showing inline fallback", async ({ page }) => {
   await page.addInitScript(() => {

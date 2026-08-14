@@ -58,6 +58,36 @@ describe("DOM extraction", () => {
     expect(products[0]?.normalized?.display).toBe("89.9¢/lb");
   });
 
+  it("applies semantic multipack ambiguity guards to Product JSON-LD", () => {
+    document.documentElement.innerHTML = `
+      <html>
+        <head>
+          <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Product",
+              "name": "Tide PODS Laundry Detergent, 42 Count (Pack of 3)",
+              "offers": {
+                "@type": "Offer",
+                "price": "15.00",
+                "priceCurrency": "USD"
+              }
+            }
+          </script>
+        </head>
+        <body><main><h1>Tide PODS</h1></main></body>
+      </html>
+    `;
+
+    expect(
+      extractProductsFromDocument(
+        document,
+        DEFAULT_PREFERENCES,
+        "shop.example"
+      )
+    ).toEqual([]);
+  });
+
   it("does not treat laptop specifications as package quantities", () => {
     document.documentElement.innerHTML = `
       <main>
@@ -84,6 +114,338 @@ describe("DOM extraction", () => {
     );
 
     expect(products).toEqual([]);
+  });
+
+  it("does not treat a storage bin's capacity as package contents", () => {
+    document.documentElement.innerHTML = `
+      <main>
+        <article class="product-card">
+          <a href="/storage-bins">
+            <img alt="Sterilite storage bins" src="bins.png">
+            6-Pk 27-Gal Sterilite Large Storage Bins (Black/Yellow)
+          </a>
+          <span>$48</span><span>$60</span><button>Get Deal</button>
+        </article>
+      </main>
+    `;
+
+    expect(
+      extractProductsFromDocument(document, DEFAULT_PREFERENCES, "slickdeals.net")
+    ).toEqual([]);
+  });
+
+  it("ignores unselected Walmart pack variants", () => {
+    document.documentElement.innerHTML = `
+      <main>
+        <div role="group" data-item-id="dawn-single">
+          <a href="/ip/dawn-single">
+            <img alt="Dawn dish soap" src="dawn.png">
+            <h3 data-automation-id="product-title">
+              Dawn Ultra Dish Soap Liquid, Original, 38oz
+            </h3>
+          </a>
+          <button aria-pressed="true">Single <span>$5.94</span></button>
+          <button aria-pressed="false">8 Pack <span>$47.52</span></button>
+          <div data-automation-id="product-price">$ 5 94 15.6 ¢/fl oz</div>
+          <button>Add</button>
+        </div>
+      </main>
+    `;
+
+    const [product] = extractProductsFromDocument(
+      document,
+      DEFAULT_PREFERENCES,
+      "www.walmart.com"
+    );
+
+    expect(product).toMatchObject({
+      title: "Dawn Ultra Dish Soap Liquid, Original, 38oz",
+      normalized: {
+        display: "15.6¢/fl oz"
+      }
+    });
+    expect(product?.packCount).toBeUndefined();
+  });
+
+  it("uses only the selected Walmart pack variant", () => {
+    document.documentElement.innerHTML = `
+      <main>
+        <div role="group" data-item-id="dawn-six-pack">
+          <a href="/ip/dawn-six-pack">
+            <img alt="Dawn dish soap" src="dawn.png">
+            <h3 data-automation-id="product-title">
+              Dawn Powerwash Dish Spray, 16 fl oz
+            </h3>
+          </a>
+          <button aria-pressed="false">Single</button>
+          <button aria-pressed="false">3 Pack</button>
+          <button aria-pressed="true">6 Pack</button>
+          <div data-automation-id="product-price">$21.27 22.2 ¢/fl oz</div>
+          <button>Add</button>
+        </div>
+      </main>
+    `;
+
+    const [product] = extractProductsFromDocument(
+      document,
+      DEFAULT_PREFERENCES,
+      "www.walmart.com"
+    );
+
+    expect(product).toMatchObject({
+      packCount: 6,
+      normalized: {
+        display: "22.2¢/fl oz"
+      }
+    });
+  });
+
+  it("retains the same Walmart product when it appears in separate collections", () => {
+    const dewyDazeTitle =
+      "Method Super Shine Liquid Dish Soap, Powered by Enzymes, Dewy Daze Scented, 16 fl oz";
+    const coastalCitronTitle =
+      "Method Super Shine Liquid Dish Soap, Powered by Enzymes, Coastal Citron Scented, 16 fl oz";
+    document.documentElement.innerHTML = `
+      <main>
+        <div data-testid="item-stack">
+          <div data-item-id="dewy-daze-main">
+            <h3 data-automation-id="product-title">${dewyDazeTitle}</h3>
+            <div data-testid="unified-global-product-price">$6.12 38.3 ¢/fl oz</div>
+            <button>Add</button>
+          </div>
+          <div data-item-id="coastal-citron-main">
+            <h3 data-automation-id="product-title">${coastalCitronTitle}</h3>
+            <div data-testid="unified-global-product-price">$5.97 37.3 ¢/fl oz</div>
+            <button>Add</button>
+          </div>
+        </div>
+        <section aria-label="Products you may also like">
+          <ul data-testid="carousel-container">
+            <li>
+              <div data-item-id="dewy-daze-carousel">
+                <h3 data-automation-id="product-title">${dewyDazeTitle}</h3>
+                <div data-testid="unified-global-product-price">$6.12 38.3 ¢/fl oz</div>
+                <button>Add</button>
+              </div>
+            </li>
+            <li>
+              <div data-item-id="coastal-citron-carousel">
+                <h3 data-automation-id="product-title">${coastalCitronTitle}</h3>
+                <div data-testid="unified-global-product-price">$5.97 37.3 ¢/fl oz</div>
+                <button>Add</button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+    `;
+
+    const products = extractProductsFromDocument(
+      document,
+      DEFAULT_PREFERENCES,
+      "www.walmart.com"
+    );
+
+    expect(products).toHaveLength(4);
+    expect(
+      products
+        .filter((product) => product.title === dewyDazeTitle)
+        .map((product) => product.element.dataset.itemId)
+        .sort()
+    ).toEqual(["dewy-daze-carousel", "dewy-daze-main"]);
+    expect(
+      products
+        .filter((product) => product.title === coastalCitronTitle)
+        .map((product) => product.element.dataset.itemId)
+        .sort()
+    ).toEqual(["coastal-citron-carousel", "coastal-citron-main"]);
+  });
+
+  it("retains repeated products across separate single-item collections", () => {
+    const title = "Method Laundry Detergent Fresh Air, 53.5 fl oz, 66 Loads";
+    document.documentElement.innerHTML = `
+      <main>
+        <div data-testid="item-stack">
+          <div data-item-id="method-main">
+            <h3 data-automation-id="product-title">${title}</h3>
+            <div data-testid="unified-global-product-price">$14.29 26.7 ¢/oz</div>
+            <button>Add</button>
+          </div>
+        </div>
+        <ul data-testid="carousel-container">
+          <li>
+            <div data-item-id="method-carousel">
+              <h3 data-automation-id="product-title">${title}</h3>
+              <div data-testid="unified-global-product-price">$14.29 26.7 ¢/oz</div>
+              <button>Add</button>
+            </div>
+          </li>
+        </ul>
+      </main>
+    `;
+
+    const products = extractProductsFromDocument(
+      document,
+      DEFAULT_PREFERENCES,
+      "www.walmart.com"
+    );
+
+    expect(products.map((product) => product.element.dataset.itemId).sort()).toEqual([
+      "method-carousel",
+      "method-main"
+    ]);
+  });
+
+  it("uses count-worded laundry pacs instead of Walmart's package-weight rate", () => {
+    document.documentElement.innerHTML = `
+      <main>
+        <div role="group" data-item-id="gain-flings">
+          <a href="/ip/gain-flings">
+            <h3 data-automation-id="product-title">
+              Gain Flings Laundry Detergent Soap Pacs, Original, 12 Count
+            </h3>
+          </a>
+          <div>Options from $9.97</div>
+          <div data-testid="unified-global-product-price" aria-label="Price $ 3.97 49.6 ¢/oz">
+            $3.97 49.6 ¢/oz
+          </div>
+          <button>Add</button>
+        </div>
+      </main>
+    `;
+
+    const [product] = extractProductsFromDocument(
+      document,
+      DEFAULT_PREFERENCES,
+      "www.walmart.com"
+    );
+
+    expect(product).toMatchObject({
+      price: { cents: 397 },
+      packageQuantity: { value: 12, unit: "pod" },
+      normalized: { display: "33.1¢/pod", compareKey: "count:pod" }
+    });
+  });
+
+  it("keeps a solid detergent pac's ounce quantity out of fluid volume", () => {
+    document.documentElement.innerHTML = `
+      <main>
+        <div role="group" data-item-id="persil-pacs">
+          <h3 data-automation-id="product-title">
+            Persil Activewear Clean Laundry Detergent Ultra Pacs, Original, 8.04 oz, 12 Count
+          </h3>
+          <div data-testid="unified-global-product-price">$13.24 $1.65/oz</div>
+          <button>Add</button>
+        </div>
+      </main>
+    `;
+
+    const [product] = extractProductsFromDocument(
+      document,
+      DEFAULT_PREFERENCES,
+      "www.walmart.com"
+    );
+
+    expect(product?.normalized).toMatchObject({
+      display: "$1.10/pod",
+      compareKey: "count:pod"
+    });
+    expect(product?.normalized?.dimension).not.toBe("volume");
+  });
+
+  it("prefers count-worded detergent sheets over package weight", () => {
+    document.documentElement.innerHTML = `
+      <main>
+        <div role="group" data-item-id="detergent-sheets">
+          <h3 data-automation-id="product-title">
+            Fresh Laundry Detergent Sheets, 30 Count, 5 oz
+          </h3>
+          <div data-testid="unified-global-product-price">$9.00 $1.80/oz</div>
+          <button>Add</button>
+        </div>
+      </main>
+    `;
+
+    const [product] = extractProductsFromDocument(
+      document,
+      DEFAULT_PREFERENCES,
+      "www.walmart.com"
+    );
+
+    expect(product).toMatchObject({
+      packageQuantity: { value: 30, unit: "sheet" },
+      normalized: { display: "30¢/sheet", compareKey: "count:sheet" }
+    });
+  });
+
+  it("does not price a liquid-detergent bundle by its included dryer sheets", () => {
+    document.documentElement.innerHTML = `
+      <main>
+        <div role="group" data-item-id="detergent-sheet-bundle">
+          <h3 data-automation-id="product-title">
+            Tide Liquid Laundry Detergent, 92 fl oz with Bounce Dryer Sheets, 60 Count
+          </h3>
+          <div data-testid="unified-global-product-price">$20.00 15¢/fl oz</div>
+          <button>Add</button>
+        </div>
+      </main>
+    `;
+
+    expect(
+      extractProductsFromDocument(
+        document,
+        DEFAULT_PREFERENCES,
+        "www.walmart.com"
+      )
+    ).toEqual([]);
+  });
+
+  it("does not price pod-storage accessories as detergent pods", () => {
+    document.documentElement.innerHTML = `
+      <main>
+        <div role="group" data-item-id="pod-storage">
+          <h3 data-automation-id="product-title">
+            Laundry Detergent Pods Storage Containers, 2 Count, 64 oz capacity
+          </h3>
+          <div data-testid="unified-global-product-price">$20.00</div>
+          <button>Add</button>
+        </div>
+      </main>
+    `;
+
+    const [product] = extractProductsFromDocument(
+      document,
+      DEFAULT_PREFERENCES,
+      "www.walmart.com"
+    );
+
+    expect(product).toMatchObject({
+      packageQuantity: { value: 2, unit: "each" },
+      normalized: { display: "$10.00/count", compareKey: "count:each" }
+    });
+    expect(product?.normalized?.unit).not.toBe("pod");
+  });
+
+  it("abstains from direct pod counts that describe a storage drawer", () => {
+    document.documentElement.innerHTML = `
+      <main>
+        <div role="group" data-item-id="coffee-pod-drawer">
+          <h3 data-automation-id="product-title">
+            Keurig K-Cup Coffee Pod Storage Drawer, Holds 36 Pods
+          </h3>
+          <div data-testid="unified-global-product-price">$20.00</div>
+          <button>Add</button>
+        </div>
+      </main>
+    `;
+
+    expect(
+      extractProductsFromDocument(
+        document,
+        DEFAULT_PREFERENCES,
+        "www.walmart.com"
+      )
+    ).toEqual([]);
   });
 
   it("rejects specifications while retaining real fabric and paper units", () => {

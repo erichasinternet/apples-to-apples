@@ -7,6 +7,7 @@ import {
   parseNativeUnitPrices,
   parseQuantities,
   selectPackageQuantity,
+  selectProductUseQuantity,
   specializePackageQuantity
 } from "../../src/core/pricing";
 import { normalizeProduct } from "../../src/core/normalizer";
@@ -113,6 +114,7 @@ describe("quantity parsing", () => {
 
   it("captures multipack count separately", () => {
     expect(extractPackCount("Fresh scent refill, 4 Pack")).toBe(4);
+    expect(extractPackCount("6-Pk 27-Gal Sterilite Large Storage Bins")).toBe(6);
     expect(extractPackCount("Hand soap, 7.5 oz, Pack of 6 bottles")).toBe(6);
     expect(extractPackCount("Hand soap, 7.5 fl oz, 6/Carton")).toBe(6);
     expect(extractPackCount("Hand soap, 11.25 oz, Total Qty 6")).toBe(6);
@@ -129,6 +131,44 @@ describe("quantity parsing", () => {
     expect(parseQuantities("Alkaline Batteries, 8 / Pack")).toContainEqual(
       expect.objectContaining({ value: 8, unit: "each", dimension: "count" })
     );
+  });
+
+  it("specializes count-worded product-use units from the title", () => {
+    for (const [title, expectedUnit] of [
+      ["Gain Flings Laundry Detergent Pacs, 12 Count", "pod"],
+      ["Washing Machine Cleaner Tablets, 6 Count", "tablet"],
+      ["Laundry Detergent Sheets, 30 Count", "sheet"]
+    ] as const) {
+      const quantity = parseQuantities(title).find(
+        (candidate) => candidate.dimension === "count"
+      );
+      expect(quantity).toBeDefined();
+      expect(specializePackageQuantity(title, quantity!).unit).toBe(expectedUnit);
+    }
+
+    const paperTowelTitle = "Paper Towels, 12 Count, Choose-A-Sheet";
+    const paperTowelCount = parseQuantities(paperTowelTitle).find(
+      (candidate) => candidate.dimension === "count"
+    );
+    expect(paperTowelCount).toBeDefined();
+    expect(specializePackageQuantity(paperTowelTitle, paperTowelCount!).unit).toBe(
+      "each"
+    );
+  });
+
+  it("does not turn accessory counts into the product they store or discard", () => {
+    for (const title of [
+      "Laundry Detergent Pods Storage Containers, 2 Count, 64 oz capacity",
+      "Reusable Coffee Pod Filters, 4 Count",
+      "Ubbi Diaper Disposal Bags, 75 Count",
+      "Avery Index Tabs, 25 Count"
+    ]) {
+      const quantity = parseQuantities(title).find(
+        (candidate) => candidate.dimension === "count"
+      );
+      expect(quantity).toBeDefined();
+      expect(specializePackageQuantity(title, quantity!).unit).toBe("each");
+    }
   });
 
   it.each([
@@ -176,6 +216,9 @@ describe("quantity parsing", () => {
     ["Dental Needle 27ga Long 30mm 100/Box", "27L", false],
     ["Water Filtration Unit 15 gal/min", "15 gal", false],
     ["Sterilite 15 Qt Storage Tote", "15 Qt", false],
+    ["6-Pk 27-Gal Sterilite Large Storage Bins (Black/Yellow)", "27-Gal", false],
+    ["Sterilite Large Storage Bin, 27 Gallon Durable Plastic Storage Tote", "27 Gallon", false],
+    ["Liquid Laundry Fabric Softener, 34 fl oz, 50 Loads", "34 fl oz", true],
     ["Only 2 left!", "2 L", false],
     ["Paper Hot Cups, 16 Oz, 1000/carton", "16 Oz", false],
     ["Square Dance Yardage SKU# 10080-G", "10080-G", false],
@@ -255,6 +298,65 @@ describe("normalization", () => {
     expect(normalized?.display).toBe("12¢/fl oz");
   });
 
+  it("prefers explicit liquid-detergent volume over a native package-weight rate", () => {
+    const product = makeProduct(
+      "Method Laundry Detergent, Beach Sage, 53.5 fl oz, 66 Loads",
+      "$16.68 $4.42/lb"
+    );
+
+    expect(normalizeProduct(product).normalized).toMatchObject({
+      dimension: "volume",
+      unit: "fl_oz",
+      display: "31.2¢/fl oz",
+      compareKey: "volume:fl_oz"
+    });
+  });
+
+  it("does not apply liquid-detergent precedence to unrelated products", () => {
+    const product = makeProduct(
+      "Maple Syrup, 12 fl oz",
+      "$9.00 $6.00/lb"
+    );
+
+    expect(normalizeProduct(product).normalized).toMatchObject({
+      dimension: "mass",
+      unit: "lb",
+      display: "$6.00/lb"
+    });
+  });
+
+  it("prefers an explicit detergent-pod count over a native package-weight rate", () => {
+    const title = "Gain Flings Laundry Detergent Soap Pacs, Original, 12 Count";
+    const count = parseQuantities(title).find(
+      (quantity) => quantity.dimension === "count"
+    );
+    expect(count).toBeDefined();
+
+    const product: ProductInput = {
+      id: title,
+      site: "test",
+      pageType: "search",
+      title,
+      price: { cents: 397, currency: "USD", sourceText: "$3.97", index: 0 },
+      nativeUnitPrice: {
+        centsPerUnit: 49.6,
+        unit: "oz",
+        dimension: "mass",
+        sourceText: "49.6 ¢/oz",
+        index: 6
+      },
+      packageQuantity: specializePackageQuantity(title, count!),
+      evidence: []
+    };
+
+    expect(normalizeProduct(product).normalized).toMatchObject({
+      unit: "pod",
+      dimension: "count",
+      display: "33.1¢/pod",
+      compareKey: "count:pod"
+    });
+  });
+
   it("uses fluid-ounce package math when a liquid native rate omits fluid", () => {
     const product = makeProduct(
       "Dove Shampoo, 12 fl oz",
@@ -300,6 +402,35 @@ describe("normalization", () => {
     ).toMatchObject({ unit: "oz", dimension: "mass" });
   });
 
+  it("keeps solid detergent forms and in-wash beads as package mass", () => {
+    for (const title of [
+      "Persil Activewear Clean Laundry Detergent Ultra Pacs, 8.04 oz, 12 Count",
+      "Ariel Powder Laundry Detergent, 70 oz, 44 Loads",
+      "In-Wash Scent Booster Beads, 13.4 oz"
+    ]) {
+      const quantity = parseQuantities(title).find(
+        (candidate) => candidate.unit === "oz"
+      );
+      expect(quantity).toBeDefined();
+      expect(specializePackageQuantity(title, quantity!)).toMatchObject({
+        unit: "oz",
+        dimension: "mass"
+      });
+    }
+  });
+
+  it("still treats ounce-labeled liquid detergent as fluid volume", () => {
+    const title = "all Baby Liquid Laundry Detergent, 73 oz, 58 Loads";
+    const quantity = parseQuantities(title).find(
+      (candidate) => candidate.unit === "oz"
+    );
+    expect(quantity).toBeDefined();
+    expect(specializePackageQuantity(title, quantity!)).toMatchObject({
+      unit: "fl_oz",
+      dimension: "volume"
+    });
+  });
+
   it("treats ambiguous cleaner ounces as liquid volume", () => {
     const quantity = parseQuantities("32 oz")[0]!;
     expect(
@@ -327,6 +458,125 @@ describe("normalization", () => {
     );
 
     expect(normalizeProduct(product).normalized?.display).toBe("45.3¢/count");
+  });
+
+  it("abstains when a semantic count and trailing multipack are ambiguous", () => {
+    const product = makeProduct(
+      "Tide PODS Laundry Detergent, 42 Count (Pack of 3)",
+      "$15.00"
+    );
+
+    expect(product).toMatchObject({
+      packCount: 3,
+      packageQuantity: { value: 42, unit: "pod" }
+    });
+    expect(normalizeProduct(product).normalized).toBeUndefined();
+  });
+
+  it("also abstains when a parenthetical semantic count lacks a total label", () => {
+    for (const title of [
+      "Tide PODS Laundry Detergent, Pack of 3 (42 Count)",
+      "Tide PODS Laundry Detergent, Pack of 3 (42 Pods)"
+    ]) {
+      const product = makeProduct(title, "$15.00");
+      expect(product).toMatchObject({
+        packCount: 3,
+        packageQuantity: { value: 42, unit: "pod" }
+      });
+      expect(normalizeProduct(product).normalized).toBeUndefined();
+    }
+  });
+
+  it("uses an explicitly labeled semantic total count once", () => {
+    for (const title of [
+      "Tide PODS Laundry Detergent, 3 Pack, 42 Count Total",
+      "Tide PODS Laundry Detergent, 3 Pack, 42 Pods Total"
+    ]) {
+      expect(normalizeProduct(makeProduct(title, "$15.00")).normalized?.display).toBe(
+        "35.7¢/pod"
+      );
+    }
+  });
+
+  it("multiplies a semantic count when the title says it is per pack", () => {
+    const product = makeProduct(
+      "Laundry Detergent Pods, 12 Count per Pack, 3 Pack",
+      "$12.00"
+    );
+
+    expect(normalizeProduct(product).normalized?.display).toBe("33.3¢/pod");
+  });
+
+  it("multiplies an explicit per-pack count even when it equals the pack count", () => {
+    const product = makeProduct(
+      "Laundry Detergent Pods, 3 Count per Pack, 3 Pack",
+      "$9.00"
+    );
+
+    expect(normalizeProduct(product).normalized?.display).toBe("$1.00/pod");
+  });
+
+  it("does not fall back to a package-weight rate for an ambiguous pod multipack", () => {
+    const product = makeProduct(
+      "Tide PODS Laundry Detergent, 42 Count (Pack of 3)",
+      "$15.00 50¢/oz"
+    );
+
+    expect(product).toMatchObject({
+      nativeUnitPrice: { unit: "oz" },
+      packageQuantity: { value: 42, unit: "pod" },
+      packCount: 3
+    });
+    expect(normalizeProduct(product).normalized).toBeUndefined();
+  });
+
+  it("does not price a liquid-detergent bundle by its included dryer sheets", () => {
+    for (const separator of ["+", "with", "and"]) {
+      const product = makeProduct(
+        `Tide Liquid Laundry Detergent, 92 fl oz ${separator} Bounce Dryer Sheets, 60 Count`,
+        "$20.00 15¢/fl oz"
+      );
+
+      expect(product.packageQuantity).toMatchObject({
+        value: 92,
+        unit: "fl_oz",
+        dimension: "volume"
+      });
+      expect(product.packageQuantity?.unit).not.toBe("sheet");
+      expect(normalizeProduct(product).normalized).toBeUndefined();
+    }
+  });
+
+  it("still prices a same-product detergent-sheet bundle per sheet", () => {
+    const product = makeProduct(
+      "Eco Laundry Detergent Sheets Bundle, 120 Count, 16 oz",
+      "$24.00"
+    );
+
+    expect(product.packageQuantity).toMatchObject({
+      value: 120,
+      unit: "sheet",
+      dimension: "count"
+    });
+    expect(normalizeProduct(product).normalized?.display).toBe("20¢/sheet");
+  });
+
+  it("abstains from detergent and fabric-softener bundles with separate sizes", () => {
+    const product = makeProduct(
+      "Tide Liquid Laundry Detergent, 92 fl oz + Downy Fabric Softener, 48 fl oz",
+      "$20.00 15¢/fl oz"
+    );
+
+    expect(normalizeProduct(product).normalized).toBeUndefined();
+  });
+
+  it("still rejects appliance weight when dryer sheets are bundled with a dryer", () => {
+    const product = makeProduct(
+      "Samsung Electric Dryer with Bonus Dryer Sheets, 125 lb",
+      "$699.00"
+    );
+
+    expect(normalizeProduct(product).normalized).toBeUndefined();
   });
 
   it("does not multiply total tile coverage by the tile count", () => {
@@ -448,12 +698,13 @@ describe("normalization", () => {
 
 function makeProduct(title: string, text: string): ProductInput {
   const nativeUnitPrice = parseNativeUnitPrices(text)[0];
-  const quantities = parseQuantities(`${title} ${text}`);
+  const quantities = parseQuantities(`${title} ${text}`).map((quantity) =>
+    specializePackageQuantity(title, quantity)
+  );
   const price = findBestPrice(text);
-  const selectedQuantity = selectPackageQuantity(quantities, nativeUnitPrice?.dimension);
-  const packageQuantity = selectedQuantity
-    ? specializePackageQuantity(title, selectedQuantity)
-    : undefined;
+  const packageQuantity =
+    selectProductUseQuantity(title, quantities) ??
+    selectPackageQuantity(quantities, nativeUnitPrice?.dimension);
   const packCount = extractPackCount(title);
 
   return {

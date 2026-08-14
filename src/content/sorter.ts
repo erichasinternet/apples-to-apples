@@ -1,4 +1,5 @@
 import type { NormalizedPrice, UserPreferences } from "../core/types";
+import { comparisonFamilyKey } from "../core/comparison-family";
 import type { DomProduct } from "./extractor";
 
 export interface UnitSortResult {
@@ -134,7 +135,9 @@ export function getUnitPriceSortMessage(): string {
 }
 
 export function canSortByUnitPrice(products: DomProduct[], compareKey: string): boolean {
-  return [...groupBySortableParent(products, compareKey).values()].some((group) => group.length >= 2);
+  return [...groupBySortableParent(products, compareKey).values()].some((group) =>
+    hasSortableCohort(group)
+  );
 }
 
 export function getUnitPriceSortContainer(
@@ -147,7 +150,7 @@ export function getUnitPriceSortContainer(
   }
 
   for (const [parent, parentProducts] of groupBySortableParent(products, resolvedKey)) {
-    if (parentProducts.length >= 2) {
+    if (hasSortableCohort(parentProducts)) {
       return parent;
     }
   }
@@ -177,7 +180,7 @@ function applyUnitPriceSort(
   let changedCount = 0;
 
   for (const [parent, sortableProducts] of byParent) {
-    if (sortableProducts.length < 2) {
+    if (!hasSortableCohort(sortableProducts)) {
       continue;
     }
 
@@ -186,10 +189,7 @@ function applyUnitPriceSort(
       childNodes: Array.from(parent.childNodes)
     });
 
-    const sorted = [...sortableProducts].sort(
-      (left, right) => left.normalized.centsPerUnit - right.normalized.centsPerUnit
-    );
-    changedCount += sortParentChildren(parent, sortableProducts, sorted);
+    changedCount += sortParentChildren(parent, sortableProducts);
   }
 
   if (snapshots.length === 0) {
@@ -280,12 +280,26 @@ function findSortableElement(
 
 function sortParentChildren(
   parent: HTMLElement,
-  originalItems: SortItem[],
-  sortedItems: SortItem[]
+  originalItems: SortItem[]
 ): number {
   const originalChildren = Array.from(parent.childNodes);
   const productByElement = new Map(originalItems.map((item) => [item.element, item]));
-  const queue = [...sortedItems];
+  const queues = new Map<string, SortItem[]>();
+  for (const item of originalItems) {
+    const family = comparisonFamilyKey(item.product);
+    const queue = queues.get(family) ?? [];
+    queue.push(item);
+    queues.set(family, queue);
+  }
+  for (const [family, queue] of queues) {
+    if (queue.length < 2) {
+      queues.delete(family);
+      continue;
+    }
+    queue.sort(
+      (left, right) => left.normalized.centsPerUnit - right.normalized.centsPerUnit
+    );
+  }
   let changedCount = 0;
   const fragment = parent.ownerDocument.createDocumentFragment();
 
@@ -293,6 +307,12 @@ function sortParentChildren(
     const product = child instanceof HTMLElement ? productByElement.get(child) : undefined;
 
     if (!product) {
+      fragment.append(child);
+      continue;
+    }
+
+    const queue = queues.get(comparisonFamilyKey(product.product));
+    if (!queue) {
       fragment.append(child);
       continue;
     }
@@ -313,6 +333,23 @@ function sortParentChildren(
   return changedCount;
 }
 
+function hasSortableCohort(items: SortItem[]): boolean {
+  return sortableCohortCount(items) >= 2;
+}
+
+function sortableCohortCount(items: SortItem[]): number {
+  const counts = new Map<string, number>();
+  for (const item of items) {
+    const family = comparisonFamilyKey(item.product);
+    counts.set(family, (counts.get(family) ?? 0) + 1);
+  }
+
+  return [...counts.values()].reduce(
+    (total, count) => total + (count >= 2 ? count : 0),
+    0
+  );
+}
+
 function resolveCompareKey(
   products: DomProduct[],
   basis: UserPreferences | string
@@ -321,17 +358,21 @@ function resolveCompareKey(
     return basis;
   }
 
-  const counts = new Map<string, number>();
+  const compareKeys = new Set<string>();
   for (const product of products) {
     if (product.normalized) {
-      counts.set(
-        product.normalized.compareKey,
-        (counts.get(product.normalized.compareKey) ?? 0) + 1
-      );
+      compareKeys.add(product.normalized.compareKey);
     }
   }
 
-  return [...counts.entries()]
+  return [...compareKeys]
+    .map((compareKey) => [
+      compareKey,
+      [...groupBySortableParent(products, compareKey).values()].reduce(
+        (total, group) => total + sortableCohortCount(group),
+        0
+      )
+    ] as const)
     .filter(([, count]) => count >= 2)
     .sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0]))[0]?.[0];
 }

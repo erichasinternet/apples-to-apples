@@ -1,6 +1,8 @@
 import type { NormalizedPrice } from "../../src/core/types";
+import { comparisonFamilyKey } from "../../src/core/comparison-family";
 import {
   buildComparisonGroups,
+  buildLowestSignals,
   findLowestProductIds,
   formatAccessibleUnitPrice,
   isMatchingNativeUnitPrice
@@ -34,6 +36,86 @@ describe("comparison presentation model", () => {
     ]);
   });
 
+  it("recognizes detergent titles without the word laundry and ignores benefit claims", () => {
+    expect(
+      comparisonFamilyKey({
+        title: "Purex Free & Clear Liquid Detergent, 150 fl oz"
+      })
+    ).toBe("laundry:detergent-liquid");
+    expect(
+      comparisonFamilyKey({
+        title:
+          "Tide PODs Laundry Detergent, 14 Count, 3-in-1 Stain Remover, Odor Fighter"
+      })
+    ).toBe("laundry:detergent-pod");
+    expect(
+      comparisonFamilyKey({
+        title: "OxiClean Versatile Stain Remover Powder, 3 lb, 65 Loads"
+      })
+    ).toBe("laundry:stain-remover");
+  });
+
+  it("does not infer laundry detergent from unrelated spot removers or load counts", () => {
+    expect(
+      comparisonFamilyKey({
+        title: "Folex Instant Carpet Spot Remover, 32 fl oz"
+      })
+    ).toBe("general");
+    expect(
+      comparisonFamilyKey({
+        title: "Cascade Dishwasher Detergent ActionPacs, 62 Count, 62 Loads"
+      })
+    ).toBe("general");
+    expect(
+      comparisonFamilyKey({
+        title: "Palmolive Ultra Strength Liquid Dish Detergent, 32.5 fl oz"
+      })
+    ).toBe("general");
+    expect(
+      comparisonFamilyKey({
+        title: "Nature's Miracle Pet Stain Remover, 32 fl oz"
+      })
+    ).toBe("general");
+    expect(
+      comparisonFamilyKey({
+        title: "Whink Rust Stain Remover, 10 fl oz"
+      })
+    ).toBe("general");
+    expect(
+      comparisonFamilyKey({
+        title: "Resolve Upholstery & Fabric Stain Remover, 22 fl oz"
+      })
+    ).toBe("general");
+    expect(
+      comparisonFamilyKey({
+        title: "Clorox Splash-Less Bleach, 40 fl oz, 25 Loads"
+      })
+    ).toBe("laundry:bleach");
+    expect(
+      comparisonFamilyKey({
+        title: "Laundry Detergent Pods Storage Containers, 2 Count"
+      })
+    ).toBe("general");
+    expect(
+      comparisonFamilyKey({
+        title:
+          "Xtra Tropical Passion Liquid Laundry Detergent with Fabric Softener, 67.5 fl oz"
+      })
+    ).toBe("laundry:detergent-liquid");
+    expect(
+      comparisonFamilyKey({
+        title:
+          "Tide Liquid Laundry Detergent, 92 fl oz + Bounce Dryer Sheets, 60 Count"
+      })
+    ).toBe("general");
+    expect(
+      comparisonFamilyKey({
+        title:
+          "Tide Liquid Laundry Detergent, 92 fl oz + Downy Fabric Softener, 48 fl oz"
+      })
+    ).toBe("general");
+  });
+
   it("marks only exact minima in groups of at least three", () => {
     const grid = document.createElement("section");
     document.body.append(grid);
@@ -62,6 +144,23 @@ describe("comparison presentation model", () => {
     expect([...findLowestProductIds(products)]).toEqual(["primary-low"]);
   });
 
+  it("keeps equally measured laundry products in purpose-specific Lowest cohorts", () => {
+    const grid = document.createElement("section");
+    document.body.append(grid);
+    const products = [
+      product("Purex liquid laundry detergent, 150 fl oz", "volume:fl_oz", 6, grid),
+      product("Gain liquid laundry detergent, 39 fl oz", "volume:fl_oz", 12.7, grid),
+      product("Tide liquid laundry detergent, 34 fl oz", "volume:fl_oz", 14.6, grid),
+      product("Shout laundry stain remover, 60 fl oz", "volume:fl_oz", 9.97, grid),
+      product("Clorox laundry odor remover, 42 fl oz", "volume:fl_oz", 16.6, grid),
+      product("all liquid fabric softener, 34 fl oz", "volume:fl_oz", 11, grid)
+    ];
+
+    expect([...buildLowestSignals(products)]).toEqual([
+      ["Purex liquid laundry detergent, 150 fl oz", 3]
+    ]);
+  });
+
   it("suppresses only retailer values that already match the target basis and display", () => {
     const matching = product("matching", "mass:lb", 22.9);
     matching.nativeUnitPrice = {
@@ -83,6 +182,27 @@ describe("comparison presentation model", () => {
 
     expect(isMatchingNativeUnitPrice(matching)).toBe(true);
     expect(isMatchingNativeUnitPrice(converted)).toBe(false);
+  });
+
+  it("suppresses an ounce rate corrected to fluid ounces by package evidence", () => {
+    const corrected = product("all Baby Liquid Laundry Detergent, 73 oz", "volume:fl_oz", 16.4);
+    corrected.nativeUnitPrice = {
+      centsPerUnit: 16.4,
+      unit: "oz",
+      dimension: "mass",
+      sourceText: "16.4 ¢/oz",
+      index: 0
+    };
+    corrected.packageQuantity = {
+      value: 73,
+      unit: "fl_oz",
+      dimension: "volume",
+      sourceText: "73 oz",
+      index: 35,
+      rank: 2
+    };
+
+    expect(isMatchingNativeUnitPrice(corrected)).toBe(true);
   });
 
   it("expands compact prices for assistive technology", () => {

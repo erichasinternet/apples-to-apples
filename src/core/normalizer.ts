@@ -9,6 +9,7 @@ import type {
   UserPreferences
 } from "./types";
 import { DEFAULT_PREFERENCES } from "./types";
+import { comparisonFamilyKey } from "./comparison-family";
 import { isLikelyPackageQuantity } from "./pricing";
 import {
   convertPricePerUnit,
@@ -44,6 +45,19 @@ export function normalizeProduct(
     isLikelyPackageQuantity(product.title, product.packageQuantity)
       ? fromPackageMath(product.price.cents, product.packageQuantity, product, preferences)
       : undefined;
+
+  const hasUnresolvedProductUseMultipack = Boolean(
+    product.packageQuantity &&
+      packageMultiplier(product, product.packageQuantity) === undefined
+  );
+
+  if (
+    hasUnresolvedProductUseMultipack &&
+    nativeResult &&
+    nativeResult.dimension !== "count"
+  ) {
+    return product;
+  }
 
   if (!nativeResult && !packageResult) {
     return product;
@@ -94,6 +108,21 @@ export function normalizeProduct(
       };
     }
 
+    if (
+      nativeResult.dimension !== packageResult.dimension &&
+      product.packageQuantity?.dimension === "count" &&
+      product.packageQuantity.unit !== "each"
+    ) {
+      return { ...product, normalized: packageResult };
+    }
+
+    if (
+      nativeResult.dimension !== packageResult.dimension &&
+      shouldPreferExplicitLiquidDetergentVolume(product, packageResult)
+    ) {
+      return { ...product, normalized: packageResult };
+    }
+
     if (nativeResult.dimension !== packageResult.dimension) {
       return { ...product, normalized: nativeResult };
     }
@@ -135,6 +164,20 @@ export function normalizeProduct(
 function ratesAgree(left: number, right: number): boolean {
   const divergence = Math.abs(left - right) / left;
   return Number.isFinite(divergence) && divergence <= 0.08;
+}
+
+function shouldPreferExplicitLiquidDetergentVolume(
+  product: ProductInput,
+  packageResult: NormalizedPrice
+): boolean {
+  return (
+    product.packageQuantity?.dimension === "volume" &&
+    packageResult.dimension === "volume" &&
+    comparisonFamilyKey({
+      title: product.title,
+      normalized: packageResult
+    }) === "laundry:detergent-liquid"
+  );
 }
 
 function hasCorroboratingMultiCountPackage(product: ProductInput): boolean {
@@ -206,6 +249,9 @@ function fromPackageMath(
   }
 
   const packCount = packageMultiplier(product, quantity);
+  if (packCount === undefined) {
+    return undefined;
+  }
   const effectiveQuantity = quantity.value * packCount;
   const totalBaseUnits = convertQuantityToBase(effectiveQuantity, quantity.unit);
   if (!Number.isFinite(totalBaseUnits) || totalBaseUnits <= 0) {
@@ -241,12 +287,30 @@ function fromPackageMath(
   };
 }
 
-function packageMultiplier(product: ProductInput, quantity: Quantity): number {
+function packageMultiplier(
+  product: ProductInput,
+  quantity: Quantity
+): number | undefined {
   const packCount = product.packCount ?? 1;
   if (packCount <= 1) return 1;
   if (quantity.dimension === "area") return 1;
-  if (quantity.dimension === "count" && quantity.value === packCount) return 1;
+
+  const productUseCount = isProductUseCount(product.title, quantity);
+  if (productUseCount) {
+    if (hasExplicitTotalCount(product.title, quantity)) return 1;
+    if (hasExplicitPerPackCount(product.title, quantity)) return packCount;
+  }
+
   if (
+    !productUseCount &&
+    quantity.dimension === "count" &&
+    quantity.value === packCount
+  ) {
+    return 1;
+  }
+
+  if (
+    !productUseCount &&
     quantity.dimension === "count" &&
     [...product.title.matchAll(/\(\s*(\d+(?:\.\d+)?)\s*(?:ct\.?|count)\s*\)/gi)].some(
       (match) => Number.parseFloat(match[1] ?? "") === quantity.value
@@ -259,7 +323,64 @@ function packageMultiplier(product: ProductInput, quantity: Quantity): number {
     new RegExp(`\\b${packCount}\\s*(?:pack|pk)\\b`, "i").test(quantity.sourceText) ||
     new RegExp(`\\b(?:pack|pk)\\s+of\\s+${packCount}\\b`, "i").test(quantity.sourceText) ||
     /\b\d{2,6}\s*\/\s*(?:cs|case|pk|pack)\b/i.test(quantity.sourceText);
-  return sourceIncludesPack ? 1 : packCount;
+  if (sourceIncludesPack) return 1;
+
+  if (productUseCount) return undefined;
+
+  return packCount;
+}
+
+function isProductUseCount(title: string, quantity: Quantity): boolean {
+  if (quantity.dimension !== "count") return false;
+  if (["pod", "tablet", "capsule", "diaper"].includes(quantity.unit)) {
+    return true;
+  }
+  return (
+    quantity.unit === "sheet" &&
+    /\b(?:laundry\s+detergent|detergent|dryer|dye[-\s]?trapping|color\s+catcher)\s+sheets?\b/i.test(
+      title
+    )
+  );
+}
+
+function hasExplicitTotalCount(title: string, quantity: Quantity): boolean {
+  const value = escapeRegex(String(quantity.value));
+  const unit = semanticCountLabelPattern(quantity.unit);
+  const valueAndUnit = `${value}\\s*${unit}`;
+  return new RegExp(
+    `(?:\\btotal(?:\\s+of)?\\s+${valueAndUnit}\\b|\\b${valueAndUnit}\\s+total\\b|\\b${value}\\s+total\\s+${unit}\\b)`,
+    "i"
+  ).test(title);
+}
+
+function hasExplicitPerPackCount(title: string, quantity: Quantity): boolean {
+  const value = escapeRegex(String(quantity.value));
+  const unit = semanticCountLabelPattern(quantity.unit);
+  return new RegExp(
+    `\\b${value}\\s*${unit}\\s*(?:per|in\\s+each)\\s+(?:pack|pk)\\b`,
+    "i"
+  ).test(title);
+}
+
+function semanticCountLabelPattern(unit: CanonicalUnit): string {
+  switch (unit) {
+    case "pod":
+      return "(?:ct\\.?|counts?|pods?|pacs?|flings?)";
+    case "tablet":
+      return "(?:ct\\.?|counts?|tablets?)";
+    case "capsule":
+      return "(?:ct\\.?|counts?|capsules?)";
+    case "diaper":
+      return "(?:ct\\.?|counts?|diapers?)";
+    case "sheet":
+      return "(?:ct\\.?|counts?|sheets?)";
+    default:
+      return "(?:ct\\.?|counts?)";
+  }
+}
+
+function escapeRegex(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function selectTargetUnit(sourceUnit: CanonicalUnit, preferences: UserPreferences): CanonicalUnit {

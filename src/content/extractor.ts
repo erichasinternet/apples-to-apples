@@ -6,6 +6,7 @@ import {
   parseNativeUnitPrices,
   parseQuantities,
   selectPackageQuantity,
+  selectProductUseQuantity,
   specializePackageQuantity
 } from "../core/pricing";
 import { normalizeProduct } from "../core/normalizer";
@@ -174,23 +175,25 @@ function extractProductFromCard(
     preferredNativeUnitPrice?.unit === "each"
       ? undefined
       : preferredNativeUnitPrice?.dimension;
-  const titleQuantities = parseQuantities(title).filter(
-    (quantity) => isLikelyPackageQuantity(title, quantity)
-  );
-  const cardQuantities = parseQuantities(text).filter((quantity) =>
-    isLikelyPackageQuantity(title, quantity)
-  );
+  const titleQuantities = parseQuantities(title)
+    .filter((quantity) => isLikelyPackageQuantity(title, quantity))
+    .map((quantity) => specializePackageQuantity(title, quantity));
+  const cardQuantities = parseQuantities(text)
+    .filter((quantity) => isLikelyPackageQuantity(title, quantity))
+    .map((quantity) => specializePackageQuantity(title, quantity));
+  const productUseQuantity = selectProductUseQuantity(title, titleQuantities);
   const packageQuantity =
+    productUseQuantity ??
     selectPackageQuantity(titleQuantities, preferredDimension) ??
     (titleNativeUnitPrices.length === 0
       ? selectPackageQuantity(cardQuantities, preferredDimension)
       : undefined);
   const rankedPackageQuantity = raiseTitleQuantityIfFromTitle(
-    packageQuantity ? specializePackageQuantity(title, packageQuantity) : undefined,
+    packageQuantity,
     title
   );
   const price = findBestPrice(scopedPriceText) ?? findBestPrice(text);
-  const packCount = extractPackCount(title) ?? extractPackCount(text);
+  const packCount = extractCardPackCount(element, title, text);
 
   const input: ProductInput = {
     id: `${hostname}-${index}-${hashText(title)}`,
@@ -229,6 +232,47 @@ function looksLikeMerchandisingLabel(title: string): boolean {
   return /^(?:cost-effective|highly reviewed|best in class|read more|sign up or log in|save \d+% now!?|out of stock|in stock|sold out)$/i.test(
     title.trim()
   );
+}
+
+function extractCardPackCount(
+  element: HTMLElement,
+  title: string,
+  text: string
+): number | undefined {
+  const titlePackCount = extractPackCount(title);
+  if (titlePackCount) {
+    return titlePackCount;
+  }
+
+  const variantControls = [
+    ...element.querySelectorAll<HTMLElement>(
+      "button[aria-pressed], [role='radio'][aria-checked], [role='option'][aria-selected]"
+    )
+  ]
+    .map((control) => ({
+      control,
+      text: getVisibleText(control)
+    }))
+    .filter(({ text: controlText }) =>
+      /^(?:single\b|\d{1,3}\s*(?:-\s*)?(?:pack|pk)\b|(?:pack|pk)\s+of\s+\d{1,3}\b)/i.test(
+        controlText
+      )
+    );
+
+  const hasPackVariant = variantControls.some(({ text: controlText }) =>
+    /(?:pack|pk)/i.test(controlText)
+  );
+  if (!hasPackVariant) {
+    return extractPackCount(text);
+  }
+
+  const selected = variantControls.find(({ control }) =>
+    control.getAttribute("aria-pressed") === "true" ||
+    control.getAttribute("aria-checked") === "true" ||
+    control.getAttribute("aria-selected") === "true"
+  );
+
+  return selected ? extractPackCount(selected.text) : undefined;
 }
 
 function structuredFallback(document: Document, hostname: string, preferences: UserPreferences): DomProduct[] {
@@ -425,20 +469,55 @@ function inferPageType(pathname: string): ProductInput["pageType"] {
 }
 
 function dedupeProducts(products: DomProduct[]): DomProduct[] {
-  const seen = new Set<string>();
+  const seenByScope = new Map<HTMLElement | Document, Set<string>>();
   const deduped: DomProduct[] = [];
 
   for (const product of products) {
+    const scope = findProductCollectionScope(product, products) ?? product.element.ownerDocument;
+    const seen = seenByScope.get(scope) ?? new Set<string>();
     const key = `${product.title.toLowerCase()}::${product.normalized?.display}`;
     if (seen.has(key)) {
       continue;
     }
 
     seen.add(key);
+    seenByScope.set(scope, seen);
     deduped.push(product);
   }
 
   return deduped;
+}
+
+function findProductCollectionScope(
+  product: DomProduct,
+  products: DomProduct[]
+): HTMLElement | undefined {
+  const explicitCollection = product.element.closest<HTMLElement>(
+    "[data-testid='item-stack'], [data-testid='carousel-container'], [role='list'], ul, ol"
+  );
+  if (explicitCollection && explicitCollection !== product.element) {
+    return explicitCollection;
+  }
+
+  let current: HTMLElement | null = product.element;
+
+  while (
+    current?.parentElement &&
+    current.parentElement !== current.ownerDocument.body &&
+    current.parentElement !== current.ownerDocument.documentElement
+  ) {
+    const siblingProductCount = Array.from(current.parentElement.children).filter(
+      (sibling) => products.some((candidate) => sibling.contains(candidate.element))
+    ).length;
+
+    if (siblingProductCount >= 2) {
+      return current.parentElement;
+    }
+
+    current = current.parentElement;
+  }
+
+  return undefined;
 }
 
 function hashText(value: string): string {

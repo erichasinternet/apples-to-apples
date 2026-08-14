@@ -14,6 +14,7 @@ export type ExtractionAuditReason =
   | "physical-dimension-as-quantity"
   | "equipment-capacity-as-quantity"
   | "material-weight-as-quantity"
+  | "mixed-product-bundle-as-quantity"
   | "container-capacity-as-quantity"
   | "container-size-as-quantity"
   | "style-descriptor-as-quantity"

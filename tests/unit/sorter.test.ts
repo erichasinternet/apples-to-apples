@@ -94,6 +94,83 @@ describe("unit price page sorting", () => {
     expect([...grid.children].map((element) => element.textContent)).toEqual(["Litter", "Detergent"]);
   });
 
+  it("sorts only within compatible laundry-product families", () => {
+    const grid = document.createElement("div");
+    const tide = card("Tide detergent");
+    const shout = card("Shout stain remover");
+    const purex = card("Purex detergent");
+    grid.append(tide, shout, purex);
+    document.body.append(grid);
+
+    const result = sortByUnitPrice(
+      [
+        product(tide, "Tide liquid laundry detergent, 34 fl oz", "volume:fl_oz", 14.6),
+        product(shout, "Shout laundry stain remover, 60 fl oz", "volume:fl_oz", 9.97),
+        product(purex, "Purex liquid laundry detergent, 150 fl oz", "volume:fl_oz", 6)
+      ],
+      "volume:fl_oz"
+    );
+
+    expect(result.state).toBe("sorted");
+    expect([...grid.children].map((element) => element.textContent)).toEqual([
+      "Purex detergent",
+      "Shout stain remover",
+      "Tide detergent"
+    ]);
+  });
+
+  it("does not offer a sort when same-basis products have different purposes", () => {
+    const grid = document.createElement("div");
+    const detergent = card("Detergent");
+    const stainRemover = card("Stain remover");
+    grid.append(detergent, stainRemover);
+    document.body.append(grid);
+
+    const products = [
+      product(detergent, "Purex liquid laundry detergent, 150 fl oz", "volume:fl_oz", 6),
+      product(stainRemover, "Shout laundry stain remover, 60 fl oz", "volume:fl_oz", 9.97)
+    ];
+
+    expect(canSortByUnitPrice(products, "volume:fl_oz")).toBe(false);
+    expect(sortByUnitPrice(products, "volume:fl_oz").state).toBe("unavailable");
+  });
+
+  it("chooses the largest actually sortable family cohort by default", () => {
+    const grid = document.createElement("div");
+    const volumeCards = [
+      card("Liquid detergent"),
+      card("Stain remover"),
+      card("Fabric softener"),
+      card("Odor remover")
+    ];
+    const expensiveLitter = card("Expensive litter");
+    const cheapLitter = card("Cheap litter");
+    grid.append(...volumeCards, expensiveLitter, cheapLitter);
+    document.body.append(grid);
+
+    const result = sortByUnitPrice(
+      [
+        product(volumeCards[0]!, "Purex liquid laundry detergent, 150 fl oz", "volume:fl_oz", 6),
+        product(volumeCards[1]!, "Shout laundry stain remover, 60 fl oz", "volume:fl_oz", 9.97),
+        product(volumeCards[2]!, "all liquid fabric softener, 34 fl oz", "volume:fl_oz", 11),
+        product(volumeCards[3]!, "Clorox laundry odor remover, 42 fl oz", "volume:fl_oz", 16.6),
+        product(expensiveLitter, "Premium Cat Litter, 20 lb", "mass:lb", 70),
+        product(cheapLitter, "Budget Cat Litter, 20 lb", "mass:lb", 20)
+      ],
+      DEFAULT_PREFERENCES
+    );
+
+    expect(result).toMatchObject({ state: "sorted", compareKey: "mass:lb" });
+    expect([...grid.children].map((element) => element.textContent)).toEqual([
+      "Liquid detergent",
+      "Stain remover",
+      "Fabric softener",
+      "Odor remover",
+      "Cheap litter",
+      "Expensive litter"
+    ]);
+  });
+
   it("rejects document-level reordering even when values are comparable", () => {
     const expensive = card("Expensive litter");
     const cheap = card("Cheap litter");

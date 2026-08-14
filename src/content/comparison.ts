@@ -1,4 +1,5 @@
 import type { CanonicalUnit, Dimension } from "../core/types";
+import { comparisonFamilyKey } from "../core/comparison-family";
 import { formatUnitPrice } from "../core/normalizer";
 import { getUnitLabel } from "../core/units";
 import type { DomProduct } from "./extractor";
@@ -65,9 +66,10 @@ export function buildLowestSignals(
     }
 
     const scopeGroups = byScope.get(scope) ?? new Map<string, DomProduct[]>();
-    const group = scopeGroups.get(product.normalized.compareKey) ?? [];
+    const cohortKey = `${product.normalized.compareKey}:${comparisonFamilyKey(product)}`;
+    const group = scopeGroups.get(cohortKey) ?? [];
     group.push(product);
-    scopeGroups.set(product.normalized.compareKey, group);
+    scopeGroups.set(cohortKey, group);
     byScope.set(scope, scopeGroups);
   }
 
@@ -118,12 +120,18 @@ export function isMatchingNativeUnitPrice(product: DomProduct): boolean {
   const native = product.nativeUnitPrice;
   const normalized = product.normalized;
 
+  const nativeUnit =
+    native?.unit === "oz" && product.packageQuantity?.unit === "fl_oz"
+      ? "fl_oz"
+      : native?.unit;
+  const nativeDimension = nativeUnit === "fl_oz" ? "volume" : native?.dimension;
+
   return Boolean(
     native &&
       normalized &&
-      native.dimension === normalized.dimension &&
-      native.unit === normalized.unit &&
-      formatUnitPrice(native.centsPerUnit, native.unit) === normalized.display
+      nativeDimension === normalized.dimension &&
+      nativeUnit === normalized.unit &&
+      formatUnitPrice(native.centsPerUnit, nativeUnit) === normalized.display
   );
 }
 

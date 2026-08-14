@@ -1,9 +1,11 @@
 import type { Evidence, Money, ProductInput, Quantity } from "../core/types";
 import {
   findBestPrice,
+  extractPackCount,
   isLikelyPackageQuantity,
   parseQuantities,
   selectPackageQuantity,
+  selectProductUseQuantity,
   specializePackageQuantity
 } from "../core/pricing";
 
@@ -29,13 +31,12 @@ export function extractStructuredProducts(document: Document, site: string): Pro
       const title = textValue(node.name) || textValue(node.headline) || document.title || "Product";
       const offer = firstObject(node.offers);
       const price = moneyFromOffer(offer) ?? findBestPrice(JSON.stringify(node));
-      const quantities = parseQuantities(JSON.stringify(node)).filter(
-        (quantity) => isLikelyPackageQuantity(title, quantity)
-      );
-      const selectedQuantity = selectPackageQuantity(quantities);
-      const packageQuantity = selectedQuantity
-        ? specializePackageQuantity(title, selectedQuantity)
-        : undefined;
+      const quantities = parseQuantities(JSON.stringify(node))
+        .filter((quantity) => isLikelyPackageQuantity(title, quantity))
+        .map((quantity) => specializePackageQuantity(title, quantity));
+      const packageQuantity =
+        selectProductUseQuantity(title, quantities) ?? selectPackageQuantity(quantities);
+      const packCount = extractPackCount(title);
       const evidence: Evidence[] = [
         {
           kind: "structured-data",
@@ -50,7 +51,8 @@ export function extractStructuredProducts(document: Document, site: string): Pro
         title,
         evidence,
         ...(price ? { price } : {}),
-        ...(packageQuantity ? { packageQuantity } : {})
+        ...(packageQuantity ? { packageQuantity } : {}),
+        ...(packCount ? { packCount } : {})
       });
     }
   });
