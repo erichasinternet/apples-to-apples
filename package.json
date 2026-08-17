@@ -166,7 +166,7 @@
     "@commitlint/cli": "^21.2.1",
     "@commitlint/config-conventional": "^21.2.0",
     "@playwright/test": "^1.62.1",
-    "@types/chrome": "^0.0.326",
+    "@types/chrome": "^0.2.5",
     "@types/jsdom": "^28.0.3",
     "@types/node": "^24.13.3",
     "esbuild": "^0.25.12",
