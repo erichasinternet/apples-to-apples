@@ -163,7 +163,7 @@
     "training:baseline:markuplm:test": "python3 training/test_infer_markuplm.py && python3 training/test_train_t5gemma2.py"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.2.1",
+    "@commitlint/cli": "^21.2.2",
     "@commitlint/config-conventional": "^21.2.0",
     "@playwright/test": "^1.62.1",
     "@types/chrome": "^0.0.326",
